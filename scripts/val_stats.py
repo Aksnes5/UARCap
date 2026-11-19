@@ -50,8 +50,9 @@ def main():
         return {"diff": round(obs, 4), "ci95": [round(boots[250], 4), round(boots[9750], 4)],
                 "p_perm": round((cnt + 1) / 10001, 5), "win": w, "loss": l, "tie": t}
 
-    pairs = [("D3", "D7"), ("D5", "D7"), ("D3", "D5"), ("CF3", "CF7"), ("CF5", "CF7"),
-             ("D3", "CF3"), ("D7", "CF7")]
+    pairs = [("D3", "D7"), ("D5", "D7"), ("D3", "D5"), ("D1", "D3"),
+             ("CF3", "CF7"), ("CF5", "CF7"), ("CF1", "CF3"), ("CF1", "CF7"),
+             ("D3", "CF3"), ("D3", "CF1"), ("D7", "CF7")]
     best = max((m for m in P if m.startswith("D")), key=lambda m: sum(sc[m][k] for k in K))
     res = {}
     for a, b in pairs:
