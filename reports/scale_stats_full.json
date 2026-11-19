@@ -1,0 +1,11 @@
+{
+  "level": "full",
+  "queries": 300,
+  "mean_top1_sim": 0.282,
+  "mean_top20_sim": 0.2686,
+  "mean_unique_sources_top20": 19.33,
+  "same_source_query_ratio": 0.42,
+  "mean_unique_topics_top20": 17.51,
+  "top20_unique_clips": 7459,
+  "top7_unique_clips": 1989
+}

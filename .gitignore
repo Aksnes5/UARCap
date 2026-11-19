@@ -1,0 +1,96 @@
+# =====================================================================
+# UARCap repository hygiene
+# Rule of thumb: source / config / manifests / reports / small results go in.
+# Raw data, weights, embeddings, feature caches, indexes and third-party
+# binaries stay out (regenerable or too large for git).
+# =====================================================================
+
+# ---------- raw data / videos ----------
+datasets/
+videos/
+metadata/
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.webm
+*.tar
+*.tar.gz
+*.tgz
+*.parquet
+*.zip
+
+# ---------- weights ----------
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+
+# ---------- embeddings / feature caches / indexes ----------
+embeddings/
+indexes/
+features/
+*.npy
+*.npz
+*.npz.part
+*.faiss
+*.index
+*.mmap
+
+# ---------- frame dumps / raw image tables ----------
+*.img.tsv
+*.img.8b
+
+# ---------- third-party heavy resources ----------
+*.jar
+*.mdb
+*.gz
+evcap_external/evaluation/pycocoevalcap/spice/cache/
+evcap_external/evaluation/pycocoevalcap/spice/lib/
+evcap_external/evaluation/pycocoevalcap/spice/tmp/
+evcap_external/evaluation/pycocoevalcap/meteor/data/
+evcap_external/evaluation/pycocoevalcap/tokenizer/tmp*
+evcap_external/evaluation/pycocoevalcap/tokenizer/stanford-corenlp-*.jar
+evcap_external/evaluation/pycocoevalcap/**/__pycache__/
+evcap_external/models/Egoinstructor-main/
+evcap_external/static/
+evcap_external/1.ipynb
+evcap_external/evaluation/evaluation_result.png
+
+# ---------- symlinks into the read-only dataset disk ----------
+evcap_external/datasets
+evcap_external/download
+evcap_external/ext_data
+
+# ---------- generated run products ----------
+# keep generated captions + metrics.json; drop checkpoints/logs
+evcap_external/outputs/**/*.pt
+evcap_external/outputs/**/*.pth
+evcap_external/logs/
+PRE_FIX_DIAGNOSTIC/*
+!PRE_FIX_DIAGNOSTIC/README.md
+!PRE_FIX_DIAGNOSTIC/INDEX.txt
+
+# ---------- runtime / temp ----------
+logs/
+tmp/
+*.tmp
+*.part
+*.incomplete
+*.log
+*.pid
+*.swp
+
+# ---------- python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ---------- editors / OS ----------
+.vscode/
+.idea/
+.DS_Store

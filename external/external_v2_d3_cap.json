@@ -1,0 +1,7889 @@
+{
+ "datasets/MSRVTT-v2/videos/video7010.mp4": [
+  [
+   "The user is using a music production software to create and edit music.",
+   "The user is using a digital audio workstation daw software to create and edit music.",
+   "The user is using a software to create and edit music compositions."
+  ],
+  [
+   0.425751333862789,
+   0.3990209672309412,
+   0.39737392905936736
+  ],
+  [
+   [
+    "Dx9Sj2m-UyU.2"
+   ],
+   [
+    "l4e54DTWLQQ.1"
+   ],
+   [
+    "KSl9aYixSKk.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7019.mp4": [
+  [
+   "A blue background with the words profs on it.",
+   "A green background with the words nhs language on it.",
+   "A dark background with the words the night manager on it."
+  ],
+  [
+   0.39517866486816006,
+   0.3609480434591736,
+   0.34638900021653246
+  ],
+  [
+   [
+    "vDEDoPBAVPA.5"
+   ],
+   [
+    "lPvSi6qUN-I.0"
+   ],
+   [
+    "FX6uZDlbcn0.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7029.mp4": [
+  [
+   "A spongebob squarepants cartoon on a tv screen.",
+   "A picture of a spongebob squarepants cartoon on a tv screen.",
+   "A cartoon picture of a tv on a pink background."
+  ],
+  [
+   0.48385369089296093,
+   0.48199201763632754,
+   0.47281730760983487
+  ],
+  [
+   [
+    "w2OugVEBlqE.1"
+   ],
+   [
+    "Lr-fDH4otPU.1"
+   ],
+   [
+    "2FnAa7co2Rg.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7039.mp4": [
+  [
+   "A man and a woman are standing in front of a building, and the woman is wearing sunglasses.",
+   "A young man and woman are standing in front of a blue wall, with the man wearing glasses and the woman wearing a blue shirt.",
+   "A woman wearing glasses is standing in front of a blue wall and talking to the camera."
+  ],
+  [
+   0.43696055209539264,
+   0.41946857651036235,
+   0.4144576859714678
+  ],
+  [
+   [
+    "zWY5AiGjhW4.10"
+   ],
+   [
+    "kP-6Wdlnpqw.2"
+   ],
+   [
+    "1XobFGRX_TM.15",
+    "W1bcvTRaXis.3",
+    "g5Ai5tQ6-l4.30"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7049.mp4": [
+  [
+   "There is a plate of food on a table with sausages, potatoes, and mushrooms.",
+   "There is a white plate with vegetables and mushrooms on it.",
+   "A person is cooking sausages in a white bowl on a table."
+  ],
+  [
+   0.33077012610587925,
+   0.32995470064219135,
+   0.3294420504489155
+  ],
+  [
+   [
+    "_BM89J3LaWI.0"
+   ],
+   [
+    "gDVRSFDISDw.7"
+   ],
+   [
+    "Mn0HKGpA42M.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7059.mp4": [
+  [
+   "A green parrot is standing on a couch in a living room.",
+   "A green parrot is sitting on a metal rack in a room.",
+   "A green parrot sitting on a shelf in a room."
+  ],
+  [
+   0.5833038366741401,
+   0.5761444095261545,
+   0.5614633405803611
+  ],
+  [
+   [
+    "CgYo8iFiGxk.1"
+   ],
+   [
+    "fcsv9YIZIsM.0"
+   ],
+   [
+    "arCFDWDsz5o.0",
+    "fcsv9YIZIsM.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7069.mp4": [
+  [
+   "A hand drawing a picture on a piece of paper.",
+   "A drawing of a penguin on a piece of paper.",
+   "A picture of a drawing on a piece of paper."
+  ],
+  [
+   0.5785807034218287,
+   0.575904356925176,
+   0.5715740033049939
+  ],
+  [
+   [
+    "AFhClkPwchM.7",
+    "Do5PY4tAQkU.2",
+    "me14ikumMZE.3"
+   ],
+   [
+    "u4bwANwaH5k.0"
+   ],
+   [
+    "AFhClkPwchM.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7079.mp4": [
+  [
+   "A group of musicians are performing on stage and the audience is waving their hands in the air.",
+   "A group of musicians are performing on stage and the crowd is waving their hands in the air.",
+   "A group of musicians are performing on stage and playing heavy metal music."
+  ],
+  [
+   0.516254367172514,
+   0.5042881288904862,
+   0.4409754764362051
+  ],
+  [
+   [
+    "cynpZtTBO94.2"
+   ],
+   [
+    "8qCZyFJzmbQ.0"
+   ],
+   [
+    "TbfJrYCJpYo.45"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7089.mp4": [
+  [
+   "A group of people standing on a stage in front of a blue wall.",
+   "A group of people talking on a stage in front of a microphone.",
+   "A group of people, including a man and a woman, are standing in front of a microphone and singing."
+  ],
+  [
+   0.4148570694484282,
+   0.41441662436018517,
+   0.39527294178354155
+  ],
+  [
+   [
+    "gTSOwPd8axg.20"
+   ],
+   [
+    "Goe38Y665J4.17"
+   ],
+   [
+    "vwqchqgbD8c.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7099.mp4": [
+  [
+   "A person is riding a motorcycle on an open road and the camera is mounted on the handlebar of the bike.",
+   "A person is riding a motorcycle on a highway during sunset and the camera is mounted on the handlebar of the bike.",
+   "A woman is riding a motorcycle on a road and the camera is mounted on her helmet, showing the view from her perspective."
+  ],
+  [
+   0.4403850414028659,
+   0.42216301687553964,
+   0.4152525064010446
+  ],
+  [
+   [
+    "SYsz_MSGUfM.1"
+   ],
+   [
+    "OhkPSa-txZM.0"
+   ],
+   [
+    "snLxHOrX6ag.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7109.mp4": [
+  [
+   "A group of cartoon characters dancing in front of a blue background.",
+   "A cartoon character is dancing in front of a blue background.",
+   "A cartoon of three girls dancing in front of a purple background."
+  ],
+  [
+   0.5754632637470166,
+   0.5566807577589646,
+   0.5221244820100656
+  ],
+  [
+   [
+    "tQ71U-X5rSs.5"
+   ],
+   [
+    "EHJGJL40cQs.5"
+   ],
+   [
+    "X7oxLnqY6L4.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7119.mp4": [
+  [
+   "A live news broadcast with a blue background.",
+   "A news channel with a blue background.",
+   "A news set with a red and blue background."
+  ],
+  [
+   0.4492714581151787,
+   0.4482050288208232,
+   0.4176995984252044
+  ],
+  [
+   [
+    "1Li5pnxSN44.0"
+   ],
+   [
+    "tuzkDhjsMuI.1"
+   ],
+   [
+    "ZybIqrxt86k.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7129.mp4": [
+  [
+   "A person is using a smartphone and sending a text message.",
+   "A person is using a smartphone and sending a message on whatsapp.",
+   "A person is using a messaging app and sending a message to another person."
+  ],
+  [
+   0.4930151737142979,
+   0.4911363877157296,
+   0.47851711263945296
+  ],
+  [
+   [
+    "WqS4W5aHAks.5"
+   ],
+   [
+    "9BsD8mRsC5s.0"
+   ],
+   [
+    "3p6BKPbE9RM.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7139.mp4": [
+  [
+   "A screen shot of a news website with a red background.",
+   "A screen shot of a website with a woman in a red dress.",
+   "A screen shot of a website with a picture of a woman in a red dress."
+  ],
+  [
+   0.45541520606225094,
+   0.45368684832174655,
+   0.45004313157527764
+  ],
+  [
+   [
+    "0aEjouaH6o0.0",
+    "Ko2w6oUcrqA.0",
+    "b5lbpa0zu7A.0"
+   ],
+   [
+    "EnK5VYSWIHA.0",
+    "tbY2EueYNpk.6"
+   ],
+   [
+    "oPwCvSH30WA.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7149.mp4": [
+  [
+   "A dark screen with text on it.",
+   "There is a white screen with text on it.",
+   "There is a white screen with some text on it."
+  ],
+  [
+   0.382868973599747,
+   0.37286783083701375,
+   0.35745013274783266
+  ],
+  [
+   [
+    "0HU_o0R08f4.5",
+    "EgMCeSk5DgQ.0",
+    "_tjd5VVcFfo.3",
+    "ww9pHXl4Clk.25"
+   ],
+   [
+    "6SLAKpk6_2Q.2"
+   ],
+   [
+    "pWJDA7vtjFo.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7159.mp4": [
+  [
+   "A man is sitting in a wheelchair and talking to the camera.",
+   "A man in a wheelchair is sitting in front of a camera and talking to the interviewer.",
+   "An elderly man is sitting in a wheelchair and talking to the camera."
+  ],
+  [
+   0.5324088318630945,
+   0.5081255560229866,
+   0.4761408699230495
+  ],
+  [
+   [
+    "2WidQlJL1_0.10",
+    "2WidQlJL1_0.13",
+    "BVuLCsBLilA.3",
+    "CjhGxL3KXak.16",
+    "CjhGxL3KXak.5"
+   ],
+   [
+    "6gIpCWCnGtw.4"
+   ],
+   [
+    "yupPGFPcHzo.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7169.mp4": [
+  [
+   "A group of people working in a laundry room.",
+   "A group of people working in a medical room.",
+   "There are various cleaning products on a shelf in a storage room."
+  ],
+  [
+   0.36754187812716715,
+   0.36315591321488644,
+   0.3610898149446638
+  ],
+  [
+   [
+    "YFkxocDHmZ8.24"
+   ],
+   [
+    "QGnpEW6rXzc.5"
+   ],
+   [
+    "VsPCUwDKESE.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7179.mp4": [
+  [
+   "A cartoon of a girl with blonde hair and a purple hat.",
+   "A cartoon woman with blonde hair and a purple hat.",
+   "A cartoon of a pregnant woman in a purple dress."
+  ],
+  [
+   0.40241912930700113,
+   0.3785230405175003,
+   0.3702197064246926
+  ],
+  [
+   [
+    "fNtomC7Yk2Y.1"
+   ],
+   [
+    "MzIQkT1cFnM.0",
+    "oqletQWbldA.0"
+   ],
+   [
+    "6zjhF_kORBE.5",
+    "YjTAxXskAXo.10",
+    "nk-6rAvXqhs.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7189.mp4": [
+  [
+   "A person is holding a black case in the driver's seat of a car.",
+   "A person is cleaning a car seat with a green glove.",
+   "A person is using a flashlight to inspect the interior of a car."
+  ],
+  [
+   0.3146542644285878,
+   0.30937150079216574,
+   0.3029230998347459
+  ],
+  [
+   [
+    "eq9vA0BSScA.3"
+   ],
+   [
+    "PbS9LmQY-Ss.11"
+   ],
+   [
+    "kfK0jNsVArU.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7199.mp4": [
+  [
+   "A video game with a tree in the middle of the screen.",
+   "The player is playing a video game where they are shooting arrows at a tree in the middle of a field.",
+   "A video game with a person on top of a tree."
+  ],
+  [
+   0.34883403724281703,
+   0.34538362037218606,
+   0.3343369722468415
+  ],
+  [
+   [
+    "2ZZbOe5bPx8.4"
+   ],
+   [
+    "Gw4AqrJAqTI.1"
+   ],
+   [
+    "RMDhIQvy1AU.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7209.mp4": [
+  [
+   "A person is driving a car and the camera is mounted on the dashboard of the car.",
+   "A person is driving a car on a road and the camera is mounted on the dashboard of the car.",
+   "A person is driving a car on a highway and the camera is mounted on the dashboard of the car."
+  ],
+  [
+   0.8086408637655176,
+   0.7970864440756027,
+   0.7970154163037438
+  ],
+  [
+   [
+    "OLj94I1KD2E.2",
+    "i1thOAYe_ks.6",
+    "sA5vaI0QUMs.0",
+    "tQM3H8bRkTQ.2",
+    "yQ1AOogBunI.1",
+    "yjdynCPQkag.21"
+   ],
+   [
+    "TiyyolP0oek.0",
+    "ado1ZqITYaw.9",
+    "gaNyRVwaeJU.0",
+    "jXMfwDPWS-E.0"
+   ],
+   [
+    "6QKF2EsgqGw.1",
+    "E-9n2DE-H3c.0",
+    "dvrFVcXzEW4.0",
+    "qgTnkCwRQiE.1",
+    "rvH5zqL4S0U.15"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7219.mp4": [
+  [
+   "A racing car driving down a road in a video game.",
+   "A white sports car driving down a road in a video game.",
+   "A white sports car driving down a street in front of a building."
+  ],
+  [
+   0.4123230997174733,
+   0.4120908539686339,
+   0.40378775027328456
+  ],
+  [
+   [
+    "uM5BpIQDUhI.7"
+   ],
+   [
+    "mzdzxcsvRW4.1"
+   ],
+   [
+    "jzUMu_7-jCc.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7229.mp4": [
+  [
+   "A news screen with a woman in a blue shirt.",
+   "A screen shot of a web page with a woman in a blue shirt.",
+   "A screen shot of a news article with a woman in a blue shirt."
+  ],
+  [
+   0.514748445127865,
+   0.4910379581432214,
+   0.48248880748880757
+  ],
+  [
+   [
+    "MNDkxkyDVQo.2"
+   ],
+   [
+    "55d7rH2cSJE.0"
+   ],
+   [
+    "omNDg-tKbOo.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7239.mp4": [
+  [
+   "A screen shot of a newspaper with a map on it.",
+   "A picture of a newspaper with a typewriter on it.",
+   "A newspaper with a picture of a ship on it."
+  ],
+  [
+   0.43859470116244775,
+   0.4083905252143522,
+   0.40836414347051886
+  ],
+  [
+   [
+    "KGLD56A4EMI.1"
+   ],
+   [
+    "V80G9s8r-vE.2"
+   ],
+   [
+    "00B2bnuMbYg.2",
+    "YuFkdjQWGRQ.5",
+    "d11-5CdcunI.6",
+    "xvI_tozuht0.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7249.mp4": [
+  [
+   "A picture of a house with a ghost in front of it.",
+   "A person is walking through a dark and creepy mansion with a ghostly figure following them.",
+   "A person is opening the door of a house with their hand."
+  ],
+  [
+   0.30491863000803965,
+   0.30008922542522704,
+   0.2871325358132767
+  ],
+  [
+   [
+    "_E0lDTncItI.7"
+   ],
+   [
+    "_3vNq_FJIfg.9"
+   ],
+   [
+    "4xN-wb5Hv2w.0",
+    "5zegl_xW0A0.3",
+    "vJCY5JEihVM.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7259.mp4": [
+  [
+   "A group of baseball players are playing on the field and one player is swinging a bat and hitting the ball.",
+   "A group of baseball players are playing on the field and one player is throwing the ball to another player.",
+   "A group of baseball players are playing on the field and one player hits a home run."
+  ],
+  [
+   0.41687966326499076,
+   0.3900924101593381,
+   0.38340987893913736
+  ],
+  [
+   [
+    "t0oXYjT6InU.5"
+   ],
+   [
+    "Z5lkF759wYA.15"
+   ],
+   [
+    "GO-TVF0xV-I.3",
+    "V-Zn-574cmQ.2",
+    "V-Zn-574cmQ.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7269.mp4": [
+  [
+   "A cartoon with a caption in spanish.",
+   "A black screen with a message in spanish.",
+   "A red screen with a message in spanish."
+  ],
+  [
+   0.5346253393831873,
+   0.4934480559401743,
+   0.4918327645146797
+  ],
+  [
+   [
+    "3lbSGt1_vdA.1",
+    "KIg8Kb2iL_8.12",
+    "dmuKGvBV8J8.3"
+   ],
+   [
+    "0GJzhps9II0.7",
+    "85hyx-uWODE.1",
+    "CbAd6RSNOkQ.0",
+    "Ei7v-TauAv4.0",
+    "KQ13jP4m0hQ.8",
+    "Ls-mZ2LuuLs.0",
+    "ROcBND3-V6w.1",
+    "UJEFXuUWAs4.0",
+    "Wp4Wj6PiE1Q.0",
+    "l9YRfk6w3a4.0",
+    "xa4P6LnfyOU.0",
+    "y4lXmkSR5aY.3"
+   ],
+   [
+    "3MG552STj2A.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7279.mp4": [
+  [
+   "A group of people are walking on a red carpet at an exhibition.",
+   "A crowd of people are walking down a blue carpet at an event.",
+   "A group of people are walking on a red carpet at an awards ceremony."
+  ],
+  [
+   0.43406105116446886,
+   0.42688354189055455,
+   0.4229970694657554
+  ],
+  [
+   [
+    "CxBTvaLzD4E.3",
+    "PvfxPzC8-9E.15",
+    "TOHSOH-hLZM.2"
+   ],
+   [
+    "qHxMHFhP3KM.18"
+   ],
+   [
+    "ucmZo7L3Uhw.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7289.mp4": [
+  [
+   "A group of people are dancing hip-hop in a studio.",
+   "A group of people are dancing hip-hop moves in a gym.",
+   "A group of people are dancing hip-hop in a shopping mall."
+  ],
+  [
+   0.5250501765375908,
+   0.5021986409976624,
+   0.49718610966934174
+  ],
+  [
+   [
+    "51ftX1NXWkQ.6",
+    "KxXUm7kk_qo.23",
+    "pqPLf2Wn-h0.5",
+    "zDf_UerRGYs.3",
+    "zOUB7SSMZJQ.1"
+   ],
+   [
+    "ywJOjudLjFA.4"
+   ],
+   [
+    "Va7xv2pXtgw.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7299.mp4": [
+  [
+   "A person is using a brush to paint a bowl.",
+   "A person is using a paintbrush to paint colorful beads on a table.",
+   "A person is using a paintbrush to paint colorful eggs on a wooden table."
+  ],
+  [
+   0.48580023493307845,
+   0.46906078327130957,
+   0.45660944445841467
+  ],
+  [
+   [
+    "1NxdGg3oHok.2"
+   ],
+   [
+    "XrlnW1wXyPA.0"
+   ],
+   [
+    "fHxX6rulJ7c.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7309.mp4": [
+  [
+   "A group of people are playing a video game in a dark room with fire and explosions happening around them.",
+   "A group of people are playing video games in a dark room with fire and explosions happening in the background.",
+   "A group of people are playing a game with water bottles on the floor."
+  ],
+  [
+   0.3646836965000964,
+   0.3632063415947636,
+   0.3533900607756424
+  ],
+  [
+   [
+    "3hYkygrMzWU.13"
+   ],
+   [
+    "Ur05W5lxzAM.7"
+   ],
+   [
+    "kkWA89wdNFU.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7319.mp4": [
+  [
+   "A children's book with a cartoon character on the cover.",
+   "A book with a picture of a cartoon character on the cover.",
+   "A children's book with a cartoon dog on the cover."
+  ],
+  [
+   0.5654651755178964,
+   0.5629841173319433,
+   0.5377893916764438
+  ],
+  [
+   [
+    "12dek1lAkJ0.7",
+    "55ovpaTbN3s.10",
+    "55ovpaTbN3s.11",
+    "6R4hK6M98As.2",
+    "6R4hK6M98As.6",
+    "i5jx0msW_VE.7",
+    "mpu86iNKDJg.14",
+    "tD91ncud1yg.12",
+    "wxbEk8o2YyM.7"
+   ],
+   [
+    "LITEI0hvk0E.5"
+   ],
+   [
+    "3cVH2m8Rc7M.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7329.mp4": [
+  [
+   "Two cartoon characters hugging each other on a purple background.",
+   "Two cartoon characters hugging each other on a colorful background.",
+   "A cartoon of two yellow characters on a purple background."
+  ],
+  [
+   0.396520201082691,
+   0.37508423477137837,
+   0.36798839637360087
+  ],
+  [
+   [
+    "URWMbPKVWsY.42",
+    "joulGr6hvDo.1"
+   ],
+   [
+    "OQkKYO7AqdM.3"
+   ],
+   [
+    "kgpcCKr8mwc.18"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7339.mp4": [
+  [
+   "There is a fireworks display in the night sky with colorful fireworks lighting up the sky.",
+   "There is a fireworks display in the night sky, with colorful fireworks lighting up the sky.",
+   "There is a fireworks display in the sky with colorful fireworks lighting up the night sky."
+  ],
+  [
+   0.6715322521426398,
+   0.6685388208519948,
+   0.6365508034228009
+  ],
+  [
+   [
+    "3K_5mGfcrTk.0",
+    "fFAPe7gIz70.0"
+   ],
+   [
+    "0JizAj7uTcI.2",
+    "F4Ql34oXEjg.3",
+    "_6ywGyArVnQ.26",
+    "cKkNyn1zv8E.3",
+    "gsPFDZsMT5g.3"
+   ],
+   [
+    "cKkNyn1zv8E.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7349.mp4": [
+  [
+   "A young black man is sitting in front of the camera and talking to the viewer.",
+   "A young man is sitting in front of the camera and talking to the interviewer.",
+   "A young man is sitting in front of a camera and talking to the interviewer."
+  ],
+  [
+   0.6594547108981761,
+   0.6566267110267207,
+   0.6455154457422076
+  ],
+  [
+   [
+    "B4P0nT9u56Q.3",
+    "CFwAloMKltk.9",
+    "F0Cj5reWObs.6",
+    "Flwex4F5NX0.12",
+    "IU2zWQl1GRw.0",
+    "IU2zWQl1GRw.1",
+    "LrvrFFCtXeA.4",
+    "LrvrFFCtXeA.6",
+    "LrvrFFCtXeA.8",
+    "Nvs7FhhdZ64.0",
+    "PUK938D1Tfk.6",
+    "SDJ7-aiQ7io.5",
+    "SIfxKjCQBMw.1",
+    "SIfxKjCQBMw.4",
+    "UTDVM5Z0YF4.6",
+    "ZHnmiQGfFiA.33",
+    "ZHnmiQGfFiA.4",
+    "fBTf8zPJu2E.0",
+    "fBTf8zPJu2E.2",
+    "mWuywBa1OTU.5",
+    "pTb0MtX2Z3c.31",
+    "pTb0MtX2Z3c.34",
+    "vfO6DqsnA_4.2",
+    "wTgqJIXjf1Y.0"
+   ],
+   [
+    "B-Fbvlv6gaU.14",
+    "KtUm9wxpHHY.14",
+    "KtUm9wxpHHY.4",
+    "KtUm9wxpHHY.8",
+    "VRqcMCTkzvw.0",
+    "W2xTXjg6jbo.18",
+    "W2xTXjg6jbo.6",
+    "c4D1nJJwR4E.11",
+    "hMLeJUmhJTk.4",
+    "tqmLa2oqRAI.0",
+    "x7mdMpMNzgM.1",
+    "yvKy2FueAec.0"
+   ],
+   [
+    "4VJ8J-yKa5g.5",
+    "HS0E6VTy7S4.5",
+    "l7uWLy4HJ1k.5",
+    "op0ZvPO11AM.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7359.mp4": [
+  [
+   "A picture of two people fighting in a boxing ring.",
+   "Two people fighting in a boxing ring.",
+   "A group of people are fighting in a boxing ring."
+  ],
+  [
+   0.5459994974054385,
+   0.5286733502666795,
+   0.519727196547056
+  ],
+  [
+   [
+    "BGVXtQ-AImc.4",
+    "xv0afLBTsVQ.0"
+   ],
+   [
+    "Ficy4TvOzf4.0",
+    "Gbm8ODEi1UI.0",
+    "cq5ZejrXyko.1"
+   ],
+   [
+    "VtnueSGVYk0.35"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7369.mp4": [
+  [
+   "A picture of a laptop with a lot of information on it.",
+   "A picture of a laptop with a bunch of icons on it.",
+   "A laptop computer with a lot of information on it."
+  ],
+  [
+   0.4996261617337921,
+   0.48048740575293086,
+   0.44586308709155875
+  ],
+  [
+   [
+    "0mtAI_wbcI8.3"
+   ],
+   [
+    "APccP9xNjc8.8",
+    "Y9Y4Efyxmk4.0"
+   ],
+   [
+    "VQQFJSiA2CE.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7379.mp4": [
+  [
+   "A young man wearing a baseball cap is standing in front of the camera and talking to the viewer.",
+   "A young man wearing a blue shirt and a baseball cap is standing in front of the camera and talking to the viewer.",
+   "A young man wearing a denim jacket is standing in front of the camera and talking to the viewer."
+  ],
+  [
+   0.5533706374352168,
+   0.552621361169256,
+   0.551888189151498
+  ],
+  [
+   [
+    "GWbmh474US4.6"
+   ],
+   [
+    "_4Tiz_b64yE.0"
+   ],
+   [
+    "-QQlI6LM9f0.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7389.mp4": [
+  [
+   "A young man and woman are standing in a room, with the woman holding a purse.",
+   "It is a scene from a movie where two people are standing in front of each other, one of them is looking at the other with a sad expression on their face.",
+   "It is a scene from a movie where two people are standing in a room, one of them is looking at the other with a serious expression on their face."
+  ],
+  [
+   0.31299115234835945,
+   0.3075438204347966,
+   0.3053512324691791
+  ],
+  [
+   [
+    "MR__Jog7Hqg.1"
+   ],
+   [
+    "hCgvW8PP1hg.13"
+   ],
+   [
+    "vMql12dYj_U.28"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7399.mp4": [
+  [
+   "A screen shot of a web page with a movie on it.",
+   "A screen shot of a tv show with a man in a blue hat.",
+   "A screen shot of a movie website with a bunch of pictures on it."
+  ],
+  [
+   0.33837109779647184,
+   0.3281258705799483,
+   0.3190130006697035
+  ],
+  [
+   [
+    "ZIV6c0Ibe0o.17"
+   ],
+   [
+    "BMMo3EOefgc.2"
+   ],
+   [
+    "acYZYzaA4PE.11"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7409.mp4": [
+  [
+   "A video game of a football game on a field.",
+   "A video game of a baseball game on a field.",
+   "A video game of a football player kicking a football."
+  ],
+  [
+   0.39931681844725325,
+   0.3669900300563916,
+   0.3499468901299565
+  ],
+  [
+   [
+    "k7wDNFtkXd8.0",
+    "k7wDNFtkXd8.1",
+    "k7wDNFtkXd8.3"
+   ],
+   [
+    "9yPw0yhjCHE.3"
+   ],
+   [
+    "PDwCN4_EZl4.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7419.mp4": [
+  [
+   "The person is playing an acoustic guitar on a stage in front of an audience.",
+   "The person is playing an acoustic guitar and singing on stage in front of a microphone.",
+   "A man is playing an acoustic guitar on stage in front of a purple background."
+  ],
+  [
+   0.4977772931655384,
+   0.4799545937852324,
+   0.4637961730201817
+  ],
+  [
+   [
+    "m1qTMAaCEG4.7"
+   ],
+   [
+    "V3mL58cG_-0.6"
+   ],
+   [
+    "j5o4yuRdGbY.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7429.mp4": [
+  [
+   "A picture of a necklace and earrings on a mannequin.",
+   "A picture of a necklace with a lot of pearls on it.",
+   "A collage of pictures of a woman with earrings."
+  ],
+  [
+   0.40116172941657713,
+   0.37937020106593206,
+   0.37436152793323485
+  ],
+  [
+   [
+    "Z51F7KutpiI.1"
+   ],
+   [
+    "3JTVwk7zw8w.0"
+   ],
+   [
+    "K5IhdPT7ZoY.18"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7439.mp4": [
+  [
+   "A person is playing the violin in a recording studio.",
+   "A group of people are playing violins in a recording studio.",
+   "A group of musicians are playing violin music together at a concert."
+  ],
+  [
+   0.36882783147313414,
+   0.3603410891168327,
+   0.35691285869111217
+  ],
+  [
+   [
+    "2xUOy0muiw0.1",
+    "2xUOy0muiw0.10",
+    "2xUOy0muiw0.11",
+    "RKEuuTBvTu0.0",
+    "RKEuuTBvTu0.4"
+   ],
+   [
+    "C0jMTiVvyvA.17"
+   ],
+   [
+    "ojgKcOlECdE.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7449.mp4": [
+  [
+   "A screen shot of a website with a green arrow pointing to a link.",
+   "A computer screen with a yellow arrow pointing to a link.",
+   "A computer screen with a yellow arrow pointing to a website."
+  ],
+  [
+   0.5168709928530019,
+   0.5156044775209534,
+   0.5154425342011153
+  ],
+  [
+   [
+    "2aTKrs4ecCc.6"
+   ],
+   [
+    "R8XxxBlD1gE.6"
+   ],
+   [
+    "V1hDT2_ai9E.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7459.mp4": [
+  [
+   "A person is driving a car on a road and the camera captures the view from inside the car.",
+   "A person is driving a car on a road, and the camera captures the view from inside the car.",
+   "A person is driving a car in a forest and the camera is inside the car."
+  ],
+  [
+   0.5676498406089412,
+   0.5597133326724333,
+   0.5579943751354969
+  ],
+  [
+   [
+    "8tKi_Ijjqo0.3"
+   ],
+   [
+    "4XS1HjgZjQ0.1",
+    "8tKi_Ijjqo0.0",
+    "GUKd9Ojjn_M.7",
+    "im9U6NxDYVk.3"
+   ],
+   [
+    "K9yt--c-eVk.11"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7469.mp4": [
+  [
+   "A news report with a man in a turban.",
+   "A news report with a man in a purple turban.",
+   "A news report about a lion in a cage."
+  ],
+  [
+   0.3871049974282658,
+   0.37204532898017184,
+   0.34744859518085996
+  ],
+  [
+   [
+    "0p7nry_RbOc.12",
+    "CPS95h4z_gk.15"
+   ],
+   [
+    "0p7nry_RbOc.5"
+   ],
+   [
+    "NnYC4pwdrHw.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7479.mp4": [
+  [
+   "A young woman is talking to the camera on a red background.",
+   "A young woman is standing in front of a red curtain and talking to the camera.",
+   "A woman is talking to the camera in front of a red background and she is wearing a blue dress."
+  ],
+  [
+   0.41060329564881404,
+   0.4064674699114927,
+   0.39738198234353544
+  ],
+  [
+   [
+    "AwBkAxU-5uU.0",
+    "KXPmeR32VrI.3"
+   ],
+   [
+    "Qez2hWY64Ng.7"
+   ],
+   [
+    "UQsAdWfBOmM.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7489.mp4": [
+  [
+   "There is a large excavator in a construction site with cranes and other heavy machinery in the background.",
+   "It is a group of people wearing hard hats and uniforms, standing in a dimly lit room with pipes and machinery in the background.",
+   "There is a group of people wearing hard hats and uniforms, standing around a large excavation site with heavy machinery in the background."
+  ],
+  [
+   0.3466165712756762,
+   0.31618438009710675,
+   0.3052688741033846
+  ],
+  [
+   [
+    "T-eO_a_JaI4.0"
+   ],
+   [
+    "TZhDcxR86sg.0"
+   ],
+   [
+    "OISo09cNg7U.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7499.mp4": [
+  [
+   "A band is performing on stage and the audience is cheering and waving their hands in the air.",
+   "The band is performing on stage and the singer is singing into a microphone.",
+   "A young woman is singing on stage at a concert, and there are other people in the audience."
+  ],
+  [
+   0.4184135164781236,
+   0.39672454616352915,
+   0.39625867437737805
+  ],
+  [
+   [
+    "I9z3WXfWG9U.2"
+   ],
+   [
+    "4lvSUspjYok.9"
+   ],
+   [
+    "seRpInyugQ4.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7509.mp4": [
+  [
+   "A screen shot of a website with a gold medal on it.",
+   "A group of young women are dancing in front of a swimming pool with bright lights shining on them.",
+   "A group of people are working on a research project involving dolphins in a swimming pool."
+  ],
+  [
+   0.2640026114849606,
+   0.26315925266020634,
+   0.25574676360831267
+  ],
+  [
+   [
+    "t9cgKQLQq34.7"
+   ],
+   [
+    "KVWPs88u-0A.14"
+   ],
+   [
+    "tjSRkWF9FdE.8"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7519.mp4": [
+  [
+   "The player is playing a first-person shooter game and shooting at zombies with a gun.",
+   "The player is playing a first-person shooter game and shooting with a gun.",
+   "The player is playing a first-person shooter video game and shooting at enemies with a gun."
+  ],
+  [
+   0.778647586863587,
+   0.771811331775034,
+   0.7712629791774746
+  ],
+  [
+   [
+    "8U5jWr5hHAA.8"
+   ],
+   [
+    "pF4CYaoxYjI.0"
+   ],
+   [
+    "B1aNatJ53BQ.0",
+    "VZ0NHrHowZc.2",
+    "a6aLghSanbo.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7529.mp4": [
+  [
+   "A web page with a message on it.",
+   "A web page with a question on it.",
+   "A screen shot of a website with a message on it."
+  ],
+  [
+   0.4002578033903352,
+   0.38886968396897476,
+   0.35771812028445
+  ],
+  [
+   [
+    "ru6T84MvsvU.14"
+   ],
+   [
+    "D7Zx_9Fqj1I.1"
+   ],
+   [
+    "MSH_60jxLsE.3",
+    "eDcuhh43HO8.1",
+    "etwdwXkPhOQ.0",
+    "gr4mw1qvcWM.1",
+    "iEO1-MsvwvM.3",
+    "kLMOvxldprs.25",
+    "sMOuKpoEmMw.7",
+    "z2fwCLQzDN8.14"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7539.mp4": [
+  [
+   "A group of people are walking down a dark hallway with flashlights in their hands.",
+   "A group of people are walking through a dark tunnel with flashlights in their hands.",
+   "A group of people are walking down a dark hallway with flashlights in hand."
+  ],
+  [
+   0.561659566205553,
+   0.5404206451481202,
+   0.5250713360109575
+  ],
+  [
+   [
+    "9eF40Mw6qWs.23",
+    "JrLuljNlmRs.5",
+    "UMT3D2w1Lfo.9"
+   ],
+   [
+    "_5EowzYwuQ0.15",
+    "mHJ9pTCrvoI.9"
+   ],
+   [
+    "_62-8oPQz7k.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7549.mp4": [
+  [
+   "A woman is sitting in a chair and talking to the camera she is wearing a white shirt and has blonde hair.",
+   "A woman is talking to the camera in an office setting she is wearing a white shirt and has blonde hair.",
+   "A woman is sitting on a couch and talking to someone off camera she is wearing a white shirt and has blonde hair."
+  ],
+  [
+   0.41395779317492254,
+   0.3798534916492969,
+   0.3756154353647834
+  ],
+  [
+   [
+    "36gux36EVjw.4"
+   ],
+   [
+    "00jsbj-EHjg.3",
+    "_8v8dNWENz0.16"
+   ],
+   [
+    "RYDlxWPQQU4.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7559.mp4": [
+  [
+   "There is a dining table with various types of food on it, including meat, fish, rice, and vegetables.",
+   "There is a plate of food on a table with various ingredients, including fish, vegetables, and noodles.",
+   "There is a plate of food on a table with various ingredients such as chicken, broccoli, and rice."
+  ],
+  [
+   0.3872925193830386,
+   0.38067648828147244,
+   0.3630150758255932
+  ],
+  [
+   [
+    "Q2QYkAI7OPE.4"
+   ],
+   [
+    "hv2YC29JTg0.4"
+   ],
+   [
+    "TIApsOOc-Og.24"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7569.mp4": [
+  [
+   "A woman is giving a speech at an event and receiving an award.",
+   "A woman is giving an interview at an event and receiving an award.",
+   "A woman is receiving an award at an event."
+  ],
+  [
+   0.39211261363559924,
+   0.38578559842099996,
+   0.3815863212454391
+  ],
+  [
+   [
+    "Cr9JMFTX_9Q.10",
+    "OZQyFpJ9jPI.0",
+    "jGs4QZAl9Rw.6",
+    "l4x59t3jmog.0"
+   ],
+   [
+    "SkQNNtqre9Y.0"
+   ],
+   [
+    "0HdRbQueJWk.2",
+    "nl02UH2GrBM.12"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7579.mp4": [
+  [
+   "A picture of a dog on a pink background.",
+   "A picture of a pink dog on a pink background.",
+   "A picture of a dog on a pink and blue background."
+  ],
+  [
+   0.5662254363739058,
+   0.5517814589184079,
+   0.5490400573238101
+  ],
+  [
+   [
+    "FEeDV5_pFAk.8"
+   ],
+   [
+    "rb8_ZsWgs6o.1"
+   ],
+   [
+    "iNLnBB5XuV8.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7589.mp4": [
+  [
+   "A yellow background with the words biology on it.",
+   "A yellow background with the words buenas tardes on it.",
+   "A yellow background with the words migration matters written on it."
+  ],
+  [
+   0.34935036246485784,
+   0.3358542776354784,
+   0.3281399313725341
+  ],
+  [
+   [
+    "wMLgO5OpoY0.0"
+   ],
+   [
+    "z_7R_-oBoXU.1"
+   ],
+   [
+    "1IbdG8FSPdk.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7599.mp4": [
+  [
+   "A man is jumping on a trampoline in a backyard, and he is wearing a blue shirt.",
+   "A group of people are standing in front of a tree, and they are all wearing blue shirts.",
+   "A person is jumping on a trampoline in the backyard of a house."
+  ],
+  [
+   0.3533791764217873,
+   0.34835187547597557,
+   0.33907180294783407
+  ],
+  [
+   [
+    "rp_P5XK4iRc.0"
+   ],
+   [
+    "m9OW1uDhuN4.12"
+   ],
+   [
+    "0e-dCD-IwPQ.7",
+    "16UUPzSTKZ0.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7609.mp4": [
+  [
+   "A man standing in a bar with other people in the background.",
+   "A man in a suit walks down a hallway in a movie with people in the background.",
+   "A man is holding a drink in his hand at a party with other people in the background."
+  ],
+  [
+   0.39575058273825503,
+   0.37898005211378355,
+   0.37810498011809807
+  ],
+  [
+   [
+    "37uJ0t6ri0k.43"
+   ],
+   [
+    "WfdJUZs7aqw.3"
+   ],
+   [
+    "n-sOclT3SLU.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7619.mp4": [
+  [
+   "A man is talking to the camera and making hand gestures.",
+   "A woman is talking to the camera and making hand gestures.",
+   "A young man is sitting in front of the camera and making hand gestures."
+  ],
+  [
+   0.353514200414611,
+   0.3458520721044631,
+   0.33597528015644806
+  ],
+  [
+   [
+    "6wOL7nITV6A.1"
+   ],
+   [
+    "ilkhyk4AjPI.0"
+   ],
+   [
+    "9g39OW2fxfA.8"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7629.mp4": [
+  [
+   "A soccer player scores a goal in a soccer game.",
+   "A soccer player scores a goal in a video game.",
+   "A soccer player scores a goal during a game."
+  ],
+  [
+   0.4427230093007522,
+   0.42285549153608876,
+   0.4167972122265751
+  ],
+  [
+   [
+    "KeGekHVl1NY.1"
+   ],
+   [
+    "x9DSEnv39hE.6"
+   ],
+   [
+    "v8y_m2CskAA.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7639.mp4": [
+  [
+   "The player is in a first-person shooter game and is fighting against zombies in a post-apocalyptic world.",
+   "The player is in a first-person shooter game and is fighting against enemies in a post-apocalyptic world.",
+   "The player is in a first-person shooter game and is fighting against other players in a post-apocalyptic world."
+  ],
+  [
+   0.6903859078007685,
+   0.6897693857059181,
+   0.6894521541685491
+  ],
+  [
+   [
+    "AT2fsTpEHeI.2",
+    "k-QCDaxl1G8.14"
+   ],
+   [
+    "CyXEh-sUVtM.0",
+    "cyfGyvUWoCo.3",
+    "nGOTAGOMEfM.8"
+   ],
+   [
+    "pCBEaON0VcQ.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7649.mp4": [
+  [
+   "A group of people are driving off-road vehicles in a rocky terrain.",
+   "A person is driving an excavator in a rocky terrain.",
+   "A group of people are driving off-road vehicles in a muddy terrain."
+  ],
+  [
+   0.3566698177342391,
+   0.3538476461245339,
+   0.3513570526960736
+  ],
+  [
+   [
+    "RkDACeQ5jUU.3",
+    "UT-6FJLRMQU.0"
+   ],
+   [
+    "GRoH4e7c4xs.1"
+   ],
+   [
+    "FUEnRcE4r4A.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7659.mp4": [
+  [
+   "A cartoon scene with a bridge in the background.",
+   "A cartoon character is swimming in the water with a bridge in the background.",
+   "A cartoon image of paw patrol with a tower in the background."
+  ],
+  [
+   0.3902055284727034,
+   0.3815728843564628,
+   0.3698959429212723
+  ],
+  [
+   [
+    "0UuPN5wJjIY.21",
+    "_t-glBfoMW4.0"
+   ],
+   [
+    "sPn-A_bqzsk.11"
+   ],
+   [
+    "6qH3n4dzYj0.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7669.mp4": [
+  [
+   "A woman is wearing a red dress and walking down the runway at a fashion show.",
+   "A model is walking down the runway wearing a cat-themed outfit at a fashion show.",
+   "A woman is walking down the runway at a fashion show wearing a floral dress and carrying a yellow purse."
+  ],
+  [
+   0.49499844147415234,
+   0.4864807898808525,
+   0.48555344415766805
+  ],
+  [
+   [
+    "slHfskTW7Ig.4"
+   ],
+   [
+    "WPaSv1ZtG4Y.4"
+   ],
+   [
+    "V5hllV8y4c0.15"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7679.mp4": [
+  [
+   "A group of people are attending a concert and they are cheering and clapping along with the music.",
+   "A group of people are gathered in a church and they are clapping their hands to praise god.",
+   "A group of people are on stage and they are clapping and cheering for someone."
+  ],
+  [
+   0.4347283834446864,
+   0.43448096041164064,
+   0.42471411261944086
+  ],
+  [
+   [
+    "tyZS-NYZwSw.10"
+   ],
+   [
+    "f1vglZoXCn4.8"
+   ],
+   [
+    "AM5y1v4uk1s.44"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7689.mp4": [
+  [
+   "A man is on a roof in a video game.",
+   "A person is climbing a ladder in a video game.",
+   "A truck is driving down a road in a video game."
+  ],
+  [
+   0.48717352220594345,
+   0.4820494159135847,
+   0.47992808107224577
+  ],
+  [
+   [
+    "8FUYnV_goPg.2"
+   ],
+   [
+    "YSO_TSHL0Fo.1"
+   ],
+   [
+    "4WaJDqqO3-o.1",
+    "JQ8HoUGu0mM.0",
+    "yk8-z5Fohj0.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7699.mp4": [
+  [
+   "A person is assembling a ping pong table.",
+   "A person holding a ping pong paddle on a table.",
+   "A person standing next to a ping pong table."
+  ],
+  [
+   0.36806910308603535,
+   0.3597820091302248,
+   0.3438346207646815
+  ],
+  [
+   [
+    "-g2VrgLHlgc.12"
+   ],
+   [
+    "-g2VrgLHlgc.8"
+   ],
+   [
+    "7D0yoloyx5Y.8",
+    "watwmEeqcNs.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7709.mp4": [
+  [
+   "A piece of raw chicken is placed on a blue and white plate on a wooden cutting board.",
+   "A plate of food on a table with sausage and greens.",
+   "A woman is making a sandwich on a wooden table with a knife and fork."
+  ],
+  [
+   0.3405867223341303,
+   0.3378238987263732,
+   0.33216529165387915
+  ],
+  [
+   [
+    "R4aWL0KKs9Y.3"
+   ],
+   [
+    "zXpQXC7JC5U.5"
+   ],
+   [
+    "5DQ_2LxDkyU.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7719.mp4": [
+  [
+   "The title of a movie with a red moon in the background.",
+   "There is a red sky with fireworks in the background.",
+   "There is a red and purple sky with stars in the background."
+  ],
+  [
+   0.3281545209176788,
+   0.3255846089641104,
+   0.3067097376307903
+  ],
+  [
+   [
+    "3z2iCMEqwFQ.0"
+   ],
+   [
+    "LQO6CyPXw38.6"
+   ],
+   [
+    "-9o64Ya2R7s.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7729.mp4": [
+  [
+   "A news broadcast with a man in a red shirt and a man in a white shirt.",
+   "A news screen with a picture of trump and a man in a red hat.",
+   "A news broadcast with a man in a suit and a woman in a red shirt."
+  ],
+  [
+   0.4663614495495595,
+   0.4605803487212655,
+   0.4522731097862824
+  ],
+  [
+   [
+    "skua8joPXLA.1"
+   ],
+   [
+    "rab5UHBrHsc.2"
+   ],
+   [
+    "n7eYHR-tqLw.11"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7739.mp4": [
+  [
+   "A book with a picture of a cartoon character on it.",
+   "A children's book with cartoon characters on it.",
+   "A book with pictures of cartoon characters on it."
+  ],
+  [
+   0.5384541774906704,
+   0.4915034788253894,
+   0.48779794274944877
+  ],
+  [
+   [
+    "xVKVXBDiJYI.0"
+   ],
+   [
+    "gEaRFMd7LGk.11",
+    "gEaRFMd7LGk.5",
+    "i0jwuq7Or2A.10",
+    "mpu86iNKDJg.3",
+    "pLdFaiE0vcE.3",
+    "w1rOQI89FGc.5"
+   ],
+   [
+    "2GUiwahMZ_k.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7749.mp4": [
+  [
+   "A young woman is applying lipstick to her lips in front of a mirror.",
+   "A woman is applying red lipstick to her lips using a brush.",
+   "A woman is applying lipstick to her lips using a lipstick tube."
+  ],
+  [
+   0.6137577444649568,
+   0.5969518063845415,
+   0.5949969191664966
+  ],
+  [
+   [
+    "3nQzBPpNX8A.5"
+   ],
+   [
+    "PtYmcscxFsg.0"
+   ],
+   [
+    "-u8_1kW5u5M.5",
+    "LOYxvMZn3z8.10",
+    "aLnSBl6GQlI.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7759.mp4": [
+  [
+   "A person is using an image editing software on a computer.",
+   "A person is using photoshop to edit an image of a cityscape.",
+   "The person is using adobe photoshop on a computer screen to create a colorful image."
+  ],
+  [
+   0.3584275961817108,
+   0.3579001518163516,
+   0.34370583767202945
+  ],
+  [
+   [
+    "AreAmhd4jTI.0"
+   ],
+   [
+    "jZU2YJczqq8.0"
+   ],
+   [
+    "BAajRPt5DMA.11"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7769.mp4": [
+  [
+   "A drone is flying over a snowy landscape with mountains in the background.",
+   "A golden eagle is flying over a mountain range with a blue sky and clouds in the background.",
+   "An aerial view of a snowy valley with mountains in the background."
+  ],
+  [
+   0.39106929688476194,
+   0.3615672946174979,
+   0.3370322284115388
+  ],
+  [
+   [
+    "ZZ_9uMNRtO0.5"
+   ],
+   [
+    "atUQjsohzc8.5"
+   ],
+   [
+    "Uidt54tFsko.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7779.mp4": [
+  [
+   "A man is opening the door of a car.",
+   "A man in a black hat is opening the door of a car.",
+   "A man in a black shirt is opening the door of a truck."
+  ],
+  [
+   0.4302890663144747,
+   0.42221624969502725,
+   0.41189986756200675
+  ],
+  [
+   [
+    "c7G_uyZ9JUU.0"
+   ],
+   [
+    "jw7Gy1Yi888.4"
+   ],
+   [
+    "zebzalEVJ7E.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7789.mp4": [
+  [
+   "A group of soccer players are playing on the field and one player scores a goal.",
+   "A soccer player scores a goal in a soccer game.",
+   "A soccer player scores a goal in a video game."
+  ],
+  [
+   0.3519882908389798,
+   0.33548477266781873,
+   0.3309081136289171
+  ],
+  [
+   [
+    "nTwf_uRhIKo.16"
+   ],
+   [
+    "KeGekHVl1NY.1"
+   ],
+   [
+    "x9DSEnv39hE.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7799.mp4": [
+  [
+   "A person is cooking chicken in a pan and serving it on a plate.",
+   "A person is cooking chicken in a pan with vegetables and spices.",
+   "A person is cooking chicken in a frying pan with onions and garlic."
+  ],
+  [
+   0.5100963088075835,
+   0.4997853970615885,
+   0.49385614500514596
+  ],
+  [
+   [
+    "3D3uW98Yrn4.3"
+   ],
+   [
+    "OrNUfS0OKUM.1"
+   ],
+   [
+    "phGI2anMKT8.2",
+    "pv9iKe83fHo.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7809.mp4": [
+  [
+   "A video game character is attacking another character with a sword.",
+   "A video game character holding a knife.",
+   "A video game character holding a sword in front of another character."
+  ],
+  [
+   0.2762367238169199,
+   0.2501858112141267,
+   0.24615255797159608
+  ],
+  [
+   [
+    "Esf8gywkGBM.0",
+    "MStfouDgR8I.40",
+    "kNowJYeJaoI.6",
+    "yKV1BxvcpOQ.17"
+   ],
+   [
+    "dP5VZAiGDbY.20",
+    "wEFJv-Su07E.35",
+    "zC2pfuCv9ZA.24",
+    "zC2pfuCv9ZA.45"
+   ],
+   [
+    "JvjZnpaFR_I.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7819.mp4": [
+  [
+   "A man is working on the engine of a car under the hood.",
+   "A person is working on the engine of a car with their hands under the hood.",
+   "A woman is working on the engine of a car under the hood."
+  ],
+  [
+   0.45750382213156765,
+   0.4498768511233205,
+   0.44303430359320073
+  ],
+  [
+   [
+    "7E-TigBXxGU.0",
+    "7EiGKUyoXQI.2",
+    "9XwSpbM0oyk.1",
+    "Ef57rYt85Ls.10",
+    "Ef57rYt85Ls.6",
+    "S-2yJxljIQs.0"
+   ],
+   [
+    "LkwrSNZoAj0.5",
+    "MZaMa8XBS64.10",
+    "NI5fMJbRi4A.4"
+   ],
+   [
+    "ujJtTPnZajI.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7829.mp4": [
+  [
+   "The human body is made up of different organs and tissues that work together to keep the body functioning.",
+   "The human body is made up of muscles, bones, and organs that work together to keep the body functioning.",
+   "A human body is made up of bones, muscles, and organs that work together to enable movement and support the body's functions."
+  ],
+  [
+   0.27828148810989667,
+   0.27262005497734676,
+   0.2712154273809535
+  ],
+  [
+   [
+    "KmyJr93DwUk.5"
+   ],
+   [
+    "UqRMSaE9-38.0"
+   ],
+   [
+    "Lb7jq25msn4.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7839.mp4": [
+  [
+   "A video game with a blue background and a yellow symbol on it.",
+   "A video game with a blue background and a cartoon character on it.",
+   "A video game with a blue background and a bunch of cartoon characters on it."
+  ],
+  [
+   0.49194218191530675,
+   0.4913156154992666,
+   0.4811552332815724
+  ],
+  [
+   [
+    "96w9GercjLs.30"
+   ],
+   [
+    "makVBpCvrjo.16"
+   ],
+   [
+    "K_OjUwKLmDs.17"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7849.mp4": [
+  [
+   "A green parrot in a cage with a mirror in the background.",
+   "A green parrot sitting in a cage with a person's hand reaching out to it.",
+   "A green parrot sitting on a shelf in a room."
+  ],
+  [
+   0.38748253102944175,
+   0.3729491941446745,
+   0.37067569830306196
+  ],
+  [
+   [
+    "n_HGFTQRaK4.1"
+   ],
+   [
+    "DWO3NTUE3v0.0"
+   ],
+   [
+    "arCFDWDsz5o.0",
+    "fcsv9YIZIsM.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7859.mp4": [
+  [
+   "It is a scene from a movie or video game where the characters are fighting in a dark and futuristic environment.",
+   "It is a scene from a video game where the characters are fighting against each other in a futuristic setting.",
+   "It is a scene from a movie or a video game where the characters are fighting in a battle."
+  ],
+  [
+   0.37716455881472977,
+   0.36268697479620227,
+   0.3544935450577766
+  ],
+  [
+   [
+    "HT6t15s3XK0.6"
+   ],
+   [
+    "MrNGFWTwggg.0",
+    "zBa6Ab4Xa7U.14"
+   ],
+   [
+    "4BoLfIZ6RgE.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7869.mp4": [
+  [
+   "The camera is traveling through space and observing stars and galaxies.",
+   "The camera is traveling through space and observing stars and planets.",
+   "The camera is traveling through space and observing different celestial objects such as stars, planets, and galaxies."
+  ],
+  [
+   0.4146711319385126,
+   0.3911666811563849,
+   0.3907527690379584
+  ],
+  [
+   [
+    "--kpD1FqIFM.5",
+    "18AOnL8TieY.5",
+    "2ZPv8FN1iQM.0",
+    "53YBnqFmaIU.16",
+    "FprsfPgQ2lo.10",
+    "U25csrFmGv0.3",
+    "bfAjQX-eapc.0",
+    "mY87u0nog_s.1",
+    "tMWjGDon4ak.8",
+    "uUVKJy0s2b8.8",
+    "xep5xz4xb5w.1"
+   ],
+   [
+    "y0XMI6L_DQQ.0"
+   ],
+   [
+    "jNYYqqLqmDw.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7879.mp4": [
+  [
+   "It is a scene from a movie or a video game where soldiers are fighting in a war.",
+   "It is a scene from a video game, possibly a battle scene with soldiers on horseback and flags in the background.",
+   "There is a painting of a battle scene with soldiers in red uniforms and flags flying in the background."
+  ],
+  [
+   0.30120599823232624,
+   0.29785920626335344,
+   0.2924014582668652
+  ],
+  [
+   [
+    "lVTbJU8I6ZQ.6"
+   ],
+   [
+    "t5xNwUWGBzk.12"
+   ],
+   [
+    "9V6dR1EI7dg.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7889.mp4": [
+  [
+   "A person is making muffins in a baking tray.",
+   "A person is making a cake by mixing ingredients in a mixing bowl and pouring it into a baking dish.",
+   "A person is making cake batter in a bowl and pouring it into a cake pan."
+  ],
+  [
+   0.36136011212949853,
+   0.34709028330215774,
+   0.33147605502231603
+  ],
+  [
+   [
+    "bR0uYsU5AqE.8"
+   ],
+   [
+    "eSUo6OvZW3E.12"
+   ],
+   [
+    "EYjkIBx84Y4.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7899.mp4": [
+  [
+   "A picture of pokemon characters on a green background.",
+   "A picture of a pokemon cartoon on a green background.",
+   "A screen shot of a website with anime characters on it."
+  ],
+  [
+   0.40581128217329876,
+   0.4056017951689962,
+   0.405466989017513
+  ],
+  [
+   [
+    "FVvi8H0W95E.0",
+    "WE26QKo0xMA.0"
+   ],
+   [
+    "-hy1vXPZLXA.0"
+   ],
+   [
+    "FJDm9FC4EI8.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7909.mp4": [
+  [
+   "A collage of pictures on a purple background.",
+   "A collage of pictures of different things on a purple background.",
+   "A purple background with a collage of pictures on it."
+  ],
+  [
+   0.4255172004093371,
+   0.39737831400603896,
+   0.3964136052634186
+  ],
+  [
+   [
+    "egm9kphfyGA.10"
+   ],
+   [
+    "z1U2Km0-Ih0.4"
+   ],
+   [
+    "O7P7_wct-EI.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7919.mp4": [
+  [
+   "A video game with a man holding a gun in the woods.",
+   "A video game with a man holding a gun in the middle of a forest.",
+   "A video game with a gun and a tree in the background."
+  ],
+  [
+   0.4457075277089989,
+   0.43353310092958625,
+   0.42856633693744056
+  ],
+  [
+   [
+    "LbJthP5tD9s.0",
+    "abx7d0GEj0s.0",
+    "abx7d0GEj0s.15"
+   ],
+   [
+    "TZ7XnQJNTME.0"
+   ],
+   [
+    "m5_9oHNbGHg.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7929.mp4": [
+  [
+   "A car is driving down a street in a video game.",
+   "A car is driving down a road in a video game.",
+   "A green car is driving down a street in a video game."
+  ],
+  [
+   0.5384232512790007,
+   0.5203785787720857,
+   0.5186358983841821
+  ],
+  [
+   [
+    "Bt3kqhgQ6VM.0",
+    "FXJXR_p-QU8.2"
+   ],
+   [
+    "NHoapGU5ahY.5"
+   ],
+   [
+    "91Ii7aI0gRs.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7939.mp4": [
+  [
+   "A person is preparing chicken breasts for cooking by seasoning them with salt and pepper.",
+   "A person is preparing chicken thighs by seasoning them with salt, pepper, and other spices.",
+   "A person is preparing chicken thighs for cooking by seasoning them with salt and pepper and placing them on a cooling rack."
+  ],
+  [
+   0.4180217043568749,
+   0.38830594505582655,
+   0.38164085218131927
+  ],
+  [
+   [
+    "AUuUxCDGAH4.16"
+   ],
+   [
+    "mXd55XJF-OE.10"
+   ],
+   [
+    "f-ppa4oyJL4.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7949.mp4": [
+  [
+   "The jellyfish are swimming in the dark ocean.",
+   "The waves are crashing on a rock in the ocean.",
+   "The penguins are swimming in an aquarium."
+  ],
+  [
+   0.27231085196549054,
+   0.25524316496377475,
+   0.24906968247743266
+  ],
+  [
+   [
+    "6mm653d1Kc8.0"
+   ],
+   [
+    "BplKUi_xSUs.7"
+   ],
+   [
+    "MSgknaTPTY4.11"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7959.mp4": [
+  [
+   "A group of people are cheering and waving their hands in the air.",
+   "A large group of people are gathered in a public place, cheering and waving their hands in the air.",
+   "A large crowd of people are gathered at a concert, cheering and waving their hands in the air."
+  ],
+  [
+   0.5705346280751061,
+   0.5562785157263425,
+   0.5205277084532757
+  ],
+  [
+   [
+    "6XpY_6uoscA.25"
+   ],
+   [
+    "Q36dio0dNhQ.16"
+   ],
+   [
+    "whkzD0G8Cls.17"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7969.mp4": [
+  [
+   "A person is using a smartphone to control the settings of a car's infotainment system.",
+   "A person is using a smartphone app to control the settings of a car's infotainment system.",
+   "A person is using a smartphone to control the car's infotainment system."
+  ],
+  [
+   0.4625295157153311,
+   0.45621276569784897,
+   0.4391147534855032
+  ],
+  [
+   [
+    "Idi_RKlFf1w.10"
+   ],
+   [
+    "Idi_RKlFf1w.19"
+   ],
+   [
+    "Idi_RKlFf1w.12",
+    "mbTV87pju3E.12",
+    "qtMXC2YCW8Q.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7979.mp4": [
+  [
+   "A boxing match is taking place in a ring with two fighters punching each other.",
+   "A boxing match is taking place in a boxing ring, with two fighters wearing gloves and punching each other.",
+   "A boxing match is taking place in a ring, with two fighters standing in front of each other."
+  ],
+  [
+   0.5288866914687587,
+   0.5240127427508832,
+   0.5121890094008372
+  ],
+  [
+   [
+    "BfwO-ntNyZI.5",
+    "ySup-F3q4e8.1"
+   ],
+   [
+    "jHf-PDvzG7I.2"
+   ],
+   [
+    "4kn-e5mY_V0.20"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7989.mp4": [
+  [
+   "A plate of yellow food on a blue background.",
+   "A woman in a blue shirt holding a piece of food.",
+   "A young boy in a blue shirt holding a piece of food."
+  ],
+  [
+   0.35758146286384934,
+   0.35094185214832596,
+   0.3352575111310676
+  ],
+  [
+   [
+    "O3MyCtZHYv8.2"
+   ],
+   [
+    "ufNBKFIU-NU.0"
+   ],
+   [
+    "2yHcuKf9OtE.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7999.mp4": [
+  [
+   "A woman is holding a piece of fried chicken in her hand.",
+   "A woman is holding a piece of chicken on a stick in her hand, and she is wearing a blue shirt.",
+   "A person holding a piece of fried food in their hand."
+  ],
+  [
+   0.4101630908101905,
+   0.3715209843987144,
+   0.35161301154441993
+  ],
+  [
+   [
+    "imO6dj284tw.9"
+   ],
+   [
+    "_BrInVxz1cQ.4"
+   ],
+   [
+    "tZAE9FRz4AU.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8009.mp4": [
+  [
+   "A group of musicians are performing on a tv show.",
+   "A group of musicians and singers are performing on a tv show.",
+   "A group of singers and musicians are performing on a tv show."
+  ],
+  [
+   0.4075925563857636,
+   0.39976981702697795,
+   0.3962610450971534
+  ],
+  [
+   [
+    "M6EL6pfySwQ.0",
+    "OZ5DmMM0Iz4.1",
+    "S74Vme_nwNM.20",
+    "YrFGYnoOIag.8",
+    "rl2zl1ve7cI.28"
+   ],
+   [
+    "AVIPGSZzOz0.17",
+    "AVIPGSZzOz0.31",
+    "qEQOr2WfEKQ.0",
+    "qEQOr2WfEKQ.2"
+   ],
+   [
+    "128IDdf2MYg.34"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8019.mp4": [
+  [
+   "A man is practicing archery in a park on a sunny day.",
+   "A group of people are practicing martial arts in a park on a sunny day.",
+   "A man is practicing archery in the countryside on a sunny day."
+  ],
+  [
+   0.5565525200913108,
+   0.480411900359348,
+   0.47642886190904205
+  ],
+  [
+   [
+    "aOpG7yiR49s.4",
+    "pX_pPFIl-cc.4"
+   ],
+   [
+    "WQzoVBEpAaA.9",
+    "b374pYJ0vIU.4",
+    "b374pYJ0vIU.5",
+    "di_p2_KgFIQ.19",
+    "fT4eFEH7yU4.3"
+   ],
+   [
+    "gIfGYCdmxjg.21"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8029.mp4": [
+  [
+   "There is a group of people playing basketball in a gym.",
+   "A group of people are practicing basketball in a gym.",
+   "There is a group of people playing basketball in an indoor gym."
+  ],
+  [
+   0.45897180724766934,
+   0.418422297923683,
+   0.40742279472256593
+  ],
+  [
+   [
+    "EFqAuS8ZW6M.0",
+    "knPf_hOzG8g.4"
+   ],
+   [
+    "QFYsAJ-WL4U.1"
+   ],
+   [
+    "7K8iUn77Z48.27",
+    "i5KIbOiUJ0s.16",
+    "pUCjgO96CEo.10",
+    "pUCjgO96CEo.17",
+    "pUCjgO96CEo.22"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8039.mp4": [
+  [
+   "A picture of a blue and purple star on a blue background.",
+   "A picture of a blue and purple device on a blue and purple background.",
+   "A picture of a kidney on a blue background."
+  ],
+  [
+   0.4971397316094838,
+   0.4639485007255693,
+   0.46309397900942634
+  ],
+  [
+   [
+    "SOGbZItT2HM.0"
+   ],
+   [
+    "EO3OtEgQyy4.8"
+   ],
+   [
+    "1rQTqX4S4EA.6",
+    "iUTlVa8HXgw.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8049.mp4": [
+  [
+   "A group of people are playing baseball on a field with a blue sky and clouds in the background.",
+   "A group of people are playing baseball in a field on a foggy day.",
+   "A group of people are practicing baseball in a field with a blue sky and clouds in the background."
+  ],
+  [
+   0.3830561516902364,
+   0.3693355988242722,
+   0.36082422227541705
+  ],
+  [
+   [
+    "3-AlAH2un18.2"
+   ],
+   [
+    "pE5v89H8M-k.12"
+   ],
+   [
+    "bsgU8237LbU.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8059.mp4": [
+  [
+   "A man is sitting on a bench and talking to another man who is standing in front of him.",
+   "A man is sitting on a bench and talking to another man.",
+   "A man is sitting on a bench and giving money to another man who is standing in front of him."
+  ],
+  [
+   0.3317435999508522,
+   0.331634024128602,
+   0.3136249962030716
+  ],
+  [
+   [
+    "Mz4_Mt4ZZPg.6"
+   ],
+   [
+    "FfYPHhzLVc8.0",
+    "RHKQRPdLaDM.7"
+   ],
+   [
+    "T0TrZUZcAMI.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8069.mp4": [
+  [
+   "A blue and yellow logo on a green background.",
+   "The playstation logo on a green background.",
+   "The playstation logo on a yellow background."
+  ],
+  [
+   0.4297818694629557,
+   0.4245481875902489,
+   0.40283988364961937
+  ],
+  [
+   [
+    "Ep0vCV2-mn4.3"
+   ],
+   [
+    "iZKeq6Eptbk.29"
+   ],
+   [
+    "iZKeq6Eptbk.18"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8079.mp4": [
+  [
+   "A person is paddling in a yellow kayak on a river.",
+   "A man and a dog are paddling in a kayak on the water.",
+   "A man is paddling in a kayak on a river and using a remote control to steer the boat."
+  ],
+  [
+   0.34842309579151687,
+   0.3291721669454857,
+   0.3254591442828593
+  ],
+  [
+   [
+    "jiemPA2FMpg.0"
+   ],
+   [
+    "FE81swRTbbQ.1"
+   ],
+   [
+    "WGXfjigH_nE.22"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8089.mp4": [
+  [
+   "A person is driving a car on a highway and the camera is on the dashboard of the car.",
+   "A person is driving a car on a highway and the camera is mounted on the dashboard of the car.",
+   "A person is driving a car on a road and the camera is mounted on the dashboard of the car."
+  ],
+  [
+   0.6598020461361764,
+   0.6575541522155103,
+   0.650842191017219
+  ],
+  [
+   [
+    "mVrQrFj1O34.8"
+   ],
+   [
+    "6QKF2EsgqGw.1",
+    "E-9n2DE-H3c.0",
+    "dvrFVcXzEW4.0",
+    "qgTnkCwRQiE.1",
+    "rvH5zqL4S0U.15"
+   ],
+   [
+    "TiyyolP0oek.0",
+    "ado1ZqITYaw.9",
+    "gaNyRVwaeJU.0",
+    "jXMfwDPWS-E.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8099.mp4": [
+  [
+   "A video game with a picture of soldiers in the water.",
+   "A video game with a picture of ships in the water.",
+   "A video game with a picture of a creature in the water."
+  ],
+  [
+   0.46168132473571505,
+   0.46168132473571505,
+   0.4533856404144252
+  ],
+  [
+   [
+    "CDvkdi1EoEI.0"
+   ],
+   [
+    "RNi0ehhxe0I.3"
+   ],
+   [
+    "zewriMRwDQw.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8109.mp4": [
+  [
+   "A group of disney princesses standing in front of a pink background.",
+   "A group of cartoon princesses standing next to each other.",
+   "A group of animated princesses standing next to each other."
+  ],
+  [
+   0.289686722295418,
+   0.287555317807034,
+   0.28203963465977194
+  ],
+  [
+   [
+    "dWCR8OmtspY.1"
+   ],
+   [
+    "vhMmJ3kTQ9Q.0"
+   ],
+   [
+    "vhMmJ3kTQ9Q.8"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8119.mp4": [
+  [
+   "A bald man is sitting at a desk with a laptop and talking to the camera.",
+   "A bald man with tattoos is sitting in a tattoo studio and talking to the camera.",
+   "A bald man is sitting on a stool and talking to the camera."
+  ],
+  [
+   0.4923478476688411,
+   0.4918499655366098,
+   0.4848099294598482
+  ],
+  [
+   [
+    "sFD1oWLuQM8.0"
+   ],
+   [
+    "K26MsAMc0CY.1"
+   ],
+   [
+    "VdLlu-aSVsg.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8129.mp4": [
+  [
+   "A group of people are working in a restaurant kitchen, with chefs preparing food and serving customers.",
+   "A group of people are working in a restaurant kitchen, preparing food and serving customers.",
+   "A chef is preparing pizza in a restaurant kitchen."
+  ],
+  [
+   0.37875820860204096,
+   0.3759618745508038,
+   0.36282167455839626
+  ],
+  [
+   [
+    "TR8g6O-5kMs.1"
+   ],
+   [
+    "wBsCQxkkaoM.1"
+   ],
+   [
+    "0KdakF_iJcs.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8139.mp4": [
+  [
+   "A green and yellow parrot is sitting on a perch in a cage.",
+   "A green parrot is sitting on a metal rack in a room.",
+   "A green parrot sitting on a shelf in a room."
+  ],
+  [
+   0.5123123018841373,
+   0.5046684584077008,
+   0.48424330887993794
+  ],
+  [
+   [
+    "BEmxGsX0VCI.0",
+    "SLxZe_Uuajo.0"
+   ],
+   [
+    "fcsv9YIZIsM.0"
+   ],
+   [
+    "arCFDWDsz5o.0",
+    "fcsv9YIZIsM.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8149.mp4": [
+  [
+   "A woman in a blue shirt standing in front of a green background.",
+   "A woman in a blue shirt is talking to the camera in a classroom.",
+   "A woman in a blue shirt is standing in a classroom and talking to the camera."
+  ],
+  [
+   0.49097313780371843,
+   0.45912553898769354,
+   0.4421493821366898
+  ],
+  [
+   [
+    "pkPpo_opVYs.1"
+   ],
+   [
+    "cWRqjSMymBI.12"
+   ],
+   [
+    "cWRqjSMymBI.27"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8159.mp4": [
+  [
+   "A cartoon character is sitting on a bench and talking to the viewer.",
+   "A cartoon cat is sitting on a chair and waving to the camera.",
+   "A cartoon cat sitting on the ground with a caption."
+  ],
+  [
+   0.35121231616726906,
+   0.34501493538357464,
+   0.34478393485124537
+  ],
+  [
+   [
+    "gr-KMeLJXP4.1"
+   ],
+   [
+    "x1blm6KBnt8.8"
+   ],
+   [
+    "yGNmSgJvgf0.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8169.mp4": [
+  [
+   "A person is unlocking a car door with a key.",
+   "A person is using a key to unlock the door of a white car.",
+   "A person is using a key fob to unlock the door of a black mercedes-benz car."
+  ],
+  [
+   0.42280002859701193,
+   0.4099167026080226,
+   0.3921965371378203
+  ],
+  [
+   [
+    "lFMqBX3oHbs.10"
+   ],
+   [
+    "qAA2fXyKzvQ.5"
+   ],
+   [
+    "sDyqWZxlf7A.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8179.mp4": [
+  [
+   "Two young women are sitting in a car and talking to each other.",
+   "Two women are sitting in a car and one of them is talking to the other.",
+   "Two women are sitting in a car and talking to each other."
+  ],
+  [
+   0.3849688192708852,
+   0.38316393804776144,
+   0.38190326988114004
+  ],
+  [
+   [
+    "5yqt5Ew3o20.0"
+   ],
+   [
+    "Afjp3gssdJ4.19"
+   ],
+   [
+    "5PRPEkemZNc.6",
+    "T7JeT9H3nxY.4",
+    "aXHO-m2t8-U.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8189.mp4": [
+  [
+   "A young woman in a pink dress is sitting on the ground next to a river with a waterfall in the background.",
+   "A woman in a red dress standing in the middle of a rocky body of water.",
+   "A woman in a yellow dress standing next to a body of water."
+  ],
+  [
+   0.43770236439743637,
+   0.425401436750643,
+   0.4209029282186478
+  ],
+  [
+   [
+    "zR8UjDmGTUc.5"
+   ],
+   [
+    "dqTaqw9lOEc.14"
+   ],
+   [
+    "YiuuCxaOu98.2",
+    "oA5PT5hpXYA.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8199.mp4": [
+  [
+   "A person is preparing a salad with vegetables and other ingredients in a bowl.",
+   "A person is preparing a salad with lettuce and other ingredients in a white bowl.",
+   "A person is preparing a salad with avocado, lettuce, tomatoes, and other ingredients on a white plate."
+  ],
+  [
+   0.5797156011129571,
+   0.5719683104679247,
+   0.5532976712842888
+  ],
+  [
+   [
+    "EjLUWbqHTMo.5"
+   ],
+   [
+    "qVQlLriXMM8.2"
+   ],
+   [
+    "awA_NPzFVL0.13"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8209.mp4": [
+  [
+   "A group of people are standing on a stage and receiving an award.",
+   "A group of people are standing on a stage and receiving awards.",
+   "A group of people are standing on a podium and receiving awards."
+  ],
+  [
+   0.5999425534084444,
+   0.5954444318722496,
+   0.5727903928714614
+  ],
+  [
+   [
+    "3WmFO__cawA.2",
+    "5hgKwqXXtog.3",
+    "BHF2Lg2j1H4.18",
+    "BHF2Lg2j1H4.21",
+    "BHF2Lg2j1H4.22",
+    "WeJJjc86ApE.13",
+    "YJfPjkN-bh4.6",
+    "ZHqDYgCZtZg.32",
+    "xBFFxYDjSik.1",
+    "y7P6M9sS5fM.2"
+   ],
+   [
+    "NDwR4GCM1bY.3"
+   ],
+   [
+    "07fCVyp1uAQ.17",
+    "JjibdSo_Dvg.12",
+    "kKPjf1MoXuw.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8219.mp4": [
+  [
+   "A group of basketball players are hugging and congratulating each other after a game.",
+   "There is a basketball game being played on a court, and the players are wearing green and white uniforms.",
+   "A basketball game is being played and the players are cheering and clapping for each other."
+  ],
+  [
+   0.3540732310072273,
+   0.34649350192941347,
+   0.34607283930324956
+  ],
+  [
+   [
+    "P69nYvdqxLY.1"
+   ],
+   [
+    "FaUGLBx-m4U.0"
+   ],
+   [
+    "VpHNoQ7N22k.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8229.mp4": [
+  [
+   "A group of baseball players are playing on the field and one player hits a home run.",
+   "A group of baseball players are running on the field and one player hits a home run.",
+   "A picture of a baseball player with a message on it."
+  ],
+  [
+   0.3446163495018518,
+   0.34390750668774583,
+   0.3341152422427575
+  ],
+  [
+   [
+    "GO-TVF0xV-I.3",
+    "V-Zn-574cmQ.2",
+    "V-Zn-574cmQ.5"
+   ],
+   [
+    "Der65wW_7-o.10"
+   ],
+   [
+    "u3CFm2U7yak.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8239.mp4": [
+  [
+   "A screen shot of a tennis match with the names of the players on it.",
+   "A picture of a stadium with the words pole vault world championships on it.",
+   "A screenshot of a website with a player's name on it."
+  ],
+  [
+   0.2900128626908818,
+   0.2874651125893162,
+   0.2766021222196597
+  ],
+  [
+   [
+    "VETONTAaC-c.2"
+   ],
+   [
+    "c-2xRqe5QME.0"
+   ],
+   [
+    "uUAwe_1F_DI.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8249.mp4": [
+  [
+   "A man is punching another man in a dark room.",
+   "A spider-man is fighting with a villain in a dark room.",
+   "A man is being beaten up by another man in a dark room."
+  ],
+  [
+   0.4042624930765071,
+   0.3885920079536844,
+   0.3849993606596226
+  ],
+  [
+   [
+    "_nUzujzPBxs.2",
+    "xAkNJHcrUlk.1"
+   ],
+   [
+    "RMDG1VLBW1w.17"
+   ],
+   [
+    "62hkJYjJ4hs.6",
+    "ov2PiXsPtwc.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8259.mp4": [
+  [
+   "A man is sitting in front of a microphone and talking to the interviewer he is wearing a baseball cap and has a beard.",
+   "A man wearing an octopus hat is sitting in front of a microphone and talking to the host of a radio show.",
+   "A man with a beard and hat is sitting in a chair and talking on a microphone at an event."
+  ],
+  [
+   0.37817616388749353,
+   0.3516363111252545,
+   0.34608190629219165
+  ],
+  [
+   [
+    "WTA4zg54RbA.0"
+   ],
+   [
+    "5WzrDdZ39SA.2"
+   ],
+   [
+    "AQ9XHXyMK8M.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8269.mp4": [
+  [
+   "A whiteboard with a drawing on it.",
+   "A white board with a bunch of drawings on it.",
+   "A whiteboard with a lot of writing on it."
+  ],
+  [
+   0.4385385062857769,
+   0.4365342478815577,
+   0.42326522919115245
+  ],
+  [
+   [
+    "HKO3CTpPVvY.2",
+    "M0GgzH9ljwM.2",
+    "ZWLTIAiPngQ.2",
+    "iekq_la2Ako.2",
+    "labn7zs-Oqg.2",
+    "mgLFqGI8lco.2",
+    "oEMb8Vi694s.2",
+    "tJKVhGsWEfM.2",
+    "xM_KEpHnB9k.2"
+   ],
+   [
+    "23f3c7oWIqo.1",
+    "te3QyyYXDio.2"
+   ],
+   [
+    "05HsdvGSD6Y.2",
+    "1KisTgh3Q2M.1",
+    "27M42Btul44.7",
+    "2_GoP-jbcvw.2",
+    "3gK72hitudY.2",
+    "5UIFAEKQsD8.2",
+    "6rOHcS3eRBU.0",
+    "8yGdQAf0Cqo.2",
+    "97gFJ0QPHk0.2",
+    "9XLxpHY_t3o.4",
+    "9eX38xT94Jk.2",
+    "A4A1wbmSm-U.2",
+    "AV5JSyqcwm0.2",
+    "BrbAzwCUu4Y.3",
+    "CjloNEFtxYM.2",
+    "E8ayfBKP724.2",
+    "EkQArcmN9z0.2",
+    "FOYa-MeGtoY.2",
+    "GL5CBhl_XHU.2",
+    "HspFmNgbLNU.2",
+    "I9oHwUZf1m4.2",
+    "JKl8g6S9H_Y.1",
+    "K6lyOn_M5gI.2",
+    "KTCygSH8LHE.2",
+    "MkhsRLGlAVE.2",
+    "MourPtr5c6k.2",
+    "O0kt22M6Zp4.2",
+    "OqgFQdoFjJE.3",
+    "QYz550GbtzM.2",
+    "S2Skp2VJSlo.3",
+    "SsMYMd7LWPQ.2",
+    "Tw2HjSjXOyQ.2",
+    "TyYZz2qLjzs.2",
+    "U6H4olqUBwg.2",
+    "WtsA_76CGVM.2",
+    "Wug0C2r8o-A.2",
+    "YHanPLhWyO8.2",
+    "ZtuxOgSO1p4.2",
+    "auylfs5noC0.2",
+    "b8eE52CHjwE.2",
+    "bj9YA9kD0iA.2",
+    "cLm4bJFpR7A.4",
+    "dE0SI5oJx8Y.2",
+    "dGKLpAAjdSQ.2",
+    "e6ubeMtj68g.2",
+    "euCVKJuBt84.2",
+    "hsofj-oFv9o.2",
+    "jiCJuW1CCSM.2",
+    "lBJPQs3R5Ng.3",
+    "mE_bF7Ywup0.0",
+    "mcPBqMuaY18.2",
+    "mtk6DDldoYo.2",
+    "nYlIROu2Y-Q.2",
+    "o6Je4DziL64.3",
+    "oiWXk14FBoU.2",
+    "oxdF0EBBpz0.2",
+    "p9u4gLFwL1k.3",
+    "p9u4gLFwL1k.4",
+    "p9u4gLFwL1k.5",
+    "rpxtbE6L2M8.2",
+    "uC8CRIlJq1k.2",
+    "uyjaC6SrYX0.2",
+    "v-hp_M-3E9U.2",
+    "vbXT918c6sI.2",
+    "wW9bAq7DchA.2",
+    "zj6UVJJipJs.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8279.mp4": [
+  [
+   "Two wrestlers are fighting in a ring and one of them is performing a move on the other.",
+   "Two wrestlers are fighting in a ring and one of them is being punched by the other.",
+   "Two wrestlers are fighting in a ring and one of them is being pinned down by the other."
+  ],
+  [
+   0.4062302618396389,
+   0.39966297988458654,
+   0.38524218785265285
+  ],
+  [
+   [
+    "kKT7IduQGHg.2"
+   ],
+   [
+    "N6MUoj9orLE.2"
+   ],
+   [
+    "B3jnMdsqDb8.3",
+    "b15eoo7FaCo.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8289.mp4": [
+  [
+   "A newscast with a man in a blue jacket.",
+   "A picture of a man holding a microphone in front of a blue background with elvis presley's name on it.",
+   "A newscast with a man in a blue jacket and a woman in a blue jacket."
+  ],
+  [
+   0.3057917516839516,
+   0.3045346864966899,
+   0.29987468220172303
+  ],
+  [
+   [
+    "3uNjiuISqeo.1"
+   ],
+   [
+    "GmQM919QEEM.2"
+   ],
+   [
+    "7kfnyQeHBzI.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8299.mp4": [
+  [
+   "A green screen with a purple text on it.",
+   "A screen shot of a movie with a purple background.",
+   "A black screen with the words penguin costume on it."
+  ],
+  [
+   0.367110955237718,
+   0.3550612773095257,
+   0.3547138698723349
+  ],
+  [
+   [
+    "vBkuxEbzuvg.0"
+   ],
+   [
+    "afHl9axrR9Y.2"
+   ],
+   [
+    "E22zBO_Pe8Y.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8309.mp4": [
+  [
+   "Two wrestlers are fighting in a ring and one of them is performing a move on the other.",
+   "Two wrestlers are fighting in a ring and one of them is being punched by the other.",
+   "Two wrestlers are fighting in a ring and one of them is being pinned down by the other."
+  ],
+  [
+   0.3844663352691192,
+   0.38030645767487875,
+   0.3629461780104221
+  ],
+  [
+   [
+    "kKT7IduQGHg.2"
+   ],
+   [
+    "N6MUoj9orLE.2"
+   ],
+   [
+    "B3jnMdsqDb8.3",
+    "b15eoo7FaCo.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8319.mp4": [
+  [
+   "The avengers are fighting against thanos in a dark and futuristic setting.",
+   "The avengers are fighting against an enemy in a dark and futuristic setting.",
+   "The avengers are fighting against the villain in a dark and gritty environment."
+  ],
+  [
+   0.35963552898354867,
+   0.35515167125045916,
+   0.35238497189337076
+  ],
+  [
+   [
+    "gBqi3In08Bs.1"
+   ],
+   [
+    "hwWLCf-epHc.9"
+   ],
+   [
+    "T3gtJkxOTdo.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8329.mp4": [
+  [
+   "A screen shot of a news website on a black background.",
+   "A screen shot of a news article on a black background.",
+   "A screen shot of a news article with a picture of a building in the background."
+  ],
+  [
+   0.4955654206068472,
+   0.49484429972475424,
+   0.4894812015784875
+  ],
+  [
+   [
+    "__Oc-Tpnpko.7"
+   ],
+   [
+    "InhLlouRYpM.3",
+    "Md1CeMLy71A.3"
+   ],
+   [
+    "qhgTNuHZLKE.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8339.mp4": [
+  [
+   "There is a group of people dancing in a room with balloons and hats.",
+   "There is a group of people dancing in a large room with balloons and decorations.",
+   "There is a group of people dancing in a room with balloons hanging from the ceiling."
+  ],
+  [
+   0.4091723971161841,
+   0.3997874477142635,
+   0.3734402372893972
+  ],
+  [
+   [
+    "P-Ukv54TzlI.11"
+   ],
+   [
+    "umQB4MqQJgc.1"
+   ],
+   [
+    "TgluZSvoScc.9"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8349.mp4": [
+  [
+   "A picture of a person shaking hands with another person.",
+   "A man is shaking hands with another man in a restaurant.",
+   "A woman shaking hands with another woman in a bar."
+  ],
+  [
+   0.4147928563136275,
+   0.4034624580592905,
+   0.39702910086138743
+  ],
+  [
+   [
+    "mbs6it3fXKY.16"
+   ],
+   [
+    "O-rqtF9bqSk.1",
+    "PRzkzJuo6mI.6",
+    "snaCQpyTyrY.2",
+    "wxIEYH_tY-A.6"
+   ],
+   [
+    "FpJKHgzQfJc.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8359.mp4": [
+  [
+   "A man is surfing on a big wave in the ocean.",
+   "There is a person surfing on a wave in the ocean.",
+   "A person is riding a surfboard on a wave in the water."
+  ],
+  [
+   0.4656528249318038,
+   0.4353575159522844,
+   0.428209979609806
+  ],
+  [
+   [
+    "cW__OjaTRJo.0"
+   ],
+   [
+    "WNDY8bctjwg.0"
+   ],
+   [
+    "vqLeanipfbs.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8369.mp4": [
+  [
+   "The spider-man is walking down a dark alley with a motorcycle in the background.",
+   "A group of people are walking down a dark alley and being chased by a group of people in black clothing.",
+   "A group of people are walking in a dark alley and suddenly they are attacked by a group of people in black suits."
+  ],
+  [
+   0.35759872256052233,
+   0.3147712718903723,
+   0.30567725257389033
+  ],
+  [
+   [
+    "oF0r_u4xYu4.3"
+   ],
+   [
+    "kiXHgaJrCJA.19"
+   ],
+   [
+    "PIKB8SsLR0c.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8379.mp4": [
+  [
+   "A cartoon character holding a gun in front of a purple background.",
+   "A cartoon character is holding a heart in front of a pink background.",
+   "A cartoon hand holding a heart on a pink background."
+  ],
+  [
+   0.4371289062617498,
+   0.417156174151819,
+   0.3961618314601999
+  ],
+  [
+   [
+    "apmLhNqRfrs.4"
+   ],
+   [
+    "Qrai6CmHI1Y.4",
+    "yzvD0UHqQ6A.0"
+   ],
+   [
+    "YgykvCP_vcE.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8389.mp4": [
+  [
+   "A person is playing a drum set with a pair of drumsticks.",
+   "A person is playing drums on a drum set with a pair of drumsticks.",
+   "A person is playing a drum set on a website."
+  ],
+  [
+   0.39953625876326354,
+   0.3959334625120154,
+   0.3789108725667385
+  ],
+  [
+   [
+    "nuqM9jNL9WU.33"
+   ],
+   [
+    "nuqM9jNL9WU.21"
+   ],
+   [
+    "KEg6F1Ym8jI.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8399.mp4": [
+  [
+   "A blue and green background with the word elixo on it.",
+   "A green background with the words dulux let's colour on it.",
+   "A green background with yellow letters on it."
+  ],
+  [
+   0.4140986129905797,
+   0.39765647300273327,
+   0.39571783895876533
+  ],
+  [
+   [
+    "fXorGu-y8rw.2"
+   ],
+   [
+    "oV5C-XivC0o.3"
+   ],
+   [
+    "5_izxl_jOJ8.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8409.mp4": [
+  [
+   "A woman is singing on stage in a concert, and she is wearing a black dress.",
+   "A woman is sitting on a couch and talking to someone on a tv show she is wearing a black dress and has blonde hair.",
+   "A woman is talking to the camera in a dark room she is wearing a black dress and has long hair."
+  ],
+  [
+   0.31560810349404084,
+   0.292554626790382,
+   0.2866703928769385
+  ],
+  [
+   [
+    "6WSDAlalO4E.1"
+   ],
+   [
+    "44dED5vqZBA.0",
+    "F-QqnW46kqc.2"
+   ],
+   [
+    "MrI9C3mtA3I.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8419.mp4": [
+  [
+   "The player is in a minecraft game and they are walking through a dark cave.",
+   "The inside of a room in minecraft.",
+   "The inside of a minecraft building."
+  ],
+  [
+   0.31795106431834125,
+   0.3147705391187549,
+   0.31312744926959485
+  ],
+  [
+   [
+    "9La_Eguw4cg.0",
+    "G6ElASWorKo.0",
+    "KdxBNkMBRFo.3",
+    "g9Sg9a047Ro.9"
+   ],
+   [
+    "A-9F8lauleE.0",
+    "I2IqgvA03jY.3",
+    "MN0pZdZi-Ec.2",
+    "_-Rvnv8f24Y.3",
+    "_-Rvnv8f24Y.6",
+    "x6kks8NDdQw.11"
+   ],
+   [
+    "mXOvR-LYGzU.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8429.mp4": [
+  [
+   "A mechanic is working on a car underneath the car, using a wrench to tighten bolts.",
+   "A mechanic is working on a car underneath it and using a wrench to tighten the bolts.",
+   "A mechanic is working on a car underneath it and using a wrench to tighten bolts."
+  ],
+  [
+   0.6300777446884054,
+   0.6257916110432838,
+   0.6252143744153443
+  ],
+  [
+   [
+    "Y0XrwzK0Iio.12"
+   ],
+   [
+    "f0MAzHkLSSA.0"
+   ],
+   [
+    "2YCItws9FEU.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8439.mp4": [
+  [
+   "A group of people dressed in colorful costumes are performing on a tv show.",
+   "A group of people dressed in costumes are performing on a tv show.",
+   "A group of people dressed in colorful costumes are performing on a television show."
+  ],
+  [
+   0.5971724994777057,
+   0.5911948488489166,
+   0.5898782782615829
+  ],
+  [
+   [
+    "kQCTnrZv23A.11",
+    "y3QAGI3FN3U.11"
+   ],
+   [
+    "Wgw6J23FPnI.2"
+   ],
+   [
+    "gSoauHrdy34.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8449.mp4": [
+  [
+   "A man in a suit and bow tie is singing into a microphone.",
+   "A man in a tuxedo and bow tie is speaking into a microphone at an awards ceremony.",
+   "A man in a suit and bow tie is giving an acceptance speech at an awards ceremony."
+  ],
+  [
+   0.4560895957195176,
+   0.4362203851464364,
+   0.42817473736292205
+  ],
+  [
+   [
+    "blLZX763EUQ.0"
+   ],
+   [
+    "j2nYW55eXng.9"
+   ],
+   [
+    "LshCO54NwMk.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8459.mp4": [
+  [
+   "A video game with mario and other characters on a stage.",
+   "A video game with mario characters on a stage.",
+   "A video game with mario and luigi on an island."
+  ],
+  [
+   0.34290662968249375,
+   0.34244664786844164,
+   0.3225991094961027
+  ],
+  [
+   [
+    "0kqt8kUNuMM.1"
+   ],
+   [
+    "iwGcvz3d57k.8"
+   ],
+   [
+    "G_0KbZaosxE.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8469.mp4": [
+  [
+   "A green parrot is sitting on a rope in a cage.",
+   "A colorful parrot sitting on a perch in a cage.",
+   "A parrot is sitting on a wooden branch in front of a computer screen."
+  ],
+  [
+   0.5207989698064355,
+   0.45982273655311745,
+   0.44653865355258526
+  ],
+  [
+   [
+    "-etYgD4NHH8.0"
+   ],
+   [
+    "8cPvYUA3pVY.4",
+    "8cPvYUA3pVY.5"
+   ],
+   [
+    "qv6HHg1vldw.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8479.mp4": [
+  [
+   "A person is holding a piece of pink slime in their hands.",
+   "A person is mixing meat in a bowl with their hands.",
+   "A person is packaging chicken meat in a plastic bag."
+  ],
+  [
+   0.3783557424565104,
+   0.3761178983207165,
+   0.36600852576756593
+  ],
+  [
+   [
+    "v4xiHyNzVrQ.4"
+   ],
+   [
+    "ImU4r4pWhs8.0",
+    "OxtTXaB9h7I.4"
+   ],
+   [
+    "BZQbX2mofK8.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8489.mp4": [
+  [
+   "A person is cooking shrimp in a pan on a stove.",
+   "A person is cooking shrimp in a frying pan on a stove.",
+   "A person is cooking shrimp in a frying pan on a gas stove."
+  ],
+  [
+   0.5636359684952009,
+   0.5514417326639699,
+   0.5322455578147092
+  ],
+  [
+   [
+    "Nc1wpWd6DCU.1",
+    "pnEN8rNWDO0.2",
+    "pnEN8rNWDO0.6"
+   ],
+   [
+    "8QhJGLl5ih0.3",
+    "FYT30Tb_C68.5",
+    "FYT30Tb_C68.7",
+    "Q6BZT9tGe0Y.0",
+    "ad-SQGNdCIw.0",
+    "hrkwj9ccwKc.1",
+    "v89s30yFnUM.9"
+   ],
+   [
+    "Dxu9DJyjWqE.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8499.mp4": [
+  [
+   "A screen shot of a website with a spacecraft in the background.",
+   "A screen shot of a news article with a ship in the background.",
+   "A screen shot of a nasa website with a rocket in the background."
+  ],
+  [
+   0.3248711165037212,
+   0.3208453077537361,
+   0.3142875340090295
+  ],
+  [
+   [
+    "sJ4wT_NwfkA.14"
+   ],
+   [
+    "l_7vCwdVO5g.0"
+   ],
+   [
+    "B1R3dTdcpSU.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8509.mp4": [
+  [
+   "A group of rugby players are tackling each other during a game.",
+   "A group of rugby players hugging each other on a field.",
+   "A group of soccer players hugging each other on a field."
+  ],
+  [
+   0.5498177957468028,
+   0.5288766123332426,
+   0.4991140388386985
+  ],
+  [
+   [
+    "3SBg4ZaSR98.2",
+    "4jRuaIlOj2Q.0",
+    "QrpW8qFkr5Y.12",
+    "U0qwbBNKWn0.1",
+    "U0qwbBNKWn0.11",
+    "U0qwbBNKWn0.16",
+    "U0qwbBNKWn0.6",
+    "eqO6sgi49hc.6",
+    "k6DmZg1t-CI.21",
+    "k6DmZg1t-CI.24",
+    "k6DmZg1t-CI.4",
+    "o-7NbzQFXtk.11",
+    "o-7NbzQFXtk.12",
+    "rv_OHLr9DB0.5"
+   ],
+   [
+    "QIrXH62HPOQ.8",
+    "QIrXH62HPOQ.9",
+    "Zz0SQaBNzhM.5",
+    "rv_OHLr9DB0.10",
+    "tdneh0yGsyc.6"
+   ],
+   [
+    "1VdQvA4h9ME.4",
+    "ASwFMB7OhIQ.1",
+    "OsTz8A0XXgU.23",
+    "PhnSZR5OpV8.8",
+    "dUBsiE_9XUs.1",
+    "lhuqPwETFfA.6",
+    "oFttRh4VR9A.5",
+    "r05lLGVfdLk.15"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8519.mp4": [
+  [
+   "A person is driving a car on a highway and the camera is on the dashboard of the car.",
+   "A person is driving a car on a highway and the camera is mounted on the dashboard of the car.",
+   "A person is driving a car on a road and the camera is mounted on the dashboard of the car."
+  ],
+  [
+   0.5676196073657467,
+   0.5620831492329227,
+   0.5591248606230753
+  ],
+  [
+   [
+    "mVrQrFj1O34.8"
+   ],
+   [
+    "6QKF2EsgqGw.1",
+    "E-9n2DE-H3c.0",
+    "dvrFVcXzEW4.0",
+    "qgTnkCwRQiE.1",
+    "rvH5zqL4S0U.15"
+   ],
+   [
+    "TiyyolP0oek.0",
+    "ado1ZqITYaw.9",
+    "gaNyRVwaeJU.0",
+    "jXMfwDPWS-E.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8529.mp4": [
+  [
+   "A group of people are standing in front of a building and shaking hands with each other.",
+   "A group of people are standing in front of a building, and one person is shaking hands with another person.",
+   "A group of people are standing in front of a building, and one man is shaking hands with another man."
+  ],
+  [
+   0.5854126003091799,
+   0.5823000823782295,
+   0.5723679092881616
+  ],
+  [
+   [
+    "Zh5mcM-ltnI.12"
+   ],
+   [
+    "PsWJ2xVcp1Y.0",
+    "a19m5S4n74E.12",
+    "jklVR2rhBiY.6"
+   ],
+   [
+    "gTCikMperOQ.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8539.mp4": [
+  [
+   "A blue and yellow logo on a green background.",
+   "The cartoon network logo on a yellow background.",
+   "A blue and yellow background with a yellow arrow pointing to the right."
+  ],
+  [
+   0.3449853732891048,
+   0.3195703793619697,
+   0.31690356977863654
+  ],
+  [
+   [
+    "Ep0vCV2-mn4.3"
+   ],
+   [
+    "pU275Dfm3Ns.4"
+   ],
+   [
+    "disj5mEDUNg.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8549.mp4": [
+  [
+   "A screen shot of a website with a picture of a nuclear power plant.",
+   "A screenshot of a website with a picture of a nuclear power plant.",
+   "A picture of jesus with a heart in his hand."
+  ],
+  [
+   0.2571191269822473,
+   0.25344150563551693,
+   0.24816019073464193
+  ],
+  [
+   [
+    "d77FCrs762k.0"
+   ],
+   [
+    "bcFczV2MhM8.2"
+   ],
+   [
+    "Ci2GzXFZZUc.0",
+    "Y-nzqcdLoik.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8559.mp4": [
+  [
+   "A horse race is taking place on a track, with jockeys riding horses and competing against each other.",
+   "A horse race is taking place at a race track, with jockeys and horses racing on the track.",
+   "A horse race is taking place on a track, with jockeys and horses racing against each other."
+  ],
+  [
+   0.45031673041914894,
+   0.44233009696476167,
+   0.44067251604572055
+  ],
+  [
+   [
+    "AhMzoQOjmN4.1"
+   ],
+   [
+    "ubyBOR_8mkw.2"
+   ],
+   [
+    "9tIRwl4Vs_I.4",
+    "MptifxBjY_o.3",
+    "_V-3xcZ1QY4.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8569.mp4": [
+  [
+   "A person is using a smartphone to control the lighting in their home.",
+   "A picture of a phone with a camera on it.",
+   "A person is using a raspberry pi to control a 360-degree camera."
+  ],
+  [
+   0.3123422661533211,
+   0.28717738975317314,
+   0.2820803760855486
+  ],
+  [
+   [
+    "QRQkxrHbq0c.2"
+   ],
+   [
+    "P1D3UnKoeOY.33"
+   ],
+   [
+    "Q6UyzECLui0.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8579.mp4": [
+  [
+   "A picture of a man and a woman shaking hands in front of a british flag.",
+   "A man and a woman standing next to a robot.",
+   "A man and a woman are standing in front of a door, with the man wearing a red shirt and the woman wearing a blue shirt."
+  ],
+  [
+   0.37119243111835865,
+   0.36604947036407876,
+   0.3656987550591854
+  ],
+  [
+   [
+    "QMzkU2cMue0.0"
+   ],
+   [
+    "RmbTnQnxxo4.0",
+    "lkoDBU6xgBM.23"
+   ],
+   [
+    "Tt1-RUXBIu0.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8589.mp4": [
+  [
+   "A man and a woman are kissing in a romantic scene.",
+   "A man and a woman are kissing passionately in a romantic scene.",
+   "A man and a woman are kissing each other in a romantic scene."
+  ],
+  [
+   0.511209021283693,
+   0.5007261201335632,
+   0.49812614540303324
+  ],
+  [
+   [
+    "0HaXlesBqLI.1"
+   ],
+   [
+    "BVNTy4XzHO4.0",
+    "Z4Foh_b8K9E.1",
+    "ZTZAfvniR84.7",
+    "l5AsFsowNZ0.12",
+    "t5RT_7RnEk0.0",
+    "tUV3RLpI3yE.7",
+    "wEtje0o1joI.2"
+   ],
+   [
+    "BTVOwjTWcEA.15",
+    "Il8hNUVte8E.1",
+    "Xv1Ju2ieU8U.4",
+    "ZTZAfvniR84.8",
+    "htPEs81fKLk.0",
+    "noC1ZGl7yZ8.2",
+    "nxLdp57N2iU.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8599.mp4": [
+  [
+   "A video game with the words call of duty on it.",
+   "A video game with the words call of duty 1993 on it.",
+   "A video game with the words virtual reality on it."
+  ],
+  [
+   0.5163290736143923,
+   0.4954333265594255,
+   0.48671327672609976
+  ],
+  [
+   [
+    "itJIiL0SOYA.6"
+   ],
+   [
+    "XN9Lo4d_3Ds.0"
+   ],
+   [
+    "7LH58lNKKew.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8609.mp4": [
+  [
+   "A person is driving a self-driving car and the car's camera is recording the inside of the car.",
+   "A man is driving a truck and the camera is inside the truck.",
+   "A man is driving a self-driving car and the camera is inside the car."
+  ],
+  [
+   0.3824199928984416,
+   0.3809128125824963,
+   0.3787800046323469
+  ],
+  [
+   [
+    "27sg_az42ng.0"
+   ],
+   [
+    "pzTKSPRKjqA.18",
+    "xBcM7V6tTIo.8"
+   ],
+   [
+    "_c__La7K9Xs.5",
+    "cQlwIyct58M.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8619.mp4": [
+  [
+   "A person is assembling a lego star wars toy.",
+   "A person is playing with a lego star wars toy.",
+   "A person is assembling and playing with a lego star wars toy."
+  ],
+  [
+   0.5212575347135144,
+   0.5140832584294445,
+   0.5116850446126301
+  ],
+  [
+   [
+    "s2ZfRuuofkI.23"
+   ],
+   [
+    "ZXlky0JGf4U.10"
+   ],
+   [
+    "s2ZfRuuofkI.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8629.mp4": [
+  [
+   "A close up of a sandwich with a rating on it.",
+   "A close up of a sandwich with the words rating on it.",
+   "A close up of a sandwich with the word rating on it."
+  ],
+  [
+   0.3789969793891517,
+   0.3738622820676792,
+   0.36606501111251344
+  ],
+  [
+   [
+    "9z_Lr-aDpGU.1"
+   ],
+   [
+    "kLMEIohnYeo.2"
+   ],
+   [
+    "5csEzAeQ280.2",
+    "8NaEKIidI9E.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8639.mp4": [
+  [
+   "A woman is applying makeup to her eyes with a black eyeliner.",
+   "A woman is applying makeup on her eyelids with a black eyeliner.",
+   "A woman is applying makeup on her face using a black eyeliner."
+  ],
+  [
+   0.34200037801612015,
+   0.3390148693727168,
+   0.3094194794847758
+  ],
+  [
+   [
+    "aLnSBl6GQlI.25"
+   ],
+   [
+    "b3hdgBtOoUo.2"
+   ],
+   [
+    "pDCpAf1AYkU.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8649.mp4": [
+  [
+   "A close up of a person cutting potatoes with a knife.",
+   "A person is cutting sweet potatoes on a tray with a knife.",
+   "A close up of a bunch of potatoes on a plate."
+  ],
+  [
+   0.41685525261773143,
+   0.4143243089541163,
+   0.38278690756498934
+  ],
+  [
+   [
+    "Yad88ASR6ns.1"
+   ],
+   [
+    "jMhgk095a8k.2"
+   ],
+   [
+    "dMmdkqIj6wQ.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8659.mp4": [
+  [
+   "A person is preparing food in a bowl with eggs, onions, and other ingredients.",
+   "A person is cooking shrimp in a pan with garlic, onions, and other ingredients.",
+   "A person is mixing eggs in a glass bowl with a spoon."
+  ],
+  [
+   0.38513264695091143,
+   0.369996038945082,
+   0.36446024619143935
+  ],
+  [
+   [
+    "eTAjxMcyuy8.3"
+   ],
+   [
+    "d3Ng9WxdSbw.5"
+   ],
+   [
+    "MuJE8IMx3qY.2",
+    "Qe_CI4srl4c.3",
+    "_YySyUEHuYM.3",
+    "eSUo6OvZW3E.10",
+    "znoQZC3sN94.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8669.mp4": [
+  [
+   "A green screen with the words speaking ft on it.",
+   "A green screen with the word research on it.",
+   "A green screen with the words thanks for watching."
+  ],
+  [
+   0.480615302497117,
+   0.46085989186020354,
+   0.448559864859962
+  ],
+  [
+   [
+    "PPRoe8bEPxI.1"
+   ],
+   [
+    "A9DA1BucczM.1"
+   ],
+   [
+    "YqGgAWz3av0.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8679.mp4": [
+  [
+   "A birthday card with a picture of a man and a woman.",
+   "A collage of pictures on a pink background.",
+   "A birthday card with a cake and candles on a pink background."
+  ],
+  [
+   0.34458897819767814,
+   0.3308947838104557,
+   0.3269379666107398
+  ],
+  [
+   [
+    "o7vDqEHQGd0.2"
+   ],
+   [
+    "BiKfzmir7F4.0"
+   ],
+   [
+    "39P5tP_M1GM.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8689.mp4": [
+  [
+   "The game super mario bros is being played on a nintendo entertainment system.",
+   "The game super mario world is being played on a nintendo entertainment system.",
+   "The game super mario world is being played on a nintendo game console."
+  ],
+  [
+   0.342958005969568,
+   0.33208435444946344,
+   0.32803577145351204
+  ],
+  [
+   [
+    "PWjuCXqFxHM.1"
+   ],
+   [
+    "A3JxKBAozy8.0",
+    "TT3IWJBd0tE.5",
+    "Vwfp3aENFo0.18",
+    "oxmV7T_wEyM.6"
+   ],
+   [
+    "oxmV7T_wEyM.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8699.mp4": [
+  [
+   "A group of people are playing badminton in a gym.",
+   "A group of people playing badminton in a video game.",
+   "A group of people are playing badminton in an indoor stadium."
+  ],
+  [
+   0.4795525423222003,
+   0.4488469905640169,
+   0.438552198400446
+  ],
+  [
+   [
+    "83uTqOg0eVk.3"
+   ],
+   [
+    "l1j1TkOdx2A.1"
+   ],
+   [
+    "0AQWRKd3DCE.0",
+    "6_KpwTTY1Wc.0",
+    "ZnbCAjr5GMQ.0",
+    "ctlpmKAFBGE.1",
+    "jMt2GvUGdXc.1",
+    "zEsT0HhW_mg.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8709.mp4": [
+  [
+   "A man and woman are kissing in front of a green background.",
+   "A man and a woman kissing each other in front of a red background.",
+   "A young man and woman are hugging each other while standing in front of a green wall."
+  ],
+  [
+   0.4142346846102898,
+   0.40424810917119197,
+   0.40304737387168166
+  ],
+  [
+   [
+    "9En3FSs3ZUc.10"
+   ],
+   [
+    "wpEiyxuEaEU.0",
+    "wpEiyxuEaEU.2"
+   ],
+   [
+    "Xf1NyhXqgGQ.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8719.mp4": [
+  [
+   "The player is playing a first-person shooter game in a multiplayer environment.",
+   "The gamer is playing a first-person shooter game in a multiplayer environment.",
+   "The gamer is playing a first-person shooter game with other players in a multiplayer environment."
+  ],
+  [
+   0.5178530109566353,
+   0.5056552294950747,
+   0.493777625418742
+  ],
+  [
+   [
+    "AdpypofYzkM.0",
+    "IFQTHB6Q_Ms.2"
+   ],
+   [
+    "8C3QlH28tbQ.0"
+   ],
+   [
+    "9eBLODvQfGk.6",
+    "jTzs9dgIU-U.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8729.mp4": [
+  [
+   "A person is preparing a chicken for roasting by seasoning it with herbs and spices.",
+   "A person is putting a chicken on a baking tray.",
+   "A person is cooking chicken and potatoes in the oven."
+  ],
+  [
+   0.3401512695466688,
+   0.32558264347738036,
+   0.3197954482165009
+  ],
+  [
+   [
+    "NDTNhLt9m2Y.6"
+   ],
+   [
+    "_Q5Co7Iv8Bw.1"
+   ],
+   [
+    "BlDc5RMe7T8.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8739.mp4": [
+  [
+   "A mechanic is working on a car underneath it and using a wrench to tighten the bolts.",
+   "A person is working on a car engine in a garage, using a wrench to tighten the bolts.",
+   "A mechanic is working on a car under the hood, using a wrench to tighten a bolt."
+  ],
+  [
+   0.4894665497700701,
+   0.4863673147185616,
+   0.485144360852111
+  ],
+  [
+   [
+    "f0MAzHkLSSA.0"
+   ],
+   [
+    "v-qnw9vRz1o.2"
+   ],
+   [
+    "VNkuFmhA56U.11"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8749.mp4": [
+  [
+   "A group of people are standing in line at an event, and some of them are wearing pink shirts.",
+   "A group of people are standing in line at an event, some of them are wearing pink shirts.",
+   "A group of people are standing in line at an event, and some of them are wearing yellow vests."
+  ],
+  [
+   0.4288980230001204,
+   0.42749579944795973,
+   0.4183121617410645
+  ],
+  [
+   [
+    "mPl6570C3ns.16"
+   ],
+   [
+    "7CjeeexeuUY.10"
+   ],
+   [
+    "7ARIXOsakIY.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8759.mp4": [
+  [
+   "A woman is wearing a silver dress and walking down a runway at a fashion show.",
+   "A woman in a white bikini and hat walks down the runway at a fashion show.",
+   "A woman in a blue dress with angel wings is walking on the catwalk during a fashion show."
+  ],
+  [
+   0.3494484750592759,
+   0.34251485731174214,
+   0.3395949950193227
+  ],
+  [
+   [
+    "qL47YuF2y-k.3"
+   ],
+   [
+    "oBFkGo4D8B8.0"
+   ],
+   [
+    "8PH9V7i35io.12"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8769.mp4": [
+  [
+   "A cricket match is being played on a television screen, and the players are wearing green jerseys.",
+   "A cricket match is being played on a television screen, and the players are wearing green and blue uniforms.",
+   "A cricket match is being played on a television screen, and the players are wearing different colored jerseys."
+  ],
+  [
+   0.34974066185339303,
+   0.3399750026227368,
+   0.3348491111125212
+  ],
+  [
+   [
+    "mT0RRsSMQYo.1"
+   ],
+   [
+    "OKk3dQ4SPQg.2"
+   ],
+   [
+    "79SPJeN3rI4.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8779.mp4": [
+  [
+   "There is a clock on the wall of a living room, and the time is displayed on the screen.",
+   "The ant-man and the wasp are standing next to each other on a black background.",
+   "There is a living room with a television on the wall, and the word model is written on the screen."
+  ],
+  [
+   0.23037548565641372,
+   0.2192256744089362,
+   0.21409316727693367
+  ],
+  [
+   [
+    "WYYzrG36jXc.2"
+   ],
+   [
+    "rPbLpQPwQtk.3"
+   ],
+   [
+    "hyKDwQAcMdg.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8789.mp4": [
+  [
+   "A live news broadcast with a blue background.",
+   "A close up of a news broadcast with a blue background.",
+   "A news broadcast with a red background."
+  ],
+  [
+   0.4394472500221663,
+   0.43668680470438875,
+   0.42128276734761994
+  ],
+  [
+   [
+    "1Li5pnxSN44.0"
+   ],
+   [
+    "3Xk0iTFlGfc.3"
+   ],
+   [
+    "7eO3fBnvifc.5",
+    "_6rDqXGERdM.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8799.mp4": [
+  [
+   "A cartoon of a letter f on a purple background.",
+   "A cartoon of a letter e on a yellow background.",
+   "A cartoon image of a purple monster on a yellow background."
+  ],
+  [
+   0.5309269335046762,
+   0.5305116348044203,
+   0.518045567238931
+  ],
+  [
+   [
+    "7d8bUGpyxHs.4"
+   ],
+   [
+    "Uh1z1NHhMCc.0"
+   ],
+   [
+    "nsIBrZvB80c.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8809.mp4": [
+  [
+   "A bowl of food with a slice of lemon and a lime wedge.",
+   "A white plate of food with a garnish of parsley.",
+   "A plate of food with a lime on it next to a bottle of vodka."
+  ],
+  [
+   0.326781598363702,
+   0.3189241817906156,
+   0.31517307409923917
+  ],
+  [
+   [
+    "ITiXQn85S5o.0"
+   ],
+   [
+    "s2kwIrWzzEI.0"
+   ],
+   [
+    "fXRxsPLFhCI.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8819.mp4": [
+  [
+   "A blue sports car is driving on a road with a blue sky in the background.",
+   "A blue sports car is driving on a road with a clear blue sky in the background.",
+   "There is a car driving on a road with a purple sky in the background."
+  ],
+  [
+   0.46196060297011177,
+   0.44954653006053613,
+   0.4001734273441581
+  ],
+  [
+   [
+    "RbksuIkeecs.9"
+   ],
+   [
+    "rVfYFEV-BT8.4"
+   ],
+   [
+    "aSFUlK5Xo6g.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8829.mp4": [
+  [
+   "A man is standing in front of a door and talking to another man.",
+   "A man is standing in front of a window and talking to another man.",
+   "A man is standing in front of a green door and talking to another man."
+  ],
+  [
+   0.6034760347473572,
+   0.6009938677915061,
+   0.5852984985265841
+  ],
+  [
+   [
+    "PcqWy309VJE.2",
+    "eewvjlMZqss.4"
+   ],
+   [
+    "c9rbIMfPZs8.9",
+    "dv9CK0VXXD8.20",
+    "oO9INJONFzs.5"
+   ],
+   [
+    "E7qVbmeZzxY.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8839.mp4": [
+  [
+   "A cartoon of spongebob squarepants in a cartoon.",
+   "A cartoon of a spongebob squarepants movie.",
+   "A cartoon of people dancing on a yellow background."
+  ],
+  [
+   0.42648317068700203,
+   0.3896652916182002,
+   0.3581521992512704
+  ],
+  [
+   [
+    "nKIeydNvJ_s.0"
+   ],
+   [
+    "WwkZ_zhrPAM.0"
+   ],
+   [
+    "gTcUnju5VPI.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8849.mp4": [
+  [
+   "There is a black sports car parked in front of a building, and people are walking around it.",
+   "A black sports car is parked in front of a building, and there is a man standing next to it.",
+   "There is a black car parked in front of a building, and the door of the car is open."
+  ],
+  [
+   0.396801506753065,
+   0.3907818611137646,
+   0.38575804734005464
+  ],
+  [
+   [
+    "bFpp5s-4wuE.3"
+   ],
+   [
+    "eyktTl19mCI.0"
+   ],
+   [
+    "Idg7_o7QHYA.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8859.mp4": [
+  [
+   "A group of basketball players are celebrating after winning a game.",
+   "A group of basketball players are hugging and congratulating each other after a game.",
+   "A group of basketball players are playing against each other in a game."
+  ],
+  [
+   0.43832130237934336,
+   0.41811940262003644,
+   0.4131696152399124
+  ],
+  [
+   [
+    "--Ega3kE_Is.23",
+    "2IEUDjKPfIQ.0"
+   ],
+   [
+    "P69nYvdqxLY.1"
+   ],
+   [
+    "JozAvVufHd4.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8869.mp4": [
+  [
+   "A person is assembling a lego toy.",
+   "A person is assembling a lego spaceship.",
+   "A person is assembling a lego set."
+  ],
+  [
+   0.4516345255402365,
+   0.4512475286362117,
+   0.44910416116776686
+  ],
+  [
+   [
+    "qCHs1iIeDKg.4"
+   ],
+   [
+    "ZXlky0JGf4U.13",
+    "ZXlky0JGf4U.8"
+   ],
+   [
+    "WlG8g2UEWI4.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8879.mp4": [
+  [
+   "A man and a woman are sitting in a car, and the man is talking to the woman.",
+   "A young man and woman are sitting in a car and talking to each other.",
+   "A man and a woman are sitting in a car at night, and the man is talking to the woman."
+  ],
+  [
+   0.3934385236053839,
+   0.39241113573891456,
+   0.3881410434347911
+  ],
+  [
+   [
+    "24wAyyVkg4U.0",
+    "7aT_pYYBbjY.4",
+    "9530L4K8h-Q.8",
+    "I5h9iwg5LtY.1",
+    "Pu5iyfjd_L0.3",
+    "tx9BTKzwlls.2",
+    "wm0TYebjyHQ.1"
+   ],
+   [
+    "lvVpObQYt8c.19"
+   ],
+   [
+    "MhGegjS-k-A.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8889.mp4": [
+  [
+   "A woman is talking to the camera in a shopping mall.",
+   "A young woman is talking to the camera in a shopping mall.",
+   "A woman is talking to another woman in a shopping mall."
+  ],
+  [
+   0.48615330435639453,
+   0.4695832288550105,
+   0.4681627361484349
+  ],
+  [
+   [
+    "SvrXYdC2t7g.8",
+    "yGRyutNbX7U.4"
+   ],
+   [
+    "5mQqrfaAKDI.0"
+   ],
+   [
+    "4OoLiKYPAT0.7",
+    "gdtlnzMeoSw.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8899.mp4": [
+  [
+   "A pregnant woman is lying in a hospital bed and talking to the camera.",
+   "A woman is standing in a hospital and talking to the camera.",
+   "A pregnant woman is lying in a hospital bed and talking to a nurse."
+  ],
+  [
+   0.44796020452324303,
+   0.4308213216969764,
+   0.42744807945813124
+  ],
+  [
+   [
+    "nHIVgFCS1B8.20"
+   ],
+   [
+    "xs6vMHOuOdw.0"
+   ],
+   [
+    "BocNqGkMnf4.16"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8909.mp4": [
+  [
+   "A close up of a blue and yellow object.",
+   "A close up of a blue object on a yellow background.",
+   "A website with a blue and yellow background."
+  ],
+  [
+   0.38912051968549477,
+   0.387640973311718,
+   0.38427603814889966
+  ],
+  [
+   [
+    "DDmo-HTdz3Q.2",
+    "PcW_Jt6lFP8.1"
+   ],
+   [
+    "xpq_J6Rddio.0"
+   ],
+   [
+    "lFJ_rfMY71A.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8919.mp4": [
+  [
+   "A woman is on a tv show and she is talking to the host.",
+   "A man and a woman talking on a tv show.",
+   "A man is on a tv show and he is talking to the host."
+  ],
+  [
+   0.4357688349552969,
+   0.42949090625353936,
+   0.4217484898261176
+  ],
+  [
+   [
+    "b-Ci8aG1ptM.28",
+    "z-WuxZfDa6I.1"
+   ],
+   [
+    "dnoifyeKHdE.10",
+    "dnoifyeKHdE.18",
+    "dnoifyeKHdE.22",
+    "mISWWTEtmSA.2"
+   ],
+   [
+    "E4ZSQDyBeDg.11"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8929.mp4": [
+  [
+   "A deer is crossing the street in front of a car.",
+   "A bull is running down a street in front of a crowd of people.",
+   "A deer is fighting in a video game."
+  ],
+  [
+   0.38477066253806685,
+   0.3237567665774382,
+   0.31092589648469526
+  ],
+  [
+   [
+    "bEwK-Zv7NrA.0"
+   ],
+   [
+    "wxFXrP7rrss.14"
+   ],
+   [
+    "ybI5iR-o6sU.9"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8939.mp4": [
+  [
+   "A tv advertisement for an airline with a plane in the background.",
+   "A view of the inside of a large building with a large space shuttle in the middle of it.",
+   "A blue and purple background with a space shuttle in the middle of it."
+  ],
+  [
+   0.2956158233022115,
+   0.29029599868905775,
+   0.2887366756568534
+  ],
+  [
+   [
+    "Tjhs8DBru7g.2"
+   ],
+   [
+    "o9XS0TIl-LI.10"
+   ],
+   [
+    "4RU4OU1YF3I.9"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8949.mp4": [
+  [
+   "A person is swimming underwater in a swimming pool.",
+   "A person is swimming underwater in a pool.",
+   "A person is diving underwater in a swimming pool."
+  ],
+  [
+   0.6201433159977433,
+   0.5968546883203881,
+   0.5937882425523808
+  ],
+  [
+   [
+    "H8BIkpRE5XQ.0",
+    "hyc_OoUdABg.11",
+    "yczzemySMPQ.2"
+   ],
+   [
+    "3gjWQW2ubpA.0",
+    "8dpwm344PfI.12",
+    "8dpwm344PfI.6",
+    "Jj3z9K15g98.0",
+    "JjPBO-bl1eg.4",
+    "TWcqLpe-_Z8.1",
+    "TtTArpDah9s.0",
+    "X-m9cHlHSw8.2",
+    "hyc_OoUdABg.10",
+    "hyc_OoUdABg.4",
+    "kb1WRIsOE1M.2",
+    "mLOqnCSvr5k.17",
+    "mLOqnCSvr5k.30",
+    "o54R9avIUI4.4",
+    "rYxrezETexc.4",
+    "rYxrezETexc.9",
+    "ukDCD3d9jZ0.1",
+    "vxf4x_pZYcQ.5",
+    "zpO5kjqNqPE.3"
+   ],
+   [
+    "mLOqnCSvr5k.28"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8959.mp4": [
+  [
+   "A ship is sinking in the ocean with icebergs in the background.",
+   "The titanic ship is sailing in the ocean with icebergs in the background.",
+   "The titanic ship is sinking in the ocean with icebergs in the background."
+  ],
+  [
+   0.6399029520192879,
+   0.6373960265384949,
+   0.6302011161856897
+  ],
+  [
+   [
+    "JjDfJFzBPKg.1"
+   ],
+   [
+    "7jieS_e3_Vk.6"
+   ],
+   [
+    "4-qFDO84prQ.1",
+    "Khn9c8dO1AQ.7",
+    "tkBwL3LLm6Q.7",
+    "v4GYJtQG8f0.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8969.mp4": [
+  [
+   "A person is unboxing a new smartphone and examining the contents of the box.",
+   "A person is unboxing a new smartphone and examining the accessories that come with it.",
+   "A person is unboxing a new smartphone and examining its features."
+  ],
+  [
+   0.35037082474234876,
+   0.3444442658356733,
+   0.3433884878977015
+  ],
+  [
+   [
+    "Pb1zENmcATg.7"
+   ],
+   [
+    "Zp2pYuEFc8s.5"
+   ],
+   [
+    "E967XkV7N4E.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8979.mp4": [
+  [
+   "A picture of a soccer team and a picture of a soccer team.",
+   "A picture of a soccer team and a picture of a woman.",
+   "A picture of a woman on a soccer field."
+  ],
+  [
+   0.36843704282218703,
+   0.3622479522539875,
+   0.35702194217348204
+  ],
+  [
+   [
+    "Upw7v3_6y7M.0"
+   ],
+   [
+    "eLies9AGaG0.3"
+   ],
+   [
+    "WljoUuOhTHs.15"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8989.mp4": [
+  [
+   "A group of musicians are playing music together in a backyard.",
+   "A group of musicians are playing jazz music together on stage.",
+   "A group of musicians are playing jazz music together in a concert hall."
+  ],
+  [
+   0.48157050170319166,
+   0.4646092021331964,
+   0.4607076624563891
+  ],
+  [
+   [
+    "VQetw5j12Vc.17",
+    "VQetw5j12Vc.5"
+   ],
+   [
+    "HuSWcnIo87s.6"
+   ],
+   [
+    "m-NShewN4Vo.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8999.mp4": [
+  [
+   "A picture of a woman in a bikini with stars in the background.",
+   "A woman in a green bikini on a beach with a white sky and blue water in the background.",
+   "A woman in a leopard print bikini walking on the beach."
+  ],
+  [
+   0.35280871099274713,
+   0.3075381929279734,
+   0.3035158537996316
+  ],
+  [
+   [
+    "UL4UmdlKcRE.3"
+   ],
+   [
+    "dpAmUcZEIfs.1"
+   ],
+   [
+    "Y1xPbF1oDYw.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9009.mp4": [
+  [
+   "A pregnant woman is sitting on a bed and talking to the camera.",
+   "A woman is lying on a bed and talking to another person.",
+   "A pregnant woman is lying on a bed and using a vibrator to massage her belly."
+  ],
+  [
+   0.41427855142632114,
+   0.40929188419684176,
+   0.39489675021301496
+  ],
+  [
+   [
+    "fiXgD2E0k0U.16",
+    "xwjlSGfdv9g.2"
+   ],
+   [
+    "u-f_fs09otk.3"
+   ],
+   [
+    "rSdJKOo_Fto.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9019.mp4": [
+  [
+   "A group of people are playing basketball in a gym.",
+   "A group of people playing basketball in a gym.",
+   "A group of young people are playing basketball in a gym."
+  ],
+  [
+   0.4966136432998164,
+   0.48939230812762186,
+   0.4774069692538726
+  ],
+  [
+   [
+    "3g1RBY1DcQQ.1",
+    "JXdtL2ZORjY.0",
+    "l42cIC1AwkA.0",
+    "tOGn_rsYO3A.3"
+   ],
+   [
+    "2IP9CivLbvw.0",
+    "5Q4qggI28Bc.0",
+    "OfEO32ZoJuA.4",
+    "OfEO32ZoJuA.5",
+    "RuF_s3m4Sog.1",
+    "bZszSH7fGHs.2",
+    "ltNxp1F4clc.10",
+    "n2YmWHGFOYs.1",
+    "rxxv6mRQ-ZM.0",
+    "tOGn_rsYO3A.0",
+    "xgQPNdXUT-0.1"
+   ],
+   [
+    "0lRRuQ5d4IE.1",
+    "0lRRuQ5d4IE.10",
+    "R2CtgVS8fs8.13"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9029.mp4": [
+  [
+   "A basketball game is being played on a court, and the players are wearing different colored jerseys.",
+   "There is a basketball game being played on a court, and the players are wearing different colored jerseys.",
+   "There is a basketball game being played on a court, and the players are jumping and dunking the ball."
+  ],
+  [
+   0.43276923555153957,
+   0.4265464887086048,
+   0.42323376847778016
+  ],
+  [
+   [
+    "1R0OBWYUUPg.0",
+    "2oD8aABoA6k.3",
+    "3JMKCL5eCfE.7",
+    "4V_ZMyuKauQ.2",
+    "5K_836v9ZOA.1",
+    "8rOAWv3hBhY.0",
+    "FFnTiT7CTWg.2",
+    "I9iTrNhQ0yk.22",
+    "MLfywr75uD0.0",
+    "PIECR3xBl7E.1",
+    "RlzXaeXxBys.5",
+    "WFJL3UvttME.0",
+    "XTe6QjcPCQA.0",
+    "ecDqpNGHwm0.0",
+    "fVCSEyrLF60.0",
+    "guW-6sLKloo.0",
+    "nyeCW58o9Eg.8",
+    "sgnZKbsYm04.0",
+    "t-BbTGE5Omc.0",
+    "ueRhMQI_jhw.2",
+    "vqhNDsu0AR0.0",
+    "xMjKcIpwrGI.0",
+    "xRZzNKRZYAk.0",
+    "yeQ_rYGUhA0.0",
+    "z5t1rL0QrKQ.0",
+    "ztDGkt3T_CA.4",
+    "zuL91J13S-M.1"
+   ],
+   [
+    "9m7OfzV6I_I.3",
+    "Vxw5porrB_0.5",
+    "Zp7AK7_jAyo.19",
+    "l-GdeakvGV4.2",
+    "u0zzsi8TEqk.3",
+    "yn6o7IQ3Vvs.1"
+   ],
+   [
+    "mHhX4XG0-y8.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9039.mp4": [
+  [
+   "A woman is wearing a white fur coat and walking in a shopping mall.",
+   "A woman is wearing a purple fur coat and holding a purse while standing in a living room.",
+   "A woman wearing a fur coat is talking to another woman in a shopping mall."
+  ],
+  [
+   0.3464501831610387,
+   0.3306902316013539,
+   0.3179908290681762
+  ],
+  [
+   [
+    "T_d-JO-YBNQ.0"
+   ],
+   [
+    "ahREv-kNfmU.1"
+   ],
+   [
+    "EQCdLuS_Xis.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9049.mp4": [
+  [
+   "A gamer is playing a first-person shooter video game with other players in a multiplayer environment.",
+   "A gamer is playing a first-person shooter game with other players in a multiplayer environment.",
+   "The gamer is playing a first-person shooter game with other players in a multiplayer environment."
+  ],
+  [
+   0.47237573072067557,
+   0.43777077810228676,
+   0.4296748323848611
+  ],
+  [
+   [
+    "VyjADeJw9-c.6"
+   ],
+   [
+    "-prd1L6fkX8.0",
+    "2d8cvKVLRhs.4",
+    "3UrwAx5Nsyc.3",
+    "4gtS1EuxM-Y.1",
+    "7SbcgEQoGUY.0",
+    "7WM6pK_Ue9U.10",
+    "7WM6pK_Ue9U.2",
+    "Dm2i5Bb_SXk.1",
+    "J7arxV74Pe4.0",
+    "Kctt0PWeKig.0",
+    "NlaQWvyXVFk.4",
+    "PHgFdjU9vHc.1",
+    "PHgFdjU9vHc.4",
+    "VyjADeJw9-c.3",
+    "VyjADeJw9-c.8",
+    "Zg74QQJW7lk.6",
+    "Zg74QQJW7lk.7",
+    "aKQ3to_hT5k.5",
+    "bzHBoIKjCQY.5",
+    "vAyJRj24F14.2",
+    "vmcnXpqEVd4.16",
+    "vmcnXpqEVd4.18",
+    "vmcnXpqEVd4.6"
+   ],
+   [
+    "9eBLODvQfGk.6",
+    "jTzs9dgIU-U.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9059.mp4": [
+  [
+   "There is a cartoon of dinosaurs in a jungle, with hearts and trees in the background.",
+   "A cartoon with a nuclear explosion in the background.",
+   "There is a cartoon of dinosaurs in a forest, and they are standing next to each other."
+  ],
+  [
+   0.3095368115571773,
+   0.3020718371921807,
+   0.29244348685066884
+  ],
+  [
+   [
+    "3GeHrdW5vbw.12"
+   ],
+   [
+    "swH-BoBL5Rg.6"
+   ],
+   [
+    "2D6KJk6jOvo.27"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9069.mp4": [
+  [
+   "A group of people are participating in an event and one person is receiving an award.",
+   "A group of people are attending an awards ceremony and one person is receiving an award.",
+   "A group of people are receiving an award at an event."
+  ],
+  [
+   0.4228060515832885,
+   0.4205285452647198,
+   0.4165124319677929
+  ],
+  [
+   [
+    "Oqse7v50nYs.2"
+   ],
+   [
+    "ucmZo7L3Uhw.0"
+   ],
+   [
+    "2Q8NOv1axrw.9",
+    "3WmFO__cawA.4",
+    "8V_kXXfUg-o.1",
+    "BphA_yBrrG8.1",
+    "BphA_yBrrG8.14",
+    "EcktCo7G9CI.11",
+    "K8S8pEfVlCg.0",
+    "K8S8pEfVlCg.8",
+    "NNB5DHfpPZk.24",
+    "RRn94bLuptI.17",
+    "Uan3kQbE-VM.13",
+    "W3y5a8apXV0.4",
+    "_7PHk5v0iws.2",
+    "_7niQGrF7cg.5",
+    "fTeILAETL0w.2",
+    "gCEsnLLDNEw.1",
+    "jlHZjKfvS-k.34",
+    "o45npy42fzs.0",
+    "rMKus0CNt8U.3",
+    "rj40sCxhCrs.6",
+    "t5sSjQsACrM.2",
+    "xWorEnqndd8.6",
+    "xra0m2QWRAI.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9079.mp4": [
+  [
+   "A cartoon image of a robot in a futuristic setting.",
+   "A cartoon cat and aliens in a futuristic setting.",
+   "Three cartoon characters standing on a stage with a rainbow in the background."
+  ],
+  [
+   0.3052364538461788,
+   0.2960712993218962,
+   0.28627031528424485
+  ],
+  [
+   [
+    "SMJ-G8xYP0s.5"
+   ],
+   [
+    "mQYEfPU5LpQ.3"
+   ],
+   [
+    "QsRClmD4QRI.16",
+    "QsRClmD4QRI.17",
+    "QsRClmD4QRI.8",
+    "QsRClmD4QRI.9"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9089.mp4": [
+  [
+   "A person is driving a self-driving car and using the car's infotainment system.",
+   "A person is driving a car and using a smartphone to control the car's infotainment system.",
+   "A person is driving a luxury car and using the infotainment system."
+  ],
+  [
+   0.5181103263137503,
+   0.5166962148158747,
+   0.515726047889703
+  ],
+  [
+   [
+    "3TyJbmcjwok.1",
+    "Bdi-FnkHZm8.10",
+    "R9SH5A5_aGE.9",
+    "c4FbmFS0fOs.7",
+    "n23-6tG0vvY.9",
+    "qAiYH075hlo.0"
+   ],
+   [
+    "HF3EwBqn1dQ.6"
+   ],
+   [
+    "3YL1X8RXMH8.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9099.mp4": [
+  [
+   "A woman is using a tube of foundation and applying it to her face.",
+   "A woman is applying makeup to her eyebrows.",
+   "A woman applying makeup to her eyebrows with a brush."
+  ],
+  [
+   0.3960887931898232,
+   0.3954770970638729,
+   0.38964143535081747
+  ],
+  [
+   [
+    "6rPy18zk2Do.2"
+   ],
+   [
+    "aLnSBl6GQlI.20",
+    "fR39BrigF2A.9",
+    "jHHv9X5dxao.2"
+   ],
+   [
+    "-RNUhX-hELo.3",
+    "m_T9hkdRi7Y.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9109.mp4": [
+  [
+   "A red screen with the words breaking news on it.",
+   "A red screen with a breaking news sign on it.",
+   "A red screen with a news story on it."
+  ],
+  [
+   0.41953933453497744,
+   0.4171708272504582,
+   0.41415106219641784
+  ],
+  [
+   [
+    "BdSxIOgEujw.18",
+    "_6rDqXGERdM.7"
+   ],
+   [
+    "BdSxIOgEujw.21"
+   ],
+   [
+    "uWcaUY9jXFs.10",
+    "uWcaUY9jXFs.8"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9119.mp4": [
+  [
+   "A picture of a red dna on a blue background.",
+   "A picture of a dna molecule on a blue background.",
+   "A blue dna strand on a blue background."
+  ],
+  [
+   0.39306455130374196,
+   0.3872165980873677,
+   0.36258080763610306
+  ],
+  [
+   [
+    "HK2ksp5zwOU.4"
+   ],
+   [
+    "IjwOC3XPIk8.5",
+    "OWGVBIJsLFg.3",
+    "vkYAIYFWSbk.28"
+   ],
+   [
+    "avM1Yg5oEu0.6",
+    "gWOvAHag5HM.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9129.mp4": [
+  [
+   "A young woman is sitting in front of a camera and talking to the viewer.",
+   "A young woman is sitting in front of the camera and talking to the viewer.",
+   "A young asian woman is standing in front of the camera and talking to the viewer."
+  ],
+  [
+   0.6104746171230137,
+   0.6071270356102049,
+   0.5842122641804766
+  ],
+  [
+   [
+    "0P1zovCPjO8.1",
+    "1mLDq1GBIEk.3",
+    "2gSdEmrL9pw.5",
+    "4dulTP90aZM.1",
+    "60EzX51tdxc.21",
+    "HsZbCt84S4M.1",
+    "HsZbCt84S4M.4",
+    "JnIzKjyUVco.2",
+    "K57rs2ZiwzU.1",
+    "LsUDEOob6RU.9",
+    "MIXYrX4wMKA.0",
+    "NxJNUyoF0VM.0",
+    "O0wygmQy4QQ.3",
+    "PC2WZVdSw14.0",
+    "Rl2VqAoAnKE.8",
+    "SEub22aXjlo.3",
+    "SEub22aXjlo.5",
+    "XBkl5Dhys0Y.2",
+    "Z3cnuQvzmOE.10",
+    "b2QCcE8q2DU.1",
+    "dJPzL8Og2DI.1",
+    "p_EBBUdQ0qw.2",
+    "pd4C9cKgrh8.1",
+    "tjPrxtR6mCo.5",
+    "tjPrxtR6mCo.8",
+    "wS4MBFkqXGo.1",
+    "ymee42I6LMo.0",
+    "z-GLUOcBU68.0"
+   ],
+   [
+    "-DxaJf5eK5o.3",
+    "-DxaJf5eK5o.4",
+    "2gSdEmrL9pw.1",
+    "2gSdEmrL9pw.10",
+    "2gSdEmrL9pw.14",
+    "2gSdEmrL9pw.3",
+    "2gSdEmrL9pw.4",
+    "2gqlf4k-2b8.3",
+    "2p6g6ZZWL_c.10",
+    "4hGZzUoDRE8.0",
+    "63cAS8nnojY.0",
+    "8D5Xn-haSoM.25",
+    "9Tt_jPRIcYE.0",
+    "9fivUGONCw4.12",
+    "AOl6xn_zcVA.1",
+    "Fk2WqXYWWrs.1",
+    "LsUDEOob6RU.2",
+    "MYLG1RPBA1I.11",
+    "TiQ9kKZA_4c.1",
+    "TiQ9kKZA_4c.3",
+    "TiQ9kKZA_4c.5",
+    "U8cj7fePTfA.0",
+    "VeRfO5F96sw.0",
+    "W5RorahLCf4.3",
+    "_Y69xSHpN-c.2",
+    "f57H0UILnXQ.2",
+    "fzsykLHZ5SQ.2",
+    "g14Gq8Bvzqg.3",
+    "iOrzyttGXdw.0",
+    "uaTddZd2y6s.0",
+    "wwxQAxilaPA.18"
+   ],
+   [
+    "pqWplNw41wU.28"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9139.mp4": [
+  [
+   "The user is on a boat in the middle of the ocean with a beautiful view of the sea and sky.",
+   "A cartoon character is on a boat in the water with other cartoon characters.",
+   "A purple cartoon character is sailing on a boat in the sky with stars and clouds in the background."
+  ],
+  [
+   0.2782296178747761,
+   0.26787948528626926,
+   0.2638743417754841
+  ],
+  [
+   [
+    "DbbhFD-8w-Y.1"
+   ],
+   [
+    "Go1-bIErLNk.1"
+   ],
+   [
+    "yFzQuHAAD1E.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9149.mp4": [
+  [
+   "A group of musicians are performing on a tv show.",
+   "A group of people are on stage and one person is giving an award to another person.",
+   "A group of people are standing on a stage and receiving an award."
+  ],
+  [
+   0.4897750189885677,
+   0.4798371409561484,
+   0.47974161188944214
+  ],
+  [
+   [
+    "M6EL6pfySwQ.0",
+    "OZ5DmMM0Iz4.1",
+    "S74Vme_nwNM.20",
+    "YrFGYnoOIag.8",
+    "rl2zl1ve7cI.28"
+   ],
+   [
+    "E6mS4bsVCYk.3"
+   ],
+   [
+    "3WmFO__cawA.2",
+    "5hgKwqXXtog.3",
+    "BHF2Lg2j1H4.18",
+    "BHF2Lg2j1H4.21",
+    "BHF2Lg2j1H4.22",
+    "WeJJjc86ApE.13",
+    "YJfPjkN-bh4.6",
+    "ZHqDYgCZtZg.32",
+    "xBFFxYDjSik.1",
+    "y7P6M9sS5fM.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9159.mp4": [
+  [
+   "A group of people are participating in a cooking competition on a tv show.",
+   "A group of people are participating in a cooking competition on a television show.",
+   "A group of chefs are preparing food on a tv show."
+  ],
+  [
+   0.40979140212961246,
+   0.405580875813823,
+   0.39494910092414826
+  ],
+  [
+   [
+    "5VNTz5oRjVs.27",
+    "5VNTz5oRjVs.6",
+    "y1p2rEcRdaA.5"
+   ],
+   [
+    "61-prYSca2M.6"
+   ],
+   [
+    "yBNJDRsiTig.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9169.mp4": [
+  [
+   "A picture of a blue background with a bunch of smiley faces on it.",
+   "A blue background with a lot of yellow faces on it.",
+   "A painting of a green and yellow background with a bunch of splatters on it."
+  ],
+  [
+   0.40204107143663675,
+   0.39392340265022874,
+   0.3717443354145647
+  ],
+  [
+   [
+    "5hZY0_9qoLQ.2"
+   ],
+   [
+    "pbwNpVO92P8.1"
+   ],
+   [
+    "o-IKxzRvyEU.11"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9179.mp4": [
+  [
+   "A group of people are walking in a dark room, and there is a man wearing a blue shirt.",
+   "A man in a blue scrub suit is walking down a hallway in a hospital.",
+   "A group of people are working in a laboratory, and one person is wearing blue gloves."
+  ],
+  [
+   0.35072531263443435,
+   0.3495711366497878,
+   0.3417371835823811
+  ],
+  [
+   [
+    "QwmtzWLFgbw.8"
+   ],
+   [
+    "c4D1nJJwR4E.13"
+   ],
+   [
+    "JfLv-eYJsvI.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9189.mp4": [
+  [
+   "A screen shot of a web page with a yellow arrow pointing to a number.",
+   "A screen shot of a computer screen with a yellow arrow pointing to a button.",
+   "A screen shot of a web page with a blue and yellow background."
+  ],
+  [
+   0.4075528993199792,
+   0.4040826853234494,
+   0.3903872630821076
+  ],
+  [
+   [
+    "6vuN7kObyNU.2",
+    "J75ObGo5OWQ.2"
+   ],
+   [
+    "gj0-pRB1abs.3"
+   ],
+   [
+    "GLx98lCU3NY.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9199.mp4": [
+  [
+   "It is a dark and mysterious scene with glowing red and blue lights in the background.",
+   "There is a dark and mysterious scene with fireworks in the background.",
+   "It is a dark and mysterious scene with glowing green crystals in the background."
+  ],
+  [
+   0.4425773513581777,
+   0.43664589942383986,
+   0.42436057843891506
+  ],
+  [
+   [
+    "yOtTBheWq04.4"
+   ],
+   [
+    "033FWxL22A0.21"
+   ],
+   [
+    "-2rheUysXKc.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9209.mp4": [
+  [
+   "A woman is shooting an arrow at a target in the outdoors.",
+   "A little girl is shooting arrows at a target in an outdoor archery range.",
+   "A woman is shooting an arrow at a target during an archery competition."
+  ],
+  [
+   0.4433080439992773,
+   0.4296903451991867,
+   0.4292541634552209
+  ],
+  [
+   [
+    "-Y47dzs81vQ.3"
+   ],
+   [
+    "A90r7l9ghjY.0"
+   ],
+   [
+    "BkSlCTrhJAo.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9219.mp4": [
+  [
+   "A group of people are dancing breakdancing in front of an audience.",
+   "A group of dancers are performing breakdancing in front of an audience.",
+   "A group of breakdancers are performing in front of an audience."
+  ],
+  [
+   0.5331820336511427,
+   0.4842505272970275,
+   0.47746754303882366
+  ],
+  [
+   [
+    "o9k0d41-KC0.14"
+   ],
+   [
+    "ASL_LGoJIlg.5",
+    "O3-NpSs1vYU.0"
+   ],
+   [
+    "3TJ0fjasX6c.5",
+    "F2l-Ve0eJ7M.0",
+    "Jl6h93SKKMM.0",
+    "L4rt3zpHXNw.0",
+    "NfLMBYplOuU.1",
+    "b5jkBQuYct4.3",
+    "d938FgH_z0A.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9229.mp4": [
+  [
+   "A picture of a knife on a blue background.",
+   "A close up of a knife on a blue background.",
+   "A picture of a knife on a colorful background."
+  ],
+  [
+   0.5436391321553312,
+   0.5137361221896516,
+   0.5117567947328275
+  ],
+  [
+   [
+    "upYHacmGTUg.4"
+   ],
+   [
+    "-lFZ0YcRB60.6"
+   ],
+   [
+    "H90VfEFwJcw.25"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9239.mp4": [
+  [
+   "A kangaroo standing on the side of the road.",
+   "A kangaroo sitting on the side of the road.",
+   "A cartoon kangaroo holding a sign on the side of the road."
+  ],
+  [
+   0.4967895861325947,
+   0.48314025813423617,
+   0.4454586617157686
+  ],
+  [
+   [
+    "DnErUmKMC_8.8"
+   ],
+   [
+    "VW-ftDXGqUQ.0"
+   ],
+   [
+    "71XMoBrMKo0.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9249.mp4": [
+  [
+   "A blue background with the words medication room.",
+   "A blue background with the words 101 in cell biology.",
+   "A blue background with the words chemistry measuring cylinder."
+  ],
+  [
+   0.2998156979547476,
+   0.2974415742579306,
+   0.29283189046754304
+  ],
+  [
+   [
+    "r6JIOurW_CE.23"
+   ],
+   [
+    "WBetMQFbqv4.2"
+   ],
+   [
+    "7HDNlNnLynI.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9259.mp4": [
+  [
+   "A person is opening the door of a car with a key.",
+   "A person is opening the door of a blue car with a key.",
+   "A person is opening the door of a car with their hand."
+  ],
+  [
+   0.5728724470539226,
+   0.5646843467521542,
+   0.5564814696103135
+  ],
+  [
+   [
+    "OYie-KID5wY.5"
+   ],
+   [
+    "yNwz3wIvzvs.2"
+   ],
+   [
+    "0gRvG1CCqWQ.0",
+    "2pJq_fJ1xNw.1",
+    "5TA7L8qTlLQ.1",
+    "6jKbloPXMjo.0",
+    "Yfi-7t1XAoM.0",
+    "gwGA7HhLldo.4",
+    "yawNkbVXzzA.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9269.mp4": [
+  [
+   "A picture of a microphone with the words voz do brasil on it.",
+   "A person is holding a pair of shoes with the logo adidas on them.",
+   "A close up of a pair of headphones with the word more freedom written on it."
+  ],
+  [
+   0.2924204038668877,
+   0.29121608074598687,
+   0.2872930703608911
+  ],
+  [
+   [
+    "bQT3s504Ug8.2"
+   ],
+   [
+    "OtbPbBrFEn8.10"
+   ],
+   [
+    "DmnQdhFplyc.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9279.mp4": [
+  [
+   "A painting of a woman with a purple background.",
+   "A woman with a purple background and the words nasopharyngeal carcinoma.",
+   "A digital image of a woman with a purple background."
+  ],
+  [
+   0.37884052062060014,
+   0.3680081703193831,
+   0.3630166441763829
+  ],
+  [
+   [
+    "IWmrLYwvn1k.3"
+   ],
+   [
+    "teNdTQVK-hg.4"
+   ],
+   [
+    "WeBWmx8bLOE.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9289.mp4": [
+  [
+   "Models are walking down the runway at a fashion show.",
+   "A woman is wearing a red dress and walking down the runway at a fashion show.",
+   "A cat in a suit walking down the runway at a fashion show."
+  ],
+  [
+   0.46248327113519305,
+   0.4593906157875584,
+   0.45647001610804133
+  ],
+  [
+   [
+    "hbIDPscb0oQ.12"
+   ],
+   [
+    "slHfskTW7Ig.4"
+   ],
+   [
+    "Kl6IS9mtrtg.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9299.mp4": [
+  [
+   "A dog is jumping up and down in front of the camera.",
+   "A cute dog is sitting on the floor and looking up at the camera.",
+   "A dog is walking on the floor in a store."
+  ],
+  [
+   0.41229862198825934,
+   0.4043218499902828,
+   0.4041533114357228
+  ],
+  [
+   [
+    "8jVlaRcKyKM.5",
+    "jAeYt5Z0X7g.3"
+   ],
+   [
+    "kIiQpk550o0.1"
+   ],
+   [
+    "DIlCVO0mXQM.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9309.mp4": [
+  [
+   "There is a plate of food on a table with shrimp and other ingredients.",
+   "A person is making a salad with shrimp and vegetables on a plate.",
+   "A picture of a salad with vegetables and shrimp in a bowl."
+  ],
+  [
+   0.32946040756780115,
+   0.3250766133817922,
+   0.29800619587926525
+  ],
+  [
+   [
+    "1jiblLb7NfY.9"
+   ],
+   [
+    "p2Jq3v09IUo.0"
+   ],
+   [
+    "sywo7WCOads.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9319.mp4": [
+  [
+   "A group of musicians and singers are performing on a tv show.",
+   "A group of singers and musicians are performing on a tv show.",
+   "A group of musicians are performing on a tv show."
+  ],
+  [
+   0.3647900392401679,
+   0.3647900392401679,
+   0.36382447827039976
+  ],
+  [
+   [
+    "AVIPGSZzOz0.17",
+    "AVIPGSZzOz0.31",
+    "qEQOr2WfEKQ.0",
+    "qEQOr2WfEKQ.2"
+   ],
+   [
+    "128IDdf2MYg.34"
+   ],
+   [
+    "M6EL6pfySwQ.0",
+    "OZ5DmMM0Iz4.1",
+    "S74Vme_nwNM.20",
+    "YrFGYnoOIag.8",
+    "rl2zl1ve7cI.28"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9329.mp4": [
+  [
+   "A woman is holding an award and smiling at the camera.",
+   "A man is holding an award and smiling at the camera.",
+   "A woman is holding an award at an event and posing for the camera."
+  ],
+  [
+   0.4208624298354616,
+   0.40585747938349775,
+   0.4026939669182898
+  ],
+  [
+   [
+    "cM2QteNtlF8.6"
+   ],
+   [
+    "92lWgSTgXZM.0",
+    "bF_GRiPB1tY.3"
+   ],
+   [
+    "9j9WWwnyCtU.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9339.mp4": [
+  [
+   "A picture of a camel with a caption on it.",
+   "A photo of a llama with a caption on it.",
+   "A picture of a camel with a caption that says snap facts."
+  ],
+  [
+   0.3846171478099696,
+   0.36567930965016354,
+   0.3497805170826555
+  ],
+  [
+   [
+    "0YOaXfRWSIw.1",
+    "iI8NcIredZA.0"
+   ],
+   [
+    "LxuWTQu4AK0.1"
+   ],
+   [
+    "IYdmNofGd8s.3",
+    "IYdmNofGd8s.7"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9349.mp4": [
+  [
+   "A person is making a jewelry piece using red beads and a needle.",
+   "A person is using a tool to make a piece of jewelry.",
+   "A person is making a christmas ornament using beads and a soldering iron."
+  ],
+  [
+   0.4374368301883493,
+   0.4313521422217075,
+   0.4279135388343943
+  ],
+  [
+   [
+    "gR24qNx886k.5"
+   ],
+   [
+    "Ji_psKy4xYc.4"
+   ],
+   [
+    "S2R9u5F5GH0.11"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9359.mp4": [
+  [
+   "A picture of a whale swimming in the water.",
+   "A picture of a whale and an octopus in the ocean.",
+   "A picture of a whale and a shark in the water."
+  ],
+  [
+   0.5718476205769955,
+   0.5351557748125256,
+   0.526280622504879
+  ],
+  [
+   [
+    "0sB90HPCwnc.2"
+   ],
+   [
+    "Yh1U__NwToc.8"
+   ],
+   [
+    "NiRl_ivsPBI.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9369.mp4": [
+  [
+   "A man is sitting in a chair and talking to another man.",
+   "A man sitting in a chair talking to another man.",
+   "A man is sitting on a chair and talking to another man."
+  ],
+  [
+   0.6033101049956034,
+   0.5773421334778066,
+   0.5725812452286313
+  ],
+  [
+   [
+    "1tOyWTTxhX8.3",
+    "1tOyWTTxhX8.5",
+    "2byW9cbPNeo.17",
+    "3kZjXBsKyJQ.4",
+    "4k9wg6YjOkA.2",
+    "8x9obT_Dv2A.7",
+    "8xJt0TEMVVg.3",
+    "9O8EcKUsHbY.1",
+    "9hdh1EJDPEo.31",
+    "DWW8ym1YimA.5",
+    "DswyB3vrBB8.5",
+    "Fyp80TdZeF8.0",
+    "H4FMxo_0W-Q.7",
+    "HVxBAWLYi2E.2",
+    "JyUEVLzJdrQ.0",
+    "KWrNMHk-Zos.2",
+    "Q60za5jHKBY.9",
+    "Q9kL8vnr0wc.0",
+    "QjnHIuITp-E.4",
+    "SR6MiFguoVA.5",
+    "Sr-CoJVEWkU.2",
+    "TJbxAphlw_4.2",
+    "TMvud4DjtJ8.1",
+    "TbGKrjAnw30.1",
+    "VRoR1-zTfjw.8",
+    "Vy18ueBJRfg.22",
+    "Z67NvR5WmTA.2",
+    "ZZ7Gftozlkk.0",
+    "d5Qaya2wTyo.7",
+    "lSR3TywJAmg.0",
+    "lqdZNELQbIg.0",
+    "m1w1-I2El2w.3",
+    "mzHb3RlhvFE.3",
+    "ocDXfYupMZE.3",
+    "t8VgMzwrNXE.3",
+    "uljExKG5e1s.4",
+    "zR_NNLzldv4.1"
+   ],
+   [
+    "8ebVGeZSjj4.3",
+    "8x9obT_Dv2A.9",
+    "9hdh1EJDPEo.17",
+    "Al9Ig9hswbE.0",
+    "D2TKasfIpIo.5",
+    "FDd1YrzJleI.3",
+    "G3DvSMaf7a4.3",
+    "HeBBmb4hIqE.0",
+    "TMvud4DjtJ8.4",
+    "WjrA7T3cD8o.6",
+    "Wvp2Q0e6rs0.4",
+    "_1XV3o9WK2g.2",
+    "iawvkGkWS3E.9",
+    "l3YZaVso9aE.0",
+    "nxdZBXsxluQ.12",
+    "quhI1JE4jf0.2",
+    "vTTQbsAcTjI.0"
+   ],
+   [
+    "VsahqgSBP8U.2",
+    "r2SijvZsIvk.0",
+    "rTMslwAFvlU.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9379.mp4": [
+  [
+   "A computer screen showing a web page with a blue and green background.",
+   "A computer screen showing a web page with a blue background.",
+   "A web page with a blue and red background."
+  ],
+  [
+   0.5235307697587169,
+   0.5223942548997472,
+   0.5082488405334152
+  ],
+  [
+   [
+    "lvU43R5Tv48.8"
+   ],
+   [
+    "9DYjbp-RvkU.2",
+    "M4do8I0MDkU.0"
+   ],
+   [
+    "Y05is0LH8pU.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9389.mp4": [
+  [
+   "The user is browsing a music app on their smartphone.",
+   "The user is scrolling through an anime app on their smartphone.",
+   "The user is browsing the weather app on their smartphone."
+  ],
+  [
+   0.3917433684029609,
+   0.3847610351890342,
+   0.3801877748736832
+  ],
+  [
+   [
+    "LRSSF0O8QiI.4",
+    "qBsjAyjIyjw.1"
+   ],
+   [
+    "g9CDX3MBJF8.5"
+   ],
+   [
+    "_WUaBpQkzUA.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9399.mp4": [
+  [
+   "A person is cooking food in a pan with vegetables and other ingredients.",
+   "A chef is cooking a dish in a frying pan with vegetables and herbs.",
+   "A person is cooking food in a frying pan with onions and green onions."
+  ],
+  [
+   0.4804102757583233,
+   0.42277327268691944,
+   0.42016028096321983
+  ],
+  [
+   [
+    "5egAGgcAPd4.7"
+   ],
+   [
+    "zbu2Z7_32Vk.3"
+   ],
+   [
+    "SPjm1Pgkqlg.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9409.mp4": [
+  [
+   "A close up of a plate of food with noodles and broccoli.",
+   "A close up of a bowl of food with broccoli and carrots.",
+   "A picture of a salad with vegetables and shrimp in a bowl."
+  ],
+  [
+   0.3930129575384657,
+   0.3773940226975629,
+   0.3647367063869958
+  ],
+  [
+   [
+    "Key92tdpVE4.6"
+   ],
+   [
+    "k31WP5lHSDc.1"
+   ],
+   [
+    "sywo7WCOads.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9419.mp4": [
+  [
+   "A picture of a box with a pink bow on it.",
+   "A picture of a box with a purple bow on it.",
+   "Two pictures of a blue gift box with a blue bow on it."
+  ],
+  [
+   0.4206446474759842,
+   0.4191639636692807,
+   0.4181071493452146
+  ],
+  [
+   [
+    "L1DPozIpCIo.4",
+    "fcExttkzvn8.2",
+    "fcExttkzvn8.4"
+   ],
+   [
+    "bP8836-H3vU.0"
+   ],
+   [
+    "gAE5f2SzmRU.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9429.mp4": [
+  [
+   "A video game with a blue background and a cartoon character on it.",
+   "A video game with a blue background and a yellow symbol on it.",
+   "A video game with a blue background and a man standing in front of it."
+  ],
+  [
+   0.44918097973848137,
+   0.44103561632996,
+   0.43454128292720884
+  ],
+  [
+   [
+    "makVBpCvrjo.16"
+   ],
+   [
+    "96w9GercjLs.30"
+   ],
+   [
+    "Tm9fPW6rHlw.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9439.mp4": [
+  [
+   "A hand drawing a picture on a piece of paper.",
+   "A black and white drawing on a white piece of paper.",
+   "A black and white drawing on a piece of paper."
+  ],
+  [
+   0.5334470559059096,
+   0.5214662260512327,
+   0.5177547954944576
+  ],
+  [
+   [
+    "AFhClkPwchM.7",
+    "Do5PY4tAQkU.2",
+    "me14ikumMZE.3"
+   ],
+   [
+    "QWoZ1BvjE58.0"
+   ],
+   [
+    "aU2Qkf1qMEs.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9449.mp4": [
+  [
+   "There is a blue card with a picture of a person on it.",
+   "A person is sitting at a desk with a laptop open in front of them, and they are looking at the screen with a serious expression on their face.",
+   "An advertisement for a tv show with a picture of a woman's face on it."
+  ],
+  [
+   0.2774993652698406,
+   0.2731554430919697,
+   0.2673773638342811
+  ],
+  [
+   [
+    "U9JcQwLWRhc.11"
+   ],
+   [
+    "kv4dqjUHy5Y.4"
+   ],
+   [
+    "2IKcl6aY8rI.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9459.mp4": [
+  [
+   "A young boy is standing on a soccer field and talking to the camera.",
+   "A young boy is standing in front of a soccer field and talking to the camera.",
+   "A young soccer player is standing in front of a soccer field and talking to the camera."
+  ],
+  [
+   0.4579770697767302,
+   0.42170082615662846,
+   0.41247609478473946
+  ],
+  [
+   [
+    "abVfACIS1qs.3"
+   ],
+   [
+    "PnkvqzQIgzk.18"
+   ],
+   [
+    "PnkvqzQIgzk.16"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9469.mp4": [
+  [
+   "A man in a white vest shaking hands with a group of people.",
+   "A man in uniform shaking hands with a group of people.",
+   "A man wearing a helmet standing next to a group of people."
+  ],
+  [
+   0.3654595137890333,
+   0.36058205714956293,
+   0.35861258328077544
+  ],
+  [
+   [
+    "NSnSxlHD4D4.3"
+   ],
+   [
+    "tnrKh9vCbtI.9"
+   ],
+   [
+    "BiekDUAIFis.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9479.mp4": [
+  [
+   "An advertisement for a cartoon show in spanish.",
+   "An advertisement for a tv show in spanish.",
+   "An advertisement for a youtube channel in spanish."
+  ],
+  [
+   0.3759654976045579,
+   0.3709529662762371,
+   0.3592570598434886
+  ],
+  [
+   [
+    "SnIOIUBFmV8.0"
+   ],
+   [
+    "-yI8ggiXDvo.5",
+    "T6tGPf-yDfY.0",
+    "_Qxw43df4rk.5"
+   ],
+   [
+    "rddaThW928w.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9489.mp4": [
+  [
+   "A close up of a bike with a blue light on it.",
+   "A close up of a bicycle with a number on it.",
+   "A close up of a blue bicycle with a black chain."
+  ],
+  [
+   0.4159677965728471,
+   0.4086247175832577,
+   0.40262983438134087
+  ],
+  [
+   [
+    "CDZK4xhJY40.3"
+   ],
+   [
+    "OeVb_6nrlAE.11"
+   ],
+   [
+    "9y2EqvXaGuk.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9499.mp4": [
+  [
+   "A person is holding a knife in the dark.",
+   "A person holding a knife in the dark.",
+   "A person is holding a knife in their hand and talking about it."
+  ],
+  [
+   0.42237925677018306,
+   0.3976726341195157,
+   0.3907796667293696
+  ],
+  [
+   [
+    "I1PTjRPvAI4.7"
+   ],
+   [
+    "I1PTjRPvAI4.5"
+   ],
+   [
+    "g5IeeuBtsFk.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9509.mp4": [
+  [
+   "A woman with red hair and a red lipstick is talking to the camera.",
+   "A screen shot of a website with a woman in a red dress.",
+   "A screen shot of a web page with a woman in a red dress."
+  ],
+  [
+   0.3424634799275203,
+   0.32096880871786504,
+   0.3077826538992297
+  ],
+  [
+   [
+    "PSc5bdkDzoI.19"
+   ],
+   [
+    "EnK5VYSWIHA.0",
+    "tbY2EueYNpk.6"
+   ],
+   [
+    "9MQguSuFN8E.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9519.mp4": [
+  [
+   "The members of a k-pop group are performing on stage.",
+   "The members of a k-pop group are rehearsing on stage.",
+   "The members of a k-pop group are performing on stage and singing their hit song."
+  ],
+  [
+   0.3918198687300551,
+   0.36517478379549645,
+   0.3611657261037137
+  ],
+  [
+   [
+    "-XDgSLzu6l4.28",
+    "8Ilrx7t5ZhI.3",
+    "8qFwSTb8xFM.22",
+    "FkFQQXWfLL0.17",
+    "FkFQQXWfLL0.26",
+    "FkFQQXWfLL0.35",
+    "FkFQQXWfLL0.36",
+    "FkFQQXWfLL0.8",
+    "MFneF10Fj0E.1",
+    "P87p6QNPgLU.1",
+    "P87p6QNPgLU.6",
+    "VtQpPkiOcfc.12",
+    "YmMbm8PUo9I.19",
+    "YmMbm8PUo9I.28",
+    "a8t-GsnUHAk.23",
+    "gMH2DL9tBvo.1",
+    "h6nLFth-59M.7",
+    "hiJ3jsHEkKM.17",
+    "hiJ3jsHEkKM.9",
+    "lFSUWfsR0ho.3",
+    "wMFEUODLrs8.0"
+   ],
+   [
+    "hiJ3jsHEkKM.0"
+   ],
+   [
+    "WVCHiqOnttM.18"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9529.mp4": [
+  [
+   "A car is being worked on in a garage.",
+   "A car that is being worked on in a garage.",
+   "A silver car is being worked on in a factory."
+  ],
+  [
+   0.4055360203448245,
+   0.38998213606282284,
+   0.3834780215254673
+  ],
+  [
+   [
+    "ufRxyTIxX4k.0"
+   ],
+   [
+    "F_fEo1YDIF4.11",
+    "d8daNAPKKI4.7"
+   ],
+   [
+    "PN8v08VIcJ0.12"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9539.mp4": [
+  [
+   "A man is sitting at a table in an outdoor restaurant and eating food he is wearing a blue shirt and has a beard.",
+   "A man is sitting at a table in an outdoor restaurant at night, and he is wearing a blue shirt.",
+   "A man with a beard is sitting at a table in an outdoor restaurant he is wearing a blue shirt and has a cell phone in his hand."
+  ],
+  [
+   0.3645158997329611,
+   0.36243642978295243,
+   0.3273861704969543
+  ],
+  [
+   [
+    "XbU5L93UTKc.4"
+   ],
+   [
+    "EcncJlyzFlc.8"
+   ],
+   [
+    "8yHZ7cewuNI.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9549.mp4": [
+  [
+   "A hacker is working on a computer in a dark room with multiple monitors.",
+   "The user is using a music production software with a graphical user interface.",
+   "The user is using a music production software to create and edit music."
+  ],
+  [
+   0.3071445138515994,
+   0.3020390107561893,
+   0.29922694783934956
+  ],
+  [
+   [
+    "PdK1A3dyn7k.0"
+   ],
+   [
+    "EpzBafdsqRA.0",
+    "Op1f29QKY_A.0",
+    "_8x5x_ekn-g.0"
+   ],
+   [
+    "Dx9Sj2m-UyU.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9559.mp4": [
+  [
+   "A man is hugging another man in a warehouse.",
+   "A man is hugging another man in a hallway.",
+   "A man is hugging another man in a room."
+  ],
+  [
+   0.4581424389636163,
+   0.4578346519522282,
+   0.4578346519522281
+  ],
+  [
+   [
+    "wBhsdDMxbp0.9"
+   ],
+   [
+    "cg_dW0_dIME.10"
+   ],
+   [
+    "2PW6elnnrZw.18",
+    "GzyKdKmBV4E.18",
+    "ldOk9R0nH8w.7",
+    "sn4PhnKSSPM.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9569.mp4": [
+  [
+   "A man and a woman kissing in front of a purple background.",
+   "A man and a woman kissing each other in front of a purple background.",
+   "A man and a woman kissing on a pink background."
+  ],
+  [
+   0.3979590491718638,
+   0.39439106366511073,
+   0.38510917187780974
+  ],
+  [
+   [
+    "p04Vj7IxpLg.4",
+    "tUV3RLpI3yE.17"
+   ],
+   [
+    "fRNQCQ6gPJA.0"
+   ],
+   [
+    "-KE9o44ctMs.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9579.mp4": [
+  [
+   "A group of people in white lab coats looking at a screen.",
+   "A group of people in lab coats looking at a screen.",
+   "A group of people in lab coats looking at a robot."
+  ],
+  [
+   0.5913005975194694,
+   0.5750259725732445,
+   0.5513459584406831
+  ],
+  [
+   [
+    "Pe4KX4O6ioQ.22"
+   ],
+   [
+    "n_9rSWdCgJw.2"
+   ],
+   [
+    "8CzgamSAuus.9",
+    "t7YUi_QVS9c.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9589.mp4": [
+  [
+   "A woman is singing and playing the guitar on a tv show.",
+   "A woman is wearing a cowboy hat and sitting in front of a camera, talking to the viewer.",
+   "A woman is playing the violin and talking to the camera."
+  ],
+  [
+   0.30595533719103507,
+   0.30302199640798644,
+   0.294798384234123
+  ],
+  [
+   [
+    "b5KXxu8q_3U.7"
+   ],
+   [
+    "5A9EltjYBvU.5"
+   ],
+   [
+    "R9P2bSyljYk.0",
+    "lgbZKLl_AAw.9"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9599.mp4": [
+  [
+   "A group of people bowling in a bowling alley.",
+   "A group of people are playing bowling in a bowling alley.",
+   "A group of people are skateboarding in a bowling alley."
+  ],
+  [
+   0.4829848529131566,
+   0.46175351690312555,
+   0.44701726273484715
+  ],
+  [
+   [
+    "CR3g4IQTHW8.20",
+    "SBiIFc47GoM.0"
+   ],
+   [
+    "CR3g4IQTHW8.10",
+    "CR3g4IQTHW8.13",
+    "soIJz-bG82g.1"
+   ],
+   [
+    "aglmavWBr6w.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9609.mp4": [
+  [
+   "The player is playing a first-person shooter game in a futuristic space station.",
+   "The player is playing a first-person shooter game in which they are in a futuristic space station.",
+   "The character is playing a video game in a futuristic space station."
+  ],
+  [
+   0.5591514607258709,
+   0.5234909806707417,
+   0.5065773209409731
+  ],
+  [
+   [
+    "0jVkVJB4jyk.14",
+    "0jVkVJB4jyk.19",
+    "3XagM_tkQsY.6",
+    "5CXDG4gQhVs.0",
+    "9J_fN9UACBg.2",
+    "DWa4cN_KTpE.2",
+    "Fbm2mQMWdNI.1",
+    "Mm5Tm6YQOdo.3",
+    "gAF251zb9aI.3",
+    "lj_CtCN9nSs.7",
+    "tnAUUelGo2w.1",
+    "wNRBm94k6HM.2"
+   ],
+   [
+    "FimPgy27geo.0"
+   ],
+   [
+    "ejmCBIwk1jc.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9619.mp4": [
+  [
+   "A cartoon girl standing in front of a rainbow background.",
+   "A cartoon character is walking in a magical forest with a rainbow in the background.",
+   "A cartoon character is standing in the middle of a forest with an umbrella."
+  ],
+  [
+   0.4542320312114362,
+   0.43586591300205835,
+   0.42916010940440386
+  ],
+  [
+   [
+    "G6StuZV0MuI.2"
+   ],
+   [
+    "nXlpCvNA674.1"
+   ],
+   [
+    "kVf9idHSOzs.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9629.mp4": [
+  [
+   "A person is driving a car at night and the car's speedometer is displayed on the screen.",
+   "A person is driving a car at night and the car's dashboard shows various information such as speed, fuel level, and temperature.",
+   "A person is driving a car on a snowy road and the car's speedometer is displayed on the screen."
+  ],
+  [
+   0.4233592147848012,
+   0.4209232407423933,
+   0.41624389205356654
+  ],
+  [
+   [
+    "F-0vcujBMAk.8"
+   ],
+   [
+    "ze5gA7VZouQ.2"
+   ],
+   [
+    "E-9n2DE-H3c.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9639.mp4": [
+  [
+   "A person is preparing a salad with vegetables and feta cheese on a white plate.",
+   "A person is cooking food in a frying pan with vegetables and mushrooms.",
+   "A person is frying vegetables in a pan with a wooden spoon."
+  ],
+  [
+   0.4380860506227874,
+   0.4371479056202484,
+   0.42513316969641446
+  ],
+  [
+   [
+    "wQEfbEjuu8Q.10"
+   ],
+   [
+    "2-xZdyOxLiE.2",
+    "IPBlkBmZXXY.2"
+   ],
+   [
+    "pv9ebgUgZZU.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9649.mp4": [
+  [
+   "A group of people are riding horses in a parade.",
+   "A group of cowboys are riding horses on a dusty trail in the countryside.",
+   "A group of cowboys are riding horses on a dirt road in the countryside."
+  ],
+  [
+   0.487300283257749,
+   0.4418708915239576,
+   0.4418708915239576
+  ],
+  [
+   [
+    "35g4n-HBdzI.3",
+    "BzS25FKZ7tg.5"
+   ],
+   [
+    "Z4_OGHU7XvM.8"
+   ],
+   [
+    "wr063h2unYE.9"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9659.mp4": [
+  [
+   "A man and a woman are fighting in a dark and futuristic environment.",
+   "A group of futuristic robots are attacking a group of humans in a dark and rainy environment.",
+   "It is a scene from a movie where a robot is standing in a dark room."
+  ],
+  [
+   0.3664434272179154,
+   0.3398872763959336,
+   0.33703981092271496
+  ],
+  [
+   [
+    "Tl9Z-pjMeHQ.4"
+   ],
+   [
+    "_LR1NtZOISg.22"
+   ],
+   [
+    "1I83HNJFHtU.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9669.mp4": [
+  [
+   "The character is dancing on a stage with neon lights and music playing in the background.",
+   "The character is performing a rap song on a stage with neon lights in the background.",
+   "The characters are dancing on a stage with neon lights in the background."
+  ],
+  [
+   0.41054979619787707,
+   0.40038394618509804,
+   0.3992774769090559
+  ],
+  [
+   [
+    "StiWQqMwPHA.13"
+   ],
+   [
+    "rWPXop_MyQo.16"
+   ],
+   [
+    "WTIOEI3Zwjc.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9679.mp4": [
+  [
+   "A close up of a box with a picture of a video game on it.",
+   "A box with a picture of a helicopter on it.",
+   "A laptop with a picture of a video game on it."
+  ],
+  [
+   0.47587067127186716,
+   0.46802490482606113,
+   0.4655138960450294
+  ],
+  [
+   [
+    "SDmZ6_4bwQc.2"
+   ],
+   [
+    "gpFEyEWCIfE.1"
+   ],
+   [
+    "9oQewI37Akw.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9689.mp4": [
+  [
+   "A person is cooking chicken in a pan with vegetables and spices.",
+   "A person is cooking chicken in a pan and adding spices to it.",
+   "A person is cooking chicken in a frying pan with herbs and spices."
+  ],
+  [
+   0.5572505072136241,
+   0.5486162430548005,
+   0.5465822637033338
+  ],
+  [
+   [
+    "OrNUfS0OKUM.1"
+   ],
+   [
+    "jROQDGOi7TY.5"
+   ],
+   [
+    "mXd55XJF-OE.21"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9699.mp4": [
+  [
+   "A person is making a drink by pouring different colored liquids into a glass.",
+   "A picture of a test tube filled with different colored liquids.",
+   "A close up of a glass jar filled with different colored liquids."
+  ],
+  [
+   0.357881440360727,
+   0.35550820984341064,
+   0.3451887124656004
+  ],
+  [
+   [
+    "R6ZFgpUS2ck.4"
+   ],
+   [
+    "b7fTkfPanXs.3"
+   ],
+   [
+    "pdw1oboReEs.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9709.mp4": [
+  [
+   "A woman in a yellow vest standing in front of a bus.",
+   "A group of children boarding a yellow school bus.",
+   "A woman in a yellow vest standing next to a yellow school bus."
+  ],
+  [
+   0.4137327642202624,
+   0.3985707678023709,
+   0.3949061403497048
+  ],
+  [
+   [
+    "24-E9_nczgk.30"
+   ],
+   [
+    "4UkHtCe4kWA.28"
+   ],
+   [
+    "15-xp6LxzlQ.12",
+    "15-xp6LxzlQ.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9719.mp4": [
+  [
+   "A tv screen showing a group of people on a stage.",
+   "A tv screen showing a woman dancing on a stage.",
+   "A cartoon of a group of people dancing on a stage."
+  ],
+  [
+   0.44201257956880147,
+   0.4198607137062146,
+   0.3989140559210787
+  ],
+  [
+   [
+    "9evnGJt6i6E.11",
+    "9xPrZ5FxNF0.14",
+    "O9bcasO4b1M.4"
+   ],
+   [
+    "0DfBVYUIGV0.1"
+   ],
+   [
+    "4phJ7vg3n_Y.1",
+    "DTzJHUivkQY.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9729.mp4": [
+  [
+   "A screen shot of a news article with a woman in a pink shirt.",
+   "A screen shot of a website with a woman in a pink dress.",
+   "A screen shot of a website with a woman in a pink hat."
+  ],
+  [
+   0.5606522785075614,
+   0.5396949281477413,
+   0.5390321601165522
+  ],
+  [
+   [
+    "wTYEEUg9RJU.1"
+   ],
+   [
+    "u9K5S7mcxVY.3"
+   ],
+   [
+    "a0AQPeJYJ84.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9739.mp4": [
+  [
+   "A person is cooking vegetables in a frying pan with a wooden spoon.",
+   "A person is cooking food in a frying pan with onions and mushrooms.",
+   "A person is cooking food in a frying pan with vegetables and mushrooms."
+  ],
+  [
+   0.5943846644573525,
+   0.5874776720664459,
+   0.5834290890704944
+  ],
+  [
+   [
+    "3vejfiSaZVM.3",
+    "T26D4DEsbi0.5",
+    "vtYoKYwEInQ.18",
+    "vtYoKYwEInQ.20"
+   ],
+   [
+    "jr-iGuGkB6g.0"
+   ],
+   [
+    "2-xZdyOxLiE.2",
+    "IPBlkBmZXXY.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9749.mp4": [
+  [
+   "A person is cutting vegetables on a cutting board with a knife.",
+   "A person is cutting vegetables on a green cutting board with a knife.",
+   "A person is cutting vegetables on a wooden cutting board with a knife."
+  ],
+  [
+   0.6473910470438524,
+   0.6362358486090678,
+   0.6327270766792432
+  ],
+  [
+   [
+    "-GdSAUeaAjM.6",
+    "-SWgkbIwixY.3",
+    "-yuWRhuSaVQ.1",
+    "0qP8Qb3RqN4.2",
+    "1HkLr6FgSwg.0",
+    "2BInASH3gZU.0",
+    "4GXSOSxlgs8.7",
+    "4rP-N12UuIY.3",
+    "6qpn6AQWJ7c.0",
+    "8DeoCO6jcsQ.3",
+    "8Rp4Lg7cn58.2",
+    "8T24lpoICMQ.7",
+    "AyUhiJ1KSHo.4",
+    "Bh6OgGNPQBM.1",
+    "D6vb8gPnI0E.1",
+    "Ddp_qf_j_8s.1",
+    "DpWs0dvuZjY.21",
+    "DvQomTZnIH0.6",
+    "FfgZALKG5FA.4",
+    "H6bZhPHoq4Y.7",
+    "I17BMuKLJkY.3",
+    "IhdNyeghvQs.1",
+    "JVJ4rRos_KA.1",
+    "JWsFdelZDcY.0",
+    "K6jD9dArnsw.3",
+    "Mc_LxqTeyVI.3",
+    "N-kmYz93nnc.0",
+    "N0PEdpSxZZ0.0",
+    "OBn7l63olDo.0",
+    "Os4Y0wdDAHs.1",
+    "PTr6aBGaTQs.5",
+    "R0O80lbxuUI.1",
+    "RQED-amUR-Y.0",
+    "Rp0_lcYj1HU.0",
+    "SU-XNk9lRIU.0",
+    "SWvXopbRRsA.21",
+    "T-8grunevXs.5",
+    "TdJhjpRcLIQ.1",
+    "TdJhjpRcLIQ.2",
+    "TnvnB1EdCIg.3",
+    "URMJmdEooPU.0",
+    "Uam0vwXH18A.1",
+    "V1OAGihD_cw.6",
+    "WH-8GP6UoaQ.2",
+    "WOx45VzAAqE.11",
+    "aUmBrMNd_qE.0",
+    "dYPWSPhfBaQ.0",
+    "ddJROrFL9qc.4",
+    "eBI7HPPsofg.0",
+    "eMwXfmTl9JA.1",
+    "eWvrGMwnhHI.1",
+    "fQ6a3T2Z0WA.0",
+    "g-5NvBHFkLQ.0",
+    "gai2q3_wbog.7",
+    "hPze1mTpBJ4.0",
+    "j7xhD5Irxc8.3",
+    "kkFyXXY6pIA.0",
+    "l6BiE4VweZ8.0",
+    "lFi7zbvij4s.1",
+    "lejMopLl6WQ.4",
+    "lst2UpaOnJg.1",
+    "mcJaxzD_tyA.1",
+    "nSixFXGnxGU.6",
+    "nZodFWf6Hk0.33",
+    "oTO6hL0KZlM.2",
+    "q5fkdw8z9YY.0",
+    "rPE3Gfay-Ls.3",
+    "s0exq6NtpPo.6",
+    "tnDNfTTugh0.4",
+    "v5-ctY32FYs.0",
+    "veP2frPRq34.2",
+    "vtYoKYwEInQ.5",
+    "vtYoKYwEInQ.8",
+    "xRhbg3wUIKw.6",
+    "zCEhbOa26Xs.6",
+    "zPK-x45n5sU.11",
+    "zPZCSYFEs1Q.0",
+    "z_dd_3-WpIY.1",
+    "zbu2Z7_32Vk.0"
+   ],
+   [
+    "SRDXYAgSbUk.0",
+    "SRDXYAgSbUk.1",
+    "eYFbCzByvRg.8"
+   ],
+   [
+    "-mFRN4u1Nys.0",
+    "02NtTqcttqs.1",
+    "1cgVm7yA5KQ.0",
+    "2-xZdyOxLiE.1",
+    "2oc5jpGtWyc.5",
+    "3bgYRNgV-6s.5",
+    "3q4m8KqjXcU.1",
+    "6Do3pYoRbAc.3",
+    "8KLhUvAhNSc.0",
+    "AMXiRX-5wVo.0",
+    "B145WpZmIkM.6",
+    "CMD5Ar3TW6Q.0",
+    "Fm5Bd-qLtT0.7",
+    "Fz5vwlG_lGg.15",
+    "Fz5vwlG_lGg.3",
+    "G759TtL3Zqk.3",
+    "Gb2tkSq3XyI.0",
+    "HHq3GnuvkSU.2",
+    "Iap-3lJPej8.4",
+    "Iyx3HJU0kfE.1",
+    "K6jD9dArnsw.0",
+    "K6jD9dArnsw.2",
+    "KvWfNfRBkwE.7",
+    "LwSR7kCqFQ4.0",
+    "NfZtOHlzCR4.3",
+    "Np_IsyB8zUU.6",
+    "NxuJCiBgMYg.2",
+    "O6w60feM8KU.0",
+    "PRTps36MrFQ.1",
+    "Q1Nish56-vA.0",
+    "Q52-l33-cA8.7",
+    "RT_Zl8KDRCE.5",
+    "SQz93k4IUDg.0",
+    "SS2LnV1Slqw.3",
+    "TPcOnD2rIq0.2",
+    "TnvYnUHMMp0.0",
+    "WclP6tFufuM.1",
+    "XXDFt95b1HA.0",
+    "ZPPDW1JeaMA.1",
+    "aLPM2ZYGYFg.0",
+    "abe7xi6L-f4.1",
+    "clZ6G0ia6yQ.5",
+    "cmxvtc1wNKY.4",
+    "cxFxEPxELb8.0",
+    "d62ta9fh6SE.1",
+    "ddRD9jlrPPw.6",
+    "edIBx3Jwx44.3",
+    "f7s29Akju_s.0",
+    "fzep1_aTKKE.11",
+    "gw27xg6lOS8.1",
+    "isLleH4WQio.0",
+    "j7Xx2nsRoxA.1",
+    "jchHinY4ApI.3",
+    "k31WP5lHSDc.3",
+    "lUfJ_EBjt7Y.2",
+    "lejMopLl6WQ.1",
+    "mobW3DZ4hBE.0",
+    "nazqktcajZM.0",
+    "nuTGdQh8X2A.0",
+    "o7KCS_iGv_M.1",
+    "o7KCS_iGv_M.4",
+    "o7KCS_iGv_M.6",
+    "o7KCS_iGv_M.8",
+    "q6MrmHCsMBw.1",
+    "qIGjPOhlh1Q.9",
+    "qRtyg2ufQdk.2",
+    "roEoM_6VeoE.0",
+    "s2kwIrWzzEI.6",
+    "s6_GNxC89uo.6",
+    "soVmm4Kedbk.5",
+    "taBPHEcSunw.0",
+    "uEFDg2Zi3jc.2",
+    "uVkz8PuHKCU.3",
+    "usI7Ut15sGM.3",
+    "uw7Z7OGAGs0.0",
+    "vHvY0KjLYs0.1",
+    "wJ4B7OrbQJk.3",
+    "wj0ZMBDxtfg.0",
+    "wj0ZMBDxtfg.4",
+    "wkhDp3wGM88.3",
+    "wz9_V4y3l10.2",
+    "xRhbg3wUIKw.5",
+    "yOa8BHIse60.2",
+    "zEWefaypQvM.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9759.mp4": [
+  [
+   "A person is opening a box and taking out a pair of earphones.",
+   "A person is opening a box with a bunch of wires in it.",
+   "A person is opening a cardboard box and taking out a pair of headphones."
+  ],
+  [
+   0.4573274663789169,
+   0.45052009796971787,
+   0.4416966613305286
+  ],
+  [
+   [
+    "2MjBSyyPKkA.1"
+   ],
+   [
+    "O1a9RJ28PMQ.4"
+   ],
+   [
+    "YX2Pd_XjLRU.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9769.mp4": [
+  [
+   "A group of people dancing in front of a yellow background.",
+   "A group of people in front of a yellow background.",
+   "A group of people dancing in front of a blue background."
+  ],
+  [
+   0.600734720873225,
+   0.5966577962138812,
+   0.5733050355488029
+  ],
+  [
+   [
+    "id53ZddMJlg.2"
+   ],
+   [
+    "ax-K1NvupP8.0"
+   ],
+   [
+    "kjf4FE04kf8.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9779.mp4": [
+  [
+   "There is a fireworks display happening in the night sky, with colorful fireworks exploding and lighting up the dark sky.",
+   "There is a firework display happening in the night sky, with colorful fireworks exploding and lighting up the dark sky.",
+   "There is a fireworks display in the sky with colorful fireworks lighting up the night sky."
+  ],
+  [
+   0.4492175030002062,
+   0.4264757404591412,
+   0.4221521092411347
+  ],
+  [
+   [
+    "7G_Xcahq1r0.6"
+   ],
+   [
+    "7G_Xcahq1r0.3",
+    "LW2W5g5XOic.1"
+   ],
+   [
+    "cKkNyn1zv8E.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9789.mp4": [
+  [
+   "A cartoon character with a crown on a pink background.",
+   "A cartoon cat with a crown on a red background.",
+   "A cartoon cat with a crown on a green background."
+  ],
+  [
+   0.4761786716397027,
+   0.46749534716690444,
+   0.46749534716690444
+  ],
+  [
+   [
+    "erx2K4yxOKI.7"
+   ],
+   [
+    "mRLnO9jpheo.40"
+   ],
+   [
+    "mRLnO9jpheo.10"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9799.mp4": [
+  [
+   "A person is unboxing a new smartphone and examining the accessories that come with it.",
+   "A picture of a phone with a camera on it.",
+   "A close up of a cell phone with a youtube app on it."
+  ],
+  [
+   0.31388435598061787,
+   0.3136490347413933,
+   0.31246277930725186
+  ],
+  [
+   [
+    "Zp2pYuEFc8s.5"
+   ],
+   [
+    "P1D3UnKoeOY.33"
+   ],
+   [
+    "FJEawk7CecI.24"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9809.mp4": [
+  [
+   "A screen shot of a youtube video with a caption in spanish.",
+   "A screen shot of a youtube video in arabic.",
+   "A picture of a motorcycle with the words features explained."
+  ],
+  [
+   0.28840871019879855,
+   0.2718105806567808,
+   0.25919882854534404
+  ],
+  [
+   [
+    "PIRFGcB88vE.1"
+   ],
+   [
+    "hb0SQ7o2S_Y.0"
+   ],
+   [
+    "fKVw_SfYxvU.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9819.mp4": [
+  [
+   "A news report on a tv screen with a picture of a group of people sitting on the ground.",
+   "A newscast with a group of people on the screen.",
+   "A news tv screen with a group of people standing in front of it."
+  ],
+  [
+   0.3534971726351788,
+   0.3512672777678706,
+   0.34646723281020725
+  ],
+  [
+   [
+    "QJ5ru922TC4.5"
+   ],
+   [
+    "tOR9NkZhLZo.0"
+   ],
+   [
+    "xeDir_68iA8.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9829.mp4": [
+  [
+   "There is a red background with the words bbc news in arabic written on it.",
+   "A picture of a blue tunnel with a message on it.",
+   "There is a red background with a sign that says on our channel in russian."
+  ],
+  [
+   0.28618089481433917,
+   0.27786772573140994,
+   0.27631506628140945
+  ],
+  [
+   [
+    "6ocvbbMXVzo.40"
+   ],
+   [
+    "tfGZnMEbRa4.17"
+   ],
+   [
+    "59KgcTamdEE.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9839.mp4": [
+  [
+   "A video game with a horse and a man standing next to it.",
+   "A picture of a yellow room with a horse in it.",
+   "A picture of a horse and a horse standing next to each other."
+  ],
+  [
+   0.39371956990378054,
+   0.3917974574303611,
+   0.3903481167954852
+  ],
+  [
+   [
+    "sK1_xVUYtCk.7"
+   ],
+   [
+    "K9tONgEXSXA.1"
+   ],
+   [
+    "A-VvH9_U_-s.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9849.mp4": [
+  [
+   "A campfire is burning in the woods at night with trees in the background.",
+   "A group of people are gathered around a campfire in the middle of a dark forest, with flames and smoke rising from the fire.",
+   "A group of people are gathered around a campfire at night, with some holding weapons and others standing in the background."
+  ],
+  [
+   0.39131093997469674,
+   0.3798591510545496,
+   0.3749695066127995
+  ],
+  [
+   [
+    "S0iknYag_5M.0"
+   ],
+   [
+    "Vaa9bTe6f4k.2",
+    "vRWYEPAMhXo.6"
+   ],
+   [
+    "fPppcIYPQTY.5"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9859.mp4": [
+  [
+   "A woman in a yellow sari is dancing on a television show.",
+   "A woman is dancing in a futuristic, neon-lit environment with a disco ball in the background.",
+   "A futuristic woman is dancing in a neon-lit futuristic city with a disco ball in the background."
+  ],
+  [
+   0.32894241062476887,
+   0.31170892557442703,
+   0.30610935456532734
+  ],
+  [
+   [
+    "XrP8TG_c1sc.2"
+   ],
+   [
+    "60aBGYquAIg.19"
+   ],
+   [
+    "VWgm3J4zShQ.28"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9869.mp4": [
+  [
+   "A woman wearing glasses is talking to another woman.",
+   "A woman is wearing glasses and talking to another woman.",
+   "A woman with glasses is talking to another woman."
+  ],
+  [
+   0.3771862489530644,
+   0.37298109031571786,
+   0.3652139271596879
+  ],
+  [
+   [
+    "opJiN2r7-Gc.11",
+    "opJiN2r7-Gc.12",
+    "opJiN2r7-Gc.20",
+    "opJiN2r7-Gc.25",
+    "opJiN2r7-Gc.28",
+    "opJiN2r7-Gc.3",
+    "opJiN2r7-Gc.5",
+    "opJiN2r7-Gc.7",
+    "opJiN2r7-Gc.9"
+   ],
+   [
+    "92XJ8WorQCE.5"
+   ],
+   [
+    "PngEkWquc-Y.4"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9879.mp4": [
+  [
+   "A young girl is sitting in front of a camera and talking to the viewer.",
+   "A young girl is sitting in front of the camera and talking to the viewer.",
+   "A young girl is sitting in front of the camera and talking to the interviewer."
+  ],
+  [
+   0.5727461657290123,
+   0.5700373305700862,
+   0.5630197867104372
+  ],
+  [
+   [
+    "5fjRc137kKE.14"
+   ],
+   [
+    "-njREt-7fZs.0",
+    "2QhQggsHAbw.1",
+    "Evlmgo-9dPw.12",
+    "JA35NekMOXw.0",
+    "KrLYDjgfSyE.0",
+    "LBWTn-rGm7Y.13"
+   ],
+   [
+    "h2cSst-TSVg.6",
+    "op0ZvPO11AM.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9889.mp4": [
+  [
+   "There is a beautiful castle in the sky with a waterfall and mountains in the background.",
+   "There is a dark and mysterious scene with fireworks in the background.",
+   "A spaceship is landing on a futuristic planet with buildings and spaceships in the background."
+  ],
+  [
+   0.31781396422295194,
+   0.309227444189775,
+   0.30024737105831684
+  ],
+  [
+   [
+    "uUlt6bHhffw.2"
+   ],
+   [
+    "033FWxL22A0.21"
+   ],
+   [
+    "QheSJmdmWUU.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9899.mp4": [
+  [
+   "A picture of a buddha with clouds in the background.",
+   "There is a beautiful castle in the sky with a waterfall and mountains in the background.",
+   "A picture of a jungle with a logo in the middle of it."
+  ],
+  [
+   0.3644283087936859,
+   0.3614937500509329,
+   0.3544712403122214
+  ],
+  [
+   [
+    "vSecXIXj8U8.0"
+   ],
+   [
+    "uUlt6bHhffw.2"
+   ],
+   [
+    "pXEcAD9bSL8.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9909.mp4": [
+  [
+   "The player is playing the game super mario world on a nintendo entertainment system.",
+   "The player is playing the game super mario world on an nintendo entertainment system.",
+   "The game super mario bros is being played on a nintendo entertainment system."
+  ],
+  [
+   0.4736721068683867,
+   0.45394269138640597,
+   0.44827025663403147
+  ],
+  [
+   [
+    "4VP3mK-17qc.2",
+    "B24Lu1AjOfk.13",
+    "Eu0YZHJGu98.2",
+    "GdK0KerxriA.2",
+    "Qcu3qD0QH40.3",
+    "ZFlHZ0i7QKk.2",
+    "oj8m6YyS_eU.2",
+    "oxmV7T_wEyM.15",
+    "yJXEAIOFcNU.0"
+   ],
+   [
+    "3_OS-IoPO1E.0",
+    "4VP3mK-17qc.1",
+    "GdK0KerxriA.0",
+    "Xz2uA7jpGhA.5",
+    "q73Ma8P0osQ.2"
+   ],
+   [
+    "PWjuCXqFxHM.1"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9919.mp4": [
+  [
+   "It is a scene from a movie where a man is standing in front of a door with his hand on the handle, looking at the camera with a worried expression on his face.",
+   "It is a scene from a movie where two people are standing in front of each other, one of them is looking at the other with a sad expression on their face.",
+   "It is a scene from a movie where two characters are standing in front of each other, one of them is wearing a golden crown and the other is wearing a white robe."
+  ],
+  [
+   0.3236908364020234,
+   0.3205277034414234,
+   0.31094124444559235
+  ],
+  [
+   [
+    "PeyLmDHMhhc.1"
+   ],
+   [
+    "hCgvW8PP1hg.13"
+   ],
+   [
+    "sM2v9Mc39RI.2"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9929.mp4": [
+  [
+   "A person is sitting in a car and using a smartphone.",
+   "A woman is sitting in a car and using a smartphone.",
+   "A woman is driving in a car and talking to the camera."
+  ],
+  [
+   0.5169906598485071,
+   0.5134012966424394,
+   0.5007715676366509
+  ],
+  [
+   [
+    "HV3O1tLgtXg.1",
+    "n7padNXPE1E.0"
+   ],
+   [
+    "mbTV87pju3E.11"
+   ],
+   [
+    "1LJI3PNBLlc.4",
+    "6hxeEt5LrRM.1",
+    "CcHmJ9ZgVlY.14",
+    "CcHmJ9ZgVlY.23",
+    "DJl06LK377U.1",
+    "JA5V3WuN3Gs.0",
+    "JA5V3WuN3Gs.2",
+    "oVpFVdfn2eI.4",
+    "sjXB7KFktzc.0",
+    "u4RpLQjKFHk.1",
+    "uiCGK363oXc.0",
+    "weGphwj-aVk.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9939.mp4": [
+  [
+   "The band is performing on a stage with bright lights shining on them.",
+   "The band is performing on stage with lights shining on them.",
+   "The band is performing on stage with bright lights shining on them."
+  ],
+  [
+   0.4133599228319369,
+   0.41282257658958244,
+   0.41192139352230783
+  ],
+  [
+   [
+    "qcijEIULhOg.17"
+   ],
+   [
+    "ccTJ3W7F4Ag.1"
+   ],
+   [
+    "_rgF0BYBcK8.0",
+    "rOX4PwCBWU8.18",
+    "sCGf9jOnxuA.3"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9949.mp4": [
+  [
+   "The player is playing a video game in which they are driving a car and shooting at other cars.",
+   "The player is playing a first-person shooter game in which they are driving a car and shooting at enemies.",
+   "The player is playing a first-person shooter game in which they are driving a car and shooting at other players."
+  ],
+  [
+   0.5813270315052307,
+   0.5781901808866916,
+   0.5744270151943129
+  ],
+  [
+   [
+    "JlqDGgoA2AM.15",
+    "MTSuCoWo2Gc.3"
+   ],
+   [
+    "0M-NiTaozlw.5",
+    "3LX_0Bq6YtI.1",
+    "9ayip3cjhvc.30",
+    "GqpEtqz3UmI.10",
+    "KHVlHm5BSV0.7",
+    "MZN7lTh_CFM.8",
+    "NDdC1sHFlAc.0",
+    "VEAm3NcILiw.1",
+    "WEffbJF68ZM.4",
+    "bKOcjBT0bsM.7",
+    "cEVa2MewTNg.4",
+    "h7u8jrPW-eU.3",
+    "o6q8e-JCaSs.0"
+   ],
+   [
+    "8WwakVNNjmA.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9959.mp4": [
+  [
+   "A cartoon of a woman with blonde hair and a speech bubble.",
+   "A cartoon of a person pointing to a yellow board with a list of words on it.",
+   "A cartoon with the words fact friday on it."
+  ],
+  [
+   0.32098197916029453,
+   0.2955316525070672,
+   0.2947015189037787
+  ],
+  [
+   [
+    "Fus2OkxdQm4.7",
+    "pePAuskWmcY.20"
+   ],
+   [
+    "GsFHfzmJQjA.1"
+   ],
+   [
+    "FvsmeiLhu3s.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9969.mp4": [
+  [
+   "A picture of a chihuahua on a pink background.",
+   "A picture of two cats on a pink background.",
+   "A picture of a woman and a cat on a pink background."
+  ],
+  [
+   0.39639353148446244,
+   0.3938360905312609,
+   0.3895215590221738
+  ],
+  [
+   [
+    "FEeDV5_pFAk.9",
+    "qY-XXgVHtW8.13"
+   ],
+   [
+    "hGKa_pRqaSk.0"
+   ],
+   [
+    "_RjfRw8mUP0.0"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9979.mp4": [
+  [
+   "A group of people dressed up in costumes walking down a hallway.",
+   "A group of people dressed in costumes walking through a hallway.",
+   "A person in a space suit walking down a hallway."
+  ],
+  [
+   0.44020624888611953,
+   0.4322198429099549,
+   0.40262847545396024
+  ],
+  [
+   [
+    "omYwZS6NPYY.3"
+   ],
+   [
+    "we6nRQ6nizg.1"
+   ],
+   [
+    "bJRavLdEl8I.6"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9989.mp4": [
+  [
+   "A car is driving on a highway and the camera is mounted on the dashboard of the car.",
+   "A car is driving on a road and the camera is mounted on the dashboard of the car.",
+   "A person is driving a car on a highway and the camera is on the dashboard of the car."
+  ],
+  [
+   0.5738182408951372,
+   0.5730750537371864,
+   0.5569679614249224
+  ],
+  [
+   [
+    "qePpFy2axEA.1"
+   ],
+   [
+    "Hp8Dz-Zek2E.11"
+   ],
+   [
+    "mVrQrFj1O34.8"
+   ]
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9999.mp4": [
+  [
+   "A woman is brushing her hair with a pink brush.",
+   "A woman with long blonde hair brushing her hair with a brush.",
+   "A person brushing a long blonde hair with a brush."
+  ],
+  [
+   0.41807773021069417,
+   0.4079702143775371,
+   0.3934450959935724
+  ],
+  [
+   [
+    "LxvRNksuSdE.4",
+    "N7MNOMNPZ98.2"
+   ],
+   [
+    "vPHMu_GhwmM.9"
+   ],
+   [
+    "3RQP14kuWMI.32"
+   ]
+  ]
+ ]
+}

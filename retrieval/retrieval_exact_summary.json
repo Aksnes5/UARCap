@@ -1,0 +1,182 @@
+{
+  "10k": {
+    "raw": {
+      "n_queries": 300,
+      "corpus_clips": 10000,
+      "top1_sim": 0.2568,
+      "top5_mean_sim": 0.2475,
+      "top20_mean_sim": 0.237,
+      "mean_unique_sources_top20": 20.0,
+      "mean_max_same_source": 1.0,
+      "queries_with_repeated_source": 0,
+      "mean_unique_captions_top20": 18.8,
+      "caption_repetition_rate": 0.0602,
+      "mean_unique_topics_top20": 18.11
+    },
+    "dedup": {
+      "n_queries": 300,
+      "corpus_clips": 10000,
+      "top1_sim": 0.2568,
+      "top5_mean_sim": 0.2473,
+      "top20_mean_sim": 0.2364,
+      "mean_unique_sources_top20": 20.0,
+      "mean_max_same_source": 1.0,
+      "queries_with_repeated_source": 0,
+      "mean_unique_captions_top20": 20.0,
+      "caption_repetition_rate": 0.0,
+      "mean_unique_topics_top20": 18.19,
+      "unique_captions": 9568
+    },
+    "sec": 2.9
+  },
+  "50k": {
+    "raw": {
+      "n_queries": 300,
+      "corpus_clips": 50000,
+      "top1_sim": 0.2667,
+      "top5_mean_sim": 0.2592,
+      "top20_mean_sim": 0.2499,
+      "mean_unique_sources_top20": 20.0,
+      "mean_max_same_source": 1.0,
+      "queries_with_repeated_source": 0,
+      "mean_unique_captions_top20": 18.23,
+      "caption_repetition_rate": 0.0883,
+      "mean_unique_topics_top20": 16.47
+    },
+    "dedup": {
+      "n_queries": 300,
+      "corpus_clips": 50000,
+      "top1_sim": 0.2667,
+      "top5_mean_sim": 0.2589,
+      "top20_mean_sim": 0.2492,
+      "mean_unique_sources_top20": 20.0,
+      "mean_max_same_source": 1.0,
+      "queries_with_repeated_source": 0,
+      "mean_unique_captions_top20": 20.0,
+      "caption_repetition_rate": 0.0,
+      "mean_unique_topics_top20": 16.67,
+      "unique_captions": 45326
+    },
+    "sec": 12.1
+  },
+  "100k": {
+    "raw": {
+      "n_queries": 300,
+      "corpus_clips": 100000,
+      "top1_sim": 0.2702,
+      "top5_mean_sim": 0.2633,
+      "top20_mean_sim": 0.2548,
+      "mean_unique_sources_top20": 20.0,
+      "mean_max_same_source": 1.0,
+      "queries_with_repeated_source": 0,
+      "mean_unique_captions_top20": 17.98,
+      "caption_repetition_rate": 0.101,
+      "mean_unique_topics_top20": 15.9
+    },
+    "dedup": {
+      "n_queries": 300,
+      "corpus_clips": 100000,
+      "top1_sim": 0.2702,
+      "top5_mean_sim": 0.2629,
+      "top20_mean_sim": 0.2542,
+      "mean_unique_sources_top20": 20.0,
+      "mean_max_same_source": 1.0,
+      "queries_with_repeated_source": 0,
+      "mean_unique_captions_top20": 20.0,
+      "caption_repetition_rate": 0.0,
+      "mean_unique_topics_top20": 16.21,
+      "unique_captions": 87750
+    },
+    "sec": 23.4
+  },
+  "250k": {
+    "raw": {
+      "n_queries": 300,
+      "corpus_clips": 250000,
+      "top1_sim": 0.2754,
+      "top5_mean_sim": 0.2686,
+      "top20_mean_sim": 0.2609,
+      "mean_unique_sources_top20": 19.96,
+      "mean_max_same_source": 1.04,
+      "queries_with_repeated_source": 11,
+      "mean_unique_captions_top20": 17.59,
+      "caption_repetition_rate": 0.1205,
+      "mean_unique_topics_top20": 15.4
+    },
+    "dedup": {
+      "n_queries": 300,
+      "corpus_clips": 250000,
+      "top1_sim": 0.2754,
+      "top5_mean_sim": 0.2683,
+      "top20_mean_sim": 0.2601,
+      "mean_unique_sources_top20": 19.98,
+      "mean_max_same_source": 1.02,
+      "queries_with_repeated_source": 7,
+      "mean_unique_captions_top20": 20.0,
+      "caption_repetition_rate": 0.0,
+      "mean_unique_topics_top20": 15.76,
+      "unique_captions": 207556
+    },
+    "sec": 57.8
+  },
+  "500k": {
+    "raw": {
+      "n_queries": 300,
+      "corpus_clips": 500000,
+      "top1_sim": 0.2789,
+      "top5_mean_sim": 0.2725,
+      "top20_mean_sim": 0.2652,
+      "mean_unique_sources_top20": 19.66,
+      "mean_max_same_source": 1.29,
+      "queries_with_repeated_source": 85,
+      "mean_unique_captions_top20": 17.25,
+      "caption_repetition_rate": 0.1377,
+      "mean_unique_topics_top20": 14.81
+    },
+    "dedup": {
+      "n_queries": 300,
+      "corpus_clips": 500000,
+      "top1_sim": 0.2789,
+      "top5_mean_sim": 0.2721,
+      "top20_mean_sim": 0.2644,
+      "mean_unique_sources_top20": 19.82,
+      "mean_max_same_source": 1.17,
+      "queries_with_repeated_source": 50,
+      "mean_unique_captions_top20": 20.0,
+      "caption_repetition_rate": 0.0,
+      "mean_unique_topics_top20": 15.32,
+      "unique_captions": 395060
+    },
+    "sec": 112.9
+  },
+  "full": {
+    "raw": {
+      "n_queries": 300,
+      "corpus_clips": 1091712,
+      "top1_sim": 0.282,
+      "top5_mean_sim": 0.2762,
+      "top20_mean_sim": 0.2695,
+      "mean_unique_sources_top20": 18.76,
+      "mean_max_same_source": 1.83,
+      "queries_with_repeated_source": 166,
+      "mean_unique_captions_top20": 16.73,
+      "caption_repetition_rate": 0.1633,
+      "mean_unique_topics_top20": 13.99
+    },
+    "dedup": {
+      "n_queries": 300,
+      "corpus_clips": 1091712,
+      "top1_sim": 0.282,
+      "top5_mean_sim": 0.2758,
+      "top20_mean_sim": 0.2686,
+      "mean_unique_sources_top20": 19.35,
+      "mean_max_same_source": 1.48,
+      "queries_with_repeated_source": 124,
+      "mean_unique_captions_top20": 20.0,
+      "caption_repetition_rate": 0.0,
+      "mean_unique_topics_top20": 14.83,
+      "unique_captions": 812932
+    },
+    "sec": 238.8
+  }
+}

@@ -1,0 +1,19 @@
+# data
+dataset: howto100_feat
+root: /path/to/your/ego4d_feature/
+metadata: /path/to/your/ego4d_metadata.json
+howto_root: myphdd:s3://HT100M/internvideo_MM_L14/
+howto_metadata: /mnt/petrelfs/xujilan/data/egohowto_pairdata/htm_llama3_refined.json
+
+### egoexonce ###
+pair_num: 1
+
+### dataengine ###
+clear_narration: true
+expand_period: 10
+
+### longterm ###
+ctx_length: 300  # 77
+clip_length: 32 # 4
+
+load_from: dir

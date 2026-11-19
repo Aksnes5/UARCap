@@ -1,0 +1,3 @@
+<Video>video</Video>
+Similar video <Video>video_fusion</Video> shows caption_fusion
+This video shows

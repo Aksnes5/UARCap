@@ -1,0 +1,349 @@
+### 1. video7539  D-B=-1.737 CIDEr B=1.887 D=0.149
+GT: a group of people are being haunted in a house | a group of people are sitting around lit candles holding hands | a group of people quietly creep through a scary looking building while a scary looking ghoul stalks them
+A : a group of people are walking down a hallway
+B : a trailer for a horror movie
+D : a group of people are walking down a dark hallway with flashlights in their hands
+R : A group of people are standing in a dark room with flashlights in their hands. || A group of people are walking through a dark tunnel with flashlights in their hands. || A group of people in black hoodies and masks are walking down a dark hallway with flashlights in their hands. || A group of people are standing in a dark room with flashlights shining on them. || A group of people in black hooded jackets and masks are walking down a dark hallway with flashlights in their hands.
+
+### 2. video7859  D-B=-1.229 CIDEr B=1.234 D=0.005
+GT: there are some animated  characters   beaten  each other | there is an alien fighting in the earth | the animated characters are shown in the game star wars
+A : a man is talking about star wars
+B : a man is talking about star wars
+D : a group of people are fighting against a group of monsters in a dark and eerie cave
+R : A group of people are fighting against a giant monster in a dark and eerie environment. || A group of soldiers are fighting against alien creatures in a dark and futuristic environment. || A group of fantasy creatures are fighting each other in a dark and mystical environment. || A group of warriors are fighting against a group of monsters in a dark and eerie cave. || The characters are fighting in a dark and eerie environment.
+
+### 3. video9149  D-B=-1.216 CIDEr B=1.312 D=0.096
+GT: a boy and a girl are singing for a competition | a boy is singing a song | a group of children preform a song on stage
+A : a group of kids are singing on stage
+B : a group of kids are singing on stage
+D : a group of people are on stage and one person is giving an award to another person
+R : A group of people are standing on a stage and one person is giving an award to another person. || A group of people are on stage and one person is giving an award to another person. || A group of people are standing on a stage, and one person is giving an award to another person. || A group of people are standing on a stage and receiving an award. || A group of people are on stage and one of them is giving an award to another person.
+
+### 4. video7099  D-B=-1.195 CIDEr B=1.224 D=0.029
+GT: a car driving down the road with men inside | a car is driving on the road and a man is taking a selfie | a clip of people driving in a car set to music
+A : a man is driving a car down the road
+B : a man is driving a car down a road
+D : a person is riding a motorcycle on a road and the camera is mounted on the handlebar of the motorcycle
+R : A person is riding a motorcycle on an open road and the camera is mounted on the handlebar of the bike. || A motorcyclist is riding on a road and the camera is mounted on the handlebar of the motorcycle. || A person is riding a motorcycle on a highway during sunset and the camera is mounted on the handlebar of the bike. || A person is riding a motorized scooter on the road and the camera is mounted on the handlebar of the scooter. || A woman is riding a motorcycle on a road and the camera is mounted on her helmet, showing the view from her perspective.
+
+### 5. video7229  D-B=-1.126 CIDEr B=2.437 D=1.311
+GT: a woman advertising a youtube channel | a woman asks viewers to subscribe to her service | a woman hosts a vlog for movies
+A : a woman is talking about movies
+B : a woman is talking about movies
+D : a woman in a pink shirt is talking about movies
+R : A news screen with a woman in a blue shirt. || A screen shot of a web page with a woman in a blue shirt. || A screen shot of a news article with a woman in a blue shirt. || A screen shot of a web page with a woman in a gray shirt. || A screen shot of a news story with a woman in a red shirt.
+
+### 6. video7809  D-B=-0.985 CIDEr B=1.621 D=0.636
+GT: a animated cartoon cuts another s throat | a character in a video game gets his throat cut open | a fatality from mortal kombat is shown
+A : someone is playing a video game
+B : someone is playing a video game
+D : a video game is being played
+R : A group of cosplayers are posing for pictures at a convention. || A group of cosplayers are posing for photos at an anime convention. || A group of people dressed in cosplay costumes are posing for a photo at a convention. || A group of people dressed in cosplay costumes are posing for the camera at an anime convention. || A group of cosplayers dressed in costumes and masks are participating in an anime convention.
+
+### 7. video7619  D-B=-0.904 CIDEr B=2.038 D=1.134
+GT: a clip showcasing the president giving a speech | a man is giving a speech | a news channel is telecasting barack obama s speech
+A : barack obama is giving a speech
+B : president obama is giving a speech
+D : the president of the united states is giving a speech
+R : A young man is sitting in front of a laptop and talking to the camera while gesturing with his hands. || Joe biden is giving a speech at a podium with american flags in the background. || A man is giving a speech at a conference and another man is listening to him. || Joe biden is giving a speech at a podium with an american flag in the background. || The president of the united states, barack obama, is giving a speech at a press conference.
+
+### 8. video9009  D-B=-0.823 CIDEr B=1.187 D=0.364
+GT: a female is in a bed | a man and a woman are sitting in bed | a man and a woman talking to each other and kissing in bedroom
+A : a man and a woman are talking to each other
+B : a man is talking to a woman in a bed
+D : a man and a woman are talking to each other in a romantic scene
+R : It is a scene from a movie where a man and a woman are sitting on a couch, the man is holding the woman's hand and they are talking to each other. || It is a scene from a movie where a man and a woman are standing next to each other, looking at something in the distance. || A screen shot of a movie in hindi. || A man and a woman are talking to each other in a romantic scene. || A screen shot of a movie with a picture of a spaceship in the background.
+
+### 9. video9629  D-B=-0.786 CIDEr B=1.091 D=0.305
+GT: a car drives really fast | a car gauge is going up | a clip showcasing the panels inside of a vehicle
+A : a car dashboard is shown
+B : a person is driving a car
+D : a person is driving a car and the car s speedometer is displayed on the screen
+R : A person is driving a car and the car's speedometer is displayed on the screen. || A person is driving a car at night and the car's speedometer is displayed on the screen. || A person is driving a car on a snowy road and the car's speedometer is displayed on the screen. || A person is driving a car on a highway and the car's speedometer shows the speed of the car. || A person is driving a car at night and the car's dashboard shows various information such as speed, fuel level, and temperature.
+
+### 10. video8709  D-B=-0.764 CIDEr B=1.818 D=1.053
+GT: a boy and girl talking outside | a boy having a conversation with his girlfriend | a boy is talking to a girl outside
+A : a man is talking to a woman
+B : a man is talking to a woman
+D : a man and a woman are talking to each other
+R : A man and a woman kissing each other in front of a red background. || A man and woman are kissing in front of a green background. || A man and a woman kissing in front of a red wall. || A young man and woman are hugging each other while standing in front of a green wall. || A man and a woman are talking to each other in a romantic scene.
+
+### 11. video7789  D-B=-0.677 CIDEr B=0.693 D=0.016
+GT: a clipping of some exciting sports news | a compilation of vine videos is shown | a football player get hit
+A : football players are playing football
+B : people are playing sports
+D : a soccer player scores a goal in a soccer game
+R : A hockey player is playing on the ice and scoring a goal. || A soccer player scores a goal in a soccer game. || A soccer player scores a goal in a video game. || A hockey player is running on the field and scoring a goal. || A player scores a goal during a hockey game.
+
+### 12. video7299  D-B=-0.672 CIDEr B=0.788 D=0.117
+GT: a person adding nail polish to make something | a person creates a swirl paint design | a person is mixing some colors
+A : a woman demonstrates how to make a design on a glass
+B : a person is putting nail polish on a bottle
+D : a person is using a paintbrush to paint a small figurine
+R : A person is using a paintbrush to paint colorful beads on a table. || A person is using a paintbrush to paint a miniature figurine. || A person is using a paintbrush to paint a toy dinosaur. || A person is using a brush to paint a flower on a small bowl. || A person is using a paintbrush to paint flowers on a piece of fruit.
+
+### 13. video9679  D-B=-0.606 CIDEr B=0.671 D=0.065
+GT: a guy talks about what motherboard he chose | a man discusses boxes with computer parts in them | a man discusses the features of a sata drive
+A : a box of computer parts is shown
+B : a box of computer parts is shown
+D : a man is talking about a product
+R : A video game box with a picture of a man on it. || A box with a picture of a helicopter on it. || A laptop with a picture of a video game on it. || A picture of a video game box with a picture of a video game on it. || A laptop computer with a picture of a video game on it.
+
+### 14. video7259  D-B=-0.559 CIDEr B=0.587 D=0.028
+GT: a baseball game is being shown | a baseball player runs around and then several children play basketball in a pool | a baseball player scores a run
+A : people are playing baseball
+B : people are playing baseball
+D : a group of baseball players are playing on the field and one player catches a fly ball and runs to home plate to score a run.
+R : A group of baseball players are playing on the field and one player is swinging a bat and hitting the ball. || A group of baseball players are playing on the field and one player is throwing the ball to another player. || A group of baseball players are playing on the field and one player hits a home run. || A group of baseball players are running on the field and one player hits a home run. || A group of baseball players are playing on the field and one of them is throwing the ball to another player.
+
+### 15. video7179  D-B=-0.541 CIDEr B=0.731 D=0.189
+GT: a cartoon about three girls | a cartoon character holds up her shoe | a family at home
+A : a cartoon girl is talking to her mother
+B : cartoon characters are talking to each other
+D : a cartoon girl is talking to her mother
+R : A cartoon girl with purple hair standing in front of a tv. || A cartoon character with a tv in front of it. || A cartoon of a woman in a purple dress standing in front of a tv. || A cartoon character is holding a teddy bear in front of a tv. || There is a cartoon character standing in a room with a tv screen in the background.
+
+### 16. video7149  D-B=-0.528 CIDEr B=0.540 D=0.012
+GT: a commercial gives descriptions of virtuous characteristics of a good woman | a few brief clips of a woman showing plot points for a show | a message about too much drinking
+A : a commercial for a movie
+B : a woman is talking about a movie
+D : a group of people are sitting in a room
+R : There is a white screen with text on it. || There is a white screen with text on it, and the text is in italian. || There is a white screen with some text on it. || There is a black screen with text on it, and the text is written in white. || A woman in a white dress talking to a man on a couch.
+
+### 17. video9839  D-B=-0.494 CIDEr B=1.194 D=0.700
+GT: there is a horse is  standing alone the ground | there is a horse standing in a shelter | there is a horse standing inside the room
+A : a horse is standing in a barn
+B : an animated horse is standing in a barn
+D : a cartoon horse is standing in a stable
+R : A picture of a horse with a caption in spanish. || A picture of a yellow room with a horse in it. || A video game with a horse and a man standing next to it. || A picture of a horse and a horse standing next to each other. || A horse is standing in a field and looking at the camera.
+
+### 18. video7159  D-B=-0.488 CIDEr B=1.474 D=0.986
+GT: a clip of bill murrary on a talk show | a man is taking interview on tv | a man is talking to another man
+A : david letterman is interviewing david spade on the david letterman show
+B : bill murray is on the david letterman show
+D : a man is being interviewed on the david letterman show
+R : A young man is sitting in front of the camera and talking to the interviewer. || A man in a wheelchair is sitting in front of a camera and talking to the interviewer. || A man is sitting in a chair and talking to the interviewer. || A teenage boy is sitting in front of a camera and talking to the viewer. || A man wearing a green hat is sitting in front of the camera and talking to the viewer.
+
+### 19. video9879  D-B=-0.428 CIDEr B=1.616 D=1.188
+GT: a child singing on the television show the voice (kids) | a girl in a singing competition | a girl singing in front of judges
+A : a little girl is singing on stage
+B : a girl is singing on the voice kids
+D : a little girl is singing on stage
+R : A young girl is sitting in front of the camera and talking to the viewer. || A young girl is sitting in front of a camera and talking to the viewer. || A young girl is sitting in front of the camera and talking to the interviewer. || A young girl is standing in front of the camera and talking to the viewer. || A young girl is standing in front of the camera and talking to the interviewer.
+
+### 20. video7719  D-B=-0.395 CIDEr B=0.471 D=0.076
+GT: a intro to a movie trailer | a slideshow about a introduction | a text ad for a new cinematic series
+A : a black screen with white text on it
+B : a trailer for a movie is shown
+D : the title of a movie with a red moon in the background
+R : The title of a movie with a red moon in the background. || The cast of avengers endgame is standing together in a space-themed setting with planets and stars visible in the background. || It is a scene from a movie or anime where the characters are standing in front of a dark cityscape with neon lights shining in the background. || There is a red and purple sky with stars in the background. || The scene is set in a dark, futuristic city with neon lights and a large, glowing red eye in the center of the frame.
+
+### 21. video7749  D-B=-0.386 CIDEr B=1.119 D=0.733
+GT: a girl doing a makeup review | a girl is teaching how to apply lipstick on lips | a girl is using amore lipsticks and teaching us how to apply it
+A : a woman is applying lipstick
+B : a woman is applying lipstick
+D : a woman is applying lipstick to her lips
+R : A woman is applying red lipstick to her lips using a brush. || A young woman is applying lipstick to her lips in front of a mirror. || A woman is applying lipstick to her lips using a lipstick tube. || A woman is applying a red lipstick to her lips using a brush. || A woman is applying red lipstick to her lips using a lipstick tube.
+
+### 22. video7989  D-B=-0.381 CIDEr B=1.108 D=0.728
+GT: a boy is eating | a girl in a classroom eating some chicken | a young boy and girl eating a piece of fried food
+A : a child is eating a piece of chicken
+B : kids are eating food
+D : a child is eating a piece of chicken
+R : A man in a blue shirt eating a piece of food. || A group of children are sitting at a table and eating food. || A woman in a blue shirt holding a piece of food. || A man in a blue shirt is eating food. || A child is sitting at a table and eating food.
+
+### 23. video7089  D-B=-0.372 CIDEr B=0.443 D=0.070
+GT: a black male is talking to judges and laughing on american idol | a black man and a white man on american idol talk to the judges | a contestant talks to the panel of judges on american idol
+A : a man is playing a guitar
+B : a panel of judges on a talent show are discussing a contestant
+D : a man is playing a guitar on a talk show
+R : A woman in a blue shirt is sitting in front of the camera and talking to the interviewer. || A young woman is standing in front of the camera and talking to the interviewer. || A curly-haired woman in a blue dress is sitting in front of a microphone and talking to someone off-camera. || A woman is sitting in front of a camera and talking to the viewer she has long hair and is wearing a blue shirt. || A group of musicians and singers are performing on a tv show.
+
+### 24. video8419  D-B=-0.361 CIDEr B=0.498 D=0.137
+GT: a 3d video done in the game mine craft featuring a character carrying guns | a clip of an animated character snoring and one carrying something | a green minecraft monster carries a gun
+A : someone is playing a video game
+B : a minecraft character is talking to another minecraft character
+D : someone is playing a video game
+R : The player is in a minecraft game and they are walking through a cave. || The player is in a minecraft game and they are walking through a dark cave. || A minecraft video game with a person holding a gun. || A minecraft video game with the words love you and a picture of a heart. || A lego minecraft game with a green background.
+
+### 25. video9499  D-B=-0.343 CIDEr B=1.369 D=1.026
+GT: a clip from limney snickets | a clip of a movie two men in conversation with children there | a grey haired man holds a baby
+A : a man is talking to a woman
+B : a man is holding a knife
+D : a man is holding a knife and talking to a woman
+R : A man is holding a rabbit in his arms, and the rabbit is looking at the camera. || A picture of a sword with a caption on it. || A man is holding a large rabbit in his arms and talking to the camera. || A person is holding a deer in their hand and they are cutting the deer's ear with a knife. || A man is holding a knife and showing it to the camera while standing in front of a display case.
+
+### 26. video7449  D-B=-0.342 CIDEr B=0.522 D=0.180
+GT: there is a suit man in front of a globe | there is a suit man is talking in front of a globe | there is a suit man is talking in front of a globe
+A : a man in a suit is talking about the discovery of the new world
+B : a man in a suit is talking about the discovery of the new world
+D : a man in a blue shirt and glasses is talking about the discovery of the new world
+R : A screen shot of a website with a green arrow pointing to it. || A screen shot of a website with a green arrow pointing to a link. || A computer screen with a yellow arrow pointing to a website. || A computer screen with a yellow arrow pointing to a link. || A computer screen showing a web page with a green arrow pointing to it.
+
+### 27. video9569  D-B=-0.338 CIDEr B=1.133 D=0.794
+GT: the man is kissing his wife and the woman is seen carrying her child and both are facing face to face | a man in black shirt is kissing with a woman | there is a man kissing her wife in front of their baby
+A : a man and woman are talking to each other with a baby in between them
+B : a man is kissing a woman with a baby in her arms
+D : a man is kissing a woman on the cheek
+R : A man kissing a woman on the cheek. || A man is kissing a woman on the cheek. || A man kissing a little girl on the cheek. || A woman kissing a baby on the cheek. || A man and a woman kissing in front of a purple background.
+
+### 28. video8009  D-B=-0.336 CIDEr B=0.667 D=0.331
+GT: a boy is performing a song on the voice | a boy is performing for judges | a boy is singing let it go
+A : a girl is singing on the voice kids
+B : a young girl is singing on the voice
+D : a young girl is singing on a talent show
+R : A teenage boy is sitting in front of a camera and talking to the viewer. || A young boy is sitting in front of the camera and talking to the viewer. || A teenage boy is sitting in front of the camera and talking to the viewer. || A teenage girl is sitting in front of the camera and talking to the viewer. || A child is sitting in front of the camera and talking to the interviewer.
+
+### 29. video9939  D-B=-0.335 CIDEr B=0.368 D=0.034
+GT: a music video for a band showing a crowd of people | a man in suit is singing a song on the stage | there are some man singing his  maximum   energy 
+A : a band is performing a song
+B : a band is performing a song
+D : a group of musicians are performing on stage in front of a dark background with spotlights shining on them
+R : A group of musicians are performing on stage in a dark room with spotlights shining on them. || A group of musicians are performing on stage in front of a dark background with spotlights shining on them. || The band is performing on stage in a dimly lit room with spotlights shining on them. || A group of musicians are performing on stage in a dark and eerie atmosphere. || The band is performing on stage with lights shining on them.
+
+### 30. video8489  D-B=-0.328 CIDEr B=0.599 D=0.272
+GT: there is a man making a prawn dish in the kitchen | someone is putting a cooked shrimp meal into a white bowl | someone holding a bowl of shrimp above another bowl filled with a yellow liquid
+A : a person is cooking shrimp in a bowl
+B : a person is cooking shrimp in a bowl
+D : a person is cooking shrimp in a pan with onions and garlic
+R : A man is holding a crab in his hand and eating it. || A man is holding a large piece of crab in his hand and eating it. || A man is cooking crab in a pan and serving it to someone. || A person is cooking shrimp in a pan with onions and garlic. || A chef is cooking shrimp in a pan and serving it to a customer.
+
+### 31. video8699  D-B=-0.301 CIDEr B=0.639 D=0.338
+GT: a man in a british accent talking while a tenis match is being shown | people are gathered in the stadium to watch  tennis match | women s singles semi final and men s doubles game of badminton are progressing
+A : two tennis players are playing a match on a tennis court
+B : two men play a game of badminton in a stadium
+D : two teams are playing badminton in an indoor stadium
+R : A group of people are playing badminton in a gym. || A group of people playing badminton in a video game. || A group of people are playing badminton in an indoor stadium. || A group of people are playing badminton in an indoor sports hall. || A group of people are playing badminton in an indoor sports facility.
+
+### 32. video8729  D-B=-0.295 CIDEr B=0.414 D=0.119
+GT: a lady showing how to cook potatoes and chitlins | a person is making food with potatoes | a person is placing potatoes and vinegar in a sink
+A : a person is preparing a dish
+B : a person is preparing food
+D : a person is preparing a dish in a kitchen
+R : A person is holding a barbie doll in their hand, and the doll is wearing a pink dress. || A hand holding a barbie doll in a pink dress. || A person is holding a barbie doll in their hand, and the doll is wearing a purple dress. || A woman is holding a barbie doll in her hand, and the doll is wearing a pink dress. || A person is putting a chicken on a baking tray.
+
+### 33. video9659  D-B=-0.293 CIDEr B=1.056 D=0.763
+GT: a clip of a robot | a lady and man about to fight a villin | a movie scene is going on of avengers
+A : a woman is talking to a robot
+B : a scene from the avengers movie
+D : a woman is talking to a robot
+R : It is a scene from a movie where a robot is standing in a dark room. || A group of robots are fighting each other in a dark, futuristic environment. || A group of futuristic robots are attacking a group of humans in a dark and rainy environment. || It is a futuristic scene with a humanoid robot wearing a metallic suit standing in a dark and gloomy environment. || A group of people dressed in futuristic armor are fighting each other in a dark, futuristic setting.
+
+### 34. video8319  D-B=-0.282 CIDEr B=0.296 D=0.013
+GT: there is a man in black is walking in to the bridge | there is a man is walking on the bridge | a character dressed in a superhero costume is carrying a shield
+A : superheroes are flying in the air
+B : captain america is talking to the avengers
+D : a group of superheroes are fighting against an enemy in a dark and futuristic environment
+R : The avengers are fighting against the aliens in a dark and futuristic city. || The avengers are fighting against an enemy in a dark and futuristic setting. || The avengers are fighting against the villain in a dark and gritty environment. || The avengers are fighting a villain in a dark hallway. || A group of superheroes are fighting against an enemy in a dark and futuristic environment.
+
+### 35. video7879  D-B=-0.275 CIDEr B=0.537 D=0.262
+GT: a big war with swords fighting | a clip from a movie | a clip of a battle with swords
+A : a group of people are running
+B : a group of people are fighting
+D : a group of people are fighting on a battlefield
+R : It is a scene from a movie or a video game where soldiers are fighting in a war. || It is a scene from a movie or a video game where soldiers are fighting in a battlefield. || It is a scene from a movie or a tv show, where people are dressed in historical costumes and are fighting on a battlefield. || It is a scene from a video game, possibly a battle scene with soldiers on horseback and flags in the background. || It is a scene from a movie or tv show, possibly a historical drama about the war of 1812.
+
+### 36. video8529  D-B=-0.271 CIDEr B=0.419 D=0.148
+GT: in a room three men in suite talking with each other | three men stand in an office while cars pass by outside | a scene from an indian movie showing a bunch of men talking
+A : two men are talking to each other
+B : two men are talking to each other
+D : a group of men are standing in front of a building and one man is shaking hands with another man
+R : A group of people are standing in front of a window and shaking hands. || A group of people are standing in front of a building, and one person is shaking hands with another person. || A group of people are standing in front of a building, and one man is shaking hands with another man. || A group of men are standing in front of a building, and one man is shaking hands with another man. || A group of business people are standing in front of a large glass window and shaking hands.
+
+### 37. video8279  D-B=-0.265 CIDEr B=1.114 D=0.849
+GT: a group of pro wrestlers fight in a ring | a man flips ray mysterio and is trying to get a knockout | a wrestler gets thrown and then pinned
+A : two men are fighting in a wrestling ring
+B : two men are wrestling
+D : two men are fighting in a wrestling ring
+R : Two wrestlers are fighting in a ring and one of them is performing a move on the other. || Two wrestlers are fighting in a ring and one of them is being punched by the other. || Two wrestlers are fighting in a ring and one of them is being pinned down by the other. || A man is wrestling with another man in a wrestling ring. || A wrestler is performing a move on another wrestler in a wrestling ring.
+
+### 38. video9919  D-B=-0.264 CIDEr B=0.321 D=0.057
+GT: a cut scene from a movie | a man and a woman are talking | a man and a woman prepare to fight in a movie scene
+A : a man wearing a black jacket is talking to a woman in a living room
+B : a man is talking to a woman
+D : a man in a black overcoat is talking to a woman in a red dress
+R : It is a scene from a movie where two characters are standing in front of each other, one of them is wearing a golden crown and the other is wearing a white robe. || It is a scene from a movie where two people are standing in front of each other, one of them is looking at the other with a sad expression on their face. || It is a scene from a movie where a man and a woman are standing next to each other, looking at something in the distance. || It is a scene from a movie where a man is standing in front of a door with his hand on the handle, looking at the camera with a worried expression on his face. || It is a scene from a movie where a man and a woman are standing in front of a door, the man is looking at the woman with a seductive expression on his face and the woman is looking back at him with.
+
+### 39. video9329  D-B=-0.262 CIDEr B=0.474 D=0.212
+GT: a bearded man has his photo taken on the red carpet | a celebrity couple in photos and videos | a celebrity is posing for pictures
+A : a man and a woman are posing for pictures
+B : a woman is talking about a celebrity
+D : a man and a woman are posing for the camera
+R : A woman is holding an award and smiling at the camera. || A man is holding an award and smiling at the camera. || A woman is holding an award in her hand and smiling at the camera. || A woman is receiving an award at an event and she is smiling and posing for the camera. || A man and a woman are receiving an award at an event.
+
+### 40. video8159  D-B=-0.261 CIDEr B=0.557 D=0.297
+GT: 3d animated music scene | a 3d game play scene | a boy cartoon character
+A : a cartoon character is playing a musical instrument
+B : cartoon characters are playing music
+D : a cartoon character is playing a musical instrument
+R : A cartoon character sitting on a bench with a guitar. || A cartoon character is sitting on a bench and talking to the viewer. || A cartoon cat is sitting on a chair and waving to the camera. || A cartoon cat sitting on a bench in front of a tv. || A cartoon character is sitting on a bench in the park and waving to the viewer.
+
+### 41. video8249  D-B=-0.259 CIDEr B=1.175 D=0.916
+GT: a batman movie scene | a cut scene from batman | a movie scene shows batman fighting a man
+A : batman and bane are fighting
+B : batman is fighting bane
+D : batman and bane are fighting in a dark room
+R : A man is punching another man in a dark room. || A man is being beaten up by another man in a dark room. || A young man is being beaten by another man in a dark room. || A man is being beaten up by a group of people in a dark room. || A superhero is punching a villain in a dark alley.
+
+### 42. video7169  D-B=-0.258 CIDEr B=0.354 D=0.096
+GT: a woman washes her hands dries them with a paper towel and then wipes off a countertop | a woman wearing scrubs washes her hands with coffins around her | a mortician is wiping down her work area while describing how she handles the emotional complexities of her job
+A : a woman is working in a kitchen
+B : a woman is washing her hands
+D : a woman is working in a kitchen
+R : A group of people working in a laundry room. || A group of people are working in a commercial kitchen. || A group of people working in a medical room. || A group of medical professionals are working in a hospital kitchen. || There are several bottles filled with liquid on a shelf in a laboratory.
+
+### 43. video9099  D-B=-0.254 CIDEr B=0.732 D=0.478
+GT: a dark haired woman instructs the viewer on proper makeup application for highlighting with concealer | a woman is showing the foundation and applies it to her face with a brush | the beautiful telling their makeup features and their eyes and mascra
+A : a woman is applying makeup to her face
+B : a woman is applying makeup to her face
+D : a woman is applying makeup to her eyebrows
+R : A woman is applying makeup to her eyebrows with a brush. || A woman is applying makeup to her eyebrows using a brush. || A woman is applying makeup to her eyebrows with a makeup brush. || A woman applying makeup to her eyebrows with a brush. || A woman is applying eyebrow makeup with a brush.
+
+### 44. video9029  D-B=-0.254 CIDEr B=0.394 D=0.141
+GT: a compilation of vine sports videos | a hockey players makes a goal | a player is putting a basket ball into the basket from distance
+A : sports highlights are being shown
+B : people are playing sports
+D : there is a basketball game being played on a court
+R : There is a basketball game being played on a court, and the players are wearing different uniforms. || A basketball game is being played on a court, and the players are wearing different uniforms. || There is a basketball game being played on a court, and the players are wearing different colored jerseys. || There is a basketball game being played on a court, and the players are jumping and dunking the ball. || A basketball game is being played and the players are wearing different jerseys.
+
+### 45. video9549  D-B=-0.246 CIDEr B=0.674 D=0.427
+GT: there is a user interface with full functioning options | there is a user interface with good and easy appearance | there is someone using a software to do something
+A : a man is showing how to use a computer program
+B : a person is using a computer program
+D : a person is working on a computer
+R : The user is using a music production software on a computer screen with a black background, and they are able to understand the visual content that the user provides. || The user is using a music production software on a computer screen, and they are able to understand the visual content that the user provides. || The user is working on a computer screen with a music production software, and they are able to understand the visual content that the user provides. || The user is playing a video game in a dark room with a blue sky and stars in the background. || A person is using a music production software and is able to understand the visual content that the user provides.
+
+### 46. video9609  D-B=-0.237 CIDEr B=0.248 D=0.011
+GT: two pilots were travelled in space and relieved from some dangerous incident | a man in a space ship with a helmet on | two men are in a space ship with helmets on
+A : a man in a space suit is talking to another man in a space suit
+B : a man in a space suit is talking to another man in a space suit
+D : a man in a spacesuit is talking to another man in a spacesuit
+R : The player is playing a video game in which they are fighting against other players in a futuristic sci-fi setting. || The player is in a futuristic sci-fi game and driving a futuristic car. || The character is playing a video game in a futuristic space station. || The gamer is playing a video game in which they are fighting against enemies in a futuristic space setting. || The character is playing a video game in a futuristic setting with a spaceship and laser guns.
+
+### 47. video8519  D-B=-0.232 CIDEr B=1.046 D=0.815
+GT: a car drives down the highway with other cars | a car is displayed from several angles on the road | a person is discussing a car
+A : a car is driving down the road
+B : a car is driving down the road
+D : a car is driving on the road
+R : A person is driving a car on a highway at night, and there are other cars on the road. || A person is driving a car on a highway at night, and there are several cars on the road. || A person is driving a car on a highway and the camera is on the dashboard of the car. || A person is driving a car on a highway and the camera is mounted on the dashboard of the car. || A person is driving a car on a highway at night, and there is a display on the dashboard of the car.
+
+### 48. video8169  D-B=-0.223 CIDEr B=1.099 D=0.875
+GT: a man builds something | a man doing wiring for equipment | a man explains how to wire a car
+A : a man is working on a car
+B : a man is working on a car
+D : a person is working on a car
+R : A person is using a screwdriver to open the door of a car. || A person is using a key to open the door of a car. || A person is using a screwdriver to remove the door handle of a car. || A person is using a key to unlock the door of a white car. || A person is using a screwdriver to open a lock on a door.
+
+### 49. video9749  D-B=-0.209 CIDEr B=0.618 D=0.409
+GT: a clip of a woman cutting up vegetables giving instructions | a person is chopping peppers | a person is cutting a vegetable with a knife
+A : a woman cuts a green pepper into small pieces with a sharp knife
+B : a woman is chopping vegetables in a kitchen
+D : a person is cutting vegetables in a bowl with a knife
+R : A person is cutting vegetables on a plate with a knife. || A person is cutting vegetables in a bowl with a knife. || A person is cutting vegetables on a green cutting board with a knife. || A person is cutting vegetables on a wooden chopping board with a knife. || A person is cutting lettuce on a white plate with a knife.
+
+### 50. video9259  D-B=-0.201 CIDEr B=0.398 D=0.197
+GT: a 1970 dodge datona is showecased in the video | a black dodge  daytona from 1970 is on display | a car has been parked in front of the building
+A : a car is parked in a parking lot
+B : a car is being shown
+D : a car is parked in a parking lot
+R : A person is opening the door of a car and checking the inside of the car. || A person is opening the door of a blue car with a key. || A person is opening the door of a yellow car and getting into the car. || A person is opening the door of a blue car in a garage. || A person is opening the door of a car and taking out a yellow water bottle.

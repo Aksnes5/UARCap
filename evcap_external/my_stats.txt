@@ -1,0 +1,76 @@
+========== 开始构建模型 ==========
+topn: 3
+video_topn: 3
+verb_noun_topn: 3
+Loading VIT
+vision encoder is frozen
+Loading VIT Done
+Loading Q-Former
+Qformer is frozen
+Loading Q-Former Done
+ext_data: ext_data/rerank_sentence_by_sentence_as_inference_rouge_quality_no_duplicate_with_video_ids.json
+sim scores: ext_data/msrvtt_train_allGT_avg_frames_xclip_retrieve_20_captions_no_duplicate_sim_scores.json
+video ext data: ext_data/msrvtt_video_similarity_top20.json
+verb_noun ext data: ext_data/retrieved_video_verbs_nouns_per_video.json
+predictions: ext_data/msrvtt_predictions.json
+Loading LLAMA
+LLAMA is frozen
+Loading LLAMA Done
+Load 1 training prompts
+Prompt Example 
+###Human: <Video><VideoHere></Video> 
+Similar videos <Video><VideoHere></Video> show 
+{}.
+Relevant actions and objects include: {}.
+This video shows
+ ###Assistant: 
+Loading video_Q-Former
+video_Qformer is frozen
+Loading video_Q-Former Done
+Loading basepretrained video_Q-Former weights
+
+========== 参数统计 ==========
+模型总参数量: 7.862 B (7862.39 M)
+可训练参数量: 14.04 M (0.18%)
+--------------------------------------------------
+各子模块（可训练参数）:
+  visual_encoder                : (全部冻结)
+  ln_vision                     : (全部冻结)
+  Qformer                       : (全部冻结)
+  llama_model                   : (全部冻结)
+  llama_proj                    :     3.15 M
+  video_frame_position_embedding:     0.01 M
+  video_Qformer                 : (全部冻结)
+  attn                          :     2.36 M
+  update_gate                   :     1.18 M
+  reset_gate                    :     1.18 M
+  new_transform                 :     1.18 M
+  fusion_llama_proj             :     3.15 M
+  video_retri_proj              :     0.59 M
+  film_gamma_net                :     0.59 M
+  film_beta_net                 :     0.59 M
+  token_conf_net                :     0.00 M
+
+顶层可训练参数（如 query_tokens 等）:
+  query_tokens                  :    24.58 K (24576)
+  video_query_tokens            :    24.58 K (24576)
+
+========== 模块级 FLOPs 统计 (单位: GFLOPs) ==========
+  [✓] Visual Encoder (ViT)           FLOPs: 3097.729 GFLOPs, Params: 753.473M
+  [✓] Image Q-Former                 FLOPs: 100.517 GFLOPs, Params: 105.138M
+  [✓] Video Q-Former                 FLOPs: 1.737 GFLOPs, Params: 18.905M
+  [✓] LLAMA Projection               FLOPs: 0.101 GFLOPs, Params: 0.000B
+  [✓] Cross-Attention (attn)         FLOPs: 0.000 MFLOPs, Params: 0.000B
+  [✓] Update Gate                    FLOPs: 0.038 GFLOPs, Params: 1.180M
+  [✓] Reset Gate                     FLOPs: 0.038 GFLOPs, Params: 1.180M
+  [✓] New Transform                  FLOPs: 0.038 GFLOPs, Params: 1.180M
+  [✓] Fusion LLAMA Proj              FLOPs: 0.101 GFLOPs, Params: 0.000B
+  [✓] Video Retri Proj               FLOPs: 0.019 GFLOPs, Params: 592.128K
+  [✓] Film Gamma Net                 FLOPs: 0.019 GFLOPs, Params: 590.592K
+  [✓] Film Beta Net                  FLOPs: 0.019 GFLOPs, Params: 0.000B
+  [✓] Token Conf Net                 FLOPs: 0.025 MFLOPs, Params: 769.000B
+  [✓] LLAMA (7B)                     FLOPs: 845.706 GFLOPs, Params: 6.607G
+
+注：以上为各模块单次前向 FLOPs，总 FLOPs 可将各 G 值直接相加。生成时 LLM 部分需乘以生成 token 数。
+
+统计完成，结果已保存至: my_stats.txt

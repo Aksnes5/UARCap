@@ -1,0 +1,1838 @@
+{
+ "D": {
+  "mean_diff": 0.0214,
+  "ci95": [
+   -0.0041,
+   0.0476
+  ],
+  "p_perm": 0.10289,
+  "bins": {
+   "gt+1": 3,
+   "p0.2_1": 24,
+   "pm0.2": 255,
+   "m1_-0.2": 17,
+   "lt-1": 1
+  },
+  "worst20": [
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8929.mp4",
+    "diff": -1.3789,
+    "H5": "gameplay footage of someone playing a video game",
+    "base": "a man is playing a video game",
+    "GT": [
+     "a deer gets hit by a car then a person",
+     "a deer in a video game gets hit by a car",
+     "a deer is running across a road in a video game"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9289.mp4",
+    "diff": -0.8833,
+    "H5": "a woman in a red dress walks down a runway",
+    "base": "models are walking down the runway at a fashion show",
+    "GT": [
+     "there is a cat walk with two women one is dressing in red and the other is in brown",
+     "some woman perform fashion show on the tv channel",
+     "models are walking on a catwalk during a fashion show"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7029.mp4",
+    "diff": -0.7189,
+    "H5": "spongebob is talking on the phone",
+    "base": "spongebob and squidward are talking on the phone",
+    "GT": [
+     "a cartoon character picks up a phone",
+     "a cartoon character speaks on a phone",
+     "a cartoon squid is using the phone"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9759.mp4",
+    "diff": -0.6131,
+    "H5": "a person is playing with toys",
+    "base": "a person is opening a box of toys",
+    "GT": [
+     "a clip of someone taking toys out of a gift set",
+     "a man is opening a toy egg",
+     "a man is playing with some toys"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8939.mp4",
+    "diff": -0.6004,
+    "H5": "a woman is talking about an airplane",
+    "base": "a woman is talking about a plane",
+    "GT": [
+     "a huge airplane is being shown while a woman talks about having to fly one side of the country to the other",
+     "a clip of the us air force is being displayed a plane is prepared to takeoff",
+     "a plane from the us air force is being displayed a woman speaks about the plane"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7549.mp4",
+    "diff": -0.5575,
+    "H5": "a woman is talking to the camera",
+    "base": "a woman in a red shirt is talking to the camera",
+    "GT": [
+     "a transgendered person speaks about taking care of their dogs and how they shampoo and condition their dogs in between grooming sessions",
+     "a transvestite shows what she bought for her dog including shampoo and conditioner made by martha stuart",
+     "a blonde woman sits in a grey chair and talks about things she buys for her dogs"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7729.mp4",
+    "diff": -0.5274,
+    "H5": "a man in a suit is talking to a woman in a suit",
+    "base": "a man is talking on the news",
+    "GT": [
+     "a man defends himself on the air",
+     "a man is talking about lobbyists on the news",
+     "a man is talking"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8949.mp4",
+    "diff": -0.4014,
+    "H5": "a woman in a bikini is swimming underwater",
+    "base": "a woman is swimming underwater in a pool",
+    "GT": [
+     "a woman dives into a pool of water and removes her clothing underwater",
+     "a woman is diving into a pool while wearing a dress",
+     "a woman falls head first into a pool where she swims off her dress"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8639.mp4",
+    "diff": -0.3093,
+    "H5": "a woman is applying eyeliner to her eyes",
+    "base": "a woman is applying makeup to her eyes",
+    "GT": [
+     "a woman applies thin layers of black liquid liner to her left eye to make a cat eye look",
+     "there is a woman touching her eyebrow with black colr",
+     "a model demostrates how to apply mascara to the eyes while wearing purple fingernail polish"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7659.mp4",
+    "diff": -0.306,
+    "H5": "a cartoon of a boat going over a bridge with a tower in the background",
+    "base": "a cartoon of a boat going over a bridge",
+    "GT": [
+     "a bridge is depicted in the water as a popular nursery rhyme song plays in the background",
+     "a cartoon about the song london bridges",
+     "a cartoon based on london bridge is being shown"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8589.mp4",
+    "diff": -0.2875,
+    "H5": "there is a woman is kissing another woman",
+    "base": "two women are kissing each other passionately",
+    "GT": [
+     "2 women are kissing while a song is playing",
+     "a video song in which two girls loving each other",
+     "a woman is talking"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9309.mp4",
+    "diff": -0.2743,
+    "H5": "shrimp is being cooked on a grill",
+    "base": "a plate of food with shrimp and other ingredients on it",
+    "GT": [
+     "a person is eating shrimp salad",
+     "there is someone serving a crab dish",
+     "a person is showing the results from a shrimp salad recipe"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9469.mp4",
+    "diff": -0.2586,
+    "H5": "a group of football players celebrating a touchdown",
+    "base": "a man is talking about a football game",
+    "GT": [
+     "a football going is going on",
+     "a football player is taking rest and then talks to a reporter",
+     "a football player sits on the bench"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8099.mp4",
+    "diff": -0.2458,
+    "H5": "a group of people are swimming in the ocean",
+    "base": "a group of people are swimming in the water",
+    "GT": [
+     "a camera flies over a landscape",
+     "a camera flies over waterscapes",
+     "a camera is being used for a flyover shot of a lake"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7269.mp4",
+    "diff": -0.2367,
+    "H5": "cartoon characters are singing a song",
+    "base": "a cartoon character is singing",
+    "GT": [
+     "a cartoon boy holds his hands to his face",
+     "a cartoon character seems to be singing in an animated music video",
+     "a cartoon character wearing a hat and a tie is singing"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9409.mp4",
+    "diff": -0.2265,
+    "H5": "a bowl of stir fried shrimp and vegetables",
+    "base": "a bowl of noodles with shrimp and vegetables in it",
+    "GT": [
+     "some one showing the video of prawn noodles soup",
+     "its a green vegetables and prawns named singapore prawn soup",
+     "there is a prawn food in a plate on the table"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7329.mp4",
+    "diff": -0.2151,
+    "H5": "a cartoon dog is jumping on a trampoline",
+    "base": "a cartoon dog is playing on a playground",
+    "GT": [
+     "a boy and his dog are at a playground and the dog goes on the slide in this cartoon",
+     "a boy is playing with a dog in a cartoon",
+     "a boy is playing with his puppy at the park"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7139.mp4",
+    "diff": -0.2101,
+    "H5": "an old woman is talking",
+    "base": "a woman is talking",
+    "GT": [
+     "a clip of an elderly woman talking on a tv show",
+     "a grand old lady is talking about education",
+     "a video of a lenin quote about teaching then a hospital with a pile of babies"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9819.mp4",
+    "diff": -0.1879,
+    "H5": "a news reporter talks about a police officer being shot",
+    "base": "a news reporter talks about a police shooting",
+    "GT": [
+     "a clip of a news reporter on abc",
+     "a man introduces a news video clip",
+     "a man is reporting on a police officer holding back teenagers"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8879.mp4",
+    "diff": -0.1791,
+    "H5": "a man is talking to a woman in a car",
+    "base": "a woman is talking to a man in a car",
+    "GT": [
+     "there is a woman is talking to a person",
+     "there is a woman is talking with a man in a vehicle",
+     "there is a woman is talking with a man in a vehicle"
+    ]
+   }
+  ],
+  "best20": [
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7169.mp4",
+    "diff": 0.2582,
+    "H5": "a woman is washing her hands",
+    "base": "a woman is working in a kitchen",
+    "GT": [
+     "a woman washes her hands dries them with a paper towel and then wipes off a countertop",
+     "a woman wearing scrubs washes her hands with coffins around her",
+     "a mortician is wiping down her work area while describing how she handles the emotional complexities of her job"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8529.mp4",
+    "diff": 0.2714,
+    "H5": "two men are talking to each other",
+    "base": "a group of men are standing in front of a building and one man is shaking hands with another man",
+    "GT": [
+     "in a room three men in suite talking with each other",
+     "three men stand in an office while cars pass by outside",
+     "a scene from an indian movie showing a bunch of men talking"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7829.mp4",
+    "diff": 0.3011,
+    "H5": "a woman is talking about the human body",
+    "base": "a woman is drawing on a white board",
+    "GT": [
+     "a lady is showing a selecton in a table top projector  a seleton is kept behing the lady",
+     "a lady is showing some science project",
+     "a lady pointing out things on a human bones diagram"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7869.mp4",
+    "diff": 0.3202,
+    "H5": "a person is showing how to use a selfie stick",
+    "base": "a person is demonstrating how to use a selfie stick",
+    "GT": [
+     "a person describing a selfie stick to take your own pictures",
+     "a man manipulates and adjusts a metal object with a green handle",
+     "a man uses his hand to get a better view on a selfie stick for the camera"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9569.mp4",
+    "diff": 0.3383,
+    "H5": "a man is kissing a woman with a baby in her arms",
+    "base": "a man is kissing a woman on the cheek",
+    "GT": [
+     "the man is kissing his wife and the woman is seen carrying her child and both are facing face to face",
+     "a man in black shirt is kissing with a woman",
+     "there is a man kissing her wife in front of their baby"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9619.mp4",
+    "diff": 0.3912,
+    "H5": "a cartoon of a little girl holding an umbrella and dancing in the rain",
+    "base": "a cartoon girl is holding an umbrella",
+    "GT": [
+     "a cartoon of people playing in the rain",
+     "a childrens cartoon animation they are singing the nursery rhyme rain rain go away",
+     "a girl and boy playing in the rain while singing"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7359.mp4",
+    "diff": 0.4237,
+    "H5": "a man is punching a child in a boxing ring",
+    "base": "a man is teaching a kid how to box",
+    "GT": [
+     "a child is boxing his father",
+     "a man boxing with his child",
+     "child training to box"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9009.mp4",
+    "diff": 0.4624,
+    "H5": "a man and a woman are talking to each other",
+    "base": "a man and a woman are talking to each other in a romantic scene",
+    "GT": [
+     "a female is in a bed",
+     "a man and a woman are sitting in bed",
+     "a man and a woman talking to each other and kissing in bedroom"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9589.mp4",
+    "diff": 0.5404,
+    "H5": "two women are singing and playing instruments",
+    "base": "two women are singing and dancing",
+    "GT": [
+     "3 country music singers in a music video",
+     "a girl is singing along with her band",
+     "a group is performing a song"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7879.mp4",
+    "diff": 0.5579,
+    "H5": "a group of people are fighting in a battle",
+    "base": "a group of people are fighting on a battlefield",
+    "GT": [
+     "a big war with swords fighting",
+     "a clip from a movie",
+     "a clip of a battle with swords"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7259.mp4",
+    "diff": 0.5592,
+    "H5": "people are playing baseball",
+    "base": "a group of baseball players are playing on the field and one player catches a fly ball and runs to home plate to score a run.",
+    "GT": [
+     "a baseball game is being shown",
+     "a baseball player runs around and then several children play basketball in a pool",
+     "a baseball player scores a run"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7159.mp4",
+    "diff": 0.5768,
+    "H5": "a man is being interviewed by david letterman",
+    "base": "a man is being interviewed on the david letterman show",
+    "GT": [
+     "a clip of bill murrary on a talk show",
+     "a man is taking interview on tv",
+     "a man is talking to another man"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9839.mp4",
+    "diff": 0.6002,
+    "H5": "a horse is standing in a barn",
+    "base": "a cartoon horse is standing in a stable",
+    "GT": [
+     "there is a horse is  standing alone the ground",
+     "there is a horse standing in a shelter",
+     "there is a horse standing inside the room"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7099.mp4",
+    "diff": 0.6091,
+    "H5": "a person is riding a car on the road",
+    "base": "a person is riding a motorcycle on a road and the camera is mounted on the handlebar of the motorcycle",
+    "GT": [
+     "a car driving down the road with men inside",
+     "a car is driving on the road and a man is taking a selfie",
+     "a clip of people driving in a car set to music"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7789.mp4",
+    "diff": 0.6767,
+    "H5": "people are playing sports",
+    "base": "a soccer player scores a goal in a soccer game",
+    "GT": [
+     "a clipping of some exciting sports news",
+     "a compilation of vine videos is shown",
+     "a football player get hit"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9229.mp4",
+    "diff": 0.7754,
+    "H5": "a man is eating something",
+    "base": "two men are cooking in a kitchen",
+    "GT": [
+     "a guy cuts the bottom off an ice cream carton and makes an ice cream sandwich out of it",
+     "a guy is cutting up an old ice cream box and tried to make an ice cream sandwich out of it",
+     "a man creates an ice cream sandwich the other man is really surprised at how he did it"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9629.mp4",
+    "diff": 0.7862,
+    "H5": "a person is driving a car",
+    "base": "a person is driving a car and the car s speedometer is displayed on the screen",
+    "GT": [
+     "a car drives really fast",
+     "a car gauge is going up",
+     "a clip showcasing the panels inside of a vehicle"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7599.mp4",
+    "diff": 1.0868,
+    "H5": "kids are jumping on a blue mat",
+    "base": "a man is jumping on a trampoline in a backyard with trees and a blue sky in the background",
+    "GT": [
+     "a bunch of kids hop around on a blue mat",
+     "a girl is doing star jumps",
+     "a girl jumping in the park"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9149.mp4",
+    "diff": 1.2162,
+    "H5": "a group of kids are singing on stage",
+    "base": "a group of people are on stage and one person is giving an award to another person",
+    "GT": [
+     "a boy and a girl are singing for a competition",
+     "a boy is singing a song",
+     "a group of children preform a song on stage"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7859.mp4",
+    "diff": 1.2291,
+    "H5": "a man is talking about star wars",
+    "base": "a group of people are fighting against a group of monsters in a dark and eerie cave",
+    "GT": [
+     "there are some animated  characters   beaten  each other",
+     "there is an alien fighting in the earth",
+     "the animated characters are shown in the game star wars"
+    ]
+   }
+  ]
+ },
+ "CF": {
+  "mean_diff": 0.0103,
+  "ci95": [
+   -0.0124,
+   0.0329
+  ],
+  "p_perm": 0.36996,
+  "bins": {
+   "gt+1": 0,
+   "p0.2_1": 21,
+   "pm0.2": 265,
+   "m1_-0.2": 12,
+   "lt-1": 2
+  },
+  "worst20": [
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8929.mp4",
+    "diff": -1.3789,
+    "H5": "gameplay footage of someone playing a video game",
+    "base": "a man is playing a video game",
+    "GT": [
+     "a deer gets hit by a car then a person",
+     "a deer in a video game gets hit by a car",
+     "a deer is running across a road in a video game"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9759.mp4",
+    "diff": -1.0437,
+    "H5": "a person is playing with toys",
+    "base": "a person is opening a toy box",
+    "GT": [
+     "a clip of someone taking toys out of a gift set",
+     "a man is opening a toy egg",
+     "a man is playing with some toys"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9599.mp4",
+    "diff": -0.755,
+    "H5": "a man is bowling in a bowling alley",
+    "base": "a man is bowling",
+    "GT": [
+     "a bowler throws a bowling ball and hits a spare",
+     "a countdown of impressive plays on espn",
+     "a man bowls in a competition"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8939.mp4",
+    "diff": -0.6004,
+    "H5": "a woman is talking about an airplane",
+    "base": "a woman is talking about a plane",
+    "GT": [
+     "a huge airplane is being shown while a woman talks about having to fly one side of the country to the other",
+     "a clip of the us air force is being displayed a plane is prepared to takeoff",
+     "a plane from the us air force is being displayed a woman speaks about the plane"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7549.mp4",
+    "diff": -0.5575,
+    "H5": "a woman is talking to the camera",
+    "base": "a woman in a red shirt is talking to the camera",
+    "GT": [
+     "a transgendered person speaks about taking care of their dogs and how they shampoo and condition their dogs in between grooming sessions",
+     "a transvestite shows what she bought for her dog including shampoo and conditioner made by martha stuart",
+     "a blonde woman sits in a grey chair and talks about things she buys for her dogs"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9739.mp4",
+    "diff": -0.5368,
+    "H5": "a person is cooking food in a frying pan with onions and mushrooms",
+    "base": "a person is cooking a dish in a frying pan on a stove",
+    "GT": [
+     "there is a woman is making a dish in a stove",
+     "there is a woman is making a dish little bit spicy",
+     "man is cooking a special type of pasta in the kitchen"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7069.mp4",
+    "diff": -0.4546,
+    "H5": "a person is drawing a starfish",
+    "base": "a person is drawing a picture",
+    "GT": [
+     "a man drawing a star on a piece of paper",
+     "a man is drawing a circle and a star",
+     "a man is drawing on a piece of paper"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9549.mp4",
+    "diff": -0.3614,
+    "H5": "a person is working on a computer",
+    "base": "a man is showing how to use a computer program",
+    "GT": [
+     "there is a user interface with full functioning options",
+     "there is a user interface with good and easy appearance",
+     "there is someone using a software to do something"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9309.mp4",
+    "diff": -0.268,
+    "H5": "shrimp is being cooked on a grill",
+    "base": "a plate of food with shrimp and vegetables on it",
+    "GT": [
+     "a person is eating shrimp salad",
+     "there is someone serving a crab dish",
+     "a person is showing the results from a shrimp salad recipe"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9399.mp4",
+    "diff": -0.261,
+    "H5": "a person is preparing a dish by adding vegetables and seafood in a bowl",
+    "base": "a woman is cooking a dish with shrimp and vegetables",
+    "GT": [
+     "a nice food is placed in a bowl kept in table",
+     "vegetables are nicely cut and placed in  a bowl kept in the table",
+     "its a prawn curry with lot od vegetables"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7409.mp4",
+    "diff": -0.2498,
+    "H5": "a football game is being played on a field",
+    "base": "people are playing sports",
+    "GT": [
+     "a baseball player hits a home run",
+     "a bunch of small sport clips with songs playing the background",
+     "a football team playing football on a field"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9329.mp4",
+    "diff": -0.2275,
+    "H5": "a man and a little girl are posing for pictures",
+    "base": "a woman is talking about a celebrity",
+    "GT": [
+     "a bearded man has his photo taken on the red carpet",
+     "a celebrity couple in photos and videos",
+     "a celebrity is posing for pictures"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7329.mp4",
+    "diff": -0.2151,
+    "H5": "a cartoon dog is jumping on a trampoline",
+    "base": "a cartoon dog is playing on a playground",
+    "GT": [
+     "a boy and his dog are at a playground and the dog goes on the slide in this cartoon",
+     "a boy is playing with a dog in a cartoon",
+     "a boy is playing with his puppy at the park"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7139.mp4",
+    "diff": -0.2101,
+    "H5": "an old woman is talking",
+    "base": "a woman is talking",
+    "GT": [
+     "a clip of an elderly woman talking on a tv show",
+     "a grand old lady is talking about education",
+     "a video of a lenin quote about teaching then a hospital with a pile of babies"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9339.mp4",
+    "diff": -0.1849,
+    "H5": "a llama is standing in a field",
+    "base": "llamas and alpacas are grazing in a field",
+    "GT": [
+     "animals are beautifully shot with or without their knowledge",
+     "different animals are shown in this video clip",
+     "there is some animals on the grass field"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8879.mp4",
+    "diff": -0.1791,
+    "H5": "a man is talking to a woman in a car",
+    "base": "a woman is talking to a man in a car",
+    "GT": [
+     "there is a woman is talking to a person",
+     "there is a woman is talking with a man in a vehicle",
+     "there is a woman is talking with a man in a vehicle"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9409.mp4",
+    "diff": -0.1785,
+    "H5": "a bowl of stir fried shrimp and vegetables",
+    "base": "a bowl of shrimp and vegetables in a white bowl",
+    "GT": [
+     "some one showing the video of prawn noodles soup",
+     "its a green vegetables and prawns named singapore prawn soup",
+     "there is a prawn food in a plate on the table"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7319.mp4",
+    "diff": -0.1679,
+    "H5": "a cartoon about a monkey and a gorilla",
+    "base": "muppet babies are watching a movie",
+    "GT": [
+     "a cartoon character flies around in a helicopter",
+     "a cartoon gorilla is climbing a building",
+     "a children video that showed oscar the grouch"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7529.mp4",
+    "diff": -0.1441,
+    "H5": "a man is talking to the camera",
+    "base": "a man is talking about education",
+    "GT": [
+     "a few words in a presentation",
+     "a woman discusses what you can do with the web",
+     "a woman explains how the internet helps education"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8769.mp4",
+    "diff": -0.1434,
+    "H5": "a man in a yellow shirt and a man in a white shirt are fighting",
+    "base": "a man in a yellow shirt is hitting a man in a black shirt with a stick",
+    "GT": [
+     "a man is talking about a video of a man sneaking up behind someone and hitting him",
+     "a man with black t-shirt explaining something in front of the camera",
+     "there is a black tshirt man is talking from a studio"
+    ]
+   }
+  ],
+  "best20": [
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9609.mp4",
+    "diff": 0.2369,
+    "H5": "a man in a space suit is talking to another man in a space suit",
+    "base": "a man in a spacesuit is talking to another man in a spacesuit",
+    "GT": [
+     "two pilots were travelled in space and relieved from some dangerous incident",
+     "a man in a space ship with a helmet on",
+     "two men are in a space ship with helmets on"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8239.mp4",
+    "diff": 0.239,
+    "H5": "a group of athletes are running in a track and field competition",
+    "base": "a group of athletes are running on a track",
+    "GT": [
+     "track runners running swiftly around the race track in a large arena",
+     "the athletics race of men is started while the audience in the stadium is watching it",
+     "a group of men in shorts and tank tops running around a track in a stadium as part of a race"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8079.mp4",
+    "diff": 0.2463,
+    "H5": "a group of people are rowing a boat in a race on the water",
+    "base": "a group of people are rowing a boat in a race on the water they are wearing different colors of shirts, and some of them are we",
+    "GT": [
+     "a competetion kayak race",
+     "a group of people are racing in their boats",
+     "a man talks about evaluating boat rowers"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9009.mp4",
+    "diff": 0.2796,
+    "H5": "a man and a woman are talking to each other",
+    "base": "a man and a woman are talking to each other in a bedroom",
+    "GT": [
+     "a female is in a bed",
+     "a man and a woman are sitting in bed",
+     "a man and a woman talking to each other and kissing in bedroom"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9499.mp4",
+    "diff": 0.2915,
+    "H5": "a man is holding a knife and talking to a woman",
+    "base": "a man is holding a knife to a woman s throat",
+    "GT": [
+     "a clip from limney snickets",
+     "a clip of a movie two men in conversation with children there",
+     "a grey haired man holds a baby"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9199.mp4",
+    "diff": 0.3227,
+    "H5": "a man is talking about a cartoon",
+    "base": "a man is talking about a video game",
+    "GT": [
+     "a boy walking in an road",
+     "a car is driving down the road",
+     "a cartoon character stands in a road"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8509.mp4",
+    "diff": 0.3244,
+    "H5": "a group of people are playing soccer",
+    "base": "a group of soccer players are hugging and congratulating each other after a game",
+    "GT": [
+     "a fight between a group of boys",
+     "a fight breaking out during a soccer game",
+     "a fighton a soccer field"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7879.mp4",
+    "diff": 0.3327,
+    "H5": "a group of people are fighting in a battle",
+    "base": "a group of people are fighting in the middle of a battle",
+    "GT": [
+     "a big war with swords fighting",
+     "a clip from a movie",
+     "a clip of a battle with swords"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9619.mp4",
+    "diff": 0.3912,
+    "H5": "a cartoon of a little girl holding an umbrella and dancing in the rain",
+    "base": "a cartoon girl is holding an umbrella",
+    "GT": [
+     "a cartoon of people playing in the rain",
+     "a childrens cartoon animation they are singing the nursery rhyme rain rain go away",
+     "a girl and boy playing in the rain while singing"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7869.mp4",
+    "diff": 0.4614,
+    "H5": "a person is showing how to use a selfie stick",
+    "base": "a man demonstrates how to use a selfie stick",
+    "GT": [
+     "a person describing a selfie stick to take your own pictures",
+     "a man manipulates and adjusts a metal object with a green handle",
+     "a man uses his hand to get a better view on a selfie stick for the camera"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7489.mp4",
+    "diff": 0.4726,
+    "H5": "a tank is being filmed for a movie",
+    "base": "a group of people are working together to transport a large piece of machinery on a truck",
+    "GT": [
+     "a film shooting group take the particular scene with the main hero of the movie",
+     "there is someone working in shooting loction",
+     "a crew is shooting a motion picture with trolley camera"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9579.mp4",
+    "diff": 0.4955,
+    "H5": "two men in white coats are talking to each other",
+    "base": "a man is talking to another man in a white lab coat",
+    "GT": [
+     "a man and another man speak to each other in a room",
+     "guys talking with kid voices",
+     "people act while being dubbed over by young children"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9439.mp4",
+    "diff": 0.496,
+    "H5": "a person is drawing squidward",
+    "base": "a man draws squidward from spongebob squarepants",
+    "GT": [
+     "a man doing a drawing demonstration",
+     "a man draws a cartoon",
+     "a man draws the spongebob character squidward in pencil"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7099.mp4",
+    "diff": 0.6375,
+    "H5": "a person is riding a car on the road",
+    "base": "a person is riding a motorcycle on a highway during sunset and the camera is mounted on the helmet of the rider, showing the view from",
+    "GT": [
+     "a car driving down the road with men inside",
+     "a car is driving on the road and a man is taking a selfie",
+     "a clip of people driving in a car set to music"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7789.mp4",
+    "diff": 0.6767,
+    "H5": "people are playing sports",
+    "base": "a soccer player scores a goal in a soccer game",
+    "GT": [
+     "a clipping of some exciting sports news",
+     "a compilation of vine videos is shown",
+     "a football player get hit"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7599.mp4",
+    "diff": 0.7328,
+    "H5": "kids are jumping on a blue mat",
+    "base": "a boy and a girl are jumping on a blue mat on the grass",
+    "GT": [
+     "a bunch of kids hop around on a blue mat",
+     "a girl is doing star jumps",
+     "a girl jumping in the park"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9229.mp4",
+    "diff": 0.7754,
+    "H5": "a man is eating something",
+    "base": "two men are cooking in a kitchen",
+    "GT": [
+     "a guy cuts the bottom off an ice cream carton and makes an ice cream sandwich out of it",
+     "a guy is cutting up an old ice cream box and tried to make an ice cream sandwich out of it",
+     "a man creates an ice cream sandwich the other man is really surprised at how he did it"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7669.mp4",
+    "diff": 0.8243,
+    "H5": "a model is walking down the runway at a fashion show",
+    "base": "a model is walking down the runway at a fashion show wearing different dresses and posing for the cameras",
+    "GT": [
+     "various models are walking ramp in a fashion show",
+     "all woman are in the ramp walk for a fashion show",
+     "there is a hot women walking on the ramp"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9819.mp4",
+    "diff": 0.8267,
+    "H5": "a news reporter talks about a police officer being shot",
+    "base": "a man in a suit is talking to the camera",
+    "GT": [
+     "a clip of a news reporter on abc",
+     "a man introduces a news video clip",
+     "a man is reporting on a police officer holding back teenagers"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7229.mp4",
+    "diff": 0.9448,
+    "H5": "a woman in a pink shirt is talking about movies",
+    "base": "a woman in a pink shirt is talking to the camera",
+    "GT": [
+     "a woman advertising a youtube channel",
+     "a woman asks viewers to subscribe to her service",
+     "a woman hosts a vlog for movies"
+    ]
+   }
+  ]
+ },
+ "D100k": {
+  "mean_diff": 0.0043,
+  "ci95": [
+   -0.0224,
+   0.0313
+  ],
+  "p_perm": 0.76122,
+  "bins": {
+   "gt+1": 3,
+   "p0.2_1": 25,
+   "pm0.2": 248,
+   "m1_-0.2": 23,
+   "lt-1": 1
+  },
+  "worst20": [
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8929.mp4",
+    "diff": -1.3789,
+    "H5": "gameplay footage of someone playing a video game",
+    "base": "a man is playing a video game",
+    "GT": [
+     "a deer gets hit by a car then a person",
+     "a deer in a video game gets hit by a car",
+     "a deer is running across a road in a video game"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8979.mp4",
+    "diff": -0.9453,
+    "H5": "a man is playing soccer and a dog is playing with a ball",
+    "base": "people are playing sports",
+    "GT": [
+     "a clip showcasing sports highlights",
+     "a compilation of basketball videos",
+     "a compilation of sports vines are shown"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7069.mp4",
+    "diff": -0.9385,
+    "H5": "a person is drawing a starfish",
+    "base": "a person is drawing on a piece of paper",
+    "GT": [
+     "a man drawing a star on a piece of paper",
+     "a man is drawing a circle and a star",
+     "a man is drawing on a piece of paper"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9599.mp4",
+    "diff": -0.755,
+    "H5": "a man is bowling in a bowling alley",
+    "base": "a man is bowling",
+    "GT": [
+     "a bowler throws a bowling ball and hits a spare",
+     "a countdown of impressive plays on espn",
+     "a man bowls in a competition"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7029.mp4",
+    "diff": -0.7189,
+    "H5": "spongebob is talking on the phone",
+    "base": "spongebob and squidward are talking on the phone",
+    "GT": [
+     "a cartoon character picks up a phone",
+     "a cartoon character speaks on a phone",
+     "a cartoon squid is using the phone"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7359.mp4",
+    "diff": -0.6531,
+    "H5": "a man is punching a child in a boxing ring",
+    "base": "a man is boxing with a child",
+    "GT": [
+     "a child is boxing his father",
+     "a man boxing with his child",
+     "child training to box"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7419.mp4",
+    "diff": -0.6377,
+    "H5": "a man is playing the guitar",
+    "base": "a man is playing the guitar and singing",
+    "GT": [
+     "a man in a red ball cap holds and plays a guitar while singing into a microphone",
+     "there is a man  singing a song  and playing his guitar",
+     "there is a man with red cap singing a song"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7549.mp4",
+    "diff": -0.5575,
+    "H5": "a woman is talking to the camera",
+    "base": "a woman in a red shirt is talking to the camera",
+    "GT": [
+     "a transgendered person speaks about taking care of their dogs and how they shampoo and condition their dogs in between grooming sessions",
+     "a transvestite shows what she bought for her dog including shampoo and conditioner made by martha stuart",
+     "a blonde woman sits in a grey chair and talks about things she buys for her dogs"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7729.mp4",
+    "diff": -0.5274,
+    "H5": "a man in a suit is talking to a woman in a suit",
+    "base": "a man is talking on the news",
+    "GT": [
+     "a man defends himself on the air",
+     "a man is talking about lobbyists on the news",
+     "a man is talking"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7179.mp4",
+    "diff": -0.505,
+    "H5": "barbie dolls are talking to each other",
+    "base": "cartoon characters are talking to each other",
+    "GT": [
+     "a cartoon about three girls",
+     "a cartoon character holds up her shoe",
+     "a family at home"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7149.mp4",
+    "diff": -0.4158,
+    "H5": "a group of people are sitting in a room",
+    "base": "a commercial for a movie",
+    "GT": [
+     "a commercial gives descriptions of virtuous characteristics of a good woman",
+     "a few brief clips of a woman showing plot points for a show",
+     "a message about too much drinking"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9549.mp4",
+    "diff": -0.3614,
+    "H5": "a person is working on a computer",
+    "base": "a man is showing how to use a computer program",
+    "GT": [
+     "there is a user interface with full functioning options",
+     "there is a user interface with good and easy appearance",
+     "there is someone using a software to do something"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9499.mp4",
+    "diff": -0.3428,
+    "H5": "a man is holding a knife and talking to a woman",
+    "base": "a man is holding a knife",
+    "GT": [
+     "a clip from limney snickets",
+     "a clip of a movie two men in conversation with children there",
+     "a grey haired man holds a baby"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7659.mp4",
+    "diff": -0.306,
+    "H5": "a cartoon of a boat going over a bridge with a tower in the background",
+    "base": "a cartoon of a boat going over a bridge",
+    "GT": [
+     "a bridge is depicted in the water as a popular nursery rhyme song plays in the background",
+     "a cartoon about the song london bridges",
+     "a cartoon based on london bridge is being shown"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9289.mp4",
+    "diff": -0.2983,
+    "H5": "a woman in a red dress walks down a runway",
+    "base": "a woman in a red dress walks down the runway at a fashion show",
+    "GT": [
+     "there is a cat walk with two women one is dressing in red and the other is in brown",
+     "some woman perform fashion show on the tv channel",
+     "models are walking on a catwalk during a fashion show"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8049.mp4",
+    "diff": -0.2915,
+    "H5": "a man is practicing his baseball skills",
+    "base": "a man is hitting a baseball",
+    "GT": [
+     "a baseball player spinning around and trying to kick a ball",
+     "a guy is spinning around with a bat",
+     "a man making himself very dizzy and then trying to kick a kickball"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8359.mp4",
+    "diff": -0.2598,
+    "H5": "a man is surfing in the ocean",
+    "base": "a man is riding a surfboard on a wave in the ocean",
+    "GT": [
+     "a person is surfing he moves around on the wave like an expert",
+     "there is a man swimming in to the powerful waves",
+     "an excellent surfer demonstrates surfing moves including surfing through the curl of the wave"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9469.mp4",
+    "diff": -0.2586,
+    "H5": "a group of football players celebrating a touchdown",
+    "base": "a man is talking about a football game",
+    "GT": [
+     "a football going is going on",
+     "a football player is taking rest and then talks to a reporter",
+     "a football player sits on the bench"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8099.mp4",
+    "diff": -0.2458,
+    "H5": "a group of people are swimming in the ocean",
+    "base": "a group of people are swimming in the water",
+    "GT": [
+     "a camera flies over a landscape",
+     "a camera flies over waterscapes",
+     "a camera is being used for a flyover shot of a lake"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7529.mp4",
+    "diff": -0.2264,
+    "H5": "a man is talking to the camera",
+    "base": "a man is talking in a classroom",
+    "GT": [
+     "a few words in a presentation",
+     "a woman discusses what you can do with the web",
+     "a woman explains how the internet helps education"
+    ]
+   }
+  ],
+  "best20": [
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8819.mp4",
+    "diff": 0.3038,
+    "H5": "cars are parked in a parking lot",
+    "base": "a car is parked on the side of the road",
+    "GT": [
+     "a car from the 1970s is shown",
+     "a demo of new car",
+     "a montage of photos showing high performance cars"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8179.mp4",
+    "diff": 0.3135,
+    "H5": "two women are sitting in a car and talking to each other",
+    "base": "two women sit in the back seat of a car and talk to each other",
+    "GT": [
+     "two blonde women ride in the backseat of a taxi and talk",
+     "two female fiends talking each other sitting in the vehicle",
+     "there is a car in yellow is moving on the road"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7869.mp4",
+    "diff": 0.3202,
+    "H5": "a person is showing how to use a selfie stick",
+    "base": "a person is demonstrating how to use a selfie stick",
+    "GT": [
+     "a person describing a selfie stick to take your own pictures",
+     "a man manipulates and adjusts a metal object with a green handle",
+     "a man uses his hand to get a better view on a selfie stick for the camera"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8799.mp4",
+    "diff": 0.3241,
+    "H5": "a cartoon of the letter f is shown",
+    "base": "a cartoon character is talking",
+    "GT": [
+     "a animation is shown teaching the alphabet",
+     "a cartoon of letters describing the sounds they make",
+     "a kid s show about the alphabet"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7259.mp4",
+    "diff": 0.3541,
+    "H5": "people are playing baseball",
+    "base": "a baseball game is being played on a field with people running and catching the ball",
+    "GT": [
+     "a baseball game is being shown",
+     "a baseball player runs around and then several children play basketball in a pool",
+     "a baseball player scores a run"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7969.mp4",
+    "diff": 0.372,
+    "H5": "a man is wearing headphones and sitting in a car",
+    "base": "a man is wearing headphones",
+    "GT": [
+     "a man djs in his car",
+     "a man is in a car",
+     "a man is listening to music and playing an instrument in his car"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9619.mp4",
+    "diff": 0.3755,
+    "H5": "a cartoon of a little girl holding an umbrella and dancing in the rain",
+    "base": "a cartoon of a little girl with an umbrella",
+    "GT": [
+     "a cartoon of people playing in the rain",
+     "a childrens cartoon animation they are singing the nursery rhyme rain rain go away",
+     "a girl and boy playing in the rain while singing"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7409.mp4",
+    "diff": 0.4052,
+    "H5": "a football game is being played on a field",
+    "base": "a football game is being played on a field with players running and catching the ball",
+    "GT": [
+     "a baseball player hits a home run",
+     "a bunch of small sport clips with songs playing the background",
+     "a football team playing football on a field"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7589.mp4",
+    "diff": 0.427,
+    "H5": "an old man is talking about something",
+    "base": "a man is talking about something",
+    "GT": [
+     "a fisher talks about work",
+     "a man explaining about an island",
+     "a man getting interviewed by a beach"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7599.mp4",
+    "diff": 0.453,
+    "H5": "kids are jumping on a blue mat",
+    "base": "a boy and a girl are jumping on a blue mat",
+    "GT": [
+     "a bunch of kids hop around on a blue mat",
+     "a girl is doing star jumps",
+     "a girl jumping in the park"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9819.mp4",
+    "diff": 0.5284,
+    "H5": "a news reporter talks about a police officer being shot",
+    "base": "a man in a suit is talking on a news show",
+    "GT": [
+     "a clip of a news reporter on abc",
+     "a man introduces a news video clip",
+     "a man is reporting on a police officer holding back teenagers"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9629.mp4",
+    "diff": 0.5646,
+    "H5": "a person is driving a car",
+    "base": "a person is driving a car and the speedometer is displayed on the screen",
+    "GT": [
+     "a car drives really fast",
+     "a car gauge is going up",
+     "a clip showcasing the panels inside of a vehicle"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7159.mp4",
+    "diff": 0.5768,
+    "H5": "a man is being interviewed by david letterman",
+    "base": "a man is being interviewed on the david letterman show",
+    "GT": [
+     "a clip of bill murrary on a talk show",
+     "a man is taking interview on tv",
+     "a man is talking to another man"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7099.mp4",
+    "diff": 0.6057,
+    "H5": "a person is riding a car on the road",
+    "base": "a person is riding a motorcycle on a road and the camera is mounted on the handlebars of the bike",
+    "GT": [
+     "a car driving down the road with men inside",
+     "a car is driving on the road and a man is taking a selfie",
+     "a clip of people driving in a car set to music"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8239.mp4",
+    "diff": 0.6323,
+    "H5": "a group of athletes are running in a track and field competition",
+    "base": "there is a man is running on the ground",
+    "GT": [
+     "track runners running swiftly around the race track in a large arena",
+     "the athletics race of men is started while the audience in the stadium is watching it",
+     "a group of men in shorts and tank tops running around a track in a stadium as part of a race"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9569.mp4",
+    "diff": 0.7317,
+    "H5": "a man is kissing a woman with a baby in her arms",
+    "base": "a man and a woman are talking to each other",
+    "GT": [
+     "the man is kissing his wife and the woman is seen carrying her child and both are facing face to face",
+     "a man in black shirt is kissing with a woman",
+     "there is a man kissing her wife in front of their baby"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7879.mp4",
+    "diff": 0.7738,
+    "H5": "a group of people are fighting in a battle",
+    "base": "a group of soldiers are fighting in a battlefield with weapons such as swords, spears, and shields",
+    "GT": [
+     "a big war with swords fighting",
+     "a clip from a movie",
+     "a clip of a battle with swords"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8429.mp4",
+    "diff": 1.0043,
+    "H5": "a man is working on a car",
+    "base": "a man is working on a car in a garage he is wearing a black shirt and appears to be a mechanic.",
+    "GT": [
+     "a clip showing a vehicle in a garage that s being worked on",
+     "a guy crawls under a vehicle and talks about the vehicle s rear subframe assembly",
+     "a guy talking about his car"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9479.mp4",
+    "diff": 1.1241,
+    "H5": "a man is cooking in a kitchen",
+    "base": "a man and a woman are standing in front of a tv screen",
+    "GT": [
+     "a cooking show is shown with people joking around",
+     "a discussion takes place during a cooking segment",
+     "a group of hispanics talk about making food in a kitchen"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7279.mp4",
+    "diff": 1.5093,
+    "H5": "a group of people are watching a fashion show on a big screen",
+    "base": "a group of people are walking down a street in london",
+    "GT": [
+     "in a public road people watching fashion show in a big screen",
+     "some one walking on the down town  and screening modeling show",
+     "there is a display on the street for modeling show"
+    ]
+   }
+  ]
+ },
+ "B": {
+  "mean_diff": -0.011,
+  "ci95": [
+   -0.0397,
+   0.0172
+  ],
+  "p_perm": 0.44646,
+  "bins": {
+   "gt+1": 1,
+   "p0.2_1": 30,
+   "pm0.2": 231,
+   "m1_-0.2": 36,
+   "lt-1": 2
+  },
+  "worst20": [
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7539.mp4",
+    "diff": -1.711,
+    "H5": "a group of people are walking down a dark hallway with flashlights",
+    "base": "a trailer for a horror movie",
+    "GT": [
+     "a group of people are being haunted in a house",
+     "a group of people are sitting around lit candles holding hands",
+     "a group of people quietly creep through a scary looking building while a scary looking ghoul stalks them"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7229.mp4",
+    "diff": -1.126,
+    "H5": "a woman in a pink shirt is talking about movies",
+    "base": "a woman is talking about movies",
+    "GT": [
+     "a woman advertising a youtube channel",
+     "a woman asks viewers to subscribe to her service",
+     "a woman hosts a vlog for movies"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7809.mp4",
+    "diff": -0.9849,
+    "H5": "a video game is being played",
+    "base": "someone is playing a video game",
+    "GT": [
+     "a animated cartoon cuts another s throat",
+     "a character in a video game gets his throat cut open",
+     "a fatality from mortal kombat is shown"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7619.mp4",
+    "diff": -0.9043,
+    "H5": "the president of the united states is giving a speech",
+    "base": "president obama is giving a speech",
+    "GT": [
+     "a clip showcasing the president giving a speech",
+     "a man is giving a speech",
+     "a news channel is telecasting barack obama s speech"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7299.mp4",
+    "diff": -0.7487,
+    "H5": "a person is painting with a paintbrush",
+    "base": "a person is putting nail polish on a bottle",
+    "GT": [
+     "a person adding nail polish to make something",
+     "a person creates a swirl paint design",
+     "a person is mixing some colors"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7029.mp4",
+    "diff": -0.7189,
+    "H5": "spongebob is talking on the phone",
+    "base": "spongebob and squidward are talking on the phone",
+    "GT": [
+     "a cartoon character picks up a phone",
+     "a cartoon character speaks on a phone",
+     "a cartoon squid is using the phone"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8709.mp4",
+    "diff": -0.6503,
+    "H5": "a man and woman are talking to each other",
+    "base": "a man is talking to a woman",
+    "GT": [
+     "a boy and girl talking outside",
+     "a boy having a conversation with his girlfriend",
+     "a boy is talking to a girl outside"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9679.mp4",
+    "diff": -0.606,
+    "H5": "a man is talking about a product",
+    "base": "a box of computer parts is shown",
+    "GT": [
+     "a guy talks about what motherboard he chose",
+     "a man discusses boxes with computer parts in them",
+     "a man discusses the features of a sata drive"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7099.mp4",
+    "diff": -0.5858,
+    "H5": "a person is riding a car on the road",
+    "base": "a man is driving a car down a road",
+    "GT": [
+     "a car driving down the road with men inside",
+     "a car is driving on the road and a man is taking a selfie",
+     "a clip of people driving in a car set to music"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7149.mp4",
+    "diff": -0.5276,
+    "H5": "a group of people are sitting in a room",
+    "base": "a woman is talking about a movie",
+    "GT": [
+     "a commercial gives descriptions of virtuous characteristics of a good woman",
+     "a few brief clips of a woman showing plot points for a show",
+     "a message about too much drinking"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7179.mp4",
+    "diff": -0.505,
+    "H5": "barbie dolls are talking to each other",
+    "base": "cartoon characters are talking to each other",
+    "GT": [
+     "a cartoon about three girls",
+     "a cartoon character holds up her shoe",
+     "a family at home"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7089.mp4",
+    "diff": -0.4362,
+    "H5": "a man is playing a guitar",
+    "base": "a panel of judges on a talent show are discussing a contestant",
+    "GT": [
+     "a black male is talking to judges and laughing on american idol",
+     "a black man and a white man on american idol talk to the judges",
+     "a contestant talks to the panel of judges on american idol"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9879.mp4",
+    "diff": -0.4277,
+    "H5": "a little girl is singing on stage",
+    "base": "a girl is singing on the voice kids",
+    "GT": [
+     "a child singing on the television show the voice (kids)",
+     "a girl in a singing competition",
+     "a girl singing in front of judges"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7989.mp4",
+    "diff": -0.4116,
+    "H5": "a little girl is eating a piece of chicken",
+    "base": "kids are eating food",
+    "GT": [
+     "a boy is eating",
+     "a girl in a classroom eating some chicken",
+     "a young boy and girl eating a piece of fried food"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7749.mp4",
+    "diff": -0.3856,
+    "H5": "a woman is applying lipstick to her lips",
+    "base": "a woman is applying lipstick",
+    "GT": [
+     "a girl doing a makeup review",
+     "a girl is teaching how to apply lipstick on lips",
+     "a girl is using amore lipsticks and teaching us how to apply it"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8419.mp4",
+    "diff": -0.3612,
+    "H5": "someone is playing a video game",
+    "base": "a minecraft character is talking to another minecraft character",
+    "GT": [
+     "a 3d video done in the game mine craft featuring a character carrying guns",
+     "a clip of an animated character snoring and one carrying something",
+     "a green minecraft monster carries a gun"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9009.mp4",
+    "diff": -0.3605,
+    "H5": "a man and a woman are talking to each other",
+    "base": "a man is talking to a woman in a bed",
+    "GT": [
+     "a female is in a bed",
+     "a man and a woman are sitting in bed",
+     "a man and a woman talking to each other and kissing in bedroom"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7329.mp4",
+    "diff": -0.3443,
+    "H5": "a cartoon dog is jumping on a trampoline",
+    "base": "a cartoon dog is playing with a cartoon boy",
+    "GT": [
+     "a boy and his dog are at a playground and the dog goes on the slide in this cartoon",
+     "a boy is playing with a dog in a cartoon",
+     "a boy is playing with his puppy at the park"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9499.mp4",
+    "diff": -0.3428,
+    "H5": "a man is holding a knife and talking to a woman",
+    "base": "a man is holding a knife",
+    "GT": [
+     "a clip from limney snickets",
+     "a clip of a movie two men in conversation with children there",
+     "a grey haired man holds a baby"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7449.mp4",
+    "diff": -0.3417,
+    "H5": "a man in a blue shirt and glasses is talking about the discovery of the new world",
+    "base": "a man in a suit is talking about the discovery of the new world",
+    "GT": [
+     "there is a suit man in front of a globe",
+     "there is a suit man is talking in front of a globe",
+     "there is a suit man is talking in front of a globe"
+    ]
+   }
+  ],
+  "best20": [
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7869.mp4",
+    "diff": 0.3202,
+    "H5": "a person is showing how to use a selfie stick",
+    "base": "a person is demonstrating how to use a selfie stick",
+    "GT": [
+     "a person describing a selfie stick to take your own pictures",
+     "a man manipulates and adjusts a metal object with a green handle",
+     "a man uses his hand to get a better view on a selfie stick for the camera"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9199.mp4",
+    "diff": 0.3227,
+    "H5": "a man is talking about a cartoon",
+    "base": "a man is talking about a video game",
+    "GT": [
+     "a boy walking in an road",
+     "a car is driving down the road",
+     "a cartoon character stands in a road"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8799.mp4",
+    "diff": 0.3241,
+    "H5": "a cartoon of the letter f is shown",
+    "base": "a cartoon character is talking",
+    "GT": [
+     "a animation is shown teaching the alphabet",
+     "a cartoon of letters describing the sounds they make",
+     "a kid s show about the alphabet"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9109.mp4",
+    "diff": 0.3276,
+    "H5": "a woman in a blue shirt is talking to the camera",
+    "base": "a woman is talking",
+    "GT": [
+     "a tv announcer telling about the moocs offered by various universities for example university of california",
+     "a tv announcer telling about the moocs offered by various universities for example university of california",
+     "a lady is talking about methods of teaching in different universities"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7969.mp4",
+    "diff": 0.372,
+    "H5": "a man is wearing headphones and sitting in a car",
+    "base": "a man is wearing headphones",
+    "GT": [
+     "a man djs in his car",
+     "a man is in a car",
+     "a man is listening to music and playing an instrument in his car"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8049.mp4",
+    "diff": 0.3739,
+    "H5": "a man is practicing his baseball skills",
+    "base": "a man is practicing his pitching",
+    "GT": [
+     "a baseball player spinning around and trying to kick a ball",
+     "a guy is spinning around with a bat",
+     "a man making himself very dizzy and then trying to kick a kickball"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9619.mp4",
+    "diff": 0.3755,
+    "H5": "a cartoon of a little girl holding an umbrella and dancing in the rain",
+    "base": "a cartoon of a little girl with an umbrella",
+    "GT": [
+     "a cartoon of people playing in the rain",
+     "a childrens cartoon animation they are singing the nursery rhyme rain rain go away",
+     "a girl and boy playing in the rain while singing"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8469.mp4",
+    "diff": 0.4216,
+    "H5": "a parrot is sitting in a cage",
+    "base": "a parrot sits on a perch and looks at the camera",
+    "GT": [
+     "there is a white color bird sitting inside the cage",
+     "a baby bird sits on a perch in a cage while a green bellied bird sits on a perch and another peeks its head out of a box",
+     "two parrots in a bird cage one white chick and on green adult"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9579.mp4",
+    "diff": 0.423,
+    "H5": "two men in white coats are talking to each other",
+    "base": "a man is talking to another man",
+    "GT": [
+     "a man and another man speak to each other in a room",
+     "guys talking with kid voices",
+     "people act while being dubbed over by young children"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7359.mp4",
+    "diff": 0.4237,
+    "H5": "a man is punching a child in a boxing ring",
+    "base": "a man is teaching a kid how to box",
+    "GT": [
+     "a child is boxing his father",
+     "a man boxing with his child",
+     "child training to box"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8329.mp4",
+    "diff": 0.467,
+    "H5": "a man and a woman are talking about a horse race",
+    "base": "a man and woman are talking",
+    "GT": [
+     "a gossip hostess is talking about a movie director and horse racing",
+     "a man is shown then a horse race is shown",
+     "a man is standing"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video8299.mp4",
+    "diff": 0.4945,
+    "H5": "a man is sitting on a couch and talking to another man",
+    "base": "a man is talking to another man",
+    "GT": [
+     "a bunch of guys talking to a guy under a light",
+     "a few people have an intense conversation in a dark room",
+     "a group of guys talking with each other"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7909.mp4",
+    "diff": 0.5195,
+    "H5": "a woman is showing a purple ribbon",
+    "base": "a woman is demonstrating how to wrap a ribbon",
+    "GT": [
+     "a person is doing crafts at the table",
+     "a woman explaining how to use decorations",
+     "a woman explains her ribbon choice"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9589.mp4",
+    "diff": 0.5404,
+    "H5": "two women are singing and playing instruments",
+    "base": "two women are singing and dancing",
+    "GT": [
+     "3 country music singers in a music video",
+     "a girl is singing along with her band",
+     "a group is performing a song"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9129.mp4",
+    "diff": 0.5483,
+    "H5": "a girl is singing on stage",
+    "base": "a girl is singing on the voice",
+    "GT": [
+     "a contestant is singing on a stage for a talent show",
+     "a girl is singing a song in  a stage",
+     "a girl is singing on stage"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7669.mp4",
+    "diff": 0.5726,
+    "H5": "a model is walking down the runway at a fashion show",
+    "base": "models are walking down the runway",
+    "GT": [
+     "various models are walking ramp in a fashion show",
+     "all woman are in the ramp walk for a fashion show",
+     "there is a hot women walking on the ramp"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9479.mp4",
+    "diff": 0.6909,
+    "H5": "a man is cooking in a kitchen",
+    "base": "a man is cooking",
+    "GT": [
+     "a cooking show is shown with people joking around",
+     "a discussion takes place during a cooking segment",
+     "a group of hispanics talk about making food in a kitchen"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9229.mp4",
+    "diff": 0.7754,
+    "H5": "a man is eating something",
+    "base": "two men are cooking in a kitchen",
+    "GT": [
+     "a guy cuts the bottom off an ice cream carton and makes an ice cream sandwich out of it",
+     "a guy is cutting up an old ice cream box and tried to make an ice cream sandwich out of it",
+     "a man creates an ice cream sandwich the other man is really surprised at how he did it"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video9599.mp4",
+    "diff": 0.7987,
+    "H5": "a man is bowling in a bowling alley",
+    "base": "a man scores a touchdown in a football game",
+    "GT": [
+     "a bowler throws a bowling ball and hits a spare",
+     "a countdown of impressive plays on espn",
+     "a man bowls in a competition"
+    ]
+   },
+   {
+    "query": "datasets/MSRVTT-v2/videos/video7599.mp4",
+    "diff": 1.0465,
+    "H5": "kids are jumping on a blue mat",
+    "base": "a girl is doing a backflip on a trampoline",
+    "GT": [
+     "a bunch of kids hop around on a blue mat",
+     "a girl is doing star jumps",
+     "a girl jumping in the park"
+    ]
+   }
+  ]
+ }
+}

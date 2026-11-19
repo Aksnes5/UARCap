@@ -1,0 +1,4 @@
+PRE_FIX dev300 FULL retrieval: 300 queries
+external_sims_full.json        top20 X-CLIP brief-caption retrieval (bilinear query resize)
+external_reranked_full.json    ROUGE-L quality rerank of the top20
+features/external_top7/        Video-LLaMA 32x768 per selected clip (center-of-bin temporal)

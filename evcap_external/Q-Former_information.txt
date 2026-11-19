@@ -1,0 +1,2 @@
+Q-former和Qformer_txt都是12layers，每2layers在self-attention后增加cross-attention
+video Q-former是2layers，每层都有cross-attention

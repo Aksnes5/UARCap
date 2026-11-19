@@ -1,0 +1,3 @@
+img: /home/bn/videoufo_research/evcap_external/val497/val_video_paths.tsv
+label: /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/val.label.tsv
+caption: /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/val.caption.tsv

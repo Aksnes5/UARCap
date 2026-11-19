@@ -1,0 +1,7 @@
+<Video><VideoHere></Video> 
+<Video>video1</Video> shows caption1
+...
+<Video>videok</Video> shows captionk
+You will be given one video and several retrieved videos and their captions. The first video is the input video, others are retrieved examples to help you.
+You should generate a concise caption for the input video.
+The input video shows

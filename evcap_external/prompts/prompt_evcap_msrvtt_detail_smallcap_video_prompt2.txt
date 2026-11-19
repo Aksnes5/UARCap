@@ -1,0 +1,4 @@
+Similar video <Video>video_feature[0]</Video> shows caption[0]
+...
+Similar video <Video>video_feature[k]</Video> shows caption[k]
+This video <Video>video</Video> shows

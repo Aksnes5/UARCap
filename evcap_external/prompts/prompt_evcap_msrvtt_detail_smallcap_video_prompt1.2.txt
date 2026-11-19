@@ -1,0 +1,5 @@
+<Video>img_embeds[i]</Video>
+Similar video <Video>video_feature[0]</Video> caption[0]
+...
+<Video>video_feature[k]</Video> caption[k]
+This video show 

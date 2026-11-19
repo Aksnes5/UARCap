@@ -1,0 +1,79 @@
+[
+  {
+    "variant": "E",
+    "mean_top1_cider": 0.0762,
+    "mean_oracle7": 0.1544,
+    "mean_unique_sources_top7": 6.9,
+    "near_dup_ratio": 0.199
+  },
+  {
+    "variant": "F",
+    "mean_top1_cider": 0.0724,
+    "mean_oracle7": 0.1587,
+    "mean_unique_sources_top7": 6.85,
+    "near_dup_ratio": 0.205
+  },
+  {
+    "variant": "Fv",
+    "mean_top1_cider": 0.0732,
+    "mean_oracle7": 0.157,
+    "mean_unique_sources_top7": 6.87,
+    "near_dup_ratio": 0.206
+  },
+  {
+    "variant": "G",
+    "mean_top1_cider": 0.0746,
+    "mean_oracle7": 0.1606,
+    "mean_unique_sources_top7": 6.84,
+    "near_dup_ratio": 0.198
+  },
+  {
+    "variant": "H",
+    "mean_top1_cider": 0.0746,
+    "mean_oracle7": 0.161,
+    "mean_unique_sources_top7": 6.97,
+    "near_dup_ratio": 0.181
+  },
+  {
+    "variant": "H1",
+    "mean_top1_cider": 0.0746,
+    "mean_oracle7": 0.0746,
+    "mean_unique_sources_top7": 1.0,
+    "near_dup_ratio": 0.0
+  },
+  {
+    "variant": "H3",
+    "mean_top1_cider": 0.0746,
+    "mean_oracle7": 0.1244,
+    "mean_unique_sources_top7": 3.0,
+    "near_dup_ratio": 0.196
+  },
+  {
+    "variant": "H5",
+    "mean_top1_cider": 0.0746,
+    "mean_oracle7": 0.1479,
+    "mean_unique_sources_top7": 4.98,
+    "near_dup_ratio": 0.193
+  },
+  {
+    "variant": "H7",
+    "mean_top1_cider": 0.0746,
+    "mean_oracle7": 0.161,
+    "mean_unique_sources_top7": 6.97,
+    "near_dup_ratio": 0.181
+  },
+  {
+    "variant": "Ip",
+    "mean_top1_cider": 0.0717,
+    "mean_oracle7": 0.1323,
+    "mean_unique_sources_top7": 4.08,
+    "near_dup_ratio": 0.151
+  },
+  {
+    "variant": "Ia",
+    "mean_top1_cider": 0.0717,
+    "mean_oracle7": 0.1323,
+    "mean_unique_sources_top7": 4.08,
+    "near_dup_ratio": 0.151
+  }
+]

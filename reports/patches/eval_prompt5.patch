@@ -1,0 +1,26 @@
+--- eval_evcap_fix_video_llama_xclip_msrvtt_fusion_gate_prompt5.py	2026-05-06 15:18:05.987140851 +0800
++++ /home/bn/videoufo_research/evcap_external/eval_evcap_fix_video_llama_xclip_msrvtt_fusion_gate_prompt5.py	2026-11-19 15:06:17.218721832 +0800
+@@ -141,6 +141,11 @@
+             load_video_feature=args.load_video_feature,
+             share_query_tokens=args.share_query_tokens,
+             freeze_llm=args.freeze_llm,
++            sim_scores_path=args.sim_scores_path,
++            video_feature_dir=args.video_feature_dir,
++            use_fusion=args.use_fusion,
++            deterministic=args.deterministic,
++            external_features=args.external_features,
+             )
+     state_dict = torch.load(ckpt, map_location=device)['model']
+ 
+@@ -190,6 +195,11 @@
+     parser.add_argument("--freeze_qformer", type=str_to_bool, default=True)
+     # XCLIP
+     parser.add_argument("--ext_path", default='ext_data/msrvtt_train_caption.json', type=str)
++    parser.add_argument("--sim_scores_path", default=None, type=str)
++    parser.add_argument("--video_feature_dir", default=None, type=str)
++    parser.add_argument("--use_fusion", type=str_to_bool, default=True)
++    parser.add_argument("--deterministic", type=str_to_bool, default=True)
++    parser.add_argument("--external_features", type=str_to_bool, default=False)
+     # prompt
+     parser.add_argument("--prompt_path", default='prompts/prompt_evcap_msrvtt.txt', type=str)
+     

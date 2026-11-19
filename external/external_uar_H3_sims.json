@@ -1,0 +1,3602 @@
+{
+ "datasets/MSRVTT-v2/videos/video7010.mp4": [
+  [
+   "A person is using a music production software to record and mix a song.",
+   "The user is using a music production software to create and edit music.",
+   "The user is downloading a file with the name save the audio."
+  ],
+  [
+   0.27734375,
+   0.269775390625,
+   0.273193359375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7019.mp4": [
+  [
+   "A cartoon character is sitting on a box with a heart on it.",
+   "A cartoon character is working in a movie studio.",
+   "Three cartoon animals standing next to each other on a blue background."
+  ],
+  [
+   0.263671875,
+   0.251220703125,
+   0.2437744140625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7029.mp4": [
+  [
+   "A cartoon spongebob talking on the phone.",
+   "A cartoon spongebob sitting on a chair next to a tv.",
+   "A picture of spongebob squarepants with a red arrow pointing to it."
+  ],
+  [
+   0.267578125,
+   0.24365234375,
+   0.2408447265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7039.mp4": [
+  [
+   "It is a scene from a movie where two people are standing in a forest, one of them is wearing a robotic suit and the other is looking at it with a serious expression on their face.",
+   "A man and a woman are standing in front of a robot, with the woman looking at the robot and the man looking at the woman.",
+   "A cartoon of a lion, tiger, and cheetah standing next to each other."
+  ],
+  [
+   0.2744140625,
+   0.278076171875,
+   0.272216796875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7049.mp4": [
+  [
+   "A white plate topped with mushrooms and peppers.",
+   "A white plate topped with sausages on a wooden table.",
+   "A person is cooking sausages in a white bowl on a table."
+  ],
+  [
+   0.287109375,
+   0.295654296875,
+   0.282470703125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7059.mp4": [
+  [
+   "A green parrot is standing on top of a cage in a living room.",
+   "A green and yellow parrot is standing on a table and a person is pointing a gun at it.",
+   "A green parrot sitting on a shelf in a room."
+  ],
+  [
+   0.32373046875,
+   0.324462890625,
+   0.32470703125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7069.mp4": [
+  [
+   "A drawing on a piece of paper with a bunch of drawings on it.",
+   "A group of people are visiting an art museum and one person is drawing on a piece of paper.",
+   "A person is drawing a design with a pen on a piece of paper."
+  ],
+  [
+   0.326171875,
+   0.33154296875,
+   0.3212890625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7079.mp4": [
+  [
+   "A metal band is performing on stage and the audience is cheering and waving their hands in the air.",
+   "A group of musicians are performing on stage and playing heavy metal music.",
+   "A group of rock musicians are performing on stage and thanking the audience for watching."
+  ],
+  [
+   0.31884765625,
+   0.3046875,
+   0.3046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7089.mp4": [
+  [
+   "A group of singers and musicians are performing on a tv show.",
+   "A group of musicians are performing on a tv show.",
+   "Two musicians are playing acoustic guitars and singing on a tv show."
+  ],
+  [
+   0.26708984375,
+   0.2578125,
+   0.253173828125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7099.mp4": [
+  [
+   "A person is riding a motorcycle on a highway during sunset and the camera is mounted on the handlebar of the bike.",
+   "A woman is riding a motorcycle on an empty road at sunset, wearing a black helmet and leather jacket.",
+   "A person is riding a motorcycle on a highway during sunset, with the camera mounted on the handlebars of the bike."
+  ],
+  [
+   0.305419921875,
+   0.313232421875,
+   0.30712890625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7109.mp4": [
+  [
+   "Two cartoon characters dancing in front of a blue and yellow background.",
+   "A cartoon of three girls dancing in front of a purple background.",
+   "The character is dancing in front of a colorful background with cartoon characters."
+  ],
+  [
+   0.265380859375,
+   0.265869140625,
+   0.2578125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7119.mp4": [
+  [
+   "A newscaster is reporting the news in a studio with a blue background.",
+   "A news broadcast on a blue background with the words news is king.",
+   "A news set with a red and blue background."
+  ],
+  [
+   0.320556640625,
+   0.31640625,
+   0.31494140625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7129.mp4": [
+  [
+   "A person is using a smartphone and sending a text message.",
+   "A person is using a smartphone with an app that displays the word fear on the screen.",
+   "The user is sending a text message to someone on a messaging app."
+  ],
+  [
+   0.25830078125,
+   0.25341796875,
+   0.259033203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7139.mp4": [
+  [
+   "A red background with the words windows xp down.",
+   "A dark blue background with white text that says ask a librarian.",
+   "A purple background with the words 35 billion connected articles."
+  ],
+  [
+   0.25634765625,
+   0.2425537109375,
+   0.2474365234375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7149.mp4": [
+  [
+   "A young man and woman are talking to each other in a romantic scene, with the woman wearing a white shirt.",
+   "A green background with a text that says is there any way to have sex during pregnancy?.",
+   "A woman in a white dress talking to a man on a couch."
+  ],
+  [
+   0.1993408203125,
+   0.1884765625,
+   0.189697265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7159.mp4": [
+  [
+   "A teenage boy is sitting in front of the camera and talking to the viewer.",
+   "A young man is sitting in front of the camera and making hand gestures.",
+   "An elderly man is sitting in a chair and talking to the interviewer."
+  ],
+  [
+   0.22314453125,
+   0.2220458984375,
+   0.22412109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7169.mp4": [
+  [
+   "A woman is washing her hands with soap in a hospital.",
+   "A group of medical professionals are working in a hospital kitchen.",
+   "There are various laundry detergents and cleaning products on the shelves of a laundry room."
+  ],
+  [
+   0.25048828125,
+   0.253173828125,
+   0.25
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7179.mp4": [
+  [
+   "A cartoon of two barbie dolls standing next to each other.",
+   "A cartoon girl with purple hair standing in front of a tv.",
+   "A cartoon girl hugging another girl in a living room."
+  ],
+  [
+   0.203369140625,
+   0.1905517578125,
+   0.185791015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7189.mp4": [
+  [
+   "A tv screen showing a person holding a gun.",
+   "A woman in a black latex outfit is posing and holding a gun at an outdoor event.",
+   "A green gun laying on top of a car seat."
+  ],
+  [
+   0.294189453125,
+   0.288330078125,
+   0.2861328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7199.mp4": [
+  [
+   "A video game character is hanging from a tree.",
+   "The player is playing a video game where they are shooting arrows at a tree in the middle of a field.",
+   "The player is playing a game where they have to stack logs on top of each other to reach the top of the screen."
+  ],
+  [
+   0.288330078125,
+   0.286865234375,
+   0.283447265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7209.mp4": [
+  [
+   "A person is driving a car on a highway and the camera is mounted on the dashboard of the car.",
+   "A woman is driving a car and the camera is mounted on the dashboard of the car.",
+   "A person is driving a car on a highway and the camera is inside the car, showing the view from the driver's seat."
+  ],
+  [
+   0.2900390625,
+   0.288818359375,
+   0.2822265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7219.mp4": [
+  [
+   "A gray sports car driving down a street in front of a building.",
+   "A grey sports car driving down a street.",
+   "A silver sports car driving down a street in front of a building."
+  ],
+  [
+   0.310546875,
+   0.30859375,
+   0.29931640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7229.mp4": [
+  [
+   "A woman in a red sweatshirt sitting in front of a green screen.",
+   "A woman in a blue jacket standing in front of a green screen.",
+   "A green screen is being placed on top of a wooden table with glittering stars in the background."
+  ],
+  [
+   0.269287109375,
+   0.26708984375,
+   0.265380859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7239.mp4": [
+  [
+   "An old newspaper with a headline about a new planet discovered.",
+   "A bunch of old newspapers laying on top of each other.",
+   "A black and white newspaper with the headline thousands arrested in chicago."
+  ],
+  [
+   0.31005859375,
+   0.287109375,
+   0.28857421875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7249.mp4": [
+  [
+   "A blurry image of two people shaking hands in front of a building.",
+   "A person is receiving a package at their front door.",
+   "Two people shaking hands in front of a window."
+  ],
+  [
+   0.2335205078125,
+   0.2135009765625,
+   0.2176513671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7259.mp4": [
+  [
+   "A group of baseball players are playing on the field and one player hits a home run.",
+   "There is a baseball game being played, and the players are running and catching the ball.",
+   "A baseball game is being played at night, and the players are wearing uniforms."
+  ],
+  [
+   0.298828125,
+   0.30078125,
+   0.296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7269.mp4": [
+  [
+   "A black screen with a red arrow pointing to the right.",
+   "A cartoon of a man and a woman hugging each other in front of a pink background.",
+   "A red and black screen with a message in spanish."
+  ],
+  [
+   0.255615234375,
+   0.2464599609375,
+   0.271240234375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7279.mp4": [
+  [
+   "A young man and woman are walking down the street in a mall, with the woman wearing a pink dress.",
+   "Kendall jenner and kylie jenner walking down the street.",
+   "The model is walking down a runway wearing a purple dress with a thigh-high slit and a sheer overlay."
+  ],
+  [
+   0.242919921875,
+   0.2352294921875,
+   0.2398681640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7289.mp4": [
+  [
+   "There is a group of people dancing hip-hop on the floor in a large room with a lot of people watching them.",
+   "A group of rappers and hip-hop artists are posing for a photo in a recording studio.",
+   "There is a group of people performing breakdancing in a shopping mall."
+  ],
+  [
+   0.241455078125,
+   0.234375,
+   0.2333984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7299.mp4": [
+  [
+   "A person is using a paintbrush to paint colorful beads on a table.",
+   "A close up of a paint brush and a bottle of paint.",
+   "A person is painting a white flower on a nail with a paintbrush."
+  ],
+  [
+   0.212158203125,
+   0.2232666015625,
+   0.205810546875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7309.mp4": [
+  [
+   "A man is being burned by a fire in a video game.",
+   "A video game with a fire on the ground.",
+   "A group of people dressed as superheroes are playing video games in a living room."
+  ],
+  [
+   0.23974609375,
+   0.250244140625,
+   0.2376708984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7319.mp4": [
+  [
+   "The video is about a group of puppets performing a skit on stage.",
+   "An advertisement for a tv with a bunch of different colored tv's on it.",
+   "A dvd cover with a cartoon character on it."
+  ],
+  [
+   0.28662109375,
+   0.2919921875,
+   0.30224609375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7329.mp4": [
+  [
+   "The cn original series logo on a purple background.",
+   "A cartoon image of paw patrol with a tower in the background.",
+   "A cartoon dog standing in front of a green background."
+  ],
+  [
+   0.261962890625,
+   0.2685546875,
+   0.253662109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7339.mp4": [
+  [
+   "There is a dark night sky with fireworks lighting up the sky.",
+   "There is a fireworks display in the sky with colorful fireworks lighting up the night sky.",
+   "Fireworks light up the night sky over a city at night."
+  ],
+  [
+   0.283203125,
+   0.275390625,
+   0.276611328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7349.mp4": [
+  [
+   "A young man is sitting in front of the camera and talking to the viewer, he is wearing a cap and has a funny expression on his face.",
+   "A blue hat with the words interrogate the question.",
+   "A teenage boy is sitting in front of the camera and talking to the interviewer."
+  ],
+  [
+   0.2183837890625,
+   0.2025146484375,
+   0.211669921875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7359.mp4": [
+  [
+   "A boxer is punching another boxer in a boxing ring.",
+   "Two people fighting in a boxing ring.",
+   "Two people are fighting each other in a boxing ring."
+  ],
+  [
+   0.30615234375,
+   0.30224609375,
+   0.30517578125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7369.mp4": [
+  [
+   "A picture of a laptop with the text how to connect xbox one to a laptop with a hdmi cable.",
+   "A person is unboxing a gaming laptop and reviewing its specifications.",
+   "A person is holding an acer laptop and opens it to show the inside of the device."
+  ],
+  [
+   0.297607421875,
+   0.295654296875,
+   0.298583984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7379.mp4": [
+  [
+   "A young man is wearing a blue cap and talking to the camera.",
+   "A teenage boy is sitting in front of the camera and talking to the interviewer.",
+   "A young boy in a blue jacket and cap is talking into a microphone."
+  ],
+  [
+   0.2293701171875,
+   0.2225341796875,
+   0.236572265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7389.mp4": [
+  [
+   "It is a scene from a movie where two people are standing in front of each other, one of them is looking at the other with a sad expression on their face.",
+   "A young man and woman are standing in front of a blue door, with the woman hugging the man.",
+   "It is a scene from a korean drama where the main characters are talking to each other and expressing their feelings."
+  ],
+  [
+   0.2215576171875,
+   0.214111328125,
+   0.2125244140625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7399.mp4": [
+  [
+   "The user is browsing a news website and searching for information about toy story.",
+   "A monkey is in a movie with a man wearing a baseball cap.",
+   "A screen shot of a news article in korean."
+  ],
+  [
+   0.1846923828125,
+   0.1910400390625,
+   0.19384765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7409.mp4": [
+  [
+   "A video game of a football player kicking a football.",
+   "The user is playing a video game called mlb power pros on a nintendo wii console.",
+   "A football game is taking place on the field, with players running and tackling each other."
+  ],
+  [
+   0.309326171875,
+   0.298095703125,
+   0.2978515625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7419.mp4": [
+  [
+   "A person is playing an acoustic guitar with hearts in the background.",
+   "The person is playing an acoustic guitar on a stage with a microphone in front of them.",
+   "A person is playing an acoustic guitar and singing a song."
+  ],
+  [
+   0.325439453125,
+   0.317626953125,
+   0.31689453125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7429.mp4": [
+  [
+   "There is a necklace made of silver and diamonds on a mannequin.",
+   "A website page showing a necklace and earrings.",
+   "A woman is wearing an attractive heart-shaped jewelry set and posing for the camera."
+  ],
+  [
+   0.2646484375,
+   0.254150390625,
+   0.250244140625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7439.mp4": [
+  [
+   "A group of musicians are playing violin music together at a concert.",
+   "A close up of a person playing a violin.",
+   "A woman playing the violin in front of a purple background."
+  ],
+  [
+   0.33544921875,
+   0.3330078125,
+   0.328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7449.mp4": [
+  [
+   "A computer screen with a green arrow pointing to a google search page.",
+   "A purple background with a red arrow pointing to a web page.",
+   "A black background with a green arrow pointing to the left and a yellow arrow pointing to the right."
+  ],
+  [
+   0.293212890625,
+   0.285888671875,
+   0.292236328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7459.mp4": [
+  [
+   "A person is driving a car on a highway and the camera is inside the car, showing the view from the driver's seat.",
+   "Two men are driving a car on a road and the camera is inside the car, showing the view from the driver's seat.",
+   "A person is unlocking the door of a car using a key fob."
+  ],
+  [
+   0.265625,
+   0.26708984375,
+   0.256103515625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7469.mp4": [
+  [
+   "A blue screen with the words breaking news buried treasure found.",
+   "Scientists and engineers are working in a clean room to assemble the james webb space telescope.",
+   "A news reporter is reporting live from a studio in hong kong."
+  ],
+  [
+   0.277099609375,
+   0.27880859375,
+   0.284912109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7479.mp4": [
+  [
+   "A woman is giving an interview at an event and she is wearing a pink dress.",
+   "A female student is sitting in front of the camera and talking to the interviewer.",
+   "A woman is giving an interview at an event and she is wearing a blue dress."
+  ],
+  [
+   0.283447265625,
+   0.27783203125,
+   0.279296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7489.mp4": [
+  [
+   "A man is pointing at a moving truck with a crown on his head.",
+   "A man and a cat dressed in iron man costumes are walking down the runway at a fashion show.",
+   "A group of people are working together to transport a large piece of machinery on a truck."
+  ],
+  [
+   0.273193359375,
+   0.263916015625,
+   0.27685546875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7499.mp4": [
+  [
+   "A young man is singing on stage at a concert he is wearing a blue shirt and has his hands up in the air.",
+   "The band is performing on stage and the singer is singing into a microphone while playing an acoustic guitar.",
+   "A young man is singing on stage at a concert."
+  ],
+  [
+   0.3037109375,
+   0.296875,
+   0.296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7509.mp4": [
+  [
+   "Two female gymnasts are performing synchronized diving in an international competition.",
+   "A group of animated pink pigs standing next to each other.",
+   "A group of young girls in pink and black leotards are practicing ballet in a dance studio."
+  ],
+  [
+   0.280029296875,
+   0.27099609375,
+   0.2646484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7519.mp4": [
+  [
+   "The player is playing a first-person shooter game and shooting at a building with a gun.",
+   "The player is playing a first-person shooter game and shooting with a gun.",
+   "The player is playing a first-person shooter game in an indoor shooting range."
+  ],
+  [
+   0.36376953125,
+   0.356689453125,
+   0.362548828125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7529.mp4": [
+  [
+   "A purple background with the words so how do you do all of these great resources? use discovery search.",
+   "There are many people working in a library and using laptops.",
+   "A blue background with the words our team is grateful to hear from you."
+  ],
+  [
+   0.256591796875,
+   0.26171875,
+   0.25390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7539.mp4": [
+  [
+   "A man and a woman are walking in a dark room and they are holding hands, the man is wearing a black t-shirt and the woman has red hair.",
+   "A group of people are in a dark room with flashlights and they seem to be searching for something.",
+   "A group of people in black hooded jackets and masks are walking down a dark hallway with flashlights in their hands."
+  ],
+  [
+   0.2393798828125,
+   0.23193359375,
+   0.2305908203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7549.mp4": [
+  [
+   "A pink background with the words common questions asked in uk & usa interviews.",
+   "A woman sitting on a couch with the words what to study? how to study?.",
+   "Two women, one with gray hair and the other with blonde hair, are sitting on a white background and talking to each other."
+  ],
+  [
+   0.2156982421875,
+   0.205810546875,
+   0.213134765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7559.mp4": [
+  [
+   "A chef is sitting at a table with a glass of wine and talking to the camera.",
+   "A chef is sitting at a table and talking to the camera.",
+   "There is a table with various dishes on it, including seafood, meat, and vegetables."
+  ],
+  [
+   0.303955078125,
+   0.305908203125,
+   0.30078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7569.mp4": [
+  [
+   "A soccer player from argentina, lionel messi, has won the fifa world player of the year award.",
+   "A woman is receiving an award from a group of people.",
+   "A woman is receiving an award at an event."
+  ],
+  [
+   0.294677734375,
+   0.2822265625,
+   0.2734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7579.mp4": [
+  [
+   "A picture of a dog on a pink background.",
+   "A cute dog is sitting on the floor and looking up at the camera.",
+   "A cute puppy is sitting on the floor and looking at the camera."
+  ],
+  [
+   0.269287109375,
+   0.25927734375,
+   0.265380859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7589.mp4": [
+  [
+   "An amazon forests website with a tree in the background.",
+   "A person is holding a jar of raw honey in their hand.",
+   "A man is holding a gun and standing in front of a tree in the jungle he is wearing a hat and holding the gun with both hands."
+  ],
+  [
+   0.2366943359375,
+   0.209716796875,
+   0.2208251953125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7599.mp4": [
+  [
+   "A person is jumping on a trampoline in a backyard on a cloudy day.",
+   "A group of people are having fun at an outdoor camping event by jumping into a large inflatable pool filled with water.",
+   "A group of people are standing in front of a tree, and they are all wearing blue shirts."
+  ],
+  [
+   0.2166748046875,
+   0.22509765625,
+   0.22314453125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7609.mp4": [
+  [
+   "A bear in a suit holding a gun in front of a group of people.",
+   "A man is playing the guitar and singing in a bar, and there are other people in the background.",
+   "A man standing in a bar with other people in the background."
+  ],
+  [
+   0.206787109375,
+   0.20947265625,
+   0.20068359375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7619.mp4": [
+  [
+   "President biden speaking at a congressional hearing.",
+   "A man is giving a speech at a conference and another man is listening to him.",
+   "The president of the united states, barack obama, is giving a speech at a military graduation ceremony."
+  ],
+  [
+   0.265380859375,
+   0.26318359375,
+   0.2587890625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7629.mp4": [
+  [
+   "A soccer player scores a goal.",
+   "A soccer player scores a goal in a soccer game.",
+   "Cristiano ronaldo scores a goal in a soccer game."
+  ],
+  [
+   0.3076171875,
+   0.302001953125,
+   0.297119140625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7639.mp4": [
+  [
+   "A person is playing a first-person shooter game in a dark, abandoned building and shooting at enemies with a gun.",
+   "The player is playing a first-person shooter game and is in a battle with other players in a post-apocalyptic world.",
+   "The player is in a first-person shooter game and is fighting against other players in a post-apocalyptic world."
+  ],
+  [
+   0.325927734375,
+   0.32080078125,
+   0.31982421875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7649.mp4": [
+  [
+   "A cat excavator is parked in a field with other excavators in the background.",
+   "A person is driving an excavator in a rocky terrain.",
+   "An aerial view of a bulldozer and a truck near a body of water."
+  ],
+  [
+   0.33935546875,
+   0.334228515625,
+   0.332763671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7659.mp4": [
+  [
+   "A cartoon image of paw patrol with a tower in the background.",
+   "A blue bus is driving over a bridge with a tower in the background.",
+   "The logo for the game, and a logo for a tv show are shown on a blue background."
+  ],
+  [
+   0.2381591796875,
+   0.228271484375,
+   0.2222900390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7669.mp4": [
+  [
+   "A child is walking down the runway at a fashion show wearing a yellow dress with flowers on it.",
+   "A model is walking down the runway wearing a cat-themed outfit at a fashion show.",
+   "A model is walking down the runway at a fashion show, wearing different dresses and posing for the cameras."
+  ],
+  [
+   0.30126953125,
+   0.293701171875,
+   0.29638671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7679.mp4": [
+  [
+   "A group of people are gathered in a church and they are clapping their hands to praise god.",
+   "A group of people are attending an event and clapping for someone who is receiving an award.",
+   "A group of people are gathered in a church and they are singing and raising their hands in praise."
+  ],
+  [
+   0.2744140625,
+   0.27197265625,
+   0.26416015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7689.mp4": [
+  [
+   "An aerial view of a fire truck parked in front of a house.",
+   "An aerial view of a fire truck parked in front of a building.",
+   "A cartoon character is driving a fire truck in the countryside."
+  ],
+  [
+   0.24560546875,
+   0.2418212890625,
+   0.23486328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7699.mp4": [
+  [
+   "A person is assembling a ping pong table.",
+   "A person is setting up a ping pong table and adjusting the height of the net.",
+   "Two people standing next to a ping pong table."
+  ],
+  [
+   0.30029296875,
+   0.287841796875,
+   0.290771484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7709.mp4": [
+  [
+   "A chef is preparing a dish with octopus on a blue tablecloth.",
+   "A chef is preparing a dish with chicken, turkey, and other ingredients on a wooden table.",
+   "A chef is cutting an octopus on a blue cutting board."
+  ],
+  [
+   0.290771484375,
+   0.2919921875,
+   0.291259765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7719.mp4": [
+  [
+   "The terminator character from the terminator franchise is standing in a dark, futuristic environment with glowing red eyes.",
+   "The title of the movie guardians of the galaxy is displayed on a black background with neon lights.",
+   "The logo for blade trinity on a dark background."
+  ],
+  [
+   0.2548828125,
+   0.2568359375,
+   0.251708984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7729.mp4": [
+  [
+   "Two girls in red shirts standing in front of a news logo.",
+   "A news broadcast with a woman in a red shirt and an image of a helicopter.",
+   "A news anchor standing next to a picture of a beetle."
+  ],
+  [
+   0.30224609375,
+   0.302001953125,
+   0.2900390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7739.mp4": [
+  [
+   "A person is holding a super mario book and opening it to reveal its contents.",
+   "A person is opening a gift box containing a manga comic book.",
+   "A person is opening a comic book box and revealing various comic books inside."
+  ],
+  [
+   0.327880859375,
+   0.314453125,
+   0.299560546875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7749.mp4": [
+  [
+   "A woman is applying red lipstick to her lips using a lipstick tube.",
+   "A woman is applying red lipstick on her lips.",
+   "A woman is applying red lipstick to her lips using a brush."
+  ],
+  [
+   0.319580078125,
+   0.314453125,
+   0.30859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7759.mp4": [
+  [
+   "The user is using adobe photoshop to edit an image.",
+   "A person is using an image editing software to adjust the brightness, contrast, and saturation of an image.",
+   "A screen shot of an adobe photo editing program."
+  ],
+  [
+   0.339599609375,
+   0.327880859375,
+   0.332763671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7769.mp4": [
+  [
+   "A plane flying over a snowy mountain range.",
+   "There is a person flying a paraglider in a green valley with mountains in the background.",
+   "The person is riding a snowboard down a snowy slope with mountains in the background."
+  ],
+  [
+   0.33154296875,
+   0.316162109375,
+   0.31689453125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7779.mp4": [
+  [
+   "A red bull racing car is being transported on a truck in a warehouse.",
+   "A pickup truck is parked in a parking lot, and the driver's side door of the truck is open.",
+   "A large white rocket is being transported on a truck in a warehouse."
+  ],
+  [
+   0.318115234375,
+   0.304443359375,
+   0.305419921875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7789.mp4": [
+  [
+   "A player scores a goal during a hockey game.",
+   "A player scored a goal during a hockey game.",
+   "A group of hockey players are playing on the ice and one player scores a goal."
+  ],
+  [
+   0.30859375,
+   0.30859375,
+   0.307861328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7799.mp4": [
+  [
+   "A person is frying zucchini slices in a pan.",
+   "A person is cooking roasted chicken in a pan with garlic butter and herbs.",
+   "A person is cooking pasta with chicken and mushrooms in a blue pan on a stove."
+  ],
+  [
+   0.3095703125,
+   0.31005859375,
+   0.312255859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7809.mp4": [
+  [
+   "A group of cosplayers are attending a comic book convention and interacting with each other.",
+   "A group of cosplayers are performing on stage at an anime convention.",
+   "A group of cosplayers dressed in costumes and masks are participating in an anime convention."
+  ],
+  [
+   0.333251953125,
+   0.33447265625,
+   0.3154296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7819.mp4": [
+  [
+   "A woman is working on the engine of a car under the hood.",
+   "A person is repairing a computer by removing the fan and cleaning the motherboard.",
+   "A mechanic is working on a car's engine in a garage."
+  ],
+  [
+   0.3046875,
+   0.29345703125,
+   0.293701171875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7829.mp4": [
+  [
+   "The video is about the 1st year anatomy upper limb spotting 5.",
+   "A robot is walking in a dark room with a laptop on its back.",
+   "A blue and white sign that says europe's anatomy in the digital world."
+  ],
+  [
+   0.283935546875,
+   0.271240234375,
+   0.270751953125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7839.mp4": [
+  [
+   "A video game of a football player kicking a football.",
+   "It is a video game with a pixelated background and characters in the foreground.",
+   "A video game of football players in a dark forest."
+  ],
+  [
+   0.319580078125,
+   0.322265625,
+   0.32763671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7849.mp4": [
+  [
+   "A person is feeding a rabbit with a cucumber.",
+   "A person holding a piece of cucumber in front of a rabbit.",
+   "A cute kitten is holding a bunch of green vegetables in its mouth."
+  ],
+  [
+   0.2159423828125,
+   0.2239990234375,
+   0.218994140625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7859.mp4": [
+  [
+   "It is a scene from the movie star wars the clone wars, where two clones are fighting each other with lightsabers.",
+   "The characters are fighting in a dark and eerie environment.",
+   "A group of alien creatures are attacking a spaceship in a dark, futuristic environment."
+  ],
+  [
+   0.265625,
+   0.26611328125,
+   0.2509765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7869.mp4": [
+  [
+   "A person is using a handheld showerhead to flush a toilet in a bathroom.",
+   "A man is using a handheld showerhead to clean a shower enclosure in a bathroom.",
+   "A person is unboxing a solar panel charger and showing the components of the charger."
+  ],
+  [
+   0.252685546875,
+   0.251220703125,
+   0.251708984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7879.mp4": [
+  [
+   "It is a scene from a movie or a video, possibly depicting a battle or a war.",
+   "George washington and his army are marching through a battlefield in the american revolutionary war.",
+   "There is a battle between the french and the british in the 18th century."
+  ],
+  [
+   0.330322265625,
+   0.317626953125,
+   0.327392578125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7889.mp4": [
+  [
+   "A video showing how to make a cake.",
+   "The video is about making a buttercream cake, and the person is sharing tips and tricks on how to make it.",
+   "A person is making a cake with ingredients such as flour, sugar, eggs, milk, and other ingredients."
+  ],
+  [
+   0.3466796875,
+   0.3369140625,
+   0.325927734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7899.mp4": [
+  [
+   "A cartoon character sitting at a desk with two other cartoon characters.",
+   "A picture of a pokemon cartoon on a green background.",
+   "A picture of pokemon and a pikachu on a colorful background."
+  ],
+  [
+   0.278564453125,
+   0.28515625,
+   0.28173828125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7909.mp4": [
+  [
+   "A woman is opening a purple gift box with a ribbon on it.",
+   "A woman's hand with gold glitter nails on a purple background.",
+   "A collage of different colored nails with glitter on them."
+  ],
+  [
+   0.27880859375,
+   0.291259765625,
+   0.27587890625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7919.mp4": [
+  [
+   "The game is a side-scrolling platformer with a retro pixel art style, featuring a blue sky and palm trees in the background.",
+   "The game is a side-scrolling platformer with a pixelated graphic style, featuring a character named sonic the hedgehog running through a forest with mushrooms and trees in the background.",
+   "The game is a side-scrolling platformer where the player controls a character in a jungle setting, dodging obstacles and enemies while collecting coins."
+  ],
+  [
+   0.308349609375,
+   0.296875,
+   0.301025390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7929.mp4": [
+  [
+   "The player is playing a first-person shooter game in a city with buildings and cars.",
+   "A person is driving a car in a video game, and there are various objects on the dashboard of the car.",
+   "The player is playing a first-person shooter game in a city with buildings, cars, and people."
+  ],
+  [
+   0.3232421875,
+   0.31640625,
+   0.321044921875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7939.mp4": [
+  [
+   "A close up of a pile of purple and pink onions.",
+   "A person is preparing red onions in a bowl with salt and pepper.",
+   "A person is cutting red onions on a cutting board with a knife."
+  ],
+  [
+   0.3095703125,
+   0.279541015625,
+   0.279052734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7949.mp4": [
+  [
+   "Penguins are swimming in a dark, icy underwater cave.",
+   "Polar bears are swimming underwater in an aquarium.",
+   "There is a large body of water with icebergs floating in it."
+  ],
+  [
+   0.2724609375,
+   0.25830078125,
+   0.25244140625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7959.mp4": [
+  [
+   "A group of people are celebrating and cheering for their team after winning a cricket match.",
+   "A group of people are sitting in a large crowd and clapping their hands.",
+   "A large crowd of people clapping in a room."
+  ],
+  [
+   0.2061767578125,
+   0.21630859375,
+   0.2027587890625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7969.mp4": [
+  [
+   "The person is using a smartphone app to record and stream live video from an acoustic guitar.",
+   "A person is using a smartphone to take a video of themselves walking down a street in london, england.",
+   "A video game with the words deep dive dubai."
+  ],
+  [
+   0.263427734375,
+   0.26123046875,
+   0.257080078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7979.mp4": [
+  [
+   "A boxing match is taking place in a ring with a referee and two fighters.",
+   "A boxer is punching another boxer in the face during a boxing match.",
+   "A boxing match is taking place in a ring with two fighters punching each other."
+  ],
+  [
+   0.3125,
+   0.307373046875,
+   0.310302734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7989.mp4": [
+  [
+   "Two little girls eating food with a caption that says global markets.",
+   "A young man is eating food on the street while wearing a blue jacket he is holding a piece of chicken in his hand and appears to be enjoying his meal.",
+   "A woman is holding a piece of chicken on a stick in her hand, and she is wearing a blue shirt."
+  ],
+  [
+   0.288330078125,
+   0.2802734375,
+   0.298828125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video7999.mp4": [
+  [
+   "A man is eating fried chicken in a restaurant he is wearing glasses and has a blue shirt on.",
+   "A young man is eating food on the street while wearing a blue jacket he is holding a piece of chicken in his hand and appears to be enjoying his meal.",
+   "There is a street vendor selling fried chicken in a night market."
+  ],
+  [
+   0.308837890625,
+   0.30908203125,
+   0.302490234375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8009.mp4": [
+  [
+   "Two musicians are playing acoustic guitars and singing on a tv show.",
+   "A child is singing on a stage with a microphone.",
+   "There are two musicians playing an acoustic guitar and singing on a stage in front of an audience."
+  ],
+  [
+   0.26416015625,
+   0.261474609375,
+   0.260498046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8019.mp4": [
+  [
+   "A man is flying a drone in a park with trees and grass.",
+   "A person is flying a drone along a path in the countryside.",
+   "A man is practicing archery in a park on a sunny day he is holding a bow and arrow and aiming at a target in the distance."
+  ],
+  [
+   0.27783203125,
+   0.268310546875,
+   0.275146484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8029.mp4": [
+  [
+   "There is a group of people playing basketball in an indoor gym, with one person dribbling the ball and another person trying to steal it.",
+   "Kobe bryant is walking on a basketball court and the fans are cheering for him.",
+   "A group of people are practicing basketball dribbling in a gym."
+  ],
+  [
+   0.268798828125,
+   0.269775390625,
+   0.27099609375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8039.mp4": [
+  [
+   "A blue background with a yellow text that says giving tuesday.",
+   "A person is holding a gun in their hand, and they are wearing a blue shirt.",
+   "A blue and purple background with a letter m on it."
+  ],
+  [
+   0.2822265625,
+   0.286865234375,
+   0.290283203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8049.mp4": [
+  [
+   "A bat flying over a baseball field on a cloudy day.",
+   "The earth with the words top 10 avengers superheroes.",
+   "A man is practicing his baseball skills by doing flips and other stunts on a baseball field."
+  ],
+  [
+   0.27978515625,
+   0.286376953125,
+   0.281982421875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8059.mp4": [
+  [
+   "Two lions are standing in a field with a sunset in the background.",
+   "A man is sitting on a bench and giving money to another man who is standing in front of him.",
+   "A man and a woman are standing next to each other, looking at each other with a sad expression on their faces."
+  ],
+  [
+   0.247802734375,
+   0.250732421875,
+   0.2493896484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8069.mp4": [
+  [
+   "The robot is wearing a white robe and is standing in front of a green background.",
+   "A robot holding a glowing object in front of a green screen.",
+   "A white robot standing on a yellow background."
+  ],
+  [
+   0.267822265625,
+   0.262451171875,
+   0.2484130859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8079.mp4": [
+  [
+   "A group of people are rowing a boat in a race on the water they are wearing different colors of shirts, and some of them are wearing hats.",
+   "A soccer player is rowing a boat on a river with a trophy in it.",
+   "A man is riding a blue kayak in a canal, and he falls off the kayak into the water."
+  ],
+  [
+   0.30224609375,
+   0.30078125,
+   0.3017578125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8089.mp4": [
+  [
+   "A person is driving a car on a highway and the camera is inside the car, showing the view from the driver's seat.",
+   "A person is driving a car on a highway and the camera is mounted on the dashboard of the car.",
+   "A person is driving a car on a highway and the camera is on the dashboard of the car."
+  ],
+  [
+   0.2958984375,
+   0.298828125,
+   0.29931640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8099.mp4": [
+  [
+   "The player is exploring an island in a video game.",
+   "An underwater view of kelp plants in the ocean.",
+   "It is a 3d animation of a small island in the middle of the ocean, surrounded by green trees and blue water."
+  ],
+  [
+   0.2841796875,
+   0.281982421875,
+   0.27734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8109.mp4": [
+  [
+   "A screen shot of a disney princess dress up game.",
+   "Disney princesses on a banner with the words choose your birthday month.",
+   "Three animated princesses standing next to each other."
+  ],
+  [
+   0.322021484375,
+   0.290771484375,
+   0.305419921875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8119.mp4": [
+  [
+   "A man with a shaved head and tattoos is standing in a locker room and shaving his beard with an electric razor.",
+   "A bald man is talking to the camera.",
+   "A bald man sitting in a red chair with a caption that says source media."
+  ],
+  [
+   0.267822265625,
+   0.2646484375,
+   0.267333984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8129.mp4": [
+  [
+   "A chef is preparing pizza in a restaurant kitchen.",
+   "A chef is preparing a pizza in a restaurant kitchen.",
+   "A view of a counter in a bakery with a lot of food on it."
+  ],
+  [
+   0.267333984375,
+   0.26708984375,
+   0.268310546875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8139.mp4": [
+  [
+   "A green parrot is sitting on a metal rack in a room.",
+   "A green parrot is eating food from a bowl on a green background.",
+   "A person is holding two parrots in a cage, one of which is green and the other is white."
+  ],
+  [
+   0.328857421875,
+   0.330078125,
+   0.31884765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8149.mp4": [
+  [
+   "A screenshot of a news article in chinese.",
+   "A young woman in a green shirt is talking to the camera in a classroom.",
+   "A woman in a blue shirt is talking to the camera in a classroom."
+  ],
+  [
+   0.2384033203125,
+   0.23095703125,
+   0.23291015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8159.mp4": [
+  [
+   "A cartoon character is sitting on a bench in the park and waving to the viewer.",
+   "A cartoon cat and a knight standing next to each other.",
+   "Two musicians are playing acoustic guitars and singing on a tv show."
+  ],
+  [
+   0.2177734375,
+   0.216796875,
+   0.2088623046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8169.mp4": [
+  [
+   "A person is trying to fix a door latch on a car by using a screwdriver to twist the locking mechanism back into place.",
+   "A person is using a key to unlock the door of a white car.",
+   "A person is using a screwdriver to install a lock on a door."
+  ],
+  [
+   0.250244140625,
+   0.2470703125,
+   0.2459716796875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8179.mp4": [
+  [
+   "Two young women are sitting in a car and talking to each other.",
+   "Two young women are sitting in front of a camera and talking to each other.",
+   "A young man and woman are driving in a car and talking to each other."
+  ],
+  [
+   0.215576171875,
+   0.205322265625,
+   0.190673828125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8189.mp4": [
+  [
+   "A young woman is wearing a beautiful blue dress and walking in a garden with pink flowers.",
+   "A woman in a pink dress is walking on a sandy beach with white cliffs in the background.",
+   "A picture of a fetus in a womb with purple flowers."
+  ],
+  [
+   0.26220703125,
+   0.261962890625,
+   0.259521484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8199.mp4": [
+  [
+   "A person is preparing a salad by adding vegetables and dressing in a bowl.",
+   "A person is preparing a salad with lettuce and other ingredients in a white bowl.",
+   "A woman is preparing a salad with zucchini, tomatoes, and other vegetables on a white plate."
+  ],
+  [
+   0.327880859375,
+   0.330322265625,
+   0.3291015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8209.mp4": [
+  [
+   "A group of men in blue and yellow uniforms celebrating in a stadium.",
+   "A soccer player is being awarded a trophy by a group of people in a stadium.",
+   "A group of men are presenting an award to another man at an event."
+  ],
+  [
+   0.271728515625,
+   0.25,
+   0.2486572265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8219.mp4": [
+  [
+   "A group of people are playing basketball on a court, and they are wearing different uniforms.",
+   "A group of people are watching a basketball game and cheering for their favorite team.",
+   "A group of friends are playing basketball together and cheering each other on."
+  ],
+  [
+   0.317138671875,
+   0.318603515625,
+   0.3154296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8229.mp4": [
+  [
+   "A group of baseball players are playing on the field and one player hits a home run.",
+   "A young man is practicing his baseball swing by hitting a baseball with a bat in a field.",
+   "A baseball is lying on the ground in a baseball glove."
+  ],
+  [
+   0.271728515625,
+   0.277099609375,
+   0.267333984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8239.mp4": [
+  [
+   "A picture of a stadium with the words pole vault world championships on it.",
+   "A group of soccer players hugging each other in a stadium.",
+   "A bunch of photos of wrestling magazines on a beige background."
+  ],
+  [
+   0.294189453125,
+   0.27001953125,
+   0.265869140625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8249.mp4": [
+  [
+   "A man is being beaten up by another man in a dark room.",
+   "A man is punching another man in a dark room.",
+   "A superhero is punching a villain in a dark alley."
+  ],
+  [
+   0.28857421875,
+   0.27783203125,
+   0.28271484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8259.mp4": [
+  [
+   "Two men are talking on a podcast and one of them is wearing a baseball cap.",
+   "A woman is wearing a cap and headphones, sitting in front of a camera and talking to the viewer.",
+   "A man wearing an octopus hat is sitting in front of a microphone and talking to the host of a radio show."
+  ],
+  [
+   0.2261962890625,
+   0.218017578125,
+   0.238525390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8269.mp4": [
+  [
+   "There is a whiteboard with various notes and diagrams written on it.",
+   "There is a whiteboard with a blue marker on it, and a person is writing on the whiteboard.",
+   "A whiteboard with a lot of writing on it."
+  ],
+  [
+   0.32568359375,
+   0.32861328125,
+   0.3203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8279.mp4": [
+  [
+   "A wrestler is performing in a ring and being punched by another wrestler.",
+   "A man is wrestling with another man in a wrestling ring.",
+   "A man is wrestling another man in a wrestling ring, and they both wear wrestling gear."
+  ],
+  [
+   0.30224609375,
+   0.29833984375,
+   0.29833984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8289.mp4": [
+  [
+   "A picture of a man holding a microphone in front of a blue background with elvis presley's name on it.",
+   "The logo for noon on a blue background.",
+   "A news broadcast on a blue background with the words news is king."
+  ],
+  [
+   0.24755859375,
+   0.25244140625,
+   0.24072265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8299.mp4": [
+  [
+   "It is a scene from a movie where two people are talking to each other in a dark room.",
+   "There is a blue curtain on a stage, and the words finance written on it in white letters.",
+   "It is a scene from the movie the matrix where neo and trinity are standing in front of a wall of green code that is being projected onto it by the oracle."
+  ],
+  [
+   0.24853515625,
+   0.2490234375,
+   0.2430419921875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8309.mp4": [
+  [
+   "A wrestler is performing in a ring and being punched by another wrestler.",
+   "There is a wrestling match happening in a ring, with two wrestlers fighting each other.",
+   "Two wrestlers are in the ring and one of them is trying to punch the other."
+  ],
+  [
+   0.3564453125,
+   0.3408203125,
+   0.34033203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8319.mp4": [
+  [
+   "Two men in avengers costumes standing next to each other.",
+   "The avengers are fighting against the aliens in the movie the avengers.",
+   "The avengers are standing together with their shields in front of a dark background."
+  ],
+  [
+   0.244384765625,
+   0.2462158203125,
+   0.2431640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8329.mp4": [
+  [
+   "An old newspaper with a headline about a new planet discovered.",
+   "A screen shot of a news article with a picture of a capitol building in the background.",
+   "A web page with a picture of a star on it."
+  ],
+  [
+   0.29736328125,
+   0.3056640625,
+   0.304443359375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8339.mp4": [
+  [
+   "A group of minions are having a party in a grand hall with balloons and decorations.",
+   "A group of people wearing chef hats and holding balloons.",
+   "A birthday party decorated with blue and black balloons."
+  ],
+  [
+   0.227783203125,
+   0.2093505859375,
+   0.2127685546875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8349.mp4": [
+  [
+   "A woman shaking hands with another woman in a bar.",
+   "A man is shaking hands with a woman at an outdoor restaurant.",
+   "A person is shaking hands with another person in front of a table with food on it."
+  ],
+  [
+   0.25341796875,
+   0.25927734375,
+   0.2421875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8359.mp4": [
+  [
+   "A twitter post with a picture of a person surfing.",
+   "A picture of a man surfing on a wave with the words perfect vibes.",
+   "A surfer is riding a wave on a surfboard in the ocean."
+  ],
+  [
+   0.315185546875,
+   0.3193359375,
+   0.316650390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8369.mp4": [
+  [
+   "A group of people are walking down a dark alley and being chased by a group of people in black clothing.",
+   "A black cat is walking down a dark alleyway, and there are other cats in the background.",
+   "The spider-man is walking down a dark alley with a motorcycle in the background."
+  ],
+  [
+   0.284423828125,
+   0.2763671875,
+   0.272705078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8379.mp4": [
+  [
+   "A purple cartoon character is pointing at the viewer and smiling.",
+   "A cartoon of a purple and pink machine with a hand pointing at it.",
+   "Three cartoon characters wearing hats and holding hands."
+  ],
+  [
+   0.25634765625,
+   0.2493896484375,
+   0.252197265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8389.mp4": [
+  [
+   "The drummer is playing a snare drum and cymbals in a rhythmic pattern.",
+   "A person is playing a drum set with a pair of drumsticks.",
+   "A drummer is playing the snare drum and cymbals on a drum set."
+  ],
+  [
+   0.303466796875,
+   0.294921875,
+   0.294921875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8399.mp4": [
+  [
+   "A cartoon character is standing in front of a colorful background and talking to the camera.",
+   "A colorful background with the words kids wonder club.",
+   "A blue background with the words'what questions do you want the following characters to answer '."
+  ],
+  [
+   0.276611328125,
+   0.276611328125,
+   0.271728515625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8409.mp4": [
+  [
+   "There is a group of musicians performing on stage in a dark room with a projected image of a galaxy in the background.",
+   "The beatles are performing on a television show in the 1960s.",
+   "People are walking in a dark room with a waterfall and a forest on the wall."
+  ],
+  [
+   0.2452392578125,
+   0.23193359375,
+   0.2374267578125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8419.mp4": [
+  [
+   "A group of people are playing minecraft together in a virtual world.",
+   "A video game with the words minecraft subscribe on it.",
+   "A minecraft character holding a gun."
+  ],
+  [
+   0.308349609375,
+   0.2998046875,
+   0.30322265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8429.mp4": [
+  [
+   "A mechanic is using an oil drain pan to drain engine oil from under a car.",
+   "A mechanic is working on a car underneath the car, using a wrench to tighten bolts.",
+   "A mechanic is working on a car underneath it, using tools such as a wrench and a screwdriver."
+  ],
+  [
+   0.29150390625,
+   0.272705078125,
+   0.27392578125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8439.mp4": [
+  [
+   "A group of dancers dressed in colorful costumes are performing on a television show.",
+   "Two anime characters are performing on stage.",
+   "A group of people dressed in colorful costumes are performing on a tv show."
+  ],
+  [
+   0.2069091796875,
+   0.1993408203125,
+   0.20703125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8449.mp4": [
+  [
+   "A man in a suit and bow tie is giving an acceptance speech at an awards ceremony.",
+   "A man in a suit and bow tie is singing into a microphone.",
+   "An older man in a tuxedo is giving an acceptance speech at an awards show."
+  ],
+  [
+   0.263427734375,
+   0.26416015625,
+   0.259033203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8459.mp4": [
+  [
+   "The player is playing a video game with a character named mario party top 100.",
+   "Mario and luigi are standing in front of a large, ornate doorway.",
+   "The player is playing a video game called super mario party 10, and there are different types of characters in the game."
+  ],
+  [
+   0.28271484375,
+   0.280029296875,
+   0.285400390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8469.mp4": [
+  [
+   "A parrot is sitting in a cage in a room the parrot is grey and white, and it appears to be calm and relaxed.",
+   "A blue and yellow parrot is sitting in a cage, and there are other birds in the background.",
+   "A green parrot is hanging from a rope in a room."
+  ],
+  [
+   0.35107421875,
+   0.3388671875,
+   0.330078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8479.mp4": [
+  [
+   "A person is preparing chicken for cooking by removing the skin and washing it with water.",
+   "A piece of pink meat is being cooked in an oven.",
+   "A person is mixing meat in a bowl with their hands."
+  ],
+  [
+   0.2724609375,
+   0.27294921875,
+   0.26416015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8489.mp4": [
+  [
+   "A person is frying crabs in a pan with oil and serving them on a plate.",
+   "A chef is cooking shrimp in a pan and serving it to a customer.",
+   "A man is holding a piece of fried fish in his hand he is wearing a black shirt and has a beard."
+  ],
+  [
+   0.301513671875,
+   0.305908203125,
+   0.29931640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8499.mp4": [
+  [
+   "The crew is operating the ship's navigation system.",
+   "There is an aerial view of a large ship in the water, surrounded by other boats and cranes.",
+   "A man in a hard hat is standing on the bridge of a ship and talking to the camera."
+  ],
+  [
+   0.2958984375,
+   0.287841796875,
+   0.2861328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8509.mp4": [
+  [
+   "Rugby players are tackling each other during a game.",
+   "A group of rugby players are tackling each other during a game.",
+   "A group of rugby players are tackling each other on the field."
+  ],
+  [
+   0.3134765625,
+   0.3056640625,
+   0.3017578125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8519.mp4": [
+  [
+   "A person is driving a car on a highway at night, and there are several cars on the road.",
+   "A person is driving a car on a highway at night, and there is a display on the dashboard of the car.",
+   "A person is driving a car on a highway at night, and there are other cars on the road."
+  ],
+  [
+   0.306640625,
+   0.301513671875,
+   0.3046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8529.mp4": [
+  [
+   "It is a group of people shaking hands in front of a large window with a view of the city.",
+   "A group of men in suits shaking hands in front of a building.",
+   "A group of businessmen and women are shaking hands in front of an office building."
+  ],
+  [
+   0.2425537109375,
+   0.24072265625,
+   0.23876953125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8539.mp4": [
+  [
+   "The words online courses on a colorful background.",
+   "A purple and yellow background with a red arrow pointing to the left and a blue arrow pointing to the right.",
+   "The pbs kids logo on a colorful background."
+  ],
+  [
+   0.27978515625,
+   0.300537109375,
+   0.273681640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8549.mp4": [
+  [
+   "The titanic ship is sinking in the ocean at night with stars shining above it.",
+   "There is a sign on the wall that says jack herbert's dna and there is a picture of a plant on the wall.",
+   "It is a scene from a movie where two people are standing in front of each other, one of them is looking at the other with a sad expression on their face."
+  ],
+  [
+   0.1993408203125,
+   0.192626953125,
+   0.19775390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8559.mp4": [
+  [
+   "A group of people are playing polo on horses in an outdoor stadium.",
+   "A tv screen showing a horse race with jockeys on the track.",
+   "Two jockeys are riding horses on a racetrack."
+  ],
+  [
+   0.303955078125,
+   0.292724609375,
+   0.293701171875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8569.mp4": [
+  [
+   "A person is using a smartphone with an app that allows them to control the camera settings and zoom in and out.",
+   "A person is using a camera with a remote control and adjusting the settings on the camera.",
+   "A person is using an app on their smartphone to control the lighting in their home."
+  ],
+  [
+   0.28369140625,
+   0.262451171875,
+   0.266845703125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8579.mp4": [
+  [
+   "A man and a woman are standing in front of a robot, with the woman looking at the robot and the man looking at the woman.",
+   "A toy story character standing next to another toy story character.",
+   "Three toy story characters standing next to each other."
+  ],
+  [
+   0.2132568359375,
+   0.2127685546875,
+   0.206787109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8589.mp4": [
+  [
+   "A picture of a man kissing a woman.",
+   "A screen shot of a website with a picture of a man kissing a woman.",
+   "A man and a woman are kissing and caressing each other in a romantic scene."
+  ],
+  [
+   0.29150390625,
+   0.2880859375,
+   0.292236328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8599.mp4": [
+  [
+   "The player is playing a first-person shooter video game in which they are in a jungle setting, shooting at enemies with a bow and arrow.",
+   "The player is in a dark and eerie jungle, with a monster standing in front of them.",
+   "The player is playing a first-person shooter game in a dark and eerie environment with flashing lights and gunfire."
+  ],
+  [
+   0.23876953125,
+   0.2286376953125,
+   0.2242431640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8609.mp4": [
+  [
+   "A man is driving a truck in the desert and the camera is inside the cab of the truck.",
+   "A close up of a samsung washing machine.",
+   "A person is using a smartphone to control a recycling machine."
+  ],
+  [
+   0.2020263671875,
+   0.1883544921875,
+   0.20361328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8619.mp4": [
+  [
+   "A person is opening a box of lego ninjago sets and showing the different figures and weapons that come with them.",
+   "A person is assembling a lego set.",
+   "A person is assembling a lego toy."
+  ],
+  [
+   0.29833984375,
+   0.28564453125,
+   0.283447265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8629.mp4": [
+  [
+   "A close up of a hand sprinkling seasoning on a sandwich.",
+   "A young woman is eating a sandwich in front of the camera.",
+   "A person is making a sandwich by spreading butter on two slices of bread and placing them together."
+  ],
+  [
+   0.28662109375,
+   0.26416015625,
+   0.266845703125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8639.mp4": [
+  [
+   "A person is holding a black eyeliner in their hand.",
+   "A woman is applying eyeliner to her eyelashes using tweezers and watching a video tutorial on how to do it.",
+   "A close up of a woman's eye with black eyeliner."
+  ],
+  [
+   0.27197265625,
+   0.275146484375,
+   0.273681640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8649.mp4": [
+  [
+   "A person is preparing potatoes for roasting by cutting them into slices and placing them on a baking tray.",
+   "A person is preparing potatoes for cooking by peeling them and cutting them into small pieces.",
+   "A person is using a knife to cut potatoes in a bowl."
+  ],
+  [
+   0.29541015625,
+   0.296142578125,
+   0.288330078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8659.mp4": [
+  [
+   "A person is taking eggs out of an egg carton.",
+   "A white bowl filled with squid on a table.",
+   "A person is cracking eggs into a bowl and mixing them with other ingredients."
+  ],
+  [
+   0.314453125,
+   0.322509765625,
+   0.3095703125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8669.mp4": [
+  [
+   "A green screen with the words what's the scientific name for the human digestive system?.",
+   "A green screen with the words click like subscribe button to verify your daily horoscope.",
+   "A green screen with the words click like button subscribe to verify your daily horoscope."
+  ],
+  [
+   0.3017578125,
+   0.26953125,
+   0.265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8679.mp4": [
+  [
+   "A person is making a scrapbook by cutting out pictures from a magazine and pasting them on a page.",
+   "A person is making a scrapbook with old photos and memorabilia.",
+   "A person is creating a mixed media art journal by cutting out pictures from a magazine and pasting them on a page."
+  ],
+  [
+   0.322509765625,
+   0.32666015625,
+   0.314453125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8689.mp4": [
+  [
+   "The gamer is playing an online multiplayer game with other players in real-time.",
+   "The user is playing a video game called sonic generations and they are trying to get a perfect score of 150,000,000.",
+   "The gamer is playing a first-person shooter game in a multiplayer environment."
+  ],
+  [
+   0.261962890625,
+   0.25390625,
+   0.251953125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8699.mp4": [
+  [
+   "A group of people are playing badminton in an indoor sports facility.",
+   "A group of people are playing badminton in an indoor stadium.",
+   "There is a group of people playing badminton in an indoor court."
+  ],
+  [
+   0.330078125,
+   0.343017578125,
+   0.324462890625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8709.mp4": [
+  [
+   "A young man and woman are kissing each other while looking into each other's eyes.",
+   "A man and woman are kissing in front of a green background.",
+   "A picture of a kissing scene in hindi."
+  ],
+  [
+   0.268310546875,
+   0.267333984375,
+   0.254638671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8719.mp4": [
+  [
+   "The player is playing a first-person shooter game in which they are in a forest and shooting at enemies.",
+   "A gamer is playing a first-person shooter game with other players in a multiplayer environment.",
+   "The player is playing a first-person shooter game in a multiplayer environment."
+  ],
+  [
+   0.29638671875,
+   0.295166015625,
+   0.29296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8729.mp4": [
+  [
+   "A person is preparing chicken breast by seasoning it with spices and then coating it in breadcrumbs.",
+   "A pan filled with potatoes and chicken on a table.",
+   "A person is holding a pink plate with fried potatoes on it."
+  ],
+  [
+   0.300048828125,
+   0.288330078125,
+   0.282958984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8739.mp4": [
+  [
+   "A person is using a wrench to check the oil in the engine of a car.",
+   "A mechanic is using an oil drain pan to drain engine oil from under a car.",
+   "A person is using a castrol transmission fluid to change the transmission fluid in a car."
+  ],
+  [
+   0.2822265625,
+   0.27880859375,
+   0.279541015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8749.mp4": [
+  [
+   "A group of people are holding yellow papers and standing in front of a crowd.",
+   "There is a large crowd of people marching in the streets, holding rainbow flags and umbrellas, and shouting slogans.",
+   "A group of people in green shirts are standing in front of an apple store."
+  ],
+  [
+   0.274658203125,
+   0.26318359375,
+   0.260498046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8759.mp4": [
+  [
+   "A model is wearing a silver dress with sequins on it, and the camera zooms in on the dress as the model walks down the runway.",
+   "The actor is wearing a golden crown and is looking at the camera with a serious expression.",
+   "A woman in a futuristic metallic outfit is sitting on a couch and looking at the camera."
+  ],
+  [
+   0.1815185546875,
+   0.180419921875,
+   0.1795654296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8769.mp4": [
+  [
+   "It is a scene from a movie where two actors are performing a fight scene, one of them is wearing a yellow shirt and the other is wearing a white shirt.",
+   "Two actors are performing a scene from a play where one of them is pointing a gun at the other.",
+   "Two cricket players are celebrating after winning a match."
+  ],
+  [
+   0.26806640625,
+   0.293701171875,
+   0.267822265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8779.mp4": [
+  [
+   "A person is pointing their finger at another person in a living room.",
+   "The actors are sitting on a couch and talking to each other.",
+   "An advertisement for the iphone 15 plus with a picture of a hand holding an iphone."
+  ],
+  [
+   0.1627197265625,
+   0.1864013671875,
+   0.1600341796875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8789.mp4": [
+  [
+   "A tv screen showing a news broadcast with a woman in a purple dress.",
+   "A group of people are participating in a live news program and discussing current events.",
+   "A man in a purple shirt and glasses is talking to the camera on a news program."
+  ],
+  [
+   0.298095703125,
+   0.298828125,
+   0.296630859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8799.mp4": [
+  [
+   "A cartoon of a hand holding a yellow object in front of a pink background.",
+   "The cartoon network logo on a yellow background.",
+   "A cartoon of the letter d in a pink and purple background."
+  ],
+  [
+   0.26025390625,
+   0.259765625,
+   0.264892578125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8809.mp4": [
+  [
+   "A refrigerator with the words lurpak spreaable made with real butter.",
+   "A person is cooking scrambled eggs with cheese and peas in a frying pan.",
+   "Two different types of food on a blue and orange background."
+  ],
+  [
+   0.258544921875,
+   0.250732421875,
+   0.266845703125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8819.mp4": [
+  [
+   "A futuristic sports car is driving on an empty road with a beautiful sunset in the background.",
+   "A person is opening the door of a blue car with a key.",
+   "A blue sports car is driving on the street at night, and there are cars parked on the side of the road."
+  ],
+  [
+   0.255859375,
+   0.251708984375,
+   0.25634765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8829.mp4": [
+  [
+   "A man is talking to an old man on the street.",
+   "A man standing in a doorway talking to another man.",
+   "A man is talking to another man in front of a brick wall."
+  ],
+  [
+   0.242919921875,
+   0.2451171875,
+   0.2457275390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8839.mp4": [
+  [
+   "A cartoon spongebob holding a microphone in front of a colorful background.",
+   "A cartoon of spongebob squarepants with the title famous movie moments.",
+   "A cartoon spongebob sitting on a chair next to a tv."
+  ],
+  [
+   0.294677734375,
+   0.307373046875,
+   0.288330078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8849.mp4": [
+  [
+   "A white car is parked in front of a building with yellow walls, and there is a sign on the wall that says maserati.",
+   "A white ferrari sports car is parked in front of a building and the camera pans around it.",
+   "A man is opening the door of a luxury car and getting into the driver's seat."
+  ],
+  [
+   0.284423828125,
+   0.27099609375,
+   0.27099609375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8859.mp4": [
+  [
+   "A picture of kobe bryant dunking a basketball.",
+   "Sonic the hedgehog dunking a basketball.",
+   "A group of basketball players are hugging and congratulating each other after a game."
+  ],
+  [
+   0.341796875,
+   0.333251953125,
+   0.3427734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8869.mp4": [
+  [
+   "A person is assembling a lego set.",
+   "A person is assembling a lego toy.",
+   "A person is assembling and disassembling a lego toy."
+  ],
+  [
+   0.334228515625,
+   0.335693359375,
+   0.330810546875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8879.mp4": [
+  [
+   "The characters are looking at each other with a serious expression.",
+   "It is a scene from a movie where a woman is talking to an ape and the ape is reacting to what she is saying.",
+   "A news article about a woman being questioned by police in hindi."
+  ],
+  [
+   0.2440185546875,
+   0.24951171875,
+   0.2340087890625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8889.mp4": [
+  [
+   "A woman is wearing a hijab and talking to the camera in a shopping mall.",
+   "A woman in a blue shirt with the words royal society conference 2018.",
+   "A video game with the words deep dive dubai."
+  ],
+  [
+   0.23974609375,
+   0.2396240234375,
+   0.228515625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8899.mp4": [
+  [
+   "A pregnant woman is walking down a hospital corridor with her husband and another woman.",
+   "A woman is walking down a hallway in a hospital, and she is accompanied by an elderly woman.",
+   "A woman is bringing groceries to an elderly woman in her home."
+  ],
+  [
+   0.253662109375,
+   0.25537109375,
+   0.248046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8909.mp4": [
+  [
+   "A person is cleaning a toilet bowl with a blue brush.",
+   "A person is putting an egg in a blue bowl.",
+   "A blue plate with a yellow substance on it."
+  ],
+  [
+   0.239990234375,
+   0.2491455078125,
+   0.25390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8919.mp4": [
+  [
+   "The host of a tv show is interviewing a guest on the show, and the guest is laughing and having fun with the host.",
+   "A woman is laughing and smiling on a tv show.",
+   "A man with a mustache laughing on a tv show."
+  ],
+  [
+   0.2347412109375,
+   0.214599609375,
+   0.2137451171875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8929.mp4": [
+  [
+   "A deer walking down a street next to a red car.",
+   "A deer is crossing the street in front of a car.",
+   "A vulture is attacking a dead animal on the side of the road."
+  ],
+  [
+   0.29443359375,
+   0.291748046875,
+   0.279296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8939.mp4": [
+  [
+   "The camera is inside an airport control tower, and the view from the window shows planes on the runway and in the air.",
+   "A news tv screen showing a space shuttle on a runway.",
+   "A news program with a plane on the tarmac."
+  ],
+  [
+   0.258544921875,
+   0.2476806640625,
+   0.26513671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8949.mp4": [
+  [
+   "A person is diving into a swimming pool.",
+   "A golden retriever is jumping into a swimming pool.",
+   "A man is swimming with a dog in a pool."
+  ],
+  [
+   0.302734375,
+   0.302490234375,
+   0.302978515625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8959.mp4": [
+  [
+   "A cruise ship is traveling in the ocean with icebergs in the background.",
+   "A cruise ship is sailing in the ocean and there are icebergs in the background.",
+   "The ship is sailing in the antarctic sea and passing by icebergs."
+  ],
+  [
+   0.295166015625,
+   0.29052734375,
+   0.290283203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8969.mp4": [
+  [
+   "A group of people in a hospital room looking at a tablet.",
+   "A person is unboxing a new ipad air and they are impressed with the size of the device and how it feels in their hand.",
+   "A person is opening a box containing a tablet and removing the screen from it."
+  ],
+  [
+   0.3076171875,
+   0.300537109375,
+   0.30029296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8979.mp4": [
+  [
+   "A soccer player scores a goal in a soccer game.",
+   "A picture of a soccer team and a picture of a woman.",
+   "A soccer player scores a goal."
+  ],
+  [
+   0.304443359375,
+   0.31689453125,
+   0.305908203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8989.mp4": [
+  [
+   "There are two people playing music together, one is playing a guitar and the other is singing.",
+   "A man and a woman are playing music together on a tv show.",
+   "A man and a woman are playing music together at a concert."
+  ],
+  [
+   0.27880859375,
+   0.2802734375,
+   0.284423828125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video8999.mp4": [
+  [
+   "A woman in a blue and white checkered bikini standing in front of a palm tree.",
+   "An advertisement for an almond body wash in the water.",
+   "A quote that says water rippled when i jumped into it."
+  ],
+  [
+   0.25244140625,
+   0.2548828125,
+   0.24609375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9009.mp4": [
+  [
+   "It is a scene from a movie where two people are standing in front of each other, one of them is looking at the other with a sad expression on their face.",
+   "A picture of a kissing scene in hindi.",
+   "It is a scene from a movie where a man and a woman are sitting on a couch, the man is holding the woman's hand and they are talking to each other."
+  ],
+  [
+   0.2403564453125,
+   0.217041015625,
+   0.2257080078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9019.mp4": [
+  [
+   "A picture of a cat playing basketball on a basketball court.",
+   "There is a group of people playing basketball in an indoor gym, one person is dribbling the ball and another person is jumping up to shoot the ball.",
+   "A group of people playing basketball in a gym."
+  ],
+  [
+   0.32958984375,
+   0.32421875,
+   0.324951171875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9029.mp4": [
+  [
+   "A group of basketball players are playing on the court and one player shoots the ball and scores.",
+   "A group of basketball players are playing on the court and one of them is dunking the ball.",
+   "A hockey player scored a goal and celebrated with his teammates."
+  ],
+  [
+   0.30615234375,
+   0.309326171875,
+   0.297607421875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9039.mp4": [
+  [
+   "Two frozen princesses standing in front of a snowy background.",
+   "Two women in futuristic outfits standing next to each other.",
+   "A young man and woman are standing in front of a purple building, with the woman holding a cell phone."
+  ],
+  [
+   0.2646484375,
+   0.26416015625,
+   0.2626953125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9049.mp4": [
+  [
+   "A cartoon character is playing a video game on a platform with a blue sky and clouds in the background.",
+   "The gamer is playing a first-person shooter game in a multiplayer environment.",
+   "A close up of a video game character holding a gun."
+  ],
+  [
+   0.2900390625,
+   0.28173828125,
+   0.2841796875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9059.mp4": [
+  [
+   "A person is holding an orange watch in their hand, and there are trees in the background.",
+   "The mcdonald's logo appears and disappears on a green background with hearts.",
+   "There is a cartoon of dinosaurs in a jungle, with hearts and trees in the background."
+  ],
+  [
+   0.161376953125,
+   0.1485595703125,
+   0.162353515625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9069.mp4": [
+  [
+   "A woman in a purple dress is giving an acceptance speech on stage at an awards ceremony.",
+   "A website with a picture of a group of people holding awards.",
+   "A group of people in yellow shirts are receiving an award at an event."
+  ],
+  [
+   0.266845703125,
+   0.271240234375,
+   0.259765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9079.mp4": [
+  [
+   "The character is flying in space with a halo around her head and a rainbow-colored aura.",
+   "The character is wearing a futuristic armor and holding a lightning bolt in his hand.",
+   "A cartoon of a baby standing next to a transformers robot."
+  ],
+  [
+   0.240478515625,
+   0.2305908203125,
+   0.236572265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9089.mp4": [
+  [
+   "A person is driving a luxury car and using the infotainment system.",
+   "A woman is driving a luxury car and using the car's infotainment system.",
+   "A person is driving a luxury car with a touch screen infotainment system."
+  ],
+  [
+   0.326904296875,
+   0.32177734375,
+   0.31689453125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9099.mp4": [
+  [
+   "A woman is applying eyebrow makeup.",
+   "A makeup artist is applying foundation to a model's face.",
+   "A woman is applying makeup on her eyebrows using a mirror and a pencil."
+  ],
+  [
+   0.33056640625,
+   0.326904296875,
+   0.33056640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9109.mp4": [
+  [
+   "A news broadcast on a blue background with the words news is king.",
+   "A blue screen with the words breaking news buried treasure found.",
+   "A blue and white background with the words breaking news."
+  ],
+  [
+   0.321044921875,
+   0.31396484375,
+   0.3134765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9119.mp4": [
+  [
+   "A person is holding a purple plate with yellow and blue flowers on it.",
+   "A blue background with the words research to tackle drug resistant infections.",
+   "A computer screen with the words harnessing genomic diversity through genetic and phenotypic approaches."
+  ],
+  [
+   0.29052734375,
+   0.283935546875,
+   0.284912109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9129.mp4": [
+  [
+   "A young woman is singing and playing the ukulele on stage in front of an audience.",
+   "A young girl is sitting in front of the camera and talking to the viewer.",
+   "A young woman is singing on stage at an event, and she is wearing a blue shirt."
+  ],
+  [
+   0.2344970703125,
+   0.2384033203125,
+   0.228759765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9139.mp4": [
+  [
+   "The simpsons driving a school bus in the rain.",
+   "A cartoon cat driving a purple car on a green field.",
+   "There is a purple castle in the sky with a moon and stars in the background."
+  ],
+  [
+   0.2337646484375,
+   0.2296142578125,
+   0.2418212890625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9149.mp4": [
+  [
+   "A group of people are on stage at an event and they are receiving an award.",
+   "A group of musicians are performing on a tv show.",
+   "A group of musicians are performing on stage with flashing lights and a british flag in the background."
+  ],
+  [
+   0.2587890625,
+   0.26123046875,
+   0.265380859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9159.mp4": [
+  [
+   "A group of chefs are participating in a cooking competition and they are preparing dishes on stage.",
+   "A group of chefs are cooking hamburgers on a grill in a restaurant.",
+   "A bartender is making an alcoholic drink by adding ice to a glass and shaking it."
+  ],
+  [
+   0.28515625,
+   0.26953125,
+   0.26806640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9169.mp4": [
+  [
+   "A purple and blue painting hanging on a wall.",
+   "The letter k is being written on a blue background with a butterfly and a lion in the foreground.",
+   "There is a living room with a television, a bookshelf, and a lamp the room is decorated with yellow curtains, and there is a painting on the wall."
+  ],
+  [
+   0.299072265625,
+   0.30224609375,
+   0.297119140625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9179.mp4": [
+  [
+   "A group of people in blue scrubs walking down a hallway.",
+   "A man in a blue shirt is standing in a hospital room with other doctors and nurses.",
+   "A patient's vital signs are being monitored in an intensive care unit."
+  ],
+  [
+   0.2763671875,
+   0.27490234375,
+   0.264892578125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9189.mp4": [
+  [
+   "A screen shot of a music recording program.",
+   "A screen shot of a web page with a yellow arrow pointing to a number.",
+   "A screen shot of a music program with a lot of information on it."
+  ],
+  [
+   0.263916015625,
+   0.245849609375,
+   0.2548828125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9199.mp4": [
+  [
+   "A cat is playing a video game with aliens and spaceships in the background.",
+   "The player is playing a first-person shooter game in a dark and eerie environment with flashing lights and gunfire.",
+   "A cat is walking down a dark alley at night with neon lights in the background."
+  ],
+  [
+   0.23828125,
+   0.2386474609375,
+   0.232177734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9209.mp4": [
+  [
+   "A woman is practicing archery and shooting arrows at a target.",
+   "A little girl is shooting arrows at a target in an outdoor archery range.",
+   "A person is shooting arrows with a bow and arrow."
+  ],
+  [
+   0.348876953125,
+   0.34814453125,
+   0.34765625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9219.mp4": [
+  [
+   "A group of people are dancing breakdancing in a dark room with a crowd of people watching.",
+   "There is a group of people dancing in a room with a blue sky and stars in the background.",
+   "A group of people in neon outfits are dancing and performing in a dark, futuristic setting."
+  ],
+  [
+   0.301025390625,
+   0.302734375,
+   0.290283203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9229.mp4": [
+  [
+   "An advertisement for a knife with a picture of a man holding a knife.",
+   "An advertisement for a knife show with a picture of a man holding a knife.",
+   "A picture of a knife set on a white background."
+  ],
+  [
+   0.284423828125,
+   0.28271484375,
+   0.279052734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9239.mp4": [
+  [
+   "A car is driving on a road and a deer is standing on the side of the road.",
+   "A kangaroo standing on the side of the road.",
+   "A kangaroo is hopping down the side of a road."
+  ],
+  [
+   0.289306640625,
+   0.30517578125,
+   0.29736328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9249.mp4": [
+  [
+   "A dark blue background with white text that says ask a librarian.",
+   "A blue background with the words 101 in cell biology.",
+   "A computer screen with a red arrow pointing to a library pin."
+  ],
+  [
+   0.272216796875,
+   0.279052734375,
+   0.2666015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9259.mp4": [
+  [
+   "A person is opening the door of a blue car with a key.",
+   "A person opens the door of a yellow sports car.",
+   "A person is opening the door of a car, and the car is parked on the side of the road."
+  ],
+  [
+   0.2489013671875,
+   0.2486572265625,
+   0.2493896484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9269.mp4": [
+  [
+   "There is a painting of a man wearing a baseball cap and holding a guitar.",
+   "A person standing next to a pair of shoes with the words mario guitar and grate the guitar grip written on them.",
+   "A group of musicians are performing on the street and attracting attention from passersby."
+  ],
+  [
+   0.2255859375,
+   0.220458984375,
+   0.222900390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9279.mp4": [
+  [
+   "A woman is sitting on a white bathtub and taking care of her feet by massaging them with lotion.",
+   "A person is using a knife to cut a tube of cream on a purple background.",
+   "The nail technician is applying a base coat and top coat to the client's nails."
+  ],
+  [
+   0.295166015625,
+   0.291259765625,
+   0.28662109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9289.mp4": [
+  [
+   "A catwalk show with a woman in a coat and hat walking down the runway.",
+   "A cat in a suit walking down the runway at a fashion show.",
+   "The model is walking on the catwalk and showing the clothing to the audience."
+  ],
+  [
+   0.2919921875,
+   0.287353515625,
+   0.2841796875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9299.mp4": [
+  [
+   "A dog is jumping up and down excitedly in front of an open door.",
+   "A pug dog is standing in front of a door and then walks away from the camera.",
+   "A pug dog is walking towards the camera and sniffing the floor."
+  ],
+  [
+   0.316162109375,
+   0.311279296875,
+   0.305419921875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9309.mp4": [
+  [
+   "There is a bowl of shrimp on a table, surrounded by vegetables and other ingredients.",
+   "Two blue lobsters in a tank with a caption that says bobby blue lobster.",
+   "A lobster on a plate with a quote about grilling lobsters."
+  ],
+  [
+   0.320556640625,
+   0.31787109375,
+   0.310791015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9319.mp4": [
+  [
+   "Two musicians are performing on a tv show.",
+   "The user is using a digital audio workstation daw software to create and edit music.",
+   "Two musicians are performing on a television show."
+  ],
+  [
+   0.26806640625,
+   0.255126953125,
+   0.265380859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9329.mp4": [
+  [
+   "A woman is receiving an award at an event and she is smiling and posing for the camera.",
+   "A woman is holding an award and smiling at the camera.",
+   "A woman is talking to the camera and expressing her happiness about being nominated for an award."
+  ],
+  [
+   0.2978515625,
+   0.28369140625,
+   0.293701171875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9339.mp4": [
+  [
+   "Two pictures of llamas and alpacas on a blue background.",
+   "A camel on a green background with the words subscribe for more like this.",
+   "A picture of a kangaroo with a caption that says 10 top amazing facts about kangaroos."
+  ],
+  [
+   0.315673828125,
+   0.314697265625,
+   0.293701171875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9349.mp4": [
+  [
+   "A person is making a bracelet by threading beads onto a string.",
+   "A person is making a jewelry piece using red beads and a needle.",
+   "A person is working on a piece of jewelry."
+  ],
+  [
+   0.30859375,
+   0.295654296875,
+   0.3056640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9359.mp4": [
+  [
+   "A person is walking on the water surface of a river and there is an octopus swimming in the water.",
+   "A picture of a giant octopus in the water.",
+   "A picture of a whale jumping out of the water."
+  ],
+  [
+   0.225830078125,
+   0.2342529296875,
+   0.2249755859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9369.mp4": [
+  [
+   "A man is standing in front of a washing machine and talking to another man who is sitting on a bench.",
+   "A man in a grey shirt talking to someone.",
+   "A man is sitting on the floor and talking to another man who is standing in front of him."
+  ],
+  [
+   0.2408447265625,
+   0.2266845703125,
+   0.2342529296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9379.mp4": [
+  [
+   "The speaker is giving a speech at a conference and discussing the progress of technology in korea.",
+   "A screen shot of a financial times article.",
+   "A group of people are participating in a webinar and discussing various topics related to the european union."
+  ],
+  [
+   0.259521484375,
+   0.275634765625,
+   0.251953125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9389.mp4": [
+  [
+   "The user is accessing the settings app on their smartphone.",
+   "A person is using a smartphone with an app that allows them to monitor and control their home appliances such as lights, air conditioners, and refrigerators.",
+   "A person is using a smartphone with an app that allows them to control the camera settings and zoom in and out."
+  ],
+  [
+   0.29638671875,
+   0.29248046875,
+   0.289306640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9399.mp4": [
+  [
+   "A person is making a salad with shrimp and vegetables on a plate.",
+   "A person is preparing a dish by adding vegetables and seafood in a bowl.",
+   "There is a white plate with food on it, including shrimp, carrots, and other vegetables."
+  ],
+  [
+   0.31640625,
+   0.3115234375,
+   0.296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9409.mp4": [
+  [
+   "A person is making a salad with shrimp and vegetables on a plate.",
+   "A plate of stir fried vegetables with chopsticks.",
+   "A picture of a salad with vegetables and shrimp in a bowl."
+  ],
+  [
+   0.28564453125,
+   0.2802734375,
+   0.30615234375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9419.mp4": [
+  [
+   "Two different pictures of a box with a blue bow on it.",
+   "A picture of a box with a purple bow on it.",
+   "A box with a pikachu toy inside of it."
+  ],
+  [
+   0.29248046875,
+   0.28271484375,
+   0.272216796875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9429.mp4": [
+  [
+   "A group of people playing basketball in a video game.",
+   "There is a basketball game being played on a court, and the players are jumping and dunking the ball.",
+   "A group of basketball players are playing on the court and one of them is dunking the ball."
+  ],
+  [
+   0.32763671875,
+   0.320556640625,
+   0.319580078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9439.mp4": [
+  [
+   "A hand drawing black and white drawings on a white board.",
+   "A person is drawing a picture with a pencil and paintbrush on a piece of paper.",
+   "A hand drawing on a white board with a pencil."
+  ],
+  [
+   0.318603515625,
+   0.31103515625,
+   0.31396484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9449.mp4": [
+  [
+   "It is a scene from a movie or tv show where a man and a woman are standing in front of each other, looking at each other with a serious expression on their faces.",
+   "A screen shot of a tv show with a picture of a man and a woman shaking hands.",
+   "It is a scene from a movie where two people are standing in front of each other, one of them is looking at the other with a sad expression on their face."
+  ],
+  [
+   0.2359619140625,
+   0.234130859375,
+   0.2342529296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9459.mp4": [
+  [
+   "A young boy standing next to a man on a soccer field.",
+   "Cristiano ronaldo is standing on a soccer field and smiling at the camera.",
+   "A young boy is talking to a robot on a soccer field."
+  ],
+  [
+   0.313720703125,
+   0.306396484375,
+   0.2998046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9469.mp4": [
+  [
+   "Captain america and black panther standing next to each other.",
+   "A white bird standing next to a group of animals.",
+   "Captain america and an elephant standing next to each other."
+  ],
+  [
+   0.3017578125,
+   0.287109375,
+   0.283935546875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9479.mp4": [
+  [
+   "An advertisement for discovery kids in spanish.",
+   "The user is cooking fried potato sticks in an oven.",
+   "A person is cooking food in an oven with the door open, and the person is putting the food in the oven."
+  ],
+  [
+   0.2415771484375,
+   0.2239990234375,
+   0.222412109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9489.mp4": [
+  [
+   "A man in sunglasses and a black leather jacket is standing on the street at night, pointing his finger at the camera and making a gesture with his hand.",
+   "A blue light shining on a bicycle in a dark room.",
+   "A person is pointing at a bicycle parked on the side of the road at night."
+  ],
+  [
+   0.268310546875,
+   0.26025390625,
+   0.254638671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9499.mp4": [
+  [
+   "A person is holding a deer in their hand and they are cutting the deer's ear with a knife.",
+   "It is a scene from a movie where two people are standing in front of each other, one of them is wearing a golden crown and the other is holding a sword.",
+   "A man with a beard and a crown is standing in a dark room holding a feather quill and looking at the camera."
+  ],
+  [
+   0.234130859375,
+   0.225341796875,
+   0.2275390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9509.mp4": [
+  [
+   "A woman with purple hair and pink lipstick is talking to the camera against a background of pink hearts.",
+   "A picture of a red and pink lake with mountains in the background.",
+   "A young woman is applying lipstick to her lips while looking at herself in the mirror."
+  ],
+  [
+   0.22900390625,
+   0.2239990234375,
+   0.2154541015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9519.mp4": [
+  [
+   "The logo for metal hit 8 on a black background.",
+   "The members of a k-pop group are performing on stage.",
+   "A group of musicians are playing violin on stage they are dressed in black shirts and ties, and some of them are wearing hats."
+  ],
+  [
+   0.291748046875,
+   0.288818359375,
+   0.28955078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9529.mp4": [
+  [
+   "A picture of a rolls royce parked in a garage.",
+   "A tesla electric car is being showcased at an auto show.",
+   "A black jaguar car is being filmed on a white background."
+  ],
+  [
+   0.292724609375,
+   0.30126953125,
+   0.290771484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9539.mp4": [
+  [
+   "A young woman is eating food at an outdoor restaurant with a man sitting next to her.",
+   "A woman eating a piece of food in front of a camera.",
+   "A group of people are sitting at a table in an outdoor restaurant, enjoying food and drinks."
+  ],
+  [
+   0.291259765625,
+   0.28173828125,
+   0.2802734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9549.mp4": [
+  [
+   "The user is using a music production software to create and edit music.",
+   "The user is working on a computer screen with a music production software, and they are able to understand the visual content that the user provides.",
+   "The user is using a music production software with a graphical user interface."
+  ],
+  [
+   0.263671875,
+   0.26708984375,
+   0.26513671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9559.mp4": [
+  [
+   "A man is hugging another man in a hallway.",
+   "Two men in purple uniforms hugging each other.",
+   "A man in a roman uniform shaking hands with another man."
+  ],
+  [
+   0.2403564453125,
+   0.2396240234375,
+   0.226806640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9569.mp4": [
+  [
+   "A close up of a baby laughing and smiling.",
+   "A man kissing a woman in a pink shirt.",
+   "A man kissing a little girl on the cheek."
+  ],
+  [
+   0.271240234375,
+   0.26611328125,
+   0.263916015625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9579.mp4": [
+  [
+   "A group of people in lab coats looking at a screen.",
+   "A young man in a blue shirt is standing in a hospital room, wearing a white lab coat and holding a stethoscope.",
+   "A group of people in white lab coats looking at a screen."
+  ],
+  [
+   0.2890625,
+   0.281005859375,
+   0.29052734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9589.mp4": [
+  [
+   "A picture of a flower with the words violin sad background music.",
+   "A woman is wearing a cowboy hat and sitting in front of a camera, talking to the viewer.",
+   "Two musicians are playing acoustic guitars and singing on a tv show."
+  ],
+  [
+   0.325439453125,
+   0.30712890625,
+   0.3037109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9599.mp4": [
+  [
+   "A man is bowling in a bowling alley, and he is wearing a black shirt.",
+   "A person is bowling in a bowling alley.",
+   "A group of friends are having fun in a bowling alley."
+  ],
+  [
+   0.3359375,
+   0.32080078125,
+   0.3310546875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9609.mp4": [
+  [
+   "It is a sci-fi game with a futuristic atmosphere, and the characters are wearing futuristic armor.",
+   "The character is sitting in a futuristic spacecraft and looking out of the window.",
+   "A man in a futuristic armor holding a gun."
+  ],
+  [
+   0.255615234375,
+   0.26220703125,
+   0.2347412109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9619.mp4": [
+  [
+   "A cartoon lion and a cartoon lion are standing next to each other on a colorful background.",
+   "A cartoon character is standing in the rain with a yellow car in the background.",
+   "A cartoon character is standing in the middle of a forest with an umbrella."
+  ],
+  [
+   0.2626953125,
+   0.264404296875,
+   0.28564453125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9629.mp4": [
+  [
+   "A person is using a car's infotainment system to adjust the temperature and music volume.",
+   "A person is driving a car and adjusting the settings on the dashboard.",
+   "A person is using a smartphone to control the temperature of their car remotely."
+  ],
+  [
+   0.31640625,
+   0.313232421875,
+   0.32177734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9639.mp4": [
+  [
+   "A person is frying vegetables in a pan with a wooden spoon.",
+   "A person is preparing a salad by adding vegetables and dressing in a bowl.",
+   "A person is cooking vegetables in a pan with a spoon, and the vegetables are being stirred in the pan."
+  ],
+  [
+   0.2978515625,
+   0.2939453125,
+   0.294921875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9649.mp4": [
+  [
+   "A group of cowboys are riding horses through a forest and one of them falls off his horse.",
+   "A cowboy is riding a horse and chasing after a group of wild horses.",
+   "People are riding horses and wagons in a parade."
+  ],
+  [
+   0.315185546875,
+   0.319091796875,
+   0.30908203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9659.mp4": [
+  [
+   "It is a scene from a movie where two people are standing in a forest, one of them is wearing a robotic suit and the other is looking at it with a serious expression on their face.",
+   "A man in a futuristic outfit is standing in a dimly lit room and talking to another person.",
+   "It is a futuristic scene with a humanoid robot wearing a metallic suit standing in a dark and gloomy environment."
+  ],
+  [
+   0.258056640625,
+   0.25341796875,
+   0.25439453125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9669.mp4": [
+  [
+   "A female anime character is dancing in a neon-lit club with pink and purple lighting.",
+   "A group of five anime characters are dancing on a futuristic stage with neon lights and a rainbow in the background.",
+   "The characters are dancing on a stage with neon lights in the background."
+  ],
+  [
+   0.2861328125,
+   0.2880859375,
+   0.284912109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9679.mp4": [
+  [
+   "A person is opening a video game box and taking out the game disc.",
+   "Two boxes of gaming accessories sitting on top of a table.",
+   "A close up of a box with a picture of a video game on it."
+  ],
+  [
+   0.289794921875,
+   0.291015625,
+   0.306640625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9689.mp4": [
+  [
+   "A person is cooking chicken in the oven and adding spices to it.",
+   "A person is cooking chicken in a baking dish and sprinkling spices on it.",
+   "A person is cooking a fish in a pan with red sauce."
+  ],
+  [
+   0.30078125,
+   0.299560546875,
+   0.29248046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9699.mp4": [
+  [
+   "There are four glasses filled with different colored drinks on a blue tablecloth.",
+   "A group of people are mixing different colored liquids in test tubes.",
+   "A person is making a drink by pouring different colored liquids into a glass."
+  ],
+  [
+   0.283203125,
+   0.282470703125,
+   0.28662109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9709.mp4": [
+  [
+   "A woman in a yellow vest standing next to a yellow school bus.",
+   "A person in a yellow vest walking down a hallway.",
+   "A young girl in a yellow vest standing on the side of the road."
+  ],
+  [
+   0.26806640625,
+   0.25390625,
+   0.255126953125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9719.mp4": [
+  [
+   "A young man wearing a black hat is singing into a microphone on a tv show.",
+   "A woman in a black hat is singing into a microphone while standing on a stage with a band playing in the background.",
+   "A cartoon squirrel playing a guitar on a stage."
+  ],
+  [
+   0.251953125,
+   0.239501953125,
+   0.2337646484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9729.mp4": [
+  [
+   "A woman is being interviewed on a news program, and she is wearing a pink shirt.",
+   "A news article about a woman being questioned by police in hindi.",
+   "A news story in hindi with a picture of a man in a pink shirt."
+  ],
+  [
+   0.296875,
+   0.287109375,
+   0.30078125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9739.mp4": [
+  [
+   "A person is frying vegetables in a pan with a wooden spoon.",
+   "A person is cooking food in a frying pan with onions and mushrooms.",
+   "A person is frying zucchini slices in a pan."
+  ],
+  [
+   0.31982421875,
+   0.32568359375,
+   0.322021484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9749.mp4": [
+  [
+   "A cartoon character named buzz lightyear is riding in a spaceship.",
+   "A person is cutting vegetables, including onions, tomatoes, and potatoes, with a knife on a blue cutting board.",
+   "A person is cutting vegetables on a plate with a knife."
+  ],
+  [
+   0.335205078125,
+   0.326904296875,
+   0.325927734375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9759.mp4": [
+  [
+   "A box with a pikachu toy inside of it.",
+   "The person is opening a gift box and revealing a toy inside.",
+   "A person is opening a toy packaging and revealing the contents."
+  ],
+  [
+   0.2578125,
+   0.255126953125,
+   0.25146484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9769.mp4": [
+  [
+   "A poster that says zumba love with joy.",
+   "A group of people are standing in front of a blue background, and they are wearing hats and sunglasses.",
+   "A group of people are standing in front of a dark background, with some wearing sunglasses and others not."
+  ],
+  [
+   0.27587890625,
+   0.257568359375,
+   0.255615234375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9779.mp4": [
+  [
+   "The singer is performing on stage with a band and there are fireworks in the background.",
+   "A group of people are celebrating new year's eve by lighting fireworks and having fun.",
+   "A group of people are celebrating new year's eve by setting off fireworks."
+  ],
+  [
+   0.27197265625,
+   0.2705078125,
+   0.27197265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9789.mp4": [
+  [
+   "A cartoon of two hands holding hands on a pink background.",
+   "There is a red background with the words short talk podcast written on it.",
+   "Three lions in a cartoon with a bird in the background."
+  ],
+  [
+   0.2039794921875,
+   0.2017822265625,
+   0.202880859375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9799.mp4": [
+  [
+   "A person is unboxing a new smartphone and examining its features.",
+   "A person is opening a box containing a 5000 mega pixel smartphone.",
+   "A person is holding a smartphone in their hand and opening it up to show the back of the device."
+  ],
+  [
+   0.297607421875,
+   0.294677734375,
+   0.292724609375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9809.mp4": [
+  [
+   "A motorcyclist is preparing for a race by checking the tires and adjusting the handlebars.",
+   "A video game with the words deep dive dubai.",
+   "A motorcyclist is giving an interview after winning a race."
+  ],
+  [
+   0.298095703125,
+   0.2880859375,
+   0.292236328125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9819.mp4": [
+  [
+   "A news report about a group of people sitting on the ground.",
+   "A news channel is reporting live from the scene of a breaking news event.",
+   "A news anchor on a tv screen with a group of police officers in the background."
+  ],
+  [
+   0.302001953125,
+   0.294921875,
+   0.2998046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9829.mp4": [
+  [
+   "An image of a blue star with a text that says everything you ever wondered about blue star.",
+   "A white car is parked in front of a building with yellow walls, and there is a sign on the wall that says maserati.",
+   "A man wearing a yellow vest is talking to a group of people in front of a blue door."
+  ],
+  [
+   0.2099609375,
+   0.2021484375,
+   0.189208984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9839.mp4": [
+  [
+   "A cartoon horse in front of a barn.",
+   "A horse is standing in a field and the camera zooms in on its face.",
+   "A man is standing in front of a stable and pointing at a horse while talking to the camera."
+  ],
+  [
+   0.34130859375,
+   0.3212890625,
+   0.3271484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9849.mp4": [
+  [
+   "A person is walking in the woods at night with a flashlight, and there is a campfire in the background.",
+   "A campfire is burning in the woods at night with trees in the background.",
+   "A person is camping in a forest at night with a tent and a campfire."
+  ],
+  [
+   0.297119140625,
+   0.287109375,
+   0.2841796875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9859.mp4": [
+  [
+   "A man is dancing and having fun on a tv show.",
+   "A woman in a futuristic outfit is being attacked by a robot in a neon-lit environment.",
+   "A comedian is performing on a television show and he is using a gun as part of his act."
+  ],
+  [
+   0.2421875,
+   0.23095703125,
+   0.2325439453125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9869.mp4": [
+  [
+   "A green screen with a text that says listen to two people answer the same question.",
+   "A woman is wearing glasses and talking to another woman.",
+   "A green screen with text on it that says high street survey results."
+  ],
+  [
+   0.246826171875,
+   0.23046875,
+   0.2420654296875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9879.mp4": [
+  [
+   "A child is singing on a stage with a microphone.",
+   "A young girl is sitting in front of the camera and talking to the viewer.",
+   "A young girl is singing on stage with a microphone in her hand."
+  ],
+  [
+   0.26171875,
+   0.271484375,
+   0.259033203125
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9889.mp4": [
+  [
+   "A spaceship is landing on a futuristic planet with buildings and spaceships in the background.",
+   "A cartoon dolphin jumping out of the water with a rainbow in the background.",
+   "A group of superheroes and villains are standing on a battlefield with lightning in the background."
+  ],
+  [
+   0.298583984375,
+   0.285400390625,
+   0.285888671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9899.mp4": [
+  [
+   "A person is skydiving in the middle of the ocean with clear blue water and green islands in the background.",
+   "The camera is flying over a beautiful island with mountains, sea and clouds.",
+   "A red flag with the word hong kong is waving in the wind on a green screen."
+  ],
+  [
+   0.293701171875,
+   0.292236328125,
+   0.288818359375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9909.mp4": [
+  [
+   "The game super mario 64 is being played on a nintendo 64 console.",
+   "The player is playing a game of super mario 64 and defeating enemies in a multiplayer arena.",
+   "The game super mario world is being played on a nintendo game console."
+  ],
+  [
+   0.3046875,
+   0.30810546875,
+   0.301513671875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9919.mp4": [
+  [
+   "The actor is wearing a brown leather jacket and standing in a dimly lit room.",
+   "James bond is holding a gun and wearing a tuxedo.",
+   "Iron man and tony stark are standing in front of each other with their suits on."
+  ],
+  [
+   0.2003173828125,
+   0.1658935546875,
+   0.1673583984375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9929.mp4": [
+  [
+   "A woman is sitting in the back seat of a car and using a smartphone.",
+   "A person is using a smartphone while traveling in a car.",
+   "A person is sitting in a car and using a smartphone."
+  ],
+  [
+   0.298583984375,
+   0.2939453125,
+   0.29248046875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9939.mp4": [
+  [
+   "A group of rock musicians are performing on stage and thanking the audience for watching.",
+   "A metal band is performing on stage and the audience is cheering and waving their hands in the air.",
+   "The band is performing on stage with lights shining on them."
+  ],
+  [
+   0.25830078125,
+   0.25732421875,
+   0.259521484375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9949.mp4": [
+  [
+   "The player is playing a first-person shooter game in which they are driving a car and shooting at other players.",
+   "The player is playing a first-person shooter game in which they are driving a car and shooting at enemies.",
+   "The player is playing a first-person shooter game in which they are driving a car and shooting at enemies with a gun."
+  ],
+  [
+   0.338623046875,
+   0.3349609375,
+   0.33447265625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9959.mp4": [
+  [
+   "A cartoon man with a speech bubble saying what is economics?.",
+   "A cartoon with a speech bubble that says 2002 study how we express our emotions.",
+   "A cartoon of a woman in a business suit pointing at something."
+  ],
+  [
+   0.258056640625,
+   0.258544921875,
+   0.253662109375
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9969.mp4": [
+  [
+   "A cute kitten is wearing a pink hoodie and sitting on a pink background.",
+   "Two cats with their mouths open on a pink background.",
+   "A woman is holding a black and white cat against a pink background."
+  ],
+  [
+   0.27099609375,
+   0.264404296875,
+   0.258544921875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9979.mp4": [
+  [
+   "A cute cat wearing a costume is standing on the ground and looking at the camera.",
+   "A cartoon character wearing a buzz lightyear costume.",
+   "A cartoon character in a robot costume is walking towards the camera with its arms outstretched."
+  ],
+  [
+   0.214111328125,
+   0.203857421875,
+   0.22900390625
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9989.mp4": [
+  [
+   "A white car driving down a highway with the words electric car and plug-in hybrid car on the side of the road.",
+   "A person is driving a car on a highway and the camera is mounted on the dashboard of the car.",
+   "A person is driving a car on a highway and the camera is on the dashboard of the car."
+  ],
+  [
+   0.291259765625,
+   0.290283203125,
+   0.28857421875
+  ]
+ ],
+ "datasets/MSRVTT-v2/videos/video9999.mp4": [
+  [
+   "A woman with long blonde hair brushing her hair with a brush.",
+   "A person is brushing their hair with a brush.",
+   "A woman is brushing her hair with a pink brush."
+  ],
+  [
+   0.282958984375,
+   0.271728515625,
+   0.260009765625
+  ]
+ ]
+}
