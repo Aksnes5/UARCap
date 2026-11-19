@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /home/bn/videoufo_research
-while ! grep -q "TEST_GRID_DONE_ALL" logs/master_overnight.log 2>/dev/null; do sleep 60; done
+while ! grep -q "TEST_GRID_DONE_ALL" logs/test_resume_chain.log 2>/dev/null; do sleep 60; done
 PY=/home/bn/anaconda3/envs/videollama2/bin/python
 VENV=/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python
 GEN=eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json

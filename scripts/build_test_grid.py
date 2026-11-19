@@ -23,8 +23,8 @@ for key, (caps, rels) in S.items():
     ds[key] = [rc, [m.get(c, 0.0) for c in rc]]
 
 for name, cap, sim in [("cf7", cf, cfs), ("d7", dd, ds)]:
-    json.dump(cap, open(os.path.join(EXT, f"external_val_{name}_cap.json"), "w"), indent=1)
-    json.dump(sim, open(os.path.join(EXT, f"external_val_{name}_sims.json"), "w"), indent=1)
+    json.dump(cap, open(os.path.join(EXT, f"external_test_{name}_cap.json"), "w"), indent=1)
+    json.dump(sim, open(os.path.join(EXT, f"external_test_{name}_sims.json"), "w"), indent=1)
 
 sel = set()
 for cap in (cf, dd):
