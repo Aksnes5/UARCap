@@ -1,0 +1,17 @@
+{
+  "train": {
+    "n_unique": 110025,
+    "exact_overlap": 93,
+    "ratio": 0.0008
+  },
+  "val": {
+    "n_unique": 8823,
+    "exact_overlap": 7,
+    "ratio": 0.0008
+  },
+  "test": {
+    "n_unique": 51579,
+    "exact_overlap": 41,
+    "ratio": 0.0008
+  }
+}
