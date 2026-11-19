@@ -1,0 +1,30 @@
+{
+  "queries": 497,
+  "k_star_distribution": {
+    "1": 336,
+    "3": 80,
+    "5": 43,
+    "7": 38
+  },
+  "k_star_ratio": {
+    "1": 0.6761,
+    "3": 0.161,
+    "5": 0.0865,
+    "7": 0.0765
+  },
+  "fixed_mean_cider": {
+    "1": 0.5174,
+    "3": 0.5312,
+    "5": 0.5048,
+    "7": 0.5002
+  },
+  "best_fixed_k": 3,
+  "oracle_adaptive_mean_cider": 0.5984,
+  "oracle_minus_best_fixed": 0.0671,
+  "oracle_minus_best_fixed_ci95": [
+    0.0517,
+    0.0847
+  ],
+  "all_k_identical_queries": 195,
+  "context_sensitive_queries": 302
+}
