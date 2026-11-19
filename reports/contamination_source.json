@@ -1,0 +1,33 @@
+{
+  "msrvtt_videos": 10000,
+  "ufo_sources": 345437,
+  "source_overlap": {
+    "train": {
+      "n": 0,
+      "examples": []
+    },
+    "val": {
+      "n": 0,
+      "examples": []
+    },
+    "test": {
+      "n": 0,
+      "examples": []
+    }
+  },
+  "same_time_overlap": {
+    "train": {
+      "n": 0,
+      "examples": []
+    },
+    "val": {
+      "n": 0,
+      "examples": []
+    },
+    "test": {
+      "n": 0,
+      "examples": []
+    }
+  },
+  "val_retrieved_same_source": []
+}
