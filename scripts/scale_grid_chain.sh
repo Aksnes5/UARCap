@@ -3,7 +3,7 @@
 cd /home/bn/videoufo_research
 LEDGER=reports/runtime_ledger.csv
 [ -f "$LEDGER" ] || echo "experiment,scale,track,k,n_queries,load_seconds,generation_seconds,eval_seconds,gpu_hours,status" > "$LEDGER"
-PY=/media/bn/anaconda3/envs/videollama2/bin/python
+PY=/home/bn/anaconda3/envs/videollama2/bin/python
 GEN=eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json
 for S in 10k 100k 500k; do
   for K in 1 3 5 7; do

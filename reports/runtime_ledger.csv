@@ -1,0 +1,5 @@
+experiment,scale,track,k,n_queries,load_seconds,generation_seconds,eval_seconds,gpu_hours,status
+val497_10k_D1,10k,D,1,497,,0,0,0,done
+val497_10k_D3,10k,D,3,497,,0,8,.002,done
+val497_10k_D5,10k,D,5,497,,2521,9,.702,done
+val497_10k_D7,10k,D,7,497,,2777,9,.773,done
