@@ -1,0 +1,30 @@
+{
+  "10k": {
+    "n": 497,
+    "identical_all_k": 212,
+    "sensitive": 285,
+    "d3_minus_d7_changed": 0.0353,
+    "n_changed": 199
+  },
+  "100k": {
+    "n": 497,
+    "identical_all_k": 209,
+    "sensitive": 288,
+    "d3_minus_d7_changed": 0.0351,
+    "n_changed": 212
+  },
+  "500k": {
+    "n": 497,
+    "identical_all_k": 193,
+    "sensitive": 304,
+    "d3_minus_d7_changed": 0.0342,
+    "n_changed": 212
+  },
+  "full": {
+    "n": 497,
+    "identical_all_k": 195,
+    "sensitive": 302,
+    "d3_minus_d7_changed": 0.0764,
+    "n_changed": 202
+  }
+}

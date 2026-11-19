@@ -45,3 +45,16 @@ Coverage grows from 10K to 100K and then saturates (500K ≈ FULL).
 - FULL D3 (53.14) is the overall best fixed configuration across scales.
 - This grid is characterization only; the frozen adaptive selector was not
   re-tuned on it.
+
+## Context sensitivity by scale
+
+| corpus | queries with identical output at all k | context-sensitive | D3−D7 on changed queries (n) |
+|---|---|---|---|
+| 10K | 212 | 285 | +3.53 (199) |
+| 100K | 209 | 288 | +3.51 (212) |
+| 500K | 193 | 304 | +3.42 (212) |
+| FULL | 195 | 302 | **+7.64** (202) |
+
+The per-changed-query harm of k=7 is roughly +3.5 at 10K–500K but doubles at
+FULL. The scale effect is therefore not in how many queries react, but in how
+much damage the largest corpus does when it does react.
