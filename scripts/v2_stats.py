@@ -60,8 +60,9 @@ def main():
                      "wins": sum(x > 0 for x in d), "losses": sum(x < 0 for x in d)}
         print(f"H3v2-{base}: diff {obs:+.3f} CI [{ci[0]:+.3f},{ci[1]:+.3f}] p {out[base]['p_perm']} "
               f"W/L {out[base]['wins']}/{out[base]['losses']}", flush=True)
-    json.dump({"metrics": {k: {mk: round(v * 100, 4) for mk, v in ms[k].items()} for k in ms},
-               "paired": out}, open(os.path.join(ROOT, "reports/v2_stats.json"), "w"), indent=2)
+    json.dump({"metrics": {k: {mk: float(round(float(v) * 100, 4)) for mk, v in ms[k].items()} for k in ms},
+               "paired": out}, open(os.path.join(ROOT, "reports/v2_stats.json"), "w"), indent=2,
+              default=lambda o: float(o))
 
 
 if __name__ == "__main__":
