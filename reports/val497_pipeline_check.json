@@ -1,0 +1,32 @@
+{
+  "paths": 497,
+  "paths_unique": 497,
+  "label_rows": 497,
+  "caption_rows": 497,
+  "query_feature_rows": 497,
+  "retrieval_keys": 497,
+  "id_sets_equal": true,
+  "all_videos_exist": true,
+  "cf_keys": 497,
+  "d7_keys": 497,
+  "cf_len7": true,
+  "d_len7": true,
+  "selected_clips": 4949,
+  "missing_clip_features": 0,
+  "video_shape": [
+    497,
+    512
+  ],
+  "imgfeat_shape": [
+    497,
+    196,
+    512
+  ],
+  "recompute_sample": [
+    "video6513",
+    "video6761",
+    "video7009"
+  ],
+  "recompute_max_abs_diff_fp16": 0.0,
+  "recompute_ok": true
+}

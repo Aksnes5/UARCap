@@ -1,0 +1,70 @@
+{
+  "CF": {
+    "1": {
+      "top1_caption_cider": 0.08,
+      "oracle": 0.08,
+      "mean_similarity": 0.2751,
+      "unique_sources": 1.0,
+      "near_dup_ratio": 0.0,
+      "exact_dup_ratio": 0.0
+    },
+    "3": {
+      "top1_caption_cider": 0.08,
+      "oracle": 0.1314,
+      "mean_similarity": 0.2711,
+      "unique_sources": 3.0,
+      "near_dup_ratio": 0.0624,
+      "exact_dup_ratio": 0.0
+    },
+    "5": {
+      "top1_caption_cider": 0.08,
+      "oracle": 0.1535,
+      "mean_similarity": 0.2688,
+      "unique_sources": 5.0,
+      "near_dup_ratio": 0.0408,
+      "exact_dup_ratio": 0.0
+    },
+    "7": {
+      "top1_caption_cider": 0.08,
+      "oracle": 0.1698,
+      "mean_similarity": 0.2672,
+      "unique_sources": 7.0,
+      "near_dup_ratio": 0.0379,
+      "exact_dup_ratio": 0.0
+    }
+  },
+  "D": {
+    "1": {
+      "top1_caption_cider": 0.1176,
+      "oracle": 0.1176,
+      "mean_similarity": 0.4295,
+      "unique_sources": 1.0,
+      "near_dup_ratio": 0.0,
+      "exact_dup_ratio": 0.0
+    },
+    "3": {
+      "top1_caption_cider": 0.1176,
+      "oracle": 0.1481,
+      "mean_similarity": 0.4186,
+      "unique_sources": 3.0,
+      "near_dup_ratio": 0.3521,
+      "exact_dup_ratio": 0.0
+    },
+    "5": {
+      "top1_caption_cider": 0.1176,
+      "oracle": 0.172,
+      "mean_similarity": 0.4092,
+      "unique_sources": 5.0,
+      "near_dup_ratio": 0.2235,
+      "exact_dup_ratio": 0.0
+    },
+    "7": {
+      "top1_caption_cider": 0.1176,
+      "oracle": 0.1835,
+      "mean_similarity": 0.4004,
+      "unique_sources": 7.0,
+      "near_dup_ratio": 0.1481,
+      "exact_dup_ratio": 0.0
+    }
+  }
+}
