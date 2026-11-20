@@ -1,0 +1,25 @@
+{
+  "queries": 670,
+  "unique_ids": 670,
+  "feature_rows": 670,
+  "retrieval_keys": 670,
+  "id_sets_equal": true,
+  "all_videos_exist": true,
+  "video_shape": [
+    670,
+    512
+  ],
+  "imgfeat_shape": [
+    670,
+    196,
+    512
+  ],
+  "finite": true,
+  "recompute_sample": [
+    "eyhzdC936uk_15_27",
+    "ok4cM6WTA5E_120_133",
+    "zzit5b_-ukg_5_20"
+  ],
+  "recompute_max_abs_diff_fp16": 0.0,
+  "recompute_ok": true
+}

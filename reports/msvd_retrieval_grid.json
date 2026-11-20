@@ -1,0 +1,22 @@
+{
+  "1": {
+    "oracle": 0.1699,
+    "unique_sources": 1.0,
+    "near_dup": 0.0
+  },
+  "3": {
+    "oracle": 0.2217,
+    "unique_sources": 3.0,
+    "near_dup": 0.3642
+  },
+  "5": {
+    "oracle": 0.2499,
+    "unique_sources": 5.0,
+    "near_dup": 0.2391
+  },
+  "7": {
+    "oracle": 0.278,
+    "unique_sources": 7.0,
+    "near_dup": 0.1693
+  }
+}

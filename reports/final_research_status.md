@@ -180,6 +180,17 @@ untouched test (pending).
 - "More retrieval data always helps."
 - Any claim that the adaptive selector is a novel complex method.
 
+## 18. Cross-dataset generalization (MSVD test670)
+
+External FULL VideoUFO, frozen method: D1 156.39 > Adaptive 151.94 ≈ D3 151.45 >
+D5 144.39 > D7 141.59 CIDEr. Oracle rises 0.170→0.278 with k; generation falls
+monotonically. D3−D7 = +9.86 (p=1e-4), D1−D3 = +4.94 (p=0.003),
+Adaptive−D3 = +0.49 (n.s.), Adaptive−D1 ≈ −4.45.
+
+Verdict: **CONTEXT_OVERLOAD_GENERALIZES; ADAPTIVE_QUALITY_GAIN_NOT_CONFIRMED**.
+External D1 is within 1.9 CIDEr of the in-domain reference (158.32).
+Report: `reports/msvd_external_frozen_validation.md`.
+
 ## Protocol statement
 
 All method choices (k, rule, thresholds, feature definitions) were made on

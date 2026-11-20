@@ -194,5 +194,15 @@
       "7": 85
     },
     "context_reduction_vs_k7": 0.6634
+  },
+  "adaptive_msvd670": {
+    "mean_k": 2.421,
+    "dist": {
+      "1": 322,
+      "3": 237,
+      "5": 94,
+      "7": 17
+    },
+    "context_reduction_vs_k7": 0.6542
   }
 }

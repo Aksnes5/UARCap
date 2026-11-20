@@ -29,7 +29,7 @@ out["unique_ids"] = len(set(ids))
 out["feature_rows"] = len(qids)
 out["retrieval_keys"] = len(S) if S else None
 out["id_sets_equal"] = (set(ids) == set(qids) == ({k.split("/")[-1][:-4] for k in S} if S else set(qids)))
-out["all_videos_exist"] = all(os.path.exists(os.path.join(MSVD, p)) for p in paths)
+out["all_videos_exist"] = all(os.path.exists(os.path.join(MSVD, "videos", i + ".avi")) for i in ids)
 V = np.load(os.path.join(ROOT, "embeddings/msvd_test_video_xclip_faithful_v2_video_fp16.npy"), mmap_mode="r")
 I = np.load(os.path.join(ROOT, "embeddings/msvd_test_video_xclip_faithful_v2_imgfeat_fp16.npy"), mmap_mode="r")
 out["video_shape"] = list(V.shape)
