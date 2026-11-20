@@ -1,0 +1,12 @@
+{
+  "ckpt_exists": true,
+  "ckpt_size": 147336938,
+  "test_rows": 670,
+  "videos": 1970,
+  "frame_tsv_exists": true,
+  "frame_tsv_rows": 670,
+  "yaml_exists": true,
+  "feature_dir_exists": true,
+  "runner_has_external_paths": true,
+  "eval_has_external_args": true
+}

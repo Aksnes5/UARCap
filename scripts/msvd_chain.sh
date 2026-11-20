@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /home/bn/videoufo_research
-while ! grep -q "TEST_STATS_DONE" logs/test_confirmatory_chain.log 2>/dev/null; do sleep 60; done
+while [ ! -f logs/queue_state/d5_ok ]; do sleep 30; done
 echo "MSVD_START"
 PY=/home/bn/anaconda3/envs/videollama2/bin/python
 VENV=/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python
