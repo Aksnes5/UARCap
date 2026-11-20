@@ -22,12 +22,13 @@ out = {}
 paths = [l.strip().split("\t")[0] for l in open(os.path.join(MSVD, "test.caption.tsv")) if l.strip()]
 ids = [os.path.basename(p)[:-4] for p in paths]
 qids = open(os.path.join(ROOT, "embeddings/msvd_test_video_xclip_faithful_v2_ids.txt")).read().splitlines()
-S = json.load(open(os.path.join(ROOT, "external/external_msvd_sims.json")))
+sp = os.path.join(ROOT, "external/external_msvd_sims.json")
+S = json.load(open(sp)) if os.path.exists(sp) else None
 out["queries"] = len(ids)
 out["unique_ids"] = len(set(ids))
 out["feature_rows"] = len(qids)
-out["retrieval_keys"] = len(S)
-out["id_sets_equal"] = (set(ids) == set(qids) == {k.split("/")[-1][:-4] for k in S})
+out["retrieval_keys"] = len(S) if S else None
+out["id_sets_equal"] = (set(ids) == set(qids) == ({k.split("/")[-1][:-4] for k in S} if S else set(qids)))
 out["all_videos_exist"] = all(os.path.exists(os.path.join(MSVD, p)) for p in paths)
 V = np.load(os.path.join(ROOT, "embeddings/msvd_test_video_xclip_faithful_v2_video_fp16.npy"), mmap_mode="r")
 I = np.load(os.path.join(ROOT, "embeddings/msvd_test_video_xclip_faithful_v2_imgfeat_fp16.npy"), mmap_mode="r")

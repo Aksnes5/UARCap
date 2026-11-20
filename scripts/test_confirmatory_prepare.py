@@ -39,7 +39,7 @@ def write(variant, subset, outdir):
             k = gap_k(q)
             rows.append(P[k][q])
         else:
-            rows.append(P[variant][q])
+            rows.append(P[int(variant[1:])][q])
     json.dump(rows, open(os.path.join(OUT, outdir, NAME), "w"))
 
 
