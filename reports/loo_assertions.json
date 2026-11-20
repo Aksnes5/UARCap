@@ -1,0 +1,11 @@
+{
+  "checked_queries": [
+    "datasets/MSRVTT-v2/videos/video6513.mp4",
+    "datasets/MSRVTT-v2/videos/video6514.mp4",
+    "datasets/MSRVTT-v2/videos/video6515.mp4",
+    "datasets/MSRVTT-v2/videos/video6516.mp4",
+    "datasets/MSRVTT-v2/videos/video6517.mp4"
+  ],
+  "violations": [],
+  "pass": true
+}

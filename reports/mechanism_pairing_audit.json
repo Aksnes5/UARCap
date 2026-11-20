@@ -1,0 +1,38 @@
+{
+  "variants": {
+    "oracle7": {
+      "pairs": 3479,
+      "mismatches": 0
+    },
+    "goodtail7": {
+      "pairs": 3479,
+      "mismatches": 0
+    },
+    "hardwrong7": {
+      "pairs": 3479,
+      "mismatches": 0
+    },
+    "easywrong7": {
+      "pairs": 3479,
+      "mismatches": 0
+    },
+    "posrev": {
+      "pairs": 3479,
+      "mismatches": 0
+    },
+    "postop3last": {
+      "pairs": 3479,
+      "mismatches": 0
+    },
+    "midtail7": {
+      "pairs": 3479,
+      "mismatches": 0
+    },
+    "lowtail7": {
+      "pairs": 3479,
+      "mismatches": 0
+    }
+  },
+  "mismatch_examples": [],
+  "pass": true
+}
