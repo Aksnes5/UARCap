@@ -1,0 +1,48 @@
+{
+  "name": "MSVD frozen cross-dataset validation",
+  "frozen_at": "2026-11-20T13:26:46",
+  "git_commit": "4b7a04353c021d7eab0621dd8e1023ca6f150246",
+  "dataset": {
+    "path": "/media/.../lj/datasets/MSVD",
+    "test_queries": 670,
+    "split": {
+      "train": 1200,
+      "val": 100,
+      "test": 670
+    },
+    "test_caption_sha256": "4e1dd9ae2968729a0abf649c181b3ebe64123693f48eba69bd24841289374133"
+  },
+  "method": {
+    "frozen_config": "frozen_method_config.json",
+    "sha256": "8ccdd4570fdd31b4d0653318be229716dce25f5dd93b5e6aa7fc2c2fd35f43ff",
+    "rule": "similarity-gap adaptive budget (unchanged)",
+    "tuning_on_msvd": false
+  },
+  "primary_comparison": [
+    "D3-D7"
+  ],
+  "secondary_comparisons": [
+    "D3-D5",
+    "D1-D3",
+    "Adaptive-D3",
+    "Adaptive-D7"
+  ],
+  "primary_observations": [
+    "oracle@k trend with k",
+    "generation CIDEr trend with k"
+  ],
+  "statistics": {
+    "paired_bootstrap": 10000,
+    "sign_flip_permutation": 10000,
+    "ci": 95
+  },
+  "verdicts": [
+    "CROSS_DATASET_GENERALIZATION_SUPPORTED",
+    "CONTEXT_OVERLOAD_GENERALIZES; ADAPTIVE_QUALITY_GAIN_NOT_CONFIRMED",
+    "MSVD_GENERALIZATION_NOT_SUPPORTED"
+  ],
+  "forbidden": [
+    "tune threshold/k mapping/features/ranking on MSVD",
+    "select k post hoc"
+  ]
+}

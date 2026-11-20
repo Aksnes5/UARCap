@@ -1,0 +1,17 @@
+{
+  "train": {
+    "unique": 38256,
+    "exact_matches": 40,
+    "ratio": 0.001
+  },
+  "val": {
+    "unique": 3563,
+    "exact_matches": 6,
+    "ratio": 0.0017
+  },
+  "test": {
+    "unique": 22285,
+    "exact_matches": 33,
+    "ratio": 0.0015
+  }
+}

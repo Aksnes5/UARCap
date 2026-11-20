@@ -1,0 +1,51 @@
+{
+  "10k": {
+    "clips": 10000,
+    "unique_ids": 10000,
+    "unique_captions": 9568,
+    "sources": 10000,
+    "missing_embedding_rows": 0,
+    "row_sha256": null
+  },
+  "50k": {
+    "clips": 50000,
+    "unique_ids": 50000,
+    "unique_captions": 45326,
+    "sources": 50000,
+    "missing_embedding_rows": 0,
+    "row_sha256": null
+  },
+  "100k": {
+    "clips": 100000,
+    "unique_ids": 100000,
+    "unique_captions": 87750,
+    "sources": 100000,
+    "missing_embedding_rows": 0,
+    "row_sha256": null
+  },
+  "250k": {
+    "clips": 250000,
+    "unique_ids": 250000,
+    "unique_captions": 207556,
+    "sources": 241211,
+    "missing_embedding_rows": 0,
+    "row_sha256": null
+  },
+  "500k": {
+    "clips": 500000,
+    "unique_ids": 500000,
+    "unique_captions": 395060,
+    "sources": 338877,
+    "missing_embedding_rows": 0,
+    "row_sha256": null
+  },
+  "full": {
+    "clips": 1091712,
+    "unique_ids": 1091712,
+    "unique_captions": 812932,
+    "sources": 345437,
+    "missing_embedding_rows": 0,
+    "row_sha256": null
+  },
+  "nesting": true
+}
