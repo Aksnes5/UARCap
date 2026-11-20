@@ -1,0 +1,10 @@
+{
+  "prefix": "external_val_250k",
+  "track": "D",
+  "queries": 497,
+  "candidate_slots": 3479,
+  "unique_clips": 2881,
+  "cache_hit": 2117,
+  "missing": 764,
+  "hit_rate": 0.7348
+}
