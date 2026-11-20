@@ -1,0 +1,92 @@
+{
+  "test2690:D3-D7": {
+    "diff": 0.0181,
+    "cluster_ci95": [
+      0.0088,
+      0.0275
+    ],
+    "n_sources": 2004,
+    "n_queries": 2690
+  },
+  "test2690:D1-D3": {
+    "diff": 0.0114,
+    "cluster_ci95": [
+      0.0035,
+      0.0196
+    ],
+    "n_sources": 2004,
+    "n_queries": 2690
+  },
+  "test2690:D3-D5": {
+    "diff": 0.006,
+    "cluster_ci95": [
+      -0.002,
+      0.0141
+    ],
+    "n_sources": 2004,
+    "n_queries": 2690
+  },
+  "test2690:Adaptive-D3": {
+    "diff": 0.0058,
+    "cluster_ci95": [
+      0.0001,
+      0.0116
+    ],
+    "n_sources": 2004,
+    "n_queries": 2690
+  },
+  "test2690:Adaptive-D7": {
+    "diff": 0.024,
+    "cluster_ci95": [
+      0.0147,
+      0.0335
+    ],
+    "n_sources": 2004,
+    "n_queries": 2690
+  },
+  "msvd:D3-D7": {
+    "diff": 0.0986,
+    "cluster_ci95": [
+      0.0538,
+      0.1484
+    ],
+    "n_sources": 522,
+    "n_queries": 670
+  },
+  "msvd:D1-D3": {
+    "diff": 0.0494,
+    "cluster_ci95": [
+      0.0164,
+      0.0842
+    ],
+    "n_sources": 522,
+    "n_queries": 670
+  },
+  "msvd:D3-D5": {
+    "diff": 0.0706,
+    "cluster_ci95": [
+      0.0282,
+      0.1144
+    ],
+    "n_sources": 522,
+    "n_queries": 670
+  },
+  "msvd:Adaptive-D3": {
+    "diff": 0.0049,
+    "cluster_ci95": [
+      -0.0268,
+      0.0354
+    ],
+    "n_sources": 522,
+    "n_queries": 670
+  },
+  "msvd:Adaptive-D7": {
+    "diff": 0.1035,
+    "cluster_ci95": [
+      0.063,
+      0.1449
+    ],
+    "n_sources": 522,
+    "n_queries": 670
+  }
+}

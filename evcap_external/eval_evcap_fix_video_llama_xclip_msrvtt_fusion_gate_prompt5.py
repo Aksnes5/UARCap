@@ -125,6 +125,8 @@ def main(args) -> None:
             num_query_token=32,
             num_query_token_txt=args.num_query_token_txt,
             topn = args.topn,
+            text_topn = (args.text_topn or None),
+            visual_topn = (args.visual_topn or None),
             llama_model=args.llm_model,
             prompt_path=args.prompt_path,
             prompt_template='###Human: {} ###Assistant: ',
@@ -171,6 +173,8 @@ if __name__ == '__main__':
     parser.add_argument('--out_path', default = 'outputs/eval_evcap_fix_video_llama_msrvtt')
     parser.add_argument('--num_query_token_txt', type = int, default = 8)
     parser.add_argument('--topn', type = int, default = 9)
+    parser.add_argument('--text_topn', type = int, default = 0)
+    parser.add_argument('--visual_topn', type = int, default = 0)
     parser.add_argument('--name_of_datasets', default = 'msrvtt')
     parser.add_argument('--beam_width', type = int, default = 5, help = 'width of beam')
     parser.add_argument('--random_seed', type = int, default = 42, help = 'set random seed for reproducing')

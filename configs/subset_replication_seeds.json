@@ -1,0 +1,14 @@
+{
+  "frozen_before_results": true,
+  "seeds": {
+    "replicate_B_50k": 20261121,
+    "replicate_C_50k": 20261122,
+    "replicate_D_250k": 20261123
+  },
+  "sampling": "sorted full manifest, random.Random(seed).sample without replacement",
+  "sizes": {
+    "replicate_B_50k": 50000,
+    "replicate_C_50k": 50000,
+    "replicate_D_250k": 250000
+  }
+}

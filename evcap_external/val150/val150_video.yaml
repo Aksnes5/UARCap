@@ -1,0 +1,3 @@
+img: /home/bn/videoufo_research/evcap_external/val150/val_video_paths.tsv
+label: /home/bn/videoufo_research/evcap_external/val150/val150.label.tsv
+caption: /home/bn/videoufo_research/evcap_external/val150/val150.caption.tsv

@@ -48,6 +48,8 @@ class EVCap(Blip2Base):
         num_query_token=32,
         num_query_token_txt=8,
         topn=10,
+        text_topn=None,
+        visual_topn=None,
         llama_model="",
         prompt_path="prompts/prompt_evcap_msrvtt.txt",
         prompt_template='###Human: {} ###Assistant: ',
@@ -75,6 +77,8 @@ class EVCap(Blip2Base):
 
         self.low_resource = low_resource
         self.topn = topn
+        self.text_topn = topn if text_topn is None else text_topn
+        self.visual_topn = topn if visual_topn is None else visual_topn
         self.bs = bs
         self.frames = frames      
         self.retriever = retriever
@@ -275,7 +279,7 @@ class EVCap(Blip2Base):
                 p_before, p_after = prompt.split("<VideoHere>", 1)
                 p_middle, p_after = p_after.split("<VideoHere>", 1)
                 retrirval_Texts = self.cap[image_id[i]][0]
-                cap = retrirval_Texts[:self.topn]
+                cap = retrirval_Texts[:self.text_topn]
                 
                 # smallcap
                 cap = '\n'.join(cap)
@@ -337,8 +341,8 @@ class EVCap(Blip2Base):
             sim_scores = self.sims_scores[image_id[i]][1]
             sim_caps = self.sims_scores[image_id[i]][0]
 
-            cap = retrival_Texts[:self.topn]
-            video_ids = retrival_video_ids[:self.topn]
+            cap = retrival_Texts[:self.visual_topn]
+            video_ids = retrival_video_ids[:self.visual_topn]
 
             video_features = []
             sim_scores_selected = []
