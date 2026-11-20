@@ -1,3 +1,4 @@
+import os
 import torch
 from torch.cuda.amp import autocast as autocast
 import torch.nn as nn
@@ -61,6 +62,10 @@ class EVCap(Blip2Base):
         freeze_video_qformer=True, # video-llama
         freeze_qformer_txt=True,
         load_video_feature=True,
+        sim_scores_path=None,
+        video_feature_dir=None,
+        use_fusion=True,
+        deterministic=True,
     ):
         super().__init__()
 
@@ -70,6 +75,9 @@ class EVCap(Blip2Base):
         self.frames = frames      
         self.retriever = retriever
         self.load_video_feature = load_video_feature
+        self.video_feature_dir = video_feature_dir
+        self.use_fusion = use_fusion
+        self.deterministic = deterministic
           
         print('topn:', self.topn)
 
@@ -118,7 +126,8 @@ class EVCap(Blip2Base):
             # XCLIP retrieve caption
             print('ext_data:', ext_path)
             self.cap = json.load(open(ext_path))
-            sim_scores_path = 'ext_data/msvd_train_allGT_avg_frames_xclip_retrieve_20_captions_no_duplicat_sim_scores.json'
+            if sim_scores_path is None:
+                sim_scores_path = 'ext_data/msvd_train_allGT_avg_frames_xclip_retrieve_20_captions_no_duplicat_sim_scores.json'
             print('sim scores:', sim_scores_path)
             self.sims_scores = json.load(open(sim_scores_path))
 
@@ -313,10 +322,14 @@ class EVCap(Blip2Base):
                 if not corresponding_video_ids:
                     continue
                 
-                selected_video_id = random.choice(corresponding_video_ids)
+                selected_video_id = (corresponding_video_ids[0] if self.deterministic
+                                     else random.choice(corresponding_video_ids))
                 if self.load_video_feature:
                     # load video feature
-                    video_feature_path = f"ext_data/msvd_video_query/{selected_video_id[21:-4]}.pt"
+                    if self.video_feature_dir:
+                        video_feature_path = os.path.join(self.video_feature_dir, f"{selected_video_id}.pt")
+                    else:
+                        video_feature_path = f"ext_data/msvd_video_query/{selected_video_id[21:-4]}.pt"
                     try:
                         video_feature = torch.load(video_feature_path, map_location=device)  # [32, 768]
                     except Exception as e:

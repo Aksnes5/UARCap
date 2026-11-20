@@ -142,7 +142,11 @@ def main(args) -> None:
             num_video_query_token=args.num_video_query_token, # video-llama
             freeze_video_qformer=args.freeze_video_qformer, # video-llama
             freeze_qformer_txt=args.freeze_qformer_txt, # video-llama
-            load_video_feature=args.load_video_feature
+            load_video_feature=args.load_video_feature,
+            sim_scores_path=args.sim_scores_path,
+            video_feature_dir=args.video_feature_dir,
+            use_fusion=args.use_fusion,
+            deterministic=args.deterministic,
         )
     state_dict = torch.load(ckpt, map_location=device)['model']
 
@@ -196,6 +200,10 @@ if __name__ == '__main__':
     
     parser.add_argument("--freeze_qformer_txt", type=str_to_bool, default=True)
     parser.add_argument('--load_video_feature', type=str_to_bool, default=True)
+    parser.add_argument('--sim_scores_path', default=None, type=str)
+    parser.add_argument('--video_feature_dir', default=None, type=str)
+    parser.add_argument('--use_fusion', type=str_to_bool, default=True)
+    parser.add_argument('--deterministic', type=str_to_bool, default=True)
     parser.add_argument('--llm_model', default='vicuna-7b-v1.3')
         
     args = parser.parse_args()
