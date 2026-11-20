@@ -1,0 +1,198 @@
+{
+  "runs": [
+    {
+      "experiment": "val497_10k_D1",
+      "scale": "10k",
+      "track": "D",
+      "k": "1",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "0",
+      "eval_seconds": "0",
+      "gpu_hours": "0",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_10k_D3",
+      "scale": "10k",
+      "track": "D",
+      "k": "3",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "0",
+      "eval_seconds": "8",
+      "gpu_hours": ".002",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_10k_D5",
+      "scale": "10k",
+      "track": "D",
+      "k": "5",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "2521",
+      "eval_seconds": "9",
+      "gpu_hours": ".702",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_10k_D7",
+      "scale": "10k",
+      "track": "D",
+      "k": "7",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "2777",
+      "eval_seconds": "9",
+      "gpu_hours": ".773",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_100k_D1",
+      "scale": "100k",
+      "track": "D",
+      "k": "1",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "1611",
+      "eval_seconds": "9",
+      "gpu_hours": ".450",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_100k_D3",
+      "scale": "100k",
+      "track": "D",
+      "k": "3",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "1413",
+      "eval_seconds": "8",
+      "gpu_hours": ".394",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_100k_D5",
+      "scale": "100k",
+      "track": "D",
+      "k": "5",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "1276",
+      "eval_seconds": "9",
+      "gpu_hours": ".356",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_100k_D7",
+      "scale": "100k",
+      "track": "D",
+      "k": "7",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "1441",
+      "eval_seconds": "9",
+      "gpu_hours": ".402",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_500k_D1",
+      "scale": "500k",
+      "track": "D",
+      "k": "1",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "834",
+      "eval_seconds": "8",
+      "gpu_hours": ".233",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_500k_D3",
+      "scale": "500k",
+      "track": "D",
+      "k": "3",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "1059",
+      "eval_seconds": "8",
+      "gpu_hours": ".296",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_500k_D5",
+      "scale": "500k",
+      "track": "D",
+      "k": "5",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "1295",
+      "eval_seconds": "9",
+      "gpu_hours": ".362",
+      "status": "done"
+    },
+    {
+      "experiment": "val497_500k_D7",
+      "scale": "500k",
+      "track": "D",
+      "k": "7",
+      "n_queries": "497",
+      "load_seconds": "",
+      "generation_seconds": "1495",
+      "eval_seconds": "9",
+      "gpu_hours": ".417",
+      "status": "done"
+    },
+    {
+      "experiment": "test2990_D7",
+      "scale": "FULL",
+      "track": "D",
+      "k": "7",
+      "n_queries": "2990",
+      "load_seconds": "",
+      "generation_seconds": "8521",
+      "eval_seconds": "20",
+      "gpu_hours": "2.372",
+      "status": "done"
+    }
+  ],
+  "summary": {
+    "10k:D": {
+      "runs": 4,
+      "gpu_hours": 1.477
+    },
+    "100k:D": {
+      "runs": 4,
+      "gpu_hours": 1.602
+    },
+    "500k:D": {
+      "runs": 4,
+      "gpu_hours": 1.308
+    },
+    "FULL:D": {
+      "runs": 1,
+      "gpu_hours": 2.372
+    }
+  },
+  "adaptive_val497": {
+    "mean_k": 2.296,
+    "dist": {
+      "1": 254,
+      "3": 178,
+      "5": 51,
+      "7": 14
+    },
+    "context_reduction_vs_k7": 0.672
+  },
+  "adaptive_test2990": {
+    "mean_k": 2.356,
+    "dist": {
+      "1": 1485,
+      "3": 1068,
+      "5": 352,
+      "7": 85
+    },
+    "context_reduction_vs_k7": 0.6634
+  }
+}
