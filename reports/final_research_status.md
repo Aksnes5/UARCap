@@ -119,17 +119,25 @@ significant edges over D1/D5/D7.
 
 ## 13. Untouched test2690
 
-Pending: D1/D3/D5/D7 generated on the full 2,990 queries; confirmatory metrics
-computed on the 2,690 untouched queries only, using the frozen selector.
+**Completed.** B 73.09 > D1 71.21 > Adaptive 70.67 > D3 70.08 > D5 69.48 > D7 68.27
+CIDEr. D3−D7 = +1.81 (CI [0.87,2.75], p=0.0002); D1−D3 = +1.14 (p=0.005);
+Adaptive−D3 = +0.58 (p=0.046); Adaptive−D1 = −0.56 (n.s.);
+D3−B = −3.02 (p<1e-4). Context overload confirmed; adaptive transfers but
+fixed D1 is stronger and in-domain B remains ahead.
+Full report: `reports/msrtt_test2690_confirmatory.md`.
 
 ## 14. Full test2990 standard reporting
 
-Pending; pilot300 flagged as exploratory and excluded from confirmatory claims.
+D1 70.31 > Adaptive 69.76 > D3 69.41 > D5 68.78 > D7 67.46 CIDEr;
+B in-domain 72.22. Pilot300 flagged exploratory, excluded from confirmatory
+claims; full ranking matches the untouched subset.
 
 ## 15. Statistical significance
 
-See section 9 and the confirmatory table to be filled from
-`reports/test_confirmatory.json`.
+Untouched2690 paired CIDEr: D3−D7 +1.81 (p=0.0002), D1−D3 +1.14 (p=0.005),
+Adaptive−D3 +0.58 (p=0.046), Adaptive−D7 +2.40 (p=1e-4),
+Adaptive−B −2.44, D3−B −3.02 (both p<1e-4). D3−D5 +0.60 (p=0.15) is not
+significant. Details: `reports/test_confirmatory.json`.
 
 ## 16. Ablations and scale × budget interaction
 
