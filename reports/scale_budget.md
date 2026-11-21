@@ -64,3 +64,23 @@ Coverage grows from 10K to 100K and then saturates (500K ≈ FULL).
 The per-changed-query harm of k=7 is roughly +3.5 at 10K–500K but doubles at
 FULL. The scale effect is therefore not in how many queries react, but in how
 much damage the largest corpus does when it does react.
+
+## k=7 penalty relative to each setting's best budget
+
+| scale | D: best−k7 | CF: best−k7 |
+|---|---:|---:|
+| 10K | 2.33 | 0.78 |
+| 50K | 2.31 | 2.25 |
+| 100K | 1.80 | 0.48 |
+| 250K | 1.40 | 1.53 |
+| 500K | 1.44 | 2.49 |
+| FULL | 3.09 | 2.07 |
+| mean | 2.06 | 1.60 |
+| median | 2.06 | 1.80 |
+
+Across the twelve scale–reranking settings, k=7 was never optimal and incurred
+an average penalty of 1.83 CIDEr relative to the best context budget (D 2.06,
+CF 1.60). Beyond 10K, all optimal settings used only one or three retrieved
+contexts; k=5 won only at 10K (D and CF). Large context budgets are consistently
+suboptimal, but the exact optimum (1 vs 3) varies with corpus scale and
+reranking status.
