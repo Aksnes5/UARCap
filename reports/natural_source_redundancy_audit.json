@@ -1,0 +1,44 @@
+{
+  "d7": {
+    "queries": 497,
+    "pct_with_repeated_source": 0.1791,
+    "mean_unique_sources": 6.775,
+    "max_repeat_from_one_source": 4
+  },
+  "oracle7": {
+    "queries": 497,
+    "pct_with_repeated_source": 0.1167,
+    "mean_unique_sources": 6.865,
+    "max_repeat_from_one_source": 3
+  },
+  "goodtail7": {
+    "queries": 497,
+    "pct_with_repeated_source": 0.1791,
+    "mean_unique_sources": 6.775,
+    "max_repeat_from_one_source": 4
+  },
+  "hardwrong7": {
+    "queries": 497,
+    "pct_with_repeated_source": 0.159,
+    "mean_unique_sources": 6.787,
+    "max_repeat_from_one_source": 5
+  },
+  "easywrong7": {
+    "queries": 497,
+    "pct_with_repeated_source": 0.1368,
+    "mean_unique_sources": 6.819,
+    "max_repeat_from_one_source": 5
+  },
+  "midtail7": {
+    "queries": 497,
+    "pct_with_repeated_source": 0.1268,
+    "mean_unique_sources": 6.831,
+    "max_repeat_from_one_source": 5
+  },
+  "lowtail7": {
+    "queries": 497,
+    "pct_with_repeated_source": 0.0986,
+    "mean_unique_sources": 6.887,
+    "max_repeat_from_one_source": 4
+  }
+}

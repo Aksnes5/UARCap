@@ -1,0 +1,9 @@
+{
+  "raw_captions": 130260,
+  "unique_captions": 110031,
+  "single_source": 106691,
+  "multi_source": 3340,
+  "multi_pct": 0.0304,
+  "max_videos_per_caption": 262,
+  "mean_videos_multi": 4.166
+}

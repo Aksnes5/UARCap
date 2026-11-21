@@ -49,6 +49,14 @@
 - Priority chain now extracts in-domain candidate features before generation and
   runs LOO assertions before LOO generation.
 
+## 6b. Caption→video ambiguity and source redundancy
+
+- 3,340 / 110,031 unique train captions (3.04%) map to >1 train video; max 262.
+- Index policy: deterministic sorted-video-ID (first). Recorded, not guessed.
+- External variant source redundancy: D7 17.9% queries with a repeated source
+  (max 4), Oracle7 11.7%, HardWrong7 15.9%, EasyWrong7 13.7%; kept as covariate.
+- Details: `reports/indomain_caption_video_mapping_audit.md`.
+
 ## 7. Final status
 
 `READY`
