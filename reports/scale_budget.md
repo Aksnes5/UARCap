@@ -42,7 +42,13 @@ Coverage grows from 10K to 100K and then saturates (500K ≈ FULL).
 
 - Single 497-query validation split; the k=1 vs k=3 gap at 100K is not
   individually significant.
-- FULL D3 (53.14) is the overall best fixed configuration across scales.
+- Across the six scales, the D-track maximum is 250K D1 (53.20) and the global
+  maximum is 50K CF3 (53.57); FULL D3 (53.14) is close but not the maximum.
+- Beyond 10K, every best setting uses k=1 or k=3; k=7 is never optimal in any
+  scale or track. k=7 penalty (best−k7): D mean 2.06 / median 2.06; CF mean 1.60
+  / median 1.80 (CIDEr points). D and CF best-k agree in 4/6 scales.
+- These are descriptive statistics; the best-k sequence is not monotone in
+  corpus size, and the two tracks are not identical in every scale.
 - This grid is characterization only; the frozen adaptive selector was not
   re-tuned on it.
 
