@@ -53,19 +53,18 @@ def mindist(A, B):
     return min(ham(a, b) for a in A for b in B)
 
 
-pairs = []
+pairs = {}
 for key in R:
     q = key.split("/")[-1][:-4]
-    for lst in R[key][2][:7]:
-        if lst:
-            pairs.append((q, lst[0]))
+    pairs[q] = [lst[0] for lst in R[key][2][:7] if lst]
 uniq = {}
-for q, c in pairs:
-    uniq.setdefault(c, None)
+for q, cs in pairs.items():
+    for c in cs:
+        uniq.setdefault(c, None)
 
-print("queries", len({q for q, _ in pairs}), "candidates", len(uniq), flush=True)
+print("queries", len(pairs), "candidates", len(uniq), flush=True)
 qh, ch = {}, {}
-for i, q in enumerate(sorted({q for q, _ in pairs})):
+for i, q in enumerate(sorted(pairs)):
     qh[q] = hashes(os.path.join(DATA, "videos", q + ".mp4"))
 for i, c in enumerate(sorted(uniq)):
     ch[c] = hashes(os.path.join(OUT and UFO, c + ".mp4"))
@@ -73,7 +72,7 @@ for i, c in enumerate(sorted(uniq)):
         print("cand", i + 1, "/", len(uniq), flush=True)
 
 per = {}
-for q, cs in pairs:
+for q, cs in pairs.items():
     ds = [mindist(qh[q], ch[c]) for c in cs]
     per[q] = {"min_d": min(ds), "n_le6": sum(d <= 6 for d in ds), "n_le10": sum(d <= 10 for d in ds)}
 

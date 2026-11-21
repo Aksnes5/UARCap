@@ -22,7 +22,7 @@ for line in open("/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj
 agg = {}
 rng = random.Random(42)
 for scale in ["10k", "50k", "100k", "250k", "500k", "full"]:
-    dirs = {k: f"eval_val497_{scale}_D{k}" for k in KS}
+    dirs = {k: (f"eval_val497_D{k}" if scale == "full" else f"eval_val497_{scale}_D{k}") for k in KS}
     if not all(os.path.exists(os.path.join(OUT, d, "metrics.json")) for d in dirs.values()):
         continue
     ms = {k: json.load(open(os.path.join(OUT, d, "metrics.json"))) for k, d in dirs.items()}

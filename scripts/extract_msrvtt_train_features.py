@@ -10,10 +10,10 @@ import os
 import sys
 import time
 
-import cv2
-import decord
-import numpy as np
 import torch
+import numpy as np
+import decord
+import cv2
 
 cv2.setNumThreads(0)
 ROOT = "/home/bn/videoufo_research"

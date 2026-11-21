@@ -88,9 +88,9 @@ def main():
     for k, q in enumerate(qids):
         img = torch.from_numpy(np.asarray(QI[k], dtype=np.float32)).cuda().half().unsqueeze(0)
         qv = Q[k]
-        tf = X + model.prompts_generator(X.unsqueeze(0), img)
         with torch.no_grad(), torch.cuda.amp.autocast():
-            sc = qv @ F.normalize(tf, dim=1).T
+            tf = X + model.prompts_generator(X.unsqueeze(0), img.float())
+            sc = qv @ F.normalize(tf[0], dim=1).T
         v, i = torch.topk(sc, TOPK)
         cs = [caps[j] for j in i.cpu().tolist()]
         ss = [float(x) for x in v.cpu().tolist()]

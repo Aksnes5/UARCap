@@ -42,14 +42,19 @@ def write(name, cap):
               open(os.path.join(EXT, f"external_val_{name}_sims.json"), "w"), indent=1)
 
 
+# global per-candidate CIDEr (single-document Cider collapses to 0)
+gts, res = {}, {}
+for key, (caps, sims) in RAW.items():
+    q = key.split("/")[-1][:-4]
+    for i, c in enumerate(caps):
+        gts[f"{q}::{i}"] = GT[q]
+        res[f"{q}::{i}"] = [c]
+GLOBAL = dict(zip(gts, Cider().compute_score(gts, res)[1]))
+
 oracle7, goodtail, hardwrong, easywrong = {}, {}, {}, {}
 for key, (caps, sims) in RAW.items():
     q = key.split("/")[-1][:-4]
-    gt, res = {}, {}
-    for i, c in enumerate(caps):
-        gt[f"{q}::{i}"] = GT[q]
-        res[f"{q}::{i}"] = [c]
-    C = dict(zip(gt, Cider().compute_score(gt, res)[1]))
+    C = {f"{q}::{i}": GLOBAL[f"{q}::{i}"] for i in range(20)}
     orc = [C[f"{q}::{i}"] for i in range(20)]
     oorder = sorted(range(20), key=lambda i: (-orc[i], i))
     lists = [DIAG[key][i]["clip_ids"] for i in range(20)]

@@ -65,8 +65,8 @@ def main():
     PREFIX = f"external_val_{SCALE}"
     ids, brief, topic = load_meta()
     id2row = {c: i for i, c in enumerate(ids)}
-    full_ids = [l.split("\t")[0] for l in open(os.path.join(ROOT, f"manifests/clips_{SCALE}.tsv"))
-                if not l.startswith("clip_id")]
+    full_ids = [l.strip().split("\t")[0] for l in open(os.path.join(ROOT, f"manifests/clips_{SCALE}.tsv"))
+                if l.strip() and not l.startswith("clip_id")]
     groups, order = {}, []
     for cid in full_ids:
         key = brief[id2row[cid]]

@@ -21,4 +21,5 @@ exec "$PY" -u eval_evcap_fix_video_llama_xclip_msrvtt_fusion_gate_prompt5.py \
  --freeze_qformer True --load_video_feature True --share_query_tokens True --retriever True \
  --prompt_path prompts/prompt_evcap_msrvtt_detail_smallcap_prompt5.txt \
  --llm_model /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3 \
- --deterministic True --use_fusion True --ext_path "$EXT" --sim_scores_path "$SIM"
+ --deterministic True --use_fusion True --ext_path "$EXT" --sim_scores_path "$SIM" \
+ --video_feature_dir /home/bn/videoufo_research/features/videollama_faithful_v2
