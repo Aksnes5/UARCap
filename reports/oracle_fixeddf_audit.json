@@ -1,0 +1,11 @@
+{
+  "reference_docs": 9940,
+  "df_size": 5924,
+  "batch_invariance_max_abs_diff": 0.0,
+  "ORACLE_BATCH_INVARIANT": true,
+  "score_mean": 0.07889796932281752,
+  "score_std": 0.07204846154232288,
+  "zero_fraction": 0.0,
+  "all_equal_queries": 0,
+  "unique_top3_rankings": 480
+}
