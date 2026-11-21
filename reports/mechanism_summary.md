@@ -34,9 +34,12 @@ oracle-selected textual context from three to seven still reduces utility. The
 degradation is not explained by visual context count, prompt position, or a
 small set of consistently toxic low-ranked items."
 
-## 7. Plausible distractor hypothesis — PENDING
-To be updated only from Good/Hard/Easy final numbers; the backbone above does
-not change with that result.
+## 7. Plausible distractor hypothesis — MIXED
+GoodTail7 52.71 (+2.64 vs D7, p=0.006) and HardWrong7 48.01 (−2.02, p=0.022)
+are significantly different from D7; EasyWrong7 48.98 (−1.04, p=0.21) is not.
+HardWrong − EasyWrong = −0.97 (CI [−2.79, +0.70], p=0.28): the direction is
+consistent with plausible-but-wrong evidence being more damaging, but the direct
+hard-vs-easy contrast is not significant. Status: MIXED.
 
 ## 8. Scope
 No new GPU experiments beyond the already queued tasks and replicates.
