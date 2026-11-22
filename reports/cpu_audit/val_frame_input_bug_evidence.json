@@ -1,0 +1,252 @@
+{
+  "code_path": {
+    "eval_start_end": "evcap_external/dataset/msrvtt/vision_language_tsv.py:338 start,end = 0, 0",
+    "decoder": "evcap_external/dataset/msrvtt/data_utils/video_decoder.py: pyav_decode uses start/end to set video_end_pts; temporal_sampling replicates the single decoded frame",
+    "frame_tsv_path": "get_frames_from_tsv ignores start/end (test/MSVD/dev300 use pre-extracted frame TSVs)"
+  },
+  "splits": {
+    "MSR-VTT val497": {
+      "yaml": "val497/val16_video.yaml",
+      "img_field": "/home/bn/videoufo_research/evcap_external/val497/val_video_paths.tsv",
+      "rows": [
+        {
+          "index": 0,
+          "image_id": "datasets/MSRVTT-v2/videos/video6513.mp4",
+          "n_identical_to_frame0": 15,
+          "max_abs_diff": 0.11187241971492767,
+          "mean_abs_diff": 0.00699202623218298,
+          "per_frame_diff_vs_frame0": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.111872
+          ]
+        },
+        {
+          "index": 1,
+          "image_id": "datasets/MSRVTT-v2/videos/video6514.mp4",
+          "n_identical_to_frame0": 15,
+          "max_abs_diff": 0.1347697526216507,
+          "mean_abs_diff": 0.008423109538853168,
+          "per_frame_diff_vs_frame0": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.13477
+          ]
+        },
+        {
+          "index": 10,
+          "image_id": "datasets/MSRVTT-v2/videos/video6523.mp4",
+          "n_identical_to_frame0": 16,
+          "max_abs_diff": 0.0,
+          "mean_abs_diff": 0.0,
+          "per_frame_diff_vs_frame0": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    "MSR-VTT test2990": {
+      "yaml": "test2990/test2990_16frames.yaml",
+      "img_field": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test_16frm/frame_tsv/test_16frames_img_size224.img.tsv",
+      "rows": [
+        {
+          "index": 0,
+          "image_id": "datasets/MSRVTT-v2/videos/video7010.mp4",
+          "n_identical_to_frame0": 1,
+          "max_abs_diff": 0.9549230337142944,
+          "mean_abs_diff": 0.5908537982031703,
+          "per_frame_diff_vs_frame0": [
+            0.0,
+            0.928659,
+            0.943788,
+            0.944042,
+            0.945399,
+            0.947809,
+            0.951339,
+            0.954923,
+            0.954084,
+            0.351065,
+            0.349971,
+            0.212797,
+            0.228586,
+            0.228853,
+            0.161728,
+            0.350617
+          ]
+        },
+        {
+          "index": 1,
+          "image_id": "datasets/MSRVTT-v2/videos/video7011.mp4",
+          "n_identical_to_frame0": 1,
+          "max_abs_diff": 0.9483323693275452,
+          "mean_abs_diff": 0.4815954975783825,
+          "per_frame_diff_vs_frame0": [
+            0.0,
+            0.65256,
+            0.636315,
+            0.819641,
+            0.883079,
+            0.948332,
+            0.226197,
+            0.257636,
+            0.293699,
+            0.515936,
+            0.545992,
+            0.110645,
+            0.420574,
+            0.464113,
+            0.464438,
+            0.466369
+          ]
+        },
+        {
+          "index": 10,
+          "image_id": "datasets/MSRVTT-v2/videos/video7020.mp4",
+          "n_identical_to_frame0": 1,
+          "max_abs_diff": 1.2285727262496948,
+          "mean_abs_diff": 0.9205845519900322,
+          "per_frame_diff_vs_frame0": [
+            0.0,
+            0.744173,
+            0.776083,
+            0.910828,
+            0.995229,
+            1.01273,
+            1.030286,
+            1.004553,
+            0.990314,
+            1.228573,
+            0.695683,
+            1.117266,
+            1.171803,
+            1.010439,
+            1.026007,
+            1.015384
+          ]
+        }
+      ]
+    },
+    "MSVD test670": {
+      "yaml": "datasets/MSVD/test_16frames.yaml",
+      "img_field": "frame_tsv/test_16frames_img_size256.img.tsv",
+      "rows": [
+        {
+          "index": 0,
+          "image_id": "datasets/MSVD/videos/eyhzdC936uk_15_27.avi",
+          "n_identical_to_frame0": 1,
+          "max_abs_diff": 1.4730514287948608,
+          "mean_abs_diff": 1.1881212331354618,
+          "per_frame_diff_vs_frame0": [
+            0.0,
+            0.830298,
+            1.115347,
+            1.038792,
+            1.123621,
+            1.056015,
+            1.307426,
+            1.323144,
+            1.252016,
+            1.393289,
+            1.429236,
+            1.468027,
+            1.402075,
+            1.473051,
+            1.423828,
+            1.373774
+          ]
+        },
+        {
+          "index": 1,
+          "image_id": "datasets/MSVD/videos/f-24IxG9ijw_25_40.avi",
+          "n_identical_to_frame0": 1,
+          "max_abs_diff": 1.2583657503128052,
+          "mean_abs_diff": 1.037330538034439,
+          "per_frame_diff_vs_frame0": [
+            0.0,
+            1.255279,
+            1.258366,
+            1.16113,
+            1.185475,
+            0.923636,
+            1.098057,
+            1.030493,
+            1.110955,
+            1.069518,
+            0.985999,
+            0.921301,
+            1.147613,
+            1.17693,
+            1.109378,
+            1.16316
+          ]
+        },
+        {
+          "index": 10,
+          "image_id": "datasets/MSVD/videos/fJr2evLANsE_0_10.avi",
+          "n_identical_to_frame0": 1,
+          "max_abs_diff": 0.4672376215457916,
+          "mean_abs_diff": 0.3078208789229393,
+          "per_frame_diff_vs_frame0": [
+            0.0,
+            0.233142,
+            0.335309,
+            0.260679,
+            0.262761,
+            0.24609,
+            0.296965,
+            0.335113,
+            0.298025,
+            0.323134,
+            0.350309,
+            0.347348,
+            0.378476,
+            0.386703,
+            0.403844,
+            0.467238
+          ]
+        }
+      ]
+    }
+  }
+}
