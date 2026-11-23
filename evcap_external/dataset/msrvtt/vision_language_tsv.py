@@ -335,7 +335,10 @@ class VisionLanguageTSVDataset(object):
         if not self.is_train: # by lijian
             data_sample = self.get_caption_and_timeinfo_wrapper(img_idx, cap_idx)
             caption = [cap['caption'] for cap in data_sample]
-            start, end = 0, 0
+            # POST_FIX 2026-11-23: 0/0 made pyav_decode keep only the first
+            # frame(s); None means "whole video", which is what the
+            # temporal sampler needs for 16 distinct frames.
+            start, end = None, None
         else:
             caption_sample, tag, start, end = self.get_caption_and_timeinfo_wrapper(img_idx, cap_idx)  
             if isinstance(caption_sample, dict):
