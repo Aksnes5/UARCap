@@ -1,0 +1,23 @@
+{
+  "name": "postfix_250k_D5",
+  "k": 5,
+  "scale": "250k",
+  "track": "D",
+  "status": "Complete",
+  "queries": 497,
+  "cap": "/home/bn/videoufo_research/external/external_val_250k_d7_cap.json",
+  "sims": "/home/bn/videoufo_research/external/external_val_250k_d7_sims.json",
+  "commit": "2b3da9ddcaed1fa0c5995326c58a3be3decfcd69",
+  "result_dir": "evcap_external/outputs/eval_postfix_postfix_250k_D5",
+  "metrics": {
+    "Bleu_1": 87.4328,
+    "Bleu_2": 75.2824,
+    "Bleu_3": 62.3483,
+    "Bleu_4": 50.0333,
+    "METEOR": 33.185,
+    "ROUGE_L": 66.2739,
+    "CIDEr": 68.751,
+    "SPICE": 9.0777
+  },
+  "finished_at": "2026-11-24T00:17:54"
+}
