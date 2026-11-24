@@ -1,0 +1,23 @@
+{
+  "name": "postfix_indomain_D7",
+  "k": 7,
+  "scale": "in-domain",
+  "track": "D",
+  "status": "Complete",
+  "queries": 497,
+  "cap": "/home/bn/videoufo_research/external/external_val_indomain_d7_cap.json",
+  "sims": "/home/bn/videoufo_research/external/external_val_indomain_d7_sims.json",
+  "commit": "2b3da9ddcaed1fa0c5995326c58a3be3decfcd69",
+  "result_dir": "evcap_external/outputs/eval_postfix_postfix_indomain_D7",
+  "metrics": {
+    "Bleu_1": 88.88,
+    "Bleu_2": 77.8396,
+    "Bleu_3": 64.9873,
+    "Bleu_4": 51.9975,
+    "METEOR": 33.5191,
+    "ROUGE_L": 67.332,
+    "CIDEr": 73.7568,
+    "SPICE": 9.0504
+  },
+  "finished_at": "2026-11-24T07:22:13"
+}
