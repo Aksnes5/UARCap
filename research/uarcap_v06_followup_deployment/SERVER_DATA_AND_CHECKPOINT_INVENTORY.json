@@ -1,0 +1,501 @@
+{
+  "status": "UNVERIFIED",
+  "basis_commit": "52b5ed3a69e4b84a8e16ed747f141eefb5b1e2ec",
+  "ssh": {
+    "target": "bn@bn",
+    "exit": 255,
+    "failure": "Could not resolve hostname bn",
+    "commands_executed_remotely": 0
+  },
+  "live_env": {
+    "os": null,
+    "gpu_model": null,
+    "gpu_uuid": null,
+    "vram_total": null,
+    "vram_free": null,
+    "driver": null,
+    "cuda": null,
+    "python": null,
+    "pytorch": null,
+    "conda": null,
+    "disk_free": null,
+    "compute_jobs": null
+  },
+  "physical_missing_confirmed": [],
+  "assets": {
+    "project_root": {
+      "required_for": "A,B",
+      "archived_locator": "/home/bn/videoufo_research",
+      "archived_source": "user-provided research root",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "inference_checkout": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/evcap_external",
+      "archived_source": "archived scripts/run_test.sh",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "inference_source_and_runtime_dependencies": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/evcap_external/{evaluator,models,prompts,dataset,common}",
+      "archived_source": "FROZEN_SOURCE_BINDINGS.json lists source hashes for 6 frozen paths. Pin the remaining executable dependencies in the environment receipt.",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "shared_gpu_lock": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/gpu.lock",
+      "archived_source": "scripts/run_test.sh",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "interpreter": {
+      "required_for": "A,B",
+      "archived_locator": "<DISPLAY>/repro_evcap/venv/bin/python",
+      "archived_source": "scripts/run_test.sh",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "conda_active_environment": {
+      "required_for": "if used",
+      "archived_locator": null,
+      "archived_source": "Inspect environment if used. Archive runner uses a venv; no active Conda env is witnessed.",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "runner": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/scripts/run_test.sh",
+      "archived_source": "scripts/run_test.sh",
+      "archive_evidence": {
+        "sha256": "42d7d58e534bfcb798f01fc99ee0a10d70e600aa41af05431848ff7d49b2c88f",
+        "bytes": 2042
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "test_yaml": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/evcap_external/test2990/test2990_16frames.yaml",
+      "archived_source": "evcap_external/test2990/test2990_16frames.yaml",
+      "archive_evidence": {
+        "sha256": "a2e4d55790ddfeb60a0eec8298aaa35f46833c22ffa81ddb11de9132d0014083",
+        "bytes": 354
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "frame_tsv": {
+      "required_for": "A,B",
+      "archived_locator": "<MSRVTT_ROOT>/test_16frm/frame_tsv/test_16frames_img_size224.img.tsv",
+      "archived_source": "evcap_external/test2990/test2990_16frames.yaml",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "frame_offset": {
+      "required_for": "A,B",
+      "archived_locator": "<MSRVTT_ROOT>/test_16frm/frame_tsv/test_16frames_img_size224.img.lineidx",
+      "archived_source": "archive TSVFile derives offset by replacing final extension",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "caption_tsv": {
+      "required_for": "A,B",
+      "archived_locator": "<MSRVTT_ROOT>/test.caption.tsv",
+      "archived_source": "evcap_external/test2990/test2990_16frames.yaml",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "caption_offset": {
+      "required_for": "A,B",
+      "archived_locator": "<MSRVTT_ROOT>/test.caption.lineidx",
+      "archived_source": "archive TSVFile",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "label_tsv": {
+      "required_for": "A,B",
+      "archived_locator": "<MSRVTT_ROOT>/test.label.tsv",
+      "archived_source": "evcap_external/test2990/test2990_16frames.yaml",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "label_offset": {
+      "required_for": "A,B",
+      "archived_locator": "<MSRVTT_ROOT>/test.label.lineidx",
+      "archived_source": "archive TSVFile",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "query_route": {
+      "source": "pinned vision_language_tsv.py and runner",
+      "route": "pre-extracted image TSV -> get_frames_from_tsv; 16 frames, query encoder retained",
+      "live_status": "UNVERIFIED"
+    },
+    "full_query_list": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/manifests/msrvtt_test2990.tsv",
+      "archived_source": "archive Git blob",
+      "archive_evidence": {
+        "count": 2990,
+        "sha256": "d826647b1f2ca16c75b117287d9a0b23bd7359753f987f6a7022f769a890ef8d",
+        "bytes": 119600
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "untouched_query_list": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/manifests/msrvtt_untouched2690.tsv",
+      "archived_source": "archive Git blob",
+      "archive_evidence": {
+        "count": 2690,
+        "pilot_excluded": 300,
+        "sha256": "fce00da1d10e6e80fa7c0ee9932042e4ab608946f2039887c830a778d96acae2",
+        "bytes": 107600
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "ordered_reference_witness": {
+      "required_for": "A,B",
+      "archived_locator": null,
+      "archived_source": "B-only input preparation does not read references. Reference witness comes from three historical archive pairs.",
+      "archive_evidence": {
+        "references_per_query": 20,
+        "ordered_reference_lists_canonical_sha256": "204563f74d9e4354863289760f65a767dde8d9e189d7e99dc201505847b15271"
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "full_d_cap": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/external/external_test_d7_cap.json",
+      "archived_source": "archive Git blob",
+      "archive_evidence": {
+        "sha256": "6238f379f6d35fe12fda2d3ec59f498683485d03341a1f0931caf6e234f9efe8",
+        "bytes": 3311809
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "full_d_sims": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/external/external_test_d7_sims.json",
+      "archived_source": "archive Git blob",
+      "archive_evidence": {
+        "sha256": "3a79cb5e90f2e213752679441defaba62e7d5e1dabc2842ca3a9b3dca2135021",
+        "bytes": 2156249
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "top20": {
+      "required_for": "Windows CPU",
+      "archived_locator": "<PROJECT>/external/external_test_top20.json",
+      "archived_source": "archive Git blob. Needed for Windows input preparation only.",
+      "archive_evidence": {
+        "sha256": "d857bcda93890ae2e5398b69de91080cdd0e5e767249c3f0bd93853f8779e7b2",
+        "bytes": 13124819
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "b_eligible": {
+      "required_for": "B",
+      "archived_locator": null,
+      "archived_source": "Rebuilt from frozen Windows archive. Check eligible digest after any transfer.",
+      "archive_evidence": {
+        "count": 2618,
+        "out_of": 2690,
+        "canonical_sha256": "450770ffd92520a8b474186c75c9e08cf7fbe3d11949f227a987e793cef03972"
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "historical_predictions": {
+      "required_for": "reuse audit",
+      "archived_locator": "<PROJECT>/evcap_external/outputs/eval_{test2990,test2690}_D{1,3,7}",
+      "archived_source": "Readably pinned archive output pairs. All digests and lengths in ARCHIVE_EVIDENCE.json.",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "faithful_feature_cache": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/features/videollama_faithful_v2",
+      "archived_source": "expected_feature_ids_<arm>.txt from archive replay; unique count A0=0, A1=2539, A7=15213, each B=7035",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "msrvtt_checkpoint": {
+      "required_for": "A,B",
+      "archived_locator": "<DISPLAY>/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "archived_source": "archive run script and reports/audit_checkpoint_usage.md",
+      "archive_evidence": {
+        "sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002",
+        "bytes": 147337150,
+        "per_job_verified": false
+      },
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "vicuna_model": {
+      "required_for": "A,B",
+      "archived_locator": "<DISPLAY>/repro_evcap/models/vicuna-7b-v1.3",
+      "archived_source": "scripts/run_test.sh",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "vicuna_tokenizer": {
+      "required_for": "A,B",
+      "archived_locator": "<DISPLAY>/repro_evcap/models/vicuna-7b-v1.3/{tokenizer.model,tokenizer_config.json,special_tokens_map.json}",
+      "archived_source": "verify actual tokenizer files/config from the pinned runtime",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "hf_cache": {
+      "required_for": "A,B",
+      "archived_locator": "<DISPLAY>/repro_evcap/hf_cache",
+      "archived_source": "archive runner; verify existing bert-base-uncased initialization",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "torch_cache": {
+      "required_for": "A,B",
+      "archived_locator": "<DISPLAY>/repro_evcap/torch_cache",
+      "archived_source": "archive runner; verify resolved timm checkpoint directory",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "eva_cache": {
+      "required_for": "A,B",
+      "archived_locator": "<TIMM_CACHE>/eva_vit_g.pth",
+      "archived_source": "pinned eva_vit.py",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "blip2_qformer_cache": {
+      "required_for": "A,B",
+      "archived_locator": "<TIMM_CACHE>/blip2_pretrained_flant5xxl.pth",
+      "archived_source": "pinned captioning class Q-Former initialization",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    },
+    "video_llama_weights": {
+      "required_for": "A,B",
+      "archived_locator": "<PROJECT>/evcap_external/download/videollama/baseline_2_7B_Pretrained.pth",
+      "archived_source": "pinned captioning class path for Vicuna 7B",
+      "archive_evidence": {},
+      "bn": {
+        "status": "UNVERIFIED",
+        "canonical_path": null,
+        "bytes": null,
+        "sha256": null,
+        "readable": null,
+        "matches_frozen_record": null
+      }
+    }
+  }
+}
