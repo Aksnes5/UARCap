@@ -1,4 +1,20 @@
 experiment_id,dataset,split,condition,B1,B4,METEOR,ROUGE_L,CIDEr,SPICE,status,result_path
+easywrong7,MSR-VTT,val497,easywrong7,86.14,47.45,32.78,65.42,66.85,9.09,VALID_FINAL,evcap_external/outputs/eval_postfix_easywrong7
+goodtail7,MSR-VTT,val497,goodtail7,86.37,47.12,33.07,65.43,66.66,9.33,VALID_FINAL,evcap_external/outputs/eval_postfix_goodtail7
+hardwrong7,MSR-VTT,val497,hardwrong7,85.8,47.49,32.88,65.66,65.77,9.17,VALID_FINAL,evcap_external/outputs/eval_postfix_hardwrong7
+loo0,MSR-VTT,val150,loo0,87.47,48.38,32.47,65.25,66.73,9.16,VALID_FINAL,evcap_external/outputs/eval_postfix_loo0
+loo1,MSR-VTT,val150,loo1,86.88,47.18,32.27,64.75,64.2,9.16,VALID_FINAL,evcap_external/outputs/eval_postfix_loo1
+loo2,MSR-VTT,val150,loo2,86.98,47.38,32.2,64.84,65.16,9.1,VALID_FINAL,evcap_external/outputs/eval_postfix_loo2
+loo3,MSR-VTT,val150,loo3,86.75,47.87,32.57,64.85,65.34,9.14,VALID_FINAL,evcap_external/outputs/eval_postfix_loo3
+loo4,MSR-VTT,val150,loo4,86.63,45.69,32.05,64.11,64.01,9.13,VALID_FINAL,evcap_external/outputs/eval_postfix_loo4
+loo5,MSR-VTT,val150,loo5,86.89,47.84,32.31,64.41,64.59,9.18,VALID_FINAL,evcap_external/outputs/eval_postfix_loo5
+loo6,MSR-VTT,val150,loo6,86.18,45.81,32.04,63.84,63.25,9.06,VALID_FINAL,evcap_external/outputs/eval_postfix_loo6
+lowtail7,MSR-VTT,val497,lowtail7,86.33,48.26,33.08,65.85,66.58,9.13,VALID_FINAL,evcap_external/outputs/eval_postfix_lowtail7
+midtail7,MSR-VTT,val497,midtail7,86.34,47.71,32.91,65.64,68.42,9.14,VALID_FINAL,evcap_external/outputs/eval_postfix_midtail7
+oracle1,MSR-VTT,val497,oracle1,88.31,51.01,33.55,66.71,71.64,9.06,VALID_FINAL,evcap_external/outputs/eval_postfix_oracle1
+oracle3,MSR-VTT,val497,oracle3,89.1,51.52,33.68,67.2,71.67,9.24,VALID_FINAL,evcap_external/outputs/eval_postfix_oracle3
+oracle7,MSR-VTT,val497,oracle7,87.54,48.11,33.55,66.32,68.94,9.37,VALID_FINAL,evcap_external/outputs/eval_postfix_oracle7
+posrev,MSR-VTT,val497,posrev,85.88,47.08,32.86,65.56,66.98,8.99,VALID_FINAL,evcap_external/outputs/eval_postfix_posrev
 postfix_100k_CF1,MSR-VTT,val497,postfix_100k_CF1,87.93,50.93,32.97,66.62,69.89,8.93,VALID_FINAL,evcap_external/outputs/eval_postfix_postfix_100k_CF1
 postfix_100k_CF3,MSR-VTT,val497,postfix_100k_CF3,87.99,50.76,33.27,66.4,70.1,9.07,VALID_FINAL,evcap_external/outputs/eval_postfix_postfix_100k_CF3
 postfix_100k_CF5,MSR-VTT,val497,postfix_100k_CF5,87.44,50.04,33.24,66.23,69.32,8.99,VALID_FINAL,evcap_external/outputs/eval_postfix_postfix_100k_CF5
@@ -53,4 +69,5 @@ postfix_indomain_D1,MSR-VTT,val497,postfix_indomain_D1,88.4,51.08,33.25,66.63,71
 postfix_indomain_D3,MSR-VTT,val497,postfix_indomain_D3,88.03,51.6,33.44,66.76,72.42,8.71,VALID_FINAL,evcap_external/outputs/eval_postfix_postfix_indomain_D3
 postfix_indomain_D5,MSR-VTT,val497,postfix_indomain_D5,87.75,51.15,33.32,66.83,71.07,8.78,VALID_FINAL,evcap_external/outputs/eval_postfix_postfix_indomain_D5
 postfix_indomain_D7,MSR-VTT,val497,postfix_indomain_D7,88.88,52.0,33.52,67.33,73.76,9.05,VALID_FINAL,evcap_external/outputs/eval_postfix_postfix_indomain_D7
+postop3last,MSR-VTT,val497,postop3last,86.31,47.95,33.04,65.95,67.24,9.01,VALID_FINAL,evcap_external/outputs/eval_postfix_postop3last
 smoke_val20_D3,MSR-VTT,val20,smoke_val20_D3,85.36,47.48,31.3,64.33,79.05,8.66,EXPLORATORY_ONLY,evcap_external/outputs/eval_postfix_smoke_val20_D3

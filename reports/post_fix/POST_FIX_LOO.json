@@ -1,0 +1,44 @@
+{
+  "by_rank": {
+    "1": {
+      "mean": 2.0,
+      "median": 0.0,
+      "p_harmful": 0.2
+    },
+    "2": {
+      "mean": -0.49,
+      "median": 0.0,
+      "p_harmful": 0.167
+    },
+    "3": {
+      "mean": 0.29,
+      "median": 0.0,
+      "p_harmful": 0.2
+    },
+    "4": {
+      "mean": 0.69,
+      "median": 0.0,
+      "p_harmful": 0.167
+    },
+    "5": {
+      "mean": -0.78,
+      "median": 0.0,
+      "p_harmful": 0.147
+    },
+    "6": {
+      "mean": -0.13,
+      "median": 0.0,
+      "p_harmful": 0.167
+    },
+    "7": {
+      "mean": -1.42,
+      "median": 0.0,
+      "p_harmful": 0.167
+    }
+  },
+  "head_mean": 0.6,
+  "tail_mean": -0.41,
+  "head_p_harmful": 0.189,
+  "tail_p_harmful": 0.162,
+  "n": 150
+}
