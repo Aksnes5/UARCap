@@ -1,0 +1,56 @@
+{
+  "paired_k1_cider": {
+    "CF1_10k_vs_50k": [
+      0.45,
+      [
+        -1.47,
+        2.32
+      ],
+      0.63424
+    ],
+    "CF1_10k_vs_100k": [
+      0.55,
+      [
+        -1.45,
+        2.59
+      ],
+      0.60904
+    ],
+    "D1_10k_vs_50k": [
+      0.32,
+      [
+        -1.74,
+        2.43
+      ],
+      0.76732
+    ],
+    "D1_10k_vs_100k": [
+      -0.4,
+      [
+        -2.6,
+        1.74
+      ],
+      0.71743
+    ]
+  },
+  "churn_10k_to_50k": {
+    "queries": 497,
+    "top1_replaced": 401,
+    "replaced_frac": 0.8068,
+    "replaced_sim_up": 400,
+    "replaced_sim_down": 1,
+    "mean_sim_delta_replaced": 0.0134,
+    "mean_cider_delta_CF1_replaced": -0.56,
+    "mean_cider_delta_D1_replaced": 0.26
+  },
+  "churn_10k_to_100k": {
+    "queries": 497,
+    "top1_replaced": 441,
+    "replaced_frac": 0.8873,
+    "replaced_sim_up": 440,
+    "replaced_sim_down": 1,
+    "mean_sim_delta_replaced": 0.0163,
+    "mean_cider_delta_CF1_replaced": -0.61,
+    "mean_cider_delta_D1_replaced": 0.86
+  }
+}

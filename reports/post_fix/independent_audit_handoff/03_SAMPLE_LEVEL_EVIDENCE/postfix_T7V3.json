@@ -1,0 +1,23 @@
+{
+  "name": "postfix_T7V3",
+  "k": 7,
+  "scale": "FULL",
+  "track": "D",
+  "status": "Complete",
+  "queries": 497,
+  "cap": "/home/bn/videoufo_research/external/external_val_d7_cap.json",
+  "sims": "/home/bn/videoufo_research/external/external_val_d7_sims.json",
+  "commit": "2b3da9ddcaed1fa0c5995326c58a3be3decfcd69",
+  "result_dir": "evcap_external/outputs/eval_postfix_postfix_T7V3",
+  "metrics": {
+    "Bleu_1": 86.1474,
+    "Bleu_2": 72.9209,
+    "Bleu_3": 59.3189,
+    "Bleu_4": 46.8757,
+    "METEOR": 32.8682,
+    "ROUGE_L": 65.3942,
+    "CIDEr": 67.1762,
+    "SPICE": 9.0848
+  },
+  "finished_at": "2026-11-24T07:46:39"
+}

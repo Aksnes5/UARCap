@@ -1,0 +1,21 @@
+{
+  "name": "loo3",
+  "k": 6,
+  "n_expected": 150,
+  "status": "Complete",
+  "cap": "/home/bn/videoufo_research/external/external_val_loo_rm3_cap.json",
+  "sims": "/home/bn/videoufo_research/external/external_val_loo_rm3_sims.json",
+  "commit": "d9f3ae96aa60bce2bf7c9f19f27cb488eca59e91",
+  "result_dir": "evcap_external/outputs/eval_postfix_loo3",
+  "metrics": {
+    "Bleu_1": 86.7459,
+    "Bleu_2": 73.9995,
+    "Bleu_3": 60.5967,
+    "Bleu_4": 47.8705,
+    "METEOR": 32.5734,
+    "ROUGE_L": 64.8481,
+    "CIDEr": 65.341,
+    "SPICE": 9.1425
+  },
+  "finished_at": "2026-11-24T12:26:22"
+}

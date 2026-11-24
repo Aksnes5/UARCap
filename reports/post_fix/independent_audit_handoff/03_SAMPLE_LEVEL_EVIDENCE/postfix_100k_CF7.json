@@ -1,0 +1,23 @@
+{
+  "name": "postfix_100k_CF7",
+  "k": 7,
+  "scale": "100k",
+  "track": "CF",
+  "status": "Complete",
+  "queries": 497,
+  "cap": "/home/bn/videoufo_research/external/external_val_100k_cf7_cap.json",
+  "sims": "/home/bn/videoufo_research/external/external_val_100k_cf7_sims.json",
+  "commit": "2b3da9ddcaed1fa0c5995326c58a3be3decfcd69",
+  "result_dir": "evcap_external/outputs/eval_postfix_postfix_100k_CF7",
+  "metrics": {
+    "Bleu_1": 86.6224,
+    "Bleu_2": 74.4388,
+    "Bleu_3": 61.4006,
+    "Bleu_4": 48.9886,
+    "METEOR": 33.1825,
+    "ROUGE_L": 66.3293,
+    "CIDEr": 67.5746,
+    "SPICE": 9.1387
+  },
+  "finished_at": "2026-11-23T22:09:11"
+}

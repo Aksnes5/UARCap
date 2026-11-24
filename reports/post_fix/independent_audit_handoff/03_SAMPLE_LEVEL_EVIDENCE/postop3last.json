@@ -1,0 +1,21 @@
+{
+  "name": "postop3last",
+  "k": 7,
+  "n_expected": 497,
+  "status": "Complete",
+  "cap": "/home/bn/videoufo_research/external/external_val_postop3last_cap.json",
+  "sims": "/home/bn/videoufo_research/external/external_val_postop3last_sims.json",
+  "commit": "d9f3ae96aa60bce2bf7c9f19f27cb488eca59e91",
+  "result_dir": "evcap_external/outputs/eval_postfix_postop3last",
+  "metrics": {
+    "Bleu_1": 86.3075,
+    "Bleu_2": 73.6328,
+    "Bleu_3": 60.2821,
+    "Bleu_4": 47.948,
+    "METEOR": 33.0398,
+    "ROUGE_L": 65.9466,
+    "CIDEr": 67.2422,
+    "SPICE": 9.0081
+  },
+  "finished_at": "2026-11-24T09:51:41"
+}

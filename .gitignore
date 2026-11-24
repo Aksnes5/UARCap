@@ -94,3 +94,8 @@ venv/
 .vscode/
 .idea/
 .DS_Store
+
+# independent audit handoff: sample-level prediction copies are already tracked
+# under evcap_external/outputs/eval_postfix_*; the zip stays local
+reports/post_fix/independent_audit_handoff/03_SAMPLE_LEVEL_EVIDENCE/predictions/
+*.zip

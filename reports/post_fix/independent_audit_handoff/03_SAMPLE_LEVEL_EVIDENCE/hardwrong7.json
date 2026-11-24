@@ -1,0 +1,21 @@
+{
+  "name": "hardwrong7",
+  "k": 7,
+  "n_expected": 497,
+  "status": "Complete",
+  "cap": "/home/bn/videoufo_research/external/external_val_hardwrong7_cap.json",
+  "sims": "/home/bn/videoufo_research/external/external_val_hardwrong7_sims.json",
+  "commit": "d9f3ae96aa60bce2bf7c9f19f27cb488eca59e91",
+  "result_dir": "evcap_external/outputs/eval_postfix_hardwrong7",
+  "metrics": {
+    "Bleu_1": 85.8046,
+    "Bleu_2": 73.1456,
+    "Bleu_3": 59.9368,
+    "Bleu_4": 47.4857,
+    "METEOR": 32.8837,
+    "ROUGE_L": 65.6611,
+    "CIDEr": 65.7692,
+    "SPICE": 9.171
+  },
+  "finished_at": "2026-11-24T11:30:37"
+}
