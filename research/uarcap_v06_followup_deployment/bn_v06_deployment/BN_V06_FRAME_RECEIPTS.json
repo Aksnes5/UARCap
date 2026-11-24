@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-11-24T19:50:00",
+  "receipts": [
+    {
+      "role": "img",
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test_16frm/frame_tsv/test_16frames_img_size224.img.tsv",
+      "size": 1378294858,
+      "sha256": "ee0a372585c3bfa7aad9feb0a990e6c22b7e5f42209efb1d7427b008a7dfbb7e",
+      "lineidx_sha256": "61ae0fc935fb7af2d1a500a40fa202ec4ccdf6efc6ed8db2a4b06acae42f41ed",
+      "mtime_ns": 1765852107059097006,
+      "digest_status": "VERIFIED",
+      "content_sha256_method": "read-only sequential SHA-256 on BN; size and mtime unchanged before/after"
+    },
+    {
+      "role": "label",
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test.label.tsv",
+      "size": 4015483,
+      "sha256": "5ca73d0e9d91388d793460cc0e5b227de5b0c74a569855e731c495af26ef5e18",
+      "lineidx_sha256": "7f5325597f396dc0f77a57d462366b64079fa8202fc0251bdeedcddf91cf1c05",
+      "mtime_ns": 1765852089906931020,
+      "digest_status": "VERIFIED"
+    },
+    {
+      "role": "caption",
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test.caption.tsv",
+      "size": 4015483,
+      "sha256": "5ca73d0e9d91388d793460cc0e5b227de5b0c74a569855e731c495af26ef5e18",
+      "lineidx_sha256": "7f5325597f396dc0f77a57d462366b64079fa8202fc0251bdeedcddf91cf1c05",
+      "mtime_ns": 1765852089854930517,
+      "digest_status": "VERIFIED"
+    }
+  ]
+}

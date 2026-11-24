@@ -1,0 +1,190 @@
+{
+  "base_prefix": "/home/bn/anaconda3/envs/TTP",
+  "environment": {
+    "CONDA_PREFIX": "/home/bn/anaconda3",
+    "LD_LIBRARY_PATH": ":/usr/local/cuda-12.4/lib64"
+  },
+  "ignore_python_environment": false,
+  "interpreter": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python",
+  "isolated": false,
+  "loads_runtime_packages": false,
+  "no_user_site": false,
+  "packages": {
+    "Pillow": {
+      "distribution_root": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "d53d4d78f8a8efe182396711ef76840386d2ba4ccdad421f58cc00c3b3401f73",
+        "RECORD": "6608da20a2110fac2d52b04026cf8960a05c3e6a3405617e9e7c46c7d677618f"
+      },
+      "module_file_sha256": "43828e12947b4bf5ec8f7d1fbceb2f47de311295f8294b15794c1a54fd5f53cd",
+      "module_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/PIL/__init__.py",
+      "version": "11.3.0"
+    },
+    "PyYAML": {
+      "distribution_root": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "03c3b415ed38d09faedc49360e930769b40c58f68585e6de00e2e4916a858d34",
+        "RECORD": "8dfb62513abed533561811ffc383c84843c65f17e1a10f4071c173b2080beb0f"
+      },
+      "module_file_sha256": "b19dfcc333d6a75dfd73073901164507252f271b41d3b5f7d85510033a0547a7",
+      "module_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/yaml/__init__.py",
+      "version": "6.0.3"
+    },
+    "accelerate": {
+      "distribution_root": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "5e5f5d5faef547f385c654a2a1a16b9dbfb906147cedb7647e4bcca279e8abef",
+        "RECORD": "a26044679ab0b00c268cba1d20483c260cf27e6b9a64895b00557296a825a3ef"
+      },
+      "module_file_sha256": "a49d5f5156c4208fffe719d579e77921ee3c98452b33d1eddb59c6d5bb0b2c89",
+      "module_origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/accelerate/__init__.py",
+      "version": "0.16.0"
+    },
+    "av": {
+      "distribution_root": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "bc95531fac42a80b2bbc348c09aeef2715fd216cd80789e1fb53298e3cd19b44",
+        "RECORD": "1af1aac66a0445573b09e7f9e7e7136fb1925e737d132bf59e52c6f280aacdb8"
+      },
+      "module_file_sha256": "e7f11fdd16ce04573c34a7cea293c6ef5e0a932a94f5862577f55334c3983a40",
+      "module_origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/av/__init__.py",
+      "version": "14.0.1"
+    },
+    "einops": {
+      "distribution_root": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "0bd65db043688a44f4a29608c1cba521c932f7ff76f238bbd869441e15012653",
+        "RECORD": "6854c59e86484f2e78ea911b48cf99fe3f2f33a765293451e1d64e30ca6b0a22"
+      },
+      "module_file_sha256": "3303dc6161872ac244d14c6585fed832ffd27fabeef56f58f7c872d6644ceb39",
+      "module_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/einops/__init__.py",
+      "version": "0.8.2"
+    },
+    "huggingface-hub": {
+      "distribution_root": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "405c66321443ef640f8c371c0620cfeb38770a495bc4df90ebf6c6cc71f01a48",
+        "RECORD": "d6e5e221dab4eef03c29b90b8ac50a0172fcd007e0c14264e984331cbdb26aa6"
+      },
+      "module_file_sha256": "ff74609a23a90ad85e8f76497b1c24fcc04b55f49fd77b6f008078517f937cb9",
+      "module_origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/huggingface_hub/__init__.py",
+      "version": "0.18.0"
+    },
+    "numpy": {
+      "distribution_root": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "b09734a7fed44e84b4c8161934ce532dff1e779ec6822d415644d117f6381070",
+        "RECORD": "7cd12581b460b05e27a980a2141c699743491b2b4feeec295c166ffb5189607d"
+      },
+      "module_file_sha256": "22cd1535fa14d74ef6f457cca149ffdc80875f460be313b8f895273f78bc402e",
+      "module_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/numpy/__init__.py",
+      "version": "1.26.4"
+    },
+    "opencv-python": {
+      "distribution_root": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "14d7a18c1d0289a50c3a05ed2f6f3b305fd76398d066eeeaca5ddf9b4a4f474c",
+        "RECORD": "09382d31b0b192c51b38bcc30a93b96324e37a8428fc600a15bf099fe67f3815"
+      },
+      "module_file_sha256": "936bd94c5a5debf0212fc751af79d3a163652f3e850259df2159db6aa3ed8ad8",
+      "module_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/cv2/__init__.py",
+      "version": "4.10.0.84"
+    },
+    "safetensors": {
+      "distribution_root": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "6809326fbf17444dd520ab19f0a55b7a18476dbe52a430466bbf5389967c2aaa",
+        "RECORD": "8fa2c086a5778dd83005cd0651af677dbdd5f59f4b36a8801b0c439ec147a39c"
+      },
+      "module_file_sha256": "c1bcca66501582702c8c79aaaf2b922428800efa4367134609f8fc57363402dd",
+      "module_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/safetensors/__init__.py",
+      "version": "0.7.0"
+    },
+    "sentencepiece": {
+      "distribution_root": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "ce0a2e9c599cd060a7bc3dffb18be5cfc3d5f293533e3ee4e870eaef0a5500fd",
+        "RECORD": "41fab2277e3a127e32b0bc6d61d7d71a92d02625749f10bc73e0be089e59afd0"
+      },
+      "module_file_sha256": "3504f490fde39231264512322bf8ec282ba0e8bf73422daf20f4d64229fc136c",
+      "module_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/sentencepiece/__init__.py",
+      "version": "0.2.1"
+    },
+    "timm": {
+      "distribution_root": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "c8dd62c17cc422e66547894e500cd4ec1a9ca3037f524feae35215e0ac21694e",
+        "RECORD": "24ab78203150da7614dd69ead58770532c20fe9708c74d08c7f0d72cbfad1efb"
+      },
+      "module_file_sha256": "a653accda587fdccfbdca900f2b2e93ee4a13da8a69e58f8bb353fca987f8279",
+      "module_origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/timm/__init__.py",
+      "version": "0.6.13"
+    },
+    "tokenizers": {
+      "distribution_root": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "24f28d7e76259f208a1d31f4df214881525f6f3df4eef5d87bfdf432ad0833df",
+        "RECORD": "c3c4c4940e8333b44ccc94bf0f7602a31bfae7124b3339f7a0e74fa73dd6af3b"
+      },
+      "module_file_sha256": "01081a0253e20d103ab26b0cbde21223b6049502eae4b4828d8c531a5b49d48b",
+      "module_origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/tokenizers/__init__.py",
+      "version": "0.13.2"
+    },
+    "torch": {
+      "distribution_root": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "5cdf6c66551fcb4b5cc2ca16a0ba5ff978df0b41bdb577f3e1e9ec5b71396c6d",
+        "RECORD": "30029a366c953275bcbd268b84ea14985265b6a5e3c6c8caeceeadf70c4150f6"
+      },
+      "module_file_sha256": "7261130fcc9dae49bb38843604ae2d0cab8d6b7277eb57b5dbc1559e35e34be1",
+      "module_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/torch/__init__.py",
+      "version": "2.1.2+cu121"
+    },
+    "torchvision": {
+      "distribution_root": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "7a4b7da62bc318ae66a31361481b7c12a88219bac3bb7258ae00ce17650c3f23",
+        "RECORD": "f3ef43c4d1d151531d75efe89ce0f11afa760912f3555ee828f4cd305d840a67"
+      },
+      "module_file_sha256": "dc03a32fb36a91218daae61bad15122155f00bef24069f8166684cb2972743f7",
+      "module_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/torchvision/__init__.py",
+      "version": "0.16.2+cu121"
+    },
+    "transformers": {
+      "distribution_root": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages",
+      "metadata_text_sha256": {
+        "INSTALLER": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+        "METADATA": "a9e9e77f6afc154bf09a855d77984323ace64e23bb49db9e4c2764a3acb5a747",
+        "RECORD": "ec08e79d97bee032d8aaa2687cda01d44a8fdab1819e09d09f5615889e573b2d"
+      },
+      "module_file_sha256": "8a9e2fc1060e69f050db7ca96d2f93a92a7f92879a3599159910b095a7885403",
+      "module_origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/transformers/__init__.py",
+      "version": "4.28.0"
+    }
+  },
+  "prefix": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv",
+  "real_interpreter": "/home/bn/anaconda3/envs/TTP/bin/python3.9",
+  "sys_path": [
+    "/home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/local_cpu_handoff",
+    "/home/bn/anaconda3/envs/TTP/lib/python39.zip",
+    "/home/bn/anaconda3/envs/TTP/lib/python3.9",
+    "/home/bn/anaconda3/envs/TTP/lib/python3.9/lib-dynload",
+    "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages",
+    "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages"
+  ],
+  "version": "3.9.13 | packaged by conda-forge | (main, May 27 2022, 16:58:50) \n[GCC 10.3.0]"
+}

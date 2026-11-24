@@ -1,0 +1,145 @@
+{
+  "checked_at": "2026-11-24T19:56:00",
+  "runtime_root": "/home/bn/uar_v06_runtime",
+  "run_id": "uarcapv06",
+  "attempt": 1,
+  "deployment_config": "/home/bn/uar_v06_runtime/deployment/deployment_uarcapv06.json",
+  "deployment_config_sha256": "86f2306d8197ceee105c78780f337e601a5b3224b1d49fd152ed7271ba67f0e6",
+  "statuses": {
+    "INPUTS_STAGED": "YES",
+    "INPUT_HASH_VERIFIED": "YES",
+    "SERVER_DATA_READY": "YES",
+    "RUNTIME_ENVIRONMENT_BOUND": "YES (static binding; documented version deviations; native import not exercised)",
+    "DEPLOYMENT_JSON_READY": "YES",
+    "SIX_ARM_DRY_RUN_PASS": "YES",
+    "GPU_IDLE_AT_CHECK": "YES",
+    "GPU_SMOKE_READY": "YES (A0/A1/A7 only; authorization still required)",
+    "GPU_EXECUTION_APPROVED": "NO"
+  },
+  "inputs": {
+    "dir": "/home/bn/uar_v06_runtime/inputs",
+    "bundle_sha256": "93289136546fc2d96d2f457cc9dec57c50fde1b2c517f735f23df0a1dfc63128",
+    "members_verified": 18,
+    "all_members_match": true
+  },
+  "environment": {
+    "python": "3.9.13 | packaged by conda-forge | (main, May 27 2022, 16:58:50) ",
+    "interpreter": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python",
+    "status": "BOUND_WITH_DOCUMENTED_DEVIATIONS",
+    "deviations": [
+      {
+        "component": "Python",
+        "archived": "3.9.18",
+        "live": "3.9.13",
+        "match": false
+      },
+      {
+        "component": "torch",
+        "archived": "2.1.0",
+        "live": "2.1.2+cu121",
+        "match": false
+      },
+      {
+        "component": "torchvision",
+        "archived": "0.16.0",
+        "live": "0.16.2+cu121",
+        "match": false
+      },
+      {
+        "component": "numpy",
+        "archived": "1.24.3",
+        "live": "1.26.4",
+        "match": false
+      },
+      {
+        "component": "Pillow",
+        "archived": "10.0.1",
+        "live": "11.3.0",
+        "match": false
+      },
+      {
+        "component": "opencv-python",
+        "archived": "4.7.0.72",
+        "live": "4.10.0.84",
+        "match": false
+      }
+    ],
+    "python_environment_sha256": "5bdc9836abdb2fd0d95141352e7e9fa31d8ddaea4511cf382e05980f08a06aec"
+  },
+  "six_arm": {
+    "all_pass": true,
+    "arms": {
+      "A0": {
+        "topn": "0",
+        "text_topn": "0",
+        "visual_topn": "0",
+        "feature_ids": 0,
+        "output": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A0"
+      },
+      "A1": {
+        "topn": "1",
+        "text_topn": "1",
+        "visual_topn": "1",
+        "feature_ids": 2539,
+        "output": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A1"
+      },
+      "A7": {
+        "topn": "7",
+        "text_topn": "7",
+        "visual_topn": "7",
+        "feature_ids": 15213,
+        "output": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A7"
+      },
+      "B3": {
+        "topn": "7",
+        "text_topn": "3",
+        "visual_topn": "3",
+        "feature_ids": 7035,
+        "output": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_B3"
+      },
+      "B7HQ": {
+        "topn": "7",
+        "text_topn": "7",
+        "visual_topn": "3",
+        "feature_ids": 7035,
+        "output": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_B7HQ"
+      },
+      "B7LQ": {
+        "topn": "7",
+        "text_topn": "7",
+        "visual_topn": "3",
+        "feature_ids": 7035,
+        "output": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_B7LQ"
+      }
+    }
+  },
+  "gpu": {
+    "checked_at": "2026-11-24T19:54:42",
+    "gpu": "NVIDIA RTX A6000, GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d, 49140 MiB, 15 MiB, 0 %, 39, 28.33 W, 580.178.04",
+    "compute_apps": "",
+    "lock_path": "/home/bn/videoufo_research/gpu.lock",
+    "lock_bytes": 0,
+    "lock_fuser": "",
+    "gpu_idle": true,
+    "cuda_initialized": false,
+    "project_df": "/dev/nvme0n1p2  3.6T  1.8T  1.7T   52% /",
+    "display_df": "/dev/sda        7.3T  3.1T  3.9T   44% /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1",
+    "display_mount": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1 /dev/sda ext4   ro,relatime,norecovery"
+  },
+  "blockers": {
+    "A": [],
+    "B": [
+      "A_FULL_REPORT_REQUIRED",
+      "B_SMOKE_GATE_REQUIRED",
+      "B_SMOKE_AUTHORIZATION_REQUIRED"
+    ],
+    "policy": [
+      "GPU_EXECUTION_APPROVED_NO"
+    ]
+  },
+  "p0_for_A_smoke": [],
+  "p1": [
+    "Python/PyTorch/torchvision/numpy/Pillow/OpenCV deviations from archive; accepted without reinstall but must remain documented",
+    "Native torch import and CUDA context intentionally not exercised; first smoke must prove startup and tensor dtypes"
+  ]
+}

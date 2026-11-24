@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-11-24T19:54:42",
+  "gpu": "NVIDIA RTX A6000, GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d, 49140 MiB, 15 MiB, 0 %, 39, 28.33 W, 580.178.04",
+  "compute_apps": "",
+  "lock_path": "/home/bn/videoufo_research/gpu.lock",
+  "lock_bytes": 0,
+  "lock_fuser": "",
+  "gpu_idle": true,
+  "cuda_initialized": false,
+  "project_df": "/dev/nvme0n1p2  3.6T  1.8T  1.7T   52% /",
+  "display_df": "/dev/sda        7.3T  3.1T  3.9T   44% /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1",
+  "display_mount": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1 /dev/sda ext4   ro,relatime,norecovery"
+}
