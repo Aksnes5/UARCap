@@ -1,0 +1,21 @@
+{
+  "name": "oracle7",
+  "k": 7,
+  "n_expected": 497,
+  "status": "Complete",
+  "cap": "/home/bn/videoufo_research/external/external_val_oracle7_cap.json",
+  "sims": "/home/bn/videoufo_research/external/external_val_oracle7_sims.json",
+  "commit": "d9f3ae96aa60bce2bf7c9f19f27cb488eca59e91",
+  "result_dir": "evcap_external/outputs/eval_postfix_oracle7",
+  "metrics": {
+    "Bleu_1": 87.5376,
+    "Bleu_2": 74.9573,
+    "Bleu_3": 61.1257,
+    "Bleu_4": 48.1142,
+    "METEOR": 33.5538,
+    "ROUGE_L": 66.3194,
+    "CIDEr": 68.944,
+    "SPICE": 9.3727
+  },
+  "finished_at": "2026-11-24T09:02:37"
+}

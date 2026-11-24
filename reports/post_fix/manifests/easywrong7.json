@@ -1,0 +1,21 @@
+{
+  "name": "easywrong7",
+  "k": 7,
+  "n_expected": 497,
+  "status": "Complete",
+  "cap": "/home/bn/videoufo_research/external/external_val_easywrong7_cap.json",
+  "sims": "/home/bn/videoufo_research/external/external_val_easywrong7_sims.json",
+  "commit": "d9f3ae96aa60bce2bf7c9f19f27cb488eca59e91",
+  "result_dir": "evcap_external/outputs/eval_postfix_easywrong7",
+  "metrics": {
+    "Bleu_1": 86.1419,
+    "Bleu_2": 73.2611,
+    "Bleu_3": 59.869,
+    "Bleu_4": 47.448,
+    "METEOR": 32.7848,
+    "ROUGE_L": 65.4174,
+    "CIDEr": 66.8536,
+    "SPICE": 9.0867
+  },
+  "finished_at": "2026-11-24T11:55:13"
+}
