@@ -1,0 +1,103 @@
+{
+  "checked_at": "2026-11-24T16:10:00",
+  "hostname": "bn",
+  "os": {
+    "PRETTY_NAME": "Ubuntu 24.04.4 LTS",
+    "VERSION_ID": "24.04",
+    "VERSION_CODENAME": "noble"
+  },
+  "kernel": "6.8.0-149-generic",
+  "gpu": {
+    "management": "NVIDIA RTX A6000, GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d, 00000000:01:00.0, 49140 MiB, 15 MiB, 0 %, 39, 29.64 W, 580.178.04",
+    "compute_apps": "",
+    "display_state": "Disabled, [Requested functionality has been deprecated]",
+    "cuda_init_performed": false
+  },
+  "gpu_lock": {
+    "path": "/home/bn/videoufo_research/gpu.lock",
+    "meta": {
+      "path": "/home/bn/videoufo_research/gpu.lock",
+      "exists": true,
+      "bytes": 0,
+      "mtime": "2026-11-24T12:42:13",
+      "mtime_ns": 1795495333016451109,
+      "symlink": false,
+      "realpath": "/home/bn/videoufo_research/gpu.lock",
+      "readable": true,
+      "status": "VERIFIED"
+    },
+    "fuser": "",
+    "held": false
+  },
+  "running_audit_commands": "1076174       00:00 /bin/bash -c source /home/bn/.claude/shell-snapshots/snapshot-bash-1795416093289-31knpn.sh 2>/dev/null || true && \\builtin shopt -u extglob 2>/dev/null || true && { \\builtin unalias -- 'which'; \\builtin unset -f -- 'which'; } >/dev/null 2>&1 || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'cd /home/bn/uar_bn_receipts/research/uarcap_v06_followup_deployment/bn_readonly_receipts && python3 -I run_readonly_audit.py >/tmp/uar_audit_out.json 2>&1; tail -8 /tmp/uar_audit_out.json; ls -1; python3 -I -c \"import json;b=json.load(open('\"'\"'BN_DEPLOYMENT_PATH_BINDINGS.json'\"'\"'));print(b['\"'\"'arm_readiness'\"'\"']['\"'\"'A1'\"'\"']['\"'\"'prepared_inputs'\"'\"'])\"' < /dev/null && pwd -P >| /tmp/claude-609e-cwd\n1076191       00:00 /bin/sh -c ps -eo pid,etime,args | grep -E '[e]val_evcap|[e]xtract_external_features|[e]xtract_query_features|uarcap_v06|deploy_guard' | head -20\n1076193       00:00 grep -E [e]val_evcap|[e]xtract_external_features|[e]xtract_query_features|uarcap_v06|deploy_guard",
+  "mounts": {
+    "project": "/      /dev/nvme0n1p2 ext4   rw,relatime,errors=remount-ro",
+    "display": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1 /dev/sda ext4   ro,relatime,norecovery"
+  },
+  "disk": {
+    "project": "/dev/nvme0n1p2  3.6T  1.8T  1.7T   52% /",
+    "display": "/dev/sda        7.3T  3.1T  3.9T   44% /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1"
+  },
+  "git": {
+    "project_head": "52b5ed3a69e4b84a8e16ed747f141eefb5b1e2ec",
+    "project_branch": "fix/val497-frame-loader-postfix-rerun-20261123",
+    "project_dirty_entries": 107,
+    "receipts_worktree": "/home/bn/uar_bn_receipts",
+    "receipts_head": "94f5529f8a6e4424d2af207df42482cf87c7ce1b",
+    "receipts_branch": "codex/uarcap-bn-readonly-receipts-20261124"
+  },
+  "python": {
+    "launcher_interpreter": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python",
+    "launcher_realpath": "/home/bn/anaconda3/envs/TTP/bin/python3.9",
+    "pyvenv_cfg": {
+      "home": "/home/bn/anaconda3/envs/TTP/bin",
+      "include-system-site-packages": "true",
+      "version": "3.9.13"
+    },
+    "probe": {
+      "version": "3.9.13",
+      "prefix": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv",
+      "base": "/home/bn/anaconda3/envs/TTP",
+      "torch": "2.1.2+cu121",
+      "transformers": "4.28.0",
+      "timm": "0.6.13",
+      "torch_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/torch/__init__.py",
+      "transformers_origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/transformers/__init__.py"
+    },
+    "conda_envs": [
+      "go_ai_tf219",
+      "GTR",
+      "huapo",
+      "protracker",
+      "TTP",
+      "videollama2",
+      "videollama2.tar.gz"
+    ],
+    "note": "Historical runner uses this interpreter. torch resolves to the TTP Conda base through include-system-site-packages; transformers resolves inside the venv."
+  },
+  "torch_dist_info": {
+    "path": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/torch-2.1.2+cu121.dist-info",
+    "exists": true,
+    "bytes": 4096,
+    "mtime": "2026-05-18T16:09:09",
+    "mtime_ns": 1779091749670632243,
+    "symlink": false,
+    "realpath": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/torch-2.1.2+cu121.dist-info",
+    "readable": true,
+    "status": "VERIFIED"
+  },
+  "archived_expectation": {
+    "python": "3.9.18",
+    "torch": "2.1.0",
+    "transformers": "4.28.0",
+    "timm": "0.6.13",
+    "source": "BN_READONLY_ENVIRONMENT_AUDIT.md"
+  },
+  "checks": {
+    "python_archived_match": false,
+    "torch_archived_match": false,
+    "transformers_archived_match": true,
+    "timm_archived_match": true
+  },
+  "status": "MISMATCH"
+}

@@ -1,0 +1,218 @@
+{
+  "checked_at": "2026-11-24T16:10:00",
+  "checkpoint": {
+    "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+    "exists": true,
+    "bytes": 147337150,
+    "mtime": "2026-05-27T02:54:36",
+    "mtime_ns": 1779821676526801571,
+    "symlink": false,
+    "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+    "readable": true,
+    "status": "VERIFIED",
+    "sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+  },
+  "checkpoint_expected_sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002",
+  "historical_checkpoint_snapshots": {
+    "train_test2990_D1": {
+      "path": "/home/bn/videoufo_research/evcap_external/outputs/train_test2990_D1/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "exists": true,
+      "bytes": 147337150,
+      "mtime": "2026-05-27T02:54:36",
+      "mtime_ns": 1779821676526801571,
+      "symlink": true,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+    },
+    "train_test2990_D3": {
+      "path": "/home/bn/videoufo_research/evcap_external/outputs/train_test2990_D3/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "exists": true,
+      "bytes": 147337150,
+      "mtime": "2026-05-27T02:54:36",
+      "mtime_ns": 1779821676526801571,
+      "symlink": true,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+    },
+    "train_test2990_D7": {
+      "path": "/home/bn/videoufo_research/evcap_external/outputs/train_test2990_D7/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "exists": true,
+      "bytes": 147337150,
+      "mtime": "2026-05-27T02:54:36",
+      "mtime_ns": 1779821676526801571,
+      "symlink": true,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+    }
+  },
+  "vicuna": {
+    "dir": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3",
+      "exists": true,
+      "bytes": 4096,
+      "mtime": "2026-10-28T12:26:04",
+      "mtime_ns": 1793161564671304752,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3",
+      "readable": true,
+      "status": "VERIFIED"
+    },
+    "config.json": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/config.json",
+      "exists": true,
+      "bytes": 566,
+      "mtime": "2026-10-28T12:14:41",
+      "mtime_ns": 1793160881776836723,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/config.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "3e2ce4e3a78d24ad4bbdddd6a7f1a8ee622f7135772f4cc6695f832fbafdcd8d"
+    },
+    "tokenizer.model": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/tokenizer.model",
+      "exists": true,
+      "bytes": 499723,
+      "mtime": "2026-10-28T12:14:42",
+      "mtime_ns": 1793160882318854535,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/tokenizer.model",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+    },
+    "tokenizer_config.json": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/tokenizer_config.json",
+      "exists": true,
+      "bytes": 727,
+      "mtime": "2026-10-28T12:14:42",
+      "mtime_ns": 1793160882331854962,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/tokenizer_config.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "bd87e244d21d45c358e5d822aeb2efd4e4d60127e43b648ed3efe7823fd35060"
+    },
+    "special_tokens_map.json": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/special_tokens_map.json",
+      "exists": true,
+      "bytes": 435,
+      "mtime": "2026-10-28T12:14:41",
+      "mtime_ns": 1793160881953842540,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/special_tokens_map.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "2ea88203b955648951a454e73a73967ff77ba4e79ae8ceb4400d4ab2cb040777"
+    },
+    "pytorch_model.bin.index.json": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/pytorch_model.bin.index.json",
+      "exists": true,
+      "bytes": 26788,
+      "mtime": "2026-10-28T12:14:41",
+      "mtime_ns": 1793160881961842803,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/pytorch_model.bin.index.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "aca3c1facc89d12311a667c32e85ac86e625990992ea8a189e3b036ba371b931"
+    },
+    "shards": [
+      {
+        "name": "pytorch_model-00001-of-00002.bin",
+        "bytes": 9976634558
+      },
+      {
+        "name": "pytorch_model-00002-of-00002.bin",
+        "bytes": 3500315539
+      }
+    ],
+    "index_total_size": 13476839424,
+    "index_shards": [
+      "pytorch_model-00001-of-00002.bin",
+      "pytorch_model-00002-of-00002.bin"
+    ],
+    "shards_match_index": true
+  },
+  "video_llama": {
+    "path": "/home/bn/videoufo_research/evcap_external/download/videollama/baseline_2_7B_Pretrained.pth",
+    "exists": true,
+    "bytes": 88245048,
+    "mtime": "2025-07-02T16:28:36",
+    "mtime_ns": 1751444916534946832,
+    "symlink": false,
+    "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/download/videollama/baseline_2_7B_Pretrained.pth",
+    "readable": true,
+    "status": "VERIFIED",
+    "sha256": "a718a15e91158a466dd43935d4724a3ffce2c2597e361648f2df9d2d8cacb6d1"
+  },
+  "eva_vit_g": {
+    "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache/hub/checkpoints/eva_vit_g.pth",
+    "exists": true,
+    "bytes": 2025249237,
+    "mtime": "2026-10-28T12:41:28",
+    "mtime_ns": 1793162488791217505,
+    "symlink": false,
+    "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache/hub/checkpoints/eva_vit_g.pth",
+    "readable": true,
+    "status": "VERIFIED"
+  },
+  "blip2_qformer": {
+    "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache/hub/checkpoints/blip2_pretrained_flant5xxl.pth",
+    "exists": true,
+    "bytes": 433481467,
+    "mtime": "2026-10-28T12:26:18",
+    "mtime_ns": 1793161578561896741,
+    "symlink": false,
+    "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache/hub/checkpoints/blip2_pretrained_flant5xxl.pth",
+    "readable": true,
+    "status": "VERIFIED"
+  },
+  "hf_cache": {
+    "root": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache",
+      "exists": true,
+      "bytes": 4096,
+      "mtime": "2026-10-28T12:20:48",
+      "mtime_ns": 1793161248542831927,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache",
+      "readable": true,
+      "status": "VERIFIED"
+    },
+    "bert_base_uncased": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache/models--bert-base-uncased",
+      "exists": true,
+      "bytes": 4096,
+      "mtime": "2026-10-28T12:20:10",
+      "mtime_ns": 1793161210150554409,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache/models--bert-base-uncased",
+      "readable": true,
+      "status": "VERIFIED"
+    },
+    "bert_files": [
+      "config.json",
+      "tokenizer.json",
+      "vocab.txt"
+    ],
+    "note": "Tokenizer/config/vocab cached; no BERT weight file. Historical runs used the cached tokenizer and the BLIP2 Q-Former checkpoint."
+  },
+  "checks": {
+    "checkpoint_sha_match": true,
+    "checkpoint_bytes_match": true,
+    "three_snapshot_hashes_match": true,
+    "vicuna_all_present": true,
+    "vicuna_two_shards": true,
+    "video_llama_present": true,
+    "eva_cache_present": true,
+    "blip2_cache_present": true
+  },
+  "status": "VERIFIED"
+}

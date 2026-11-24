@@ -1,0 +1,738 @@
+{
+  "checked_at": "2026-11-24T16:10:00",
+  "host": "bn",
+  "project_root": {
+    "path": "/home/bn/videoufo_research",
+    "exists": true,
+    "bytes": 4096,
+    "mtime": "2026-11-24T13:47:47",
+    "mtime_ns": 1795499267290798997,
+    "symlink": false,
+    "realpath": "/home/bn/videoufo_research",
+    "readable": true,
+    "status": "VERIFIED"
+  },
+  "inference_checkout": {
+    "path": "/home/bn/videoufo_research/evcap_external",
+    "exists": true,
+    "bytes": 4096,
+    "mtime": "2026-11-23T14:48:21",
+    "mtime_ns": 1795416501485128550,
+    "symlink": false,
+    "realpath": "/home/bn/videoufo_research/evcap_external",
+    "readable": true,
+    "status": "VERIFIED"
+  },
+  "interpreter": {
+    "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python",
+    "status": "VERIFIED",
+    "effective_versions": {
+      "version": "3.9.13",
+      "prefix": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv",
+      "base": "/home/bn/anaconda3/envs/TTP",
+      "torch": "2.1.2+cu121",
+      "transformers": "4.28.0",
+      "timm": "0.6.13",
+      "torch_origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/torch/__init__.py",
+      "transformers_origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/transformers/__init__.py"
+    }
+  },
+  "shared_gpu_lock": {
+    "path": "/home/bn/videoufo_research/gpu.lock",
+    "exists": true,
+    "bytes": 0,
+    "mtime": "2026-11-24T12:42:13",
+    "mtime_ns": 1795495333016451109,
+    "symlink": false,
+    "realpath": "/home/bn/videoufo_research/gpu.lock",
+    "readable": true,
+    "status": "VERIFIED"
+  },
+  "test_yaml": {
+    "path": "/home/bn/videoufo_research/evcap_external/test2990/test2990_16frames.yaml",
+    "exists": true,
+    "bytes": 354,
+    "mtime": "2026-11-20T01:04:25",
+    "mtime_ns": 1795107865795663855,
+    "symlink": false,
+    "realpath": "/home/bn/videoufo_research/evcap_external/test2990/test2990_16frames.yaml",
+    "readable": true,
+    "status": "VERIFIED",
+    "sha256": "a2e4d55790ddfeb60a0eec8298aaa35f46833c22ffa81ddb11de9132d0014083"
+  },
+  "dataset_roles": {
+    "img": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test_16frm/frame_tsv/test_16frames_img_size224.img.tsv",
+      "exists": true,
+      "bytes": 1378294858,
+      "mtime": "2025-12-16T10:28:27",
+      "mtime_ns": 1765852107059097006,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test_16frm/frame_tsv/test_16frames_img_size224.img.tsv",
+      "readable": true,
+      "status": "VERIFIED"
+    },
+    "label": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test.label.tsv",
+      "exists": true,
+      "bytes": 4015483,
+      "mtime": "2025-12-16T10:28:09",
+      "mtime_ns": 1765852089906931020,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test.label.tsv",
+      "readable": true,
+      "status": "VERIFIED"
+    },
+    "caption": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test.caption.tsv",
+      "exists": true,
+      "bytes": 4015483,
+      "mtime": "2025-12-16T10:28:09",
+      "mtime_ns": 1765852089854930517,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test.caption.tsv",
+      "readable": true,
+      "status": "VERIFIED"
+    }
+  },
+  "manifests": {
+    "full": {
+      "path": "/home/bn/videoufo_research/manifests/msrvtt_test2990.tsv",
+      "exists": true,
+      "bytes": 119600,
+      "mtime": "2026-11-20T13:16:47",
+      "mtime_ns": 1795151807484447970,
+      "symlink": false,
+      "realpath": "/home/bn/videoufo_research/manifests/msrvtt_test2990.tsv",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "d826647b1f2ca16c75b117287d9a0b23bd7359753f987f6a7022f769a890ef8d"
+    },
+    "untouched": {
+      "path": "/home/bn/videoufo_research/manifests/msrvtt_untouched2690.tsv",
+      "exists": true,
+      "bytes": 107600,
+      "mtime": "2026-11-20T13:16:47",
+      "mtime_ns": 1795151807484447970,
+      "symlink": false,
+      "realpath": "/home/bn/videoufo_research/manifests/msrvtt_untouched2690.tsv",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "fce00da1d10e6e80fa7c0ee9932042e4ab608946f2039887c830a778d96acae2"
+    }
+  },
+  "frozen_sources": {
+    "eval_evcap_fix_video_llama_xclip_msrvtt_fusion_gate_prompt5.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/eval_evcap_fix_video_llama_xclip_msrvtt_fusion_gate_prompt5.py",
+      "expected": "89e12494809150638ab3d88bbdb1a05e1b4ea618c38bf23a5c18b417b9a1ee0c",
+      "actual": "89e12494809150638ab3d88bbdb1a05e1b4ea618c38bf23a5c18b417b9a1ee0c",
+      "status": "VERIFIED"
+    },
+    "models/evcap_fix_video_llama_xclip_msrvtt_smallcap_quality_fusion_gate_prompt5.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/models/evcap_fix_video_llama_xclip_msrvtt_smallcap_quality_fusion_gate_prompt5.py",
+      "expected": "c05cd421c102119d72d06b2bf5230253a3b36f5a0310023d75b264b3aec6b599",
+      "actual": "c05cd421c102119d72d06b2bf5230253a3b36f5a0310023d75b264b3aec6b599",
+      "status": "VERIFIED"
+    },
+    "prompts/prompt_evcap_msrvtt_detail_smallcap_prompt5.txt": {
+      "path": "/home/bn/videoufo_research/evcap_external/prompts/prompt_evcap_msrvtt_detail_smallcap_prompt5.txt",
+      "expected": "8e618c6957f3f20352002a3a7213b13c1485a733fa4ab67f560f82c3f4b7ee80",
+      "actual": "8e618c6957f3f20352002a3a7213b13c1485a733fa4ab67f560f82c3f4b7ee80",
+      "status": "VERIFIED"
+    },
+    "search.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/search.py",
+      "expected": "d54de4098d2ad5942f894a7607ee866fa2e8ad3932e36c7ebd8750380a4d4825",
+      "actual": "d54de4098d2ad5942f894a7607ee866fa2e8ad3932e36c7ebd8750380a4d4825",
+      "status": "VERIFIED"
+    },
+    "dataset/msrvtt/vision_language_tsv.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/dataset/msrvtt/vision_language_tsv.py",
+      "expected": "edc6ad0d2eeb10f29acdc422c8e2d112496b5b798f50fd7e5f71f0baf659d618",
+      "actual": "edc6ad0d2eeb10f29acdc422c8e2d112496b5b798f50fd7e5f71f0baf659d618",
+      "status": "VERIFIED"
+    },
+    "dataset/msrvtt/data_utils/video_decoder.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/dataset/msrvtt/data_utils/video_decoder.py",
+      "expected": "17a6edc3b9651cd949ded89e143e651b4526d40632a6418e340ad14206e0cbfe",
+      "actual": "17a6edc3b9651cd949ded89e143e651b4526d40632a6418e340ad14206e0cbfe",
+      "status": "VERIFIED"
+    }
+  },
+  "runtime_dependencies": {
+    "common/dist_utils.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/common/dist_utils.py",
+      "expected": "af7dbfbcf1718ca1aae4b6f7a73dd8cb0526608447f45e76446b29afb0d78f51",
+      "actual": "af7dbfbcf1718ca1aae4b6f7a73dd8cb0526608447f45e76446b29afb0d78f51",
+      "status": "VERIFIED"
+    },
+    "dataset/msrvtt/vl_dataloader.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/dataset/msrvtt/vl_dataloader.py",
+      "expected": "9453db8c0c2b7a60472426ba696c5b57bd0866021e8a0f80198bd3343c702ddc",
+      "actual": "9453db8c0c2b7a60472426ba696c5b57bd0866021e8a0f80198bd3343c702ddc",
+      "status": "VERIFIED"
+    },
+    "dataset/msrvtt/data_utils/tsv_file.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/dataset/msrvtt/data_utils/tsv_file.py",
+      "expected": "4f38e8c5e47a27fd7f4559c913b92039d82413d24f22b583ead2fd309a3eb6d6",
+      "actual": "4f38e8c5e47a27fd7f4559c913b92039d82413d24f22b583ead2fd309a3eb6d6",
+      "status": "VERIFIED"
+    },
+    "dataset/msrvtt/data_utils/miscellaneous.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/dataset/msrvtt/data_utils/miscellaneous.py",
+      "expected": "765ea33e7f17a92e123901ca111743caa1bb2f8634d4f04d41c9d7e34cd33551",
+      "actual": "765ea33e7f17a92e123901ca111743caa1bb2f8634d4f04d41c9d7e34cd33551",
+      "status": "VERIFIED"
+    },
+    "models/Qformer.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/models/Qformer.py",
+      "expected": "b2c49c64edf35d50995a726d18475a3a9867371809ea4af788d931f6aaa1100f",
+      "actual": "b2c49c64edf35d50995a726d18475a3a9867371809ea4af788d931f6aaa1100f",
+      "status": "VERIFIED"
+    },
+    "models/blip2.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/models/blip2.py",
+      "expected": "f24c6ca3c0b3d31856fce0be24a05a6e1f5447e6cec6d90b8769b85951431b68",
+      "actual": "f24c6ca3c0b3d31856fce0be24a05a6e1f5447e6cec6d90b8769b85951431b68",
+      "status": "VERIFIED"
+    },
+    "models/base_model.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/models/base_model.py",
+      "expected": "57fe338edd19177e3749dd806d8b4ce0cb54d8ccc50b47eebc36857a59670054",
+      "actual": "57fe338edd19177e3749dd806d8b4ce0cb54d8ccc50b47eebc36857a59670054",
+      "status": "VERIFIED"
+    },
+    "models/eva_vit.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/models/eva_vit.py",
+      "expected": "2bcfa0040e986b040f153e72f7e9506918c6fa52ac21512523a4f15cc9b38961",
+      "actual": "2bcfa0040e986b040f153e72f7e9506918c6fa52ac21512523a4f15cc9b38961",
+      "status": "VERIFIED"
+    },
+    "models/modeling_llama.py": {
+      "path": "/home/bn/videoufo_research/evcap_external/models/modeling_llama.py",
+      "expected": "a4d9707fb97dcea7bd370941f62a3d8db252562a68b75392b3c6c66b0f9acd84",
+      "actual": "a4d9707fb97dcea7bd370941f62a3d8db252562a68b75392b3c6c66b0f9acd84",
+      "status": "VERIFIED"
+    }
+  },
+  "runner": {
+    "path": "/home/bn/videoufo_research/scripts/run_test.sh",
+    "exists": true,
+    "bytes": 2042,
+    "mtime": "2026-11-20T13:26:41",
+    "mtime_ns": 1795152401158089068,
+    "symlink": false,
+    "realpath": "/home/bn/videoufo_research/scripts/run_test.sh",
+    "readable": true,
+    "status": "VERIFIED",
+    "sha256": "42d7d58e534bfcb798f01fc99ee0a10d70e600aa41af05431848ff7d49b2c88f"
+  },
+  "checkpoint": {
+    "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+    "exists": true,
+    "bytes": 147337150,
+    "mtime": "2026-05-27T02:54:36",
+    "mtime_ns": 1779821676526801571,
+    "symlink": false,
+    "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+    "readable": true,
+    "status": "VERIFIED",
+    "sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+  },
+  "historical_checkpoint_snapshots": {
+    "train_test2990_D1": {
+      "path": "/home/bn/videoufo_research/evcap_external/outputs/train_test2990_D1/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "exists": true,
+      "bytes": 147337150,
+      "mtime": "2026-05-27T02:54:36",
+      "mtime_ns": 1779821676526801571,
+      "symlink": true,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+    },
+    "train_test2990_D3": {
+      "path": "/home/bn/videoufo_research/evcap_external/outputs/train_test2990_D3/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "exists": true,
+      "bytes": 147337150,
+      "mtime": "2026-05-27T02:54:36",
+      "mtime_ns": 1779821676526801571,
+      "symlink": true,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+    },
+    "train_test2990_D7": {
+      "path": "/home/bn/videoufo_research/evcap_external/outputs/train_test2990_D7/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "exists": true,
+      "bytes": 147337150,
+      "mtime": "2026-05-27T02:54:36",
+      "mtime_ns": 1779821676526801571,
+      "symlink": true,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+    }
+  },
+  "vicuna": {
+    "dir": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3",
+      "exists": true,
+      "bytes": 4096,
+      "mtime": "2026-10-28T12:26:04",
+      "mtime_ns": 1793161564671304752,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3",
+      "readable": true,
+      "status": "VERIFIED"
+    },
+    "config.json": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/config.json",
+      "exists": true,
+      "bytes": 566,
+      "mtime": "2026-10-28T12:14:41",
+      "mtime_ns": 1793160881776836723,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/config.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "3e2ce4e3a78d24ad4bbdddd6a7f1a8ee622f7135772f4cc6695f832fbafdcd8d"
+    },
+    "tokenizer.model": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/tokenizer.model",
+      "exists": true,
+      "bytes": 499723,
+      "mtime": "2026-10-28T12:14:42",
+      "mtime_ns": 1793160882318854535,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/tokenizer.model",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347"
+    },
+    "tokenizer_config.json": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/tokenizer_config.json",
+      "exists": true,
+      "bytes": 727,
+      "mtime": "2026-10-28T12:14:42",
+      "mtime_ns": 1793160882331854962,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/tokenizer_config.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "bd87e244d21d45c358e5d822aeb2efd4e4d60127e43b648ed3efe7823fd35060"
+    },
+    "special_tokens_map.json": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/special_tokens_map.json",
+      "exists": true,
+      "bytes": 435,
+      "mtime": "2026-10-28T12:14:41",
+      "mtime_ns": 1793160881953842540,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/special_tokens_map.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "2ea88203b955648951a454e73a73967ff77ba4e79ae8ceb4400d4ab2cb040777"
+    },
+    "pytorch_model.bin.index.json": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/pytorch_model.bin.index.json",
+      "exists": true,
+      "bytes": 26788,
+      "mtime": "2026-10-28T12:14:41",
+      "mtime_ns": 1793160881961842803,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3/pytorch_model.bin.index.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "aca3c1facc89d12311a667c32e85ac86e625990992ea8a189e3b036ba371b931"
+    },
+    "shards": [
+      {
+        "name": "pytorch_model-00001-of-00002.bin",
+        "bytes": 9976634558
+      },
+      {
+        "name": "pytorch_model-00002-of-00002.bin",
+        "bytes": 3500315539
+      }
+    ],
+    "index_total_size": 13476839424,
+    "index_shards": [
+      "pytorch_model-00001-of-00002.bin",
+      "pytorch_model-00002-of-00002.bin"
+    ],
+    "shards_match_index": true
+  },
+  "video_llama": {
+    "path": "/home/bn/videoufo_research/evcap_external/download/videollama/baseline_2_7B_Pretrained.pth",
+    "exists": true,
+    "bytes": 88245048,
+    "mtime": "2025-07-02T16:28:36",
+    "mtime_ns": 1751444916534946832,
+    "symlink": false,
+    "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/download/videollama/baseline_2_7B_Pretrained.pth",
+    "readable": true,
+    "status": "VERIFIED",
+    "sha256": "a718a15e91158a466dd43935d4724a3ffce2c2597e361648f2df9d2d8cacb6d1"
+  },
+  "eva_vit_g": {
+    "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache/hub/checkpoints/eva_vit_g.pth",
+    "exists": true,
+    "bytes": 2025249237,
+    "mtime": "2026-10-28T12:41:28",
+    "mtime_ns": 1793162488791217505,
+    "symlink": false,
+    "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache/hub/checkpoints/eva_vit_g.pth",
+    "readable": true,
+    "status": "VERIFIED"
+  },
+  "blip2_qformer": {
+    "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache/hub/checkpoints/blip2_pretrained_flant5xxl.pth",
+    "exists": true,
+    "bytes": 433481467,
+    "mtime": "2026-10-28T12:26:18",
+    "mtime_ns": 1793161578561896741,
+    "symlink": false,
+    "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache/hub/checkpoints/blip2_pretrained_flant5xxl.pth",
+    "readable": true,
+    "status": "VERIFIED"
+  },
+  "hf_cache": {
+    "root": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache",
+      "exists": true,
+      "bytes": 4096,
+      "mtime": "2026-10-28T12:20:48",
+      "mtime_ns": 1793161248542831927,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache",
+      "readable": true,
+      "status": "VERIFIED"
+    },
+    "bert_base_uncased": {
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache/models--bert-base-uncased",
+      "exists": true,
+      "bytes": 4096,
+      "mtime": "2026-10-28T12:20:10",
+      "mtime_ns": 1793161210150554409,
+      "symlink": false,
+      "realpath": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache/models--bert-base-uncased",
+      "readable": true,
+      "status": "VERIFIED"
+    },
+    "bert_files": [
+      "config.json",
+      "tokenizer.json",
+      "vocab.txt"
+    ],
+    "note": "Tokenizer/config/vocab cached; no BERT weight file. Historical runs used the cached tokenizer and the BLIP2 Q-Former checkpoint."
+  },
+  "retrieval": {
+    "d7_cap": {
+      "path": "/home/bn/videoufo_research/external/external_test_d7_cap.json",
+      "exists": true,
+      "bytes": 3311809,
+      "mtime": "2026-11-20T06:21:16",
+      "mtime_ns": 1795126876993812686,
+      "symlink": false,
+      "realpath": "/home/bn/videoufo_research/external/external_test_d7_cap.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "6238f379f6d35fe12fda2d3ec59f498683485d03341a1f0931caf6e234f9efe8",
+      "expected_sha256": "6238f379f6d35fe12fda2d3ec59f498683485d03341a1f0931caf6e234f9efe8",
+      "expected_bytes": 3311809,
+      "match": true
+    },
+    "d7_sims": {
+      "path": "/home/bn/videoufo_research/external/external_test_d7_sims.json",
+      "exists": true,
+      "bytes": 2156249,
+      "mtime": "2026-11-20T06:21:17",
+      "mtime_ns": 1795126877016813212,
+      "symlink": false,
+      "realpath": "/home/bn/videoufo_research/external/external_test_d7_sims.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "3a79cb5e90f2e213752679441defaba62e7d5e1dabc2842ca3a9b3dca2135021",
+      "expected_sha256": "3a79cb5e90f2e213752679441defaba62e7d5e1dabc2842ca3a9b3dca2135021",
+      "expected_bytes": 2156249,
+      "match": true
+    },
+    "top20": {
+      "path": "/home/bn/videoufo_research/external/external_test_top20.json",
+      "exists": true,
+      "bytes": 13124819,
+      "mtime": "2026-11-20T02:29:30",
+      "mtime_ns": 1795112970320311246,
+      "symlink": false,
+      "realpath": "/home/bn/videoufo_research/external/external_test_top20.json",
+      "readable": true,
+      "status": "VERIFIED",
+      "sha256": "d857bcda93890ae2e5398b69de91080cdd0e5e767249c3f0bd93853f8779e7b2",
+      "expected_sha256": "d857bcda93890ae2e5398b69de91080cdd0e5e767249c3f0bd93853f8779e7b2",
+      "expected_bytes": 13124819,
+      "match": true
+    },
+    "checks": {
+      "all_sha_match": true,
+      "cap_2990": true,
+      "cap_seven_per_query": true,
+      "sims_2990": true,
+      "top20_2990": true
+    },
+    "feature_cache": {
+      "dir": {
+        "path": "/home/bn/videoufo_research/features/videollama_faithful_v2",
+        "exists": true,
+        "bytes": 1617920,
+        "mtime": "2026-11-21T19:48:05",
+        "mtime_ns": 1795261685288818327,
+        "symlink": false,
+        "realpath": "/home/bn/videoufo_research/features/videollama_faithful_v2",
+        "readable": true,
+        "status": "VERIFIED"
+      },
+      "total_pt_files": 45676,
+      "recursive_pt_files": 47634,
+      "required": {
+        "A1": {
+          "unique_ids": 2539,
+          "canonical_ids_sha256": "05114915acb3a1031e5f551b8e817f88e33693a9f7331ba558332ab589e2398d",
+          "expected_ids_sha256": "05114915acb3a1031e5f551b8e817f88e33693a9f7331ba558332ab589e2398d",
+          "digest_match": true,
+          "missing_files": 0,
+          "missing_examples": [],
+          "status": "VERIFIED"
+        },
+        "A7": {
+          "unique_ids": 15213,
+          "canonical_ids_sha256": "749eacf8a3fc9ac105776ded8c0fe5d3d2a8577d45cbd4a3c8c293abbf1fa65f",
+          "expected_ids_sha256": "749eacf8a3fc9ac105776ded8c0fe5d3d2a8577d45cbd4a3c8c293abbf1fa65f",
+          "digest_match": true,
+          "missing_files": 0,
+          "missing_examples": [],
+          "status": "VERIFIED"
+        }
+      },
+      "status": "VERIFIED"
+    },
+    "prepared_inputs": {
+      "A_k0_cap.json": {
+        "paths": [],
+        "status": "MISSING"
+      },
+      "A_k0_sims.json": {
+        "paths": [],
+        "status": "MISSING"
+      },
+      "B_text3_cap.json": {
+        "paths": [],
+        "status": "MISSING"
+      },
+      "B_text7_hq_cap.json": {
+        "paths": [],
+        "status": "MISSING"
+      },
+      "B_text7_lq_cap.json": {
+        "paths": [],
+        "status": "MISSING"
+      },
+      "B_shared_visual_sims.json": {
+        "paths": [],
+        "status": "MISSING"
+      },
+      "B_visual_contract.json": {
+        "paths": [],
+        "status": "MISSING"
+      },
+      "B_eligible_queries.json": {
+        "paths": [],
+        "status": "MISSING"
+      }
+    },
+    "status": "VERIFIED"
+  },
+  "prepared_inputs": {
+    "A_k0_cap.json": {
+      "paths": [],
+      "status": "MISSING"
+    },
+    "A_k0_sims.json": {
+      "paths": [],
+      "status": "MISSING"
+    },
+    "B_text3_cap.json": {
+      "paths": [],
+      "status": "MISSING"
+    },
+    "B_text7_hq_cap.json": {
+      "paths": [],
+      "status": "MISSING"
+    },
+    "B_text7_lq_cap.json": {
+      "paths": [],
+      "status": "MISSING"
+    },
+    "B_shared_visual_sims.json": {
+      "paths": [],
+      "status": "MISSING"
+    },
+    "B_visual_contract.json": {
+      "paths": [],
+      "status": "MISSING"
+    },
+    "B_eligible_queries.json": {
+      "paths": [],
+      "status": "MISSING"
+    }
+  },
+  "historical_predictions": {
+    "test2990_D1": {
+      "prediction": {
+        "path": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2990_D1/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "exists": true,
+        "bytes": 3557757,
+        "mtime": "2026-11-20T13:41:02",
+        "mtime_ns": 1795153262144925494,
+        "symlink": false,
+        "realpath": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2990_D1/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "readable": true,
+        "status": "VERIFIED",
+        "sha256": "dd4c8ea536852be9efa3135e7799bf76b629610e96a61a17465588a64a17b865"
+      },
+      "rows": 2990
+    },
+    "test2990_D3": {
+      "prediction": {
+        "path": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2990_D3/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "exists": true,
+        "bytes": 3560478,
+        "mtime": "2026-11-20T13:41:02",
+        "mtime_ns": 1795153262165925978,
+        "symlink": false,
+        "realpath": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2990_D3/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "readable": true,
+        "status": "VERIFIED",
+        "sha256": "183240102470116be7c2a648704edfce0bedc1d61bf20ef0d894623c30f7164b"
+      },
+      "rows": 2990
+    },
+    "test2990_D7": {
+      "prediction": {
+        "path": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2990_D7/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "exists": true,
+        "bytes": 3570081,
+        "mtime": "2026-11-20T13:41:02",
+        "mtime_ns": 1795153262203926854,
+        "symlink": false,
+        "realpath": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2990_D7/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "readable": true,
+        "status": "VERIFIED",
+        "sha256": "8aa52ffa5d7de3e287a1e7b872b8279965e6df2cd430d46b07aa34f1a4af89fc"
+      },
+      "rows": 2990
+    },
+    "test2690_D1": {
+      "prediction": {
+        "path": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2690_D1/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "exists": true,
+        "bytes": 3198497,
+        "mtime": "2026-11-20T13:41:02",
+        "mtime_ns": 1795153262039923074,
+        "symlink": false,
+        "realpath": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2690_D1/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "readable": true,
+        "status": "VERIFIED",
+        "sha256": "e11ea796544ac4bab0cf4a87a979338a30bb29383737f0f9b1ee34130d1eec26"
+      },
+      "rows": 2690
+    },
+    "test2690_D3": {
+      "prediction": {
+        "path": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2690_D3/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "exists": true,
+        "bytes": 3201131,
+        "mtime": "2026-11-20T13:41:02",
+        "mtime_ns": 1795153262055923443,
+        "symlink": false,
+        "realpath": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2690_D3/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "readable": true,
+        "status": "VERIFIED",
+        "sha256": "a6e61c52c0b08bccc63f62b57f1fa142562fb464f0bf967ff1c1f115f7dbd1cd"
+      },
+      "rows": 2690
+    },
+    "test2690_D7": {
+      "prediction": {
+        "path": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2690_D7/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "exists": true,
+        "bytes": 3209876,
+        "mtime": "2026-11-20T13:41:02",
+        "mtime_ns": 1795153262089924226,
+        "symlink": false,
+        "realpath": "/home/bn/videoufo_research/evcap_external/outputs/eval_test2690_D7/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+        "readable": true,
+        "status": "VERIFIED",
+        "sha256": "05671e09d411e12382b2a52fdf024b252134de4e29796bced6cd0b1da2cc4838"
+      },
+      "rows": 2690
+    }
+  },
+  "source_binding_checks": {
+    "all_six_frozen_sources_match": true,
+    "all_nine_runtime_dependencies_match": true,
+    "runner_matches": true,
+    "yaml_matches": true
+  },
+  "arm_readiness": {
+    "A0": {
+      "core_assets": "VERIFIED",
+      "prepared_inputs": "MISSING",
+      "input_generation_cpu_only": true,
+      "real_model_smoke": "NOT_CHECKED",
+      "gpu_approved": false
+    },
+    "A1": {
+      "core_assets": "VERIFIED",
+      "prepared_inputs": "NOT_REQUIRED (uses frozen D cap/sims directly)",
+      "feature_coverage": {
+        "unique_ids": 2539,
+        "canonical_ids_sha256": "05114915acb3a1031e5f551b8e817f88e33693a9f7331ba558332ab589e2398d",
+        "expected_ids_sha256": "05114915acb3a1031e5f551b8e817f88e33693a9f7331ba558332ab589e2398d",
+        "digest_match": true,
+        "missing_files": 0,
+        "missing_examples": [],
+        "status": "VERIFIED"
+      },
+      "real_model_smoke": "NOT_CHECKED",
+      "gpu_approved": false
+    },
+    "A7": {
+      "core_assets": "VERIFIED",
+      "prepared_inputs": "NOT_REQUIRED (uses frozen D cap/sims directly)",
+      "feature_coverage": {
+        "unique_ids": 15213,
+        "canonical_ids_sha256": "749eacf8a3fc9ac105776ded8c0fe5d3d2a8577d45cbd4a3c8c293abbf1fa65f",
+        "expected_ids_sha256": "749eacf8a3fc9ac105776ded8c0fe5d3d2a8577d45cbd4a3c8c293abbf1fa65f",
+        "digest_match": true,
+        "missing_files": 0,
+        "missing_examples": [],
+        "status": "VERIFIED"
+      },
+      "real_model_smoke": "NOT_CHECKED",
+      "gpu_approved": false
+    },
+    "B3_B7HQ_B7LQ": {
+      "core_assets": "VERIFIED",
+      "prepared_inputs": "MISSING",
+      "input_generation_cpu_only": true,
+      "visual_contract": "MISSING",
+      "real_model_parity": "NOT_CHECKED",
+      "gpu_approved": false
+    }
+  },
+  "status": "VERIFIED"
+}
