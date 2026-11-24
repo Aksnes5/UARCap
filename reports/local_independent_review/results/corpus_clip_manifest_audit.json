@@ -1,0 +1,78 @@
+{
+  "levels": {
+    "10k": {
+      "manifest_sha256": "141e775bd36263b40463adcf38880a66297c5b342de20fffcc08e390787d4579",
+      "rows": 10000,
+      "unique_clip_ids": 10000,
+      "source_count": 10000,
+      "previous_clip_ids_missing": 0,
+      "source_overlap_with_msrvtt": {
+        "train6513": 0,
+        "val497": 0,
+        "test2990": 0
+      }
+    },
+    "50k": {
+      "manifest_sha256": "b89fe74a52e23b1f5c3423df103b88d534ba24a0cf847c6db9f24b9030a74c81",
+      "rows": 50000,
+      "unique_clip_ids": 50000,
+      "source_count": 50000,
+      "previous_clip_ids_missing": 0,
+      "source_overlap_with_msrvtt": {
+        "train6513": 0,
+        "val497": 0,
+        "test2990": 0
+      }
+    },
+    "100k": {
+      "manifest_sha256": "1436e5ff2ae0e77cb1f77d00fc90d75e72c914bd450f6daa89e0d74402937ddb",
+      "rows": 100000,
+      "unique_clip_ids": 100000,
+      "source_count": 100000,
+      "previous_clip_ids_missing": 0,
+      "source_overlap_with_msrvtt": {
+        "train6513": 0,
+        "val497": 0,
+        "test2990": 0
+      }
+    },
+    "250k": {
+      "manifest_sha256": "77ad43769d75fd5e52e52f9c50d173644c56ef14e283b6677013db42d3910a02",
+      "rows": 250000,
+      "unique_clip_ids": 250000,
+      "source_count": 241211,
+      "previous_clip_ids_missing": 0,
+      "source_overlap_with_msrvtt": {
+        "train6513": 0,
+        "val497": 0,
+        "test2990": 0
+      }
+    },
+    "500k": {
+      "manifest_sha256": "aac9401d0481a634341a9832754166ac39af2ffa8623df452639b53a5c989ed9",
+      "rows": 500000,
+      "unique_clip_ids": 500000,
+      "source_count": 338877,
+      "previous_clip_ids_missing": 0,
+      "source_overlap_with_msrvtt": {
+        "train6513": 0,
+        "val497": 0,
+        "test2990": 0
+      }
+    },
+    "full": {
+      "manifest_sha256": "f2bacf23ecb4803feb4cc585f24b149a49493f0c5f0d6882f43482a1e6ee4b5a",
+      "rows": 1091712,
+      "unique_clip_ids": 1091712,
+      "source_count": 345437,
+      "previous_clip_ids_missing": 0,
+      "source_overlap_with_msrvtt": {
+        "train6513": 0,
+        "val497": 0,
+        "test2990": 0
+      }
+    }
+  },
+  "metadata_valid_source_ids": 10000,
+  "grouping_limit": "No raw full caption CSV or production embedding arrays were used. Clip and source checks cannot establish caption normalization or visual near-duplicate absence."
+}

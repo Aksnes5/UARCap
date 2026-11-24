@@ -1,0 +1,27 @@
+{
+  "reps": 999,
+  "n_clusters": 361,
+  "max_query_score_error_against_frozen_evaluator": 2.2737367544323206e-13,
+  "contrasts": {
+    "Oracle3-D3": {
+      "refit_idf_cluster_ci": [
+        0.7755163765840286,
+        5.302516750544543
+      ],
+      "fixed_idf_cluster_ci_same_draws": [
+        0.8100758936044786,
+        5.348730140485899
+      ]
+    },
+    "Oracle7-Oracle3": {
+      "refit_idf_cluster_ci": [
+        -4.8676911239521665,
+        -0.9384507228991352
+      ],
+      "fixed_idf_cluster_ci_same_draws": [
+        -4.7462947741205275,
+        -0.7981347261084923
+      ]
+    }
+  }
+}

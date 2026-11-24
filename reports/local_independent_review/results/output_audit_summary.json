@@ -1,0 +1,25 @@
+{
+  "official_metric_max_abs_difference_by_split": {
+    "msvd670": 2.842170943040401e-14,
+    "val497": 0.00499223434160001,
+    "test2690": 1.4210854715202004e-14,
+    "val150_loo": 0.00440479158393714
+  },
+  "metric_rows": 82,
+  "best_budget_by_scale_and_track": {
+    "10k/CF": 1,
+    "10k/D": 1,
+    "50k/CF": 1,
+    "50k/D": 1,
+    "100k/CF": 3,
+    "100k/D": 1,
+    "250k/CF": 1,
+    "250k/D": 1,
+    "500k/CF": 1,
+    "500k/D": 1,
+    "full/CF": 1,
+    "full/D": 1
+  },
+  "mean_gap_to_k7": 2.7043950431162855,
+  "matched_graph_dimensions": 12
+}
