@@ -1,0 +1,244 @@
+{
+  "checked_at": "2026-11-25T07:53:34",
+  "authorization_id": "USER_APPROVED_ALL_AB_FOLLOWUP_20261124",
+  "scope": "A0/A1/A7 full + B3/B7HQ/B7LQ smoke and full",
+  "full_arms": {
+    "A0": {
+      "family": "A",
+      "rows": 2990,
+      "duration_seconds": 4290.869952252993,
+      "duration_hours": 1.1919083200702758,
+      "peak_allocated_bytes": 16982085120,
+      "peak_reserved_bytes": 17544773632,
+      "trace_bytes": 11042070,
+      "prediction_bytes": 4428468,
+      "prediction_sha256": "8c003aea94364e86ac9d8811c25ba807bea76f1fbcafd5e1b27ab279499b66d8",
+      "trace_sha256": "f05a055df18ad806e00610c09ac0425194091030f933f879ac5e6ba4f7cae360",
+      "receipt_sha256": "0dbf39642aad9a79af4339fdf072ba360bb042ba287bcf54fabb00ad0aa793da",
+      "output_dir": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A0",
+      "zip": {
+        "path": "raw_zips/A0.zip",
+        "bytes": 3173697,
+        "sha256": "708c72502c64cc35ffeadd369055f417be880d2a3467046074a8804e274aa431",
+        "members": [
+          "A0/arm_completed.json",
+          "A0/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+          "A0/input_trace.jsonl",
+          "A0/launcher.log",
+          "A0/run_receipt.json",
+          "A0/runtime_telemetry.json"
+        ]
+      }
+    },
+    "A1": {
+      "family": "A",
+      "rows": 2990,
+      "duration_seconds": 4621.76155106099,
+      "duration_hours": 1.2838226530724972,
+      "peak_allocated_bytes": 17122217472,
+      "peak_reserved_bytes": 17781751808,
+      "trace_bytes": 11698483,
+      "prediction_bytes": 4430839,
+      "prediction_sha256": "86d336b88601468f8804890320db12b6752d4ba816bd2172599b277086a11d6a",
+      "trace_sha256": "94910eb6e9c6cb7e39de9358d208fccb3a77a894e69064a4d27e4792e6834be0",
+      "receipt_sha256": "fe751c7bf1d4878b8ab416a3576454662257fb36102ee72b59c7f566b01e1498",
+      "output_dir": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A1",
+      "zip": {
+        "path": "raw_zips/A1.zip",
+        "bytes": 3748917,
+        "sha256": "04d5b317e166cacebeb941c950165f3b7b3c5293a8a915e0f887575e8d70bb49",
+        "members": [
+          "A1/arm_completed.json",
+          "A1/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+          "A1/input_trace.jsonl",
+          "A1/launcher.log",
+          "A1/run_receipt.json",
+          "A1/runtime_telemetry.json"
+        ]
+      }
+    },
+    "A7": {
+      "family": "A",
+      "rows": 2990,
+      "duration_seconds": 8603.576267967,
+      "duration_hours": 2.3898822966575,
+      "peak_allocated_bytes": 18713040896,
+      "peak_reserved_bytes": 22213033984,
+      "trace_bytes": 16180996,
+      "prediction_bytes": 4443163,
+      "prediction_sha256": "fa7d52053835377900038e8aa935ab5e32c6d5156e1f195a7951ab8fb41b4fd5",
+      "trace_sha256": "8f02e05e8ebe0c7fa347030887c7424c5b97567cbb903c67e64ef067fbd341cc",
+      "receipt_sha256": "216ed798c69c1b1ba6b7f88f5ee8a9ca8c61791588e9f191d9c5494a2a84b2c8",
+      "output_dir": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A7",
+      "zip": {
+        "path": "raw_zips/A7.zip",
+        "bytes": 5980768,
+        "sha256": "33bc167b258209e54f09498a34de20a695d5f79bbe1f2dd399d1b4849d457456",
+        "members": [
+          "A7/arm_completed.json",
+          "A7/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+          "A7/input_trace.jsonl",
+          "A7/launcher.log",
+          "A7/run_receipt.json",
+          "A7/runtime_telemetry.json"
+        ]
+      }
+    },
+    "B3": {
+      "family": "B",
+      "rows": 2990,
+      "duration_seconds": 5989.824152504996,
+      "duration_hours": 1.6638400423624988,
+      "peak_allocated_bytes": 17591736832,
+      "peak_reserved_bytes": 18901630976,
+      "trace_bytes": 13220769,
+      "prediction_bytes": 4433560,
+      "prediction_sha256": "4814a1537650415bd51c3df352d144cbbbad9fcc9563fd8ac459be43c471f8fd",
+      "trace_sha256": "b96cf5c735c62ba0b8156656384fcd97d64f46ed3b5db64efc0edad0364a7834",
+      "receipt_sha256": "779c22a629b2f24ba4a4a536f8a328cc6e2c82012178de65d8369cb1fcae022e",
+      "output_dir": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_B3",
+      "zip": {
+        "path": "raw_zips/B3.zip",
+        "bytes": 4637648,
+        "sha256": "d597696ffec2f712f5df4b22470eacfc8ffbb28258f04c26f02918a67730f63a",
+        "members": [
+          "B3/arm_completed.json",
+          "B3/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+          "B3/input_trace.jsonl",
+          "B3/launcher.log",
+          "B3/run_receipt.json",
+          "B3/runtime_telemetry.json"
+        ]
+      }
+    },
+    "B7HQ": {
+      "family": "B",
+      "rows": 2990,
+      "duration_seconds": 8223.960427042999,
+      "duration_hours": 2.2844334519563887,
+      "peak_allocated_bytes": 18434684928,
+      "peak_reserved_bytes": 21418213376,
+      "trace_bytes": 13220769,
+      "prediction_bytes": 4440803,
+      "prediction_sha256": "de7453b56b750e691c773477491203ecadd5d6515ffd1c611be3eac0b65087fd",
+      "trace_sha256": "3aaf855645c982c86869abc84996757f676652c7ee4e75c754727a3c5b5beaff",
+      "receipt_sha256": "7d549cc8b34b975456771c2a697f4be6a5334c8e96f2f6c1e9ff9a76b28840dd",
+      "output_dir": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_B7HQ",
+      "zip": {
+        "path": "raw_zips/B7HQ.zip",
+        "bytes": 4659403,
+        "sha256": "99e468099bc92078d08093b38c364703c72114c30d9d1dd65937a04b23a5aa47",
+        "members": [
+          "B7HQ/arm_completed.json",
+          "B7HQ/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+          "B7HQ/input_trace.jsonl",
+          "B7HQ/launcher.log",
+          "B7HQ/run_receipt.json",
+          "B7HQ/runtime_telemetry.json"
+        ]
+      }
+    },
+    "B7LQ": {
+      "family": "B",
+      "rows": 2990,
+      "duration_seconds": 8174.454890867986,
+      "duration_hours": 2.2706819141299963,
+      "peak_allocated_bytes": 18441090048,
+      "peak_reserved_bytes": 21606957056,
+      "trace_bytes": 13220769,
+      "prediction_bytes": 4439817,
+      "prediction_sha256": "b9f219428e47b675e9603a05735028f325b531b0bce4d529214e3f0d81632cee",
+      "trace_sha256": "11671b2187e9b393cd9b2b05cedc89e746fb7688e2a984d0fb8c0d60c545aa21",
+      "receipt_sha256": "217998286a10ff9503ab9c682cfbacdcd9119995498d39f5029a89356e09815c",
+      "output_dir": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_B7LQ",
+      "zip": {
+        "path": "raw_zips/B7LQ.zip",
+        "bytes": 4657407,
+        "sha256": "5dfd1a02da40784496d0ced580ad34a12a80a7c396b19c23427f3f2a6d849dd1",
+        "members": [
+          "B7LQ/arm_completed.json",
+          "B7LQ/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+          "B7LQ/input_trace.jsonl",
+          "B7LQ/launcher.log",
+          "B7LQ/run_receipt.json",
+          "B7LQ/runtime_telemetry.json"
+        ]
+      }
+    }
+  },
+  "b_smoke": {
+    "B3": {
+      "rows": 8,
+      "duration_seconds": 82.45771368099668,
+      "prediction_sha256": "e2d58a5b9ba6d2a7226d05a062537b95557be91534a805272c609bbb88cfe91f",
+      "trace_sha256": "6831ba3ff3cc77da3c8101d50e2f7ff9c2deb3429e402b148b4ca3fd082542fd",
+      "receipt_sha256": "270d8326279225b01133d6dc2ea18931144c1fc0a4102a2657ec89e9acf6ceb4",
+      "dir": "/home/bn/uar_v06_full_delivery/research/uarcap_v06_followup_deployment/bn_v06_full_ab/b_smoke_raw/B3"
+    },
+    "B7HQ": {
+      "rows": 8,
+      "duration_seconds": 85.94688444999338,
+      "prediction_sha256": "077c1af8f0eab617384918883944fb7dd0c116de257589d147fba96d7b15ed2c",
+      "trace_sha256": "b7fa351e7298e14ec7c86a3a1b432b5c134322cbef74d54483f1967f1b4cfeea",
+      "receipt_sha256": "1f794990436ff51129466f65f3b334ae82fbd38f00099ed703974d635d2db6d9",
+      "dir": "/home/bn/uar_v06_full_delivery/research/uarcap_v06_followup_deployment/bn_v06_full_ab/b_smoke_raw/B7HQ"
+    },
+    "B7LQ": {
+      "rows": 8,
+      "duration_seconds": 86.58368408300157,
+      "prediction_sha256": "6e5646e63b5e6b1d62724673c0b2665bb9caac4d31ca9c57412deb0f4d38d030",
+      "trace_sha256": "a1b2f8e61e8ae8e2a5ff33038e74a0f917e4496967561df6f67b5f930dd5a08d",
+      "receipt_sha256": "245413c41b5a99504cbc591996fe2cab94801af2537c63dd6201cd5207b9eac9",
+      "dir": "/home/bn/uar_v06_full_delivery/research/uarcap_v06_followup_deployment/bn_v06_full_ab/b_smoke_raw/B7LQ"
+    }
+  },
+  "gates": {
+    "A_FULL": {
+      "path": "gates/A_FULL_VALIDATED_GATE.json",
+      "sha256": "bef8ce36341a4ae6712525e1777d76940cb5a0ffd05ded3f004d55c8e9414ec1",
+      "family": "A",
+      "mode": "full",
+      "trace_parity": true,
+      "rows_per_arm": 2990,
+      "run_id": "full_uarcapv06"
+    },
+    "B_SMOKE": {
+      "path": "gates/B_SMOKE_VALIDATED_GATE.json",
+      "sha256": "acd95c7aadcf7be588ab0f1bf4b03cff4f3c64342f8ab0b08a5da257c31e4408",
+      "family": "B",
+      "mode": "smoke",
+      "trace_parity": true,
+      "rows_per_arm": 8,
+      "run_id": "smoke_uarcapv06"
+    },
+    "B_FULL": {
+      "path": "gates/B_FULL_VALIDATED_GATE.json",
+      "sha256": "f9255d9cfe884ec26c89accaaa2031802fdbb92f84dd25a71557008b9975c01e",
+      "family": "B",
+      "mode": "full",
+      "trace_parity": true,
+      "rows_per_arm": 2990,
+      "run_id": "full_uarcapv06"
+    }
+  },
+  "configs": {
+    "A_FULL": {
+      "path": "configs/deployment_uarcapv06_full_authorized.json",
+      "sha256": "3c3498faac7a15ddc67fae3e015dabe8ba8cca099c57667bf5748b9e91bb3837"
+    },
+    "B_SMOKE": {
+      "path": "configs/deployment_uarcapv06_B_smoke_authorized.json",
+      "sha256": "7746e7cd7db9df27a58ba27ebe1f0523df8440562036d52286cdada233db55aa"
+    },
+    "B_FULL": {
+      "path": "configs/deployment_uarcapv06_B_full_authorized.json",
+      "sha256": "58a865dbf5820f89df29e96871455f280b30986d4c2d1984bba0445db6669db7"
+    }
+  },
+  "full_generations": 17940,
+  "b_smoke_generations": 24,
+  "total_generations_this_run": 17964,
+  "total_full_gpu_seconds": 39904.447241696966,
+  "total_full_gpu_hours": 11.084568678249157,
+  "peak_allocated_bytes": 18713040896
+}

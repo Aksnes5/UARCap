@@ -1,0 +1,7 @@
+{
+  "state": "COMPLETE",
+  "finished": 1795564398.9512727,
+  "A_gate": "/home/bn/uar_v06_runtime/receipts/A_FULL_VALIDATED_GATE.json",
+  "B_smoke_gate": "/home/bn/uar_v06_runtime/receipts/B_SMOKE_VALIDATED_GATE.json",
+  "B_full_gate": "/home/bn/uar_v06_runtime/receipts/B_FULL_VALIDATED_GATE.json"
+}

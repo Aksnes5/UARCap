@@ -1,0 +1,17 @@
+{
+  "A0": {
+    "predictions": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A0/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+    "trace": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A0/input_trace.jsonl",
+    "receipt": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A0/run_receipt.json"
+  },
+  "A1": {
+    "predictions": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A1/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+    "trace": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A1/input_trace.jsonl",
+    "receipt": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A1/run_receipt.json"
+  },
+  "A7": {
+    "predictions": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A7/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+    "trace": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A7/input_trace.jsonl",
+    "receipt": "/home/bn/uar_v06_runtime/evcap_work/outputs/eval_v06_full_uarcapv06_attempt1_A7/run_receipt.json"
+  }
+}

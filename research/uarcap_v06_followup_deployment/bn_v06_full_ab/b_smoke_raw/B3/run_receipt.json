@@ -1,0 +1,96 @@
+{
+  "scope": "uarcap-v06-deploy-1",
+  "arm": "B3",
+  "mode": "smoke",
+  "common": {
+    "device": "cuda:0",
+    "gpu_uuid": "GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d",
+    "test_yaml_sha256": "a2e4d55790ddfeb60a0eec8298aaa35f46833c22ffa81ddb11de9132d0014083",
+    "frame_receipts": [
+      {
+        "role": "img",
+        "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test_16frm/frame_tsv/test_16frames_img_size224.img.tsv",
+        "size": 1378294858,
+        "sha256": "ee0a372585c3bfa7aad9feb0a990e6c22b7e5f42209efb1d7427b008a7dfbb7e",
+        "lineidx_sha256": "61ae0fc935fb7af2d1a500a40fa202ec4ccdf6efc6ed8db2a4b06acae42f41ed",
+        "mtime_ns": 1765852107059097006,
+        "digest_status": "VERIFIED",
+        "content_sha256_method": "read-only sequential SHA-256 on BN; size and mtime unchanged before/after"
+      },
+      {
+        "role": "label",
+        "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test.label.tsv",
+        "size": 4015483,
+        "sha256": "5ca73d0e9d91388d793460cc0e5b227de5b0c74a569855e731c495af26ef5e18",
+        "lineidx_sha256": "7f5325597f396dc0f77a57d462366b64079fa8202fc0251bdeedcddf91cf1c05",
+        "mtime_ns": 1765852089906931020,
+        "digest_status": "VERIFIED"
+      },
+      {
+        "role": "caption",
+        "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/datasets/MSRVTT-v2/test.caption.tsv",
+        "size": 4015483,
+        "sha256": "5ca73d0e9d91388d793460cc0e5b227de5b0c74a569855e731c495af26ef5e18",
+        "lineidx_sha256": "7f5325597f396dc0f77a57d462366b64079fa8202fc0251bdeedcddf91cf1c05",
+        "mtime_ns": 1765852089854930517,
+        "digest_status": "VERIFIED"
+      }
+    ],
+    "checkpoint_sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002",
+    "llm_model": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3",
+    "llm_manifest_sha256": "a495c2a5b475502da683b54b88613813c98f280aaf5fd83e90666c1cd4472338",
+    "python_environment_sha256": "5bdc9836abdb2fd0d95141352e7e9fa31d8ddaea4511cf382e05980f08a06aec",
+    "video_feature_dir": "/home/bn/videoufo_research/features/videollama_faithful_v2",
+    "offline_cache_dirs": {
+      "TORCH_HOME": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache",
+      "HUGGINGFACE_HUB_CACHE": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache"
+    },
+    "canonical_checkpoint": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt",
+    "run_id": "smoke_uarcapv06"
+  },
+  "runtime": {
+    "driver": "580.178.04",
+    "python": "3.9.13 | packaged by conda-forge | (main, May 27 2022, 16:58:50) \n[GCC 10.3.0]",
+    "torch": "2.1.2+cu121",
+    "cuda": "12.1",
+    "gpu_uuid": "GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d",
+    "transformers": "4.28.0"
+  },
+  "code_sha256": {
+    "eval_evcap_fix_video_llama_xclip_msrvtt_fusion_gate_prompt5.py": "89e12494809150638ab3d88bbdb1a05e1b4ea618c38bf23a5c18b417b9a1ee0c",
+    "models/evcap_fix_video_llama_xclip_msrvtt_smallcap_quality_fusion_gate_prompt5.py": "c05cd421c102119d72d06b2bf5230253a3b36f5a0310023d75b264b3aec6b599",
+    "prompts/prompt_evcap_msrvtt_detail_smallcap_prompt5.txt": "8e618c6957f3f20352002a3a7213b13c1485a733fa4ab67f560f82c3f4b7ee80",
+    "search.py": "d54de4098d2ad5942f894a7607ee866fa2e8ad3932e36c7ebd8750380a4d4825",
+    "dataset/msrvtt/vision_language_tsv.py": "edc6ad0d2eeb10f29acdc422c8e2d112496b5b798f50fd7e5f71f0baf659d618",
+    "dataset/msrvtt/data_utils/video_decoder.py": "17a6edc3b9651cd949ded89e143e651b4526d40632a6418e340ad14206e0cbfe"
+  },
+  "engine_args": {
+    "bs": 1,
+    "random_seed": 42,
+    "max_num_frames": 16,
+    "num_video_query_token": 32,
+    "beam_width": 5,
+    "freeze_video_qformer": true,
+    "vit_precision": "fp16",
+    "freeze_llm": true,
+    "freeze_vit": true,
+    "freeze_qformer": true,
+    "load_video_feature": true,
+    "share_query_tokens": true,
+    "retriever": true,
+    "deterministic": true,
+    "use_fusion": true,
+    "no_retrieval": false
+  },
+  "execution_inputs": "ec5b1ac6afc41bd621a8b46775be25e6c88e24a41a27fdc0cdc4940945a425ba",
+  "deployment_code_sha256": {
+    "deploy_guard.py": "21cc07aadd9f154ed155bb52c5ff72864070afc177ff44a6b0d93825faf08a4e",
+    "runtime_trace.py": "ab7df14aa98c54df6775c16bf2a64cd350eb9eaa61b8932558ad3b5317a1198e",
+    "launch_pinned.py": "648ce479ee5b616d954171ecb5b6f32c042c9749b88187edc375bf0d24176734"
+  },
+  "attempt": 1,
+  "arm_artifact_sha256": {
+    "B_text3_cap": "1b5bd98ba4e527bd550a8d15ab2086c2b12852107917d507fbea7d20a40c4305",
+    "B_shared_visual_sims": "b3695a9be2bfabbc4e7eebcaa7a36b3493faaf114caff44a0379acb0622a0e25"
+  }
+}

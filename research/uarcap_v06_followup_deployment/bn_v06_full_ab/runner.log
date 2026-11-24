@@ -1,0 +1,111 @@
+
+
+===== full_A0 =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/deploy_guard.py --evcap-root /home/bn/uar_v06_runtime/evcap_work --deployment /home/bn/uar_v06_runtime/deployment/deployment_uarcapv06_full_authorized.json --archive-scratch /home/bn/uar_v06_runtime/inputs --arm A0 --mode full --gpu-approval-id USER_APPROVED_ALL_AB_FOLLOWUP_20261124
+2026-11-24 20:43:50.902045: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-24 20:43:50.920363: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-24 20:43:50.920394: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-24 20:43:50.920932: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-24 20:43:50.924038: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-24 20:43:51.315824: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+
+===== full_A1 =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/deploy_guard.py --evcap-root /home/bn/uar_v06_runtime/evcap_work --deployment /home/bn/uar_v06_runtime/deployment/deployment_uarcapv06_full_authorized.json --archive-scratch /home/bn/uar_v06_runtime/inputs --arm A1 --mode full --gpu-approval-id USER_APPROVED_ALL_AB_FOLLOWUP_20261124
+2026-11-24 21:55:22.644147: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-24 21:55:22.662528: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-24 21:55:22.662559: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-24 21:55:22.663082: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-24 21:55:22.666098: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-24 21:55:22.992094: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+
+===== full_A7 =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/deploy_guard.py --evcap-root /home/bn/uar_v06_runtime/evcap_work --deployment /home/bn/uar_v06_runtime/deployment/deployment_uarcapv06_full_authorized.json --archive-scratch /home/bn/uar_v06_runtime/inputs --arm A7 --mode full --gpu-approval-id USER_APPROVED_ALL_AB_FOLLOWUP_20261124
+2026-11-24 23:12:25.363221: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-24 23:12:25.381481: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-24 23:12:25.381513: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-24 23:12:25.382141: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-24 23:12:25.385198: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-24 23:12:25.710244: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+
+===== validate_A_full =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/validate_bundle.py --family A --mode full --arm-directories /home/bn/uar_v06_runtime/arm_dirs_A_full.json --archive-scratch /home/bn/uar_v06_runtime/validation_scratch --gate-out /home/bn/uar_v06_runtime/receipts/A_FULL_VALIDATED_GATE.json
+
+
+===== smoke_B3 =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/deploy_guard.py --evcap-root /home/bn/uar_v06_runtime/evcap_work --deployment /home/bn/uar_v06_runtime/deployment/deployment_uarcapv06_B_smoke_authorized.json --archive-scratch /home/bn/uar_v06_runtime/inputs --arm B3 --mode smoke --gpu-approval-id USER_APPROVED_ALL_AB_FOLLOWUP_20261124
+2026-11-25 01:35:50.496042: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-25 01:35:50.513599: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-25 01:35:50.513627: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-25 01:35:50.514131: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-25 01:35:50.517030: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-25 01:35:50.880033: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+
+===== smoke_B7HQ =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/deploy_guard.py --evcap-root /home/bn/uar_v06_runtime/evcap_work --deployment /home/bn/uar_v06_runtime/deployment/deployment_uarcapv06_B_smoke_authorized.json --archive-scratch /home/bn/uar_v06_runtime/inputs --arm B7HQ --mode smoke --gpu-approval-id USER_APPROVED_ALL_AB_FOLLOWUP_20261124
+2026-11-25 01:37:14.008943: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-25 01:37:14.027421: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-25 01:37:14.027454: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-25 01:37:14.027978: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-25 01:37:14.030972: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-25 01:37:14.406085: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+
+===== smoke_B7LQ =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/deploy_guard.py --evcap-root /home/bn/uar_v06_runtime/evcap_work --deployment /home/bn/uar_v06_runtime/deployment/deployment_uarcapv06_B_smoke_authorized.json --archive-scratch /home/bn/uar_v06_runtime/inputs --arm B7LQ --mode smoke --gpu-approval-id USER_APPROVED_ALL_AB_FOLLOWUP_20261124
+2026-11-25 01:38:40.880235: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-25 01:38:40.898932: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-25 01:38:40.898965: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-25 01:38:40.899487: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-25 01:38:40.902486: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-25 01:38:41.277735: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+
+===== validate_B_smoke =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/validate_bundle.py --family B --mode smoke --arm-directories /home/bn/uar_v06_runtime/arm_dirs_B_smoke.json --archive-scratch /home/bn/uar_v06_runtime/validation_scratch --gate-out /home/bn/uar_v06_runtime/receipts/B_SMOKE_VALIDATED_GATE.json
+
+
+===== full_B3 =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/deploy_guard.py --evcap-root /home/bn/uar_v06_runtime/evcap_work --deployment /home/bn/uar_v06_runtime/deployment/deployment_uarcapv06_B_full_authorized.json --archive-scratch /home/bn/uar_v06_runtime/inputs --arm B3 --mode full --gpu-approval-id USER_APPROVED_ALL_AB_FOLLOWUP_20261124
+2026-11-25 01:40:08.649672: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-25 01:40:08.668632: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-25 01:40:08.668661: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-25 01:40:08.669187: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-25 01:40:08.672221: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-25 01:40:09.060115: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+
+===== full_B7HQ =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/deploy_guard.py --evcap-root /home/bn/uar_v06_runtime/evcap_work --deployment /home/bn/uar_v06_runtime/deployment/deployment_uarcapv06_B_full_authorized.json --archive-scratch /home/bn/uar_v06_runtime/inputs --arm B7HQ --mode full --gpu-approval-id USER_APPROVED_ALL_AB_FOLLOWUP_20261124
+2026-11-25 03:19:59.428618: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-25 03:19:59.447228: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-25 03:19:59.447262: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-25 03:19:59.447791: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-25 03:19:59.450870: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-25 03:19:59.826929: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+
+===== full_B7LQ =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/deploy_guard.py --evcap-root /home/bn/uar_v06_runtime/evcap_work --deployment /home/bn/uar_v06_runtime/deployment/deployment_uarcapv06_B_full_authorized.json --archive-scratch /home/bn/uar_v06_runtime/inputs --arm B7LQ --mode full --gpu-approval-id USER_APPROVED_ALL_AB_FOLLOWUP_20261124
+2026-11-25 05:37:04.376014: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-25 05:37:04.394555: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-11-25 05:37:04.394595: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-11-25 05:37:04.395123: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-25 05:37:04.398135: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-25 05:37:04.772072: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+
+===== validate_B_full =====
+/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -B /home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/validate_bundle.py --family B --mode full --arm-directories /home/bn/uar_v06_runtime/arm_dirs_B_full.json --archive-scratch /home/bn/uar_v06_runtime/validation_scratch --gate-out /home/bn/uar_v06_runtime/receipts/B_FULL_VALIDATED_GATE.json

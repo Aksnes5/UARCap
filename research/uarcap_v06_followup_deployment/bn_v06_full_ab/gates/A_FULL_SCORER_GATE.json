@@ -1,0 +1,40 @@
+{
+  "scope": "uarcap-v06-deploy-1",
+  "mode": "full",
+  "family": "A",
+  "trace_parity": true,
+  "run_id": "full_uarcapv06",
+  "full_ids_sha256": "d826647b1f2ca16c75b117287d9a0b23bd7359753f987f6a7022f769a890ef8d",
+  "execution_inputs": "ec5b1ac6afc41bd621a8b46775be25e6c88e24a41a27fdc0cdc4940945a425ba",
+  "runtime": {
+    "driver": "580.178.04",
+    "python": "3.9.13 | packaged by conda-forge | (main, May 27 2022, 16:58:50) \n[GCC 10.3.0]",
+    "torch": "2.1.2+cu121",
+    "cuda": "12.1",
+    "gpu_uuid": "GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d",
+    "transformers": "4.28.0"
+  },
+  "deployment_code_sha256": {
+    "deploy_guard.py": "21cc07aadd9f154ed155bb52c5ff72864070afc177ff44a6b0d93825faf08a4e",
+    "runtime_trace.py": "ab7df14aa98c54df6775c16bf2a64cd350eb9eaa61b8932558ad3b5317a1198e",
+    "launch_pinned.py": "648ce479ee5b616d954171ecb5b6f32c042c9749b88187edc375bf0d24176734"
+  },
+  "rows_per_arm": 2990,
+  "validated_files_sha256": {
+    "A0": {
+      "predictions": "8c003aea94364e86ac9d8811c25ba807bea76f1fbcafd5e1b27ab279499b66d8",
+      "trace": "f05a055df18ad806e00610c09ac0425194091030f933f879ac5e6ba4f7cae360",
+      "receipt": "0dbf39642aad9a79af4339fdf072ba360bb042ba287bcf54fabb00ad0aa793da"
+    },
+    "A1": {
+      "predictions": "86d336b88601468f8804890320db12b6752d4ba816bd2172599b277086a11d6a",
+      "trace": "94910eb6e9c6cb7e39de9358d208fccb3a77a894e69064a4d27e4792e6834be0",
+      "receipt": "fe751c7bf1d4878b8ab416a3576454662257fb36102ee72b59c7f566b01e1498"
+    },
+    "A7": {
+      "predictions": "fa7d52053835377900038e8aa935ab5e32c6d5156e1f195a7951ab8fb41b4fd5",
+      "trace": "8f02e05e8ebe0c7fa347030887c7424c5b97567cbb903c67e64ef067fbd341cc",
+      "receipt": "216ed798c69c1b1ba6b7f88f5ee8a9ca8c61791588e9f191d9c5494a2a84b2c8"
+    }
+  }
+}

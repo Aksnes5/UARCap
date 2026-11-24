@@ -1,0 +1,90 @@
+{
+  "note": "Relative paths are relative to the unzipped per-arm raw directory. Each arm must be extracted from raw_zips/<arm>.zip into a directory named <arm>.",
+  "authorization_id": "USER_APPROVED_ALL_AB_FOLLOWUP_20261124",
+  "families": {
+    "A": [
+      "A0",
+      "A1",
+      "A7"
+    ],
+    "B": [
+      "B3",
+      "B7HQ",
+      "B7LQ"
+    ]
+  },
+  "arms": {
+    "A0": {
+      "zip": "raw_zips/A0.zip",
+      "zip_sha256": "708c72502c64cc35ffeadd369055f417be880d2a3467046074a8804e274aa431",
+      "zip_bytes": 3173697,
+      "predictions": "A0/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+      "trace": "A0/input_trace.jsonl",
+      "receipt": "A0/run_receipt.json",
+      "prediction_sha256": "8c003aea94364e86ac9d8811c25ba807bea76f1fbcafd5e1b27ab279499b66d8",
+      "trace_sha256": "f05a055df18ad806e00610c09ac0425194091030f933f879ac5e6ba4f7cae360",
+      "receipt_sha256": "0dbf39642aad9a79af4339fdf072ba360bb042ba287bcf54fabb00ad0aa793da"
+    },
+    "A1": {
+      "zip": "raw_zips/A1.zip",
+      "zip_sha256": "04d5b317e166cacebeb941c950165f3b7b3c5293a8a915e0f887575e8d70bb49",
+      "zip_bytes": 3748917,
+      "predictions": "A1/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+      "trace": "A1/input_trace.jsonl",
+      "receipt": "A1/run_receipt.json",
+      "prediction_sha256": "86d336b88601468f8804890320db12b6752d4ba816bd2172599b277086a11d6a",
+      "trace_sha256": "94910eb6e9c6cb7e39de9358d208fccb3a77a894e69064a4d27e4792e6834be0",
+      "receipt_sha256": "fe751c7bf1d4878b8ab416a3576454662257fb36102ee72b59c7f566b01e1498"
+    },
+    "A7": {
+      "zip": "raw_zips/A7.zip",
+      "zip_sha256": "33bc167b258209e54f09498a34de20a695d5f79bbe1f2dd399d1b4849d457456",
+      "zip_bytes": 5980768,
+      "predictions": "A7/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+      "trace": "A7/input_trace.jsonl",
+      "receipt": "A7/run_receipt.json",
+      "prediction_sha256": "fa7d52053835377900038e8aa935ab5e32c6d5156e1f195a7951ab8fb41b4fd5",
+      "trace_sha256": "8f02e05e8ebe0c7fa347030887c7424c5b97567cbb903c67e64ef067fbd341cc",
+      "receipt_sha256": "216ed798c69c1b1ba6b7f88f5ee8a9ca8c61791588e9f191d9c5494a2a84b2c8"
+    },
+    "B3": {
+      "zip": "raw_zips/B3.zip",
+      "zip_sha256": "d597696ffec2f712f5df4b22470eacfc8ffbb28258f04c26f02918a67730f63a",
+      "zip_bytes": 4637648,
+      "predictions": "B3/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+      "trace": "B3/input_trace.jsonl",
+      "receipt": "B3/run_receipt.json",
+      "prediction_sha256": "4814a1537650415bd51c3df352d144cbbbad9fcc9563fd8ac459be43c471f8fd",
+      "trace_sha256": "b96cf5c735c62ba0b8156656384fcd97d64f46ed3b5db64efc0edad0364a7834",
+      "receipt_sha256": "779c22a629b2f24ba4a4a536f8a328cc6e2c82012178de65d8369cb1fcae022e"
+    },
+    "B7HQ": {
+      "zip": "raw_zips/B7HQ.zip",
+      "zip_sha256": "99e468099bc92078d08093b38c364703c72114c30d9d1dd65937a04b23a5aa47",
+      "zip_bytes": 4659403,
+      "predictions": "B7HQ/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+      "trace": "B7HQ/input_trace.jsonl",
+      "receipt": "B7HQ/run_receipt.json",
+      "prediction_sha256": "de7453b56b750e691c773477491203ecadd5d6515ffd1c611be3eac0b65087fd",
+      "trace_sha256": "3aaf855645c982c86869abc84996757f676652c7ee4e75c754727a3c5b5beaff",
+      "receipt_sha256": "7d549cc8b34b975456771c2a697f4be6a5334c8e96f2f6c1e9ff9a76b28840dd"
+    },
+    "B7LQ": {
+      "zip": "raw_zips/B7LQ.zip",
+      "zip_sha256": "5dfd1a02da40784496d0ced580ad34a12a80a7c396b19c23427f3f2a6d849dd1",
+      "zip_bytes": 4657407,
+      "predictions": "B7LQ/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+      "trace": "B7LQ/input_trace.jsonl",
+      "receipt": "B7LQ/run_receipt.json",
+      "prediction_sha256": "b9f219428e47b675e9603a05735028f325b531b0bce4d529214e3f0d81632cee",
+      "trace_sha256": "11671b2187e9b393cd9b2b05cedc89e746fb7688e2a984d0fb8c0d60c545aa21",
+      "receipt_sha256": "217998286a10ff9503ab9c682cfbacdcd9119995498d39f5029a89356e09815c"
+    }
+  },
+  "b_eligible_queries": {
+    "source": "frozen transfer bundle B_eligible_queries.json",
+    "sha256": "c17126c4b6924b1eeb2bdf6b8021d8ebf2290966dbe14305def25cf25e1390e4",
+    "canonical_sha256": "450770ffd92520a8b474186c75c9e08cf7fbe3d11949f227a987e793cef03972",
+    "count": 2618
+  }
+}

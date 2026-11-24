@@ -1,0 +1,29 @@
+{
+  "A_FULL": {
+    "path": "gates/A_FULL_VALIDATED_GATE.json",
+    "sha256": "bef8ce36341a4ae6712525e1777d76940cb5a0ffd05ded3f004d55c8e9414ec1",
+    "family": "A",
+    "mode": "full",
+    "trace_parity": true,
+    "rows_per_arm": 2990,
+    "run_id": "full_uarcapv06"
+  },
+  "B_SMOKE": {
+    "path": "gates/B_SMOKE_VALIDATED_GATE.json",
+    "sha256": "acd95c7aadcf7be588ab0f1bf4b03cff4f3c64342f8ab0b08a5da257c31e4408",
+    "family": "B",
+    "mode": "smoke",
+    "trace_parity": true,
+    "rows_per_arm": 8,
+    "run_id": "smoke_uarcapv06"
+  },
+  "B_FULL": {
+    "path": "gates/B_FULL_VALIDATED_GATE.json",
+    "sha256": "f9255d9cfe884ec26c89accaaa2031802fdbb92f84dd25a71557008b9975c01e",
+    "family": "B",
+    "mode": "full",
+    "trace_parity": true,
+    "rows_per_arm": 2990,
+    "run_id": "full_uarcapv06"
+  }
+}
