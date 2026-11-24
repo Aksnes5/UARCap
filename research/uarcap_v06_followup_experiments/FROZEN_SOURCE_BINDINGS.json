@@ -1,0 +1,13 @@
+{
+  "basis_commit": "52b5ed3a69e4b84a8e16ed747f141eefb5b1e2ec",
+  "paper_frozen_commit": "7c5619ee2e8f4df716414d92af73f5e503499cbd",
+  "code_sha256": {
+    "eval_evcap_fix_video_llama_xclip_msrvtt_fusion_gate_prompt5.py": "89e12494809150638ab3d88bbdb1a05e1b4ea618c38bf23a5c18b417b9a1ee0c",
+    "models/evcap_fix_video_llama_xclip_msrvtt_smallcap_quality_fusion_gate_prompt5.py": "c05cd421c102119d72d06b2bf5230253a3b36f5a0310023d75b264b3aec6b599",
+    "prompts/prompt_evcap_msrvtt_detail_smallcap_prompt5.txt": "8e618c6957f3f20352002a3a7213b13c1485a733fa4ab67f560f82c3f4b7ee80",
+    "search.py": "d54de4098d2ad5942f894a7607ee866fa2e8ad3932e36c7ebd8750380a4d4825",
+    "dataset/msrvtt/vision_language_tsv.py": "edc6ad0d2eeb10f29acdc422c8e2d112496b5b798f50fd7e5f71f0baf659d618",
+    "dataset/msrvtt/data_utils/video_decoder.py": "17a6edc3b9651cd949ded89e143e651b4526d40632a6418e340ad14206e0cbfe"
+  },
+  "archived_yaml_sha256": "a2e4d55790ddfeb60a0eec8298aaa35f46833c22ffa81ddb11de9132d0014083"
+}

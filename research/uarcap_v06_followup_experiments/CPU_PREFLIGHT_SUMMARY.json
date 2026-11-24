@@ -1,0 +1,53 @@
+{
+  "source_sha256": {
+    "top20": "d857bcda93890ae2e5398b69de91080cdd0e5e767249c3f0bd93853f8779e7b2",
+    "cap": "6238f379f6d35fe12fda2d3ec59f498683485d03341a1f0931caf6e234f9efe8",
+    "sims": "3a79cb5e90f2e213752679441defaba62e7d5e1dabc2842ca3a9b3dca2135021",
+    "full_ids": "d826647b1f2ca16c75b117287d9a0b23bd7359753f987f6a7022f769a890ef8d",
+    "test_ids": "fce00da1d10e6e80fa7c0ee9932042e4ab608946f2039887c830a778d96acae2"
+  },
+  "run_queries": 2990,
+  "pilot_excluded_queries": 2690,
+  "cohort_counts": {
+    "PILOT_EXCLUDED": 300,
+    "ELIGIBLE": 2618,
+    "NO_BALANCED_SEPARATED_TAIL_PAIR": 72
+  },
+  "B_primary_eligible": 2618,
+  "B_coverage": 0.9732342007434944,
+  "B_coverage_gate_passed": true,
+  "B_matching_metrics": {
+    "relevance_gap": {
+      "mean": 0.00835386644892332,
+      "min": 0.0050048828125,
+      "max": 0.02606201171875
+    },
+    "absolute_word_delta": {
+      "mean": 0.3533231474407945,
+      "min": 0,
+      "max": 7
+    },
+    "absolute_head_jaccard_delta": {
+      "mean": 0.008505401818514283,
+      "min": 3.95309025338908e-06,
+      "max": 0.07981429563827225
+    },
+    "absolute_internal_jaccard_delta": {
+      "mean": 0.0074168811934713095,
+      "min": 3.071404000187794e-06,
+      "max": 0.07811786739805315
+    }
+  },
+  "inputs_fingerprints": {
+    "A_k0_cap": "230930000fe69d7743a9f5c138cc7c308a77f89519d065301c67bb05f997a176",
+    "A_k0_sims": "34a9510f3e248826101b7e270f45ee0c20d3577c3fe8e8dfe5ec072480042f96",
+    "B_text3_cap": "d0f31e88938ba4e90b63b6abf2e8fbdeb0143dcda235190cab8b8605d44a8f57",
+    "B_text7_hq_cap": "314b581c128ff391d1037f54c1402c32fe9d1148c802e66d8711a21e26a5ef96",
+    "B_text7_lq_cap": "493094cf3ba0f11fa644e5a60eda9427af12c8e572c6cf525897abfe9de14594",
+    "B_shared_visual_sims": "c45d92d655e56e883287b3a7540b45864ef7ac0d1ac801cb1a3a37db261105ca",
+    "B_visual_contract": "b5098d0c37fdeae4f74e8664d9086b13c7a7d70dc52557e2a3cacd83eed08b5a",
+    "B_eligible_queries": "450770ffd92520a8b474186c75c9e08cf7fbe3d11949f227a987e793cef03972"
+  },
+  "eligible_ids_sha256": "450770ffd92520a8b474186c75c9e08cf7fbe3d11949f227a987e793cef03972",
+  "formal_caps_or_predictions_published": false
+}
