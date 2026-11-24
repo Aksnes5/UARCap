@@ -1,0 +1,138 @@
+{
+  "checked_at": "2026-11-24T20:28:00",
+  "root": "/home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/bn_v06_smoke",
+  "file_count": 26,
+  "total_bytes": 258533,
+  "files": [
+    {
+      "path": "A_SMOKE_AUTHORIZED_DEPLOYMENT_CONFIG.json",
+      "bytes": 3986,
+      "sha256": "a08c18ab86e5622c43121449a9f0ef396b8e25f10a721c797150c89ae03d91a9"
+    },
+    {
+      "path": "A_SMOKE_BLOCKERS.md",
+      "bytes": 2576,
+      "sha256": "9792e5ab628deec376d0eb6b41c294f407377b1da87dae36f9d5bc7187d9da72"
+    },
+    {
+      "path": "A_SMOKE_BN_GATE.json",
+      "bytes": 1778,
+      "sha256": "b07ad358b4efa1ab3d64b3bad5273b27445f1f4c7c7a7f3bf0c99e7b806a9082"
+    },
+    {
+      "path": "A_SMOKE_EXECUTION_REPORT.md",
+      "bytes": 5510,
+      "sha256": "02d0b80c588a257bf8c8ab509f5f2850ec3769bed232799655fd37a192c45f02"
+    },
+    {
+      "path": "A_SMOKE_FINAL_GO_NO_GO.md",
+      "bytes": 3047,
+      "sha256": "f9780b5737431b0d0e4859ca8111efe5dcd098afc2111d8caf1a67412268dba6"
+    },
+    {
+      "path": "A_SMOKE_GPU_AND_ENVIRONMENT.json",
+      "bytes": 9609,
+      "sha256": "9ac9e234dfe1abd72ec3b17960f5c75b860a260a224c6ba78a758014f2656573"
+    },
+    {
+      "path": "A_SMOKE_INPUT_PARITY_REPORT.json",
+      "bytes": 11471,
+      "sha256": "54707c710ae3c3d842782a1d57089c0737ceaff29028cde349bf83710359caa0"
+    },
+    {
+      "path": "A_SMOKE_RUNTIME_RECEIPTS.json",
+      "bytes": 32009,
+      "sha256": "9c97862d56d457e785cbbdc82eee20b2ecc057e91270ff456cc811c9e17a36ea"
+    },
+    {
+      "path": "raw/A0/arm_completed.json",
+      "bytes": 492,
+      "sha256": "1acae543acc6bf6e404e4e7e164f0c6c5b8c1d9828fe430a39329706d6e03813"
+    },
+    {
+      "path": "raw/A0/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+      "bytes": 11111,
+      "sha256": "f3ba88811d46416120cd9bdf0af03f71d004762e912f767bbddee53057bc5ba4"
+    },
+    {
+      "path": "raw/A0/input_trace.jsonl",
+      "bytes": 29544,
+      "sha256": "3e15a6d81a37f9096318381ef4047ef4ef261c5b69d2c587fc74932414f3bba1"
+    },
+    {
+      "path": "raw/A0/launcher.log",
+      "bytes": 11432,
+      "sha256": "a736236811caac4390d60b21c915070a4da7214fef014df279479c1a2fc3e00f"
+    },
+    {
+      "path": "raw/A0/run_receipt.json",
+      "bytes": 4901,
+      "sha256": "300f335cc6ed44b63bbe3cdf50b1dca2971f23e33e06ad45d366bae6e6109139"
+    },
+    {
+      "path": "raw/A0/runtime_telemetry.json",
+      "bytes": 170,
+      "sha256": "119f9798254829aa475549cea8a9dd14dd14365ae05ea28034c79c3e0d8065e5"
+    },
+    {
+      "path": "raw/A1/arm_completed.json",
+      "bytes": 492,
+      "sha256": "89bf34c4f01802d416fe46a943dfedabaa17210f0de51f63d03c373ffb1d7042"
+    },
+    {
+      "path": "raw/A1/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+      "bytes": 11104,
+      "sha256": "b02f1d0b241c1d9636a49e9756821fa341fb527354565daee2f9846ae38d0ecb"
+    },
+    {
+      "path": "raw/A1/input_trace.jsonl",
+      "bytes": 31292,
+      "sha256": "d403ec90805cda15d6e0bfae8253fdabf1934150fdf3ab31285abd605b2f251b"
+    },
+    {
+      "path": "raw/A1/launcher.log",
+      "bytes": 11489,
+      "sha256": "03926a909dab2f533c3c82584c0d901cec2b769282f69bbc28ab0b428d68099e"
+    },
+    {
+      "path": "raw/A1/run_receipt.json",
+      "bytes": 4909,
+      "sha256": "fb46bcf65e1e4d103c649bf1fd5e511776e24e2327f91a84af304b05bbaec566"
+    },
+    {
+      "path": "raw/A1/runtime_telemetry.json",
+      "bytes": 170,
+      "sha256": "2d355fe076beaedba3189c861f77f059bc7e3f05ab694b5db60e700c72b94cb9"
+    },
+    {
+      "path": "raw/A7/arm_completed.json",
+      "bytes": 492,
+      "sha256": "1ca483819e957564f9b9d10f7a72d6535ee844f9fdcd899fcc843369d6f45e0d"
+    },
+    {
+      "path": "raw/A7/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+      "bytes": 11102,
+      "sha256": "490193fc113c32be7cd73fa7d2b47e46cfe26f36ef3719a6f86033598d907c9c"
+    },
+    {
+      "path": "raw/A7/input_trace.jsonl",
+      "bytes": 43281,
+      "sha256": "b64e1601794a9fc00a88f0a3ff8431ed24fceaa07dea19271d4184ba224b6f98"
+    },
+    {
+      "path": "raw/A7/launcher.log",
+      "bytes": 11487,
+      "sha256": "f24ebdd0b750ab7f7543fb98d61c22282a95db88eaf85374302b202cb7c842ea"
+    },
+    {
+      "path": "raw/A7/run_receipt.json",
+      "bytes": 4909,
+      "sha256": "3b7fa6e04630daffaff1309ca320a0b7921fd9f976c2bfa2798e310428b97a99"
+    },
+    {
+      "path": "raw/A7/runtime_telemetry.json",
+      "bytes": 170,
+      "sha256": "af01707935398abae2357d9bcf96609e8fc1dac4817929699b758b3772e01879"
+    }
+  ]
+}

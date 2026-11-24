@@ -1,0 +1,10 @@
+{
+  "scope": "uarcap-v06-deploy-1",
+  "mode": "smoke",
+  "arm": "A0",
+  "rows": 8,
+  "predictions": "eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+  "prediction_sha256": "f3ba88811d46416120cd9bdf0af03f71d004762e912f767bbddee53057bc5ba4",
+  "trace_sha256": "3e15a6d81a37f9096318381ef4047ef4ef261c5b69d2c587fc74932414f3bba1",
+  "receipt_sha256": "300f335cc6ed44b63bbe3cdf50b1dca2971f23e33e06ad45d366bae6e6109139"
+}

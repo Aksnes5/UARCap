@@ -1,0 +1,271 @@
+{
+  "checked_at": "2026-11-24T20:26:00",
+  "authorization_id": "USER_APPROVED_A_SMOKE_20261124",
+  "gpu_before": {
+    "checked_at": "2026-11-24T19:54:42",
+    "gpu": "NVIDIA RTX A6000, GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d, 49140 MiB, 15 MiB, 0 %, 39, 28.33 W, 580.178.04",
+    "compute_apps": "",
+    "lock_path": "/home/bn/videoufo_research/gpu.lock",
+    "lock_bytes": 0,
+    "lock_fuser": "",
+    "gpu_idle": true,
+    "cuda_initialized": false,
+    "project_df": "/dev/nvme0n1p2  3.6T  1.8T  1.7T   52% /",
+    "display_df": "/dev/sda        7.3T  3.1T  3.9T   44% /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1",
+    "display_mount": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1 /dev/sda ext4   ro,relatime,norecovery"
+  },
+  "gpu_after": {
+    "checked_at": "2026-11-24T20:25:28",
+    "gpu": "NVIDIA RTX A6000, GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d, 49140 MiB, 15 MiB, 0 %, 39, 580.178.04",
+    "compute_apps": "",
+    "lock_fuser": "",
+    "cuda_initialized_in_parent": false
+  },
+  "runtime": {
+    "driver": "580.178.04",
+    "python": "3.9.13 | packaged by conda-forge | (main, May 27 2022, 16:58:50) \n[GCC 10.3.0]",
+    "torch": "2.1.2+cu121",
+    "cuda": "12.1",
+    "gpu_uuid": "GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d",
+    "transformers": "4.28.0"
+  },
+  "dtypes": {
+    "A0": {
+      "frames": "torch.float32",
+      "aggregate": "torch.float32",
+      "wrapped_prompt": "torch.float16",
+      "prompt_mask": "torch.int32",
+      "visual_mask": "torch.int64"
+    },
+    "A1": {
+      "frames": "torch.float32",
+      "aggregate": "torch.float32",
+      "wrapped_prompt": "torch.float16",
+      "prompt_mask": "torch.int32",
+      "visual_mask": "torch.int64"
+    },
+    "A7": {
+      "frames": "torch.float32",
+      "aggregate": "torch.float32",
+      "wrapped_prompt": "torch.float16",
+      "prompt_mask": "torch.int32",
+      "visual_mask": "torch.int64"
+    }
+  },
+  "peak_vram": {
+    "A0": 16883267584,
+    "A1": 16982871552,
+    "A7": 17841610240
+  },
+  "peak_reserved": {
+    "A0": 17425235968,
+    "A1": 17548967936,
+    "A7": 19121831936
+  },
+  "environment": {
+    "checked_at": "2026-11-24T19:55:00",
+    "python_environment_file": "/home/bn/uar_v06_runtime/deployment/python_environment.json",
+    "python_environment_sha256": "5bdc9836abdb2fd0d95141352e7e9fa31d8ddaea4511cf382e05980f08a06aec",
+    "interpreter": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python",
+    "real_interpreter": "/home/bn/anaconda3/envs/TTP/bin/python3.9",
+    "version": "3.9.13 | packaged by conda-forge | (main, May 27 2022, 16:58:50) ",
+    "prefix": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv",
+    "base_prefix": "/home/bn/anaconda3/envs/TTP",
+    "sys_path": [
+      "/home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/local_cpu_handoff",
+      "/home/bn/anaconda3/envs/TTP/lib/python39.zip",
+      "/home/bn/anaconda3/envs/TTP/lib/python3.9",
+      "/home/bn/anaconda3/envs/TTP/lib/python3.9/lib-dynload",
+      "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages",
+      "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages"
+    ],
+    "environment": {
+      "CONDA_PREFIX": "/home/bn/anaconda3",
+      "LD_LIBRARY_PATH": ":/usr/local/cuda-12.4/lib64"
+    },
+    "packages": {
+      "Pillow": {
+        "version": "11.3.0",
+        "origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/PIL/__init__.py"
+      },
+      "PyYAML": {
+        "version": "6.0.3",
+        "origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/yaml/__init__.py"
+      },
+      "accelerate": {
+        "version": "0.16.0",
+        "origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/accelerate/__init__.py"
+      },
+      "av": {
+        "version": "14.0.1",
+        "origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/av/__init__.py"
+      },
+      "einops": {
+        "version": "0.8.2",
+        "origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/einops/__init__.py"
+      },
+      "huggingface-hub": {
+        "version": "0.18.0",
+        "origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/huggingface_hub/__init__.py"
+      },
+      "numpy": {
+        "version": "1.26.4",
+        "origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/numpy/__init__.py"
+      },
+      "opencv-python": {
+        "version": "4.10.0.84",
+        "origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/cv2/__init__.py"
+      },
+      "safetensors": {
+        "version": "0.7.0",
+        "origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/safetensors/__init__.py"
+      },
+      "sentencepiece": {
+        "version": "0.2.1",
+        "origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/sentencepiece/__init__.py"
+      },
+      "timm": {
+        "version": "0.6.13",
+        "origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/timm/__init__.py"
+      },
+      "tokenizers": {
+        "version": "0.13.2",
+        "origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/tokenizers/__init__.py"
+      },
+      "torch": {
+        "version": "2.1.2+cu121",
+        "origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/torch/__init__.py"
+      },
+      "torchvision": {
+        "version": "0.16.2+cu121",
+        "origin": "/home/bn/anaconda3/envs/TTP/lib/python3.9/site-packages/torchvision/__init__.py"
+      },
+      "transformers": {
+        "version": "4.28.0",
+        "origin": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/lib/python3.9/site-packages/transformers/__init__.py"
+      }
+    },
+    "comparison": [
+      {
+        "component": "Python",
+        "archived": "3.9.18",
+        "live": "3.9.13",
+        "match": false
+      },
+      {
+        "component": "torch",
+        "archived": "2.1.0",
+        "live": "2.1.2+cu121",
+        "match": false
+      },
+      {
+        "component": "torchvision",
+        "archived": "0.16.0",
+        "live": "0.16.2+cu121",
+        "match": false
+      },
+      {
+        "component": "transformers",
+        "archived": "4.28.0",
+        "live": "4.28.0",
+        "match": true
+      },
+      {
+        "component": "timm",
+        "archived": "0.6.13",
+        "live": "0.6.13",
+        "match": true
+      },
+      {
+        "component": "numpy",
+        "archived": "1.24.3",
+        "live": "1.26.4",
+        "match": false
+      },
+      {
+        "component": "Pillow",
+        "archived": "10.0.1",
+        "live": "11.3.0",
+        "match": false
+      },
+      {
+        "component": "opencv-python",
+        "archived": "4.7.0.72",
+        "live": "4.10.0.84",
+        "match": false
+      },
+      {
+        "component": "av",
+        "archived": "14.0.1",
+        "live": "14.0.1",
+        "match": true
+      }
+    ],
+    "deviations": [
+      {
+        "component": "Python",
+        "archived": "3.9.18",
+        "live": "3.9.13",
+        "match": false
+      },
+      {
+        "component": "torch",
+        "archived": "2.1.0",
+        "live": "2.1.2+cu121",
+        "match": false
+      },
+      {
+        "component": "torchvision",
+        "archived": "0.16.0",
+        "live": "0.16.2+cu121",
+        "match": false
+      },
+      {
+        "component": "numpy",
+        "archived": "1.24.3",
+        "live": "1.26.4",
+        "match": false
+      },
+      {
+        "component": "Pillow",
+        "archived": "10.0.1",
+        "live": "11.3.0",
+        "match": false
+      },
+      {
+        "component": "opencv-python",
+        "archived": "4.7.0.72",
+        "live": "4.10.0.84",
+        "match": false
+      }
+    ],
+    "python39_zip_strict": {
+      "frozen_paths_using_strict_true": [
+        "launch_pinned.actual_vision",
+        "prepare_inputs.anchor",
+        "prepare_inputs.run",
+        "evaluate_followup.main"
+      ],
+      "bn_runtime_adapter": "runtime_trace.vision_py39 replaces frozen.actual_vision before model execution and checks equal lengths explicitly",
+      "unit_test": "PASS: k=0,1,3,7 on real D cap/sims under Python 3.9.13",
+      "runtime_imports_torch_on_dry_run": false
+    },
+    "cache_dirs": {
+      "TORCH_HOME": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache",
+      "HUGGINGFACE_HUB_CACHE": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache"
+    },
+    "status": "BOUND_WITH_DOCUMENTED_DEVIATIONS",
+    "native_cuda_and_model_import": "NOT_EXERCISED; must be proven only by authorized smoke"
+  },
+  "observations": [
+    "All three arms loaded the checkpoint and generated 8 captions.",
+    "TensorFlow emitted oneDNN/cuDNN/cuFFT/cuBLAS/TF-TRT startup warnings; no traceback and all runs exited 0.",
+    "video_qformer.bert.training is True and attention.training is True in every arm; frozen model dropout is preserved, not silently changed.",
+    "A0 prompt_tokens=100; A1 108-121; A7 180-259, consistent with 0/1/7 external texts.",
+    "Gating inputs differ across A arms because the external visual evidence differs by design; A parity pins exclude gating inputs. B parity is not run."
+  ],
+  "model_loaded": true,
+  "cuda_used_in_child": true,
+  "cuda_initialized_in_parent": false,
+  "no_nan_or_nonfinite": true
+}
