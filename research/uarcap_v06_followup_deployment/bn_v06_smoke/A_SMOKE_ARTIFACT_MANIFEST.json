@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-11-24T20:28:00",
+  "checked_at": "2026-11-24T20:36:00",
   "root": "/home/bn/uar_v06_deploy/research/uarcap_v06_followup_deployment/bn_v06_smoke",
-  "file_count": 26,
-  "total_bytes": 258533,
+  "file_count": 28,
+  "total_bytes": 263231,
   "files": [
     {
       "path": "A_SMOKE_AUTHORIZED_DEPLOYMENT_CONFIG.json",
@@ -35,6 +35,11 @@
       "sha256": "9ac9e234dfe1abd72ec3b17960f5c75b860a260a224c6ba78a758014f2656573"
     },
     {
+      "path": "A_SMOKE_INDEPENDENT_RECHECK_GATE.json",
+      "bytes": 1778,
+      "sha256": "b07ad358b4efa1ab3d64b3bad5273b27445f1f4c7c7a7f3bf0c99e7b806a9082"
+    },
+    {
       "path": "A_SMOKE_INPUT_PARITY_REPORT.json",
       "bytes": 11471,
       "sha256": "54707c710ae3c3d842782a1d57089c0737ceaff29028cde349bf83710359caa0"
@@ -43,6 +48,11 @@
       "path": "A_SMOKE_RUNTIME_RECEIPTS.json",
       "bytes": 32009,
       "sha256": "9c97862d56d457e785cbbdc82eee20b2ecc057e91270ff456cc811c9e17a36ea"
+    },
+    {
+      "path": "A_SMOKE_WINDOWS_GATE_STATUS.md",
+      "bytes": 2920,
+      "sha256": "836566744a5ef0bbf27bd6814a25c589d2b251035589df2d7329f13278cd0192"
     },
     {
       "path": "raw/A0/arm_completed.json",
