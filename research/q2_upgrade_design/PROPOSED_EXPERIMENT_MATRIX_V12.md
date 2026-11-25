@@ -1,0 +1,13 @@
+# 统一实验设计矩阵（PROPOSED_EXPERIMENT_MATRIX_V12）
+
+> **状态**：`DESIGN_FOR_DISCUSSION`｜配套主稿：`UARCap_Q2_统一科研框架与实验设计讨论稿_v1.2.md`  
+> **口径承诺**：本表与 `v1.2` 主稿第 10 节、资源预算表 `RESOURCE_BUDGET_V12.md` 在数据集、样本量（暂定规划候选值）、臂数、指标命名与 GPU/人工预算上 100% 一致；原 E4 与 VATEX 已正式移出。
+
+| 实验编号 | 对应 RQ | 使用数据集与样本量（独立来源） | 使用模型与接口 | 条件臂与核心对照 | 主要终点与统计方法 | 人工核验角色 | 防泄漏与防偏置控制 |
+|---|---|---|---|---|---|---|---|
+| **E1**（探索性，非硬门控） | 探索性异质性 | 既有冻结 MSR-VTT `2,690`（`2,004` 源）+ MSVD `670`（`522` 源） | 复用冻结 Video-LLaMA 输出（0 GPU） | `A0/A1/A7/D3/D5`；跨参考选择收益 + 解耦随机选臂参照 | PTB CIDEr（独立半集 IDF + 来源聚类自助法） | **0 人时** | 明确为回顾性探索，允许放补充材料 |
+| **E2a**（方案 A 前置兼容性试点） | 流程与评价可行性验证（**不入正式集**） | **DREAM-1K 30 独立视频** + **VidHalluc 20 独立片段**（均经 VideoUFO 源去重） | Video-LLaMA + 1 款候选现代 VLM（短字幕对齐）+ 本地跨家族三值裁判 | `k=0, 1, 7`（DREAM-1K）；`Base/Sup/Con/Neu` 预检（VidHalluc） | 检验短字幕分辨率、三值裁判校准精度、`P_Unment_ref` 真实错误率与 VidHalluc 严格冲突率 | **~8–12 人时**（双人静音看片校准裁判 + 审核 20 靶对） | E2a 仅作校准与可行性门控，**绝不并入 E2b 正式集** |
+| **E2b**（主实验 1：配对事实变化） | **RQ1**（及 **RQ3** 跨模型/跨数据集主战场） | **DREAM-1K 500–800 独立来源视频**（剔除 E2a 与源重叠；新提 X-CLIP 特征并重搜 VideoUFO top-20） | Video-LLaMA（$I_{\text{x-gate}}$）+ **1 款现代开源视频 VLM**（$I_{\text{prompt}}$，强制 8–18 词短字幕对齐指令） | `k=0 (A0)、k=1 (A1)、k=7 (A7)`（必要时加 `k=3`） | **2 项共同主终点（4 项族内 Holm）**：`N_Contra_ref`（仅 `contradiction`）与预提取核心覆盖 `R_core_ref`（辅以 `N_Entail_ref`、`P_Unment_ref`、官方 `AutoDQ`） | **50 独立验证视频**双盲静音看片（产出黄金 `N_C`/`N_S`/`R_core`、L3 八类转移与无偏裁判 $\kappa$，~8–10 人时） | 跨家族开源本地裁判防自我偏好；绝不把参考代理指标改名为人工真值；每来源最多 1 clip |
+| **E2c**（MSR-VTT 方向桥接） | **RQ1 / RQ3** 衔接探索 | 历史冻结 MSR-VTT `test2690` 随机抽 **50–60 独立来源视频**（0 新增 GPU） | 复用冻结 Video-LLaMA `A0/A1/A7`（可选加现代 VLM 平行短字幕） | `A0 / A1 / A7` | 人工双盲看片 `N_C`、`N_S`、`R_core` 与 L3 八类转移 | **~8–12 人时** | 按 X-CLIP 相似度先验分层随机抽取；如实限定为探索性方向桥接 |
+| **E3**（主实验 2：受控靶事实干预） | **RQ2**（及 **RQ3** 跨模型） | **VidHalluc 150–180 独立来源片段**（每 YouTube 源最多 1 clip，零 VideoUFO 源重叠）+ 50–60 自然 VideoUFO 冲突观察子集 | 主设置（`Base=A0`）：Video-LLaMA 与现代 VLM 共同运行；敏感性（`Base=B3` 锁定 3 视觉头，60–80 子集）：仅 Video-LLaMA | 四臂共享 `Base`：**`Base / Sup / Con / Neu`** | **L4 五态（允许 $f^+$ 与 $f^-$ 共存）**：2 项主检验 Holm（`Con vs. Neu` 的 $\Delta P(f^-)$ 与 $\Delta P_{\text{supp}}(f^+)$）；次要 `Sup vs. Neu`、`Neu vs. Base` 及 `Base` 分层 | **~12–18 人时**：审核 150–180 靶冲突严格性、`Neu` 中性/相容性、25% 自然度盲审 + L4 边界复核 + 自然冲突子集核验 | 严防 MCQ 选项循环评价；实测 tokenizer subword 长度；区分最小配对因果与自然观察关联 |
+| **E5**（跨模型/跨数据集整合 + 可选 MSVD） | **RQ3** | 共同 DREAM-1K（E2b）+ 共同 VidHalluc（E3）+ MSR-VTT 桥接（E2c）+ **可选 MSVD `test670`** | Video-LLaMA vs. 1 款现代开源 VLM（`Qwen2.5-VL-7B` / `LLaVA-Video-7B` / `InternVL2.5-8B` 之一）；MSVD 3 臂（`A0/A1/A3`）为可选 | 共同查询跨模型对比 + 同现代模型跨数据集对比；可选 MSVD 3 臂 | 各系统内部配对 Holm + 共同查询交互差（DiD）；现代 VLM 另附详细描述长度敏感性分析（不与短字幕直比） | 已计入 E2b/E2c/E3 | 如实声明三单元 L 型设计（非严格 2×2）；20 条 smoke 实测峰值显存后事前锁定唯一现代模型 |
