@@ -1,8 +1,8 @@
-"""Real Unified Stage Runner CLI (P0-1 & P0-5 remediated: ZERO fake READY_FOR_BN_REAL_ADAPTER return-0 stub!).
+"""Real Unified Stage Runner CLI (Final Offline Handoff — Reuses Existing BN Models, Zero Stubs!).
 
 Exit codes:
   0  = REAL_RUNTIME_PASS or MOCK_PASS (only when outputs & receipt actually written and all gates pass)
-  2  = FAILED / missing required real assets or runtime error
+  2  = FAILED / INCONCLUSIVE / missing required real assets or runtime error
   3  = BLOCKED (authorization gate or prerequisite REAL_RUNTIME_PASS check failed)
   10 = HUMAN_VALIDATION_PENDING (stage paused cleanly awaiting required human annotation/verification)
 """
@@ -26,20 +26,33 @@ from uarcap_q2.common.gates import AuthorizationError, verify_stage_authorizatio
 from uarcap_q2.common.io_utils import atomic_write_json, read_json
 from uarcap_q2.common.schemas import ExpArm, PilotStage, StageRunStatus
 from uarcap_q2.datasets.dream1k import load_dream1k_records, sample_dream1k_stratified_pilot, write_pilot_exclusion_manifest
+from uarcap_q2.datasets.formal_sampling import FormalSamplingConfig
 from uarcap_q2.datasets.vidhalluc import load_vidhalluc_ach_mcq
 from uarcap_q2.evaluators.backends import (
     JudgeBackend,
     JudgeBackendConfig,
     LocalTransformersJudgeBackend,
+    LocalVLLMJudgeBackend,
     MockJudgeBackend,
     OpenAICompatJudgeBackend,
+    SubprocessTransformersJudgeBackend,
 )
 from uarcap_q2.generators.mock_generator import MockGeneratorAdapter
-from uarcap_q2.generators.modern_vlm_adapter import ModernVLMConfig, Qwen25VLAdapter
+from uarcap_q2.generators.modern_vlm_adapter import ModernVLMConfig, Qwen25VLAdapter, SubprocessModernVLMAdapter
+from uarcap_q2.generators.qwen3_vllm_adapter import (
+    DEFAULT_BN_QWEN38_PATH,
+    Qwen3VLLMConfig,
+    Qwen3VLLMMultimodalAdapter,
+)
 from uarcap_q2.generators.videollama_adapter import FrozenVideoLLaMAAdapter, FrozenVideoLLaMAConfig
+from uarcap_q2.interventions.e3_bridge import NaturalConflictObservation
 from uarcap_q2.interventions.vidhalluc_e3 import E3InterventionCandidate, filter_runnable_e3_candidates
 from uarcap_q2.retrieval.reranker import MockXCLIPRetriever, RetrieverAdapter
-from uarcap_q2.retrieval.videoufo_retriever import VideoUFOIndexConfig, VideoUFOXCLIPRetriever
+from uarcap_q2.retrieval.videoufo_retriever import (
+    SubprocessVideoUFOXCLIPRetriever,
+    VideoUFOIndexConfig,
+    VideoUFOXCLIPRetriever,
+)
 from uarcap_q2.runner.orchestrator import RunSpec, run_natural_retrieval_stage
 from uarcap_q2.runner.stage_pipelines import (
     run_e1_retrospective_pipeline,
@@ -59,8 +72,13 @@ def _exit_code_for_status(status: str) -> int:
     return 2
 
 
-def _build_real_retriever(paths_cfg: dict[str, Any]) -> VideoUFOXCLIPRetriever:
+def _build_real_retriever(
+    paths_cfg: dict[str, Any],
+    use_subprocess: bool = False,
+    gpu_lock: Path | None = None,
+) -> RetrieverAdapter:
     hist = paths_cfg["historical_frozen_assets"]
+    host = paths_cfg.get("host", {})
     vcfg = VideoUFOIndexConfig(
         videoufo_csv_path=hist["videoufo_csv_path"],
         clips_full_tsv_path=hist["clips_full_tsv_path"],
@@ -69,6 +87,15 @@ def _build_real_retriever(paths_cfg: dict[str, Any]) -> VideoUFOXCLIPRetriever:
         xclip_ckpt_path=hist["xclip_ckpt_path"],
         video_feature_dir=hist["video_feature_dir"],
     )
+    if use_subprocess:
+        return SubprocessVideoUFOXCLIPRetriever(
+            cfg=vcfg,
+            python_executable=hist["frozen_videollama_python"],
+            gpu_lock_path=gpu_lock,
+            gpu_uuid=host.get("gpu_uuid"),
+            require_nvidia_smi_idle=bool(gpu_lock),
+            verify_feature_files_exist=True,
+        )
     return VideoUFOXCLIPRetriever(vcfg, verify_feature_files_exist=True)
 
 
@@ -90,27 +117,108 @@ def _build_real_videollama(paths_cfg: dict[str, Any]) -> FrozenVideoLLaMAAdapter
     )
 
 
-def _build_real_judge(judge_model_path: str | None, judge_api_url: str | None, judge_model_id: str, judge_family: str) -> JudgeBackend:
-    if judge_api_url:
+def _build_real_modern_vlm(args: argparse.Namespace, paths_cfg: dict[str, Any], gpu_lock: Path | None) -> Any:
+    """Build primary modern video VLM adapter reusing existing BN Qwen3.8-27B-FP8 (or Qwen3.5-27B) via vLLM."""
+    host = paths_cfg.get("host", {})
+    existing = paths_cfg.get("existing_bn_modern_models", {})
+    model_path = args.modern_vlm_path or existing.get("primary_modern_vlm_dir", DEFAULT_BN_QWEN38_PATH)
+    model_id = args.modern_vlm_id or existing.get("primary_modern_vlm_id", "Qwen/Qwen3.8-27B-FP8")
+    backend_mode = args.modern_vlm_backend
+
+    # Optional legacy Qwen2.5-VL path ONLY if explicitly requested
+    if backend_mode in ("legacy_qwen25vl", "legacy_qwen25vl_subprocess"):
+        mcfg = ModernVLMConfig(
+            model_id=model_id,
+            local_model_path=model_path,
+            pinned_revision=args.modern_vlm_revision,
+            device=host.get("device", "cuda:0"),
+        )
+        if backend_mode == "legacy_qwen25vl_subprocess":
+            return SubprocessModernVLMAdapter(
+                mcfg,
+                python_executable=args.vllm_python or None,
+                conda_env=args.vllm_conda_env or paths_cfg.get("isolated_conda_envs", {}).get("modern_vlm_env", "uarcap_q2_modern_vlm"),
+                gpu_lock_path=gpu_lock,
+                gpu_uuid=host.get("gpu_uuid"),
+            )
+        return Qwen25VLAdapter(mcfg)
+
+    vllm_py = args.vllm_python or existing.get("existing_vllm_python", "")
+    vllm_conda = args.vllm_conda_env or existing.get("existing_vllm_conda_env", "")
+    api_url = args.modern_vlm_api_url or (existing.get("local_vllm_api_base_url", "") if backend_mode == "vllm_openai_http" else "")
+    qcfg = Qwen3VLLMConfig(
+        model_id=model_id,
+        local_model_path=model_path,
+        backend_mode=backend_mode,
+        api_base_url=api_url,
+        vllm_python_executable=vllm_py,
+        vllm_conda_env=vllm_conda,
+        pinned_revision=args.modern_vlm_revision,
+        enable_thinking=bool(args.enable_thinking),
+        quantization=args.modern_vlm_quantization,
+        device=host.get("device", "cuda:0"),
+    )
+    return Qwen3VLLMMultimodalAdapter(
+        qcfg,
+        gpu_lock_path=gpu_lock,
+        gpu_uuid=host.get("gpu_uuid"),
+        require_nvidia_smi_idle=bool(gpu_lock and backend_mode == "vllm_subprocess"),
+    )
+
+
+def _build_real_judge(args: argparse.Namespace, paths_cfg: dict[str, Any], gpu_lock: Path | None) -> JudgeBackend:
+    """Build cross-family text factuality judge reusing existing BN models (default: Mistral Small 3.2 24B)."""
+    existing = paths_cfg.get("existing_bn_modern_models", {})
+    host = paths_cfg.get("host", {})
+    model_id = args.judge_model_id or existing.get("primary_judge_model_id", "mistralai/Mistral-Small-3.2-24B-Instruct-2506")
+    family = args.judge_family or existing.get("primary_judge_family", "mistral")
+    model_path = args.judge_model_path or existing.get("primary_judge_dir", "")
+    mode = args.judge_backend_mode
+
+    if args.judge_api_url or mode == "openai_compat":
         return OpenAICompatJudgeBackend(
             JudgeBackendConfig(
                 backend_type="openai_compat",
-                model_id=judge_model_id,
-                model_family=judge_family,
-                api_base_url=judge_api_url,
+                model_id=model_id,
+                model_family=family,
+                api_base_url=args.judge_api_url or existing.get("local_vllm_api_base_url", ""),
             )
         )
-    if judge_model_path and Path(judge_model_path).is_dir():
-        return LocalTransformersJudgeBackend(
+    if not model_path or not Path(model_path).is_dir():
+        raise FileNotFoundError(
+            f"Real text judge requires an existing local BN model directory (--judge-model-path) or --judge-api-url; missing: {model_path!r}"
+        )
+    if mode == "vllm_offline":
+        return LocalVLLMJudgeBackend(
             JudgeBackendConfig(
-                backend_type="local_transformers",
-                model_id=judge_model_id,
-                model_family=judge_family,
-                local_model_path=judge_model_path,
+                backend_type="vllm_offline",
+                model_id=model_id,
+                model_family=family,
+                local_model_path=model_path,
             )
         )
-    raise FileNotFoundError(
-        "Real text judge requires either --judge-model-path (existing local directory) or --judge-api-url."
+    if mode in ("vllm_subprocess", "transformers_subprocess"):
+        btype = "vllm_offline" if mode == "vllm_subprocess" else "local_transformers"
+        return SubprocessTransformersJudgeBackend(
+            JudgeBackendConfig(
+                backend_type=btype,
+                model_id=model_id,
+                model_family=family,
+                local_model_path=model_path,
+            ),
+            python_executable=args.judge_python or existing.get("existing_vllm_python") or None,
+            conda_env=args.judge_conda_env or existing.get("existing_vllm_conda_env") or paths_cfg.get("isolated_conda_envs", {}).get("text_evaluator_env", "uarcap_q2_evaluator"),
+            gpu_lock_path=gpu_lock,
+            gpu_uuid=host.get("gpu_uuid"),
+            require_nvidia_smi_idle=bool(gpu_lock),
+        )
+    return LocalTransformersJudgeBackend(
+        JudgeBackendConfig(
+            backend_type="local_transformers",
+            model_id=model_id,
+            model_family=family,
+            local_model_path=model_path,
+        )
     )
 
 
@@ -161,6 +269,8 @@ def dispatch_stage(
             "stage_config": str(args.stage_config),
             "out_dir": str(args.out_dir),
             "prior_receipts": {k: str(v) for k, v in priors.items()},
+            "modern_vlm_default": args.modern_vlm_id,
+            "judge_default": args.judge_model_id,
             "gpu_touched": False,
         }
         return 0, plan
@@ -208,7 +318,9 @@ def dispatch_stage(
         pilot_recs, _ = sample_dream1k_stratified_pilot(recs, per_domain=min(per_dom, len(recs) // 5), seed=seed)
         write_pilot_exclusion_manifest(pilot_recs, args.out_dir / "pilot_a_excluded_dream1k_vids.json", seed=seed)
 
-        retriever = injected_retriever or (MockXCLIPRetriever() if args.cpu_mock else _build_real_retriever(paths_cfg))
+        retriever = injected_retriever or (
+            MockXCLIPRetriever() if args.cpu_mock else _build_real_retriever(paths_cfg, use_subprocess=args.xclip_subprocess, gpu_lock=gpu_lock)
+        )
         generator = injected_videollama or (MockGeneratorAdapter() if args.cpu_mock else _build_real_videollama(paths_cfg))
 
         spec = RunSpec(
@@ -232,9 +344,7 @@ def dispatch_stage(
         if not args.a1_predictions or not Path(args.a1_predictions).is_file():
             return 2, {"stage": stage.value, "status": StageRunStatus.FAILED.value, "error": "Pilot A2 requires --a1-predictions"}
         judge = injected_ref_judge or (
-            MockJudgeBackend()
-            if args.cpu_mock
-            else _build_real_judge(args.judge_model_path, args.judge_api_url, args.judge_model_id, args.judge_family)
+            MockJudgeBackend() if args.cpu_mock else _build_real_judge(args, paths_cfg, gpu_lock)
         )
         rec = run_pilot_a2_pipeline(
             a1_predictions_path=args.a1_predictions,
@@ -258,28 +368,20 @@ def dispatch_stage(
         if not vh_mcq.is_file():
             return 2, {"stage": stage.value, "status": StageRunStatus.FAILED.value, "error": f"VidHalluc ach_mcq.json missing: {vh_mcq}"}
 
-        retriever = injected_retriever or (MockXCLIPRetriever() if args.cpu_mock else _build_real_retriever(paths_cfg))
+        retriever = injected_retriever or (
+            MockXCLIPRetriever() if args.cpu_mock else _build_real_retriever(paths_cfg, use_subprocess=args.xclip_subprocess, gpu_lock=gpu_lock)
+        )
         vl_gen = injected_videollama or (MockGeneratorAdapter() if args.cpu_mock else _build_real_videollama(paths_cfg))
         if injected_modern_vlm is not None:
             vlm_gen = injected_modern_vlm
         elif args.cpu_mock:
             vlm_gen = MockGeneratorAdapter(model_id="mock_modern_vlm_cpu")
         else:
-            if not args.modern_vlm_path:
-                return 2, {"stage": stage.value, "status": StageRunStatus.FAILED.value, "error": "Pilot A3 real mode requires --modern-vlm-path"}
-            vlm_gen = Qwen25VLAdapter(
-                ModernVLMConfig(
-                    model_id=args.modern_vlm_id,
-                    local_model_path=args.modern_vlm_path,
-                    pinned_revision=args.modern_vlm_revision,
-                    device=host.get("device", "cuda:0"),
-                )
-            )
+            vlm_gen = _build_real_modern_vlm(args, paths_cfg, gpu_lock)
         e3_judge = injected_e3_judge or (
-            MockJudgeBackend()
-            if args.cpu_mock
-            else _build_real_judge(args.judge_model_path, args.judge_api_url, args.judge_model_id, args.judge_family)
+            MockJudgeBackend() if args.cpu_mock else _build_real_judge(args, paths_cfg, gpu_lock)
         )
+        ref_judge = injected_ref_judge or e3_judge
         vufo_sids = set() if args.cpu_mock else _load_videoufo_source_ids(paths_cfg)
         rec = run_pilot_a3_pipeline(
             dream1k_pilot_queries=pilot_recs[: args.limit] if args.limit else pilot_recs,
@@ -289,9 +391,14 @@ def dispatch_stage(
             vidhalluc_ach_mcq_path=vh_mcq,
             vidhalluc_video_root=vh_dir / "data",
             e3_judge_backend=e3_judge,
+            ref_judge_backend=ref_judge,
             out_dir=args.out_dir,
             videoufo_source_ids=vufo_sids,
             approved_e3_candidates_path=args.approved_e3_candidates,
+            e3_human_annotations_path=args.e3_human_annotations,
+            dream1k_vlm_human_annotations_path=args.dream1k_vlm_human_annotations,
+            a2_aligned_records_path=args.a2_aligned_records,
+            require_cross_model_dream1k_human=bool(args.require_cross_model_dream1k_human),
             auth_receipt_path=args.auth_receipt,
             prior_a2_receipt=args.prior_a2,
             gpu_lock_path=gpu_lock,
@@ -308,30 +415,49 @@ def dispatch_stage(
 
         excl_ids = set(read_json(args.pilot_exclusion).get("excluded_query_ids", []))
         all_dream = load_dream1k_records(ann_file, vid_dir, require_video_exists=True)
-        formal_dream = [r for r in all_dream if r.query_id not in excl_ids]
-        if args.limit:
-            formal_dream = formal_dream[: args.limit]
+
+        vh_pilot_q: set[str] = set()
+        vh_pilot_s: set[str] = set()
+        if args.pilot_vidhalluc_exclusion and Path(args.pilot_vidhalluc_exclusion).is_file():
+            vh_ex = read_json(args.pilot_vidhalluc_exclusion)
+            vh_pilot_q = set(vh_ex.get("excluded_query_ids", []))
+            vh_pilot_s = set(vh_ex.get("excluded_source_ids", []))
+
+        near_dup_ids: set[str] = set()
+        if args.dream1k_near_dup_exclusion and Path(args.dream1k_near_dup_exclusion).is_file():
+            nd = read_json(args.dream1k_near_dup_exclusion)
+            near_dup_ids = set(nd.get("excluded_query_ids", nd) if isinstance(nd, dict) else nd)
+
+        sampling_cfg = FormalSamplingConfig(
+            dream1k_target_n=args.formal_dream1k_n or args.limit,
+            e2_validation_target_n=args.formal_e2_val_n,
+            vidhalluc_target_n=args.formal_vidhalluc_n,
+        )
 
         vh_dir = Path(q2w["vidhalluc_dir"])
         vh_raw = load_vidhalluc_ach_mcq(vh_dir / "ach_mcq.json", vh_dir / "data")
         vh_by_qid = {r.query_id: r for r in vh_raw}
         e3_cands = filter_runnable_e3_candidates([E3InterventionCandidate(**c) for c in read_json(args.approved_e3_candidates)])
 
-        retriever = injected_retriever or _build_real_retriever(paths_cfg)
+        e3_bridge_obs = None
+        if args.e3_bridge_observations and Path(args.e3_bridge_observations).is_file():
+            e3_bridge_obs = [NaturalConflictObservation(**o) for o in read_json(args.e3_bridge_observations)]
+
+        msrvtt_bridge: dict[str, Path | str] | None = None
+        if args.msrvtt_historical_summary:
+            msrvtt_bridge = {"summary_json": args.msrvtt_historical_summary}
+        elif args.e1_ref_a and args.e1_ref_b and args.e1_source_map:
+            msrvtt_bridge = {"e1_ref_a": args.e1_ref_a, "e1_ref_b": args.e1_ref_b, "e1_source_map": args.e1_source_map}
+
+        retriever = injected_retriever or _build_real_retriever(paths_cfg, use_subprocess=args.xclip_subprocess, gpu_lock=gpu_lock)
         vl_gen = injected_videollama or _build_real_videollama(paths_cfg)
-        vlm_gen = injected_modern_vlm or Qwen25VLAdapter(
-            ModernVLMConfig(
-                model_id=args.modern_vlm_id,
-                local_model_path=args.modern_vlm_path,
-                pinned_revision=args.modern_vlm_revision,
-                device=host.get("device", "cuda:0"),
-            )
-        )
-        ref_j = injected_ref_judge or _build_real_judge(args.judge_model_path, args.judge_api_url, args.judge_model_id, args.judge_family)
+        vlm_gen = injected_modern_vlm or _build_real_modern_vlm(args, paths_cfg, gpu_lock)
+        ref_j = injected_ref_judge or _build_real_judge(args, paths_cfg, gpu_lock)
         e3_j = injected_e3_judge or ref_j
+        vufo_sids = _load_videoufo_source_ids(paths_cfg) if paths_cfg.get("historical_frozen_assets", {}).get("clips_full_tsv_path") and Path(paths_cfg["historical_frozen_assets"]["clips_full_tsv_path"]).is_file() else set()
 
         rec = run_formal_b_pipeline(
-            formal_dream1k_queries=formal_dream,
+            formal_dream1k_queries=all_dream,
             formal_vidhalluc_queries_by_id=vh_by_qid,
             approved_e3_candidates=e3_cands,
             retriever=retriever,
@@ -346,6 +472,14 @@ def dispatch_stage(
             asset_manifest_path=args.asset_manifest,
             pilot_exclusion_path=args.pilot_exclusion,
             pilot_excluded_query_ids=excl_ids,
+            e3_bridge_observations=e3_bridge_obs,
+            sampling_cfg=sampling_cfg,
+            explicit_near_dup_excluded_ids=near_dup_ids,
+            videoufo_source_ids=vufo_sids,
+            pilot_excluded_vidhalluc_query_ids=vh_pilot_q,
+            pilot_excluded_vidhalluc_source_ids=vh_pilot_s,
+            e2_validation_human_annotations_path=args.e2_validation_human_annotations,
+            msrvtt_historical_bridge=msrvtt_bridge,
             gpu_lock_path=gpu_lock,
         )
         return _exit_code_for_status(rec["status"]), rec
@@ -354,7 +488,7 @@ def dispatch_stage(
 
 
 def build_parser() -> argparse.ArgumentParser:
-    ap = argparse.ArgumentParser(description="UARCap Q2 Real Unified Stage Runner CLI")
+    ap = argparse.ArgumentParser(description="UARCap Q2 Real Unified Stage Runner CLI (BN Existing Model Reuse)")
     ap.add_argument("--stage", choices=[s.value for s in PilotStage] + ["E1"], required=True)
     ap.add_argument("--paths-config", type=Path, required=True)
     ap.add_argument("--stage-config", type=Path, required=True)
@@ -366,16 +500,48 @@ def build_parser() -> argparse.ArgumentParser:
     ap.add_argument("--prior-a3", type=Path, default=None)
     ap.add_argument("--asset-manifest", type=Path, default=None)
     ap.add_argument("--pilot-exclusion", type=Path, default=None)
+    ap.add_argument("--pilot-vidhalluc-exclusion", type=Path, default=None)
+    ap.add_argument("--dream1k-near-dup-exclusion", type=Path, default=None)
     ap.add_argument("--a1-predictions", type=Path, default=None)
+    ap.add_argument("--a2-aligned-records", type=Path, default=None)
     ap.add_argument("--human-annotations", type=Path, default=None)
     ap.add_argument("--approved-e3-candidates", type=Path, default=None)
+    ap.add_argument("--e3-human-annotations", type=Path, default=None)
+    ap.add_argument("--dream1k-vlm-human-annotations", type=Path, default=None)
+    ap.add_argument("--require-cross-model-dream1k-human", action="store_true")
+    ap.add_argument("--e2-validation-human-annotations", type=Path, default=None)
+    ap.add_argument("--e3-bridge-observations", type=Path, default=None)
+    ap.add_argument("--msrvtt-historical-summary", type=Path, default=None)
+    ap.add_argument("--formal-dream1k-n", type=int, default=None)
+    ap.add_argument("--formal-e2-val-n", type=int, default=None)
+    ap.add_argument("--formal-vidhalluc-n", type=int, default=None)
+    # Existing BN cross-family judge options (default: Mistral Small 3.2 24B)
     ap.add_argument("--judge-model-path", default="")
     ap.add_argument("--judge-api-url", default="")
-    ap.add_argument("--judge-model-id", default="mistralai/Mistral-Small-24B-Instruct-2501")
+    ap.add_argument("--judge-model-id", default="mistralai/Mistral-Small-3.2-24B-Instruct-2506")
     ap.add_argument("--judge-family", default="mistral")
+    ap.add_argument(
+        "--judge-backend-mode",
+        choices=["vllm_subprocess", "vllm_offline", "openai_compat", "local_transformers", "transformers_subprocess"],
+        default="vllm_subprocess",
+    )
+    ap.add_argument("--judge-python", default="")
+    ap.add_argument("--judge-conda-env", default="")
+    # Existing BN modern VLM options (default: Qwen/Qwen3.8-27B-FP8 via vLLM 0.29.0; NO Qwen2.5-VL download!)
     ap.add_argument("--modern-vlm-path", default="")
-    ap.add_argument("--modern-vlm-id", default="Qwen/Qwen2.5-VL-7B-Instruct")
-    ap.add_argument("--modern-vlm-revision", default="PENDING_PIN_AT_DOWNLOAD")
+    ap.add_argument("--modern-vlm-id", default="Qwen/Qwen3.8-27B-FP8")
+    ap.add_argument("--modern-vlm-revision", default="LOCAL_BN_QWEN38_FP8_66SHARDS")
+    ap.add_argument(
+        "--modern-vlm-backend",
+        choices=["vllm_subprocess", "vllm_offline", "vllm_openai_http", "legacy_qwen25vl", "legacy_qwen25vl_subprocess"],
+        default="vllm_subprocess",
+    )
+    ap.add_argument("--modern-vlm-api-url", default="")
+    ap.add_argument("--modern-vlm-quantization", default="fp8")
+    ap.add_argument("--vllm-python", default="")
+    ap.add_argument("--vllm-conda-env", default="")
+    ap.add_argument("--enable-thinking", action="store_true", help="Enable Qwen3 thinking mode (default False!)")
+    ap.add_argument("--xclip-subprocess", action="store_true", help="Run X-CLIP inside frozen Video-LLaMA Python subprocess")
     ap.add_argument("--e1-ref-a", type=Path, default=None)
     ap.add_argument("--e1-ref-b", type=Path, default=None)
     ap.add_argument("--e1-source-map", type=Path, default=None)

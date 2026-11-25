@@ -36,7 +36,7 @@ RC=$?
 set -e
 
 if [[ "${RC}" -eq 10 ]]; then
-  echo "[run_pilot_a3] PAUSED (HUMAN_VALIDATION_PENDING): Complete 5-item VidHalluc human review, then re-run with --approved-e3-candidates."
+  echo "[run_pilot_a3] PAUSED (HUMAN_VALIDATION_PENDING): Check ${OUT_DIR}/run_receipt.json for pending human step (--approved-e3-candidates or --e3-human-annotations)."
   exit 10
 elif [[ "${RC}" -ne 0 ]]; then
   echo "[run_pilot_a3] FAILED or BLOCKED (exit code ${RC})." >&2

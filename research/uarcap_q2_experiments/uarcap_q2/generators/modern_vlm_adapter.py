@@ -334,3 +334,152 @@ class Qwen25VLAdapter(GeneratorAdapter):
             ok=bool(caption),
             error="" if caption else "EMPTY_GENERATION",
         )
+
+
+class SubprocessModernVLMAdapter(GeneratorAdapter):
+    """Cross-env Modern VLM adapter invoking `modern_vlm_worker.py` in isolated `uarcap_q2_modern_vlm` env.
+
+    Loads the Modern VLM ONCE per arm batch inside the isolated env, passes exact decoded 16 PIL frames
+    via lossless PNGs, enforces shared GPU lock, verifies returned processor-observed InputTrace on the
+    parent side, and guarantees full VRAM release upon worker process exit.
+    """
+
+    injection_interface = "PROMPT_TEXT_ONLY"
+
+    def __init__(
+        self,
+        cfg: ModernVLMConfig,
+        python_executable: str | None = None,
+        conda_env: str | None = "uarcap_q2_modern_vlm",
+        gpu_lock_path: Path | None = None,
+        gpu_uuid: str | None = None,
+        require_nvidia_smi_idle: bool = False,
+        subprocess_runner: Any | None = None,
+    ) -> None:
+        cfg.validate()
+        self.cfg = cfg
+        self.model_id = cfg.model_id
+        self.expected_checkpoint_sha256 = f"revision:{cfg.pinned_revision}"
+        self.python_executable = python_executable
+        self.conda_env = conda_env
+        self.gpu_lock_path = gpu_lock_path
+        self.gpu_uuid = gpu_uuid
+        self.require_nvidia_smi_idle = require_nvidia_smi_idle
+        self.subprocess_runner = subprocess_runner
+
+    def generate_one(
+        self,
+        query: QueryRecord,
+        packet: ArmInputPacket,
+        stage: PilotStage,
+        visual_input_sha256: str,
+        frame_indices: list[int],
+        frame_images: list[Any] | None = None,
+    ) -> GenerationOutput:
+        from .base import BatchItem
+
+        outs = self.generate_batch(
+            [BatchItem(query, packet, visual_input_sha256, frame_indices, frame_images)],
+            stage=stage,
+        )
+        return outs[0]
+
+    def generate_batch(
+        self,
+        items: list[Any],
+        stage: PilotStage,
+        work_dir: Path | None = None,
+        run_id: str = "",
+    ) -> list[GenerationOutput]:
+        from dataclasses import asdict
+        import tempfile
+        from ..common.gpu_lock import GPULockConfig
+        from ..common.gpu_runtime import run_isolated_gpu_subprocess
+        from ..common.io_utils import atomic_write_json, read_jsonl
+
+        if not items:
+            return []
+
+        worker_script = Path(__file__).resolve().parent / "modern_vlm_worker.py"
+        lock_cfg = (
+            GPULockConfig(
+                lock_path=self.gpu_lock_path,
+                run_id=f"modern_vlm_{items[0].packet.arm}",
+                gpu_uuid=self.gpu_uuid,
+                require_nvidia_smi_idle=self.require_nvidia_smi_idle,
+            )
+            if self.gpu_lock_path
+            else None
+        )
+
+        with tempfile.TemporaryDirectory(prefix="uarcap_vlm_") as td:
+            td_p = Path(td)
+            req_items: list[dict[str, Any]] = []
+            for idx, it in enumerate(items):
+                if not it.frame_images or len(it.frame_images) != self.cfg.num_frames:
+                    raise TraceVerificationError(
+                        f"SubprocessModernVLMAdapter requires {self.cfg.num_frames} decoded PIL frames for {it.query.query_id}"
+                    )
+                fdir = td_p / f"frames_{idx:04d}"
+                fdir.mkdir(parents=True, exist_ok=True)
+                fpaths: list[str] = []
+                for fi, im in enumerate(it.frame_images):
+                    fp = fdir / f"f{fi:02d}.png"
+                    im.save(fp, format="PNG")
+                    fpaths.append(str(fp))
+                req_items.append(
+                    {
+                        "query": it.query.to_dict(),
+                        "packet": it.packet.to_dict(),
+                        "visual_input_sha256": it.visual_input_sha256,
+                        "frame_indices": list(it.frame_indices),
+                        "frame_png_paths": fpaths,
+                    }
+                )
+
+            req_p = td_p / "vlm_request.json"
+            resp_p = td_p / "vlm_response.jsonl"
+            atomic_write_json(
+                req_p,
+                {
+                    "model_config": asdict(self.cfg),
+                    "stage": stage.value,
+                    "items": req_items,
+                },
+            )
+            proc = run_isolated_gpu_subprocess(
+                script_or_module=str(worker_script),
+                script_args=["--request-json", str(req_p), "--response-jsonl", str(resp_p)],
+                python_executable=self.python_executable,
+                conda_env=self.conda_env,
+                gpu_lock_cfg=lock_cfg,
+                subprocess_runner=self.subprocess_runner,
+            )
+            if proc.returncode != 0:
+                raise RuntimeError(f"Modern VLM worker failed (rc={proc.returncode}): {proc.stderr[-1000:]}")
+            if not resp_p.is_file():
+                raise RuntimeError(f"Modern VLM worker produced no response JSONL: {resp_p}")
+            rows = read_jsonl(resp_p)
+            if len(rows) != len(items):
+                raise RuntimeError(f"Modern VLM worker returned {len(rows)} rows for {len(items)} items")
+
+            outputs: list[GenerationOutput] = []
+            for it, r in zip(items, rows):
+                tr = InputTrace(**r["input_trace"])
+                verify_actual_input_trace(tr, it.packet, self.expected_checkpoint_sha256, it.visual_input_sha256)
+                outputs.append(
+                    GenerationOutput(
+                        query_id=str(r["query_id"]),
+                        dataset_id=str(r["dataset_id"]),
+                        stage=str(r["stage"]),
+                        arm=str(r["arm"]),
+                        model_id=str(r["model_id"]),
+                        caption=str(r["caption"]),
+                        input_trace=tr,
+                        wall_seconds=float(r.get("wall_seconds", 0.0)),
+                        peak_vram_bytes=int(r.get("peak_vram_bytes", 0)),
+                        ok=bool(r.get("ok", False)),
+                        error=str(r.get("error", "")),
+                    )
+                )
+            return outputs

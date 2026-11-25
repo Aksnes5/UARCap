@@ -19,11 +19,11 @@ OUT_DIR="${Q2_ROOT}/outputs/pilot_a1/${RUN_ID}"
 # 2. Run A0 preflight first
 bash "${SCRIPT_DIR}/run_preflight.sh" --verify-ckpt-sha
 
-# 3. Verify DREAM-1K video.zip is staged (Route 1 or Route 2)
+# 3. Verify DREAM-1K normalized dataset readiness (metadata + videos correspondence)
 "${PYTHON_BIN}" "${EXP_ROOT}/deployment/stage_assets.py" \
-  verify --data-root "${Q2_ROOT}/data" --asset dream1k_videos
+  check-ready --data-root "${Q2_ROOT}/data" --dataset dream1k
 
-# 4. Run real Pilot A1 pipeline (real VideoUFO X-CLIP retriever + frozen Video-LLaMA batch adapter + gpu.lock)
+# 4. Run real Pilot A1 pipeline (X-CLIP in frozen venv subprocess + frozen Video-LLaMA batch adapter + gpu.lock)
 "${PYTHON_BIN}" "${EXP_ROOT}/deployment/run_stage_cli.py" \
   --stage PILOT_A1 \
   --paths-config "${PATHS_CFG}" \
@@ -31,6 +31,7 @@ bash "${SCRIPT_DIR}/run_preflight.sh" --verify-ckpt-sha
   --out-dir "${OUT_DIR}" \
   --run-id "${RUN_ID}" \
   --auth-receipt "${AUTH_RECEIPT}" \
+  --xclip-subprocess \
   "$@"
 
 if [[ -f "${OUT_DIR}/run_receipt.json" ]]; then

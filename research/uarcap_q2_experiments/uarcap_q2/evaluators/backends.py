@@ -13,15 +13,19 @@ import urllib.request
 
 @dataclass
 class JudgeBackendConfig:
-    backend_type: str  # local_transformers | openai_compat | mock
+    backend_type: str  # local_transformers | vllm_offline | openai_compat | mock
     model_id: str
-    model_family: str  # e.g., mistral | gemma | llama | qwen | mock
+    model_family: str  # e.g., mistral | gemma | llama | gpt_oss | phi | qwen | mock
     local_model_path: str = ""
     api_base_url: str = ""
     api_key_env_var: str = "OPENAI_API_KEY"
     temperature: float = 0.0
     max_new_tokens: int = 512
     timeout_sec: int = 60
+    quantization: str = ""
+    gpu_memory_utilization: float = 0.85
+    max_model_len: int = 8192
+    enable_thinking: bool = False
 
 
 class JudgeBackend(ABC):
@@ -72,6 +76,128 @@ class LocalTransformersJudgeBackend(JudgeBackend):
             )
         gen = out_ids[:, inputs.input_ids.shape[1] :]
         return self._tokenizer.batch_decode(gen, skip_special_tokens=True)[0].strip()
+
+
+class LocalVLLMJudgeBackend(JudgeBackend):
+    """Offline vLLM text judge reusing existing BN vLLM 0.29.0 + local models (e.g., Mistral Small 3.2 24B)."""
+
+    def __init__(self, cfg: JudgeBackendConfig, vllm_engine: Any | None = None) -> None:
+        self.cfg = cfg
+        self._engine = vllm_engine
+
+    def _lazy_load(self) -> Any:
+        if self._engine is not None:
+            return self._engine
+        from vllm import LLM  # type: ignore[import-not-found]
+
+        kwargs: dict[str, Any] = {
+            "model": self.cfg.local_model_path,
+            "gpu_memory_utilization": self.cfg.gpu_memory_utilization,
+            "max_model_len": self.cfg.max_model_len,
+        }
+        if self.cfg.quantization:
+            kwargs["quantization"] = self.cfg.quantization
+        self._engine = LLM(**kwargs)
+        return self._engine
+
+    def complete_batch(self, prompts: list[tuple[str, str]]) -> list[str]:
+        if not prompts:
+            return []
+        engine = self._lazy_load()
+        convs = [
+            [{"role": "system", "content": sp}, {"role": "user", "content": up}]
+            for sp, up in prompts
+        ]
+        try:
+            from vllm import SamplingParams  # type: ignore[import-not-found]
+
+            sp_obj: Any = SamplingParams(temperature=self.cfg.temperature, max_tokens=self.cfg.max_new_tokens)
+        except ImportError:
+            sp_obj = {"temperature": self.cfg.temperature, "max_tokens": self.cfg.max_new_tokens}
+        outs = engine.chat(convs, sampling_params=sp_obj, chat_template_kwargs={"enable_thinking": self.cfg.enable_thinking})
+        res: list[str] = []
+        for o in outs:
+            txt = str(o.get("text", "")) if isinstance(o, dict) else str(o.outputs[0].text)
+            res.append(txt.strip())
+        return res
+
+    def complete(self, system_prompt: str, user_prompt: str) -> str:
+        return self.complete_batch([(system_prompt, user_prompt)])[0]
+
+
+class SubprocessTransformersJudgeBackend(JudgeBackend):
+    """Cross-env local LLM judge backend invoking `judge_worker.py` in isolated `uarcap_q2_evaluator` env."""
+
+    def __init__(
+        self,
+        cfg: JudgeBackendConfig,
+        python_executable: str | None = None,
+        conda_env: str | None = "uarcap_q2_evaluator",
+        gpu_lock_path: Any | None = None,
+        gpu_uuid: str | None = None,
+        require_nvidia_smi_idle: bool = False,
+        subprocess_runner: Any | None = None,
+    ) -> None:
+        self.cfg = cfg
+        self.python_executable = python_executable
+        self.conda_env = conda_env
+        self.gpu_lock_path = gpu_lock_path
+        self.gpu_uuid = gpu_uuid
+        self.require_nvidia_smi_idle = require_nvidia_smi_idle
+        self.subprocess_runner = subprocess_runner
+
+    def complete_batch(self, prompts: list[tuple[str, str]]) -> list[str]:
+        from dataclasses import asdict
+        from pathlib import Path
+        import tempfile
+        from ..common.gpu_lock import GPULockConfig
+        from ..common.gpu_runtime import run_isolated_gpu_subprocess
+        from ..common.io_utils import atomic_write_json, atomic_write_jsonl, read_jsonl
+
+        if not prompts:
+            return []
+        worker_script = Path(__file__).resolve().parent / "judge_worker.py"
+        lock_cfg = (
+            GPULockConfig(
+                lock_path=Path(self.gpu_lock_path),
+                run_id="text_judge_batch",
+                gpu_uuid=self.gpu_uuid,
+                require_nvidia_smi_idle=self.require_nvidia_smi_idle,
+            )
+            if self.gpu_lock_path
+            else None
+        )
+        with tempfile.TemporaryDirectory(prefix="uarcap_judge_") as td:
+            td_p = Path(td)
+            cfg_p = td_p / "judge_cfg.json"
+            req_p = td_p / "requests.jsonl"
+            resp_p = td_p / "responses.jsonl"
+            atomic_write_json(cfg_p, asdict(self.cfg))
+            atomic_write_jsonl(
+                req_p,
+                [
+                    {"request_id": f"r{i:06d}", "system_prompt": sp, "user_prompt": up}
+                    for i, (sp, up) in enumerate(prompts)
+                ],
+            )
+            proc = run_isolated_gpu_subprocess(
+                script_or_module=str(worker_script),
+                script_args=["--config-json", str(cfg_p), "--requests-jsonl", str(req_p), "--responses-jsonl", str(resp_p)],
+                python_executable=self.python_executable,
+                conda_env=self.conda_env,
+                gpu_lock_cfg=lock_cfg,
+                timeout_sec=max(300, self.cfg.timeout_sec * len(prompts)),
+                subprocess_runner=self.subprocess_runner,
+            )
+            if proc.returncode != 0:
+                raise RuntimeError(f"Text judge worker failed (rc={proc.returncode}): {proc.stderr[-1000:]}")
+            if not resp_p.is_file():
+                raise RuntimeError(f"Text judge worker produced no responses JSONL: {resp_p}")
+            by_id = {r["request_id"]: str(r["response"]) for r in read_jsonl(resp_p)}
+            return [by_id[f"r{i:06d}"] for i in range(len(prompts))]
+
+    def complete(self, system_prompt: str, user_prompt: str) -> str:
+        return self.complete_batch([(system_prompt, user_prompt)])[0]
 
 
 class OpenAICompatJudgeBackend(JudgeBackend):

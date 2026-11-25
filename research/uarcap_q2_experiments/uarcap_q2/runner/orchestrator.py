@@ -239,7 +239,18 @@ def run_natural_retrieval_stage(
         nonlocal resumed_skipped, newly_completed, failed_count
         nonlocal all_videos_ok, all_traces_ok, a0_verified, prefix_verified, oom_halted
 
-        # Phase 1: Decode frames ONCE per query + run retrieval + D rerank + verify arm packets
+        # Phase 1: Decode frames ONCE per query + run retrieval (batch prefetch if supported) + D rerank + verify arm packets
+        queries_needing_work = [
+            q
+            for q in selected_queries
+            if any((q.query_id, a.value, generator.model_id) not in existing_by_key for a in spec.arms)
+        ]
+        if queries_needing_work and hasattr(retriever, "prefetch_batch"):
+            retriever.prefetch_batch(queries_needing_work)
+            from ..common.gpu_runtime import release_gpu_memory
+
+            release_gpu_memory()
+
         pending_by_arm: dict[str, list[BatchItem]] = {a.value: [] for a in spec.arms}
         for q in selected_queries:
             q_arms_needed = [a for a in spec.arms if (q.query_id, a.value, generator.model_id) not in existing_by_key]

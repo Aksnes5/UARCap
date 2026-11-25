@@ -1,4 +1,4 @@
-# BN Server Configurable Path Bindings (Recovered from BN_DEPLOYMENT_PATH_BINDINGS.json)
+# BN Server Configurable Path Bindings (Recovered from BN_DEPLOYMENT_PATH_BINDINGS.json + Existing BN Model Inventory)
 # Copy to bn_paths.local.yaml on BN and adjust only if paths moved. NEVER commit tokens or secrets!
 
 host:
@@ -29,6 +29,28 @@ historical_frozen_assets:
   video_feature_dir: "/home/bn/videoufo_research/features/videollama_faithful_v2"
   torch_home: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache"
   hf_hub_cache: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache"
+
+existing_bn_modern_models:
+  # REUSE existing already-deployed BN models — NO new model downloads by default!
+  # Historical BN vLLM runtime: vLLM 0.29.0, PyTorch 2.13.0+cu130, CUDA 13.0, FP8 block-128 / Marlin W8A16.
+  no_new_model_downloads_default: true
+  existing_vllm_python: ""  # Set to existing BN vLLM 0.29.0 python executable OR use existing_vllm_conda_env
+  existing_vllm_conda_env: ""  # Optional conda env name hosting existing vLLM 0.29.0
+  local_vllm_api_base_url: "http://127.0.0.1:8000/v1"
+  primary_modern_vlm_id: "Qwen/Qwen3.8-27B-FP8"
+  primary_modern_vlm_dir: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.8-27B-FP8"
+  backup_modern_vlm_id: "Qwen/Qwen3.5-27B"
+  backup_modern_vlm_dir: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.5-27B"
+  # Existing cross-family text factuality evaluator candidates on BN (final choice decided by Pilot A2 calibration):
+  primary_judge_model_id: "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
+  primary_judge_family: "mistral"
+  primary_judge_dir: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Mistral-Small-3.2-24B"
+  backup_judge_dirs:
+    gemma_3_27b: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Gemma-3-27B"
+    llama_3_3_70b_w4a16: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Llama-3.3-70B-W4A16"
+    gpt_oss_20b: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/gpt-oss-20b"
+    phi_4_14b: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Phi-4-14B"
+    llama_3_1_8b: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Llama-3.1-8B"
 
 q2_writable_workspace:
   # All Q2 writes stay on writable NVMe '/' under /home/bn/uarcap_q2_runtime (NEVER touch /media/bn read-only mount!)

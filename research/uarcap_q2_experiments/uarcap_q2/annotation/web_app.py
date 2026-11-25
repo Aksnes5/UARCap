@@ -59,6 +59,7 @@ HTML_PAGE = r"""<!DOCTYPE html>
   <div class="toolbar">
     <span id="progressText">0 / 0</span>
     <span id="timerText">00:00</span>
+    <button class="btn" onclick="exportFile('json')">Export JSON</button>
     <button class="btn" onclick="exportFile('jsonl')">Export JSONL</button>
     <button class="btn" onclick="exportFile('csv')">Export CSV</button>
   </div>
@@ -184,10 +185,54 @@ function setClaimLabel(bcid, cid, normKey, lbl) {
 function addMissingClaim(bcid) {
   const txt = prompt('Enter omitted factual claim from this caption:');
   if (!txt || !txt.trim()) return;
+  const lbl = prompt('Enter label (Video-Supported / Video-Contradicted / Video-Unverifiable / Non-factual):', 'Video-Contradicted');
   const t = STATE.bundle.tasks[STATE.idx];
   const rec = ensureRec(t);
-  if (!rec.captions[bcid]) rec.captions[bcid] = { claims: {}, added_claims: [], core_covered: false, notes: '' };
-  rec.captions[bcid].added_claims.push({ text: txt.trim(), label: 'Video-Contradicted' });
+  if (!rec.captions[bcid]) rec.captions[bcid] = { claims: {}, added_claims: [], claim_revisions: [], core_covered: false, notes: '' };
+  rec.captions[bcid].added_claims.push({ text: txt.trim(), label: (lbl && lbl.trim()) || 'Video-Contradicted' });
+  saveCurrent(false);
+  render();
+}
+
+function splitClaim(bcid, cid) {
+  const part1 = prompt('Split claim — Part 1 text:');
+  if (!part1 || !part1.trim()) return;
+  const lbl1 = prompt('Part 1 label (Video-Supported / Video-Contradicted / Video-Unverifiable / Non-factual):', 'Video-Supported');
+  const part2 = prompt('Split claim — Part 2 text:');
+  if (!part2 || !part2.trim()) return;
+  const lbl2 = prompt('Part 2 label (Video-Supported / Video-Contradicted / Video-Unverifiable / Non-factual):', 'Video-Contradicted');
+  const t = STATE.bundle.tasks[STATE.idx];
+  const rec = ensureRec(t);
+  if (!rec.captions[bcid]) rec.captions[bcid] = { claims: {}, added_claims: [], claim_revisions: [], core_covered: false, notes: '' };
+  if (!rec.captions[bcid].claim_revisions) rec.captions[bcid].claim_revisions = [];
+  rec.captions[bcid].claim_revisions.push({
+    revision_type: 'split',
+    source_claim_ids: [cid],
+    resulting_claims: [
+      { claim_id: cid + '_S1', text: part1.trim(), label: (lbl1 && lbl1.trim()) || 'Video-Supported' },
+      { claim_id: cid + '_S2', text: part2.trim(), label: (lbl2 && lbl2.trim()) || 'Video-Contradicted' }
+    ]
+  });
+  saveCurrent(false);
+  render();
+}
+
+function mergeClaims(bcid, claimIdsCsv) {
+  const cids = prompt('Enter comma-separated claim IDs to merge:', claimIdsCsv);
+  if (!cids || !cids.trim()) return;
+  const mergedTxt = prompt('Enter merged claim text:');
+  if (!mergedTxt || !mergedTxt.trim()) return;
+  const lbl = prompt('Merged claim label (Video-Supported / Video-Contradicted / Video-Unverifiable / Non-factual):', 'Video-Supported');
+  const t = STATE.bundle.tasks[STATE.idx];
+  const rec = ensureRec(t);
+  if (!rec.captions[bcid]) rec.captions[bcid] = { claims: {}, added_claims: [], claim_revisions: [], core_covered: false, notes: '' };
+  if (!rec.captions[bcid].claim_revisions) rec.captions[bcid].claim_revisions = [];
+  const srcList = cids.split(',').map(x => x.trim()).filter(Boolean);
+  rec.captions[bcid].claim_revisions.push({
+    revision_type: 'merge',
+    source_claim_ids: srcList,
+    resulting_claims: [{ claim_id: srcList.join('+'), text: mergedTxt.trim(), label: (lbl && lbl.trim()) || 'Video-Supported' }]
+  });
   saveCurrent(false);
   render();
 }
@@ -239,12 +284,17 @@ function render() {
           const act = (cur === lbl) ? 'btn-active' : '';
           html += `<button class="btn ${bcls} ${act}" onclick="setClaimLabel('${c.blind_caption_id}','${cl.claim_id}','${cl.norm_key}','${lbl}')">${lbl}</button>`;
         }
+        html += `<button class="btn" onclick="splitClaim('${c.blind_caption_id}','${cl.claim_id}')">Split</button>`;
         html += `</div></div>`;
       }
       if (crec.added_claims && crec.added_claims.length) {
         html += `<div><em>Added claims:</em> ` + crec.added_claims.map(x => `${x.text} [${x.label}]`).join('; ') + `</div>`;
       }
-      html += `<div style="margin-top:6px;"><button class="btn" onclick="addMissingClaim('${c.blind_caption_id}')">+ Add Omitted Claim</button></div></div>`;
+      if (crec.claim_revisions && crec.claim_revisions.length) {
+        html += `<div><em>Revisions (split/merge):</em> ` + crec.claim_revisions.map(r => `${r.revision_type}(${r.source_claim_ids.join(',')})`).join('; ') + `</div>`;
+      }
+      const allCids = c.claims.map(x => x.claim_id).join(',');
+      html += `<div style="margin-top:6px;"><button class="btn" onclick="addMissingClaim('${c.blind_caption_id}')">+ Add Omitted Claim</button> <button class="btn" onclick="mergeClaims('${c.blind_caption_id}','${allCids}')">Merge Claims</button></div></div>`;
     }
     html += `<button class="btn btn-ok" onclick="saveCurrent(true); nav(1);">Mark Video Complete & Next &rarr;</button></div>`;
     work.innerHTML = html;
@@ -302,6 +352,15 @@ class AnnotationStore:
         atomic_write_json(self.state_file, self.saved)
         atomic_write_jsonl(self.save_dir / "annotations.jsonl", list(self.saved.values()))
 
+    def export_json_bytes(self) -> bytes:
+        payload = {
+            "annotator_id": self.annotator_id,
+            "bundle_version": self.bundle.get("bundle_version", ""),
+            "bundle_sha256": self.bundle.get("bundle_sha256", ""),
+            "records": list(self.saved.values()),
+        }
+        return json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8")
+
     def export_jsonl_bytes(self) -> bytes:
         lines = [json.dumps(r, ensure_ascii=False) for r in self.saved.values()]
         return ("\n".join(lines) + ("\n" if lines else "")).encode("utf-8")
@@ -356,6 +415,8 @@ def create_annotation_server(
                 fmt = parse_qs(parsed.query).get("fmt", ["jsonl"])[0]
                 if fmt == "csv":
                     self._send(HTTPStatus.OK, store.export_csv_bytes(), "text/csv; charset=utf-8")
+                elif fmt == "json":
+                    self._send(HTTPStatus.OK, store.export_json_bytes(), "application/json; charset=utf-8")
                 else:
                     self._send(HTTPStatus.OK, store.export_jsonl_bytes(), "application/x-ndjson; charset=utf-8")
                 return

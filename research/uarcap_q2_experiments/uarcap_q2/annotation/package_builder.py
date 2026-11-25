@@ -14,7 +14,7 @@ import random
 import re
 from typing import Any
 
-from ..common.io_utils import atomic_write_json, read_json
+from ..common.io_utils import atomic_write_json, primitive_hash, read_json
 
 FORBIDDEN_BLIND_KEYS = {
     "arm",
@@ -85,15 +85,34 @@ def build_blind_e2_annotation_package(
             blind_caps: list[dict[str, Any]] = []
             for c_idx, c in enumerate(cap_entries):
                 bcid = f"{blind_vid}_C{c_idx + 1:02d}"
-                claims_list = [str(cl).strip() for cl in c.get("claims", []) if str(cl).strip()]
-                claim_objs = [
-                    {
-                        "claim_id": f"{bcid}_F{fi + 1:02d}",
-                        "text": cl,
-                        "norm_key": normalize_claim_key(cl),
+                raw_claims = c.get("claims", [])
+                claim_objs = []
+                claim_id_map: dict[str, dict[str, Any]] = {}
+                for fi, cl_entry in enumerate(raw_claims):
+                    if isinstance(cl_entry, dict):
+                        cl_txt = str(cl_entry.get("claim", cl_entry.get("text", ""))).strip()
+                        auto_cid = str(
+                            cl_entry.get("claim_id")
+                            or f"{qid}::{c['arm']}::{c['model_id']}::C{fi + 1:02d}"
+                        )
+                    else:
+                        cl_txt = str(cl_entry).strip()
+                        auto_cid = f"{qid}::{c['arm']}::{c['model_id']}::C{fi + 1:02d}"
+                    if not cl_txt:
+                        continue
+                    blind_cid = f"{bcid}_F{len(claim_objs) + 1:02d}"
+                    claim_objs.append(
+                        {
+                            "claim_id": blind_cid,
+                            "text": cl_txt,
+                            "norm_key": normalize_claim_key(cl_txt),
+                        }
+                    )
+                    claim_id_map[blind_cid] = {
+                        "auto_claim_id": auto_cid,
+                        "claim_index": fi,
+                        "claim_text": cl_txt,
                     }
-                    for fi, cl in enumerate(claims_list)
-                ]
                 blind_caps.append(
                     {
                         "blind_caption_id": bcid,
@@ -107,6 +126,7 @@ def build_blind_e2_annotation_package(
                     "blind_video_id": blind_vid,
                     "arm": c["arm"],
                     "model_id": c["model_id"],
+                    "claim_id_map": claim_id_map,
                 }
 
             blind_tasks.append(
@@ -121,7 +141,8 @@ def build_blind_e2_annotation_package(
             )
 
         bundle = {
-            "schema_version": "uarcap-q2-blind-e2-v1",
+            "schema_version": "uarcap-q2-blind-e2-v2",
+            "bundle_version": "e2-v2",
             "annotator_id": ann_id,
             "instructions": (
                 "Phase 1: Watch the muted video ONLY and record 1-2 main core events before revealing captions. "
@@ -129,11 +150,21 @@ def build_blind_e2_annotation_package(
             ),
             "tasks": blind_tasks,
         }
+        bundle["bundle_sha256"] = primitive_hash({"annotator_id": ann_id, "tasks": blind_tasks})
         assert_blind_payload_clean(bundle)
         ann_path = atomic_write_json(out / f"blind_tasks_e2_{ann_id}.json", bundle)
         outputs[f"tasks_{ann_id}"] = ann_path
 
-    key_path = atomic_write_json(out / "blind_key_e2_DO_NOT_OPEN.json", {"mapping": key_map})
+    package_sha = primitive_hash(key_map)
+    key_path = atomic_write_json(
+        out / "blind_key_e2_DO_NOT_OPEN.json",
+        {
+            "schema_version": "uarcap-q2-blind-key-e2-v2",
+            "bundle_version": "e2-v2",
+            "package_sha256": package_sha,
+            "mapping": key_map,
+        },
+    )
     outputs["blind_key"] = key_path
     return outputs
 
@@ -190,7 +221,8 @@ def build_blind_e3_annotation_package(
             }
 
         bundle = {
-            "schema_version": "uarcap-q2-blind-e3-v1",
+            "schema_version": "uarcap-q2-blind-e3-v2",
+            "bundle_version": "e3-v2",
             "annotator_id": ann_id,
             "instructions": (
                 "Judge independently whether the anonymous caption semantically expresses Target A and/or Target B. "
@@ -198,11 +230,21 @@ def build_blind_e3_annotation_package(
             ),
             "tasks": blind_tasks,
         }
+        bundle["bundle_sha256"] = primitive_hash({"annotator_id": ann_id, "tasks": blind_tasks})
         assert_blind_payload_clean(bundle)
         ann_path = atomic_write_json(out / f"blind_tasks_e3_{ann_id}.json", bundle)
         outputs[f"tasks_{ann_id}"] = ann_path
 
-    key_path = atomic_write_json(out / "blind_key_e3_DO_NOT_OPEN.json", {"mapping": key_map})
+    package_sha = primitive_hash(key_map)
+    key_path = atomic_write_json(
+        out / "blind_key_e3_DO_NOT_OPEN.json",
+        {
+            "schema_version": "uarcap-q2-blind-key-e3-v2",
+            "bundle_version": "e3-v2",
+            "package_sha256": package_sha,
+            "mapping": key_map,
+        },
+    )
     outputs["blind_key"] = key_path
     return outputs
 
@@ -211,15 +253,102 @@ def unblind_annotations(
     saved_records: list[dict[str, Any]],
     blind_key_path: Path | str,
 ) -> list[dict[str, Any]]:
-    """Re-attach hidden query_id/arm/model_id strictly AFTER human annotation finishes."""
-    key_map = read_json(blind_key_path)["mapping"]
+    """Re-attach hidden query_id/arm/model_id/auto_claim_id strictly AFTER human annotation finishes.
+
+    Supports BOTH flat caption/task records AND raw web-UI AnnotationStore task exports (which nest
+    captions under `rec["captions"][blind_caption_id]` or E3 answers under `rec["e3"]`).
+    """
+    key_obj = read_json(blind_key_path)
+    key_map = key_obj["mapping"]
+    pkg_sha = key_obj.get("package_sha256", "")
     out: list[dict[str, Any]] = []
+
     for rec in saved_records:
+        # Handle raw web UI E2 video-level export (containing nested `captions` dict)
+        if rec.get("task_type") == "E2_FACT_AUDIT" and isinstance(rec.get("captions"), dict):
+            for bcid, crec in rec["captions"].items():
+                if bcid not in key_map:
+                    raise KeyError(f"Unknown blind caption ID during unblinding: {bcid}")
+                meta = key_map[bcid]
+                cid_map = meta.get("claim_id_map", {})
+                claims_by_auto_id: dict[str, str] = {}
+                for blind_cid, lbl in dict(crec.get("claims", {})).items():
+                    if blind_cid in cid_map:
+                        auto_cid = cid_map[blind_cid]["auto_claim_id"]
+                    else:
+                        auto_cid = blind_cid
+                    claims_by_auto_id[auto_cid] = str(lbl)
+                # Map source_claim_ids in split/merge revisions from blind_cid -> auto_cid
+                mapped_revs = []
+                for rev in crec.get("claim_revisions", []):
+                    src_mapped = [
+                        cid_map[sc]["auto_claim_id"] if sc in cid_map else sc
+                        for sc in rev.get("source_claim_ids", [])
+                    ]
+                    mapped_revs.append({**rev, "source_claim_ids": src_mapped})
+                out.append(
+                    {
+                        "blind_caption_id": bcid,
+                        "annotator_id": meta["annotator_id"],
+                        "query_id": meta["query_id"],
+                        "arm": meta["arm"],
+                        "model_id": meta["model_id"],
+                        "package_sha256": pkg_sha,
+                        "claim_labels_by_id": claims_by_auto_id,
+                        "added_claims": list(crec.get("added_claims", [])),
+                        "claim_revisions": mapped_revs,
+                        "core_events": list(rec.get("core_events", [])),
+                        "elapsed_sec": float(rec.get("elapsed_sec", 0.0)),
+                    }
+                )
+            continue
+
+        # Handle raw web UI E3 export (nesting answers under `rec["e3"]` and `task_key`)
+        if rec.get("task_type") == "E3_DUAL_TARGET" and isinstance(rec.get("e3"), dict):
+            bid = rec.get("blind_task_id") or rec.get("task_key")
+            if bid not in key_map:
+                raise KeyError(f"Unknown blind E3 task ID during unblinding: {bid}")
+            meta = key_map[bid]
+            e3 = rec["e3"]
+            a_val = int(bool(e3.get("target_a_expressed", False)))
+            b_val = int(bool(e3.get("target_b_expressed", False)))
+            neg_a = bool(e3.get("negated_a", False))
+            neg_b = bool(e3.get("negated_b", False))
+            if meta["target_a_role"] == "true":
+                yt, yc, nt, nc = a_val, b_val, neg_a, neg_b
+            else:
+                yt, yc, nt, nc = b_val, a_val, neg_b, neg_a
+            out.append(
+                {
+                    "blind_task_id": bid,
+                    "annotator_id": meta["annotator_id"],
+                    "query_id": meta["query_id"],
+                    "arm": meta["arm"],
+                    "model_id": meta["model_id"],
+                    "package_sha256": pkg_sha,
+                    "y_true": yt,
+                    "y_conflict": yc,
+                    "negated_true": nt,
+                    "negated_conflict": nc,
+                    "hedged": bool(e3.get("hedged", False)),
+                    "partial": bool(e3.get("partial", False)),
+                    "generic_only": bool(e3.get("generic_only", False)),
+                    "elapsed_sec": float(rec.get("elapsed_sec", 0.0)),
+                }
+            )
+            continue
+
         bid = rec.get("blind_caption_id") or rec.get("blind_task_id")
         if bid not in key_map:
             raise KeyError(f"Unknown blind ID during unblinding: {bid}")
         meta = key_map[bid]
-        merged = {**rec, **meta}
+        merged = {**rec, **meta, "package_sha256": pkg_sha}
+        if "claim_labels_by_id" in rec and isinstance(rec["claim_labels_by_id"], dict):
+            cid_map = meta.get("claim_id_map", {})
+            merged["claim_labels_by_id"] = {
+                (cid_map[k]["auto_claim_id"] if k in cid_map else k): str(v)
+                for k, v in rec["claim_labels_by_id"].items()
+            }
         # Map randomized target_a/target_b back to y_true / y_conflict for E3
         if "target_a_role" in meta:
             a_val = int(bool(rec.get("target_a_expressed", False)))

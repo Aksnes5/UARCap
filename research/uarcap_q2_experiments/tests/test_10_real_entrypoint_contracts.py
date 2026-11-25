@@ -454,8 +454,47 @@ def test_p05_p07_mock_cannot_unlock_real_stages_and_a2_a3_formal_b_chain(
         injected_modern_vlm=MockGeneratorAdapter(model_id="real_vlm_contract"),
         injected_e3_judge=MockJudgeBackend(model_family="mistral"),
     )
-    assert rc_a3 == 0 and rec_a3["status"] == StageRunStatus.REAL_RUNTIME_PASS.value
+    # A3 MUST pause at HUMAN_VALIDATION_PENDING (exit 10) after generation until E3 human verification returns!
+    assert rc_a3 == 10 and rec_a3["status"] == StageRunStatus.HUMAN_VALIDATION_PENDING.value
     assert rec_a3["n_e3_evaluated_captions"] == 8  # 1 clip x 4 arms x 2 models
+    assert Path(rec_a3["e3_blind_annotation_files"]["tasks_A1"]).is_file()
+
+    # Supply adjudicated E3 human annotations matching auto outputs -> A3 completes with REAL_RUNTIME_PASS!
+    auto_e3_rows = read_jsonl(tmp_path / "a3_out" / "e3_dual_endpoint_eval.jsonl")
+    e3_human_file = atomic_write_json(
+        tmp_path / "e3_human_adj.json",
+        {
+            "package_sha256": rec_a3["e3_package_sha256"],
+            "records": [
+                {
+                    "query_id": r["query_id"],
+                    "arm": r["arm"],
+                    "model_id": r["model_id"],
+                    "y_true": r["y_true"],
+                    "y_conflict": r["y_conflict"],
+                }
+                for r in auto_e3_rows
+            ],
+        },
+    )
+    args_a3_done = build_parser().parse_args(
+        [
+            "--stage", "PILOT_A3", "--paths-config", str(paths_a3),
+            "--stage-config", str(EXP_ROOT / "configs" / "pilot_a23_config.yaml"),
+            "--out-dir", str(tmp_path / "a3_out"), "--auth-receipt", str(auth_a3),
+            "--prior-a2", str(real_a2_pass), "--approved-e3-candidates", str(approved_p),
+            "--e3-human-annotations", str(e3_human_file), "--limit", "2",
+        ]
+    )
+    rc_a3_done, rec_a3_done = dispatch_stage(
+        args_a3_done,
+        injected_retriever=MockXCLIPRetriever(),
+        injected_videollama=MockGeneratorAdapter(model_id="real_vl_contract"),
+        injected_modern_vlm=MockGeneratorAdapter(model_id="real_vlm_contract"),
+        injected_e3_judge=MockJudgeBackend(model_family="mistral"),
+    )
+    assert rc_a3_done == 0 and rec_a3_done["status"] == StageRunStatus.REAL_RUNTIME_PASS.value
+    assert rec_a3_done["e3_human_validation_completed"] is True
 
     # D. Formal B executes ONLY when A1/A2/A3 REAL_RUNTIME_PASS + all frozen bindings match!
     formal_cfg = EXP_ROOT / "configs" / "formal_b_candidate.yaml"
@@ -581,14 +620,33 @@ def test_p05_pilot_a2_human_annotation_return_and_a3_unverified_e3_pause(
         yaml.safe_dump({"host": {}, "historical_frozen_assets": {"clips_full_tsv_path": str(tmp_path / "empty.tsv")}, "q2_writable_workspace": {"dream1k_dir": str(synthetic_dream1k_dir), "vidhalluc_dir": str(synthetic_vidhalluc_json.parent)}}),
         encoding="utf-8",
     )
-    # 1. Supply adjudicated human annotations to Pilot A2 -> completes calibration (INCONCLUSIVE when 0 errors, human_calibration_completed=True)
+    # 1. Run Pilot A2 first to generate auto-eval + blind bundle, then supply claim_id-aligned adjudicated human truth
+    args_a2_gen = build_parser().parse_args(
+        [
+            "--stage", "PILOT_A2", "--paths-config", str(paths_cfg),
+            "--stage-config", str(EXP_ROOT / "configs" / "pilot_a23_config.yaml"),
+            "--out-dir", str(tmp_path / "a2_cal"), "--auth-receipt", str(auth_a2),
+            "--prior-a1", str(real_a1), "--a1-predictions", str(a1_preds),
+        ]
+    )
+    rc_wait, rec_wait = dispatch_stage(args_a2_gen, injected_ref_judge=MockJudgeBackend(model_family="mistral"))
+    assert rc_wait == 10 and rec_wait["status"] == StageRunStatus.HUMAN_VALIDATION_PENDING.value
+
+    eval_rows = read_jsonl(tmp_path / "a2_cal" / "a2_ref_fact_eval.jsonl")
     human_ann = atomic_write_json(
         tmp_path / "human_adj.json",
-        [
-            {"query_id": r.query_id, "arm": arm, "model_id": "vl", "claim_labels": [VideoTruthLabel.VIDEO_SUPPORTED.value] * 5}
-            for r in recs[:3]
-            for arm in ("ARM_A0", "ARM_A7")
-        ],
+        {
+            "package_sha256": rec_wait["package_sha256"],
+            "records": [
+                {
+                    "query_id": ev["query_id"],
+                    "arm": ev["arm"],
+                    "model_id": ev["model_id"],
+                    "claim_labels_by_id": {c["claim_id"]: VideoTruthLabel.VIDEO_SUPPORTED.value for c in ev["claims"]},
+                }
+                for ev in eval_rows
+            ],
+        },
     )
     args_a2 = build_parser().parse_args(
         [
@@ -600,6 +658,7 @@ def test_p05_pilot_a2_human_annotation_return_and_a3_unverified_e3_pause(
     )
     rc_a2, rec_a2 = dispatch_stage(args_a2, injected_ref_judge=MockJudgeBackend(model_family="mistral"))
     assert rec_a2["human_calibration_completed"] is True
+    assert rec_a2["reused_existing_auto_eval_and_bundle"] is True
     assert rec_a2["status"] == StageRunStatus.INCONCLUSIVE.value and rc_a2 == 2
 
     # 2. Pilot A3 WITHOUT --approved-e3-candidates pauses cleanly at exit code 10 (HUMAN_VALIDATION_PENDING)!

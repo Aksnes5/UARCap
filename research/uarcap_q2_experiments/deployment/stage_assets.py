@@ -26,6 +26,7 @@ from uarcap_q2.datasets.asset_transfer import (
     split_file_into_chunks,
     verify_local_asset,
 )
+from uarcap_q2.datasets.data_preparer import prepare_dataset_pipeline, validate_dataset_readiness
 from uarcap_q2.datasets.dream1k import DREAM1K_EXPECTED_VIDEO_ZIP_BYTES, DREAM1K_HF_REPO
 from uarcap_q2.datasets.vidhalluc import VIDHALLUC_ACH_ZIP_BYTES, VIDHALLUC_HF_REPO
 
@@ -105,11 +106,51 @@ def main(argv: list[str] | None = None) -> int:
     p_im.add_argument("--manifest", type=Path, required=True)
     p_im.add_argument("--dest", type=Path, required=True)
 
+    p_prep = sub.add_parser("prepare", help="One-click dataset prepare: detect/import/download -> verify -> safe extract -> normalize -> validate")
+    p_prep.add_argument("--data-root", type=Path, required=True)
+    p_prep.add_argument("--dataset", choices=["dream1k", "vidhalluc"], required=True)
+    p_prep.add_argument("--allow-download", action="store_true", help="Permit stage-gated HTTP download if missing")
+    p_prep.add_argument("--transfer-manifest", type=Path, default=None, help="Route 2 chunk manifest to import before extracting")
+    p_prep.add_argument("--auth-receipt", type=Path, default=None)
+    p_prep.add_argument("--prior-a1", type=Path, default=None)
+    p_prep.add_argument("--prior-a2", type=Path, default=None)
+    p_prep.add_argument("--skip-archive-size-check", action="store_true")
+
+    p_rdy = sub.add_parser("check-ready", help="Check normalized dataset schema & metadata-to-video readiness")
+    p_rdy.add_argument("--data-root", type=Path, required=True)
+    p_rdy.add_argument("--dataset", choices=["dream1k", "vidhalluc"], required=True)
+
     args = ap.parse_args(argv)
     if args.cmd == "verify":
         res = verify_local_asset(args.data_root, KNOWN_ASSETS[args.asset])
         print(json.dumps(res, indent=2))
         return 0 if res["ok"] else 2
+    if args.cmd == "check-ready":
+        res = validate_dataset_readiness(args.dataset, args.data_root)
+        print(json.dumps(res, indent=2))
+        return 0 if res.get("ready") else 2
+    if args.cmd == "prepare":
+        priors = {}
+        if args.prior_a1:
+            priors[PilotStage.PILOT_A1.value] = args.prior_a1
+        if args.prior_a2:
+            priors[PilotStage.PILOT_A2.value] = args.prior_a2
+        try:
+            res = prepare_dataset_pipeline(
+                dataset_name=args.dataset,
+                data_root=args.data_root,
+                known_assets=KNOWN_ASSETS,
+                auth_receipt_path=args.auth_receipt,
+                prior_receipts=priors,
+                allow_download=args.allow_download,
+                transfer_manifest=args.transfer_manifest,
+                skip_size_check_for_local_archive=args.skip_archive_size_check,
+            )
+        except AuthorizationError as exc:
+            print(f"[STAGE_UNLOCK_BLOCKED] Dataset prepare '{args.dataset}' blocked: {exc}", file=sys.stderr)
+            return 3
+        print(json.dumps(res, indent=2))
+        return 0 if res.get("status") in ("READY", "ALREADY_READY") else 2
     if args.cmd == "download":
         if not args.confirm_download:
             print("Refusing download without --confirm-download (offline safety guard).", file=sys.stderr)

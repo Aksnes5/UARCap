@@ -343,3 +343,98 @@ class VideoUFOXCLIPRetriever(RetrieverAdapter):
                 )
             )
         return out
+
+
+class SubprocessVideoUFOXCLIPRetriever(RetrieverAdapter):
+    """Cross-env subprocess retriever invoking `xclip_worker.py` in the frozen X-CLIP/Video-LLaMA env.
+
+    Allows `uarcap_q2_cpu` to run real VideoUFO X-CLIP retrieval without installing CUDA in the CPU env,
+    with shared GPU lock enforcement and guaranteed VRAM release when the worker exits.
+    """
+
+    retriever_id = "videoufo_xclip_faithful_v2_subprocess"
+
+    def __init__(
+        self,
+        cfg: VideoUFOIndexConfig,
+        python_executable: str | None = None,
+        conda_env: str | None = None,
+        work_dir: Path | str | None = None,
+        gpu_lock_path: Path | None = None,
+        gpu_uuid: str | None = None,
+        require_nvidia_smi_idle: bool = False,
+        verify_feature_files_exist: bool = True,
+        subprocess_runner: Any | None = None,
+    ) -> None:
+        self.cfg = cfg
+        self.python_executable = python_executable
+        self.conda_env = conda_env
+        self.work_dir = Path(work_dir) if work_dir else None
+        self.gpu_lock_path = gpu_lock_path
+        self.gpu_uuid = gpu_uuid
+        self.require_nvidia_smi_idle = require_nvidia_smi_idle
+        self.verify_feature_files_exist = verify_feature_files_exist
+        self.subprocess_runner = subprocess_runner
+        self._cache: dict[str, list[RetrievalCandidate]] = {}
+        self._manifest: dict[str, Any] | None = None
+
+    def prefetch_batch(self, queries: list[QueryRecord]) -> dict[str, list[RetrievalCandidate]]:
+        import tempfile
+        from ..common.gpu_lock import GPULockConfig
+        from ..common.gpu_runtime import run_isolated_gpu_subprocess
+        from ..common.io_utils import read_json
+
+        missing = [q for q in queries if q.query_id not in self._cache]
+        if not missing:
+            return {q.query_id: self._cache[q.query_id] for q in queries}
+
+        worker_script = Path(__file__).resolve().parent / "xclip_worker.py"
+        lock_cfg = (
+            GPULockConfig(
+                lock_path=self.gpu_lock_path,
+                run_id="xclip_retriever_batch",
+                gpu_uuid=self.gpu_uuid,
+                require_nvidia_smi_idle=self.require_nvidia_smi_idle,
+            )
+            if self.gpu_lock_path
+            else None
+        )
+
+        with tempfile.TemporaryDirectory(prefix="uarcap_xclip_", dir=str(self.work_dir) if self.work_dir else None) as td:
+            req_p = Path(td) / "xclip_request.json"
+            resp_p = Path(td) / "xclip_response.json"
+            atomic_write_json(
+                req_p,
+                {
+                    "index_config": self.cfg.to_dict(),
+                    "verify_feature_files_exist": self.verify_feature_files_exist,
+                    "queries": [q.to_dict() for q in missing],
+                },
+            )
+            proc = run_isolated_gpu_subprocess(
+                script_or_module=str(worker_script),
+                script_args=["--request-json", str(req_p), "--response-json", str(resp_p)],
+                python_executable=self.python_executable,
+                conda_env=self.conda_env,
+                gpu_lock_cfg=lock_cfg,
+                subprocess_runner=self.subprocess_runner,
+            )
+            if proc.returncode != 0:
+                raise RuntimeError(f"X-CLIP worker failed (rc={proc.returncode}): {proc.stderr[-1000:]}")
+            if not resp_p.is_file():
+                raise RuntimeError(f"X-CLIP worker succeeded without writing response JSON: {resp_p}")
+            payload = read_json(resp_p)
+            self._manifest = payload.get("manifest")
+            for qid, cand_dicts in payload["results"].items():
+                self._cache[qid] = [RetrievalCandidate(**cd) for cd in cand_dicts]
+        return {q.query_id: self._cache[q.query_id] for q in queries}
+
+    def retrieve_top20(self, query: QueryRecord) -> list[RetrievalCandidate]:
+        if query.query_id not in self._cache:
+            self.prefetch_batch([query])
+        return self._cache[query.query_id]
+
+    def write_asset_manifest(self, out_path: Path | str) -> Path:
+        if self._manifest is None:
+            raise RuntimeError("No X-CLIP retrieval executed yet; manifest unavailable.")
+        return atomic_write_json(out_path, self._manifest)

@@ -1,6 +1,6 @@
 {
-  "manifest_version": "uarcap-q2-bn-deployment-v2",
-  "status": "OFFLINE_REAL_EXECUTION_IMPLEMENTED_AWAITING_BN_RUNTIME_VERIFICATION",
+  "manifest_version": "uarcap-q2-bn-deployment-v3",
+  "status": "OFFLINE_CODE_COMPLETE_AWAITING_BN_DEPLOYMENT",
   "protocol_commit": "761dea2c51ab07c083b88805168ad1757db53d67",
   "bn_live_status_verified_in_this_round": false,
   "historical_receipt_source": "research/uarcap_v06_followup_deployment/bn_readonly_receipts/BN_DEPLOYMENT_PATH_BINDINGS.json",
@@ -23,21 +23,41 @@
     "vicuna_7b_dir": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3",
     "frozen_videollama_python": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python"
   },
+  "reused_existing_bn_modern_models": {
+    "no_new_model_downloads_default": true,
+    "runtime": "Existing BN vLLM 0.29.0 / PyTorch 2.13.0+cu130 / CUDA 13.0 / FP8 block-128 & Marlin W8A16",
+    "primary_modern_vlm": {
+      "model_id": "Qwen/Qwen3.8-27B-FP8",
+      "path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.8-27B-FP8",
+      "shards": "66/66 (30.89 GB)"
+    },
+    "backup_modern_vlm": "Qwen/Qwen3.5-27B (existing BN model)",
+    "cancelled_default_download": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "primary_cross_family_judge_candidate": "Mistral Small 3.2 24B (existing BN model; final decision after Pilot A2 calibration)",
+    "backup_existing_bn_judges": [
+      "Gemma 3 27B",
+      "Llama 3.3 70B W4A16",
+      "gpt-oss-20b",
+      "Phi-4 14B",
+      "Llama 3.1 8B"
+    ]
+  },
   "isolated_environments": {
     "env_1_videollama_frozen": "READ-ONLY legacy venv (Python 3.9.13, Torch 2.1.2+cu121, Transformers 4.28.0) — NEVER upgrade",
     "env_2_cpu_analysis": "configs/envs/env_cpu_analysis.yaml (uarcap_q2_cpu)",
-    "env_3_text_evaluator": "configs/envs/env_text_evaluator.yaml (uarcap_q2_evaluator — install ONLY when A2 unlocks)",
-    "env_4_modern_vlm": "configs/envs/env_modern_vlm.yaml (uarcap_q2_modern_vlm — install ONLY when A3 unlocks)"
+    "env_3_existing_bn_vllm": "Existing BN vLLM 0.29.0 / PyTorch 2.13.0+cu130 / CUDA 13.0 environment (reused for Qwen3.8-27B-FP8 & text judges via subprocess/HTTP)"
   },
   "entrypoints": {
     "bootstrap": "bash scripts/bootstrap_bn.sh",
     "preflight": "bash scripts/run_preflight.sh",
+    "prepare_data": "python deployment/stage_assets.py prepare --data-root /home/bn/uarcap_q2_runtime/data --dataset <dream1k|vidhalluc>",
     "pilot_a01": "bash scripts/run_pilot_a01.sh",
     "pilot_a2": "bash scripts/run_pilot_a2.sh",
     "pilot_a3": "bash scripts/run_pilot_a3.sh",
     "formal_b_guarded": "bash scripts/run_formal_b.sh",
     "status": "bash scripts/status.sh",
     "resume": "bash scripts/resume.sh <pilot_a01|pilot_a2|pilot_a3|formal_b>",
-    "annotation_ui": "python scripts/launch_annotation_ui.py --bundle <blind_tasks.json> --save-dir <save_dir>"
+    "annotation_ui": "python scripts/launch_annotation_ui.py --bundle <blind_tasks.json> --save-dir <save_dir>",
+    "adjudicate": "python scripts/adjudicate_annotations.py --task <e2|e3> --ann1 <a1.json> --ann2 <a2.json> --blind-key <key.json> --out-dir <out>"
   }
 }

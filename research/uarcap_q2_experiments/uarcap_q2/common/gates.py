@@ -91,7 +91,12 @@ def check_public_release_compliance(file_paths: list[Path | str], allow_fixture_
     return violations
 
 
-def _verify_real_prior_receipt(stage_name: str, receipt_path: Path | str | None, require_human_calibration: bool = False) -> dict[str, Any]:
+def _verify_real_prior_receipt(
+    stage_name: str,
+    receipt_path: Path | str | None,
+    require_human_calibration: bool = False,
+    require_e3_human_validation: bool = False,
+) -> dict[str, Any]:
     if not receipt_path or not Path(receipt_path).is_file():
         raise AuthorizationError(f"Blocked: missing prerequisite receipt for {stage_name}.")
     pr = read_json(receipt_path)
@@ -110,6 +115,10 @@ def _verify_real_prior_receipt(stage_name: str, receipt_path: Path | str | None,
     if require_human_calibration and pr.get("human_calibration_completed") is not True:
         raise AuthorizationError(
             f"Blocked: prerequisite {stage_name} has not completed real human calibration (human_calibration_completed!=True)."
+        )
+    if require_e3_human_validation and pr.get("e3_human_validation_completed") is not True:
+        raise AuthorizationError(
+            f"Blocked: prerequisite {stage_name} has not completed E3 human validation (e3_human_validation_completed!=True)."
         )
     return pr
 
@@ -181,7 +190,9 @@ def verify_stage_authorization(
         _verify_real_prior_receipt(
             PilotStage.PILOT_A2.value, priors.get(PilotStage.PILOT_A2.value), require_human_calibration=True
         )
-        _verify_real_prior_receipt(PilotStage.PILOT_A3.value, priors.get(PilotStage.PILOT_A3.value))
+        _verify_real_prior_receipt(
+            PilotStage.PILOT_A3.value, priors.get(PilotStage.PILOT_A3.value), require_e3_human_validation=True
+        )
 
         return {
             "stage": stg.value,

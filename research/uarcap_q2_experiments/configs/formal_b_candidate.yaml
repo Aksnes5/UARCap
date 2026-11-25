@@ -14,8 +14,8 @@ parameters_pending_pilot_freeze:
   e2_val_human_n: "PENDING_PILOT_A2_ERROR_RATE (50 baseline or 80 adaptive IPW)"
   vidhalluc_formal_n: "PENDING_PILOT_A3_PASS_RATE (planned 150-180)"
   e3_bridge_enabled: "PENDING_NATURAL_CONFLICT_SCREENING (enable only if >= 25 clean pairs)"
-  frozen_modern_vlm_id: "PENDING_PILOT_A3_SMOKE"
-  frozen_cross_family_judge_id: "PENDING_PILOT_A2_CALIBRATION"
+  frozen_modern_vlm_id: "PENDING_PILOT_A3_SMOKE (existing BN Qwen/Qwen3.8-27B-FP8 primary, Qwen/Qwen3.5-27B backup)"
+  frozen_cross_family_judge_id: "PENDING_PILOT_A2_CALIBRATION (existing BN Mistral Small 3.2 24B primary)"
   frozen_judge_prompt_sha256: "PENDING_PILOT_A2_FREEZE"
   two_phase_correction_primary_or_sensitivity: "PENDING_PILOT_A2_DECISION"
 

@@ -1,28 +1,29 @@
-# UARCap Q2 离线真实执行链整改报告（OFFLINE REAL EXECUTION INTEGRATION REPORT）
+# UARCap Q2 离线工程最终交付与真实执行链整合报告
 
-> **最终状态**：`OFFLINE_REAL_EXECUTION_IMPLEMENTED_AWAITING_BN_RUNTIME_VERIFICATION`  
-> **整改分支**：`antigravity/uarcap-q2-real-execution-integration`（基于 `a00f8f274fa54b47dd765bb92bd8fb8e7f704fcc` 独立切出，保留全部历史提交与冻结资产）  
-> **重要声明**：全部 7 项 P0（P0-1 至 P0-7）真实执行链缺陷均已在 Windows CPU 离线环境下彻底修复，并通过真实入口契约测试与冻结历史黄金回归测试；但**所有涉及 RTX A6000 48GB GPU 推理、百万级 VideoUFO 索引加载、真实模型吞吐与人工标注的事项均仍待 BN 服务器恢复后现场实测**，绝不将 CPU 契约测试等同于真实 GPU 验证。
+- **当前工程状态**：**`OFFLINE_CODE_COMPLETE_AWAITING_BN_DEPLOYMENT`**
+- **交付分支**：`antigravity/uarcap-q2-final-offline-handoff`
+- **继承基线**：完整保留 `a00f8f27` 与 `bde76688` 及所有历史冻结提交、v0.8 论文与科研协议。
+- **本轮验证范围**：Windows 轻薄本离线静态/CPU 单元/端到端/真实入口契约/历史黄金回归测试（**59 passed, 0 failed, 0 skipped**）；未连接 BN、未执行 GPU 推理、未下载大模型权重或完整视频压缩包。
 
----
+## 本轮最终收尾补齐内容摘要
 
-## 一、本轮整改的 7 项核心实质成果
-
-1. **P0-1（删除真实 CLI 假成功占位）**：彻底移除 `deployment/run_stage_cli.py` 中 `if not args.cpu_mock: print("READY_FOR_BN_REAL_ADAPTER"); return 0` 占位路径，改为真实分发至 `PILOT_A0`、`PILOT_A1`、`PILOT_A2`、`PILOT_A3`、`FORMAL_B` 及 `E1`，缺失资产返回退出码 `2`（`FAILED`）、授权不足返回退出码 `3`（`BLOCKED`）、等待人工核验返回退出码 `10`（`HUMAN_VALIDATION_PENDING`），彻底杜绝未产生结果却静默退出 0 的假成功。
-2. **P0-2（接通真实 VideoUFO X-CLIP 检索器 + 历史黄金回归测试）**：
-   - 从冻结历史提交 `52b5ed3a`（`scripts/extract_query_features_v2.py` 与 `scripts/make_external_retrieval_test.py`）1:1 恢复真实实现至 `uarcap_q2/retrieval/videoufo_retriever.py`（`VideoUFOXCLIPRetriever` + `BNXCLIPBackend`），涵盖 16 中心帧预处理、VideoUFO.csv + `clips_full.tsv` strip-only 分组与字典序代表 clip 排序、`videoufo_brief_text_fp16.npy` mmap 分块（100,000）查询条件化 `VideoSpecificPrompt` 打分、top-20 候选提取与代表 `.pt` 特征校验；
-   - 修复了 `reranker.py` 与冻结历史脚本的两处隐蔽偏差：`rouge_l_f1` 改为精确 `a.lower().split()`、D 排序平局打破改为严格按原始检索位次 `(-q[i], i)`；并在 50 条历史冻结 MSR-VTT 查询（及内置 3 条永久回归 fixture `fixtures/golden_historical_d_rerank_sample.json`）上验证排序、ROUGE-L 分数（误差 `< 1e-12`）、代表 clip 与相似度权重 **100% 精确一致**。
-3. **P0-3（Video-LLaMA 批量执行、18 列 TSV 修复与真实检查点槽位绑定）**：
-   - 核查冻结 `vision_language_tsv.py` 第 311 行（`len(row) >= decoder_num_frames + 2`，帧从 `row[2:]` 开始），修复此前 17 列 TSV 潜在退化为单图的隐患，改为精确 18 列（`qid \t 16 \t f0 ... f15`）；
-   - 为 `GeneratorAdapter` 升级一等 `generate_batch(...)`，并在 `FrozenVideoLLaMAAdapter` 实现真实批量执行（每臂仅加载一次 7B 模型，彻底消除 `NotImplementedError`）；
-   - 依据冻结 `eval_evcap` 的 `outpath.replace('eval','train')` 加载规则，强制绑定并校验 `out_rel.replace('eval','train')/FROZEN_CHECKPOINT_NAME` 指向规范检查点且 SHA-256 匹配，同时通过只读 wrapper 挂载前向 hook 采集真实 `evcap_forward_trace_{arm}.jsonl`。
-4. **P0-4（现代 VLM 实际视频帧传递与真实 Processor 观测 Trace）**：
-   - 修复 `orchestrator.py` 将真实解码的 16 张 `PIL.Image` 帧经 `BatchItem.frame_images` 传入 `Qwen25VLAdapter`；缺帧立即抛出 `TraceVerificationError`，绝不再静默传 `videos=None`；
-   - 显式区分 `PROMPT_TEXT_ONLY`（`visual_evidence_ids=[]`）与旧模型 `BIMODAL_CROSS_GATING`，实际应用 RNG 种子、校验本地 `model_revision.json`，并从 processor 实际接收帧与返回张量提取 `actual_frames_sha256`、`pixel_values_shape`/`sha256`、`input_ids_len`/`sha256` 写入 `InputTrace`。
-5. **P0-5（统一状态机与 Mock-vs-Real 彻底隔离）**：
-   - 引入 7 态 `StageRunStatus`（`MOCK_PASS`、`REAL_RUNTIME_PASS`、`HUMAN_VALIDATION_PENDING`、`INCONCLUSIVE`、`FAILED`、`BLOCKED`、`SCIENTIFIC_PROTOCOL_PENDING`）；
-   - `MOCK_PASS` **永久无法解锁**任何真实后续阶段或数据下载；A2 需 A1 `REAL_RUNTIME_PASS`，A3 需 A2 `REAL_RUNTIME_PASS` 且 `human_calibration_completed=True`；`FORMAL_B` 强制校验 3 份真实前置收据与 4 项冻结文件 SHA-256 绑定，且 `run_formal_b.sh` 完整透传全部前置参数至内部 CLI；`stage_assets.py download` 真正执行 `stage_unlock` 授权校验。
-6. **P0-6（Trace-Before-Commit 与配置绑定断点续跑）**：
-   - 仅当 `verify_actual_input_trace` 通过后才允许成对原子提交 `predictions.jsonl` + `input_traces.jsonl`（附 `run_config_fingerprint` 与 `trace_sha256`）；Trace 校验失败绝不写入成功记录；
-   - 续跑重新校验每行完整性（截断、未成对、配置/模型指纹变更一律抛出 `ResumeIntegrityError`），精确比对预期 `query × arm × model` 集合（报告缺失/重复/多余），并在**完整全量运行记录**上计算最终 `empty_output_rate` 等指标。
-7. **P0-7（A2 / A3 / Formal B / E1 / E3-Bridge 全链路串联）**：新增 `uarcap_q2/runner/stage_pipelines.py`，打通 A1→A2（含人工等待停顿与回流校准）→A3（含未审核 VidHalluc 停顿与双模型四臂评测）→Formal B（E2+E3+可选 E3-Bridge+最终统计）及独立 E1 命令行入口。
+1. **模型选型修正与既有 BN 资产复用（取消默认下载 `Qwen2.5-VL-7B-Instruct`）**
+   - 新增 [`uarcap_q2/generators/qwen3_vllm_adapter.py`](uarcap_q2/generators/qwen3_vllm_adapter.py) 与 [`uarcap_q2/generators/qwen3_vllm_worker.py`](uarcap_q2/generators/qwen3_vllm_worker.py)：面向既有 **`Qwen/Qwen3.8-27B-FP8`**（`/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.8-27B-FP8`，备用既有 `Qwen/Qwen3.5-27B`）的 vLLM 0.29.0 多模态视频推理适配器，支持 16 帧真实输入、短字幕对齐、检索文本注入（`PROMPT_TEXT_ONLY`）、显式关闭/控制 thinking（默认 `enable_thinking=False` + `<think>` 剥离审计）、本地分片完整性检查、离线 `vllm_offline` / 本地 `vllm_openai_http` / 跨环境 `vllm_subprocess` 三种执行模式及完整 `InputTrace`。
+   - 跨家族文本裁判默认复用既有 BN 模型（首选 **`Mistral Small 3.2 24B`**，备用 `Gemma 3 27B`、`Llama 3.3 70B W4A16`、`gpt-oss-20b`、`Phi-4 14B`、`Llama 3.1 8B`），新增 `LocalVLLMJudgeBackend` 与 `vllm_subprocess` 跨环境调用入口。
+   - 同步更新 `configs/bn_paths.example.yaml`、`configs/pilot_a23_config.yaml`、`configs/formal_b_candidate.yaml`、`DATA_AND_MODEL_ASSET_MANIFEST.json`、`BN_DEPLOYMENT_MANIFEST.json` 与 `deployment/run_stage_cli.py`。
+2. **A3 人工评价完整闭环（4.1）**
+   - `run_pilot_a3_pipeline()` 生成双模型 E3 字幕并完成盲法评测后，自动导出 E3 匿名双目标标注包与现代 VLM DREAM-1K 匿名标注包，并**强制停于 `HUMAN_VALIDATION_PENDING`（退出码 10）**，绝不因生成成功而提前通过。
+   - 重入 A3 时自动复用既有评测与盲法映射，调用 `audit_e3_evaluator_agreement()` 与 `audit_cross_model_dream1k_bias()` 完成独立 `Y_true` / `Y_conflict` 一致性、`Con vs Neu` 差分偏置与跨模型 DREAM-1K 偏置核验；`gates.py` 同步要求 Formal B 校验 A3 `e3_human_validation_completed == True`。
+3. **A2 人工核验严格对账与盲法包复用（4.2）**
+   - 废除 `zip(auto_r["claims"], h_labels)` 位置截断对齐，改为 `reconcile_a2_human_and_auto()` 基于稳定 `claim_id` 与 `package_sha256` 严格对账，拒绝缺失/重复 `claim_id` 与版本失配，原生支持遗漏命题补录（`added_claims`）与命题拆分/合并修订（`claim_revisions`）。
+   - 重入 A2 导入人工真值时自动校验 `a1_predictions_sha256` 并复用既有 `a2_ref_fact_eval.jsonl` 与盲法映射，不重跑裁判、不破坏人工对应关系。
+4. **正式方案 B 统计全量接通与无零值吞错（4.3）**
+   - 彻底消除 `or 0.0` 解析失败转零问题，所有 E2/E3 统计均保留缺失状态并输出逐臂缺失率与 `parse_failed_ids`。
+   - 完整接入：E2 `A1-A0` / `A7-A1` / `A7-A0`（`n_contra_ref`、`n_entail_ref`、`r_core_ref`、`p_unment_ref`、`n_unment_ref` + Holm）、E2 跨模型 DiD、E2 独立人工验证集盲包与两阶段 IPW 误差校正、E3 主比较与全部 5 组次要干预比较及跨模型 DiD、MSR-VTT 历史输出桥接，以及 `E3-Bridge` 达标时的**真实双模型四臂执行与 McNemar 统计**。
+5. **正式样本隔离与分层概率抽样（4.4）**
+   - 新增 [`uarcap_q2/datasets/formal_sampling.py`](uarcap_q2/datasets/formal_sampling.py)：实现参数化分层概率抽样、独立 E2 验证集抽样与纳入概率记录、Pilot 永久排除、DREAM-1K 疑似近重复排除、VidHalluc 同来源隔离与 Pilot 候选来源排除，以及带 SHA-256 的正式分析清单冻结。
+6. **跨环境模型调用接口、共享 GPU 锁与显存释放（4.5）**
+   - 新增 [`uarcap_q2/common/gpu_runtime.py`](uarcap_q2/common/gpu_runtime.py)、[`uarcap_q2/retrieval/xclip_worker.py`](uarcap_q2/retrieval/xclip_worker.py)（`SubprocessVideoUFOXCLIPRetriever`）、[`uarcap_q2/generators/qwen3_vllm_worker.py`](uarcap_q2/generators/qwen3_vllm_worker.py)、[`uarcap_q2/generators/modern_vlm_worker.py`](uarcap_q2/generators/modern_vlm_worker.py)（`SubprocessModernVLMAdapter`）与 [`uarcap_q2/evaluators/judge_worker.py`](uarcap_q2/evaluators/judge_worker.py)（`SubprocessTransformersJudgeBackend`），统一封装共享 GPU 锁、进程间 JSON/JSONL/PNG 交换与任务间 `release_gpu_memory()` 显存释放。
+7. **一键自动化数据准备与双人人工核验闭环（4.6 + 五）**
+   - 新增 [`uarcap_q2/datasets/data_preparer.py`](uarcap_q2/datasets/data_preparer.py) 与 `deployment/stage_assets.py prepare|check-ready`，串联文件识别/受控下载/分卷导入、校验、防 zip-slip 安全解压、目录规范化与元数据-视频对应校验。
+   - 完善本地网页标注工具（新增命题 Split/Merge 与 `Export JSON`）并新增一键双人仲裁工具 [`scripts/adjudicate_annotations.py`](scripts/adjudicate_annotations.py)（支持 E2 与 E3 全流程，零手工改 JSON）。

@@ -1,19 +1,20 @@
-# 真实入口契约测试结果报告（REAL ENTRYPOINT CONTRACT TEST RESULTS）
+# 真实入口契约与离线收尾测试结果报告（REAL ENTRYPOINT CONTRACT TEST RESULTS）
 
-- **执行命令**：`pytest -v research/uarcap_q2_experiments/tests`
-- **总计结果**：**`52 passed, 0 failed, 0 skipped`**（含原 43 项单元测试/端到端/故障注入/`bash -n` 测试 + 本轮新增 **9 项真实入口契约与冻结黄金回归测试** `tests/test_10_real_entrypoint_contracts.py`）
-- **重要边界**：本轮 9 项契约测试通过真实 `run_stage_cli.dispatch_stage`、真实 `VideoUFOXCLIPRetriever`、真实 `FrozenVideoLLaMAAdapter.generate_batch`、真实 `Qwen25VLAdapter` 与真实状态机运行，底层硬件调用使用可注入 CPU fake backend（fake X-CLIP / fake EVCap subprocess / fake processor & model / fake judge），**属于 CPU 工程契约验证，绝不等同于 BN RTX A6000 真实 GPU 验证**。
+- **执行命令**：`pytest -q research/uarcap_q2_experiments/tests`
+- **总计结果**：**`59 passed, 0 failed, 0 skipped`**
+  - 既有 43 项单元/端到端/故障注入/`bash -n` 测试（`test_01`–`test_09`）
+  - 既有 9 项真实入口契约与历史黄金回归测试（`test_10_real_entrypoint_contracts.py`，已同步升级适配 A2 稳定 `claim_id` 与 A3 人工核验停机节点）
+  - 本轮新增 **7 项离线收尾回归测试**（`test_11_final_handoff_closures.py`）
+- **明确边界**：以上测试在 Windows CPU 轻薄本完成，验证离线工程逻辑、数据契约、跨环境进程接口与统计计算正确性；**绝不等同于 BN RTX A6000 真实 GPU 环境运行验证**。
 
-## 本轮新增 9 项真实入口契约测试明细
+## 本轮新增 7 项回归测试明细（`tests/test_11_final_handoff_closures.py`）
 
-| # | 测试用例（`tests/test_10_real_entrypoint_contracts.py`） | 覆盖 P0 | 验证内容 | 实测结果 |
+| # | 测试用例 | 覆盖任务 | 验证内容 | 结果 |
 |---:|---|---|---|---|
-| 1 | `test_p02_golden_historical_d_rerank_exact_match` | P0-2 | 以冻结提交 `52b5ed3a` 的 3 条真实历史 MSR-VTT 查询（`video7010/7011/7012`）验证 D 共识重排的 top-7 顺序、ROUGE-L 分数（`<1e-12`）、代表 clip 与相似度完全一致 | **PASSED** |
-| 2 | `test_p02_real_videoufo_xclip_retriever_contract` | P0-2 | 真实 `VideoUFO.csv` + `clips_full.tsv` + `fp16.npy` mmap + 16 中心帧预处理 + fake X-CLIP `VideoSpecificPrompt` 分块检索 + `.pt` 特征校验 + `retrieval_manifest.json` 落盘 | **PASSED** |
-| 3 | `test_p01_p03_real_pilot_a1_batch` | P0-1, P0-3 | 验证真实 CLI 缺失资产返回退出码 2（绝不打印 `READY_FOR_BN_REAL_ADAPTER`）；再经真实 `PILOT_A1` 分发调用 `VideoUFOXCLIPRetriever` + `FrozenVideoLLaMAAdapter.generate_batch`（验证 18 列 TSV、绑定 `eval->train` 检查点槽位、每臂仅 1 次 subprocess 加载 7B、前向 hook trace、`REAL_RUNTIME_PASS`） | **PASSED** |
-| 4 | `test_p04_modern_vlm_real_frames_processor_telemetry_and_e3_parity` | P0-4 | 经真实 `Qwen25VLAdapter` + fake processor/model 验证：缺帧报错拒绝；16 张解码 PIL 帧真实送达 processor；捕获 `pixel_values_videos` 形状/哈希与 `input_ids` 长度/哈希；`PROMPT_TEXT_ONLY` 不伪造视觉证据；E3 四臂视觉张量哈希完全一致 | **PASSED** |
-| 5 | `test_p05_p07_mock_cannot_unlock_real_stages_and_a2_a3_formal_b_chain` | P0-5, P0-7 | 验证 `MOCK_PASS` 无法解锁真实 A2；`stage_assets.py download` 强制阻断未授权 VidHalluc 下载；真实 A2 读取 A1 输出并停在退出码 10（`HUMAN_VALIDATION_PENDING`）；A3 拒绝未校准 A2；A3 经人工批准候选执行双模型四臂 + Blind E3 评测；Formal B 校验全部真实前置收据与冻结哈希后跑通并输出统计 | **PASSED** |
-| 6 | `test_p06_trace_failure_never_commits_and_resume_rejects_truncation_and_config_drift` | P0-6 | Trace 校验失败时 0 行写入 `predictions.jsonl`/`input_traces.jsonl`（仅写 `failures.jsonl`）；更换 checkpoint 续跑抛出 `ResumeIntegrityError`；截断 JSONL 续跑抛出 `ResumeIntegrityError` | **PASSED** |
-| 7 | `test_p07_e1_cli_entrypoint` | P0-7 | 真实 `run_stage_cli.py --stage E1` 读取历史 CIDEr JSON 并落盘 `e1_report.json` | **PASSED** |
-| 8 | `test_p06_full_run_resume_metrics_cover_earlier_empty_output` | P0-6 | 第 1 次运行有空输出、第 2 次续跑新增正常输出后，最终 `empty_output_rate` 覆盖全量运行（`0.50` → `FAILED`），绝不只算新增切片 | **PASSED** |
-| 9 | `test_p05_pilot_a2_human_annotation_return_and_a3_unverified_e3_pause` | P0-5, P0-7 | 验证 A2 接收人工真值回流完成校准并标记 `human_calibration_completed=True`；验证 A3 未提供人工批准候选时安全停于退出码 10（`HUMAN_VALIDATION_PENDING`）而非运行未核验干扰项 | **PASSED** |
+| 1 | `test_qwen3_8_27b_fp8_vllm_multimodal_adapter_thinking_control_and_trace` | 模型选型修正 | `Qwen3.8-27B-FP8` / `Qwen3.5-27B` 的 `vllm_offline` + `vllm_openai_http` 适配、16 帧强校验、本地分片完整检查、关闭 thinking 与 `<think>` 剥离审计、`PROMPT_TEXT_ONLY` 零视觉泄漏与 E3 四臂视觉一致性 | **PASSED** |
+| 2 | `test_a2_strict_claim_id_reconciliation_omissions_split_merge_and_bundle_reuse` | 4.2 | A2 重入零重跑裁判并复用既有盲法映射；拒绝缺失/重复 `claim_id` 与错误 `package_sha256`；准确统计遗漏命题补录（`added_claims`）与拆分修订（`claim_revisions`） | **PASSED** |
+| 3 | `test_a3_e3_differential_bias_detection_and_cross_model_dream1k_audit` | 4.1 | `audit_e3_evaluator_agreement` 准确检出 `Con vs Neu` 差分偏置并判 `FAIL`；完整 A3 流程停于退出码 10 并在导入 E3 与跨模型 DREAM-1K 人工真值后产出完整校验报告 | **PASSED** |
+| 4 | `test_formal_b_sampling_full_stats_no_zero_coercion_e3_bridge_and_msrvtt` | 4.3, 4.4 | 分层概率抽样、近重复排除、Pilot 与 VidHalluc 同来源隔离；解析失败保留缺失不转 `0.0`；完整计算 `A1-A0`/`A7-A1`/Core/Unmentioned/两阶段 IPW/E3 次要比较/真实 E3-Bridge 执行与 MSR-VTT 历史桥接 | **PASSED** |
+| 5 | `test_isolated_xclip_and_judge_subprocess_interfaces_and_gpu_lock` | 4.5 | `SubprocessVideoUFOXCLIPRetriever` 批量预取、`SubprocessTransformersJudgeBackend`、`LocalVLLMJudgeBackend`、共享 GPU 锁与跨进程 JSON/JSONL 交换 | **PASSED** |
+| 6 | `test_one_click_data_prepare_safe_extract_normalize_and_zipslip_block` | 4.6 | `stage_assets.py prepare` & `check-ready` 一键串联分卷导入、防 zip-slip 解压、嵌套目录规范化与元数据-视频对应校验，并拦截恶意 `../` 压缩包 | **PASSED** |
+| 7 | `test_end_to_end_web_ui_export_adjudication_cli_for_both_e2_and_e3` | 五 | 本地网页标注器 `AnnotationStore` JSON 导出 → `scripts/adjudicate_annotations.py`（E2 与 E3）分歧提取与仲裁 → 直接回流 A2/A3 流水线 | **PASSED** |

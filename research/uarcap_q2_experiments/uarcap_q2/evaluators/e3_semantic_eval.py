@@ -111,3 +111,35 @@ class BlindE3SemanticEvaluator:
         )
         assessment.validate()
         return assessment
+
+    def evaluate_caption_safe(
+        self,
+        query_id: str,
+        arm: str,
+        model_id: str,
+        caption: str,
+        target_true_fact: str,
+        target_conflict_fact: str,
+    ) -> dict[str, Any]:
+        """Wrapper that preserves parse_status='PARSE_FAILED' with y_true=None, y_conflict=None (NEVER defaults to 0!)."""
+        try:
+            res = self.evaluate_caption(
+                query_id=query_id,
+                arm=arm,
+                model_id=model_id,
+                caption=caption,
+                target_true_fact=target_true_fact,
+                target_conflict_fact=target_conflict_fact,
+            )
+            return {**res.to_dict(), "parse_status": "OK", "parse_error": ""}
+        except Exception as exc:
+            return {
+                "query_id": query_id,
+                "arm": arm,
+                "model_id": model_id,
+                "y_true": None,
+                "y_conflict": None,
+                "evaluator_id": self.backend.cfg.model_id,
+                "parse_status": "PARSE_FAILED",
+                "parse_error": str(exc),
+            }

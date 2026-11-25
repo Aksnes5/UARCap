@@ -1,6 +1,7 @@
 {
-  "manifest_version": "uarcap-q2-assets-v1",
+  "manifest_version": "uarcap-q2-assets-v2",
   "public_github_redistribution_policy": "NEVER commit raw video archives, model weights, HF tokens, or VidHalluc CC-BY-NC-ND JSON copies to GitHub.",
+  "model_reuse_policy": "Reuse EXISTING BN deployed models (vLLM 0.29.0 / PyTorch 2.13.0+cu130 / CUDA 13.0). Default download of Qwen2.5-VL-7B-Instruct is CANCELLED. Do NOT download new models unless existing BN models fail pilot verification.",
   "datasets": [
     {
       "asset_id": "dream1k_videos",
@@ -35,26 +36,43 @@
       "model_id": "Video-LLaMA / EVCap frozen v0.8 checkpoint",
       "stage_unlock": "PILOT_A1",
       "already_present_on_bn": true,
+      "runtime_env": "Frozen Transformers 4.28.0 venv (strictly read-only)",
       "checkpoint_sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
     },
     {
       "role": "cross_family_text_evaluator_candidates",
       "stage_unlock": "PILOT_A2",
-      "final_selection_status": "PENDING_PILOT_A2_CALIBRATION (download ONE only upon A2 unlock)",
+      "final_selection_status": "PENDING_PILOT_A2_CALIBRATION (reuse existing BN models; NO new downloads by default)",
       "candidates": [
-        {"model_id": "mistralai/Mistral-Small-24B-Instruct-2501", "family": "mistral", "approx_size_gb": 15},
-        {"model_id": "google/gemma-2-27b-it", "family": "gemma", "approx_size_gb": 16},
-        {"model_id": "meta-llama/Llama-3.3-70B-Instruct", "family": "llama", "approx_size_gb": 39}
+        {"model_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506", "display_name": "Mistral Small 3.2 24B", "family": "mistral", "already_present_on_bn": true, "priority": 1},
+        {"model_id": "google/gemma-3-27b-it", "display_name": "Gemma 3 27B", "family": "gemma", "already_present_on_bn": true, "priority": 2},
+        {"model_id": "meta-llama/Llama-3.3-70B-Instruct-W4A16", "display_name": "Llama 3.3 70B W4A16", "family": "llama", "already_present_on_bn": true, "priority": 3},
+        {"model_id": "openai/gpt-oss-20b", "display_name": "gpt-oss-20b", "family": "gpt_oss", "already_present_on_bn": true, "priority": 4},
+        {"model_id": "microsoft/phi-4", "display_name": "Phi-4 14B", "family": "phi", "already_present_on_bn": true, "priority": 5},
+        {"model_id": "meta-llama/Llama-3.1-8B-Instruct", "display_name": "Llama 3.1 8B", "family": "llama", "already_present_on_bn": true, "priority": 6}
       ]
     },
     {
       "role": "modern_video_vlm_candidates",
       "stage_unlock": "PILOT_A3",
-      "final_selection_status": "PENDING_PILOT_A3_SMOKE (download ONE only upon A3 unlock)",
+      "final_selection_status": "PENDING_PILOT_A3_SMOKE (reuse existing BN Qwen3.8-27B-FP8 / Qwen3.5-27B via vLLM 0.29.0; Qwen2.5-VL-7B-Instruct download CANCELLED)",
       "candidates": [
-        {"model_id": "Qwen/Qwen2.5-VL-7B-Instruct", "family": "qwen", "approx_size_gb": 15.5, "priority": 1},
-        {"model_id": "lmms-lab/LLaVA-Video-7B-Qwen2", "family": "qwen", "approx_size_gb": 15.5, "priority": 2},
-        {"model_id": "OpenGVLab/InternVL2_5-8B", "family": "internlm", "approx_size_gb": 16.5, "priority": 3}
+        {
+          "model_id": "Qwen/Qwen3.8-27B-FP8",
+          "family": "qwen",
+          "already_present_on_bn": true,
+          "known_bn_path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.8-27B-FP8",
+          "shards": "66/66",
+          "size_gb": 30.89,
+          "runtime": "vLLM 0.29.0 / PyTorch 2.13.0+cu130 / CUDA 13.0 / FP8 block-128 / Marlin W8A16",
+          "priority": 1
+        },
+        {
+          "model_id": "Qwen/Qwen3.5-27B",
+          "family": "qwen",
+          "already_present_on_bn": true,
+          "priority": 2
+        }
       ]
     }
   ]
