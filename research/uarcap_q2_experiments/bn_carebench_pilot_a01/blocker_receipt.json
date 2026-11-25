@@ -1,0 +1,98 @@
+{
+  "checked_at": "2026-11-25T23:55:28",
+  "final_status": "PILOT_A01_BLOCKED",
+  "repo_commit": "647f7a2eace0c124302b3a4f70874e05169bb742",
+  "repo_path": "/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments",
+  "authorization_receipt": "/home/bn/uarcap_q2_runtime/authorizations/pilot_a01_auth.json",
+  "authorization_sha256": "3e84b722d971059829f97cbaa0de1f3878b5dd30f6de8e8312b7ba63a178053a",
+  "bootstrap": {
+    "status": "PASS",
+    "python": "/home/bn/anaconda3/envs/videollama2/bin/python",
+    "version": "3.10.8",
+    "conda_env_creation": "not_needed"
+  },
+  "preflight": {
+    "status": "PASS_BN_LIVE_READY",
+    "bn_live_ready": true,
+    "carebench_hf_access": {
+      "skipped": true
+    },
+    "log": "/home/bn/uarcap_q2_runtime/carebench_preflight.log"
+  },
+  "metadata": {
+    "acquired": true,
+    "bytes": 3696714,
+    "sha256": "740f43b71a1f8131521e2a6cde95a59c3db10a5c4bdd554dc64959b48b0fc951",
+    "n_records": 1000,
+    "n_parents": 913,
+    "n_dropped_siblings": 87
+  },
+  "sampling_preview": {
+    "selected_n": 30,
+    "unique_parents": 30,
+    "category_allocation": {
+      "Household Activities": 6,
+      "Personal Care": 6,
+      "Socializing, Relaxing": 10,
+      "Sports, Excercise": 8
+    },
+    "seed": 20261125
+  },
+  "videos": {
+    "expected_bytes": 3918994506,
+    "partial_incomplete_bytes": 20971520,
+    "completed_bytes": 0,
+    "n_videos_extracted": 0,
+    "ready_receipt": {
+      "dataset": "carebench",
+      "ready": false,
+      "timestamp_utc": "2026-11-25T15:42:22.255883+00:00",
+      "metadata_path": "/home/bn/uarcap_q2_runtime/data/carebench/json/metadata.json",
+      "metadata_sha256": "740f43b71a1f8131521e2a6cde95a59c3db10a5c4bdd554dc64959b48b0fc951",
+      "video_dir": "/home/bn/uarcap_q2_runtime/data/carebench/videos",
+      "n_metadata_records": 1000,
+      "n_unique_fineaction_parents": 913,
+      "n_dropped_same_parent_siblings": 87,
+      "n_matched_videos": 0,
+      "n_missing_or_empty_videos": 1000,
+      "missing_video_sample": [
+        "carebench_v_00000030_5",
+        "carebench_v_00000032_0",
+        "carebench_v_00000044_3",
+        "carebench_v_00000065_94",
+        "carebench_v_00000151_1",
+        "carebench_v_00000172_3",
+        "carebench_v_00000179_3",
+        "carebench_v_00000203_1",
+        "carebench_v_00000203_5",
+        "carebench_v_00000204_2"
+      ],
+      "n_orphan_videos": 0,
+      "n_empty_reference_descriptions": 0,
+      "n_opening_overview_template_matches": 943
+    },
+    "download_attempts": [
+      "huggingface.co direct: timeout",
+      "hf-mirror metadata: success via huggingface_hub",
+      "hf-mirror video: Xet bridge read timeout after ~10-20 MB",
+      "hf-mirror range: ~66 KB/s; 16 parallel ranges failed/stalled"
+    ],
+    "stopped_reason": "throughput would require tens of hours and exceeds the 2-hour pilot budget"
+  },
+  "dryrun": {
+    "status": "BLOCKED_AT_READINESS",
+    "log": "/home/bn/uarcap_q2_runtime/run_pilot_dryrun_blocked.log"
+  },
+  "gpu": {
+    "state": "IDLE_NOT_USED",
+    "memory_used_mib": 1,
+    "utilization_percent": 0,
+    "compute_apps": [],
+    "lock_held": false
+  },
+  "videos_selected": 0,
+  "generations_completed": 0,
+  "gpu_hours": 0.0,
+  "oom": false,
+  "retries": 0
+}
