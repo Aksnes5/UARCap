@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+configs/bn_paths.local.yaml
+*.mp4
+*.avi
+*.mkv
+*.zip
+*.tar.gz
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.part

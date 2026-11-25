@@ -1,0 +1,14 @@
+# Isolated Environment 3: Local Cross-Family Text Factuality Judge (vLLM / Transformers on RTX A6000 48GB)
+name: uarcap_q2_evaluator
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - torch>=2.4.0
+      - transformers>=4.47.0
+      - accelerate>=1.2.0
+      - vllm>=0.6.6
+      - pyyaml>=6.0.1
+      - huggingface_hub>=0.27.0

@@ -1,0 +1,45 @@
+# Pilot A0 Preflight & Pilot A1 Minimal Video-LLaMA Compatibility Configuration
+stage_a0:
+  pilot_stage: "PILOT_A0"
+  gpu_required: false
+  download_assets:
+    - "dream1k_metadata_json"
+  checks:
+    - "dream1k_hf_gated_access"
+    - "bn_disk_space_ge_150gb"
+    - "shared_gpu_lock_readable"
+    - "frozen_checkpoint_sha256"
+    - "frozen_evcap_source_hashes"
+
+stage_a1:
+  pilot_stage: "PILOT_A1"
+  dataset_id: "DREAM-1K"
+  sampling:
+    strategy: "stratified_by_domain"
+    per_domain: 6
+    total_queries: 30
+    seed: 20261125
+    permanent_formal_exclusion: true
+  video_decoding:
+    num_frames: 16
+    target_size: [224, 224]
+    strict_reject_repeated_first_frame: true
+  retrieval:
+    corpus: "VideoUFO"
+    top_m: 20
+    reranker: "D_full_caption_mean_pairwise_rouge_l"
+    grouping: "strip_only"
+  model:
+    adapter: "videollama_evcap_frozen_v08"
+    isolated_env: "frozen_repro_evcap_venv"
+  arms:
+    - "ARM_A0"
+    - "ARM_A1"
+    - "ARM_A7"
+  expected_generations: 90
+  stop_rules:
+    max_empty_output_rate: 0.03
+    max_near_dup_high_risk_rate: 0.25
+    require_all_videos_decoded: true
+    require_a0_zero_evidence: true
+    require_prefix_consistency: true

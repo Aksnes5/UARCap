@@ -1,0 +1,18 @@
+# Isolated Environment 2: Modern Video VLM (Qwen2.5-VL-7B-Instruct on RTX A6000 48GB)
+# NEVER share with the frozen Video-LLaMA Transformers 4.28.0 venv!
+name: uarcap_q2_modern_vlm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - torch>=2.4.0
+      - torchvision>=0.19.0
+      - transformers>=4.49.0
+      - accelerate>=1.2.0
+      - qwen-vl-utils>=0.0.10
+      - av>=13.0.0
+      - pillow>=10.0.0
+      - pyyaml>=6.0.1
+      - huggingface_hub>=0.27.0

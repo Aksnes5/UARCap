@@ -1,0 +1,42 @@
+# BN Server Configurable Path Bindings (Recovered from BN_DEPLOYMENT_PATH_BINDINGS.json)
+# Copy to bn_paths.local.yaml on BN and adjust only if paths moved. NEVER commit tokens or secrets!
+
+host:
+  name: "bn"
+  os_expected: "Ubuntu 24.04"
+  gpu_model_expected: "NVIDIA RTX A6000"
+  gpu_uuid: "GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d"
+  device: "cuda:0"
+  shared_gpu_lock: "/home/bn/videoufo_research/gpu.lock"
+  min_free_disk_gb: 150
+
+historical_frozen_assets:
+  # Read-only frozen paths verified in BN_DEPLOYMENT_PATH_BINDINGS.json (2026-11-24)
+  videoufo_dataset_root: "/home/bn/datasets/VideoUFO"
+  videoufo_research_root: "/home/bn/videoufo_research"
+  original_evcap_root: "/home/bn/videoufo_research/evcap_external"
+  v06_runtime_inputs: "/home/bn/uar_v06_runtime/inputs"
+  v06_runtime_evcap_work: "/home/bn/uar_v06_runtime/evcap_work"
+  frozen_videollama_python: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python"
+  canonical_checkpoint: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/lj/EVCapCode/outputs/train_evcap_msrvtt_quality_text/train_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review.pt"
+  canonical_checkpoint_sha256: "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+  vicuna_7b_dir: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/models/vicuna-7b-v1.3"
+  video_feature_dir: "/home/bn/videoufo_research/features/videollama_faithful_v2"
+  torch_home: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/torch_cache"
+  hf_hub_cache: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/hf_cache"
+
+q2_writable_workspace:
+  # All Q2 writes stay on writable NVMe '/' under /home/bn/uarcap_q2_runtime (NEVER touch /media/bn read-only mount!)
+  q2_root: "/home/bn/uarcap_q2_runtime"
+  data_root: "/home/bn/uarcap_q2_runtime/data"
+  dream1k_dir: "/home/bn/uarcap_q2_runtime/data/dream1k"
+  vidhalluc_dir: "/home/bn/uarcap_q2_runtime/data/vidhalluc"
+  models_root: "/home/bn/uarcap_q2_runtime/models"
+  outputs_root: "/home/bn/uarcap_q2_runtime/outputs"
+  auth_receipts_dir: "/home/bn/uarcap_q2_runtime/authorizations"
+
+isolated_conda_envs:
+  # Strictly isolated environments — NEVER upgrade the frozen Video-LLaMA Transformers 4.28.0 venv!
+  cpu_analysis_env: "uarcap_q2_cpu"
+  modern_vlm_env: "uarcap_q2_modern_vlm"
+  text_evaluator_env: "uarcap_q2_evaluator"

@@ -1,0 +1,61 @@
+{
+  "manifest_version": "uarcap-q2-assets-v1",
+  "public_github_redistribution_policy": "NEVER commit raw video archives, model weights, HF tokens, or VidHalluc CC-BY-NC-ND JSON copies to GitHub.",
+  "datasets": [
+    {
+      "asset_id": "dream1k_videos",
+      "repo": "omni-research/DREAM-1K",
+      "url": "https://huggingface.co/datasets/omni-research/DREAM-1K",
+      "stage_unlock": "PILOT_A1",
+      "gated": true,
+      "archive_path": "video/video.zip",
+      "verified_bytes": 3849677473,
+      "size_human": "3.59 GiB (3.85 GB)",
+      "license_note": "HF card lists apache-2.0 for metadata/code; extra_gated_prompt explicitly states original video copyrights belong to original creators/platforms and are for academic research use only.",
+      "source_id_traceability": "UNKNOWN_OPAQUE (vid 1..1000 across 5 domains; exact source-ID zero-overlap CANNOT be claimed)",
+      "redistribution_allowed": false
+    },
+    {
+      "asset_id": "vidhalluc_ach_videos",
+      "repo": "chaoyuli/VidHalluc",
+      "url": "https://huggingface.co/datasets/chaoyuli/VidHalluc",
+      "stage_unlock": "PILOT_A3",
+      "gated": false,
+      "archive_path": "data/ACH_videos.zip",
+      "verified_bytes": 16754119398,
+      "size_human": "15.60 GiB (16.75 GB) — corrected from earlier 1-2 GB underestimate",
+      "license_note": "CC-BY-NC-ND 4.0 (internal non-commercial academic evaluation permitted; public release restricted to independent code, clip IDs, self-authored templates, and reproduction instructions).",
+      "source_id_traceability": "VERIFIED_EXACT (11-char YouTube IDs in clip filenames; exact VideoUFO overlap exclusion & 1-clip-per-source dedup supported)",
+      "redistribution_allowed": false
+    }
+  ],
+  "model_candidates_staged_unlock": [
+    {
+      "role": "frozen_primary_generator",
+      "model_id": "Video-LLaMA / EVCap frozen v0.8 checkpoint",
+      "stage_unlock": "PILOT_A1",
+      "already_present_on_bn": true,
+      "checkpoint_sha256": "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+    },
+    {
+      "role": "cross_family_text_evaluator_candidates",
+      "stage_unlock": "PILOT_A2",
+      "final_selection_status": "PENDING_PILOT_A2_CALIBRATION (download ONE only upon A2 unlock)",
+      "candidates": [
+        {"model_id": "mistralai/Mistral-Small-24B-Instruct-2501", "family": "mistral", "approx_size_gb": 15},
+        {"model_id": "google/gemma-2-27b-it", "family": "gemma", "approx_size_gb": 16},
+        {"model_id": "meta-llama/Llama-3.3-70B-Instruct", "family": "llama", "approx_size_gb": 39}
+      ]
+    },
+    {
+      "role": "modern_video_vlm_candidates",
+      "stage_unlock": "PILOT_A3",
+      "final_selection_status": "PENDING_PILOT_A3_SMOKE (download ONE only upon A3 unlock)",
+      "candidates": [
+        {"model_id": "Qwen/Qwen2.5-VL-7B-Instruct", "family": "qwen", "approx_size_gb": 15.5, "priority": 1},
+        {"model_id": "lmms-lab/LLaVA-Video-7B-Qwen2", "family": "qwen", "approx_size_gb": 15.5, "priority": 2},
+        {"model_id": "OpenGVLab/InternVL2_5-8B", "family": "internlm", "approx_size_gb": 16.5, "priority": 3}
+      ]
+    }
+  ]
+}

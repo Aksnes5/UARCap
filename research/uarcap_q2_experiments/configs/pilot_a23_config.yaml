@@ -1,0 +1,65 @@
+# Pilot A2 (3-Way Evaluator & Human Calibration) and Pilot A3 (Modern VLM + VidHalluc E3)
+stage_a2:
+  pilot_stage: "PILOT_A2"
+  prerequisite_stage: "PILOT_A1"
+  dataset_id: "DREAM-1K"
+  n_calibration_videos: 30
+  protocol_layer: "LAYER3_UARCAP_3WAY_REF_PROXY"
+  candidate_cross_family_judges:
+    # Final judge is NOT frozen before Pilot A2 calibration!
+    - model_id: "mistralai/Mistral-Small-24B-Instruct-2501"
+      model_family: "mistral"
+      quantization: "awq_or_fp8"
+    - model_id: "google/gemma-2-27b-it"
+      model_family: "gemma"
+      quantization: "awq"
+    - model_id: "meta-llama/Llama-3.3-70B-Instruct"
+      model_family: "llama"
+      quantization: "awq_4bit"
+  max_prompt_calibration_rounds: 2
+  redlines:
+    min_prec_contra_to_err: 0.65
+    min_paired_delta_spearman_rho: 0.45
+    max_directional_reversal_rate: 0.20
+    max_a7_recall_drop_vs_a0: 0.15
+    max_a7_unment_leak_increase_vs_a0: 0.10
+    max_a7_underestimation_ratio: 0.40
+  human_annotation:
+    annotators: ["A1", "A2"]
+    blind_muted_video: true
+    phase1_core_event_lock: true
+    min_inter_annotator_agreement: 0.70
+
+stage_a3:
+  pilot_stage: "PILOT_A3"
+  prerequisite_stage: "PILOT_A2"
+  modern_vlm_candidates:
+    # Primary candidate; switch only if smoke test fails on RTX A6000 48GB
+    - model_id: "Qwen/Qwen2.5-VL-7B-Instruct"
+      model_family: "qwen"
+      num_frames: 16
+      min_pixels: 200704
+      max_pixels: 301056
+      prompt_regime: "short_aligned"
+      max_new_tokens: 48
+    - model_id: "lmms-lab/LLaVA-Video-7B-Qwen2"
+      model_family: "qwen"
+    - model_id: "OpenGVLab/InternVL2_5-8B"
+      model_family: "internlm"
+  dream1k_cross_model_check:
+    n_videos: 30
+    arms: ["ARM_A0", "ARM_A1", "ARM_A7"]
+    max_cross_model_recall_gap: 0.20
+  vidhalluc_e3_pilot:
+    dataset_id: "VidHalluc-ACH"
+    archive_verified_bytes: 16754119398
+    license: "cc-by-nc-nd-4.0"
+    candidate_pool_size: 30
+    target_approved_clips: 20
+    min_applicability_pass_rate: 0.50
+    arms: ["E3_BASE", "E3_SUP", "E3_CON", "E3_NEU"]
+    base_visual_mode: "BASE_A0"
+    endpoints: ["y_true", "y_conflict"]
+    e3_judge_min_kappa: 0.80
+    e3_judge_max_con_neu_bias: 0.03
+    scientific_null_effect_is_not_failure: true
