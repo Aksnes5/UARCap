@@ -1,0 +1,299 @@
+{
+  "schema_version": "uarcap-q2-dataset-selection-matrix-v1",
+  "audit_date": "2026-11-25",
+  "status": "DATASET_SELECTION_RESEARCH_COMPLETE_AWAITING_SCIENTIFIC_DECISION",
+  "disclaimer": "All scores are structured scientific decision aids grounded in primary-source audits, NOT objective benchmark rankings. Unknown attributes are explicitly labeled UNKNOWN and never masked with arbitrary mid-range scores.",
+  "scoring_weights_default": {
+    "rq_fit": 0.25,
+    "human_gold_reliability": 0.20,
+    "error_vs_unmentioned_discrimination": 0.15,
+    "source_independence_traceability": 0.15,
+    "human_verification_cost_efficiency": 0.10,
+    "model_and_16frame_fit": 0.05,
+    "access_and_licensing": 0.05,
+    "engineering_reuse": 0.05
+  },
+  "candidates": [
+    {
+      "dataset_id": "CaReBench",
+      "role": "E2_PRIMARY_CANDIDATE",
+      "type": "A (Human detailed spatial+temporal prose) + B_CACHED_LLM (GPT-4 extracted events/objects)",
+      "hard_admission_passed": true,
+      "hard_admission_notes": "Passes all 7 gates after 1-clip-per-FineAction-parent dedup (913 unique parents) and honest disclosure of unverifiable YouTube-ID overlap + non-Gold provenance of GPT-4 extracted events/objects.",
+      "availability": {
+        "paper_url": "https://arxiv.org/abs/2501.00513",
+        "project_url": "https://carebench.github.io",
+        "github_url": "https://github.com/MCG-NJU/CaReBench",
+        "huggingface_url": "https://huggingface.co/datasets/MCG-NJU/CaReBench",
+        "metadata_url": "https://huggingface.co/datasets/MCG-NJU/CaReBench/resolve/main/json/metadata.json",
+        "video_download_url": "https://huggingface.co/datasets/MCG-NJU/CaReBench/resolve/main/videos/videos.zip",
+        "gated": false,
+        "archive_bytes": 3918994506,
+        "archive_size_gib": 3.65,
+        "license": "MIT (code/metadata); upstream FineAction videos academic-research copyright applies",
+        "china_mainland_accessible": "High (ungated HF mirrors work directly; also Windows-download + BN transfer ready)",
+        "windows_to_bn_transfer_ready": true
+      },
+      "verified_facts": {
+        "n_clips": 1000,
+        "n_unique_parents": 913,
+        "mean_duration_sec": 14.35,
+        "mean_caption_words": 227.95,
+        "spatial_caption_words_mean": 113.22,
+        "temporal_caption_words_mean": 102.26,
+        "opening_overview_sentence_ratio": 0.94,
+        "events_per_video_mean": 6.94,
+        "objects_per_video_mean": 10.03,
+        "objects_gpt4_prompt_signature_ratio": 0.999,
+        "human_inter_annotator_kappa_reported": "UNKNOWN (not reported in arXiv:2501.00513v2)",
+        "capst_human_correlation_reported": "UNKNOWN (not reported in arXiv:2501.00513v2)",
+        "capst_penalizes_unmentioned_as_precision_error": true
+      },
+      "scores_0_to_10": {
+        "rq_fit": 8.0,
+        "human_gold_reliability": 8.2,
+        "error_vs_unmentioned_discrimination": 9.0,
+        "source_independence_traceability": 5.8,
+        "human_verification_cost_efficiency": 7.8,
+        "model_and_16frame_fit": 7.5,
+        "access_and_licensing": 9.5,
+        "engineering_reuse": 7.5
+      },
+      "weighted_score_default": 7.93,
+      "evidence_gaps": [
+        "No inter-annotator agreement reported in paper.",
+        "FineAction anonymous parent IDs prevent exact YouTube-ID overlap verification against VideoUFO without FineAction upstream URL table."
+      ]
+    },
+    {
+      "dataset_id": "DREAM-1K",
+      "role": "E2_CO_PRIMARY_CANDIDATE",
+      "type": "A (Human detailed event-centric prose)",
+      "hard_admission_passed": true,
+      "hard_admission_notes": "Passes all 7 gates once user grants HF gated access on Windows. Stronger 5-domain generality and 8.9s granularity match, but weaker static-object coverage increases Unmentioned leakage risk.",
+      "availability": {
+        "paper_url": "https://arxiv.org/abs/2407.00634",
+        "project_url": "https://tarsier-vlm.github.io/",
+        "github_url": "https://github.com/bytedance/tarsier",
+        "huggingface_url": "https://huggingface.co/datasets/omni-research/DREAM-1K",
+        "metadata_url": "https://huggingface.co/datasets/omni-research/DREAM-1K/resolve/main/json/metadata.json",
+        "video_download_url": "https://huggingface.co/datasets/omni-research/DREAM-1K/resolve/main/video/video.zip",
+        "gated": "auto",
+        "archive_bytes": 3849677473,
+        "archive_size_gib": 3.59,
+        "license": "Apache-2.0 metadata/code; original video copyrights academic-research only",
+        "china_mainland_accessible": "Blocked on HF mirrors due to gated 403; requires direct HF login on Windows + transfer to BN",
+        "windows_to_bn_transfer_ready": true
+      },
+      "verified_facts": {
+        "n_clips": 1000,
+        "n_unique_parents": "UNKNOWN (opaque IDs 1..1000)",
+        "mean_duration_sec": 8.9,
+        "mean_caption_words": 59.3,
+        "domains": 5,
+        "events_per_video_approx": 6.16,
+        "objects_per_video_approx": 5.79,
+        "human_inter_annotator_kappa_reported": "UNKNOWN (single annotator per side-by-side model pair in App. D)",
+        "autodq_penalizes_unmentioned_as_precision_error": true
+      },
+      "scores_0_to_10": {
+        "rq_fit": 8.6,
+        "human_gold_reliability": 7.0,
+        "error_vs_unmentioned_discrimination": 6.2,
+        "source_independence_traceability": 4.5,
+        "human_verification_cost_efficiency": 6.5,
+        "model_and_16frame_fit": 9.2,
+        "access_and_licensing": 6.0,
+        "engineering_reuse": 10.0
+      },
+      "weighted_score_default": 7.07,
+      "evidence_gaps": [
+        "Opaque IDs 1..1000 prevent both exact YouTube-ID overlap checks and parent-video clustering checks.",
+        "Actual metadata JSON not downloaded in this round because HF gated token is not yet configured on Windows."
+      ]
+    },
+    {
+      "dataset_id": "VidHalluc_ACH",
+      "role": "E3_PRIMARY_CANDIDATE",
+      "type": "C (Confusable natural video action pairs) + D (MCQ / BinaryQA)",
+      "hard_admission_passed": true,
+      "hard_admission_notes": "Passes all 7 gates for E3 controlled intervention. Unmatched exact 11-char YouTube-ID traceability (1,586 unique sources) and true-vs-distractor word parity (4.23 vs 4.25 words).",
+      "availability": {
+        "paper_url": "https://arxiv.org/abs/2412.03735",
+        "project_url": "https://vidhalluc.github.io/",
+        "github_url": "https://github.com/chaoyuli/VidHalluc",
+        "huggingface_url": "https://huggingface.co/datasets/chaoyuli/VidHalluc",
+        "metadata_url": "https://huggingface.co/datasets/chaoyuli/VidHalluc/resolve/main/ach_mcq.json",
+        "video_download_url": "https://huggingface.co/datasets/chaoyuli/VidHalluc/resolve/main/data/ACH_videos.zip",
+        "gated": false,
+        "archive_bytes": 16754119398,
+        "archive_size_gib": 15.60,
+        "license": "CC-BY-NC-ND-4.0 (internal academic eval allowed; no redistribution of modified JSONs)",
+        "china_mainland_accessible": "High (ungated HF mirrors work directly; also Windows-transfer ready)",
+        "windows_to_bn_transfer_ready": true
+      },
+      "verified_facts": {
+        "n_mcq_pairs": 2159,
+        "n_unique_clips": 3897,
+        "n_unique_youtube_ids": 1586,
+        "true_action_words_mean": 4.23,
+        "distractor_action_words_mean": 4.25,
+        "exact_youtube_id_dedup_feasible": true
+      },
+      "scores_0_to_10": {
+        "rq_fit": 9.0,
+        "human_gold_reliability": 7.5,
+        "error_vs_unmentioned_discrimination": 8.5,
+        "source_independence_traceability": 9.6,
+        "human_verification_cost_efficiency": 8.2,
+        "model_and_16frame_fit": 8.8,
+        "access_and_licensing": 7.2,
+        "engineering_reuse": 10.0
+      },
+      "weighted_score_default": 8.60,
+      "evidence_gaps": [
+        "Focuses on Action hallucinations (does not cover static object/count/color swaps in ACH).",
+        "Selected 150-180 formal distractors still require lightweight human watch-clip screening for strict mutual exclusivity."
+      ]
+    },
+    {
+      "dataset_id": "VidHal",
+      "role": "E3_SECONDARY_MULTI_ASPECT_BACKUP",
+      "type": "C (Graded minimal-edit contrast captions across 5 aspects)",
+      "hard_admission_passed": true,
+      "hard_admission_notes": "Passes hard admission ONLY for E3 backup after filtering out 261 synthetic CLEVRER clips and running human verification (since 90% of GPT-4o captions were not human-checked).",
+      "availability": {
+        "paper_url": "https://arxiv.org/abs/2411.16771",
+        "project_url": "https://github.com/Lookuz/VidHal",
+        "github_url": "https://github.com/Lookuz/VidHal",
+        "huggingface_url": "https://huggingface.co/datasets/anon-axolotl/VidHal",
+        "metadata_url": "https://huggingface.co/datasets/anon-axolotl/VidHal/resolve/main/annotations.json",
+        "video_download_url": "https://huggingface.co/datasets/anon-axolotl/VidHal/resolve/main/videos.zip",
+        "gated": false,
+        "archive_bytes": 5455798276,
+        "archive_size_gib": 5.08,
+        "license": "CC-BY-4.0",
+        "china_mainland_accessible": "High (ungated HF)",
+        "windows_to_bn_transfer_ready": true
+      },
+      "verified_facts": {
+        "n_clips": 1000,
+        "aspects": {"attribute": 205, "order": 204, "object": 204, "direction": 204, "action": 183},
+        "synthetic_clevrer_like_clips": 261,
+        "within_item_word_spread_median": 0.0,
+        "captions_authored_by": "GPT-4o (anchor y+ and graded y-); 100/1000 human-validated at 87% consensus",
+        "exact_youtube_id_dedup_feasible": false
+      },
+      "scores_0_to_10": {
+        "rq_fit": 7.8,
+        "human_gold_reliability": 5.5,
+        "error_vs_unmentioned_discrimination": 8.0,
+        "source_independence_traceability": 4.2,
+        "human_verification_cost_efficiency": 7.0,
+        "model_and_16frame_fit": 6.5,
+        "access_and_licensing": 9.2,
+        "engineering_reuse": 6.5
+      },
+      "weighted_score_default": 6.69,
+      "evidence_gaps": [
+        "Anonymous IDs prevent exact VideoUFO YouTube-ID overlap verification.",
+        "90% of captions are unverified GPT-4o outputs; 13% disagreement even on the 100-item human check."
+      ]
+    },
+    {
+      "dataset_id": "ARGUS",
+      "role": "E2_BACKUP_ONLY",
+      "type": "A (Very long literary human prose, 15-90s clips)",
+      "hard_admission_passed": false,
+      "hard_admission_notes": "Fails effective sample-size & 16-frame fit gates for primary E2: only 500 total videos, 15-90s long clips poorly matched to 16-frame Video-LLaMA, and 485-word prose mismatches 10-word captions.",
+      "availability": {
+        "paper_url": "https://arxiv.org/abs/2506.07371",
+        "project_url": "https://ruchitrawal.github.io/argus/",
+        "github_url": "https://github.com/JARVVVIS/argus",
+        "huggingface_url": "https://huggingface.co/datasets/tomg-group-umd/argus",
+        "metadata_url": "https://huggingface.co/datasets/tomg-group-umd/argus/resolve/main/data/train-00000-of-00001.parquet",
+        "video_download_url": "https://huggingface.co/datasets/tomg-group-umd/argus/tree/main/videos",
+        "gated": false,
+        "archive_size_gib": 15.60,
+        "license": "CC-BY-NC-SA-4.0"
+      },
+      "scores_0_to_10": {
+        "rq_fit": 6.2,
+        "human_gold_reliability": 7.5,
+        "error_vs_unmentioned_discrimination": 8.0,
+        "source_independence_traceability": 6.0,
+        "human_verification_cost_efficiency": 6.0,
+        "model_and_16frame_fit": 4.0,
+        "access_and_licensing": 7.8,
+        "engineering_reuse": 6.5
+      },
+      "weighted_score_default": 6.67
+    },
+    {
+      "dataset_id": "VCapsBench",
+      "role": "E2_QA_SECONDARY_BACKUP",
+      "type": "D (VLM-synthesized Yes/No QA for T2V across 21 dimensions)",
+      "hard_admission_passed": false,
+      "hard_admission_notes": "Fails open-ended retrieval hallucination detection requirement: closed QA cannot detect arbitrary out-of-list VideoUFO hallucinations, heavy T2V aesthetics noise, and VLM-synthesized questions.",
+      "availability": {
+        "paper_url": "https://arxiv.org/abs/2505.23484",
+        "github_url": "https://github.com/GXYM/VCapsBench",
+        "huggingface_url": "https://huggingface.co/datasets/somos99/VCapsBench",
+        "gated": false,
+        "archive_size_gib": 22.20,
+        "license": "ODbL"
+      },
+      "scores_0_to_10": {
+        "rq_fit": 5.5,
+        "human_gold_reliability": 4.5,
+        "error_vs_unmentioned_discrimination": 5.0,
+        "source_independence_traceability": 4.0,
+        "human_verification_cost_efficiency": 6.5,
+        "model_and_16frame_fit": 7.0,
+        "access_and_licensing": 7.5,
+        "engineering_reuse": 5.0
+      },
+      "weighted_score_default": 5.25
+    },
+    {
+      "dataset_id": "CapQuiz",
+      "role": "EXCLUDED_UNAVAILABLE",
+      "type": "D (Human-verified MCQ)",
+      "hard_admission_passed": false,
+      "hard_admission_notes": "Hard-rejected: paper published (ACL 2026) but NO public data/code release exists."
+    },
+    {
+      "dataset_id": "VDC_AuroraCap",
+      "role": "EXCLUDED_SYNTHETIC_NOISE",
+      "type": "A/D (GPT-4o synthetic 500-word captions + noisy QA)",
+      "hard_admission_passed": false,
+      "hard_admission_notes": "Hard-rejected: GPT-4o synthetic references (not human Gold), corrupted category placeholders in short.jsonl, 74.6 GiB."
+    }
+  ],
+  "weight_sensitivity_analysis_e2": {
+    "profile_1_default_user_weights": {
+      "CaReBench": 7.93,
+      "DREAM-1K": 7.07,
+      "winner": "CaReBench (+0.86)"
+    },
+    "profile_2_domain_generality_and_reuse_heavy": {
+      "weights": {"rq_fit": 0.35, "human_gold_reliability": 0.15, "error_vs_unmentioned_discrimination": 0.10, "source_independence_traceability": 0.10, "human_verification_cost_efficiency": 0.05, "model_and_16frame_fit": 0.10, "access_and_licensing": 0.05, "engineering_reuse": 0.10},
+      "CaReBench": 7.82,
+      "DREAM-1K": 7.62,
+      "winner": "CaReBench (+0.20 — near tie!)"
+    },
+    "profile_3_factuality_and_unmentioned_strict": {
+      "weights": {"rq_fit": 0.20, "human_gold_reliability": 0.25, "error_vs_unmentioned_discrimination": 0.25, "source_independence_traceability": 0.15, "human_verification_cost_efficiency": 0.10, "model_and_16frame_fit": 0.02, "access_and_licensing": 0.02, "engineering_reuse": 0.01},
+      "CaReBench": 8.03,
+      "DREAM-1K": 6.53,
+      "winner": "CaReBench (+1.50)"
+    },
+    "profile_4_zero_refactor_and_short_clip_heavy": {
+      "weights": {"rq_fit": 0.25, "human_gold_reliability": 0.10, "error_vs_unmentioned_discrimination": 0.10, "source_independence_traceability": 0.10, "human_verification_cost_efficiency": 0.05, "model_and_16frame_fit": 0.20, "access_and_licensing": 0.05, "engineering_reuse": 0.15},
+      "CaReBench": 7.70,
+      "DREAM-1K": 7.94,
+      "winner": "DREAM-1K (+0.24)"
+    },
+    "sensitivity_conclusion": "CaReBench wins under default weights (+0.86) and factuality/Unmentioned-strict weights (+1.50), nearly ties under generality-heavy weights (+0.20), and only trails slightly (-0.24) if 35% weight is shifted to 8.9s duration + zero code refactoring. Meanwhile VidHalluc (8.60) dominates VidHal (6.69) for E3 across all weight profiles."
+  }
+}

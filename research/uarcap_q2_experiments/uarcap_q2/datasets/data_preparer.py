@@ -1,12 +1,14 @@
-"""One-click automated dataset preparation pipeline (DREAM-1K & VidHalluc-ACH).
+"""One-click automated dataset preparation pipeline (CaReBench primary E2, DREAM-1K backup E2, & VidHalluc-ACH E3).
 
 Chains:
   1. Existing-file detection (already normalized, local archive present, or Route-2 chunk manifest).
   2. Optional stage-gated HTTP Range download (preserving `stage_unlock` enforcement).
   3. Size / SHA-256 integrity verification.
   4. Zip-slip-safe extraction.
-  5. Canonical directory normalization (`dream1k/json/metadata.json` + `dream1k/video/*.mp4`,
-     `vidhalluc/ach_mcq.json` + `vidhalluc/data/*.mp4`).
+  5. Canonical directory normalization:
+     - `carebench/json/metadata.json` + `carebench/videos/*.mp4`
+     - `dream1k/json/metadata.json` + `dream1k/video/*.mp4`
+     - `vidhalluc/ach_mcq.json` + `vidhalluc/data/*.mp4`
   6. Metadata-to-video correspondence check & schema validation.
   7. Pre-stage readiness receipt (`<dataset>_readiness.json`).
 """
@@ -27,6 +29,7 @@ from .asset_transfer import (
     reassemble_and_verify_chunks,
     verify_local_asset,
 )
+from .carebench import deduplicate_carebench_by_parent_video, load_carebench_records
 from .dream1k import load_dream1k_records
 from .vidhalluc import load_vidhalluc_ach_mcq
 
@@ -67,9 +70,20 @@ def safe_extract_zip(zip_path: Path | str, dest_dir: Path | str) -> dict[str, An
 
 
 def normalize_dataset_layout(dataset_name: str, data_root: Path | str) -> dict[str, Any]:
-    """Flatten nested zip folder layouts (e.g., `video/video/*.mp4` or `data/ACH_videos/*.mp4`) safely."""
+    """Flatten nested zip folder layouts (e.g., `videos/videos/*.mp4`, `video/video/*.mp4`, `data/ACH_videos/*.mp4`)."""
     root = Path(data_root)
     moved = 0
+    if dataset_name == "carebench":
+        vid_dir = root / "carebench" / "videos"
+        vid_dir.mkdir(parents=True, exist_ok=True)
+        for mp4 in list(vid_dir.rglob("*.mp4")):
+            if mp4.parent != vid_dir:
+                dst = vid_dir / mp4.name
+                if not dst.exists():
+                    shutil.move(str(mp4), str(dst))
+                    moved += 1
+        return {"dataset": "carebench", "canonical_video_dir": str(vid_dir), "files_normalized": moved}
+
     if dataset_name == "dream1k":
         vid_dir = root / "dream1k" / "video"
         vid_dir.mkdir(parents=True, exist_ok=True)
@@ -98,6 +112,44 @@ def normalize_dataset_layout(dataset_name: str, data_root: Path | str) -> dict[s
 def validate_dataset_readiness(dataset_name: str, data_root: Path | str) -> dict[str, Any]:
     """Run metadata schema validation + metadata-to-video correspondence audit & write readiness receipt."""
     root = Path(data_root)
+    if dataset_name == "carebench":
+        meta_path = root / "carebench" / "json" / "metadata.json"
+        vid_dir = root / "carebench" / "videos"
+        if not meta_path.is_file():
+            res = {"dataset": "carebench", "ready": False, "error": f"Missing metadata: {meta_path}"}
+            atomic_write_json(root / "carebench_readiness.json", res)
+            return res
+        recs = load_carebench_records(meta_path, vid_dir, require_video_exists=False)
+        deduped, dedup_audit = deduplicate_carebench_by_parent_video(recs)
+        existing_vids = {p.name for p in vid_dir.glob("*.mp4")} if vid_dir.is_dir() else set()
+        expected_vids = {Path(r.video_path).name for r in recs}
+        missing_vids = sorted(
+            r.query_id for r in recs if not (Path(r.video_path).is_file() and Path(r.video_path).stat().st_size > 0)
+        )
+        orphan_vids = sorted(existing_vids - expected_vids)
+        empty_refs = [r.query_id for r in recs if not r.reference_description.strip()]
+        overview_tpl_n = sum(1 for r in recs if r.metadata.get("opening_overview_matches_template"))
+        ready = bool(recs) and not missing_vids and not empty_refs
+        res = {
+            "dataset": "carebench",
+            "ready": ready,
+            "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+            "metadata_path": str(meta_path),
+            "metadata_sha256": sha256_file(meta_path),
+            "video_dir": str(vid_dir),
+            "n_metadata_records": len(recs),
+            "n_unique_fineaction_parents": len(deduped),
+            "n_dropped_same_parent_siblings": dedup_audit["n_dropped_same_parent_siblings"],
+            "n_matched_videos": len(recs) - len(missing_vids),
+            "n_missing_or_empty_videos": len(missing_vids),
+            "missing_video_sample": missing_vids[:10],
+            "n_orphan_videos": len(orphan_vids),
+            "n_empty_reference_descriptions": len(empty_refs),
+            "n_opening_overview_template_matches": overview_tpl_n,
+        }
+        atomic_write_json(root / "carebench_readiness.json", res)
+        return res
+
     if dataset_name == "dream1k":
         meta_path = root / "dream1k" / "json" / "metadata.json"
         vid_dir = root / "dream1k" / "video"
@@ -181,7 +233,11 @@ def prepare_dataset_pipeline(
     root.mkdir(parents=True, exist_ok=True)
     steps: list[dict[str, Any]] = []
 
-    if dataset_name == "dream1k":
+    if dataset_name == "carebench":
+        meta_spec = known_assets["carebench_metadata"]
+        vid_spec = known_assets["carebench_videos"]
+        extract_dest = root / "carebench" / "videos"
+    elif dataset_name == "dream1k":
         meta_spec = known_assets["dream1k_metadata"]
         vid_spec = known_assets["dream1k_videos"]
         extract_dest = root / "dream1k" / "video"

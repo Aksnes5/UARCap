@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Execute Authorized Pilot A3 (Modern VLM on DREAM-1K 30 + VidHalluc 4-arm E3 after A2 REAL_RUNTIME_PASS)
+# Execute Authorized Pilot A3 (Modern VLM on CaReBench [or DREAM-1K backup] 30 + VidHalluc 4-arm E3 after A2 REAL_RUNTIME_PASS)
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -7,7 +7,8 @@ EXP_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 PATHS_CFG="${PATHS_CFG:-${EXP_ROOT}/configs/bn_paths.local.yaml}"
 Q2_ROOT="${Q2_ROOT:-/home/bn/uarcap_q2_runtime}"
 AUTH_RECEIPT="${AUTH_RECEIPT:-${Q2_ROOT}/authorizations/pilot_a3_auth.json}"
-PRIOR_A2="${PRIOR_A2:-${Q2_ROOT}/outputs/pilot_a2/pilot_a2_eval_v1/calibration_receipt.json}"
+E2_DATASET="${E2_DATASET:-carebench}"
+PRIOR_A2="${PRIOR_A2:-${Q2_ROOT}/outputs/pilot_a2/pilot_a2_${E2_DATASET}_eval_v1/calibration_receipt.json}"
 if [[ -z "${PYTHON_BIN:-}" ]]; then
   if [[ -x "/home/bn/anaconda3/envs/videollama2/bin/python" ]]; then
     PYTHON_BIN="/home/bn/anaconda3/envs/videollama2/bin/python"
@@ -15,7 +16,7 @@ if [[ -z "${PYTHON_BIN:-}" ]]; then
     PYTHON_BIN="python3"
   fi
 fi
-RUN_ID="${RUN_ID:-pilot_a3_vlm_vidhalluc_v1}"
+RUN_ID="${RUN_ID:-pilot_a3_${E2_DATASET}_vlm_vidhalluc_v1}"
 OUT_DIR="${Q2_ROOT}/outputs/pilot_a3/${RUN_ID}"
 
 # Strictly verify PILOT_A2 status==REAL_RUNTIME_PASS & human_calibration_completed==True
@@ -31,6 +32,7 @@ OUT_DIR="${Q2_ROOT}/outputs/pilot_a3/${RUN_ID}"
 set +e
 "${PYTHON_BIN}" "${EXP_ROOT}/deployment/run_stage_cli.py" \
   --stage PILOT_A3 \
+  --e2-dataset "${E2_DATASET}" \
   --paths-config "${PATHS_CFG}" \
   --stage-config "${EXP_ROOT}/configs/pilot_a23_config.yaml" \
   --out-dir "${OUT_DIR}" \

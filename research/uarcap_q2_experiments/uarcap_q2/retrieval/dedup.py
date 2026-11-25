@@ -45,7 +45,7 @@ def caption_word_jaccard(a: str, b: str) -> float:
     return len(sa & sb) / len(sa | sb)
 
 
-def screen_dream1k_near_duplicates(
+def screen_e2_near_duplicates(
     records: list[QueryRecord],
     top1_visual_matches: dict[str, dict[str, Any]],
     query_dhashes: dict[str, list[str]] | None = None,
@@ -54,12 +54,14 @@ def screen_dream1k_near_duplicates(
     xclip_conservative_exclude_threshold: float = 0.94,
     dhash_close_threshold: int = 8,
     caption_jaccard_threshold: float = 0.55,
+    dataset_id: str | None = None,
 ) -> dict[str, Any]:
-    """Two-stage conservative near-duplicate screening for DREAM-1K vs VideoUFO.
+    """Two-stage conservative near-duplicate screening for E2 (CaReBench / DREAM-1K) vs VideoUFO.
 
     NOTE: Similarity thresholds produce candidate review flags and conservative exclusions,
     NEVER claimed as proven exact duplicates or exact source-ID zero-overlap.
     """
+    resolved_ds = dataset_id or (records[0].dataset_id if records else "CaReBench")
     q_dh = query_dhashes or {}
     c_dh = corpus_dhashes or {}
 
@@ -127,13 +129,22 @@ def screen_dream1k_near_duplicates(
             )
         )
 
-    return {
-        "dataset_id": "DREAM-1K",
-        "exact_source_zero_overlap_claimed": False,
-        "residual_overlap_uncertainty_statement": (
+    if resolved_ds.lower() == "carebench":
+        residual_stmt = (
+            "CaReBench public metadata uses anonymous FineAction parent IDs (v_XXXXXXXX) without verified original YouTube URLs/IDs. "
+            "Parent-video dedup removes known within-FineAction multi-clip clustering, and near-duplicate screening produces conservative exclusions only; "
+            "residual unknown source overlap with VideoUFO cannot be ruled out."
+        )
+    else:
+        residual_stmt = (
             "DREAM-1K public metadata provides opaque integer IDs (1..1000) without verified original source URLs/YouTube IDs. "
             "Screening flags are conservative near-duplicate exclusions only and do not guarantee 100% source-level zero overlap."
-        ),
+        )
+
+    return {
+        "dataset_id": resolved_ds,
+        "exact_source_zero_overlap_claimed": False,
+        "residual_overlap_uncertainty_statement": residual_stmt,
         "total_screened": len(records),
         "exact_source_checked_count": exact_source_checked,
         "high_conservative_exclude_count": len(conservative_exclude_ids),
@@ -142,3 +153,27 @@ def screen_dream1k_near_duplicates(
         "manual_review_query_ids": sorted(manual_review_ids),
         "flags": [f.to_dict() for f in flags],
     }
+
+
+def screen_dream1k_near_duplicates(
+    records: list[QueryRecord],
+    top1_visual_matches: dict[str, dict[str, Any]],
+    query_dhashes: dict[str, list[str]] | None = None,
+    corpus_dhashes: dict[str, list[str]] | None = None,
+    xclip_review_threshold: float = 0.88,
+    xclip_conservative_exclude_threshold: float = 0.94,
+    dhash_close_threshold: int = 8,
+    caption_jaccard_threshold: float = 0.55,
+) -> dict[str, Any]:
+    """Backward-compatible wrapper for DREAM-1K backup near-duplicate screening."""
+    return screen_e2_near_duplicates(
+        records=records,
+        top1_visual_matches=top1_visual_matches,
+        query_dhashes=query_dhashes,
+        corpus_dhashes=corpus_dhashes,
+        xclip_review_threshold=xclip_review_threshold,
+        xclip_conservative_exclude_threshold=xclip_conservative_exclude_threshold,
+        dhash_close_threshold=dhash_close_threshold,
+        caption_jaccard_threshold=caption_jaccard_threshold,
+        dataset_id="DREAM-1K",
+    )

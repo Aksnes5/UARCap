@@ -1,10 +1,38 @@
 {
-  "manifest_version": "uarcap-q2-assets-v2",
+  "manifest_version": "uarcap-q2-assets-v3",
   "public_github_redistribution_policy": "NEVER commit raw video archives, model weights, HF tokens, or VidHalluc CC-BY-NC-ND JSON copies to GitHub.",
   "model_reuse_policy": "Reuse EXISTING BN deployed models (vLLM 0.29.0 / PyTorch 2.13.0+cu130 / CUDA 13.0). Default download of Qwen2.5-VL-7B-Instruct is CANCELLED. Do NOT download new models unless existing BN models fail pilot verification.",
   "datasets": [
     {
+      "asset_id": "carebench_metadata",
+      "role": "E2_PRIMARY_METADATA",
+      "repo": "MCG-NJU/CaReBench",
+      "url": "https://huggingface.co/datasets/MCG-NJU/CaReBench",
+      "github_url": "https://github.com/MCG-NJU/CaReBench",
+      "stage_unlock": "PILOT_A0",
+      "gated": false,
+      "archive_path": "json/metadata.json",
+      "size_human": "~3.70 MB (1,000 clips across 913 distinct FineAction parent IDs)",
+      "license_note": "MIT license for code/metadata. `caption`/`spatial_caption`/`temporal_caption` are human-authored (2 annotators + expert review); `events`/`objects` are GPT-4 extracted and MUST NOT be treated as independent human Gold.",
+      "redistribution_allowed": false
+    },
+    {
+      "asset_id": "carebench_videos",
+      "role": "E2_PRIMARY_VIDEOS",
+      "repo": "MCG-NJU/CaReBench",
+      "url": "https://huggingface.co/datasets/MCG-NJU/CaReBench",
+      "stage_unlock": "PILOT_A1",
+      "gated": false,
+      "archive_path": "videos/videos.zip",
+      "verified_bytes": 3918994506,
+      "size_human": "3.65 GiB (3.92 GB)",
+      "license_note": "MIT metadata/code; upstream FineAction academic video copyrights apply (NEVER redistribute raw videos).",
+      "source_id_traceability": "UNKNOWN_OPAQUE (FineAction anonymous parent IDs v_XXXXXXXX enable known within-FineAction dedup to 913 parents, but do NOT prove 913 independent original YouTube uploads or exact VideoUFO zero-overlap)",
+      "redistribution_allowed": false
+    },
+    {
       "asset_id": "dream1k_videos",
+      "role": "E2_BACKUP_FALLBACK",
       "repo": "omni-research/DREAM-1K",
       "url": "https://huggingface.co/datasets/omni-research/DREAM-1K",
       "stage_unlock": "PILOT_A1",

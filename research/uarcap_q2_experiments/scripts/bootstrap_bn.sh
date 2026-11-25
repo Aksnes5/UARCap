@@ -31,6 +31,8 @@ fi
 
 # 2. Prepare writable Q2 runtime directories on '/' NVMe (NEVER write to read-only /media/bn)
 mkdir -p \
+  "${Q2_ROOT}/data/carebench/json" \
+  "${Q2_ROOT}/data/carebench/videos" \
   "${Q2_ROOT}/data/dream1k/json" \
   "${Q2_ROOT}/data/dream1k/video" \
   "${Q2_ROOT}/data/vidhalluc/data" \

@@ -39,10 +39,11 @@ from ..common.schemas import (
     VerdictStatus,
     VideoTruthLabel,
 )
+from ..datasets.carebench import load_carebench_records
 from ..datasets.dream1k import load_dream1k_records
 from ..datasets.formal_sampling import (
     FormalSamplingConfig,
-    build_formal_dream1k_manifest,
+    build_formal_e2_manifest,
     build_formal_vidhalluc_manifest,
 )
 from ..datasets.vidhalluc import (
@@ -54,7 +55,7 @@ from ..datasets.vidhalluc import (
 from ..evaluators.backends import JudgeBackend
 from ..evaluators.calibration import (
     AlignedAtomRecord,
-    audit_cross_model_dream1k_bias,
+    audit_cross_model_e2_bias,
     audit_e3_evaluator_agreement,
     audit_evaluator_calibration,
     make_stable_claim_id,
@@ -194,20 +195,44 @@ def _paired_arm_diff_analysis(
     return diffs, stat
 
 
+def _load_e2_records_by_dataset(
+    e2_dataset: str,
+    annotation_path: Path | str,
+    video_root: Path | str,
+    require_video_exists: bool = False,
+) -> tuple[str, list[QueryRecord]]:
+    ds = (e2_dataset or "carebench").strip().lower().replace("-", "")
+    if ds == "carebench":
+        return "CaReBench", load_carebench_records(annotation_path, video_root, require_video_exists=require_video_exists)
+    if ds == "dream1k":
+        return "DREAM-1K", load_dream1k_records(annotation_path, video_root, require_video_exists=require_video_exists)
+    raise ValueError(f"Unsupported E2 dataset '{e2_dataset}' (allowed: carebench, dream1k)")
+
+
 def run_pilot_a2_pipeline(
     a1_predictions_path: Path | str,
-    dream1k_annotation_path: Path | str,
-    dream1k_video_root: Path | str,
-    judge_backend: JudgeBackend,
-    out_dir: Path | str,
+    dream1k_annotation_path: Path | str | None = None,
+    dream1k_video_root: Path | str | None = None,
+    judge_backend: JudgeBackend | None = None,
+    out_dir: Path | str = ".",
     auth_receipt_path: Path | str | None = None,
     prior_a1_receipt: Path | str | None = None,
     human_annotations_path: Path | str | None = None,
     generator_model_family: str = "vicuna_videollama",
     allow_cpu_mock: bool = False,
+    e2_dataset: str | None = None,
+    e2_annotation_path: Path | str | None = None,
+    e2_video_root: Path | str | None = None,
 ) -> dict[str, Any]:
-    """Real Pilot A2 stage: consumes A1 predictions, reuses generated auto-eval/blind bundles on re-entry,
-    and performs strict claim_id reconciliation with omitted-claim & split/merge support."""
+    """Real Pilot A2 stage (supports CaReBench primary & DREAM-1K backup): consumes A1 predictions, reuses generated
+    auto-eval/blind bundles on re-entry, and performs strict claim_id reconciliation."""
+    if judge_backend is None:
+        raise ValueError("judge_backend is required for Pilot A2")
+    ann_path = e2_annotation_path or dream1k_annotation_path
+    vid_root = e2_video_root or dream1k_video_root
+    if ann_path is None or vid_root is None:
+        raise ValueError("Pilot A2 requires e2_annotation_path/e2_video_root (or dream1k_* aliases)")
+
     auth = verify_stage_authorization(
         stage=PilotStage.PILOT_A2,
         auth_receipt_path=auth_receipt_path,
@@ -218,6 +243,23 @@ def run_pilot_a2_pipeline(
     out.mkdir(parents=True, exist_ok=True)
     if not Path(a1_predictions_path).is_file():
         raise FileNotFoundError(f"Pilot A2 requires A1 predictions.jsonl: {a1_predictions_path}")
+
+    preds_peek = read_jsonl(a1_predictions_path)
+    if not preds_peek:
+        raise ValueError(f"Pilot A1 predictions file is empty: {a1_predictions_path}")
+    # Infer dataset cleanly when caller omitted e2_dataset (NEVER mislabel CaReBench as DREAM-1K!)
+    if e2_dataset is not None:
+        resolved_e2_key = e2_dataset
+    else:
+        first_ds = str(preds_peek[0].get("dataset_id", "")).lower().replace("-", "")
+        first_qid = str(preds_peek[0].get("query_id", "")).lower()
+        if first_ds == "carebench" or first_qid.startswith("carebench_"):
+            resolved_e2_key = "carebench"
+        elif first_ds == "dream1k" or first_qid.startswith("dream1k_"):
+            resolved_e2_key = "dream1k"
+        else:
+            resolved_e2_key = "carebench"
+    dataset_label = "CaReBench" if resolved_e2_key.lower().replace("-", "") == "carebench" else "DREAM-1K"
 
     a1_sha = sha256_file(a1_predictions_path)
     eval_path = out / "a2_ref_fact_eval.jsonl"
@@ -233,14 +275,12 @@ def run_pilot_a2_pipeline(
             blind_pkg = {k: Path(v) for k, v in prev_man["blind_annotation_files"].items()}
             parse_failures = sum(1 for r in eval_rows if r.get("parse_status") != "OK")
             pkg_sha = str(prev_man.get("package_sha256", ""))
+            dataset_label = str(prev_man.get("dataset_id", dataset_label))
             reused_existing = True
 
     if not reused_existing:
-        preds = read_jsonl(a1_predictions_path)
-        if not preds:
-            raise ValueError(f"Pilot A1 predictions file is empty: {a1_predictions_path}")
-
-        recs = load_dream1k_records(dream1k_annotation_path, dream1k_video_root)
+        preds = preds_peek
+        dataset_label, recs = _load_e2_records_by_dataset(resolved_e2_key, ann_path, vid_root)
         rec_by_qid = {r.query_id: r for r in recs}
 
         evaluator = ThreeWayReferenceFactEvaluator(
@@ -256,7 +296,7 @@ def run_pilot_a2_pipeline(
         for p in preds:
             qid = str(p["query_id"])
             if qid not in rec_by_qid:
-                raise KeyError(f"A1 prediction query_id '{qid}' not found in DREAM-1K annotations")
+                raise KeyError(f"A1 prediction query_id '{qid}' not found in {dataset_label} annotations")
             qrec = rec_by_qid[qid]
             ev = evaluator.evaluate_caption(
                 query_id=qid,
@@ -269,10 +309,11 @@ def run_pilot_a2_pipeline(
             if ev.parse_status != "OK":
                 parse_failures += 1
             ev_d = _attach_stable_claim_ids(ev.to_dict())
+            ev_d["dataset_id"] = dataset_label
             eval_rows.append(ev_d)
 
             v_entry = videos_for_blind.setdefault(
-                qid, {"query_id": qid, "video_path": qrec.video_path, "captions": []}
+                qid, {"query_id": qid, "dataset_id": dataset_label, "video_path": qrec.video_path, "captions": []}
             )
             v_entry["captions"].append(
                 {
@@ -291,6 +332,7 @@ def run_pilot_a2_pipeline(
         atomic_write_json(
             manifest_path,
             {
+                "dataset_id": dataset_label,
                 "a1_predictions_path": str(a1_predictions_path),
                 "a1_predictions_sha256": a1_sha,
                 "auto_eval_path": str(eval_path),
@@ -305,6 +347,7 @@ def run_pilot_a2_pipeline(
     if not human_annotations_path or not Path(human_annotations_path).is_file():
         receipt = {
             "stage": PilotStage.PILOT_A2.value,
+            "dataset_id": dataset_label,
             "status": StageRunStatus.HUMAN_VALIDATION_PENDING.value,
             "execution_mode": auth["mode"],
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
@@ -367,6 +410,7 @@ def run_pilot_a2_pipeline(
 
     receipt = {
         "stage": PilotStage.PILOT_A2.value,
+        "dataset_id": dataset_label,
         "status": status,
         "execution_mode": auth["mode"],
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
@@ -386,15 +430,15 @@ def run_pilot_a2_pipeline(
 
 
 def run_pilot_a3_pipeline(
-    dream1k_pilot_queries: list[QueryRecord],
-    retriever: RetrieverAdapter,
-    modern_vlm: GeneratorAdapter,
-    videollama_adapter: GeneratorAdapter,
-    vidhalluc_ach_mcq_path: Path | str,
-    vidhalluc_video_root: Path | str,
-    e3_judge_backend: JudgeBackend,
-    out_dir: Path | str,
-    videoufo_source_ids: set[str],
+    dream1k_pilot_queries: list[QueryRecord] | None = None,
+    retriever: RetrieverAdapter | None = None,
+    modern_vlm: GeneratorAdapter | None = None,
+    videollama_adapter: GeneratorAdapter | None = None,
+    vidhalluc_ach_mcq_path: Path | str = "",
+    vidhalluc_video_root: Path | str = "",
+    e3_judge_backend: JudgeBackend | None = None,
+    out_dir: Path | str = ".",
+    videoufo_source_ids: set[str] | None = None,
     approved_e3_candidates_path: Path | str | None = None,
     e3_human_annotations_path: Path | str | None = None,
     dream1k_vlm_human_annotations_path: Path | str | None = None,
@@ -406,15 +450,24 @@ def run_pilot_a3_pipeline(
     gpu_lock_path: Path | None = None,
     allow_cpu_mock: bool = False,
     skip_video_decode: bool = False,
+    e2_pilot_queries: list[QueryRecord] | None = None,
+    e2_vlm_human_annotations_path: Path | str | None = None,
+    require_cross_model_e2_human: bool = False,
 ) -> dict[str, Any]:
-    """Real Pilot A3 stage with FULL human evaluation closed-loop:
-      1. Modern VLM on DREAM-1K 30 + optional 3-way auto eval + blind package for cross-model bias audit.
-      2. VidHalluc overlap/same-source filter + pause at exit 10 if E3 candidates unapproved.
-      3. Dual-model 4-arm E3 + BlindE3SemanticEvaluator + blind E3 dual-target annotation package export.
-      4. PAUSES at HUMAN_VALIDATION_PENDING (exit 10) until E3 human verification is returned!
-      5. Reuses saved auto-eval & blind keys on re-entry -> computes independent Y_true & Y_conflict
-         agreement, Con vs Neu differential bias, and cross-model DREAM-1K evaluation bias!
-    """
+    """Real Pilot A3 stage with FULL human evaluation closed-loop (supports CaReBench primary & DREAM-1K backup)."""
+    pilot_queries = e2_pilot_queries if e2_pilot_queries is not None else (dream1k_pilot_queries or [])
+    if not pilot_queries:
+        raise ValueError("Pilot A3 requires non-empty e2_pilot_queries (or dream1k_pilot_queries)")
+    if retriever is None or modern_vlm is None or videollama_adapter is None or e3_judge_backend is None:
+        raise ValueError("Pilot A3 requires retriever, modern_vlm, videollama_adapter, and e3_judge_backend")
+    e2_vlm_h_path = e2_vlm_human_annotations_path or dream1k_vlm_human_annotations_path
+    req_cross_e2 = bool(require_cross_model_e2_human or require_cross_model_dream1k_human)
+    vufo_sids = videoufo_source_ids or set()
+
+    e2_dataset_id = pilot_queries[0].dataset_id or "CaReBench"
+    is_carebench = e2_dataset_id.lower() == "carebench"
+    e2_slug = "carebench" if is_carebench else "dream1k"
+
     auth = verify_stage_authorization(
         stage=PilotStage.PILOT_A3,
         auth_receipt_path=auth_receipt_path,
@@ -424,41 +477,41 @@ def run_pilot_a3_pipeline(
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
 
-    # 1. Run Modern VLM on DREAM-1K pilot queries (reuse cleanly if already completed!)
-    vlm_dream_dir = out / "dream1k_modern_vlm"
-    vlm_dream_rec_p = vlm_dream_dir / "run_receipt.json"
-    if vlm_dream_rec_p.is_file() and read_json(vlm_dream_rec_p).get("verdict") == VerdictStatus.PASS.value:
-        vlm_dream_summary = read_json(vlm_dream_rec_p)
+    # 1. Run Modern VLM on E2 pilot queries (reuse cleanly if already completed!)
+    vlm_e2_dir = out / f"{e2_slug}_modern_vlm"
+    vlm_e2_rec_p = vlm_e2_dir / "run_receipt.json"
+    if vlm_e2_rec_p.is_file() and read_json(vlm_e2_rec_p).get("verdict") == VerdictStatus.PASS.value:
+        vlm_e2_summary = read_json(vlm_e2_rec_p)
     else:
-        vlm_dream_summary = run_natural_retrieval_stage(
+        vlm_e2_summary = run_natural_retrieval_stage(
             RunSpec(
-                run_id="pilot_a3_dream1k_vlm",
+                run_id=f"pilot_a3_{e2_slug}_vlm",
                 stage=PilotStage.PILOT_A3,
-                dataset_id="DREAM-1K",
+                dataset_id=e2_dataset_id,
                 arms=[ExpArm.ARM_A0, ExpArm.ARM_A1, ExpArm.ARM_A7],
-                out_dir=vlm_dream_dir,
+                out_dir=vlm_e2_dir,
                 auth_receipt_path=Path(auth_receipt_path) if auth_receipt_path else None,
                 prior_receipts={PilotStage.PILOT_A2.value: prior_a2_receipt} if prior_a2_receipt else {},
                 gpu_lock_path=gpu_lock_path,
                 allow_cpu_mock=allow_cpu_mock,
             ),
-            queries=dream1k_pilot_queries,
+            queries=pilot_queries,
             retriever=retriever,
             generator=modern_vlm,
             skip_video_decode=skip_video_decode,
         )
         release_gpu_memory()
 
-    # 1b. Evaluate Modern VLM DREAM-1K captions + build blind package for cross-model DREAM-1K bias check (reusable!)
-    vlm_eval_path = out / "dream1k_vlm_ref_eval.jsonl"
-    vlm_blind_manifest_path = out / "dream1k_vlm_blind_manifest.json"
-    q_by_id = {q.query_id: q for q in dream1k_pilot_queries}
+    # 1b. Evaluate Modern VLM E2 captions + build blind package for cross-model E2 bias check (reusable!)
+    vlm_eval_path = out / f"{e2_slug}_vlm_ref_eval.jsonl"
+    vlm_blind_manifest_path = out / f"{e2_slug}_vlm_blind_manifest.json"
+    q_by_id = {q.query_id: q for q in pilot_queries}
     r_judge = ref_judge_backend or e3_judge_backend
     if vlm_blind_manifest_path.is_file() and vlm_eval_path.is_file():
         vlm_blind_man = read_json(vlm_blind_manifest_path)
         vlm_eval_rows = read_jsonl(vlm_eval_path)
     else:
-        vlm_preds = read_jsonl(vlm_dream_dir / "predictions.jsonl")
+        vlm_preds = read_jsonl(vlm_e2_dir / "predictions.jsonl")
         ref_ev = ThreeWayReferenceFactEvaluator(r_judge, enforce_cross_family=False)
         vlm_eval_rows = []
         vids_blind: dict[str, dict[str, Any]] = {}
@@ -469,8 +522,12 @@ def run_pilot_a3_pipeline(
                     p["query_id"], p["arm"], p["model_id"], p["caption"], qrec.reference_description, qrec.core_events
                 ).to_dict()
             )
+            ev_d["dataset_id"] = e2_dataset_id
             vlm_eval_rows.append(ev_d)
-            ve = vids_blind.setdefault(qrec.query_id, {"query_id": qrec.query_id, "video_path": qrec.video_path, "captions": []})
+            ve = vids_blind.setdefault(
+                qrec.query_id,
+                {"query_id": qrec.query_id, "dataset_id": e2_dataset_id, "video_path": qrec.video_path, "captions": []},
+            )
             ve["captions"].append(
                 {
                     "arm": ev_d["arm"],
@@ -481,17 +538,18 @@ def run_pilot_a3_pipeline(
             )
         atomic_write_jsonl(vlm_eval_path, vlm_eval_rows)
         vlm_bpkg = build_blind_e2_annotation_package(
-            list(vids_blind.values()), annotator_ids=["A1", "A2"], out_dir=out / "dream1k_vlm_blind_annotation_package"
+            list(vids_blind.values()), annotator_ids=["A1", "A2"], out_dir=out / f"{e2_slug}_vlm_blind_annotation_package"
         )
         vlm_blind_man = {
+            "dataset_id": e2_dataset_id,
             "package_sha256": read_json(vlm_bpkg["blind_key"]).get("package_sha256", ""),
             "blind_annotation_files": {k: str(v) for k, v in vlm_bpkg.items()},
         }
         atomic_write_json(vlm_blind_manifest_path, vlm_blind_man)
 
-    # 2. Load VidHalluc & run exact YouTube ID overlap filter + 1-clip-per-source dedup
+    # 2. Load VidHalluc & run known YouTube ID overlap filter + 1-clip-per-source dedup
     vh_raw = load_vidhalluc_ach_mcq(vidhalluc_ach_mcq_path, vidhalluc_video_root)
-    vh_clean, overlap_audit = deduplicate_and_filter_vidhalluc(vh_raw, videoufo_source_ids=videoufo_source_ids)
+    vh_clean, overlap_audit = deduplicate_and_filter_vidhalluc(vh_raw, videoufo_source_ids=vufo_sids)
     atomic_write_json(out / "vidhalluc_overlap_audit.json", overlap_audit)
     vh_by_qid = {r.query_id: r for r in vh_clean}
 
@@ -506,16 +564,19 @@ def run_pilot_a3_pipeline(
         )
         receipt = {
             "stage": PilotStage.PILOT_A3.value,
+            "e2_dataset_id": e2_dataset_id,
             "status": StageRunStatus.HUMAN_VALIDATION_PENDING.value,
             "pending_reason": "VIDHALLUC_CANDIDATE_APPLICABILITY_REVIEW",
             "execution_mode": auth["mode"],
-            "dream1k_modern_vlm_summary": vlm_dream_summary,
+            "e2_modern_vlm_summary": vlm_e2_summary,
             "vidhalluc_overlap_audit": overlap_audit,
             "pending_candidates_file": str(pending_file),
             "pilot_exclusion_manifest": str(excl_path),
             "e3_human_validation_completed": False,
             "next_action": "Complete 5-item human applicability review on VidHalluc candidates and pass --approved-e3-candidates.",
         }
+        if not is_carebench:
+            receipt["dream1k_modern_vlm_summary"] = vlm_e2_summary
         atomic_write_json(out / "run_receipt.json", receipt)
         return receipt
 
@@ -625,52 +686,58 @@ def run_pilot_a3_pipeline(
         reused_e3_bundle = False
 
     gen_all_ok = (
-        vlm_dream_summary["verdict"] == VerdictStatus.PASS.value
+        vlm_e2_summary["verdict"] == VerdictStatus.PASS.value
         and e3_vl["verdict"] == VerdictStatus.PASS.value
         and e3_vlm["verdict"] == VerdictStatus.PASS.value
     )
     if not gen_all_ok:
         receipt = {
             "stage": PilotStage.PILOT_A3.value,
+            "e2_dataset_id": e2_dataset_id,
             "status": StageRunStatus.FAILED.value,
             "execution_mode": auth["mode"],
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-            "dream1k_modern_vlm_summary": vlm_dream_summary,
+            "e2_modern_vlm_summary": vlm_e2_summary,
             "e3_videollama_summary": e3_vl,
             "e3_modern_vlm_summary": e3_vlm,
             "e3_human_validation_completed": False,
             "verdict": VerdictStatus.FAIL.value,
         }
+        if not is_carebench:
+            receipt["dream1k_modern_vlm_summary"] = vlm_e2_summary
         atomic_write_json(out / "run_receipt.json", receipt)
         return receipt
 
     # 6. NEVER pass A3 on generation alone! Pause at HUMAN_VALIDATION_PENDING until E3 human verification returns!
     need_e3_human = not e3_human_annotations_path or not Path(e3_human_annotations_path).is_file()
-    need_vlm_dream_human = require_cross_model_dream1k_human and (
-        not dream1k_vlm_human_annotations_path or not Path(dream1k_vlm_human_annotations_path).is_file()
-    )
-    if need_e3_human or need_vlm_dream_human:
+    need_vlm_e2_human = req_cross_e2 and (not e2_vlm_h_path or not Path(e2_vlm_h_path).is_file())
+    if need_e3_human or need_vlm_e2_human:
         receipt = {
             "stage": PilotStage.PILOT_A3.value,
+            "e2_dataset_id": e2_dataset_id,
             "status": StageRunStatus.HUMAN_VALIDATION_PENDING.value,
             "pending_reason": "E3_AND_CROSS_MODEL_HUMAN_EVALUATION_REQUIRED",
             "execution_mode": auth["mode"],
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-            "dream1k_modern_vlm_summary": vlm_dream_summary,
+            "e2_modern_vlm_summary": vlm_e2_summary,
             "e3_videollama_summary": e3_vl,
             "e3_modern_vlm_summary": e3_vlm,
             "n_e3_evaluated_captions": len(e3_eval_rows),
             "e3_human_validation_completed": False,
             "e3_blind_annotation_files": e3_blind_man["blind_annotation_files"],
             "e3_package_sha256": e3_blind_man["package_sha256"],
-            "dream1k_vlm_blind_annotation_files": vlm_blind_man["blind_annotation_files"],
-            "dream1k_vlm_package_sha256": vlm_blind_man["package_sha256"],
+            "e2_vlm_blind_annotation_files": vlm_blind_man["blind_annotation_files"],
+            "e2_vlm_package_sha256": vlm_blind_man["package_sha256"],
             "next_action": (
                 "Launch local web UI on e3_blind_annotation_package/blind_tasks_e3_A1.json & A2.json, "
                 "adjudicate via `python scripts/adjudicate_annotations.py --task e3 ...`, then re-run Pilot A3 "
-                "with --e3-human-annotations <adjudicated_e3.json> (and optional --dream1k-vlm-human-annotations)."
+                "with --e3-human-annotations <adjudicated_e3.json> (and optional --e2-vlm-human-annotations)."
             ),
         }
+        if not is_carebench:
+            receipt["dream1k_modern_vlm_summary"] = vlm_e2_summary
+            receipt["dream1k_vlm_blind_annotation_files"] = vlm_blind_man["blind_annotation_files"]
+            receipt["dream1k_vlm_package_sha256"] = vlm_blind_man["package_sha256"]
         atomic_write_json(out / "run_receipt.json", receipt)
         return receipt
 
@@ -694,10 +761,10 @@ def run_pilot_a3_pipeline(
         expected_package_sha256=e3_blind_man["package_sha256"] or None,
     )
 
-    # 8. Optional/Required cross-model DREAM-1K evaluation bias check
+    # 8. Optional/Required cross-model E2 evaluation bias check
     cross_model_bias: dict[str, Any] | None = None
-    if dream1k_vlm_human_annotations_path and Path(dream1k_vlm_human_annotations_path).is_file():
-        raw_vlm_h = read_json(dream1k_vlm_human_annotations_path)
+    if e2_vlm_h_path and Path(e2_vlm_h_path).is_file():
+        raw_vlm_h = read_json(e2_vlm_h_path)
         vlm_h_list = raw_vlm_h["records"] if isinstance(raw_vlm_h, dict) and "records" in raw_vlm_h else raw_vlm_h
         if vlm_h_list and (
             "blind_caption_id" in vlm_h_list[0]
@@ -715,21 +782,25 @@ def run_pilot_a3_pipeline(
         vlm_aligned: list[AlignedAtomRecord] = vlm_rec["aligned_records"]
         if a2_aligned_records_path and Path(a2_aligned_records_path).is_file():
             vl_aligned = [AlignedAtomRecord(**r) for r in read_json(a2_aligned_records_path)]
-            cross_model_bias = audit_cross_model_dream1k_bias(vl_aligned, vlm_aligned)
+            cross_model_bias = audit_cross_model_e2_bias(vl_aligned, vlm_aligned, dataset_id=e2_dataset_id)
         else:
             cross_model_bias = {
+                "dataset_id": e2_dataset_id,
                 "verdict": audit_evaluator_calibration(vlm_aligned, n_boot=300)["verdict"],
-                "note": "Modern VLM DREAM-1K calibration audited standalone (pass --a2-aligned-records for cross-model gap).",
+                "note": f"Modern VLM {e2_dataset_id} calibration audited standalone (pass --a2-aligned-records for cross-model gap).",
                 "modern_vlm_audit": audit_evaluator_calibration(vlm_aligned, n_boot=300),
             }
 
     validation_report = {
         "stage": PilotStage.PILOT_A3.value,
+        "e2_dataset_id": e2_dataset_id,
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "reused_e3_bundle": reused_e3_bundle,
         "e3_evaluator_agreement": e3_agreement,
-        "cross_model_dream1k_bias": cross_model_bias,
+        "cross_model_e2_bias": cross_model_bias,
     }
+    if not is_carebench:
+        validation_report["cross_model_dream1k_bias"] = cross_model_bias
     atomic_write_json(out / "a3_evaluator_validation_report.json", validation_report)
 
     verdicts = [e3_agreement["verdict"]]
@@ -748,40 +819,45 @@ def run_pilot_a3_pipeline(
 
     receipt = {
         "stage": PilotStage.PILOT_A3.value,
+        "e2_dataset_id": e2_dataset_id,
         "status": status,
         "execution_mode": auth["mode"],
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
-        "dream1k_modern_vlm_summary": vlm_dream_summary,
+        "e2_modern_vlm_summary": vlm_e2_summary,
         "e3_videollama_summary": e3_vl,
         "e3_modern_vlm_summary": e3_vlm,
         "n_e3_evaluated_captions": len(e3_eval_rows),
         "e3_human_validation_completed": True,
-        "cross_model_dream1k_bias_checked": cross_model_bias is not None,
+        "cross_model_e2_bias_checked": cross_model_bias is not None,
         "e3_evaluator_agreement_verdict": e3_agreement["verdict"],
-        "cross_model_dream1k_bias_verdict": cross_model_bias["verdict"] if cross_model_bias else None,
+        "cross_model_e2_bias_verdict": cross_model_bias["verdict"] if cross_model_bias else None,
         "validation_report_path": str(out / "a3_evaluator_validation_report.json"),
         "verdict": final_verdict,
     }
+    if not is_carebench:
+        receipt["dream1k_modern_vlm_summary"] = vlm_e2_summary
+        receipt["cross_model_dream1k_bias_checked"] = cross_model_bias is not None
+        receipt["cross_model_dream1k_bias_verdict"] = cross_model_bias["verdict"] if cross_model_bias else None
     atomic_write_json(out / "run_receipt.json", receipt)
     return receipt
 
 
 def run_formal_b_pipeline(
-    formal_dream1k_queries: list[QueryRecord],
-    formal_vidhalluc_queries_by_id: dict[str, QueryRecord],
-    approved_e3_candidates: list[E3InterventionCandidate],
-    retriever: RetrieverAdapter,
-    videollama_adapter: GeneratorAdapter,
-    modern_vlm: GeneratorAdapter,
-    ref_judge_backend: JudgeBackend,
-    e3_judge_backend: JudgeBackend,
-    out_dir: Path | str,
-    auth_receipt_path: Path | str,
-    prior_receipts: dict[str, Path | str],
-    formal_config_path: Path | str,
-    asset_manifest_path: Path | str,
-    pilot_exclusion_path: Path | str,
-    pilot_excluded_query_ids: set[str],
+    formal_dream1k_queries: list[QueryRecord] | None = None,
+    formal_vidhalluc_queries_by_id: dict[str, QueryRecord] | None = None,
+    approved_e3_candidates: list[E3InterventionCandidate] | None = None,
+    retriever: RetrieverAdapter | None = None,
+    videollama_adapter: GeneratorAdapter | None = None,
+    modern_vlm: GeneratorAdapter | None = None,
+    ref_judge_backend: JudgeBackend | None = None,
+    e3_judge_backend: JudgeBackend | None = None,
+    out_dir: Path | str = ".",
+    auth_receipt_path: Path | str = "",
+    prior_receipts: dict[str, Path | str] | None = None,
+    formal_config_path: Path | str = "",
+    asset_manifest_path: Path | str = "",
+    pilot_exclusion_path: Path | str = "",
+    pilot_excluded_query_ids: set[str] | None = None,
     e3_bridge_observations: list[NaturalConflictObservation] | None = None,
     sampling_cfg: FormalSamplingConfig | None = None,
     explicit_near_dup_excluded_ids: set[str] | None = None,
@@ -794,18 +870,43 @@ def run_formal_b_pipeline(
     e3_bridge_min_clean_pairs: int = 25,
     gpu_lock_path: Path | None = None,
     skip_video_decode: bool = False,
+    formal_e2_queries: list[QueryRecord] | None = None,
+    pilot_excluded_parent_ids: set[str] | None = None,
+    extra_debug_query_ids: set[str] | None = None,
+    extra_debug_parent_ids: set[str] | None = None,
 ) -> dict[str, Any]:
-    """Complete guarded Formal Study B pipeline:
-      - Stratified probability sampling + Pilot/near-dup/same-source isolation + frozen analysis manifest
+    """Complete guarded Formal Study B pipeline (supports CaReBench primary & DREAM-1K backup):
+      - Parent-video dedup (CaReBench) + stratified probability sampling + Pilot/debug/near-dup/same-source isolation
       - E2 (both models) + E3 (both models) + real E3-Bridge execution (when enabled)
-      - Full missingness-preserving statistics (NEVER `or 0.0`!):
-          * E2 A1-A0, A7-A1, A7-A0 across n_contra_ref, n_entail_ref, r_core_ref, p_unment_ref, n_unment_ref
+      - Full missingness-preserving stats (NEVER `or 0.0`!):
+          * E2 A1-A0, A7-A1, A7-A0 across n_contra_ref, n_entail_ref, r_core_ref, p_unment_ref, n_unment_ref,
+            plus auxiliary reference support/conflict rates and static/dynamic/mixed/unclassified diagnostic counts
           * E2 independent human validation set + Two-Phase IPW error correction
-          * E2 cross-model DiD + Holm-Bonferroni
-          * E3 primary (Con vs Neu) + secondary comparisons (Sup vs Neu, Con vs Sup, Con/Sup/Neu vs Base) + cross-model DiD
+          * E2 cross-model DiD + Holm-Bonferroni (primary family preserved unchanged!)
+          * E3 primary (Con vs Neu) + secondary comparisons + cross-model DiD
           * MSR-VTT historical output bridge
           * E3-Bridge execution stats (when enabled)
     """
+    e2_queries_in = formal_e2_queries if formal_e2_queries is not None else (formal_dream1k_queries or [])
+    if not e2_queries_in:
+        raise ValueError("FORMAL_B requires non-empty formal_e2_queries (or formal_dream1k_queries)")
+    if (
+        formal_vidhalluc_queries_by_id is None
+        or approved_e3_candidates is None
+        or retriever is None
+        or videollama_adapter is None
+        or modern_vlm is None
+        or ref_judge_backend is None
+        or e3_judge_backend is None
+        or prior_receipts is None
+    ):
+        raise ValueError("FORMAL_B missing required pipeline dependencies")
+
+    pilot_excl_q = set(pilot_excluded_query_ids or set())
+    e2_dataset_id = e2_queries_in[0].dataset_id or "CaReBench"
+    is_carebench = e2_dataset_id.lower() == "carebench"
+    e2_slug = "carebench" if is_carebench else "dream1k"
+
     auth = verify_stage_authorization(
         stage=PilotStage.FORMAL_B,
         auth_receipt_path=auth_receipt_path,
@@ -818,14 +919,18 @@ def run_formal_b_pipeline(
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
 
-    # 0. Formal Sample Isolation, Stratified Probability Sampling & Analysis Manifest Freeze
+    # 0. Formal Sample Isolation, Parent-Video Dedup (CaReBench), Stratified Sampling & Analysis Manifest Freeze
     scfg = sampling_cfg or FormalSamplingConfig()
-    selected_dream, dream_manifest = build_formal_dream1k_manifest(
-        all_records=formal_dream1k_queries,
-        pilot_excluded_ids=pilot_excluded_query_ids,
+    e2_manifest_path = out / f"formal_{e2_slug}_analysis_manifest.json"
+    selected_e2, e2_manifest = build_formal_e2_manifest(
+        all_records=e2_queries_in,
+        pilot_excluded_ids=pilot_excl_q,
         cfg=scfg,
         explicit_near_dup_excluded_ids=explicit_near_dup_excluded_ids,
-        out_manifest_path=out / "formal_dream1k_analysis_manifest.json",
+        out_manifest_path=e2_manifest_path,
+        pilot_excluded_parent_ids=pilot_excluded_parent_ids,
+        extra_debug_query_ids=extra_debug_query_ids,
+        extra_debug_parent_ids=extra_debug_parent_ids,
     )
     vh_selected, vh_manifest = build_formal_vidhalluc_manifest(
         raw_records=list(formal_vidhalluc_queries_by_id.values()),
@@ -839,14 +944,14 @@ def run_formal_b_pipeline(
     vh_filtered_map = {r.query_id: r for r in vh_selected}
     filtered_e3_cands = [c for c in approved_e3_candidates if c.query_id in vh_allowed_ids]
 
-    # 1. E2 Natural Retrieval on DREAM-1K Formal (both models, shared stratified cohort)
+    # 1. E2 Natural Retrieval on E2 Formal (both models, shared stratified cohort)
     e2_summaries = {}
     for tag, gen in (("videollama", videollama_adapter), ("modern_vlm", modern_vlm)):
         e2_summaries[tag] = run_natural_retrieval_stage(
             RunSpec(
-                run_id=f"formal_b_e2_{tag}",
+                run_id=f"formal_b_e2_{e2_slug}_{tag}",
                 stage=PilotStage.FORMAL_B,
-                dataset_id="DREAM-1K",
+                dataset_id=e2_dataset_id,
                 arms=[ExpArm.ARM_A0, ExpArm.ARM_A1, ExpArm.ARM_A7],
                 out_dir=out / f"e2_{tag}",
                 auth_receipt_path=Path(auth_receipt_path),
@@ -854,11 +959,11 @@ def run_formal_b_pipeline(
                 formal_config_path=Path(formal_config_path),
                 asset_manifest_path=Path(asset_manifest_path),
                 pilot_exclusion_path=Path(pilot_exclusion_path),
-                pilot_excluded_query_ids=pilot_excluded_query_ids,
+                pilot_excluded_query_ids=pilot_excl_q,
                 gpu_lock_path=gpu_lock_path,
                 allow_cpu_mock=False,
             ),
-            queries=selected_dream,
+            queries=selected_e2,
             retriever=retriever,
             generator=gen,
             skip_video_decode=skip_video_decode,
@@ -893,14 +998,22 @@ def run_formal_b_pipeline(
 
     # 3. Real E3-Bridge cohort screening AND actual execution when enabled!
     bridge_report = (
-        build_e3_bridge_cohort(e3_bridge_observations, min_clean_pairs=e3_bridge_min_clean_pairs)
+        build_e3_bridge_cohort(
+            e3_bridge_observations,
+            min_clean_pairs=e3_bridge_min_clean_pairs,
+            source_dataset_id=e2_dataset_id,
+        )
         if e3_bridge_observations is not None
-        else {"module": "E3-Bridge", "enabled": False, "status": "NOT_PROVIDED"}
+        else {"module": "E3-Bridge", "source_dataset_id": e2_dataset_id, "enabled": False, "status": "NOT_PROVIDED"}
     )
     atomic_write_json(out / "e3_bridge_decision.json", bridge_report)
 
-    q_by_id = {q.query_id: q for q in selected_dream}
-    e3_bridge_execution: dict[str, Any] = {"enabled": bool(bridge_report.get("enabled")), "executed": False}
+    q_by_id = {q.query_id: q for q in selected_e2}
+    e3_bridge_execution: dict[str, Any] = {
+        "source_dataset_id": e2_dataset_id,
+        "enabled": bool(bridge_report.get("enabled")),
+        "executed": False,
+    }
     if bridge_report.get("enabled") and bridge_report.get("candidates"):
         bridge_cands = [E3InterventionCandidate(**cd) for cd in bridge_report["candidates"] if cd["query_id"] in q_by_id]
         if bridge_cands:
@@ -911,9 +1024,9 @@ def run_formal_b_pipeline(
             for tag, gen in (("videollama", videollama_adapter), ("modern_vlm", modern_vlm)):
                 bridge_runs[tag] = run_e3_controlled_stage(
                     RunSpec(
-                        run_id=f"formal_b_e3_bridge_{tag}",
+                        run_id=f"formal_b_e3_bridge_{e2_slug}_{tag}",
                         stage=PilotStage.FORMAL_B,
-                        dataset_id="DREAM-1K-E3-Bridge",
+                        dataset_id=f"{e2_dataset_id}-E3-Bridge",
                         arms=[ExpArm.E3_BASE, ExpArm.E3_SUP, ExpArm.E3_CON, ExpArm.E3_NEU],
                         out_dir=out / f"e3_bridge_{tag}",
                         auth_receipt_path=Path(auth_receipt_path),
@@ -948,6 +1061,7 @@ def run_formal_b_pipeline(
                     "y_true_con_vs_neu": paired_binary_mcnemar_effect(con_t, neu_t, n_boot=300),
                 }
             e3_bridge_execution = {
+                "source_dataset_id": e2_dataset_id,
                 "enabled": True,
                 "executed": True,
                 "n_candidates_executed": len(bridge_cands),
@@ -1035,7 +1149,7 @@ def run_formal_b_pipeline(
 
     # 4c. E2 Independent Human Validation Set + Two-Phase Sampling Error-Correction Candidate Analysis
     two_phase_results: dict[str, Any] = {}
-    val_ids = set(dream_manifest["e2_validation_set"]["validation_query_ids"])
+    val_ids = set(e2_manifest["e2_validation_set"]["validation_query_ids"])
     if val_ids:
         # Always export blind validation bundle for the independent E2 validation subset
         val_blind_vids: dict[str, dict[str, Any]] = {}
@@ -1044,7 +1158,10 @@ def run_formal_b_pipeline(
                 if ev_d["query_id"] not in val_ids or ev_d.get("parse_status") != "OK":
                     continue
                 qrec = q_by_id[ev_d["query_id"]]
-                ve = val_blind_vids.setdefault(qrec.query_id, {"query_id": qrec.query_id, "video_path": qrec.video_path, "captions": []})
+                ve = val_blind_vids.setdefault(
+                    qrec.query_id,
+                    {"query_id": qrec.query_id, "dataset_id": e2_dataset_id, "video_path": qrec.video_path, "captions": []},
+                )
                 ve["captions"].append(
                     {
                         "arm": ev_d["arm"],
@@ -1073,7 +1190,7 @@ def run_formal_b_pipeline(
             auto_deltas = e2_deltas_store[tag]["n_contra_ref__a7_minus_a0"]
             tp_units: list[TwoPhaseUnit] = []
             for qid, auto_d in sorted(auto_deltas.items()):
-                um = dream_manifest["units"][qid]
+                um = e2_manifest["units"][qid]
                 in_val = bool(um["in_e2_human_validation"])
                 h_delta: float | None = None
                 if in_val:
@@ -1092,7 +1209,7 @@ def run_formal_b_pipeline(
                     )
                 )
             two_phase_results[tag] = estimate_two_phase_corrected_delta(
-                tp_units, calibration_excluded_ids=pilot_excluded_query_ids
+                tp_units, calibration_excluded_ids=pilot_excl_q
             )
     else:
         two_phase_results["status"] = "PENDING_E2_VALIDATION_HUMAN_ANNOTATIONS"
@@ -1189,12 +1306,44 @@ def run_formal_b_pipeline(
             )
             msrvtt_bridge_report = {"status": "COMPUTED_FROM_FROZEN_PER_QUERY_JSONS", "e1_report": e1_res}
 
+    # Auxiliary static/dynamic/mixed/unclassified diagnostic summary (strictly descriptive, NO added formal tests!)
+    e2_aux_dim_summary: dict[str, Any] = {}
+    for tag in ("videollama", "modern_vlm"):
+        by_arm_dim: dict[str, Any] = {}
+        for arm in (ExpArm.ARM_A0.value, ExpArm.ARM_A1.value, ExpArm.ARM_A7.value):
+            agg: dict[str, dict[str, int]] = {
+                d: {"total": 0, "entailed": 0, "contradicted": 0, "unmentioned": 0}
+                for d in ("static_entity_attribute", "dynamic_action_temporal", "mixed", "unclassified")
+            }
+            for ev in e2_evals_by_model[tag]:
+                if ev.get("arm") != arm or ev.get("parse_status") != "OK":
+                    continue
+                bd = ev.get("auxiliary_dimension_breakdown") or {}
+                for d, counts in bd.items():
+                    if d in agg:
+                        for k in ("total", "entailed", "contradicted", "unmentioned"):
+                            agg[d][k] += int(counts.get(k, 0))
+            by_arm_dim[arm] = agg
+        e2_aux_dim_summary[tag] = by_arm_dim
+
+    manifests_info: dict[str, str] = {
+        "e2_dataset_id": e2_dataset_id,
+        "e2_manifest": str(e2_manifest_path),
+        "vidhalluc_manifest": str(out / "formal_vidhalluc_analysis_manifest.json"),
+    }
+    if not is_carebench:
+        manifests_info["dream1k_manifest"] = str(e2_manifest_path)
+
     stats_bundle = {
-        "formal_sampling_manifests": {
-            "dream1k_manifest": str(out / "formal_dream1k_analysis_manifest.json"),
-            "vidhalluc_manifest": str(out / "formal_vidhalluc_analysis_manifest.json"),
-        },
+        "e2_dataset_id": e2_dataset_id,
+        "e3_dataset_id": "VidHalluc-ACH",
+        "e3_causal_scope_notice": (
+            "VidHalluc-ACH E3 controlled causal findings apply primarily to action facts and are NOT "
+            f"automatically extrapolated to all static object/attribute errors observed in {e2_dataset_id} E2."
+        ),
+        "formal_sampling_manifests": manifests_info,
         "e2_by_model": e2_stats_by_model,
+        "e2_auxiliary_static_dynamic_diagnostics": e2_aux_dim_summary,
         "e2_cross_model_did": e2_did_all,
         "e2_cross_model_did_contra": e2_did_all["n_contra_ref__a7_minus_a0"],  # Backward-compatible alias
         "e2_two_phase_error_correction": two_phase_results,
@@ -1212,14 +1361,17 @@ def run_formal_b_pipeline(
         )
     receipt = {
         "stage": PilotStage.FORMAL_B.value,
+        "e2_dataset_id": e2_dataset_id,
+        "e3_dataset_id": "VidHalluc-ACH",
         "status": StageRunStatus.REAL_RUNTIME_PASS.value if all_pass else StageRunStatus.FAILED.value,
         "approval_id": auth["approval_id"],
         "evaluator_version": auth["evaluator_version"],
-        "dream1k_manifest_sha256": dream_manifest.get("manifest_sha256", ""),
+        "e2_manifest_sha256": e2_manifest.get("manifest_sha256", ""),
         "vidhalluc_manifest_sha256": vh_manifest.get("manifest_sha256", ""),
         "e2_summaries": e2_summaries,
         "e3_summaries": e3_summaries,
         "e3_bridge": {
+            "source_dataset_id": e2_dataset_id,
             "enabled": bridge_report["enabled"],
             "executed": e3_bridge_execution.get("executed", False),
             "status": bridge_report["status"],
@@ -1228,6 +1380,8 @@ def run_formal_b_pipeline(
         "statistics_file": str(out / "formal_b_statistics.json"),
         "verdict": VerdictStatus.PASS.value if all_pass else VerdictStatus.FAIL.value,
     }
+    if not is_carebench:
+        receipt["dream1k_manifest_sha256"] = e2_manifest.get("manifest_sha256", "")
     atomic_write_json(out / "formal_b_receipt.json", receipt)
     return receipt
 

@@ -56,7 +56,8 @@ q2_writable_workspace:
   # All Q2 writes stay on writable NVMe '/' under /home/bn/uarcap_q2_runtime (NEVER touch /media/bn read-only mount!)
   q2_root: "/home/bn/uarcap_q2_runtime"
   data_root: "/home/bn/uarcap_q2_runtime/data"
-  dream1k_dir: "/home/bn/uarcap_q2_runtime/data/dream1k"
+  carebench_dir: "/home/bn/uarcap_q2_runtime/data/carebench"
+  dream1k_dir: "/home/bn/uarcap_q2_runtime/data/dream1k"  # Backup E2 fallback only
   vidhalluc_dir: "/home/bn/uarcap_q2_runtime/data/vidhalluc"
   models_root: "/home/bn/uarcap_q2_runtime/models"
   outputs_root: "/home/bn/uarcap_q2_runtime/outputs"

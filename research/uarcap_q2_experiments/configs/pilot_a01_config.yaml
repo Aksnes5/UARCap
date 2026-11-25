@@ -1,11 +1,13 @@
-# Pilot A0 Preflight & Pilot A1 Minimal Video-LLaMA Compatibility Configuration
+# Pilot A0 Preflight & Pilot A1 Minimal Video-LLaMA Compatibility Configuration (E2 Primary: CaReBench; Backup: DREAM-1K)
+e2_dataset: "carebench"
+
 stage_a0:
   pilot_stage: "PILOT_A0"
   gpu_required: false
   download_assets:
-    - "dream1k_metadata_json"
+    - "carebench_metadata_json"
   checks:
-    - "dream1k_hf_gated_access"
+    - "carebench_hf_public_access"
     - "bn_disk_space_ge_150gb"
     - "shared_gpu_lock_readable"
     - "frozen_checkpoint_sha256"
@@ -13,13 +15,15 @@ stage_a0:
 
 stage_a1:
   pilot_stage: "PILOT_A1"
-  dataset_id: "DREAM-1K"
+  dataset_id: "CaReBench"
+  backup_dataset_id: "DREAM-1K"
   sampling:
-    strategy: "stratified_by_domain"
-    per_domain: 6
+    strategy: "parent_video_dedup_then_proportional_category_stratified_with_subcategory_spread"
+    parent_video_dedup: true
     total_queries: 30
     seed: 20261125
     permanent_formal_exclusion: true
+    exclude_same_parent_video_from_formal: true
   video_decoding:
     num_frames: 16
     target_size: [224, 224]

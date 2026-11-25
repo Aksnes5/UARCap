@@ -3,12 +3,17 @@
 All target sample sizes are 100% parameterized via config (NEVER pre-frozen before Pilot A0-A3 verdict!).
 
 Guarantees:
-  - Permanent Pilot A DREAM-1K exclusion.
-  - DREAM-1K suspected near-duplicate exclusion (external manifest + deterministic normalized text similarity audit).
-  - Domain-stratified probability sampling with exact recorded inclusion probabilities (n_h / N_h).
-  - Independent E2 human validation set drawn strictly inside the formal cohort and strictly disjoint from Pilot A.
-  - VidHalluc same-source isolation (1 clip per source_id) + VideoUFO overlap exclusion + VidHalluc Pilot source exclusion.
-  - Deterministic frozen manifest output (`formal_analysis_manifest.json`) with SHA-256 checksum.
+  - Supports CaReBench (default E2 primary) and DREAM-1K (backup E2).
+  - CaReBench FineAction parent-video deduplication (1 clip per parent ID) and parent-ID isolation across
+    Pilot A, extra debug clips, suspected near-duplicates, independent E2 human validation set, and formal analysis pool.
+  - Permanent Pilot A E2 exclusion (query_id AND parent_video_id for CaReBench).
+  - Suspected near-duplicate exclusion (external manifest + deterministic normalized text similarity audit).
+  - Category/domain-stratified probability sampling with exact recorded inclusion probabilities (n_h / N_h).
+  - Independent E2 human validation set drawn strictly disjoint from Pilot A, with both full formal cohort
+    and explicit main-excluding-validation IDs recorded.
+  - VidHalluc same-source isolation (1 clip per known YouTube source_id) + known-ID VideoUFO overlap exclusion
+    + VidHalluc Pilot source exclusion.
+  - Deterministic frozen manifest output (`formal_<dataset>_analysis_manifest.json`) with SHA-256 checksum.
 """
 
 from __future__ import annotations
@@ -24,17 +29,22 @@ from typing import Any
 
 from ..common.io_utils import atomic_write_json, sha256_file
 from ..common.schemas import QueryRecord
+from .carebench import deduplicate_carebench_by_parent_video, get_carebench_parent_id
 from .vidhalluc import deduplicate_and_filter_vidhalluc
 
 
 @dataclass
 class FormalSamplingConfig:
-    dream1k_target_n: int | None = None  # None = use all eligible non-pilot non-near-dup records
-    e2_validation_target_n: int | None = None  # None = no Phase-2 validation subsample drawn yet
+    e2_target_n: int | None = None  # Preferred generic name (CaReBench planned range 600-750; NEVER pre-promised!)
+    dream1k_target_n: int | None = None  # Backward-compatible alias for e2_target_n
+    e2_validation_target_n: int | None = None  # Planned 50-80 independent validation subsample (drawn inside formal cohort)
     vidhalluc_target_n: int | None = None  # None = use all eligible non-pilot non-overlap VidHalluc records
     near_duplicate_jaccard_threshold: float = 0.92
     enable_text_near_duplicate_filter: bool = True
     seed: int = 20261125
+
+    def resolved_e2_target_n(self) -> int | None:
+        return self.e2_target_n if self.e2_target_n is not None else self.dream1k_target_n
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -44,11 +54,11 @@ def _norm_tokens(text: str) -> set[str]:
     return set(re.findall(r"[a-z0-9']+", (text or "").lower()))
 
 
-def detect_dream1k_near_duplicates(
+def detect_e2_near_duplicates(
     records: list[QueryRecord],
     jaccard_threshold: float = 0.92,
 ) -> tuple[list[QueryRecord], list[dict[str, Any]]]:
-    """Deterministically detect & exclude suspected near-duplicate DREAM-1K clips within the same domain."""
+    """Deterministically detect & exclude suspected near-duplicate E2 clips within the same category/domain."""
     ordered = sorted(records, key=lambda r: r.query_id)
     kept: list[QueryRecord] = []
     kept_tokens_by_domain: dict[str, list[tuple[str, set[str]]]] = defaultdict(list)
@@ -81,6 +91,10 @@ def detect_dream1k_near_duplicates(
             kept.append(r)
             kept_tokens_by_domain[dom].append((r.query_id, toks))
     return kept, excluded
+
+
+# Backward-compatible alias
+detect_dream1k_near_duplicates = detect_e2_near_duplicates
 
 
 def _allocate_proportional_strata(counts_by_stratum: dict[str, int], target_n: int) -> dict[str, int]:
@@ -121,25 +135,67 @@ def _allocate_proportional_strata(counts_by_stratum: dict[str, int], target_n: i
     return alloc
 
 
-def build_formal_dream1k_manifest(
+def build_formal_e2_manifest(
     all_records: list[QueryRecord],
     pilot_excluded_ids: set[str],
     cfg: FormalSamplingConfig,
     explicit_near_dup_excluded_ids: set[str] | None = None,
     out_manifest_path: Path | str | None = None,
+    pilot_excluded_parent_ids: set[str] | None = None,
+    extra_debug_query_ids: set[str] | None = None,
+    extra_debug_parent_ids: set[str] | None = None,
 ) -> tuple[list[QueryRecord], dict[str, Any]]:
-    """Apply Pilot exclusion + near-dup filter + stratified probability sampling + independent E2 validation draw."""
+    """Apply parent-video dedup (CaReBench) + Pilot/debug isolation + near-dup filter + stratified sampling + E2 val draw."""
+    dataset_id = all_records[0].dataset_id if all_records else "CaReBench"
+    is_carebench = dataset_id.lower() == "carebench"
+
+    parent_dedup_audit: dict[str, Any] | None = None
+    working_records = list(all_records)
+    if is_carebench:
+        working_records, parent_dedup_audit = deduplicate_carebench_by_parent_video(working_records)
+
+    pilot_q = set(pilot_excluded_ids)
+    debug_q = set(extra_debug_query_ids or set())
     expl_dup = set(explicit_near_dup_excluded_ids or set())
-    pilot_excl_applied = sorted(r.query_id for r in all_records if r.query_id in pilot_excluded_ids)
-    after_pilot = [r for r in all_records if r.query_id not in pilot_excluded_ids]
-    after_explicit_dup = [r for r in after_pilot if r.query_id not in expl_dup]
+
+    # Derive excluded parent IDs from both explicit parent list AND any matching raw record in all_records
+    pilot_p = set(pilot_excluded_parent_ids or set())
+    debug_p = set(extra_debug_parent_ids or set())
+    if is_carebench:
+        for r in all_records:
+            if r.query_id in pilot_q:
+                pilot_p.add(get_carebench_parent_id(r))
+            if r.query_id in debug_q:
+                debug_p.add(get_carebench_parent_id(r))
+
+    pilot_excl_applied: list[str] = []
+    debug_excl_applied: list[str] = []
+    explicit_dup_applied: list[str] = []
+    after_isolation: list[QueryRecord] = []
+
+    for r in working_records:
+        pid = get_carebench_parent_id(r) if is_carebench else None
+        if r.query_id in pilot_q or (pid is not None and pid in pilot_p):
+            pilot_excl_applied.append(r.query_id)
+            continue
+        if r.query_id in debug_q or (pid is not None and pid in debug_p):
+            debug_excl_applied.append(r.query_id)
+            continue
+        if r.query_id in expl_dup:
+            explicit_dup_applied.append(r.query_id)
+            continue
+        after_isolation.append(r)
+
+    pilot_excl_applied.sort()
+    debug_excl_applied.sort()
+    explicit_dup_applied.sort()
 
     if cfg.enable_text_near_duplicate_filter:
-        eligible, auto_near_dups = detect_dream1k_near_duplicates(
-            after_explicit_dup, jaccard_threshold=cfg.near_duplicate_jaccard_threshold
+        eligible, auto_near_dups = detect_e2_near_duplicates(
+            after_isolation, jaccard_threshold=cfg.near_duplicate_jaccard_threshold
         )
     else:
-        eligible, auto_near_dups = sorted(after_explicit_dup, key=lambda r: r.query_id), []
+        eligible, auto_near_dups = sorted(after_isolation, key=lambda r: r.query_id), []
 
     by_stratum: dict[str, list[QueryRecord]] = defaultdict(list)
     for r in eligible:
@@ -147,7 +203,8 @@ def build_formal_dream1k_manifest(
 
     counts = {s: len(v) for s, v in sorted(by_stratum.items())}
     total_eligible = len(eligible)
-    target_n = total_eligible if cfg.dream1k_target_n is None else min(cfg.dream1k_target_n, total_eligible)
+    cfg_target = cfg.resolved_e2_target_n()
+    target_n = total_eligible if cfg_target is None else min(cfg_target, total_eligible)
     alloc = _allocate_proportional_strata(counts, target_n)
 
     rng = random.Random(cfg.seed)
@@ -167,6 +224,7 @@ def build_formal_dream1k_manifest(
         for r in chosen:
             inclusion_records[r.query_id] = {
                 "query_id": r.query_id,
+                "parent_video_id": get_carebench_parent_id(r) if is_carebench else None,
                 "stratum": s,
                 "stratum_N": N_h,
                 "stratum_n": n_h,
@@ -195,29 +253,56 @@ def build_formal_dream1k_manifest(
             chosen_v = sorted(pool[:nv], key=lambda r: r.query_id)
             val_strata_report[s] = {"formal_N_h": Nv, "val_n_h": nv, "val_inclusion_prob": round(piv, 6)}
             for r in chosen_v:
-                assert r.query_id not in pilot_excluded_ids, "Pilot A calibration ID leaked into E2 validation set!"
+                assert r.query_id not in pilot_q, "Pilot A calibration ID leaked into E2 validation set!"
                 val_selected_ids.append(r.query_id)
                 inclusion_records[r.query_id]["in_e2_human_validation"] = True
                 inclusion_records[r.query_id]["val_inclusion_prob"] = round(piv, 6)
 
+    val_id_set = set(val_selected_ids)
+    main_excluding_val_ids = sorted(r.query_id for r in selected if r.query_id not in val_id_set)
+    selected_parent_ids = sorted({get_carebench_parent_id(r) for r in selected}) if is_carebench else []
+    val_parent_ids = sorted({get_carebench_parent_id(r) for r in selected if r.query_id in val_id_set}) if is_carebench else []
+    main_parent_ids = sorted({get_carebench_parent_id(r) for r in selected if r.query_id not in val_id_set}) if is_carebench else []
+
+    slug = "carebench" if is_carebench else "dream1k"
     manifest: dict[str, Any] = {
-        "schema_version": "uarcap-q2-formal-dream1k-manifest-v1",
+        "schema_version": f"uarcap-q2-formal-{slug}-manifest-v2",
+        "dataset_id": dataset_id,
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "sampling_config": cfg.to_dict(),
         "n_raw_total": len(all_records),
+        "n_after_parent_dedup": len(working_records),
+        "parent_video_dedup_audit": parent_dedup_audit,
         "n_pilot_excluded": len(pilot_excl_applied),
         "pilot_excluded_query_ids": pilot_excl_applied,
-        "n_explicit_near_dup_excluded": len(expl_dup),
+        "pilot_excluded_parent_video_ids": sorted(pilot_p) if is_carebench else [],
+        "n_extra_debug_excluded": len(debug_excl_applied),
+        "extra_debug_excluded_query_ids": debug_excl_applied,
+        "n_explicit_near_dup_excluded": len(explicit_dup_applied),
+        "explicit_near_dup_excluded_query_ids": explicit_dup_applied,
         "n_auto_near_dup_excluded": len(auto_near_dups),
         "auto_near_duplicates": auto_near_dups,
         "n_eligible_pool": total_eligible,
         "n_selected_formal": len(selected),
         "selected_query_ids": [r.query_id for r in selected],
+        "formal_main_excluding_validation_ids": main_excluding_val_ids,
+        "n_formal_main_excluding_validation": len(main_excluding_val_ids),
         "strata": strata_report,
+        "parent_isolation_verified": (
+            (len(selected_parent_ids) == len(selected))
+            and (len(set(selected_parent_ids) & pilot_p) == 0)
+            and (len(set(selected_parent_ids) & debug_p) == 0)
+            and (len(set(val_parent_ids) & set(main_parent_ids)) == 0)
+        )
+        if is_carebench
+        else None,
         "e2_validation_set": {
             "n_validation_selected": len(val_selected_ids),
             "validation_query_ids": sorted(val_selected_ids),
-            "disjoint_from_pilot_verified": len(set(val_selected_ids) & pilot_excluded_ids) == 0,
+            "validation_parent_video_ids": val_parent_ids,
+            "disjoint_from_pilot_verified": len(val_id_set & pilot_q) == 0
+            and (len(set(val_parent_ids) & pilot_p) == 0 if is_carebench else True),
+            "disjoint_from_formal_main_verified": len(val_id_set & set(main_excluding_val_ids)) == 0,
             "strata": val_strata_report,
         },
         "units": inclusion_records,
@@ -227,6 +312,23 @@ def build_formal_dream1k_manifest(
         manifest["manifest_path"] = str(mp)
         manifest["manifest_sha256"] = sha256_file(mp)
     return selected, manifest
+
+
+def build_formal_dream1k_manifest(
+    all_records: list[QueryRecord],
+    pilot_excluded_ids: set[str],
+    cfg: FormalSamplingConfig,
+    explicit_near_dup_excluded_ids: set[str] | None = None,
+    out_manifest_path: Path | str | None = None,
+) -> tuple[list[QueryRecord], dict[str, Any]]:
+    """Backward-compatible wrapper around `build_formal_e2_manifest`."""
+    return build_formal_e2_manifest(
+        all_records=all_records,
+        pilot_excluded_ids=pilot_excluded_ids,
+        cfg=cfg,
+        explicit_near_dup_excluded_ids=explicit_near_dup_excluded_ids,
+        out_manifest_path=out_manifest_path,
+    )
 
 
 def build_formal_vidhalluc_manifest(

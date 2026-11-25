@@ -636,15 +636,16 @@ def audit_e3_evaluator_agreement(
     }
 
 
-def audit_cross_model_dream1k_bias(
+def audit_cross_model_e2_bias(
     videollama_records: list[AlignedAtomRecord],
     modern_vlm_records: list[AlignedAtomRecord],
+    dataset_id: str = "CaReBench",
     max_recall_gap: float = 0.20,
     max_precision_gap: float = 0.20,
     max_paired_bias_gap: float = 0.35,
     n_boot: int = 300,
 ) -> dict[str, Any]:
-    """Verify DREAM-1K proxy evaluator does not show severe differential bias between Video-LLaMA and Modern VLM."""
+    """Verify E2 proxy evaluator does not show severe differential bias between Video-LLaMA and Modern VLM."""
     vl_cal = audit_evaluator_calibration(videollama_records, n_boot=n_boot)
     vlm_cal = audit_evaluator_calibration(modern_vlm_records, n_boot=n_boot)
 
@@ -660,13 +661,13 @@ def audit_cross_model_dream1k_bias(
     fail_reasons: list[str] = []
     inconclusive_reasons: list[str] = []
     if rec_gap is not None and rec_gap > max_recall_gap:
-        fail_reasons.append(f"Cross-model DREAM-1K error recall gap={rec_gap:.3f} > {max_recall_gap}")
+        fail_reasons.append(f"Cross-model {dataset_id} error recall gap={rec_gap:.3f} > {max_recall_gap}")
     if prec_gap is not None and prec_gap > max_precision_gap:
-        fail_reasons.append(f"Cross-model DREAM-1K precision gap={prec_gap:.3f} > {max_precision_gap}")
+        fail_reasons.append(f"Cross-model {dataset_id} precision gap={prec_gap:.3f} > {max_precision_gap}")
     if bias_gap is not None and bias_gap > max_paired_bias_gap:
-        fail_reasons.append(f"Cross-model DREAM-1K paired-delta bias gap={bias_gap:.3f} > {max_paired_bias_gap}")
+        fail_reasons.append(f"Cross-model {dataset_id} paired-delta bias gap={bias_gap:.3f} > {max_paired_bias_gap}")
     if rec_gap is None and prec_gap is None and bias_gap is None:
-        inconclusive_reasons.append("Insufficient cross-model DREAM-1K errors/paired deltas to compute bias gaps.")
+        inconclusive_reasons.append(f"Insufficient cross-model {dataset_id} errors/paired deltas to compute bias gaps.")
 
     verdict = (
         VerdictStatus.FAIL.value
@@ -674,6 +675,7 @@ def audit_cross_model_dream1k_bias(
         else (VerdictStatus.INCONCLUSIVE.value if inconclusive_reasons else VerdictStatus.PASS.value)
     )
     return {
+        "dataset_id": dataset_id,
         "verdict": verdict,
         "fail_reasons": fail_reasons,
         "inconclusive_reasons": inconclusive_reasons,
@@ -683,3 +685,23 @@ def audit_cross_model_dream1k_bias(
         "videollama_audit": vl_cal,
         "modern_vlm_audit": vlm_cal,
     }
+
+
+def audit_cross_model_dream1k_bias(
+    videollama_records: list[AlignedAtomRecord],
+    modern_vlm_records: list[AlignedAtomRecord],
+    max_recall_gap: float = 0.20,
+    max_precision_gap: float = 0.20,
+    max_paired_bias_gap: float = 0.35,
+    n_boot: int = 300,
+) -> dict[str, Any]:
+    """Backward-compatible wrapper for DREAM-1K backup cross-model bias audit."""
+    return audit_cross_model_e2_bias(
+        videollama_records=videollama_records,
+        modern_vlm_records=modern_vlm_records,
+        dataset_id="DREAM-1K",
+        max_recall_gap=max_recall_gap,
+        max_precision_gap=max_precision_gap,
+        max_paired_bias_gap=max_paired_bias_gap,
+        n_boot=n_boot,
+    )

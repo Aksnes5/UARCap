@@ -8,16 +8,21 @@ from typing import Any
 from scipy.stats import norm
 
 
-def plan_formal_dream1k_sample_size(
+def plan_formal_e2_sample_size(
     pilot_delta_sd: float,
     min_detectable_effect: float = 0.08,
     holm_alpha: float = 0.0125,
     power: float = 0.80,
     min_floor: int = 600,
-    max_cap: int = 800,
-    available_eligible_pool: int = 900,
+    max_cap: int = 750,
+    available_eligible_pool: int = 803,
+    dataset_id: str = "CaReBench",
 ) -> dict[str, Any]:
-    """Compute required Formal B DREAM-1K sample size from Pilot A2 empirical paired-delta SD."""
+    """Compute required Formal B E2 (CaReBench primary: 600-750 planned range; DREAM-1K backup) sample size.
+
+    Never pre-promises hitting `max_cap`; final N is always bounded by `available_eligible_pool` after
+    parent-video dedup, Pilot exclusion, near-dup exclusions, and video decode checks.
+    """
     if min_detectable_effect <= 0:
         raise ValueError("min_detectable_effect must be positive")
     if pilot_delta_sd < 0:
@@ -29,15 +34,41 @@ def plan_formal_dream1k_sample_size(
     exceeds_cap = n_raw > max_cap
     exceeds_pool = n_raw > available_eligible_pool
     return {
+        "dataset_id": dataset_id,
         "pilot_delta_sd": round(pilot_delta_sd, 5),
         "min_detectable_effect": min_detectable_effect,
         "holm_alpha": holm_alpha,
         "target_power": power,
+        "planned_range": [min_floor, max_cap],
+        "available_eligible_pool": available_eligible_pool,
         "n_required_raw": n_raw,
         "recommended_formal_n": min(recommended, available_eligible_pool),
-        "exceeds_800_cap": exceeds_cap,
+        "exceeds_cap": exceeds_cap,
+        "exceeds_800_cap": n_raw > 800,
         "exceeds_eligible_pool": exceeds_pool,
     }
+
+
+def plan_formal_dream1k_sample_size(
+    pilot_delta_sd: float,
+    min_detectable_effect: float = 0.08,
+    holm_alpha: float = 0.0125,
+    power: float = 0.80,
+    min_floor: int = 600,
+    max_cap: int = 800,
+    available_eligible_pool: int = 900,
+) -> dict[str, Any]:
+    """Backward-compatible wrapper for DREAM-1K backup sample size planning."""
+    return plan_formal_e2_sample_size(
+        pilot_delta_sd=pilot_delta_sd,
+        min_detectable_effect=min_detectable_effect,
+        holm_alpha=holm_alpha,
+        power=power,
+        min_floor=min_floor,
+        max_cap=max_cap,
+        available_eligible_pool=available_eligible_pool,
+        dataset_id="DREAM-1K",
+    )
 
 
 def extrapolate_formal_b_resources(

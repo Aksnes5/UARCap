@@ -1,7 +1,10 @@
 {
-  "manifest_version": "uarcap-q2-bn-deployment-v3",
-  "status": "OFFLINE_CODE_COMPLETE_AWAITING_BN_DEPLOYMENT",
+  "manifest_version": "uarcap-q2-bn-deployment-v4",
+  "status": "CAREBENCH_OFFLINE_HANDOFF_COMPLETE_AWAITING_BN_PILOT",
   "protocol_commit": "761dea2c51ab07c083b88805168ad1757db53d67",
+  "e2_primary_dataset": "CaReBench (MCG-NJU/CaReBench, ungated MIT, 3.65 GiB, 913 FineAction parents)",
+  "e2_backup_dataset": "DREAM-1K (omni-research/DREAM-1K, gated fallback retained)",
+  "e3_primary_dataset": "VidHalluc-ACH (chaoyuli/VidHalluc, ungated CC-BY-NC-ND-4.0, 15.60 GiB)",
   "bn_live_status_verified_in_this_round": false,
   "historical_receipt_source": "research/uarcap_v06_followup_deployment/bn_readonly_receipts/BN_DEPLOYMENT_PATH_BINDINGS.json",
   "hardware_anchor": {
@@ -44,17 +47,17 @@
   },
   "isolated_environments": {
     "env_1_videollama_frozen": "READ-ONLY legacy venv (Python 3.9.13, Torch 2.1.2+cu121, Transformers 4.28.0) — NEVER upgrade",
-    "env_2_cpu_analysis": "configs/envs/env_cpu_analysis.yaml (uarcap_q2_cpu)",
+    "env_2_cpu_analysis": "Reuse existing BN /home/bn/anaconda3/envs/videollama2/bin/python via PYTHON_BIN (no forced conda env create)",
     "env_3_existing_bn_vllm": "Existing BN vLLM 0.29.0 / PyTorch 2.13.0+cu130 / CUDA 13.0 environment (reused for Qwen3.8-27B-FP8 & text judges via subprocess/HTTP)"
   },
   "entrypoints": {
-    "bootstrap": "bash scripts/bootstrap_bn.sh",
-    "preflight": "bash scripts/run_preflight.sh",
-    "prepare_data": "python deployment/stage_assets.py prepare --data-root /home/bn/uarcap_q2_runtime/data --dataset <dream1k|vidhalluc>",
-    "pilot_a01": "bash scripts/run_pilot_a01.sh",
-    "pilot_a2": "bash scripts/run_pilot_a2.sh",
-    "pilot_a3": "bash scripts/run_pilot_a3.sh",
-    "formal_b_guarded": "bash scripts/run_formal_b.sh",
+    "bootstrap": "PYTHON_BIN=/home/bn/anaconda3/envs/videollama2/bin/python bash scripts/bootstrap_bn.sh",
+    "preflight": "PYTHON_BIN=/home/bn/anaconda3/envs/videollama2/bin/python bash scripts/run_preflight.sh --e2-dataset carebench --verify-ckpt-sha",
+    "prepare_data": "/home/bn/anaconda3/envs/videollama2/bin/python deployment/stage_assets.py prepare --data-root /home/bn/uarcap_q2_runtime/data --dataset <carebench|dream1k|vidhalluc>",
+    "pilot_a01": "PYTHON_BIN=/home/bn/anaconda3/envs/videollama2/bin/python bash scripts/run_pilot_a01.sh",
+    "pilot_a2": "PYTHON_BIN=/home/bn/anaconda3/envs/videollama2/bin/python bash scripts/run_pilot_a2.sh",
+    "pilot_a3": "PYTHON_BIN=/home/bn/anaconda3/envs/videollama2/bin/python bash scripts/run_pilot_a3.sh",
+    "formal_b_guarded": "PYTHON_BIN=/home/bn/anaconda3/envs/videollama2/bin/python bash scripts/run_formal_b.sh",
     "status": "bash scripts/status.sh",
     "resume": "bash scripts/resume.sh <pilot_a01|pilot_a2|pilot_a3|formal_b>",
     "annotation_ui": "python scripts/launch_annotation_ui.py --bundle <blind_tasks.json> --save-dir <save_dir>",

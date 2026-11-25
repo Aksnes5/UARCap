@@ -44,10 +44,12 @@ def build_e3_bridge_cohort(
     observations: list[NaturalConflictObservation],
     min_clean_pairs: int = E3_BRIDGE_MIN_CLEAN_PAIRS,
     max_pairs: int = 40,
+    source_dataset_id: str = "CaReBench",
 ) -> dict[str, Any]:
-    """Filter verified natural DREAM-1K x VideoUFO conflicts into an E3-Bridge controlled cohort or disable."""
+    """Filter verified natural E2 (CaReBench / DREAM-1K) x VideoUFO conflicts into an E3-Bridge cohort or disable."""
     approved: list[E3InterventionCandidate] = []
     rejected_ids: list[str] = []
+    ds_slug = source_dataset_id.lower().replace("-", "")
 
     for obs in sorted(observations, key=lambda o: o.query_id):
         if not (obs.single_target_clean and obs.conflict_strictly_absent_in_video):
@@ -69,13 +71,13 @@ def build_e3_bridge_cohort(
         cand = E3InterventionCandidate(
             query_id=obs.query_id,
             source_id=None,
-            dataset_id="DREAM-1K-E3-Bridge",
+            dataset_id=f"{source_dataset_id}-E3-Bridge",
             target_true_fact=obs.verified_true_fact.strip(),
             candidate_conflict_fact=obs.natural_conflict_fact.strip(),
             sup_text=sup,
             con_text=con,
             neu_text=neu,
-            provenance="dream1k_natural_videoufo_bridge",
+            provenance=f"{ds_slug}_natural_videoufo_bridge",
             eligibility_status=EligibilityStatus.APPROVED.value if chk.all_passed else EligibilityStatus.REJECTED.value,
             surface_audit=surface,
             checklist=chk.to_dict(),
@@ -89,6 +91,7 @@ def build_e3_bridge_cohort(
     selected = approved[:max_pairs] if enabled else []
     return {
         "module": "E3-Bridge",
+        "source_dataset_id": source_dataset_id,
         "enabled": enabled,
         "status": "ENABLED_READY" if enabled else "DISABLED_INSUFFICIENT_CLEAN_PAIRS",
         "total_natural_conflicts_reviewed": len(observations),
@@ -97,12 +100,12 @@ def build_e3_bridge_cohort(
         "selected_count": len(selected),
         "rejected_query_ids": rejected_ids,
         "claim_scope_directive": (
-            "E3-Bridge supports within-cohort behavioral verification that real VideoUFO conflict patterns "
+            f"E3-Bridge supports within-cohort behavioral verification that real {source_dataset_id} x VideoUFO conflict patterns "
             "can induce corresponding errors under fixed visuals, without claiming full-cohort mediation."
             if enabled
-            else "E3-Bridge disabled (< 25 clean pairs). Narrow mechanistic claims: report DREAM-1K observational "
-            "association and VidHalluc controlled intervention separately without claiming VidHalluc causally "
-            "explains all DREAM-1K natural errors."
+            else f"E3-Bridge disabled (< {min_clean_pairs} clean pairs). Narrow mechanistic claims: report {source_dataset_id} observational "
+            "association and VidHalluc action-focused controlled intervention separately without claiming VidHalluc causally "
+            f"explains all {source_dataset_id} static/dynamic natural errors."
         ),
         "candidates": [c.to_dict() for c in selected],
     }

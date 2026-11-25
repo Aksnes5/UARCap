@@ -31,9 +31,66 @@ class ClaimVerdict:
     claim: str
     label: str  # entailed | contradicted | unmentioned
     evidence: str
+    fact_dimension_aux: str = "unclassified"  # Auxiliary diagnostic only: static_entity_attribute | dynamic_action_temporal | mixed | unclassified
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+# Explicit rule-based auxiliary claim dimension classifier (strictly lexical/predicate rules on the claim itself;
+# NEVER infers type merely from whether reference text originated in spatial_caption vs temporal_caption).
+_STATIC_CUE_RE = re.compile(
+    r"\b("
+    r"red|blue|green|yellow|black|white|brown|gray|grey|pink|purple|orange|silver|golden|blonde|dark|light|"
+    r"wooden|metal|plastic|glass|leather|striped|plaid|floral|long|short|tall|small|large|big|round|square|"
+    r"wearing|dressed|shirt|jacket|dress|hat|glasses|hair|shoes|pants|shorts|coat|t-shirt|jeans|skirt|apron|"
+    r"two|three|four|five|six|seven|eight|nine|ten|several|multiple|pair|few|many|"
+    r"indoors|outdoors|kitchen|bedroom|bathroom|gym|beach|park|street|road|room|stage|court|field|yard|counter|table|wall|floor|background|"
+    r"next to|behind|in front of|under|above|beside|between|on the left|on the right|near|inside|outside|"
+    r"there is|there are|is a|are a"
+    r")\b",
+    re.I,
+)
+_DYNAMIC_CUE_RE = re.compile(
+    r"\b("
+    r"walk(?:s|ing|ed)?|run(?:s|ning)?|jump(?:s|ing|ed)?|danc(?:e|es|ing|ed)|play(?:s|ing|ed)?|"
+    r"cut(?:s|ting)?|chop(?:s|ping|ped)?|stir(?:s|ring|red)?|pour(?:s|ing|ed)?|mix(?:es|ing|ed)?|cook(?:s|ing|ed)?|"
+    r"throw(?:s|ing)?|catch(?:es|ing)?|kick(?:s|ing|ed)?|hit(?:s|ting)?|swing(?:s|ing)?|lift(?:s|ing|ed)?|"
+    r"apply(?:ing)?|applies|applied|brush(?:es|ing|ed)?|comb(?:s|ing|ed)?|wash(?:es|ing|ed)?|wip(?:e|es|ing|ed)|"
+    r"clean(?:s|ing|ed)?|fold(?:s|ing|ed)?|open(?:s|ing|ed)?|clos(?:e|es|ing|ed)|push(?:es|ing|ed)?|pull(?:s|ing|ed)?|"
+    r"pick(?:s|ing|ed)?|put(?:s|ting)?|plac(?:e|es|ing|ed)|mov(?:e|es|ing|ed)|turn(?:s|ing|ed)?|bend(?:s|ing)?|"
+    r"driv(?:e|es|ing)|rid(?:e|es|ing)|swim(?:s|ming)?|climb(?:s|ing|ed)?|sing(?:s|ing)?|talk(?:s|ing|ed)?|"
+    r"speak(?:s|ing)?|eat(?:s|ing)?|drink(?:s|ing)?|paint(?:s|ing|ed)?|draw(?:s|ing)?|writ(?:e|es|ing)|"
+    r"exercis(?:e|es|ing|ed)|stretch(?:es|ing|ed)?|squat(?:s|ting|ted)?|perform(?:s|ing|ed)?|"
+    r"before|after|then|while|begins|starts|stops|finishes|continues|transitions"
+    r")\b",
+    re.I,
+)
+
+
+def classify_claim_fact_dimension(claim: str) -> str:
+    """Explicit, deterministic auxiliary diagnostic classification of an atomic claim.
+
+    Categories:
+      - `static_entity_attribute`: explicit static entity/color/count/location/spatial cues without dynamic action cues
+      - `dynamic_action_temporal`: explicit action/motion/temporal cues without static attribute/spatial cues
+      - `mixed`: contains BOTH explicit static entity/attribute/spatial cues AND dynamic action/temporal cues
+      - `unclassified`: insufficient explicit cues to classify reliably (NEVER forced into static or dynamic!)
+
+    Scientific note: Auxiliary diagnostic only; NOT a primary hypothesis test family.
+    """
+    txt = (claim or "").strip()
+    if not txt:
+        return "unclassified"
+    has_static = bool(_STATIC_CUE_RE.search(txt))
+    has_dynamic = bool(_DYNAMIC_CUE_RE.search(txt))
+    if has_static and has_dynamic:
+        return "mixed"
+    if has_static:
+        return "static_entity_attribute"
+    if has_dynamic:
+        return "dynamic_action_temporal"
+    return "unclassified"
 
 
 @dataclass
@@ -51,9 +108,12 @@ class CaptionRefFactEval:
     n_contra_ref: int | None = None
     n_entail_ref: int | None = None
     n_unment_ref: int | None = None
+    p_entail_ref: float | None = None  # Auxiliary: Reference Support Rate (AutoDQ/CapST Precision analog, NOT 1 - true error rate)
+    p_contra_ref: float | None = None  # Auxiliary: Explicit Reference Conflict Rate
     p_unment_ref: float | None = None
     r_core_ref: float | None = None
     core_event_verdicts: list[ClaimVerdict] = field(default_factory=list)
+    auxiliary_dimension_breakdown: dict[str, dict[str, int]] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         d = asdict(self)
@@ -118,7 +178,14 @@ def parse_and_validate_verdicts(raw_response: str, expected_claims: list[str]) -
             raise JudgeOutputValidationError(
                 f"Definite label '{label}' provided without supporting evidence span/reason at #{idx}"
             )
-        verdicts.append(ClaimVerdict(claim=claim_txt, label=label, evidence=evidence))
+        verdicts.append(
+            ClaimVerdict(
+                claim=claim_txt,
+                label=label,
+                evidence=evidence,
+                fact_dimension_aux=classify_claim_fact_dimension(claim_txt),
+            )
+        )
 
     return verdicts
 
@@ -216,7 +283,19 @@ class ThreeWayReferenceFactEvaluator:
             n_contra = sum(1 for v in verdicts if v.label == RefRelation.CONTRADICTED.value)
             n_entail = sum(1 for v in verdicts if v.label == RefRelation.ENTAILED.value)
             n_unment = sum(1 for v in verdicts if v.label == RefRelation.UNMENTIONED.value)
+            p_entail = (n_entail / len(verdicts)) if verdicts else 0.0
+            p_contra = (n_contra / len(verdicts)) if verdicts else 0.0
             p_unment = (n_unment / len(verdicts)) if verdicts else 0.0
+
+            dim_breakdown: dict[str, dict[str, int]] = {}
+            for dim in ("static_entity_attribute", "dynamic_action_temporal", "mixed", "unclassified"):
+                dv = [v for v in verdicts if v.fact_dimension_aux == dim]
+                dim_breakdown[dim] = {
+                    "total": len(dv),
+                    "entailed": sum(1 for v in dv if v.label == RefRelation.ENTAILED.value),
+                    "contradicted": sum(1 for v in dv if v.label == RefRelation.CONTRADICTED.value),
+                    "unmentioned": sum(1 for v in dv if v.label == RefRelation.UNMENTIONED.value),
+                }
 
             return CaptionRefFactEval(
                 query_id=query_id,
@@ -232,9 +311,12 @@ class ThreeWayReferenceFactEvaluator:
                 n_contra_ref=n_contra,
                 n_entail_ref=n_entail,
                 n_unment_ref=n_unment,
+                p_entail_ref=round(p_entail, 6),
+                p_contra_ref=round(p_contra, 6),
                 p_unment_ref=round(p_unment, 6),
                 r_core_ref=round(r_core, 6) if r_core is not None else None,
                 core_event_verdicts=core_verdicts,
+                auxiliary_dimension_breakdown=dim_breakdown,
             )
         except Exception as exc:
             # NEVER default parse failures to 0 errors or 100% entailed!

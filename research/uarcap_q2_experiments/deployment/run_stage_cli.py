@@ -25,6 +25,11 @@ from deployment.bn_preflight_check import run_preflight
 from uarcap_q2.common.gates import AuthorizationError, verify_stage_authorization
 from uarcap_q2.common.io_utils import atomic_write_json, read_json
 from uarcap_q2.common.schemas import ExpArm, PilotStage, StageRunStatus
+from uarcap_q2.datasets.carebench import (
+    load_carebench_records,
+    sample_carebench_stratified_pilot,
+    write_carebench_pilot_exclusion_manifest,
+)
 from uarcap_q2.datasets.dream1k import load_dream1k_records, sample_dream1k_stratified_pilot, write_pilot_exclusion_manifest
 from uarcap_q2.datasets.formal_sampling import FormalSamplingConfig
 from uarcap_q2.datasets.vidhalluc import load_vidhalluc_ach_mcq
@@ -233,6 +238,44 @@ def _load_videoufo_source_ids(paths_cfg: dict[str, Any]) -> set[str]:
     }
 
 
+def _resolve_e2_dataset(
+    args: argparse.Namespace,
+    paths_cfg: dict[str, Any],
+    stage_cfg: dict[str, Any],
+) -> tuple[str, str, Path, Path]:
+    """Resolve active E2 dataset ('carebench' primary default, 'dream1k' backup) and its (annotation, video) paths."""
+    explicit = getattr(args, "e2_dataset", None)
+    q2w = paths_cfg.get("q2_writable_workspace", {})
+    if explicit:
+        key = explicit.strip().lower().replace("-", "")
+    else:
+        # Check stage config (stage_a1 / stage_a2 / top-level e2_dataset)
+        cfg_ds = (
+            stage_cfg.get("e2_dataset")
+            or stage_cfg.get("stage_a1", {}).get("dataset_id")
+            or stage_cfg.get("stage_a2", {}).get("dataset_id")
+        )
+        if cfg_ds and "carebench_dir" in q2w:
+            key = str(cfg_ds).strip().lower().replace("-", "")
+        elif "carebench_dir" in q2w:
+            key = "carebench"
+        elif "dream1k_dir" in q2w:
+            # Backward-compatible fallback for minimal legacy DREAM-1K paths fixtures lacking carebench_dir
+            key = "dream1k"
+        elif cfg_ds:
+            key = str(cfg_ds).strip().lower().replace("-", "")
+        else:
+            key = "carebench"
+
+    if key == "carebench":
+        cb_dir = Path(q2w.get("carebench_dir", Path(q2w.get("data_root", ".")) / "carebench"))
+        return "carebench", "CaReBench", cb_dir / "json" / "metadata.json", cb_dir / "videos"
+    if key == "dream1k":
+        dr_dir = Path(q2w.get("dream1k_dir", Path(q2w.get("data_root", ".")) / "dream1k"))
+        return "dream1k", "DREAM-1K", dr_dir / "json" / "metadata.json", dr_dir / "video"
+    raise ValueError(f"Unsupported E2 dataset '{key}' (allowed: carebench, dream1k)")
+
+
 def dispatch_stage(
     args: argparse.Namespace,
     injected_retriever: RetrieverAdapter | None = None,
@@ -251,6 +294,7 @@ def dispatch_stage(
     stage = PilotStage(args.stage)
     paths_cfg = yaml.safe_load(args.paths_config.read_text(encoding="utf-8"))
     stage_cfg = yaml.safe_load(args.stage_config.read_text(encoding="utf-8"))
+    e2_key, e2_label, ann_file, vid_dir = _resolve_e2_dataset(args, paths_cfg, stage_cfg)
 
     priors: dict[str, Path | str] = {}
     if args.prior_a1:
@@ -265,6 +309,11 @@ def dispatch_stage(
             "mode": "dry_run",
             "stage": stage.value,
             "run_id": args.run_id,
+            "e2_dataset": e2_key,
+            "e2_dataset_id": e2_label,
+            "e3_dataset_id": "VidHalluc-ACH",
+            "e2_annotation_path": str(ann_file),
+            "e2_video_dir": str(vid_dir),
             "paths_config": str(args.paths_config),
             "stage_config": str(args.stage_config),
             "out_dir": str(args.out_dir),
@@ -292,14 +341,11 @@ def dispatch_stage(
 
     q2w = paths_cfg["q2_writable_workspace"]
     host = paths_cfg.get("host", {})
-    dream_dir = Path(q2w["dream1k_dir"])
-    ann_file = dream_dir / "json" / "metadata.json"
-    vid_dir = dream_dir / "video"
     gpu_lock = Path(host["shared_gpu_lock"]) if (not args.cpu_mock and host.get("shared_gpu_lock")) else None
 
     # ---- PILOT A0 ----
     if stage == PilotStage.PILOT_A0:
-        rep = run_preflight(args.paths_config, out_receipt=args.out_dir / "preflight_receipt.json")
+        rep = run_preflight(args.paths_config, out_receipt=args.out_dir / "preflight_receipt.json", e2_dataset=e2_key)
         st = StageRunStatus.MOCK_PASS.value if args.cpu_mock else (
             StageRunStatus.REAL_RUNTIME_PASS.value if rep["bn_live_ready"] else StageRunStatus.FAILED.value
         )
@@ -310,13 +356,26 @@ def dispatch_stage(
     # ---- PILOT A1 ----
     if stage == PilotStage.PILOT_A1:
         if not ann_file.is_file():
-            return 2, {"stage": stage.value, "status": StageRunStatus.FAILED.value, "error": f"DREAM-1K metadata missing: {ann_file}"}
-        recs = load_dream1k_records(ann_file, vid_dir, require_video_exists=True)
+            return 2, {"stage": stage.value, "status": StageRunStatus.FAILED.value, "error": f"{e2_label} metadata missing: {ann_file}"}
         a1_cfg = stage_cfg.get("stage_a1", {})
-        per_dom = int(a1_cfg.get("sampling", {}).get("per_domain", 6))
-        seed = int(a1_cfg.get("sampling", {}).get("seed", 20261125))
-        pilot_recs, _ = sample_dream1k_stratified_pilot(recs, per_domain=min(per_dom, len(recs) // 5), seed=seed)
-        write_pilot_exclusion_manifest(pilot_recs, args.out_dir / "pilot_a_excluded_dream1k_vids.json", seed=seed)
+        samp_cfg = a1_cfg.get("sampling", {})
+        seed = int(samp_cfg.get("seed", 20261125))
+
+        if e2_key == "carebench":
+            recs = load_carebench_records(ann_file, vid_dir, require_video_exists=True)
+            total_q = int(samp_cfg.get("total_queries", 30))
+            pilot_recs, _, samp_audit = sample_carebench_stratified_pilot(
+                recs, total_queries=min(total_q, len(recs)), seed=seed
+            )
+            write_carebench_pilot_exclusion_manifest(
+                pilot_recs, args.out_dir / "pilot_a_excluded_carebench_vids.json", seed=seed
+            )
+            atomic_write_json(args.out_dir / "pilot_a1_carebench_sampling_audit.json", samp_audit)
+        else:
+            recs = load_dream1k_records(ann_file, vid_dir, require_video_exists=True)
+            per_dom = int(samp_cfg.get("per_domain", 6))
+            pilot_recs, _ = sample_dream1k_stratified_pilot(recs, per_domain=min(per_dom, len(recs) // 5), seed=seed)
+            write_pilot_exclusion_manifest(pilot_recs, args.out_dir / "pilot_a_excluded_dream1k_vids.json", seed=seed)
 
         retriever = injected_retriever or (
             MockXCLIPRetriever() if args.cpu_mock else _build_real_retriever(paths_cfg, use_subprocess=args.xclip_subprocess, gpu_lock=gpu_lock)
@@ -326,7 +385,7 @@ def dispatch_stage(
         spec = RunSpec(
             run_id=args.run_id,
             stage=PilotStage.PILOT_A1,
-            dataset_id="DREAM-1K",
+            dataset_id=e2_label,
             arms=[ExpArm.ARM_A0, ExpArm.ARM_A1, ExpArm.ARM_A7],
             out_dir=args.out_dir,
             auth_receipt_path=args.auth_receipt,
@@ -348,8 +407,9 @@ def dispatch_stage(
         )
         rec = run_pilot_a2_pipeline(
             a1_predictions_path=args.a1_predictions,
-            dream1k_annotation_path=ann_file,
-            dream1k_video_root=vid_dir,
+            e2_dataset=e2_key,
+            e2_annotation_path=ann_file,
+            e2_video_root=vid_dir,
             judge_backend=judge,
             out_dir=args.out_dir,
             auth_receipt_path=args.auth_receipt,
@@ -361,8 +421,12 @@ def dispatch_stage(
 
     # ---- PILOT A3 ----
     if stage == PilotStage.PILOT_A3:
-        recs = load_dream1k_records(ann_file, vid_dir, require_video_exists=True)
-        pilot_recs, _ = sample_dream1k_stratified_pilot(recs, per_domain=min(6, len(recs) // 5), seed=20261125)
+        if e2_key == "carebench":
+            recs = load_carebench_records(ann_file, vid_dir, require_video_exists=True)
+            pilot_recs, _, _ = sample_carebench_stratified_pilot(recs, total_queries=min(30, len(recs)), seed=20261125)
+        else:
+            recs = load_dream1k_records(ann_file, vid_dir, require_video_exists=True)
+            pilot_recs, _ = sample_dream1k_stratified_pilot(recs, per_domain=min(6, len(recs) // 5), seed=20261125)
         vh_dir = Path(q2w["vidhalluc_dir"])
         vh_mcq = vh_dir / "ach_mcq.json"
         if not vh_mcq.is_file():
@@ -383,8 +447,10 @@ def dispatch_stage(
         )
         ref_judge = injected_ref_judge or e3_judge
         vufo_sids = set() if args.cpu_mock else _load_videoufo_source_ids(paths_cfg)
+        vlm_h_ann = args.e2_vlm_human_annotations or args.dream1k_vlm_human_annotations
+        req_cross = bool(args.require_cross_model_e2_human or args.require_cross_model_dream1k_human)
         rec = run_pilot_a3_pipeline(
-            dream1k_pilot_queries=pilot_recs[: args.limit] if args.limit else pilot_recs,
+            e2_pilot_queries=pilot_recs[: args.limit] if args.limit else pilot_recs,
             retriever=retriever,
             modern_vlm=vlm_gen,
             videollama_adapter=vl_gen,
@@ -396,9 +462,9 @@ def dispatch_stage(
             videoufo_source_ids=vufo_sids,
             approved_e3_candidates_path=args.approved_e3_candidates,
             e3_human_annotations_path=args.e3_human_annotations,
-            dream1k_vlm_human_annotations_path=args.dream1k_vlm_human_annotations,
+            e2_vlm_human_annotations_path=vlm_h_ann,
             a2_aligned_records_path=args.a2_aligned_records,
-            require_cross_model_dream1k_human=bool(args.require_cross_model_dream1k_human),
+            require_cross_model_e2_human=req_cross,
             auth_receipt_path=args.auth_receipt,
             prior_a2_receipt=args.prior_a2,
             gpu_lock_path=gpu_lock,
@@ -413,8 +479,16 @@ def dispatch_stage(
         if not args.approved_e3_candidates or not Path(args.approved_e3_candidates).is_file():
             return 2, {"stage": stage.value, "status": StageRunStatus.FAILED.value, "error": "FORMAL_B requires --approved-e3-candidates"}
 
-        excl_ids = set(read_json(args.pilot_exclusion).get("excluded_query_ids", []))
-        all_dream = load_dream1k_records(ann_file, vid_dir, require_video_exists=True)
+        pilot_excl_doc = read_json(args.pilot_exclusion)
+        excl_ids = set(pilot_excl_doc.get("excluded_query_ids", []))
+        excl_parent_ids = set(pilot_excl_doc.get("excluded_parent_video_ids", []))
+        debug_q_ids = set(pilot_excl_doc.get("extra_debug_query_ids", []))
+        debug_p_ids = set(pilot_excl_doc.get("extra_debug_parent_video_ids", []))
+
+        if e2_key == "carebench":
+            all_e2 = load_carebench_records(ann_file, vid_dir, require_video_exists=True)
+        else:
+            all_e2 = load_dream1k_records(ann_file, vid_dir, require_video_exists=True)
 
         vh_pilot_q: set[str] = set()
         vh_pilot_s: set[str] = set()
@@ -424,12 +498,14 @@ def dispatch_stage(
             vh_pilot_s = set(vh_ex.get("excluded_source_ids", []))
 
         near_dup_ids: set[str] = set()
-        if args.dream1k_near_dup_exclusion and Path(args.dream1k_near_dup_exclusion).is_file():
-            nd = read_json(args.dream1k_near_dup_exclusion)
+        nd_arg = args.e2_near_dup_exclusion or args.dream1k_near_dup_exclusion
+        if nd_arg and Path(nd_arg).is_file():
+            nd = read_json(nd_arg)
             near_dup_ids = set(nd.get("excluded_query_ids", nd) if isinstance(nd, dict) else nd)
 
+        e2_n_target = args.formal_e2_n or args.formal_dream1k_n or args.limit
         sampling_cfg = FormalSamplingConfig(
-            dream1k_target_n=args.formal_dream1k_n or args.limit,
+            e2_target_n=e2_n_target,
             e2_validation_target_n=args.formal_e2_val_n,
             vidhalluc_target_n=args.formal_vidhalluc_n,
         )
@@ -457,7 +533,7 @@ def dispatch_stage(
         vufo_sids = _load_videoufo_source_ids(paths_cfg) if paths_cfg.get("historical_frozen_assets", {}).get("clips_full_tsv_path") and Path(paths_cfg["historical_frozen_assets"]["clips_full_tsv_path"]).is_file() else set()
 
         rec = run_formal_b_pipeline(
-            formal_dream1k_queries=all_dream,
+            formal_e2_queries=all_e2,
             formal_vidhalluc_queries_by_id=vh_by_qid,
             approved_e3_candidates=e3_cands,
             retriever=retriever,
@@ -472,6 +548,9 @@ def dispatch_stage(
             asset_manifest_path=args.asset_manifest,
             pilot_exclusion_path=args.pilot_exclusion,
             pilot_excluded_query_ids=excl_ids,
+            pilot_excluded_parent_ids=excl_parent_ids,
+            extra_debug_query_ids=debug_q_ids,
+            extra_debug_parent_ids=debug_p_ids,
             e3_bridge_observations=e3_bridge_obs,
             sampling_cfg=sampling_cfg,
             explicit_near_dup_excluded_ids=near_dup_ids,
@@ -490,6 +569,7 @@ def dispatch_stage(
 def build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(description="UARCap Q2 Real Unified Stage Runner CLI (BN Existing Model Reuse)")
     ap.add_argument("--stage", choices=[s.value for s in PilotStage] + ["E1"], required=True)
+    ap.add_argument("--e2-dataset", choices=["carebench", "dream1k"], default=None, help="E2 natural-retrieval dataset (default: carebench; dream1k retained as backup)")
     ap.add_argument("--paths-config", type=Path, required=True)
     ap.add_argument("--stage-config", type=Path, required=True)
     ap.add_argument("--out-dir", type=Path, required=True)
@@ -501,17 +581,21 @@ def build_parser() -> argparse.ArgumentParser:
     ap.add_argument("--asset-manifest", type=Path, default=None)
     ap.add_argument("--pilot-exclusion", type=Path, default=None)
     ap.add_argument("--pilot-vidhalluc-exclusion", type=Path, default=None)
+    ap.add_argument("--e2-near-dup-exclusion", type=Path, default=None)
     ap.add_argument("--dream1k-near-dup-exclusion", type=Path, default=None)
     ap.add_argument("--a1-predictions", type=Path, default=None)
     ap.add_argument("--a2-aligned-records", type=Path, default=None)
     ap.add_argument("--human-annotations", type=Path, default=None)
     ap.add_argument("--approved-e3-candidates", type=Path, default=None)
     ap.add_argument("--e3-human-annotations", type=Path, default=None)
+    ap.add_argument("--e2-vlm-human-annotations", type=Path, default=None)
     ap.add_argument("--dream1k-vlm-human-annotations", type=Path, default=None)
+    ap.add_argument("--require-cross-model-e2-human", action="store_true")
     ap.add_argument("--require-cross-model-dream1k-human", action="store_true")
     ap.add_argument("--e2-validation-human-annotations", type=Path, default=None)
     ap.add_argument("--e3-bridge-observations", type=Path, default=None)
     ap.add_argument("--msrvtt-historical-summary", type=Path, default=None)
+    ap.add_argument("--formal-e2-n", type=int, default=None)
     ap.add_argument("--formal-dream1k-n", type=int, default=None)
     ap.add_argument("--formal-e2-val-n", type=int, default=None)
     ap.add_argument("--formal-vidhalluc-n", type=int, default=None)

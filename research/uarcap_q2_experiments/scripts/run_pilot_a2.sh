@@ -7,7 +7,8 @@ EXP_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 PATHS_CFG="${PATHS_CFG:-${EXP_ROOT}/configs/bn_paths.local.yaml}"
 Q2_ROOT="${Q2_ROOT:-/home/bn/uarcap_q2_runtime}"
 AUTH_RECEIPT="${AUTH_RECEIPT:-${Q2_ROOT}/authorizations/pilot_a2_auth.json}"
-A1_DIR="${A1_DIR:-${Q2_ROOT}/outputs/pilot_a1/pilot_a1_dream1k_v1}"
+E2_DATASET="${E2_DATASET:-carebench}"
+A1_DIR="${A1_DIR:-${Q2_ROOT}/outputs/pilot_a1/pilot_a1_${E2_DATASET}_v1}"
 PRIOR_A1="${PRIOR_A1:-${A1_DIR}/run_receipt.json}"
 A1_PREDS="${A1_PREDS:-${A1_DIR}/predictions.jsonl}"
 if [[ -z "${PYTHON_BIN:-}" ]]; then
@@ -17,7 +18,7 @@ if [[ -z "${PYTHON_BIN:-}" ]]; then
     PYTHON_BIN="python3"
   fi
 fi
-RUN_ID="${RUN_ID:-pilot_a2_eval_v1}"
+RUN_ID="${RUN_ID:-pilot_a2_${E2_DATASET}_eval_v1}"
 OUT_DIR="${Q2_ROOT}/outputs/pilot_a2/${RUN_ID}"
 
 # Strictly verify REAL_RUNTIME_PASS on PILOT_A1 (rejects missing file AND rejects MOCK_PASS!)
@@ -29,6 +30,7 @@ OUT_DIR="${Q2_ROOT}/outputs/pilot_a2/${RUN_ID}"
 set +e
 "${PYTHON_BIN}" "${EXP_ROOT}/deployment/run_stage_cli.py" \
   --stage PILOT_A2 \
+  --e2-dataset "${E2_DATASET}" \
   --paths-config "${PATHS_CFG}" \
   --stage-config "${EXP_ROOT}/configs/pilot_a23_config.yaml" \
   --out-dir "${OUT_DIR}" \

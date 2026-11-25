@@ -2,12 +2,17 @@
 # Model Reuse Policy: Prioritize EXISTING models already deployed on BN (vLLM 0.29.0 / PyTorch 2.13.0+cu130 / CUDA 13.0).
 # Do NOT download new models unless existing BN models fail scientific pilot verification.
 
+e2_dataset: "carebench"
+
 stage_a2:
   pilot_stage: "PILOT_A2"
   prerequisite_stage: "PILOT_A1"
-  dataset_id: "DREAM-1K"
+  dataset_id: "CaReBench"
   n_calibration_videos: 30
   protocol_layer: "LAYER3_UARCAP_3WAY_REF_PROXY"
+  human_reference_fields: ["caption", "spatial_caption", "temporal_caption"]
+  llm_extracted_events_objects_not_human_gold: true
+  opening_overview_core_event_candidate_requires_pilot_audit: true
   candidate_cross_family_judges:
     # Final judge is NOT frozen before Pilot A2 calibration! All candidates reuse EXISTING BN models.
     - model_id: "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
@@ -80,7 +85,8 @@ stage_a3:
       max_new_tokens: 48
       enable_thinking: false
       priority: 2
-  dream1k_cross_model_check:
+  e2_cross_model_check:
+    dataset_id: "CaReBench"
     n_videos: 30
     arms: ["ARM_A0", "ARM_A1", "ARM_A7"]
     max_cross_model_recall_gap: 0.20
