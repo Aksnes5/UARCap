@@ -25,6 +25,7 @@ from ..common.gates import verify_asset_download_authorization
 from ..common.io_utils import atomic_write_json, sha256_file
 from .asset_transfer import (
     AssetSpec,
+    download_asset,
     download_with_resume,
     reassemble_and_verify_chunks,
     verify_local_asset,
@@ -257,7 +258,7 @@ def prepare_dataset_pipeline(
     meta_file = root / meta_spec.relative_path
     if not meta_file.is_file() and allow_download:
         verify_asset_download_authorization(meta_spec.asset_id, meta_spec.stage_unlock, auth_receipt_path, prior_receipts)
-        steps.append({"step": "download_metadata", **download_with_resume(meta_spec.source_url, meta_file)})
+        steps.append({"step": "download_metadata", **download_asset(meta_spec, meta_file)})
     else:
         steps.append({"step": "detect_metadata", "exists": meta_file.is_file(), "path": str(meta_file)})
 
@@ -267,17 +268,7 @@ def prepare_dataset_pipeline(
         steps.append({"step": "import_chunks", **reassemble_and_verify_chunks(transfer_manifest, archive_file)})
     elif not archive_file.is_file() and allow_download:
         verify_asset_download_authorization(vid_spec.asset_id, vid_spec.stage_unlock, auth_receipt_path, prior_receipts)
-        steps.append(
-            {
-                "step": "download_videos",
-                **download_with_resume(
-                    vid_spec.source_url,
-                    archive_file,
-                    expected_bytes=vid_spec.expected_bytes,
-                    expected_sha256=vid_spec.expected_sha256,
-                ),
-            }
-        )
+        steps.append({"step": "download_videos", **download_asset(vid_spec, archive_file)})
     else:
         steps.append({"step": "detect_archive", "exists": archive_file.is_file(), "path": str(archive_file)})
 

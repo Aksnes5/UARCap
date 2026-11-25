@@ -4,6 +4,26 @@
 > **Protocol Baseline**: `761dea2c51ab07c083b88805168ad1757db53d67` (`antigravity/uarcap-q2-pilot-a-protocol-v1.2-final`)  
 > **Important Notice**: All 52 CPU tests (43 unit/E2E/fault-injection/`bash -n` tests + 9 real-entrypoint contract & golden historical regression tests) pass on Windows CPU. **No real BN GPU inference, full dataset download, or formal human annotation has been executed yet.**
 
+## Trusted public dataset mirrors (ModelScope)
+
+The stage-gated downloader prefers the official source and then falls back to a
+**SHA-256 pinned ModelScope mirror**. A mirror is only accepted when its file
+`Sha256` equals the HuggingFace LFS `oid` (bit-identical content):
+
+```bash
+# Probe registered mirrors and compare every file's SHA-256 against the pinned HF oid
+python deployment/stage_assets.py mirror-check --dataset carebench
+# Parallel (16-24 way) resumable Range download with full-file SHA-256 verification
+python deployment/stage_assets.py download --data-root /home/bn/uarcap_q2_runtime/data \
+  --asset carebench_videos --confirm-download \
+  --auth-receipt /home/bn/uarcap_q2_runtime/authorizations/pilot_a01_auth.json
+```
+
+Registered mirrors live in `deployment/stage_assets.py::MODELSCOPE_MIRRORS`;
+verified SHA-256 pins live in `VERIFIED_SHA256`. When adding a new public
+dataset, first check for a ModelScope counterpart and prove the hash match
+before registering it.
+
 ## Directory Layout
 
 - `uarcap_q2/`: Modular Python package (`common/`, `datasets/`, `retrieval/`, `interventions/`, `generators/`, `evaluators/`, `annotation/`, `statistics/`, `runner/`)

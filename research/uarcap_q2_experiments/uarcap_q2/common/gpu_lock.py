@@ -18,9 +18,17 @@ from pathlib import Path
 import socket
 import subprocess
 import sys
+import threading
 from typing import Iterator
 
 from .io_utils import atomic_write_json
+
+# `fcntl.flock` is per open-file-description, so a second open() + LOCK_EX in the
+# same process conflicts with itself. Nested GPU work (e.g. the orchestrator holding
+# the lock while an isolated X-CLIP subprocess wrapper acquires it again) must be
+# re-entrant; this registry tracks locks held by *this* process.
+_HELD_LOCKS: dict[str, dict[str, object]] = {}
+_HELD_LOCKS_GUARD = threading.Lock()
 
 
 class GPULockBusyError(RuntimeError):
@@ -97,7 +105,34 @@ def _release_os_lock(file_obj) -> None:
 @contextmanager
 def acquire_cooperative_gpu_lock(cfg: GPULockConfig) -> Iterator[dict[str, object]]:
     """Acquire shared BN GPU lock non-destructively. Never deletes cfg.lock_path."""
-    lock_path = Path(cfg.lock_path)
+    lock_path = Path(cfg.lock_path).resolve()
+    key = str(lock_path)
+
+    # Re-entrant acquisition: this process already holds the OS lock.
+    with _HELD_LOCKS_GUARD:
+        held = _HELD_LOCKS.get(key)
+        if held is not None:
+            held["count"] = int(held["count"]) + 1
+            nested_meta = dict(held["meta"])
+            nested_meta["reentrant"] = True
+            nested_meta["nesting"] = held["count"]
+            nested_meta["nested_run_id"] = cfg.run_id
+            nesting = int(held["count"])
+        else:
+            nested_meta = None
+            nesting = 0
+    if nested_meta is not None:
+        try:
+            yield nested_meta
+        finally:
+            with _HELD_LOCKS_GUARD:
+                cur = _HELD_LOCKS.get(key)
+                if cur is not None:
+                    cur["count"] = max(0, int(cur["count"]) - 1)
+                    if int(cur["count"]) == 0:
+                        _HELD_LOCKS.pop(key, None)
+        return
+
     lock_path.parent.mkdir(parents=True, exist_ok=True)
     # Open in a+b so we never truncate or recreate an existing lock inode!
     mode = "r+b" if lock_path.exists() else "a+b"
@@ -131,7 +166,13 @@ def acquire_cooperative_gpu_lock(cfg: GPULockConfig) -> Iterator[dict[str, objec
             sidecar = cfg.sidecar_dir / f"gpu_lock_holder_{cfg.run_id}.json"
             atomic_write_json(sidecar, meta)
 
-        yield meta
+        with _HELD_LOCKS_GUARD:
+            _HELD_LOCKS[key] = {"count": 1, "fh": fh, "sidecar": sidecar, "meta": meta}
+        try:
+            yield meta
+        finally:
+            with _HELD_LOCKS_GUARD:
+                _HELD_LOCKS.pop(key, None)
     finally:
         if sidecar is not None and sidecar.exists():
             try:

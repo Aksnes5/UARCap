@@ -10,6 +10,7 @@ Rules:
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
@@ -23,7 +24,9 @@ from uarcap_q2.common.gates import AuthorizationError, verify_asset_download_aut
 from uarcap_q2.common.schemas import PilotStage
 from uarcap_q2.datasets.asset_transfer import (
     AssetSpec,
+    download_asset,
     download_with_resume,
+    probe_modelscope_dataset,
     reassemble_and_verify_chunks,
     split_file_into_chunks,
     verify_local_asset,
@@ -32,6 +35,24 @@ from uarcap_q2.datasets.carebench import CAREBENCH_EXPECTED_VIDEO_ZIP_BYTES, CAR
 from uarcap_q2.datasets.data_preparer import prepare_dataset_pipeline, validate_dataset_readiness
 from uarcap_q2.datasets.dream1k import DREAM1K_EXPECTED_VIDEO_ZIP_BYTES, DREAM1K_HF_REPO
 from uarcap_q2.datasets.vidhalluc import VIDHALLUC_ACH_ZIP_BYTES, VIDHALLUC_HF_REPO
+
+# Trusted ModelScope mirrors (verified bit-identical to HF LFS objects by SHA-256).
+# HF `lfs.oid` vs ModelScope `Sha256` are both the SHA-256 of the file content.
+MODELSCOPE_MIRRORS: dict[str, str] = {
+    CAREBENCH_HF_REPO: "MCG-NJU/CaReBench",
+}
+# SHA-256 pins verified on 2026-11-26 against both hf-mirror LFS oid and ModelScope tree.
+VERIFIED_SHA256: dict[str, str] = {
+    "carebench_videos": "957706c201e669ae2085994da4def1baceb2c096b854aac613171bac67cd1203",
+    "carebench_metadata": "740f43b71a1f8131521e2a6cde95a59c3db10a5c4bdd554dc64959b48b0fc951",
+}
+
+
+def modelscope_mirror_urls(hf_repo_id: str, hf_relative_path: str) -> list[str]:
+    mirror_repo = MODELSCOPE_MIRRORS.get(hf_repo_id)
+    if not mirror_repo:
+        return []
+    return [f"https://modelscope.cn/datasets/{mirror_repo}/resolve/master/{hf_relative_path}"]
 
 
 def build_known_assets(hf_endpoint: str | None = None) -> dict[str, AssetSpec]:
@@ -42,9 +63,11 @@ def build_known_assets(hf_endpoint: str | None = None) -> dict[str, AssetSpec]:
             stage_unlock="PILOT_A0",
             source_url=f"{base}/datasets/{CAREBENCH_HF_REPO}/resolve/main/json/metadata.json",
             relative_path="carebench/json/metadata.json",
+            expected_sha256=VERIFIED_SHA256["carebench_metadata"],
             gated=False,
             license_name="MIT (metadata/code)",
             redistribution_allowed=False,
+            mirror_urls=modelscope_mirror_urls(CAREBENCH_HF_REPO, "json/metadata.json"),
         ),
         "carebench_videos": AssetSpec(
             asset_id="carebench_videos",
@@ -52,9 +75,11 @@ def build_known_assets(hf_endpoint: str | None = None) -> dict[str, AssetSpec]:
             source_url=f"{base}/datasets/{CAREBENCH_HF_REPO}/resolve/main/videos/videos.zip",
             relative_path="carebench/videos/videos.zip",
             expected_bytes=CAREBENCH_EXPECTED_VIDEO_ZIP_BYTES,
+            expected_sha256=VERIFIED_SHA256["carebench_videos"],
             gated=False,
             license_name="MIT code/metadata; upstream FineAction academic video copyrights apply",
             redistribution_allowed=False,
+            mirror_urls=modelscope_mirror_urls(CAREBENCH_HF_REPO, "videos/videos.zip"),
         ),
         "dream1k_metadata": AssetSpec(
             asset_id="dream1k_metadata",
@@ -150,12 +175,57 @@ def main(argv: list[str] | None = None) -> int:
     p_rdy.add_argument("--data-root", type=Path, required=True)
     p_rdy.add_argument("--dataset", choices=["carebench", "dream1k", "vidhalluc"], required=True)
 
+    p_mc = sub.add_parser("mirror-check", help="Probe trusted ModelScope mirrors and verify SHA-256 against pinned HF LFS oids")
+    p_mc.add_argument("--dataset", choices=["carebench", "dream1k", "vidhalluc", "all"], default="all")
+
     args = ap.parse_args(argv)
     assets = build_known_assets(getattr(args, "hf_endpoint", None))
     if args.cmd == "verify":
         res = verify_local_asset(args.data_root, assets[args.asset])
         print(json.dumps(res, indent=2))
         return 0 if res["ok"] else 2
+    if args.cmd == "mirror-check":
+        dataset_assets = {
+            "carebench": ["carebench_metadata", "carebench_videos"],
+            "dream1k": ["dream1k_metadata", "dream1k_videos"],
+            "vidhalluc": ["vidhalluc_ach_mcq", "vidhalluc_ach_videos"],
+        }
+        names = [a for group in dataset_assets.values() for a in group] if args.dataset == "all" else dataset_assets[args.dataset]
+        report: dict = {"checked_at": datetime.now(timezone.utc).isoformat(), "assets": {}}
+        for name in names:
+            spec = assets[name]
+            rel = spec.relative_path.split("/", 1)[1] if "/" in spec.relative_path else spec.relative_path
+            repo_id = next((r for r in MODELSCOPE_MIRRORS if r in spec.source_url), None)
+            entry: dict = {
+                "primary_url": spec.source_url,
+                "mirror_urls": spec.mirror_urls,
+                "expected_bytes": spec.expected_bytes,
+                "expected_sha256": spec.expected_sha256,
+            }
+            if not spec.mirror_urls or repo_id is None:
+                entry["status"] = "NO_TRUSTED_MIRROR"
+            else:
+                parent = rel.rsplit("/", 1)[0] if "/" in rel else "/"
+                probe = probe_modelscope_dataset(MODELSCOPE_MIRRORS[repo_id], root=parent)
+                match = next(
+                    (f for f in probe.get("files", []) if f.get("path") == rel),
+                    None,
+                )
+                if match is None:
+                    entry["status"] = "MIRROR_FILE_NOT_FOUND"
+                    entry["probe_error"] = probe.get("error")
+                elif spec.expected_sha256 and match.get("sha256") != spec.expected_sha256:
+                    entry["status"] = "SHA256_MISMATCH"
+                    entry["mirror_sha256"] = match.get("sha256")
+                else:
+                    entry["status"] = "VERIFIED_MIRROR"
+                    entry["mirror_sha256"] = match.get("sha256")
+                    entry["mirror_bytes"] = match.get("size")
+            report["assets"][name] = entry
+        print(json.dumps(report, indent=2))
+        verified = [v["status"] == "VERIFIED_MIRROR" for v in report["assets"].values()]
+        missing = [v["status"] == "NO_TRUSTED_MIRROR" for v in report["assets"].values()]
+        return 0 if all(v or m for v, m in zip(verified, missing)) else 2
     if args.cmd == "check-ready":
         res = validate_dataset_readiness(args.dataset, args.data_root)
         print(json.dumps(res, indent=2))
@@ -197,12 +267,7 @@ def main(argv: list[str] | None = None) -> int:
         except AuthorizationError as exc:
             print(f"[STAGE_UNLOCK_BLOCKED] Asset '{spec.asset_id}' requires stage {spec.stage_unlock}: {exc}", file=sys.stderr)
             return 3
-        res = download_with_resume(
-            url=spec.source_url,
-            dest_path=args.data_root / spec.relative_path,
-            expected_bytes=spec.expected_bytes,
-            expected_sha256=spec.expected_sha256,
-        )
+        res = download_asset(spec, args.data_root / spec.relative_path)
         print(json.dumps(res, indent=2))
         return 0
     if args.cmd == "split":

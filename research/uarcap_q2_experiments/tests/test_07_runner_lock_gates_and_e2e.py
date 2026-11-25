@@ -100,19 +100,57 @@ def test_full_end_to_end_cpu_pipeline_and_resume(synthetic_dream1k_dir: Path, tm
     assert cal["verdict"] in {v.value for v in VerdictStatus}
 
 
-def test_cooperative_gpu_lock_rejects_concurrent_holder_and_preserves_lock_file(tmp_path: Path) -> None:
+def _hold_os_lock_in_child(lock_path: str, ready, release) -> None:
+    """Child-process helper: hold the real OS lock until the parent signals release."""
+    from uarcap_q2.common.gpu_lock import _acquire_os_lock
+
+    fh = open(lock_path, "r+b")
+    try:
+        _acquire_os_lock(fh)
+        ready.set()
+        release.wait(30)
+    finally:
+        fh.close()
+
+
+def test_cooperative_gpu_lock_is_reentrant_in_process_but_rejects_foreign_holders(tmp_path: Path) -> None:
+    import multiprocessing as mp
+
     lock_file = tmp_path / "shared_gpu.lock"
+    lock_file.touch()
     cfg1 = GPULockConfig(lock_path=lock_file, run_id="run_1", require_nvidia_smi_idle=False, sidecar_dir=tmp_path)
     cfg2 = GPULockConfig(lock_path=lock_file, run_id="run_2", require_nvidia_smi_idle=False, sidecar_dir=tmp_path)
 
+    # Same-process nesting is required by the real pipeline (orchestrator lock +
+    # isolated X-CLIP wrapper) and must not conflict with itself.
     with acquire_cooperative_gpu_lock(cfg1):
         assert (tmp_path / "gpu_lock_holder_run_1.json").is_file()
+        with acquire_cooperative_gpu_lock(cfg2) as nested:
+            assert nested["reentrant"] is True and nested["nesting"] == 2
+        assert (tmp_path / "gpu_lock_holder_run_1.json").is_file()
+        assert not (tmp_path / "gpu_lock_holder_run_2.json").exists()
+
+    # Sidecar cleaned up and shared lock file NEVER deleted.
+    assert not (tmp_path / "gpu_lock_holder_run_1.json").exists()
+    assert lock_file.exists()
+
+    # A different OS process holding the same lock MUST still be rejected.
+    ctx = mp.get_context("spawn")
+    ready, release = ctx.Event(), ctx.Event()
+    proc = ctx.Process(target=_hold_os_lock_in_child, args=(str(lock_file), ready, release))
+    proc.start()
+    try:
+        assert ready.wait(60), "child failed to acquire the OS lock"
         with pytest.raises(GPULockBusyError):
             with acquire_cooperative_gpu_lock(cfg2):
                 pass
+    finally:
+        release.set()
+        proc.join(30)
+        if proc.is_alive():
+            proc.terminate()
+        proc.join(10)
 
-    # Sidecar cleaned up, shared lock file NEVER deleted, and lock now re-acquirable!
-    assert not (tmp_path / "gpu_lock_holder_run_1.json").exists()
-    assert lock_file.exists()
+    # Lock is re-acquirable after the foreign holder exits.
     with acquire_cooperative_gpu_lock(cfg2):
         assert (tmp_path / "gpu_lock_holder_run_2.json").is_file()

@@ -133,6 +133,18 @@ class BNXCLIPBackend(XCLIPBackend):
         old_cwd = os.getcwd()
         try:
             os.chdir(self.xclip_repo_dir)
+            # Compatibility shims required by the frozen X-CLIP fork:
+            #  1) newer/older timm split `timm.layers` vs `timm.models.layers`;
+            #  2) `models.*` must be imported AFTER `clip`, otherwise the fork's
+            #     models/mit.py <-> clip/clip.py circular import fails.
+            try:
+                import timm  # noqa: F401
+                import timm.models.layers as _timm_layers
+
+                sys.modules.setdefault("timm.layers", _timm_layers)
+            except Exception:  # noqa: BLE001 - only a compatibility alias
+                pass
+            import clip  # noqa: F401
             from models import xclip_all as xclip  # type: ignore[import-not-found]
 
             sd = torch.load(self.xclip_ckpt_path, map_location="cpu")["model"]
