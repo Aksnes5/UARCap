@@ -1,0 +1,74 @@
+{
+  "checked_at": "2026-11-25T21:07:08",
+  "final_status": "PILOT_A01_BLOCKED",
+  "repo_commit": "350c63e3019d569d8cf84c8f7873aa32493181f1",
+  "authorization_receipt": "/home/bn/uarcap_q2_runtime/authorizations/pilot_a01_auth.json",
+  "authorization_sha256": "3e84b722d971059829f97cbaa0de1f3878b5dd30f6de8e8312b7ba63a178053a",
+  "bootstrap": {
+    "status": "PARTIAL",
+    "paths_config": "/home/bn/uarcap_q2_repo/research/uarcap_q2_experiments/configs/bn_paths.local.yaml",
+    "q2_root": "/home/bn/uarcap_q2_runtime",
+    "conda_env_create": "FAILED_NETWORK",
+    "error": "conda.anaconda.org HTTPS read timeout"
+  },
+  "runtime_env_candidate": {
+    "python": "/home/bn/anaconda3/envs/videollama2/bin/python",
+    "version": "3.10.8",
+    "av": "11.0.0"
+  },
+  "missing_code_modules": [
+    "/home/bn/uarcap_q2_repo/research/uarcap_q2_experiments/uarcap_q2/datasets/__init__.py",
+    "/home/bn/uarcap_q2_repo/research/uarcap_q2_experiments/uarcap_q2/datasets/asset_transfer.py",
+    "/home/bn/uarcap_q2_repo/research/uarcap_q2_experiments/uarcap_q2/datasets/dream1k.py",
+    "/home/bn/uarcap_q2_repo/research/uarcap_q2_experiments/uarcap_q2/datasets/vidhalluc.py",
+    "/home/bn/uarcap_q2_repo/research/uarcap_q2_experiments/uarcap_q2/datasets/video_decoder.py"
+  ],
+  "missing_code_reason": "root .gitignore pattern datasets/ excluded uarcap_q2/datasets sources; not present in commit tree or any fetched antigravity branch",
+  "preflight": {
+    "status": "FAILED_IMPORT",
+    "log": "/home/bn/uarcap_q2_runtime/preflight_attempt.log",
+    "log_sha256": "a28114eda794ac6b87e7e865ce563033e0ab1c3d8f9d0d986a56d95ad1091b0d",
+    "error": "ModuleNotFoundError: uarcap_q2.datasets.dream1k"
+  },
+  "stage_assets": {
+    "status": "FAILED_IMPORT",
+    "log": "/home/bn/uarcap_q2_runtime/stage_assets_attempt.log",
+    "log_sha256": "8b75fa7e8bbad2e1cb78f6e929339f51bb348f990220d0a768a2a8f11ee1a873",
+    "error": "ModuleNotFoundError: uarcap_q2.datasets.asset_transfer"
+  },
+  "dream1k": {
+    "status": "BLOCKED_GATED_ACCESS",
+    "official_url": "https://huggingface.co/datasets/omni-research/DREAM-1K",
+    "hf_direct": "TIMEOUT",
+    "hf_mirror_metadata_http": 403,
+    "hf_error": "Access to dataset omni-research/DREAM-1K is restricted and you are not in the authorized list.",
+    "hf_token_present": false,
+    "bytes_acquired": 0,
+    "metadata_acquired": false,
+    "video_archive_acquired": false
+  },
+  "historical_assets": {
+    "videoufo_root": true,
+    "clips_full": true,
+    "text_embeddings": true,
+    "xclip_repo": true,
+    "xclip_ckpt": true,
+    "evcap_root": true,
+    "frozen_venv": true,
+    "checkpoint": true,
+    "vicuna": true,
+    "feature_cache": true,
+    "gpu_lock": true
+  },
+  "gpu": {
+    "state": "IDLE_NOT_USED",
+    "memory_used_mib": 15,
+    "utilization_percent": 0,
+    "compute_apps": [],
+    "lock_held": false
+  },
+  "generations_completed": 0,
+  "gpu_hours": 0.0,
+  "oom": false,
+  "retries": 0
+}
