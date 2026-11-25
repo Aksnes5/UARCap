@@ -1,0 +1,17 @@
+{
+  "A0": {
+    "predictions": "D:\\UARCap\\_v07_local\\full\\A0\\eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+    "trace": "D:\\UARCap\\_v07_local\\full\\A0\\input_trace.jsonl",
+    "receipt": "D:\\UARCap\\_v07_local\\full\\A0\\run_receipt.json"
+  },
+  "A1": {
+    "predictions": "D:\\UARCap\\_v07_local\\full\\A1\\eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+    "trace": "D:\\UARCap\\_v07_local\\full\\A1\\input_trace.jsonl",
+    "receipt": "D:\\UARCap\\_v07_local\\full\\A1\\run_receipt.json"
+  },
+  "A7": {
+    "predictions": "D:\\UARCap\\_v07_local\\full\\A7\\eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json",
+    "trace": "D:\\UARCap\\_v07_local\\full\\A7\\input_trace.jsonl",
+    "receipt": "D:\\UARCap\\_v07_local\\full\\A7\\run_receipt.json"
+  }
+}

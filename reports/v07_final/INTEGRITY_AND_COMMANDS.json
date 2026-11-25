@@ -1,0 +1,301 @@
+{
+  "delivery_commit": "8ec143b9dd0a3b6f2a03fdd95b3d8ce3016230c0",
+  "zip_and_seal": {
+    "A0": {
+      "zip_bytes": 3173697,
+      "zip_sha256": "708c72502c64cc35ffeadd369055f417be880d2a3467046074a8804e274aa431",
+      "completion_seal_sha256": "97fab4046f4eef59bc2367c91223404de1780ca206bbc4bbb28170c4a0888b6b",
+      "rows": 2990,
+      "attempt": 1
+    },
+    "A1": {
+      "zip_bytes": 3748917,
+      "zip_sha256": "04d5b317e166cacebeb941c950165f3b7b3c5293a8a915e0f887575e8d70bb49",
+      "completion_seal_sha256": "eaa0c835fd17a0d72edfe099490c0be4909a0101e601535b9ef3117fe9ea5c43",
+      "rows": 2990,
+      "attempt": 1
+    },
+    "A7": {
+      "zip_bytes": 5980768,
+      "zip_sha256": "33bc167b258209e54f09498a34de20a695d5f79bbe1f2dd399d1b4849d457456",
+      "completion_seal_sha256": "6bb0fb683e74363bdb476809eb48767f199b9cde27586d29ffd2eccbee4ec810",
+      "rows": 2990,
+      "attempt": 1
+    },
+    "B3": {
+      "zip_bytes": 4637648,
+      "zip_sha256": "d597696ffec2f712f5df4b22470eacfc8ffbb28258f04c26f02918a67730f63a",
+      "completion_seal_sha256": "0f121206e267c7ee4a0396030bb9041addd033a55f5e4dabf462623f8345a476",
+      "rows": 2990,
+      "attempt": 1
+    },
+    "B7HQ": {
+      "zip_bytes": 4659403,
+      "zip_sha256": "99e468099bc92078d08093b38c364703c72114c30d9d1dd65937a04b23a5aa47",
+      "completion_seal_sha256": "93692b58bb250ccb06f7e1b5397ae0a41fcb585898830d2585d2ee199c7ebe79",
+      "rows": 2990,
+      "attempt": 1
+    },
+    "B7LQ": {
+      "zip_bytes": 4657407,
+      "zip_sha256": "5dfd1a02da40784496d0ced580ad34a12a80a7c396b19c23427f3f2a6d849dd1",
+      "completion_seal_sha256": "90e4087631c8ae0e9920ac70bda65bc876d101b73e1ca669365e8800c2931b6a",
+      "rows": 2990,
+      "attempt": 1
+    }
+  },
+  "local_replays": {
+    "A_FULL": {
+      "scope": "uarcap-v06-deploy-1",
+      "mode": "full",
+      "family": "A",
+      "trace_parity": true,
+      "run_id": "full_uarcapv06",
+      "full_ids_sha256": "d826647b1f2ca16c75b117287d9a0b23bd7359753f987f6a7022f769a890ef8d",
+      "execution_inputs": "ec5b1ac6afc41bd621a8b46775be25e6c88e24a41a27fdc0cdc4940945a425ba",
+      "runtime": {
+        "driver": "580.178.04",
+        "python": "3.9.13 | packaged by conda-forge | (main, May 27 2022, 16:58:50) \n[GCC 10.3.0]",
+        "torch": "2.1.2+cu121",
+        "cuda": "12.1",
+        "transformers": "4.28.0"
+      },
+      "deployment_code_sha256": {
+        "deploy_guard.py": "21cc07aadd9f154ed155bb52c5ff72864070afc177ff44a6b0d93825faf08a4e",
+        "runtime_trace.py": "ab7df14aa98c54df6775c16bf2a64cd350eb9eaa61b8932558ad3b5317a1198e",
+        "launch_pinned.py": "648ce479ee5b616d954171ecb5b6f32c042c9749b88187edc375bf0d24176734"
+      },
+      "rows_per_arm": 2990,
+      "validated_files_sha256": {
+        "A0": {
+          "predictions": "8c003aea94364e86ac9d8811c25ba807bea76f1fbcafd5e1b27ab279499b66d8",
+          "trace": "f05a055df18ad806e00610c09ac0425194091030f933f879ac5e6ba4f7cae360",
+          "receipt": "0dbf39642aad9a79af4339fdf072ba360bb042ba287bcf54fabb00ad0aa793da"
+        },
+        "A1": {
+          "predictions": "86d336b88601468f8804890320db12b6752d4ba816bd2172599b277086a11d6a",
+          "trace": "94910eb6e9c6cb7e39de9358d208fccb3a77a894e69064a4d27e4792e6834be0",
+          "receipt": "fe751c7bf1d4878b8ab416a3576454662257fb36102ee72b59c7f566b01e1498"
+        },
+        "A7": {
+          "predictions": "fa7d52053835377900038e8aa935ab5e32c6d5156e1f195a7951ab8fb41b4fd5",
+          "trace": "8f02e05e8ebe0c7fa347030887c7424c5b97567cbb903c67e64ef067fbd341cc",
+          "receipt": "216ed798c69c1b1ba6b7f88f5ee8a9ca8c61791588e9f191d9c5494a2a84b2c8"
+        }
+      }
+    },
+    "B_SMOKE": {
+      "scope": "uarcap-v06-deploy-1",
+      "mode": "smoke",
+      "family": "B",
+      "trace_parity": true,
+      "run_id": "smoke_uarcapv06",
+      "full_ids_sha256": "d826647b1f2ca16c75b117287d9a0b23bd7359753f987f6a7022f769a890ef8d",
+      "execution_inputs": "ec5b1ac6afc41bd621a8b46775be25e6c88e24a41a27fdc0cdc4940945a425ba",
+      "runtime": {
+        "driver": "580.178.04",
+        "python": "3.9.13 | packaged by conda-forge | (main, May 27 2022, 16:58:50) \n[GCC 10.3.0]",
+        "torch": "2.1.2+cu121",
+        "cuda": "12.1",
+        "transformers": "4.28.0"
+      },
+      "deployment_code_sha256": {
+        "deploy_guard.py": "21cc07aadd9f154ed155bb52c5ff72864070afc177ff44a6b0d93825faf08a4e",
+        "runtime_trace.py": "ab7df14aa98c54df6775c16bf2a64cd350eb9eaa61b8932558ad3b5317a1198e",
+        "launch_pinned.py": "648ce479ee5b616d954171ecb5b6f32c042c9749b88187edc375bf0d24176734"
+      },
+      "rows_per_arm": 8,
+      "validated_files_sha256": {
+        "B3": {
+          "predictions": "e2d58a5b9ba6d2a7226d05a062537b95557be91534a805272c609bbb88cfe91f",
+          "trace": "6831ba3ff3cc77da3c8101d50e2f7ff9c2deb3429e402b148b4ca3fd082542fd",
+          "receipt": "270d8326279225b01133d6dc2ea18931144c1fc0a4102a2657ec89e9acf6ceb4"
+        },
+        "B7HQ": {
+          "predictions": "077c1af8f0eab617384918883944fb7dd0c116de257589d147fba96d7b15ed2c",
+          "trace": "b7fa351e7298e14ec7c86a3a1b432b5c134322cbef74d54483f1967f1b4cfeea",
+          "receipt": "1f794990436ff51129466f65f3b334ae82fbd38f00099ed703974d635d2db6d9"
+        },
+        "B7LQ": {
+          "predictions": "6e5646e63b5e6b1d62724673c0b2665bb9caac4d31ca9c57412deb0f4d38d030",
+          "trace": "a1b2f8e61e8ae8e2a5ff33038e74a0f917e4496967561df6f67b5f930dd5a08d",
+          "receipt": "245413c41b5a99504cbc591996fe2cab94801af2537c63dd6201cd5207b9eac9"
+        }
+      }
+    },
+    "B_FULL": {
+      "scope": "uarcap-v06-deploy-1",
+      "mode": "full",
+      "family": "B",
+      "trace_parity": true,
+      "run_id": "full_uarcapv06",
+      "full_ids_sha256": "d826647b1f2ca16c75b117287d9a0b23bd7359753f987f6a7022f769a890ef8d",
+      "execution_inputs": "ec5b1ac6afc41bd621a8b46775be25e6c88e24a41a27fdc0cdc4940945a425ba",
+      "runtime": {
+        "driver": "580.178.04",
+        "python": "3.9.13 | packaged by conda-forge | (main, May 27 2022, 16:58:50) \n[GCC 10.3.0]",
+        "torch": "2.1.2+cu121",
+        "cuda": "12.1",
+        "transformers": "4.28.0"
+      },
+      "deployment_code_sha256": {
+        "deploy_guard.py": "21cc07aadd9f154ed155bb52c5ff72864070afc177ff44a6b0d93825faf08a4e",
+        "runtime_trace.py": "ab7df14aa98c54df6775c16bf2a64cd350eb9eaa61b8932558ad3b5317a1198e",
+        "launch_pinned.py": "648ce479ee5b616d954171ecb5b6f32c042c9749b88187edc375bf0d24176734"
+      },
+      "rows_per_arm": 2990,
+      "validated_files_sha256": {
+        "B3": {
+          "predictions": "4814a1537650415bd51c3df352d144cbbbad9fcc9563fd8ac459be43c471f8fd",
+          "trace": "b96cf5c735c62ba0b8156656384fcd97d64f46ed3b5db64efc0edad0364a7834",
+          "receipt": "779c22a629b2f24ba4a4a536f8a328cc6e2c82012178de65d8369cb1fcae022e"
+        },
+        "B7HQ": {
+          "predictions": "de7453b56b750e691c773477491203ecadd5d6515ffd1c611be3eac0b65087fd",
+          "trace": "3aaf855645c982c86869abc84996757f676652c7ee4e75c754727a3c5b5beaff",
+          "receipt": "7d549cc8b34b975456771c2a697f4be6a5334c8e96f2f6c1e9ff9a76b28840dd"
+        },
+        "B7LQ": {
+          "predictions": "b9f219428e47b675e9603a05735028f325b531b0bce4d529214e3f0d81632cee",
+          "trace": "11671b2187e9b393cd9b2b05cedc89e746fb7688e2a984d0fb8c0d60c545aa21",
+          "receipt": "217998286a10ff9503ab9c682cfbacdcd9119995498d39f5029a89356e09815c"
+        }
+      }
+    }
+  },
+  "commands": [
+    [
+      "python",
+      "-B",
+      "D:\\UARCap\\_local_independent_review\\research\\uarcap_v06_followup_deployment\\validate_bundle.py",
+      "--family",
+      "A",
+      "--mode",
+      "full",
+      "--arm-directories",
+      "D:\\UARCap\\_v07_local\\A_FULL_directories.json",
+      "--archive-scratch",
+      "D:\\UARCap\\_v07_local\\inputs",
+      "--gate-out",
+      "D:\\UARCap\\_v07_local\\A_FULL_gate.json",
+      "--scorer-manifest",
+      "D:\\UARCap\\_v07_local\\SCORER_MANIFEST_A_WINDOWS.json"
+    ],
+    [
+      "python",
+      "-B",
+      "D:\\UARCap\\_local_independent_review\\research\\uarcap_v06_followup_deployment\\validate_bundle.py",
+      "--family",
+      "B",
+      "--mode",
+      "smoke",
+      "--arm-directories",
+      "D:\\UARCap\\_v07_local\\B_SMOKE_directories.json",
+      "--archive-scratch",
+      "D:\\UARCap\\_v07_local\\inputs",
+      "--gate-out",
+      "D:\\UARCap\\_v07_local\\B_SMOKE_gate.json"
+    ],
+    [
+      "python",
+      "-B",
+      "D:\\UARCap\\_local_independent_review\\research\\uarcap_v06_followup_deployment\\validate_bundle.py",
+      "--family",
+      "B",
+      "--mode",
+      "full",
+      "--arm-directories",
+      "D:\\UARCap\\_v07_local\\B_FULL_directories.json",
+      "--archive-scratch",
+      "D:\\UARCap\\_v07_local\\inputs",
+      "--gate-out",
+      "D:\\UARCap\\_v07_local\\B_FULL_gate.json",
+      "--scorer-manifest",
+      "D:\\UARCap\\_v07_local\\SCORER_MANIFEST_B_WINDOWS.json"
+    ],
+    [
+      "python",
+      "-B",
+      "D:\\UARCap\\_local_independent_review\\research\\uarcap_v06_followup_experiments\\evaluate_followup.py",
+      "--family",
+      "A",
+      "--runtime-manifest",
+      "D:\\UARCap\\_v07_local\\SCORER_MANIFEST_A_WINDOWS.json",
+      "--full-ids",
+      "D:\\UARCap\\_v07_local\\inputs\\msrvtt_test2990.tsv",
+      "--test-ids",
+      "D:\\UARCap\\_v07_local\\inputs\\msrvtt_untouched2690.tsv",
+      "--audit-dir",
+      "D:\\UARCap\\_local_independent_review\\reports\\local_independent_review",
+      "--vendor",
+      "D:\\UARCap\\_v07_local\\vendor",
+      "--java",
+      "D:\\12306\\.tools\\jdk17\\bin\\java.exe",
+      "--jar",
+      "D:\\EVCapCode\\evaluation\\pycocoevalcap\\tokenizer\\stanford-corenlp-3.4.1.jar",
+      "--metadata",
+      "D:\\UARCap\\_v07_local\\MSRVTT_data.json",
+      "--out",
+      "D:\\UARCap\\_v07_local\\score_A"
+    ],
+    [
+      "python",
+      "-B",
+      "D:\\UARCap\\_local_independent_review\\research\\uarcap_v06_followup_experiments\\evaluate_followup.py",
+      "--family",
+      "B",
+      "--runtime-manifest",
+      "D:\\UARCap\\_v07_local\\SCORER_MANIFEST_B_WINDOWS.json",
+      "--full-ids",
+      "D:\\UARCap\\_v07_local\\inputs\\msrvtt_test2990.tsv",
+      "--test-ids",
+      "D:\\UARCap\\_v07_local\\inputs\\msrvtt_untouched2690.tsv",
+      "--audit-dir",
+      "D:\\UARCap\\_local_independent_review\\reports\\local_independent_review",
+      "--vendor",
+      "D:\\UARCap\\_v07_local\\vendor",
+      "--java",
+      "D:\\12306\\.tools\\jdk17\\bin\\java.exe",
+      "--jar",
+      "D:\\EVCapCode\\evaluation\\pycocoevalcap\\tokenizer\\stanford-corenlp-3.4.1.jar",
+      "--metadata",
+      "D:\\UARCap\\_v07_local\\MSRVTT_data.json",
+      "--out",
+      "D:\\UARCap\\_v07_local\\score_B",
+      "--eligible",
+      "D:\\UARCap\\_v07_local\\inputs\\prepared\\B_eligible_queries.json"
+    ]
+  ],
+  "scoring_files": {
+    "validator": "967ce1b9e5929141c018b79a562522a0a71f574c7ddb7566f27038a9d0936b68",
+    "evaluate_followup.py": "f97e28f7f0c6f4c5d1c04473344a563b69324b4c3d30bdbce4e6bf6c4fa47ef2",
+    "prepare_inputs.py": "0d3e28ce6e532e686ab865edc5f1e18efef604d0bf0c5f0bd52da5e72e7f5799",
+    "launch_pinned.py": "648ce479ee5b616d954171ecb5b6f32c042c9749b88187edc375bf0d24176734",
+    "audit_statistics.py": "0d419ef74b8df86e078a7d1257600b527c38fb1cd41367bcecdfb07fe22432ab",
+    "pycocoevalcap/cider/__init__.py": "d02e91fe125b82e6e5f0642b897f7439094506d06f32771b40d00170deb8eae1",
+    "pycocoevalcap/cider/cider.py": "f35ade7ee7513bc06b36990251621addd41f6c669d11fdb43cd41b04c9d59774",
+    "pycocoevalcap/cider/cider_scorer.py": "299037838373391c3335e066c867ba2d6dd8617d2c8fb2c4193f32620a774adc"
+  },
+  "delivery_manifest_files_verified": 45,
+  "eligibility": {
+    "source": "frozen transfer bundle B_eligible_queries.json",
+    "sha256": "c17126c4b6924b1eeb2bdf6b8021d8ebf2290966dbe14305def25cf25e1390e4",
+    "canonical_sha256": "450770ffd92520a8b474186c75c9e08cf7fbe3d11949f227a987e793cef03972",
+    "count": 2618
+  },
+  "accepted_A_smoke_gate_sha256": "b07ad358b4efa1ab3d64b3bad5273b27445f1f4c7c7a7f3bf0c99e7b806a9082",
+  "python": "3.11.9",
+  "numpy": "2.4.6",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "java": "openjdk version \"17.0.20.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Microsoft-14940689 (build 17.0.20.1+1-LTS)\nOpenJDK 64-Bit Server VM Microsoft-14940689 (build 17.0.20.1+1-LTS, mixed mode, sharing)",
+  "jar_sha256": "2fcb91bb7a111f93d71e264f4ee0e3afd19ba0dde6d21b38605088df9e940399",
+  "metadata_sha256": "3540d91f9fd5f9a56d75b00c6576f30814fd19395d027791a6d438e9dc297014",
+  "source_hashes": {
+    "top20": "d857bcda93890ae2e5398b69de91080cdd0e5e767249c3f0bd93853f8779e7b2",
+    "cap": "6238f379f6d35fe12fda2d3ec59f498683485d03341a1f0931caf6e234f9efe8",
+    "sims": "3a79cb5e90f2e213752679441defaba62e7d5e1dabc2842ca3a9b3dca2135021",
+    "full_ids": "d826647b1f2ca16c75b117287d9a0b23bd7359753f987f6a7022f769a890ef8d",
+    "test_ids": "fce00da1d10e6e80fa7c0ee9932042e4ab608946f2039887c830a778d96acae2"
+  },
+  "reference_lists_canonical_sha256": "204563f74d9e4354863289760f65a767dde8d9e189d7e99dc201505847b15271"
+}

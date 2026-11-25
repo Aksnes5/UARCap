@@ -1,0 +1,143 @@
+{
+  "arm_rows": {
+    "A0": {
+      "predictions": 2990,
+      "traces": 2990
+    },
+    "A1": {
+      "predictions": 2990,
+      "traces": 2990
+    },
+    "A7": {
+      "predictions": 2990,
+      "traces": 2990
+    },
+    "B3": {
+      "predictions": 2990,
+      "traces": 2990
+    },
+    "B7HQ": {
+      "predictions": 2990,
+      "traces": 2990
+    },
+    "B7LQ": {
+      "predictions": 2990,
+      "traces": 2990
+    }
+  },
+  "archived_test2990_endpoint_parity": {
+    "A1": {
+      "equal_full_records": 2990,
+      "historical_path": "evcap_external/outputs/eval_test2990_D1/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json"
+    },
+    "A7": {
+      "equal_full_records": 2990,
+      "historical_path": "evcap_external/outputs/eval_test2990_D7/eval_evcap_top7_bs1_load_video_feature_sim_score_cross_fusion_gate_not_share_linear_prompt5_review_generated_captions.json"
+    }
+  },
+  "historical_revision": "52b5ed3a69e4b84a8e16ed747f141eefb5b1e2ec",
+  "identical_outside_B_eligibility_records_and_traces": {
+    "B7HQ": 372,
+    "B7LQ": 372
+  },
+  "module_modes_parent_and_submodules": {
+    "A0": [
+      true,
+      {
+        "attention": true,
+        "image_qformer": false,
+        "llm": false,
+        "video_qformer": true
+      }
+    ],
+    "A1": [
+      true,
+      {
+        "attention": true,
+        "image_qformer": false,
+        "llm": false,
+        "video_qformer": true
+      }
+    ],
+    "A7": [
+      true,
+      {
+        "attention": true,
+        "image_qformer": false,
+        "llm": false,
+        "video_qformer": true
+      }
+    ],
+    "B3": [
+      true,
+      {
+        "attention": true,
+        "image_qformer": false,
+        "llm": false,
+        "video_qformer": true
+      }
+    ],
+    "B7HQ": [
+      true,
+      {
+        "attention": true,
+        "image_qformer": false,
+        "llm": false,
+        "video_qformer": true
+      }
+    ],
+    "B7LQ": [
+      true,
+      {
+        "attention": true,
+        "image_qformer": false,
+        "llm": false,
+        "video_qformer": true
+      }
+    ]
+  },
+  "exact_rounded_table_checks": {
+    "arms": 6,
+    "contrasts": 5
+  },
+  "matching_rechecked_from_consumed_caption_inputs": {
+    "relevance_gap": {
+      "mean": 0.00835386644892332,
+      "min": 0.0050048828125,
+      "max": 0.02606201171875
+    },
+    "absolute_word_delta": {
+      "mean": 0.3533231474407945,
+      "min": 0,
+      "max": 7
+    },
+    "absolute_head_jaccard_delta": {
+      "mean": 0.008505401818514294,
+      "min": 3.953090253361324e-06,
+      "max": 0.07981429563827225
+    },
+    "absolute_internal_jaccard_delta": {
+      "mean": 0.0074168811934713095,
+      "min": 3.071404000187794e-06,
+      "max": 0.07811786739805315
+    }
+  },
+  "figure_hashes": {
+    "fig1_framework.png": "76c2f09672bee5a1ba5e22e829cf3410e8e371e03f2898859dcee755ed77639f",
+    "fig1_framework.svg": "88450ecea1fe25241aa68d678ef4bcc0455fce0476bd7dbaa1ba932656f26657",
+    "fig1_framework.pdf": "972d82be58402eef59fb96e5f3f603c843927ecab8e97654143eb0cf5098358d",
+    "fig2_access.png": "b2fa3e9ac0cf5c16837ac7c387c751234ff6c174d84c1706de864033662bbf91",
+    "fig2_access.svg": "3f59d8753050c2a2a895cb050bcfbd6965a8772d76cc5f949df7579805580b94",
+    "fig2_access.pdf": "9062eaa87049a197d98e2be7f8adce2363c10b51028de08df91845f8f2c66afe",
+    "fig3_budget.png": "eff62c8c9528e86c39d537d2ca9d53f2826a317936717f568c33612bb7157472",
+    "fig3_budget.svg": "28314daf94148867257e5a8594e683eeba2f4d3414ab6079a7bc69e923379214",
+    "fig3_budget.pdf": "ade7d20f2c75f0d5efcd1933692b22841b1c23bea1b98ff738d1a029ebb34253",
+    "fig4_followups.png": "4c581f345d028f49501416fd9603d52298c42e96dd0acc8b90fd02cd0e9f3959",
+    "fig4_followups.svg": "e43ade743ff7cf8df29a90ec16d0d7bb871ca821a946803c614d0c5f1b97c8ac",
+    "fig4_followups.pdf": "d46c823d299a69b1f54a89714cb30e74726900f3cb44d507ceacc6601e4609cf",
+    "fig5_forest.png": "342aa34cf3c403b892e8d3c4a029e2e5c45a7790ead710a9a7855e8fbacb80da",
+    "fig5_forest.svg": "5259a46bb5b4b1117717529bb0e3affdacbc60b196439ae3917440639bd10f2b",
+    "fig5_forest.pdf": "bc535d5247b5e58a6492bea350929d4d807a7d7ed9c7740cb140e166db8f551f"
+  },
+  "manuscript_sha256_lf": "4d64e6bea6672bed72ca292b7407ac587a6893999ad32afc56d7d9130a8ee54b"
+}
