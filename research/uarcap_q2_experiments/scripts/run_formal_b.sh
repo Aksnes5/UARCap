@@ -14,7 +14,13 @@ PRIOR_A1="${PRIOR_A1:-${Q2_ROOT}/outputs/pilot_a1/pilot_a1_dream1k_v1/run_receip
 PRIOR_A2="${PRIOR_A2:-${Q2_ROOT}/outputs/pilot_a2/pilot_a2_eval_v1/calibration_receipt.json}"
 PRIOR_A3="${PRIOR_A3:-${Q2_ROOT}/outputs/pilot_a3/pilot_a3_vlm_vidhalluc_v1/run_receipt.json}"
 PILOT_EXCL="${PILOT_EXCL:-${Q2_ROOT}/outputs/pilot_a1/pilot_a1_dream1k_v1/pilot_a_excluded_dream1k_vids.json}"
-PYTHON_BIN="${PYTHON_BIN:-python3}"
+if [[ -z "${PYTHON_BIN:-}" ]]; then
+  if [[ -x "/home/bn/anaconda3/envs/videollama2/bin/python" ]]; then
+    PYTHON_BIN="/home/bn/anaconda3/envs/videollama2/bin/python"
+  else
+    PYTHON_BIN="python3"
+  fi
+fi
 RUN_ID="${RUN_ID:-formal_b_v1}"
 OUT_DIR="${Q2_ROOT}/outputs/formal_b/${RUN_ID}"
 

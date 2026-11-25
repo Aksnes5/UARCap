@@ -8,7 +8,13 @@ PATHS_CFG="${PATHS_CFG:-${EXP_ROOT}/configs/bn_paths.local.yaml}"
 Q2_ROOT="${Q2_ROOT:-/home/bn/uarcap_q2_runtime}"
 AUTH_RECEIPT="${AUTH_RECEIPT:-${Q2_ROOT}/authorizations/pilot_a3_auth.json}"
 PRIOR_A2="${PRIOR_A2:-${Q2_ROOT}/outputs/pilot_a2/pilot_a2_eval_v1/calibration_receipt.json}"
-PYTHON_BIN="${PYTHON_BIN:-python3}"
+if [[ -z "${PYTHON_BIN:-}" ]]; then
+  if [[ -x "/home/bn/anaconda3/envs/videollama2/bin/python" ]]; then
+    PYTHON_BIN="/home/bn/anaconda3/envs/videollama2/bin/python"
+  else
+    PYTHON_BIN="python3"
+  fi
+fi
 RUN_ID="${RUN_ID:-pilot_a3_vlm_vidhalluc_v1}"
 OUT_DIR="${Q2_ROOT}/outputs/pilot_a3/${RUN_ID}"
 

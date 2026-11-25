@@ -10,7 +10,13 @@ AUTH_RECEIPT="${AUTH_RECEIPT:-${Q2_ROOT}/authorizations/pilot_a2_auth.json}"
 A1_DIR="${A1_DIR:-${Q2_ROOT}/outputs/pilot_a1/pilot_a1_dream1k_v1}"
 PRIOR_A1="${PRIOR_A1:-${A1_DIR}/run_receipt.json}"
 A1_PREDS="${A1_PREDS:-${A1_DIR}/predictions.jsonl}"
-PYTHON_BIN="${PYTHON_BIN:-python3}"
+if [[ -z "${PYTHON_BIN:-}" ]]; then
+  if [[ -x "/home/bn/anaconda3/envs/videollama2/bin/python" ]]; then
+    PYTHON_BIN="/home/bn/anaconda3/envs/videollama2/bin/python"
+  else
+    PYTHON_BIN="python3"
+  fi
+fi
 RUN_ID="${RUN_ID:-pilot_a2_eval_v1}"
 OUT_DIR="${Q2_ROOT}/outputs/pilot_a2/${RUN_ID}"
 

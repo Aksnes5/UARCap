@@ -6,7 +6,9 @@
 # =====================================================================
 
 # ---------- raw data / videos ----------
-datasets/
+/datasets/
+!research/uarcap_q2_experiments/uarcap_q2/datasets/
+!research/uarcap_q2_experiments/uarcap_q2/datasets/*.py
 videos/
 metadata/
 *.mp4

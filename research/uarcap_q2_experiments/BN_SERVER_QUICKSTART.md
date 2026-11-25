@@ -1,6 +1,7 @@
 # BN 服务器一键部署与分阶段运行指南（BN SERVER QUICKSTART — 最终离线交付版）
 
-> 适用分支：`antigravity/uarcap-q2-final-offline-handoff`  
+> 适用分支：`antigravity/uarcap-q2-offline-delivery-hotfix`  
+> Python 编排环境：**直接复用 BN 既有 `/home/bn/anaconda3/envs/videollama2/bin/python`**（已具备 `numpy`、`scipy`、`yaml`、`PIL`、`av`、`pytest`），通过 `PYTHON_BIN` 指定，**无需访问 `conda.anaconda.org` 新建 `uarcap_q2_cpu` 环境**。  
 > 模型复用原则：**默认零新增模型下载**。现代视频生成器首选既有 **`Qwen/Qwen3.8-27B-FP8`**（`/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.8-27B-FP8`，66/66 shards，30.89 GB，备用既有 `Qwen/Qwen3.5-27B`），跨家族文本裁判首选既有 **`Mistral Small 3.2 24B`**（备用既有 `Gemma 3 27B`、`Llama 3.3 70B W4A16`、`gpt-oss-20b`、`Phi-4 14B`、`Llama 3.1 8B`），依托既有 **vLLM 0.29.0 / PyTorch 2.13.0+cu130 / CUDA 13.0** 环境运行；**取消默认下载 `Qwen2.5-VL-7B-Instruct`**；原冻结 **Video-LLaMA (`Transformers 4.28.0`)** 保持 100% 只读不动。
 
 ---
@@ -11,20 +12,21 @@
 cd /home/bn
 git clone https://github.com/Aksnes5/UARCap.git uarcap_q2_repo   # 若已存在：cd /home/bn/uarcap_q2_repo && git fetch origin
 cd /home/bn/uarcap_q2_repo
-git checkout antigravity/uarcap-q2-final-offline-handoff
-git pull origin antigravity/uarcap-q2-final-offline-handoff
-# 建议用固定 commit 锁死运行版本：git log -n 1 --oneline
+git checkout antigravity/uarcap-q2-offline-delivery-hotfix
+git pull origin antigravity/uarcap-q2-offline-delivery-hotfix
 cd /home/bn/uarcap_q2_repo/research/uarcap_q2_experiments
 ```
 
 ---
 
-## 2. 自动部署及绑定已有资产（含既有 Qwen3.8-27B-FP8 与裁判模型）
+## 2. 自动部署及绑定已有资产（直接复用已有 Python，不新建 Conda 环境）
 
 ```bash
+export PYTHON_BIN=/home/bn/anaconda3/envs/videollama2/bin/python
 bash scripts/bootstrap_bn.sh
-conda activate uarcap_q2_cpu
 ```
+
+`bootstrap_bn.sh` 会自动检测 `${PYTHON_BIN}` 已满足全部 CPU 编排依赖并跳过 `conda env create`（不访问 `conda.anaconda.org`，且绝不修改/升级任何已有环境）。
 
 检查自动生成的 `configs/bn_paths.local.yaml`：
 - `historical_frozen_assets`：已预填 VideoUFO (`VideoUFO.csv`、`clips_full.tsv`、`videoufo_brief_text_fp16.npy`、`X-CLIP`、冻结检查点 SHA-256 与 `/home/bn/videoufo_research/gpu.lock`)；
@@ -32,12 +34,11 @@ conda activate uarcap_q2_cpu
 
 ---
 
-## 3. 一键准备 DREAM-1K（支持 BN 直连与 Windows 分卷中转）
+## 3. 一键准备 DREAM-1K（推荐路线：Windows 本地下载分卷 → BN 离线导入）
 
 1. 先执行 Pilot A0 非破坏性预检：
 ```bash
-export HF_TOKEN="<接受 DREAM-1K gated 协议后的 HF Token，严禁写入文件或提交 Git>"
-bash scripts/run_preflight.sh --verify-ckpt-sha --check-hf-network
+PYTHON_BIN=/home/bn/anaconda3/envs/videollama2/bin/python bash scripts/run_preflight.sh --verify-ckpt-sha
 ```
 
 2. 签发 Pilot A0/A1 授权收据：
@@ -51,27 +52,33 @@ cat > /home/bn/uarcap_q2_runtime/authorizations/pilot_a01_auth.json <<'EOF'
 EOF
 ```
 
-3. 一键自动化准备（自动串联：已有文件识别/受控下载或分卷导入 → 完整性校验 → 防路径穿越安全解压 → 目录规范化 → 元数据与视频对应校验 → 落盘 `dream1k_readiness.json`）：
-- **路线 1（BN 直连下载）**：
+3. **路线 2（推荐，BN 离线导入 Windows 分卷）**：
+   - 先在 Windows 轻薄本接受 https://huggingface.co/datasets/omni-research/DREAM-1K 协议后运行：
+     ```powershell
+     $env:HF_TOKEN = "<你的 HF Read Token>"
+     python scripts/download_dream1k_windows_stage.py --stage-dir D:\UARCap_LocalData\dream1k_staging
+     ```
+   - 将生成的 `bn_transfer_chunks/` 目录上传至 BN `/home/bn/uarcap_q2_runtime/staging/dream1k/` 后在 BN 一键导入校验解压：
 ```bash
-python deployment/stage_assets.py prepare \
+cp /home/bn/uarcap_q2_runtime/staging/dream1k/metadata.json /home/bn/uarcap_q2_runtime/data/dream1k/json/metadata.json
+/home/bn/anaconda3/envs/videollama2/bin/python deployment/stage_assets.py prepare \
+  --data-root /home/bn/uarcap_q2_runtime/data \
+  --dataset dream1k \
+  --transfer-manifest /home/bn/uarcap_q2_runtime/staging/dream1k/video.zip.transfer_manifest.json
+```
+- **路线 1（若 BN 有直连 HF 代理）**：
+```bash
+export HF_TOKEN="<你的 HF Read Token>"
+/home/bn/anaconda3/envs/videollama2/bin/python deployment/stage_assets.py prepare \
   --data-root /home/bn/uarcap_q2_runtime/data \
   --dataset dream1k \
   --allow-download \
   --auth-receipt /home/bn/uarcap_q2_runtime/authorizations/pilot_a01_auth.json
 ```
-- **路线 2（Windows 下载并分卷中转至 BN）**：
-  - 在 Windows 本地拆分：`python deployment/stage_assets.py split --src video.zip --out-dir ./dream1k_chunks --chunk-mb 512`
-  - 上传 `dream1k_chunks/` 与 `metadata.json` 后在 BN 一键导入解压规范化：
-```bash
-python deployment/stage_assets.py prepare \
-  --data-root /home/bn/uarcap_q2_runtime/data \
-  --dataset dream1k \
-  --transfer-manifest /home/bn/uarcap_q2_runtime/staging/video.zip.transfer_manifest.json
-```
 - 随时独立核验数据就绪状态：
 ```bash
-python deployment/stage_assets.py check-ready --data-root /home/bn/uarcap_q2_runtime/data --dataset dream1k
+/home/bn/anaconda3/envs/videollama2/bin/python deployment/stage_assets.py check-ready \
+  --data-root /home/bn/uarcap_q2_runtime/data --dataset dream1k
 ```
 
 ---
