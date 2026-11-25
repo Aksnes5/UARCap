@@ -1,0 +1,27 @@
+﻿Family,Contrast,Effect,95% source-cluster CI,Source p,Source BH q
+Mechanism (val497),Text effect at V = 3 (T7V3 − T3V3),−1.45,"[−4.22, +1.22]",.2970,.7349
+Mechanism (val497),Text effect at V = 7 (T7V7 − T3V7),−1.29,"[−4.02, +1.35]",.3439,.7349
+Mechanism (val497),Visual effect at T = 3 (T3V7 − T3V3),−0.12,"[−0.78, +0.53]",.7404,.9031
+Mechanism (val497),Visual effect at T = 7 (T7V7 − T7V3),+0.04,"[−0.35, +0.50]",.8448,.9031
+Mechanism (val497),Text count main effect,−1.37,"[−4.10, +1.26]",.3154,.7349
+Mechanism (val497),Visual count main effect,−0.04,"[−0.42, +0.35]",.8529,.9031
+Mechanism (val497),Text × visual interaction,+0.16,"[−0.60, +0.94]",.7003,.9031
+Mechanism (val497),External FULL D3 − D7,+1.41,"[−1.21, +4.17]",.3042,.7349
+Mechanism (val497),Matched in-domain D3 − D7,−1.34,"[−3.59, +0.92]",.2553,.7349
+Mechanism (val497),Source × budget interaction,+2.74,"[−0.76, +6.29]",.1322,.7349
+Mechanism (val497),Reverse prompt order vs. D7,−0.24,"[−2.08, +1.67]",.8061,.9031
+Mechanism (val497),Top-three-last order vs. D7,+0.02,"[−1.76, +1.92]",.9813,.9813
+Mechanism (val497),MidTail7 (ranks 8–11) vs. D7,+1.20,"[−0.80, +3.36]",.2574,.7349
+Mechanism (val497),LowTail7 (ranks 17–20) vs. D7,−0.64,"[−2.77, +1.36]",.5513,.9031
+Mechanism (val497),GoodTail vs. D7,−0.56,"[−3.23, +2.04]",.6827,.9031
+Mechanism (val497),HardWrong vs. D7,−1.45,"[−3.55, +0.66]",.1754,.7349
+Mechanism (val497),EasyWrong vs. D7,−0.37,"[−2.35, +1.64]",.7259,.9031
+Mechanism (val497),HardWrong vs. EasyWrong,−1.08,"[−3.44, +1.22]",.3675,.7349
+LOO (val150),Remove rank 1 vs. D7,+1.97,"[−1.04, +5.11]",.2201,.8803
+LOO (val150),Remove rank 2 vs. D7,−0.56,"[−4.64, +3.22]",.7854,.9265
+LOO (val150),Remove rank 3 vs. D7,+0.39,"[−3.24, +3.84]",.8357,.9265
+LOO (val150),Remove rank 4 vs. D7,+0.58,"[−2.98, +4.01]",.7588,.9265
+LOO (val150),Remove rank 5 vs. D7,−0.75,"[−4.31, +2.47]",.6764,.9265
+LOO (val150),Remove rank 6 vs. D7,−0.17,"[−3.68, +3.09]",.9265,.9265
+LOO (val150),Remove rank 7 vs. D7,−1.51,"[−5.28, +1.97]",.4236,.9265
+LOO (val150),LOO head (1–3) − tail (4–7),+1.06,"[−0.18, +2.40]",.1127,.8803

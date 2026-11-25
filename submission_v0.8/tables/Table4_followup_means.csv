@@ -1,0 +1,7 @@
+﻿Experiment,Arm,Text / retrieved visuals,Scored queries (sources),Cohort CIDEr,Mean prompt length (median)
+A,A0,0 / 0,"2,690 (2,004)",69.81,—
+A,A1,1 / 1,"2,690 (2,004)",71.21,—
+A,A7,7 / 7,"2,690 (2,004)",68.27,—
+B,B3,3 / 3,"2,618 (1,969)",69.88,150.69 (148)
+B,B7HQ,7 / 3,"2,618 (1,969)",68.62,226.86 (224)
+B,B7LQ,7 / 3,"2,618 (1,969)",68.75,226.38 (223)

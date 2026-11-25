@@ -1,0 +1,5 @@
+﻿Contrast,Effect (CIDEr pts),95% source-cluster CI,Source p,Source BH q
+Oracle1 − D1,+1.67,"[−0.50, +3.78]",.1282,.1531
+Oracle3 − D3,+3.04,"[+0.85, +5.27]",.0073,.0146
+Oracle7 − D7,+1.72,"[−0.62, +4.08]",.1531,.1531
+Oracle7 − Oracle3,−2.73,"[−4.72, −0.80]",.0068,.0146

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="502.56pt" height="219.42pt" viewBox="0 0 502.56 219.42" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 219.42
+L 502.56 219.42
+L 502.56 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 18.036 97.8597
+L 113.29776 97.8597
+Q 122.13648 97.8597 122.13648 94.1175
+L 122.13648 29.6685
+Q 122.13648 25.9263 113.29776 25.9263
+L 18.036 25.9263
+Q 9.19728 25.9263 9.19728 29.6685
+L 9.19728 94.1175
+Q 9.19728 97.8597 18.036 97.8597
+z
+" clip-path="url(#paf1111ebbd)" style="fill: #ebf3f7; stroke: #1b4f72; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 141.77808 97.8597
+L 237.03984 97.8597
+Q 245.87856 97.8597 245.87856 94.1175
+L 245.87856 29.6685
+Q 245.87856 25.9263 237.03984 25.9263
+L 141.77808 25.9263
+Q 132.93936 25.9263 132.93936 29.6685
+L 132.93936 94.1175
+Q 132.93936 97.8597 141.77808 97.8597
+z
+" clip-path="url(#paf1111ebbd)" style="fill: #ebf3f7; stroke: #1b4f72; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 265.52016 97.8597
+L 360.78192 97.8597
+Q 369.62064 97.8597 369.62064 94.1175
+L 369.62064 29.6685
+Q 369.62064 25.9263 360.78192 25.9263
+L 265.52016 25.9263
+Q 256.68144 25.9263 256.68144 29.6685
+L 256.68144 94.1175
+Q 256.68144 97.8597 265.52016 97.8597
+z
+" clip-path="url(#paf1111ebbd)" style="fill: #fdf3eb; stroke: #c04d00; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 389.26224 97.8597
+L 484.524 97.8597
+Q 493.36272 97.8597 493.36272 94.1175
+L 493.36272 29.6685
+Q 493.36272 25.9263 484.524 25.9263
+L 389.26224 25.9263
+Q 380.42352 25.9263 380.42352 29.6685
+L 380.42352 94.1175
+Q 380.42352 97.8597 389.26224 97.8597
+z
+" clip-path="url(#paf1111ebbd)" style="fill: #f2f4f4; stroke: #17202a; stroke-width: 1.25; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 17.54496 163.9719
+L 485.01504 163.9719
+Q 492.38064 163.9719 492.38064 160.8534
+L 492.38064 129.2526
+Q 492.38064 126.1341 485.01504 126.1341
+L 17.54496 126.1341
+Q 10.17936 126.1341 10.17936 129.2526
+L 10.17936 160.8534
+Q 10.17936 163.9719 17.54496 163.9719
+z
+" clip-path="url(#paf1111ebbd)" style="fill: #eff5f9; stroke: #1b4f72; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 17.54496 207.6309
+L 485.01504 207.6309
+Q 492.38064 207.6309 492.38064 204.5124
+L 492.38064 172.9116
+Q 492.38064 169.7931 485.01504 169.7931
+L 17.54496 169.7931
+Q 10.17936 169.7931 10.17936 172.9116
+L 10.17936 204.5124
+Q 10.17936 207.6309 17.54496 207.6309
+z
+" clip-path="url(#paf1111ebbd)" style="fill: #fcf4ee; stroke-dasharray: 4.44,1.92; stroke-dashoffset: 0; stroke: #c04d00; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 11.65248 110.7495
+L 490.90752 110.7495
+" clip-path="url(#paf1111ebbd)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #e2e8ec"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #5d6d7e" x="10.6704" y="17.342434" transform="rotate(-0 10.6704 17.342434)">Frozen video-captioning interface (Fang et al., 2026)  |  Controlled external-retrieval variables</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 8.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17202a" x="65.66688" y="41.180379" transform="rotate(-0 65.66688 41.180379)">1. External Corpus</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(21.715177 65.227531)">VideoUFO nested scales</text>
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(31.954568 74.302344)">10K to 1.09M clips</text>
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(21.411771 84.362086)">(345,437 source videos)</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 125.608286 61.893
+Q 127.537578 61.893 128.125229 61.893
+" style="fill: none; stroke: #17202a; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 124.125229 59.893
+L 128.125229 61.893
+L 124.125229 63.893
+z
+" style="fill: #17202a; stroke: #17202a; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 8.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17202a" x="189.40896" y="41.180379" transform="rotate(-0 189.40896 41.180379)">2. Candidate Access</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(143.702976 65.227531)">Video-conditioned X-CLIP</text>
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(148.91278 74.302344)">Top-20 caption groups</text>
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(145.667702 84.084344)">(exact cosine similarity)</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 249.350366 61.893
+Q 251.279658 61.893 251.867309 61.893
+" style="fill: none; stroke: #17202a; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 247.867309 59.893
+L 251.867309 61.893
+L 247.867309 63.893
+z
+" style="fill: #17202a; stroke: #17202a; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 8.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17202a" x="313.15104" y="41.180379" transform="rotate(-0 313.15104 41.180379)">3. Evidence Selection</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(264.282103 64.794094)">CF (raw) vs. D (consensus)</text>
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(262.45254 74.302344)">Prefix budget k in {1,3,5,7}</text>
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(260.532298 84.084344)">Text + matched clip features</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 373.092446 61.893
+Q 375.021738 61.893 375.609389 61.893
+" style="fill: none; stroke: #17202a; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 371.609389 59.893
+L 375.609389 61.893
+L 371.609389 63.893
+z
+" style="fill: #17202a; stroke: #17202a; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 8.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17202a" x="436.89312" y="41.180379" transform="rotate(-0 436.89312 41.180379)">4. Caption Utility</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(389.141995 64.520344)">Frozen cross-gating fusion</text>
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(389.019948 75.009531)">+ Vicuna-7B-v1.3 decoder</text>
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(404.721792 84.791531)">Official PTB CIDEr</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #17202a" x="11.65248" y="121.29982" transform="rotate(-0 11.65248 121.29982)">Prespecified controlled follow-up interventions on MSR-VTT (FULL external memory)</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1b4f72" x="21.47328" y="138.919359" transform="rotate(-0 21.47328 138.919359)">Experiment A: Matched Net Utility (n = 2,690; 2,004 sources)</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(21.47328 149.074012)">Retain full fusion pathway &amp; prompt scaffold at zero external input (A0).</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(21.47328 159.058012)">Compare A0 (0/0) vs. A1 (1/1) and A7 (7/7) D-ordered caption-clip pairs.</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #c04d00" x="21.47328" y="182.578359" transform="rotate(-0 21.47328 182.578359)">Experiment B: Fixed-Visual Text Extension (n = 2,618; 1,969 sources)</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(21.47328 192.733012)">Verify per-query identity of all three retrieved visual tensors &amp; fused projections (B3).</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(21.47328 202.717012)">Append four higher- (B7HQ) or lower-similarity (B7LQ) text-only captions (length- &amp; overlap-matched).</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 313.64208 100.275827
+Q 313.64208 105.551566 313.64208 109.541566
+" style="fill: none; stroke: #c04d00; stroke-width: 1.15; stroke-linecap: round"/>
+    <path d="M 315.64208 105.541566
+L 313.64208 109.541566
+L 311.64208 105.541566
+z
+" style="fill: #c04d00; stroke: #c04d00; stroke-width: 1.15; stroke-linecap: round"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="paf1111ebbd">
+   <rect x="5.76" y="5.76" width="491.04" height="207.9"/>
+  </clipPath>
+ </defs>
+</svg>

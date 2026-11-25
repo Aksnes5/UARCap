@@ -1,0 +1,7 @@
+﻿Verification domain,Verified condition,Outcome
+Experiment A zero-evidence arm (A0),"Zero captions, zero retrieved features loaded, no visual softmax; 1 x 32 x 768 external aggregate and attention K/V equal to exact zero tensor","PASS (2,990 / 2,990)"
+Experiment A cross-arm parity,"Identical query frames, Q-Former inputs, query visual projection, masks, module states, and CPU/CUDA encoder RNG across A0, A1, A7","PASS (2,990 / 2,990)"
+Experiment A endpoint reproducibility,"Parsed outputs of A1 and A7 match archived D1 and D7 records identically across all 2,990 test queries","PASS (2,990 / 2,990)"
+Experiment B visual-tensor parity,"Identical query frames, representative clip IDs, raw similarity weights, ordered feature-tensor hashes, fused aggregate, attention K/V, gate inputs, visual projections, and encoder RNG across B3, B7HQ, B7LQ","PASS (2,990 / 2,990)"
+Experiment B ineligible-query parity,"For all 372 non-eligible queries (300 pilots + 72 unmatched), B7HQ and B7LQ match B3 predictions and traces identically",PASS (372 / 372)
+Reference & source metadata alignment,"Exact query reference list/order match; zero fallback singleton clusters (2,004 clusters in A; 1,969 in B)",PASS

@@ -1,0 +1,13 @@
+﻿Split,Budget k,Mean words,Fixed top-1 trigram match,Supplied-union trigram match
+"MSR-VTT test2690 (n = 2,690)",1,7.92,0.142,0.142
+"MSR-VTT test2690 (n = 2,690)",3,8.10,0.164,0.223
+"MSR-VTT test2690 (n = 2,690)",5,8.36,0.179,0.284
+"MSR-VTT test2690 (n = 2,690)",7,8.75,0.190,0.334
+MSR-VTT repaired val497 (n = 497),1,8.01,0.147,0.147
+MSR-VTT repaired val497 (n = 497),3,8.18,0.174,0.223
+MSR-VTT repaired val497 (n = 497),5,8.40,0.186,0.288
+MSR-VTT repaired val497 (n = 497),7,8.65,0.191,0.331
+MSVD test670 (n = 670),1,6.77,—,—
+MSVD test670 (n = 670),3,6.97,—,—
+MSVD test670 (n = 670),5,7.35,—,—
+MSVD test670 (n = 670),7,7.61,—,—

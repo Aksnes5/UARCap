@@ -1,0 +1,9 @@
+﻿Metric,Mean,Median,Min,Max
+Mean raw X-CLIP similarity gap (HQ − LQ),0.00835,—,0.00500,0.02606
+Absolute quartet word-count imbalance,0.35,—,0,7
+Absolute head-overlap Jaccard imbalance,0.0085,—,0.000004,0.0798
+Absolute internal-overlap Jaccard imbalance,0.0074,—,0.000003,0.0781
+Wrapped prompt length: B3 (positions),150.69,148,125,219
+Wrapped prompt length: B7HQ (positions),226.86,224,172,346
+Wrapped prompt length: B7LQ (positions),226.38,223,176,347
+Prompt-length difference (B7HQ − B7LQ),+0.48,3 (abs. median),—,—
