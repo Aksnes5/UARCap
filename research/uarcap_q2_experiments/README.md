@@ -24,6 +24,11 @@ verified SHA-256 pins live in `VERIFIED_SHA256`. When adding a new public
 dataset, first check for a ModelScope counterpart and prove the hash match
 before registering it.
 
+As of 2026-11-26, `mirror-check --dataset all` reports `VERIFIED_MIRROR` for
+CaReBench; DREAM-1K (`omni-research/DREAM-1K`) and VidHalluc
+(`chaoyuli/VidHalluc`) return 404 on ModelScope under those repo IDs, so no
+mirror is registered for them.
+
 ## Directory Layout
 
 - `uarcap_q2/`: Modular Python package (`common/`, `datasets/`, `retrieval/`, `interventions/`, `generators/`, `evaluators/`, `annotation/`, `statistics/`, `runner/`)

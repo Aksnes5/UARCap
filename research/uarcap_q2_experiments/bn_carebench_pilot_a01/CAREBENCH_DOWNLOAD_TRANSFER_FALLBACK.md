@@ -1,6 +1,11 @@
 # CaReBench download / offline transfer fallback
 
-## Current block
+> **RESOLVED (2026-11-26):** the official ModelScope mirror `MCG-NJU/CaReBench`
+> is bit-identical to the HF LFS object (SHA-256 `957706c2…203`). A 16–24-way
+> parallel Range download completed in 177 s. Route B below is retained only as
+> a fallback. See `PILOT_A1_RUNBOOK.md` and `PILOT_A1_RESULTS.md`.
+
+## Historical block (2026-11-25)
 
 Metadata succeeded through `hf-mirror.com`, but the **3,918,994,506-byte** `videos/videos.zip` could not be transferred at usable speed from BN:
 

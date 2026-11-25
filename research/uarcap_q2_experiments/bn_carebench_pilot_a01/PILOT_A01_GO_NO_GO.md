@@ -1,6 +1,13 @@
 # UARCap Q2 CaReBench Pilot A0/A1 — GO / NO-GO
 
-**Final status: `PILOT_A01_BLOCKED`.**
+> **SUPERSEDED (2026-11-26):** this document records the historical download block.
+> The block was resolved via the SHA-256-verified ModelScope mirror; real Pilot A1
+> then completed with `REAL_RUNTIME_PASS` (90/90). See
+> [`PILOT_A1_RESULTS.md`](PILOT_A1_RESULTS.md) and
+> [`PILOT_A1_RUNBOOK.md`](PILOT_A1_RUNBOOK.md). The receipt below is kept unchanged
+> as historical evidence.
+
+**Final status at the time of the block: `PILOT_A01_BLOCKED`.**
 
 | Gate | Result | Reason |
 | --- | --- | --- |
