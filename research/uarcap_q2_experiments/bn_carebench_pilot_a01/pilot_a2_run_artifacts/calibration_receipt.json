@@ -1,0 +1,22 @@
+{
+  "stage": "PILOT_A2",
+  "dataset_id": "CaReBench",
+  "status": "PILOT_A2_HUMAN_VALIDATION_PENDING",
+  "execution_mode": "real_authorized",
+  "timestamp_utc": "2026-11-25T17:40:38.098425+00:00",
+  "judge_model_id": "RedHatAI/gemma-3-27b-it-FP8-dynamic",
+  "judge_family": "gemma",
+  "n_captions_evaluated": 90,
+  "n_unique_captions_evaluated": 50,
+  "n_duplicate_caption_reuses": 40,
+  "parse_failures": 0,
+  "reused_existing_auto_eval_and_bundle": false,
+  "package_sha256": "f55acbaa6f4baf88bfb884a82c78017a5ccb54dfceac11ff5eb88f598a6ac571",
+  "human_calibration_completed": false,
+  "blind_annotation_files": {
+    "tasks_A1": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/blind_tasks_e2_A1.json",
+    "tasks_A2": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/blind_tasks_e2_A2.json",
+    "blind_key": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/blind_key_e2_DO_NOT_OPEN.json"
+  },
+  "next_action": "Launch the blind UI for annotator A1 and A2 with separate --save-dir directories, export both annotations, adjudicate with scripts/adjudicate_annotations.py --task e2, then re-run run_pilot_a2.sh with --human-annotations <adjudicated_e2.json>."
+}

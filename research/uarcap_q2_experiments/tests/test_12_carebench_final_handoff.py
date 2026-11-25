@@ -165,6 +165,11 @@ def test_carebench_schema_provenance_missing_fields_and_parent_dedup(tmp_path: P
     assert s_tpl == "This video showcases a woman applying makeup." and is_tpl is True
     s_nt, is_nt = extract_opening_overview_candidate("A man rides a bike on a street. Trees line the road.")
     assert s_nt == "A man rides a bike on a street." and is_nt is False
+    # Abbreviations like "Mr." must not terminate the opening sentence early.
+    s_abbr, _ = extract_opening_overview_candidate(
+        "This video showcases the handshake between Mr. Donald Trump and Mr. Kim Jong-un. In the footage, Mr. Trump stands."
+    )
+    assert s_abbr == "This video showcases the handshake between Mr. Donald Trump and Mr. Kim Jong-un."
     assert parse_fineaction_parent_id("v_00000030_5.mp4") == ("v_00000030", 5)
 
     # Parent-video deduplication collapses 46 clips -> 40 unique FineAction parents deterministically

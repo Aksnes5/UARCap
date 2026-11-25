@@ -1,0 +1,171 @@
+{
+  "audit_schema": "uarcap_q2.pilot_a2_auto_audit.v1",
+  "all_checks_passed": true,
+  "checks": {
+    "eval_rows_complete_90": {
+      "ok": true,
+      "n_rows": 90,
+      "missing": []
+    },
+    "all_parse_status_ok": {
+      "ok": true,
+      "parse_failures": 0,
+      "statuses": [
+        "OK"
+      ]
+    },
+    "identical_captions_have_identical_verdicts": {
+      "ok": true,
+      "n_unique_caption_groups": 50,
+      "violations": [],
+      "n_duplicate_reuse_sum": 40
+    },
+    "per_arm_claim_ids_unique": {
+      "ok": true,
+      "violations": []
+    },
+    "reference_fields_consistent": {
+      "ok": true,
+      "violations": [],
+      "fields": [
+        [
+          "caption",
+          "spatial_caption",
+          "temporal_caption"
+        ]
+      ]
+    },
+    "core_event_verdicts_aligned": {
+      "ok": true,
+      "violations": []
+    },
+    "blind_bundles_clean_and_complete": {
+      "ok": true,
+      "bundles": {
+        "A1": {
+          "n_tasks": 30,
+          "n_captions": 90,
+          "n_tasks_with_16_frames": 30
+        },
+        "A2": {
+          "n_tasks": 30,
+          "n_captions": 90,
+          "n_tasks_with_16_frames": 30
+        }
+      },
+      "violations": []
+    },
+    "blind_key_maps_all_conditions": {
+      "ok": true,
+      "n_blind_captions": 180,
+      "per_annotator": {
+        "A1": 90,
+        "A2": 90
+      },
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "n_key_claims": 496,
+      "n_auto_claims": 248
+    },
+    "frame_previews_complete": {
+      "ok": true,
+      "n_frame_dirs": 30,
+      "bad": []
+    },
+    "raw_judge_outputs_saved": {
+      "ok": true,
+      "n_calls": 150,
+      "empty": 0,
+      "retries": 0,
+      "stages": [
+        "3WAY_REF_NLI",
+        "CORE_EVENT_NLI",
+        "EXTRACT_CLAIMS"
+      ]
+    },
+    "core_event_lock_precedes_judge": {
+      "ok": true,
+      "lock_time": "2026-11-25T17:38:31.221133+00:00",
+      "judge_time": "2026-11-25T17:40:38.050284+00:00",
+      "n_entries": 30
+    },
+    "a1_inputs_sha_verified": {
+      "ok": true,
+      "a1_status": "REAL_RUNTIME_PASS",
+      "metadata_match": true
+    },
+    "judge_receipt_consistent": {
+      "ok": true,
+      "judge": "RedHatAI/gemma-3-27b-it-FP8-dynamic",
+      "family": "gemma",
+      "unique": 50
+    },
+    "status_human_validation_pending": {
+      "ok": true,
+      "status": "PILOT_A2_HUMAN_VALIDATION_PENDING"
+    }
+  },
+  "artifacts": {
+    "a2_ref_fact_eval.jsonl": {
+      "exists": true,
+      "bytes": 283532,
+      "sha256": "63747be652051a65ac9513abf5b8a1d39a2fcc738c83dacb167cdf3917594968"
+    },
+    "a2_judge_raw_calls.jsonl": {
+      "exists": true,
+      "bytes": 304611,
+      "sha256": "db837335c12de570a858a2934e8e8352f359097cfc5370d7de619e5d3cd9ff90"
+    },
+    "a2_judge_run_receipt.json": {
+      "exists": true,
+      "bytes": 1517,
+      "sha256": "918239ed2ad2ef29a3e680f211accd61e0743ed6f16a253b5f36458bc7dc8505"
+    },
+    "a2_input_verification.json": {
+      "exists": true,
+      "bytes": 2460,
+      "sha256": "56ee5cd9b27eef6ed3a6b5e942b788d91418c29b7d2e0eca8ecbf1844b133b5b"
+    },
+    "a2_core_event_lock.json": {
+      "exists": true,
+      "bytes": 116784,
+      "sha256": "2deb0464f47bfa70066d8fe5626c969743c97b46e6d2ec6a67b26135e58aa90e"
+    },
+    "a2_bundle_manifest.json": {
+      "exists": true,
+      "bytes": 1527,
+      "sha256": "bb007b931cb136546422635fcc631dbc5e5dc404ed40dfec25d689765a691764"
+    },
+    "calibration_receipt.json": {
+      "exists": true,
+      "bytes": 1307,
+      "sha256": "031da7e070695e6a5260c4a411668a4f0a8ec20f7cda756528e867e51e160e75"
+    },
+    "a2_auto_diagnostics.json": {
+      "exists": true,
+      "bytes": 35197,
+      "sha256": "c2ca3793a4bd4bc57e9d35d1a9da934d755fe7bef54b6371b73f09ef928c1404"
+    },
+    "PILOT_A2_AUTO_DIAGNOSTICS.md": {
+      "exists": true,
+      "bytes": 10148,
+      "sha256": "4e9b2608d5cd3ed2ef7710a08e829154b9a521a3dda860a4766cae73a4a04936"
+    },
+    "blind_annotation_package/blind_tasks_e2_A1.json": {
+      "exists": true,
+      "bytes": 141118,
+      "sha256": "74e164d367051c857372d870c0c4b25bfe75ae6252977e746db64018ab4e6e0d"
+    },
+    "blind_annotation_package/blind_tasks_e2_A2.json": {
+      "exists": true,
+      "bytes": 141118,
+      "sha256": "0b2e7f18d236a3a48ef6e0587eb2a79bbf9dec22d3b8006f21c183f641cf8370"
+    }
+  },
+  "package_sha256": "f55acbaa6f4baf88bfb884a82c78017a5ccb54dfceac11ff5eb88f598a6ac571",
+  "source_verification_sha256": "56ee5cd9b27eef6ed3a6b5e942b788d91418c29b7d2e0eca8ecbf1844b133b5b",
+  "core_event_lock_sha256": "6692d1dd20aa09f16b4815892c56547d72ead07b920790cee6d47bfacb94c552"
+}

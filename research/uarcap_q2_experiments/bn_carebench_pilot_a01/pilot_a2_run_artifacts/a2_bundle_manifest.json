@@ -1,0 +1,18 @@
+{
+  "dataset_id": "CaReBench",
+  "a1_predictions_path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_carebench_v1/predictions.jsonl",
+  "a1_predictions_sha256": "f958c87c83d31b7f28468e6637c22a3f45df338f36fc94f36c317f034a119428",
+  "auto_eval_path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/a2_ref_fact_eval.jsonl",
+  "auto_eval_sha256": "63747be652051a65ac9513abf5b8a1d39a2fcc738c83dacb167cdf3917594968",
+  "package_sha256": "f55acbaa6f4baf88bfb884a82c78017a5ccb54dfceac11ff5eb88f598a6ac571",
+  "judge_model_id": "RedHatAI/gemma-3-27b-it-FP8-dynamic",
+  "blind_annotation_files": {
+    "tasks_A1": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/blind_tasks_e2_A1.json",
+    "tasks_A2": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/blind_tasks_e2_A2.json",
+    "blind_key": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/blind_key_e2_DO_NOT_OPEN.json"
+  },
+  "input_verification_path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/a2_input_verification.json",
+  "core_event_lock_path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/a2_core_event_lock.json",
+  "core_event_lock_sha256": "6692d1dd20aa09f16b4815892c56547d72ead07b920790cee6d47bfacb94c552",
+  "judge_run_receipt_path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/a2_judge_run_receipt.json"
+}

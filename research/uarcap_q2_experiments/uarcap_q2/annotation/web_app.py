@@ -81,6 +81,14 @@ HTML_PAGE = r"""<!DOCTYPE html>
         <button class="btn" onclick="toggleFrames()">Show/Hide Sampled Frames</button>
       </div>
       <div id="framesGrid" class="frames" style="display:none;"></div>
+      <div class="toolbar" style="margin-top:8px;">
+        <span style="font-size:12px;color:#566573;">16-frame visibility check:</span>
+        <button id="fvSufficient" class="btn btn-ok" onclick="setFramesVisibility('sufficient')">Sufficient</button>
+        <button id="fvInsufficient" class="btn btn-err" onclick="setFramesVisibility('insufficient')">Insufficient / misaligned</button>
+      </div>
+      <div style="margin-top:8px;">
+        <textarea id="videoNotes" rows="2" placeholder="Optional video-level notes..." onchange="setVideoNotes(this.value)"></textarea>
+      </div>
     </div>
     <div class="card">
       <strong>Phase 1: Independent Core Events (Video-Only)</strong>
@@ -137,6 +145,21 @@ function toggleFrames() {
   g.style.display = (g.style.display === 'none') ? 'grid' : 'none';
 }
 
+function setFramesVisibility(value) {
+  const t = STATE.bundle.tasks[STATE.idx];
+  const rec = ensureRec(t);
+  rec.frames_visibility = value;
+  saveCurrent(false);
+  render();
+}
+
+function setVideoNotes(value) {
+  const t = STATE.bundle.tasks[STATE.idx];
+  const rec = ensureRec(t);
+  rec.notes = value;
+  saveCurrent(false);
+}
+
 function nav(delta) {
   saveCurrent(false);
   const n = STATE.bundle.tasks.length;
@@ -150,6 +173,7 @@ function ensureRec(t) {
   if (!STATE.saved[k]) {
     STATE.saved[k] = {
       task_key: k, task_type: t.task_type, core_events: [], phase1_confirmed: (t.task_type !== 'E2_FACT_AUDIT'),
+      frames_visibility: 'not_checked', notes: '',
       captions: {}, e3: { target_a_expressed: false, target_b_expressed: false, negated_a: false, negated_b: false, hedged: false, partial: false, generic_only: false, notes: '' },
       elapsed_sec: 0, completed: false
     };
@@ -267,6 +291,9 @@ function render() {
   const fg = document.getElementById('framesGrid');
   fg.innerHTML = (t.sampled_frame_paths || []).map(p => `<img src="/media?path=${encodeURIComponent(p)}" />`).join('');
   document.getElementById('coreEventsInput').value = (rec.core_events || []).join('\n');
+  document.getElementById('videoNotes').value = rec.notes || '';
+  document.getElementById('fvSufficient').classList.toggle('btn-active', rec.frames_visibility === 'sufficient');
+  document.getElementById('fvInsufficient').classList.toggle('btn-active', rec.frames_visibility === 'insufficient');
 
   const work = document.getElementById('workArea');
   if (t.task_type === 'E2_FACT_AUDIT') {

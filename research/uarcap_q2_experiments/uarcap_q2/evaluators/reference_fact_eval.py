@@ -21,6 +21,45 @@ PROTOCOL_LAYER = "LAYER3_UARCAP_3WAY_REF_PROXY"
 VALID_REF_LABELS = {e.value for e in RefRelation}
 REFUSAL_RE = re.compile(r"\b(as an ai|i cannot|i'm unable to|cannot comply|policy prevents)\b", re.I)
 
+# Lossless canonicalization of common judge label spellings. Arbitrary labels
+# (e.g. "partially_true") are still rejected.
+_LABEL_ALIASES = {
+    "entail": "entailed",
+    "entails": "entailed",
+    "entailment": "entailed",
+    "supported": "entailed",
+    "support": "entailed",
+    "contradict": "contradicted",
+    "contradicts": "contradicted",
+    "contradiction": "contradicted",
+    "conflict": "contradicted",
+    "conflicting": "contradicted",
+    "unmentioned": "unmentioned",
+    "unmention": "unmentioned",
+    "not_mentioned": "unmentioned",
+    "not mentioned": "unmentioned",
+    "neutral": "unmentioned",
+    "unknown": "unmentioned",
+}
+
+
+def _canonical_label(raw: str) -> str | None:
+    label = (raw or "").strip().lower().replace("-", "_")
+    if label in VALID_REF_LABELS:
+        return label
+    return _LABEL_ALIASES.get(label)
+
+
+_CLAIM_ARTICLES = {"a", "an", "the"}
+
+
+def _normalize_claim_for_match(text: str) -> str:
+    """Normalize article/punctuation/whitespace differences only; NEVER semantic paraphrases."""
+    s = (text or "").lower()
+    s = re.sub(r"[^a-z0-9'\s]", " ", s)
+    toks = [t for t in s.split() if t not in _CLAIM_ARTICLES]
+    return " ".join(toks)
+
 
 class JudgeOutputValidationError(ValueError):
     """Raised when structured judge output fails strict schema/fidelity validation."""
@@ -32,6 +71,7 @@ class ClaimVerdict:
     label: str  # entailed | contradicted | unmentioned
     evidence: str
     fact_dimension_aux: str = "unclassified"  # Auxiliary diagnostic only: static_entity_attribute | dynamic_action_temporal | mixed | unclassified
+    fact_dimension_detail: str = "unclassified"  # object_entity | attribute | action_event | relation_spatial | mixed | unclassified
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -93,6 +133,66 @@ def classify_claim_fact_dimension(claim: str) -> str:
     return "unclassified"
 
 
+# Finer-grained descriptive classification requested by the Pilot A2 protocol:
+# object / attribute / action / relation / mixed / unclassified. Deterministic lexical cues only.
+_OBJECT_CUE_RE = re.compile(
+    r"\b(woman|man|girl|boy|child|children|person|people|lady|guy|baby|dog|cat|animal|bird|horse|"
+    r"car|bike|bicycle|motorcycle|bus|train|boat|table|chair|counter|bed|sofa|door|window|wall|floor|"
+    r"brush|knife|bowl|pan|pot|plate|cup|glass|bottle|spoon|fork|towel|cloth|sponge|broom|"
+    r"food|vegetable|fruit|meat|dough|water|makeup|eyeliner|lipstick|eyeshadow|mascara|hair|"
+    r"ball|bat|racket|weight|treadmill|phone|camera|book|paper|tool)\b",
+    re.I,
+)
+_ATTRIBUTE_CUE_RE = re.compile(
+    r"\b(red|blue|green|yellow|black|white|brown|gray|grey|pink|purple|orange|silver|golden|blonde|dark|light|"
+    r"wooden|metal|plastic|glass|leather|striped|plaid|floral|long|short|tall|small|large|big|round|square|"
+    r"wearing|dressed|shirt|jacket|dress|hat|glasses|shoes|pants|shorts|coat|t-shirt|jeans|skirt|apron|"
+    r"two|three|four|five|six|seven|eight|nine|ten|several|multiple|pair|few|many|"
+    r"indoors|outdoors|kitchen|bedroom|bathroom|gym|beach|park|street|road|room|stage|court|field|yard|background)\b",
+    re.I,
+)
+_RELATION_CUE_RE = re.compile(
+    r"\b(next to|behind|in front of|under|above|beside|between|on the left|on the right|near|inside|outside|"
+    r"with|without|holding|held|onto|from|into|toward|towards|across|around|against)\b",
+    re.I,
+)
+_ACTION_CUE_RE = re.compile(
+    r"\b(walk(?:s|ing|ed)?|run(?:s|ning)?|jump(?:s|ing|ed)?|danc(?:e|es|ing|ed)|play(?:s|ing|ed)?|"
+    r"cut(?:s|ting)?|chop(?:s|ping|ped)?|stir(?:s|ring|red)?|pour(?:s|ing|ed)?|mix(?:es|ing|ed)?|cook(?:s|ing|ed)?|"
+    r"throw(?:s|ing)?|catch(?:es|ing)?|kick(?:s|ing|ed)?|hit(?:s|ting)?|swing(?:s|ing)?|lift(?:s|ing|ed)?|"
+    r"apply(?:ing)?|applies|applied|brush(?:es|ing|ed)?|comb(?:s|ing|ed)?|wash(?:es|ing|ed)?|wip(?:e|es|ing|ed)|"
+    r"clean(?:s|ing|ed)?|fold(?:s|ing|ed)?|open(?:s|ing|ed)?|clos(?:e|es|ing|ed)|push(?:es|ing|ed)?|pull(?:s|ing|ed)?|"
+    r"pick(?:s|ing|ed)?|put(?:s|ting)?|plac(?:e|es|ing|ed)|mov(?:e|es|ing|ed)|turn(?:s|ing|ed)?|bend(?:s|ing)?|"
+    r"driv(?:e|es|ing)|rid(?:e|es|ing)|swim(?:s|ming)?|climb(?:s|ing|ed)?|sing(?:s|ing)?|talk(?:s|ing|ed)?|"
+    r"speak(?:s|ing)?|eat(?:s|ing)?|drink(?:s|ing)?|paint(?:s|ing|ed)?|draw(?:s|ing)?|writ(?:e|es|ing)|"
+    r"exercis(?:e|es|ing|ed)|stretch(?:es|ing|ed)?|squat(?:s|ting|ted)?|perform(?:s|ing|ed)?|"
+    r"begins|starts|stops|finishes|continues|transitions)\b",
+    re.I,
+)
+
+
+def classify_claim_fact_dimension_detail(claim: str) -> str:
+    """Descriptive 6-way claim classification: object / attribute / action / relation / mixed / unclassified.
+
+    Auxiliary diagnostic only; never a primary hypothesis test. Deterministic lexical cues.
+    """
+    txt = (claim or "").strip()
+    if not txt:
+        return "unclassified"
+    flags = {
+        "object_entity": bool(_OBJECT_CUE_RE.search(txt)),
+        "attribute": bool(_ATTRIBUTE_CUE_RE.search(txt)),
+        "action_event": bool(_ACTION_CUE_RE.search(txt)),
+        "relation_spatial": bool(_RELATION_CUE_RE.search(txt)),
+    }
+    active = [k for k, v in flags.items() if v]
+    if len(active) >= 2:
+        return "mixed"
+    if len(active) == 1:
+        return active[0]
+    return "unclassified"
+
+
 @dataclass
 class CaptionRefFactEval:
     query_id: str
@@ -114,6 +214,7 @@ class CaptionRefFactEval:
     r_core_ref: float | None = None
     core_event_verdicts: list[ClaimVerdict] = field(default_factory=list)
     auxiliary_dimension_breakdown: dict[str, dict[str, int]] = field(default_factory=dict)
+    auxiliary_dimension_detail_breakdown: dict[str, dict[str, int]] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         d = asdict(self)
@@ -159,21 +260,25 @@ def parse_and_validate_verdicts(raw_response: str, expected_claims: list[str]) -
         for req_key in ("claim", "label", "evidence"):
             if req_key not in entry:
                 raise JudgeOutputValidationError(f"Missing required field '{req_key}' in claim #{idx}")
-        claim_txt = str(entry["claim"]).strip()
-        label = str(entry["label"]).strip().lower()
-        evidence = str(entry["evidence"]).strip()
+        returned_claim = str(entry["claim"]).strip()
+        raw_label = str(entry["label"]).strip().lower()
+        label = _canonical_label(raw_label)
+        ev_raw = entry["evidence"]
+        evidence = "" if ev_raw is None or str(ev_raw).strip().lower() in ("", "none", "null") else str(ev_raw).strip()
 
-        if claim_txt.lower() != exp_claim.strip().lower():
+        if _normalize_claim_for_match(returned_claim) != _normalize_claim_for_match(exp_claim):
             raise JudgeOutputValidationError(
-                f"Returned claim mismatch at #{idx}: got '{claim_txt}', expected '{exp_claim}'"
+                f"Returned claim mismatch at #{idx}: got '{returned_claim}', expected '{exp_claim}'"
             )
-        norm_key = re.sub(r"\s+", " ", claim_txt.lower())
+        # Keep the canonical input text (order-aligned) so claim IDs stay stable across arms.
+        claim_txt = exp_claim.strip()
+        norm_key = _normalize_claim_for_match(claim_txt)
         if norm_key in seen_norm:
             raise JudgeOutputValidationError(f"Duplicate proposition in judge output: '{claim_txt}'")
         seen_norm.add(norm_key)
 
-        if label not in VALID_REF_LABELS:
-            raise JudgeOutputValidationError(f"Illegal NLI label '{label}' (allowed: {sorted(VALID_REF_LABELS)})")
+        if label is None:
+            raise JudgeOutputValidationError(f"Illegal NLI label '{raw_label}' (allowed: {sorted(VALID_REF_LABELS)})")
         if label in (RefRelation.ENTAILED.value, RefRelation.CONTRADICTED.value) and not evidence:
             raise JudgeOutputValidationError(
                 f"Definite label '{label}' provided without supporting evidence span/reason at #{idx}"
@@ -184,10 +289,101 @@ def parse_and_validate_verdicts(raw_response: str, expected_claims: list[str]) -
                 label=label,
                 evidence=evidence,
                 fact_dimension_aux=classify_claim_fact_dimension(claim_txt),
+                fact_dimension_detail=classify_claim_fact_dimension_detail(claim_txt),
             )
         )
 
     return verdicts
+
+
+def parse_core_event_verdicts(raw_response: str, expected_events: list[str]) -> list[ClaimVerdict]:
+    """Parse core-event coverage verdicts.
+
+    Preferred wire format: {"verdicts":[{"label":...,"evidence":...}]} with exactly one
+    verdict per event, in the same order. This avoids judge-side claim-text rewriting.
+    The older {"claims":[{claim,label,evidence}]} format is accepted for compatibility.
+    """
+    if not raw_response or not raw_response.strip():
+        raise JudgeOutputValidationError("Empty core-event output")
+    if REFUSAL_RE.search(raw_response):
+        raise JudgeOutputValidationError("Judge refused core-event check")
+    cleaned = _strip_code_fence(raw_response)
+    try:
+        obj = json.loads(cleaned)
+    except json.JSONDecodeError as exc:
+        raise JudgeOutputValidationError(f"Invalid core-event JSON: {exc}") from exc
+    if len(expected_events) == 1 and isinstance(obj, dict) and "label" in obj and "verdicts" not in obj:
+        label = _canonical_label(str(obj.get("label", "")))
+        if label is None:
+            raise JudgeOutputValidationError(f"Illegal single core-event label: {obj.get('label')!r}")
+        ev_raw = obj.get("evidence")
+        evidence = "" if ev_raw is None or str(ev_raw).strip().lower() in ("", "none", "null") else str(ev_raw).strip()
+        if label in (RefRelation.ENTAILED.value, RefRelation.CONTRADICTED.value) and not evidence:
+            raise JudgeOutputValidationError(f"Single core verdict '{label}' lacks evidence")
+        claim = expected_events[0].strip()
+        return [
+            ClaimVerdict(
+                claim=claim,
+                label=label,
+                evidence=evidence,
+                fact_dimension_aux=classify_claim_fact_dimension(claim),
+                fact_dimension_detail=classify_claim_fact_dimension_detail(claim),
+            )
+        ]
+    if isinstance(obj, dict) and isinstance(obj.get("verdicts"), list):
+        items = obj["verdicts"]
+        if len(items) != len(expected_events):
+            raise JudgeOutputValidationError(
+                f"Core-event verdict count mismatch: expected {len(expected_events)}, got {len(items)}"
+            )
+        verdicts: list[ClaimVerdict] = []
+        for idx, (entry, claim) in enumerate(zip(items, expected_events)):
+            if not isinstance(entry, dict):
+                raise JudgeOutputValidationError(f"Core verdict #{idx} is not an object")
+            label = _canonical_label(str(entry.get("label", "")))
+            if label is None:
+                raise JudgeOutputValidationError(f"Illegal core-event label at #{idx}: {entry.get('label')!r}")
+            ev_raw = entry.get("evidence")
+            evidence = "" if ev_raw is None or str(ev_raw).strip().lower() in ("", "none", "null") else str(ev_raw).strip()
+            if label in (RefRelation.ENTAILED.value, RefRelation.CONTRADICTED.value) and not evidence:
+                raise JudgeOutputValidationError(f"Core verdict '{label}' at #{idx} lacks evidence")
+            verdicts.append(
+                ClaimVerdict(
+                    claim=claim.strip(),
+                    label=label,
+                    evidence=evidence,
+                    fact_dimension_aux=classify_claim_fact_dimension(claim),
+                    fact_dimension_detail=classify_claim_fact_dimension_detail(claim),
+                )
+            )
+        return verdicts
+    if isinstance(obj, dict) and isinstance(obj.get("claims"), list):
+        return parse_and_validate_verdicts(raw_response, expected_events)
+    raise JudgeOutputValidationError("Core-event output missing 'verdicts' list")
+
+
+def _claim_item_to_text(item: Any) -> str:
+    """Convert a judge claim item into a natural-language proposition.
+
+    Accepts plain strings and the common structured form
+    {"subject": ..., "relation": ..., "object": ...} (also entity/predicate/action aliases).
+    Unknown structures are rejected rather than stringified into Python-dict noise.
+    """
+    if isinstance(item, str):
+        return item.strip()
+    if isinstance(item, dict):
+        for key in ("claim", "text", "proposition", "sentence", "description"):
+            val = item.get(key)
+            if isinstance(val, str) and val.strip():
+                return val.strip()
+        subj = str(item.get("subject") or item.get("entity") or "").strip()
+        rel = str(item.get("relation") or item.get("predicate") or item.get("action") or "").strip()
+        obj = str(item.get("object") or item.get("target") or item.get("patient") or "").strip()
+        parts = [p for p in (subj, rel, obj) if p]
+        if len(parts) >= 2:
+            return " ".join(parts)
+        raise JudgeOutputValidationError(f"Unsupported structured claim item: {item!r}")
+    raise JudgeOutputValidationError(f"Claim item must be string or object, got {type(item).__name__}")
 
 
 def parse_extracted_claims(raw_response: str) -> list[str]:
@@ -205,11 +401,11 @@ def parse_extracted_claims(raw_response: str) -> list[str]:
     deduped: list[str] = []
     seen: set[str] = set()
     for item in obj["claims"]:
-        s = str(item).strip()
+        s = _claim_item_to_text(item)
         if not s:
             continue
-        norm = re.sub(r"\s+", " ", s.lower())
-        if norm not in seen:
+        norm = _normalize_claim_for_match(s)
+        if norm and norm not in seen:
             seen.add(norm)
             deduped.append(s)
     return deduped
@@ -230,7 +426,7 @@ class ThreeWayReferenceFactEvaluator:
     def extract_claims(self, caption: str) -> list[str]:
         if not caption.strip():
             return []
-        sys_p = "Extract atomic factual propositions from the caption. Output JSON {'claims': [...]} only."
+        sys_p = "Extract atomic factual propositions as natural-language strings from the caption. Output JSON {'claims': ['...']} only."
         usr_p = f"[TASK:EXTRACT_CLAIMS]\nCAPTION: {caption.strip()}"
         raw = self.backend.complete(sys_p, usr_p)
         return parse_extracted_claims(raw)
@@ -249,7 +445,7 @@ class ThreeWayReferenceFactEvaluator:
             if claims:
                 sys_p = (
                     "Compare each claim against REFERENCE and classify into entailed, contradicted, or unmentioned. "
-                    "Output strict JSON with keys claims:[{claim,label,evidence}]."
+                    "Copy each claim string exactly as provided. Output strict JSON with keys claims:[{claim,label,evidence}]."
                 )
                 usr_p = (
                     f"[TASK:3WAY_REF_NLI]\nREFERENCE: {reference_description.strip()}\n"
@@ -262,16 +458,30 @@ class ThreeWayReferenceFactEvaluator:
 
             core_clean = [c.strip() for c in core_events if c and c.strip()]
             if core_clean and caption.strip():
-                sys_c = (
-                    "Check whether CAPTION entails each core reference event. Output strict JSON "
-                    "with keys claims:[{claim,label,evidence}]."
-                )
-                usr_c = (
-                    f"[TASK:3WAY_REF_NLI]\nREFERENCE: {caption.strip()}\n"
-                    f"CLAIMS_JSON: {json.dumps(core_clean, ensure_ascii=False)}"
-                )
+                if len(core_clean) == 1:
+                    sys_c = (
+                        "You check whether a CAPTION entails one CORE EVENT. Output strict JSON "
+                        '{"label": "entailed|contradicted|unmentioned", "evidence": "..."} only. '
+                        "Do not output a list, do not repeat the event text."
+                    )
+                    usr_c = (
+                        f"[TASK:CORE_EVENT_CHECK_SINGLE]\nCAPTION: {caption.strip()}\n"
+                        f"CORE_EVENT: {core_clean[0]}\n"
+                        'Return exactly one JSON object with "label" and "evidence" (no list).'
+                    )
+                else:
+                    sys_c = (
+                        "You check whether a CAPTION entails each CORE EVENT. Output strict JSON "
+                        '{"verdicts": [{"label": "entailed|contradicted|unmentioned", "evidence": "..."}]} '
+                        "with exactly one verdict per core event, in the same order. Do not repeat the event text."
+                    )
+                    usr_c = (
+                        f"[TASK:CORE_EVENT_CHECK]\nCAPTION: {caption.strip()}\n"
+                        f"CORE_EVENTS_JSON: {json.dumps(core_clean, ensure_ascii=False)}\n"
+                        "Return one verdict per core event, in the same order."
+                    )
                 raw_core = self.backend.complete(sys_c, usr_c)
-                core_verdicts = parse_and_validate_verdicts(raw_core, core_clean)
+                core_verdicts = parse_core_event_verdicts(raw_core, core_clean)
                 r_core = sum(1 for v in core_verdicts if v.label == RefRelation.ENTAILED.value) / len(core_clean)
             elif core_clean:
                 core_verdicts = []

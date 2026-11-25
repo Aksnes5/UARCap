@@ -1,0 +1,1044 @@
+{
+  "schema_version": "uarcap_q2.pilot_a2_core_event_lock.v1",
+  "dataset": "CaReBench",
+  "created_before_any_judge_call": true,
+  "timestamp_utc": "2026-11-25T17:38:31.221133+00:00",
+  "frozen_manifest_sha256": "26fbf6abaf7ed12309ca5be40ccc583c068e5bd2c9b427f0753c4600d5b5bd21",
+  "metadata_sha256": "740f43b71a1f8131521e2a6cde95a59c3db10a5c4bdd554dc64959b48b0fc951",
+  "n_queries": 30,
+  "entries": [
+    {
+      "query_id": "carebench_v_00002077_10",
+      "core_event_candidate": "This video showcases a woman applying and blending eyeshadow.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases a woman applying and blending eyeshadow. In the footage, we can see her eyebrows and eyes, with the camera focusing above her nose. Her hand is holding a black-handled eyeshadow brush, featuring a black brush head connected by a silver metal piece. She sports beautifully manicured nails painted in shiny white. On either side of her black hair, she has pink hair clips holding it back. Her eye makeup is a blend of pink and orange, with orange dominating the eyelid area and pink concentrated near the eye socket. Her eyelashes appear slightly lighter in color, giving them a bit of a pale look. At first, she uses the brush to blend eyeshadow on her right eye, sweeping back and forth within the eyeshadow area to ensure an even distribution, paying special attention to the outer corner of the eye. The video then speeds up as she blends again from the outer corner to the inner corner. Subsequently, she applies the same technique to the other eye, this time focusing on the eyeshadow at the inner corner. The entire process is captured from a slightly overhead angle, giving the impression that her eyeshadow has a somewhat messy finish.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases a woman applying eyeshadow. In the frame, we can see her eyebrows and eyes, with only the area above her nose visible. She's holding a black-handled eyeshadow brush, which features a black brush head connected by a silver metal ferrule. Her nails are painted with a shimmering white polish. On either side of her black hair, she has two pink hair clips. Her eye makeup consists of alternating shades of pink and orange, with the orange dominating near her eyelids and pink predominating closer to her eye sockets. Her eyelashes appear slightly light in color, giving them a somewhat washed-out look.",
+      "temporal_caption": "This video showcases a woman applying and blending eyeshadow. She begins by using a brush to blend the eyeshadow on her right eye, sweeping back and forth within the eyeshadow area to ensure an even distribution. During this process, she puts particular focus on blending the outer corner of her eye. The video then speeds up, and she blends again, moving from the outer corner to the inner corner of her eye. Following this, she performs the same technique on her other eye.",
+      "llm_extracted_events_NOT_gold": [
+        "Woman blends eyeshadow on right eye with brush",
+        "Focuses on outer corner while blending",
+        "Speeds up blending process",
+        "Moves from outer to inner corner while blending",
+        "Performs same technique on other eye"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a woman's eyebrows",
+        "There is a woman's eyes",
+        "There is a black-handled eyeshadow brush",
+        "There is a black brush head",
+        "There is a silver metal ferrule",
+        "There are shimmering white nails",
+        "There are two pink hair clips",
+        "There is pink eyeshadow",
+        "There is orange eyeshadow",
+        "There are slightly light eyelashes"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00002093_8",
+      "core_event_candidate": "This video portrays a scene of a woman applying her makeup.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video portrays a scene of a woman applying her makeup. Throughout the footage, we can see her entire face, complemented by her long, brown hair. She is wearing a soft lotus pink nail polish. Her eyebrows and the eye makeup on her left eye, as well as her foundation, are already perfectly done. A nose ring adorns the center of her nose, and on the lower right side of her bottom lip, there is a lip stud. In her hand, she holds a black pen with a stainless steel and black bristle brush head. Her eye makeup features pink eyeshadow applied to her eyelids, while a brown eyeshadow is used in her eye socket. However, her right eye's eyelashes appear pale, with traces of eyeshadow powder lingering on them. Throughout the video, she uses the brush to dab and sweep lightly across her right eyelid, moving gently from side to side along the crease. She first focuses on the eyeshadow in the middle of her eyelid, then shifts her attention to the area near her inner corner, and finally, she tends to the outer edge and the eyelid as a whole. The video is filmed from a side angle, and her overall movements are minimal yet stable. Her demeanor appears natural and composed throughout.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video depicts a scene of a woman applying her makeup. In the video, we can see her entire face, complemented by her long brown hair. She has on a light pink nail polish. Her eyebrows, along with the eye makeup on her left eye and her base makeup, are already flawlessly completed. A nose ring adorns the center of her nose. On the right side of her lower lip, there is a lip stud, and she is gripping a black pen-like brush with a stainless steel middle section and a black bristle tip. Her eye makeup features pink eyeshadow elegantly applied on her eyelids, while brown eyeshadow accents her eye sockets. However, the lashes on her right eye appear whitened, with remnants of eyeshadow powder clinging to them.",
+      "temporal_caption": "This video depicts a scene of a woman applying her makeup. Throughout the video, she holds a brush and dabs and sweeps on her right eyelid, gliding it gently back and forth along her eye socket. She starts by focusing on the eyeshadow in the center of her eyelid, then moves on to the area near the inner corner of her eye, and finally she attends to the outer corner of her eyelid and the overall appearance of her eyelid.",
+      "llm_extracted_events_NOT_gold": [
+        "Woman applies makeup",
+        "Woman holds brush",
+        "Woman dabs eyeshadow",
+        "Woman sweeps brush",
+        "Woman focuses on inner corner",
+        "Woman attends to outer corner",
+        "Woman glides brush along eye socket",
+        "Woman moves to outer corner",
+        "Woman improves eyelid appearance"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a woman with long brown hair.",
+        "There is a woman with light pink nail polish.",
+        "There is a woman with flawlessly completed eyebrows.",
+        "There is a woman with eye makeup on her left eye.",
+        "There is a woman with base makeup.",
+        "There is a nose ring on the woman's nose.",
+        "There is a lip stud on the right side of the woman's lower lip.",
+        "There is a black pen-like brush with a stainless steel middle section.",
+        "There is a black bristle tip on the pen-like brush.",
+        "There is pink eyeshadow on the woman's eyelids.",
+        "There is brown eyeshadow on the woman's eye sockets.",
+        "There are whitened lashes on the woman's right eye.",
+        "There are remnants of eyeshadow powder on the woman's right eye lashes."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "core_event_candidate": "This video showcases the process of an individual applying blue lipstick to complete their makeup look.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases the process of an individual applying blue lipstick to complete their makeup look. The person is wearing a green headscarf, has a blue and pink gradient eye makeup, and some black accents scattered on both sides of their cheeks. In one hand, they hold a silver pencil, while their right hand is occupied with a mirror. The background features a white, concentric circle pattern. During the lipstick application, the individual keeps their gaze fixed on the mirror. With their left hand, they first draw two gentle strokes in the center of their lower lip at a slow pace before quickly sweeping towards the left corner of their mouth, coating that side thoroughly with lipstick. They then tilt their head to the left. Subsequently, they make a few delicate strokes from the right corner inward towards the center of the lips, and after that, they apply back-and-forth strokes on the lower lip. They also touch up the area of the right corner that hasn't been covered with lipstick. Once they finish defining the center of the upper lip, they smoothly apply lipstick back and forth from the left corner to the right corner, ensuring even coverage. The video is shot from the front, clearly showing the individual's remarkable skill in applying lipstick as they achieve a flawless and even finish without any mistakes.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases a person applying blue lipstick to complete their makeup look. The individual wears a green headscarf, and their face is adorned with a blue-to-pink gradient makeup, accented with some black splashes on either cheek. They hold a silver pencil in one hand, while the other hand is occupied with a mirror. The background features a white pattern of concentric circles.",
+      "temporal_caption": "This video showcases the process of a person applying blue lipstick to complete their makeup look. Throughout the lipstick application, the individual keeps their eyes focused on the mirror. With their left hand holding the lipstick, they first make two gentle and slow strokes in the center of the lower lip before swiftly gliding the color towards the left corner of their mouth, filling in the left side completely. Then, they tilt their head to the left and lightly swipe from the right corner of their mouth towards the center a few times. After that, they apply the lipstick back and forth on the lower lip, touching up the areas that were still bare on the right corner. Once they carefully outline the center of the upper lip with lipstick, they smoothly apply it from the left corner to the right corner, layering it as they go.",
+      "llm_extracted_events_NOT_gold": [
+        "Person applies blue lipstick to lower lip",
+        "Person glides lipstick from left corner to center",
+        "Person swipes lipstick from right corner to center",
+        "Person touches up bare areas on lower lip",
+        "Person outlines center of upper lip with lipstick",
+        "Person applies lipstick from left corner to right corner"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a blue lipstick",
+        "There is a green headscarf",
+        "There is a blue-to-pink gradient makeup",
+        "There are black splashes on the cheeks",
+        "There is a silver pencil",
+        "There is a mirror",
+        "There is a white background",
+        "There are concentric circles on the background"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00002283_1",
+      "core_event_candidate": "This video showcases the joyful journey of a little girl gliding along on her scooter.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases the joyful journey of a little girl gliding along on her scooter. She is dressed in a blue T-shirt and dark blue leggings, while wearing a black helmet on her head. The sides of the pathway are lined with lush green lawns, and in the distance, you can see many thriving trees and houses, along with a few utility poles. The road itself is quite flat and appears to be made of concrete, making it perfect for scootering. At the beginning of the footage, the camera is positioned in front of the girl, capturing her as she glides toward the viewer from afar. She stands with her legs together on the scooter, holding onto the handlebars with both hands, her arms slightly bent, and her face lit up with a big smile, radiating happiness. As she moves forward, she approaches a point on the path where a gentle slope rises and falls. When she reaches this intersection, she bends slightly at the waist and knees, lowering her center of gravity to maintain stability. The perspective then shifts to show her from the side and gradually transitions to her rear, while she continues to maintain her initial posture. Her hands expertly steer the scooter in a graceful \"S\" shape as she navigates the path. The camera cuts again, now facing the girl directly, and her movements remain unchanged as she glides along the winding course, still smiling radiantly. The entire video is filmed from a third-person perspective, with varying angles that highlight the girl's carefree gliding style, showcasing her evident skill and technique on the scooter, all while exuding a sense of freedom and joy.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases a little girl joyfully gliding along on her scooter. She is dressed in a blue T-shirt and deep blue leggings, with a black helmet securely on her head. Flanking her on both sides are lush green lawns, and in the distance, you can see a number of flourishing trees and houses, along with a few utility poles. The path is beautifully smooth, resembling a concrete road, perfect for riding a scooter. The little girl maintains a bright smile on her face as she approaches a section of the path that features gentle slopes, both downhill and uphill, though the incline is quite mild. The camera initially captures the scene from in front of her, where the girl stands with her legs together on the scooter, hands firmly gripping the handlebars while her arms are slightly bent.",
+      "temporal_caption": "This video showcases the delightful journey of a little girl joyfully riding her scooter. The scene opens with a shot from the front, capturing the girl as she glides in from a distance. As she reaches an intersection, she slightly bends her waist and legs to lower her center of gravity for better stability. The perspective then shifts to her side and gradually moves to her rear, where she maintains the same position while skillfully maneuvering her scooter to create an \"S\" shaped curve with her hands gripping the handlebars. The camera then transitions again, this time facing her directly as she continues to glide playfully forward.",
+      "llm_extracted_events_NOT_gold": [
+        "Little girl joyfully riding scooter",
+        "Girl bending waist and legs for stability",
+        "Girl maneuvering scooter in 's' shape",
+        "Girl playfully gliding forward"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a little girl in a blue T-shirt.",
+        "There is a little girl in deep blue leggings.",
+        "There is a little girl with a black helmet.",
+        "There is a scooter.",
+        "There are lush green lawns.",
+        "There are flourishing trees.",
+        "There are houses.",
+        "There are utility poles.",
+        "There is a smooth concrete road.",
+        "There are gentle slopes on the path."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00002328_16",
+      "core_event_candidate": "This video captures the process of a barber shaving someone's head.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video captures the process of a barber shaving someone's head. In the footage, the person getting their head shaved is facing away from the camera, with very short, black hair. The right side of their hair has already been shaved clean, while the left side remains untouched, and a yellow-green ointment is visible on the lower part of their hair. The barber holds a silver razor in his right hand. Throughout the video, his left thumb presses against the person's scalp while his right hand uses the razor to smoothly move back and forth across the lower section of hair, shaving off several centimeters. As he proceeds, his left thumb shifts downward, allowing the razor to continue cutting lower. This action is repeated as his left thumb moves down again, and the razor follows suit. The video is shot from the barber's first-person perspective, clearly demonstrating his skillful and precise shaving movements, while also showcasing the barber's gentle and attentive technique.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video captures the process of a barber shaving someone's head. In the video, the person being shaved is facing away from the camera; he has very short black hair. The right side of his head has already been shaved, while the left side remains untouched, and there is a yellow-green ointment applied to the lower half of his hair. The barber is holding a silver shaving razor in his right hand.",
+      "temporal_caption": "This video captures the process of a barber shaving someone's head. In the footage, the barber holds a silver razor in his right hand. His left thumb is positioned against the person's scalp, while he moves the razor up and down across the hair just below his thumb, shaving off several centimeters of hair. After that, his left thumb moves down again, and the razor continues its downward stroke. Once more, his left thumb shifts lower, and the razor continues to shave downward. Following this, his left thumb moves down again, with the razor proceeding to shave further.",
+      "llm_extracted_events_NOT_gold": [
+        "Barber holds silver razor in right hand",
+        "Barber shaves off hair below left thumb",
+        "Left thumb moves down, razor shaves further"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a person with very short black hair.",
+        "There is a barber holding a silver shaving razor.",
+        "There is a yellow-green ointment on the lower half of the hair.",
+        "There is a shaved right side of the head.",
+        "There is an unshaved left side of the head."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00004040_0",
+      "core_event_candidate": "This video serves as a personal keepsake, capturing the moments of a backstroke swimming competition.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video serves as a personal keepsake, capturing the moments of a backstroke swimming competition. The competitors are donned in their swimsuits, complete with swim caps and goggles. They take off from one end of the pool, while the banks are lined with staff and spectators. The pool is marked with numerous lane lines made of alternating purple and black buoys, forming multiple racing lanes. The athletes compete in their designated lanes, with their faces turned upward, swiftly swinging their arms as they propel themselves to the far end of the pool. As one swimmer reaches the opposite end, they maintain a reclined position and grasp the edge of the pool with their right hand. This video is recorded from a third-person perspective, with the cameraman positioned at the finish line, capturing the athlete's performance. Throughout the footage, there are instances of shaky camera work, moments where the subject falls out of frame, and obstructions caused by onlookers, indicating that this is a personal recording intended to document the swimmer's experience. Although the filming technique may be somewhat lacking, it conveys the enthusiast's excitement, allowing viewers to feel the intense emotion behind the footage. This short video encapsulates a powerful sense of warmth and sentiment.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video serves as a personal keepsake, showcasing scenes from a backstroke swimming competition. The competitors are dressed in their swimwear, complete with swim caps and goggles. The edge of the pool is lined with staff members and spectators. Inside the pool, there are numerous lane dividers made up of alternating purple and black buoys, creating multiple separate lanes for the athletes to compete in. The walls of the indoor pool are painted white, adorned with many small triangular flags in shades of purple and white. Above these flags, there are several green rectangular signs, and even higher up, some advertising banners along with an electronic scoreboard can be seen.",
+      "temporal_caption": "This video serves as a personal keepsake, showcasing scenes from a backstroke swimming competition. The competitors start from one end of the pool, facing upwards as they swiftly swing their arms to propel themselves toward the opposite end. One athlete quickly reaches the far end of the pool, maintaining a reclined position as they grasp the edge with their right hand. Throughout the video, there are several instances of shaky camera work.",
+      "llm_extracted_events_NOT_gold": [
+        "Competitors start from one end of the pool",
+        "They swiftly swing their arms to propel themselves",
+        "Athlete quickly reaches far end of the pool",
+        "Athlete maintains reclined position",
+        "Athlete grasps edge with right hand"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There are competitors in swimwear.",
+        "There are swim caps on the competitors.",
+        "There are goggles on the competitors.",
+        "There are staff members at the edge of the pool.",
+        "There are spectators at the edge of the pool.",
+        "There are lane dividers with purple and black buoys.",
+        "There are white walls in the indoor pool.",
+        "There are small triangular flags in purple and white.",
+        "There are green rectangular signs on the walls.",
+        "There is an electronic scoreboard above the flags."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00005394_0",
+      "core_event_candidate": "This video showcases the initial phase of a swimming competition, specifically the women's 200-meter butterfly event.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases the initial phase of a swimming competition, specifically the women's 200-meter butterfly event. The competitors are dressed in dark-colored swimsuits, sporting their swim caps. They grip the edge of the starting block with both hands, with one foot positioned between their hands and the other foot resting on the platform, poised to dive into the water. As the race begins, the athletes propel themselves with their legs, bringing their arms together and leaping headfirst into the pool. The swimming lanes are marked by alternating red and white buoys, while a triangular red and white flag hangs at the finish line. The video starts by capturing the jump details from behind the athletes, who are preparing for their dive. After entering the water, the swimmers initially glide forward underwater before commencing their arm and leg movements to propel themselves ahead. At this point, the camera angle shifts to capture the action from the left front of the athletes, highlighting their rapid strokes as they surface rhythmically for air. In the lower right corner of the screen, real-time competition data is displayed as a watermark. Below the data, there is another watermark featuring letters, with a black fill on the left side and a red fill on the right. The video is accompanied by English commentary. Along the poolside near the finish, numerous staff members are waiting in anticipation. The entire video is filmed from a third-person perspective, documenting the starting process of the women's 200-meter butterfly race. The athletes demonstrate remarkable strength and impressive swimming skills, making the competition extremely captivating.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases the initial stages of a swimming competition, specifically the women's 200-meter butterfly event. The competitors are dressed in dark swimsuits and wearing swim caps. The swimming pool is marked with red and white buoys that delineate several lanes. At the finish line, there is a triangular flag in red and white colors hanging above. Information about the competition is displayed at the bottom of the video, while real-time competition data can be found in the bottom right corner, presented as a watermark. Below the real-time watermark, there is an additional line featuring a watermark with black filling on the left and red filling on the right, adorned with English letters. At the edge of the pool near the finish line, numerous staff members are waiting in anticipation.",
+      "temporal_caption": "This video showcases the initial stage of a swimming competition. It begins with a shot from behind the athletes, capturing the details of their jumps. The competitors grip the edge of the starting block with both hands, placing one foot between their hands and the other on the block, poised to dive into the water. Once they enter the water, the swimmers first glide forward beneath the surface before starting to move their arms and legs in a rhythmic manner to propel themselves ahead. At this moment, the camera shifts to capture the athletes from the left front angle, where they swiftly stroke forward, emerging from the water at regular intervals to breathe.",
+      "llm_extracted_events_NOT_gold": [
+        "Competitors grip edge of starting block",
+        "Swimmers glide forward beneath surface",
+        "Swimmers move arms and legs rhythmically",
+        "Camera captures athletes from left front angle",
+        "Athletes stroke forward swiftly",
+        "Athletes emerge from water to breathe at intervals"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a swimming pool marked with red buoys.",
+        "There is a swimming pool marked with white buoys.",
+        "There is a triangular flag in red color.",
+        "There is a triangular flag in white color.",
+        "There are competitors in dark swimsuits.",
+        "There are competitors wearing swim caps.",
+        "There are staff members near the finish line.",
+        "There is a watermark with black filling.",
+        "There is a watermark with red filling.",
+        "There is a watermark with English letters."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00005595_0",
+      "core_event_candidate": "This video showcases a scene where a little girl is sitting on a couch while holding another child.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases a scene where a little girl is sitting on a couch while holding another child. The older child, a girl, is wearing a pink short-sleeved top adorned with a floral pattern on the upper half of her body, paired with white long pants that also feature flowers. The younger child is dressed in a onesie with a white base, decorated with numerous little flowers. The filming takes place indoors, where the two children are sitting closely together on a small blue sofa. Nearby, there is a white board and a brown-framed storage box, which contains various black items. Behind the sofa is a white wall, and to the right of the sofa is an open white door. The camera initially captures the action from the right front of the two children, then zooms in. Throughout the video, the younger child attempts to stand up while sitting in the older child's lap, struggling playfully. After exchanging a glance with the older girl, the younger one energetically kicks her legs, and eventually, the two tumble forward together onto the floor. The entire scene is filmed from a left front angle, depicting the delightful yet slightly risky play between the two children.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases a scene of a little girl seated on a sofa, holding another child in her arms. The older girl is dressed in a pink short-sleeve top adorned with a floral print, paired with white long pants that also feature small flowers. The younger child is wearing a onesie with a white background, embellished with numerous little flowers. The filming takes place indoors, where the two children are perched on a small blue sofa. Beside the sofa, there is a white board and a brown-framed storage box, which contains some black miscellaneous items. Behind the sofa is a white wall, and to the right of it, there’s an open white door.",
+      "temporal_caption": "This video showcases a scene where a young girl is holding another child while sitting on a sofa. The camera starts from the right front of the two children and then zooms in. As they are seated, the younger child, who is nestled in the older child's lap, struggles to stand up. After turning to meet the girl's gaze, the younger child kicks their legs vigorously. Ultimately, both children tumble forward and fall to the ground together.",
+      "llm_extracted_events_NOT_gold": [
+        "Young girl holding another child on sofa",
+        "Younger child struggles to stand up in girl's lap",
+        "Younger child kicks legs vigorously",
+        "Both children tumble forward and fall to the ground"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a little girl with a pink floral short-sleeve top.",
+        "There is a little girl with white long pants.",
+        "There is a younger child with a white floral onesie.",
+        "There is a small blue sofa.",
+        "There is a white board.",
+        "There is a brown-framed storage box.",
+        "There are black miscellaneous items in the storage box.",
+        "There is a white wall.",
+        "There is an open white door."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00005805_0",
+      "core_event_candidate": "This video showcases an individual chopping wood outdoors in a forest.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases an individual chopping wood outdoors in a forest. The woodchopper is wearing a khaki hat, along with a gray-green long-sleeved shirt and trousers, as he stands in front of a small tree stump. On top of the stump is a larger piece of wood to be chopped, and around it lies many pieces of wood that have already been split. To his right, there is an onlooker—a man with his hands on his hips, sporting a brown hat, dressed in a white long-sleeved shirt for the upper body and blue denim pants for the lower body. Behind the two men, there is a small blue shed, and leaning against a tree on the right side of the shed is a silver ladder. Additionally, a small truck is parked in front of the shed. As the woodchopper goes about his task, he stands with his feet apart, holding an axe—his left hand positioned behind him and his right hand in front as he raises the axe overhead and strikes downwards with force, successfully splitting the wood. However, the axe gets stuck in the stump, prompting him to step forward to remove it and push down on the axe handle with his hands. The entire video is filmed from a third-person perspective, capturing the smooth movements of the woodchopper.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases a person chopping firewood outdoors in a forest. The individual, wearing a khaki hat and dressed in a gray-green long-sleeve shirt and pants, stands in front of a small tree stump. On the stump rests a large piece of wood waiting to be chopped, while the ground around it is scattered with many pieces of already split firewood. To the right of this person stands an onlooker, a man who has his hands on his hips. He wears a brown hat, a white long-sleeve shirt on his upper body, and blue denim jeans on his lower body. Behind the two men, there is a small blue house, and leaning against a tree to the right of the house is a silver ladder. In front of the house, there is also a small truck parked.",
+      "temporal_caption": "This video showcases a person chopping wood outdoors in a forest. During the chopping process, the individual stands with their feet apart, holding an axe with their left hand positioned behind and their right hand in front. They raise the axe high and strike forcefully downward, successfully splitting the wood. However, the axe gets stuck in the stump, so they step forward to pull it out, using their hand to press down on the axe handle.",
+      "llm_extracted_events_NOT_gold": [
+        "Person chopping wood outdoors in forest",
+        "Person standing with feet apart",
+        "Person holding axe with left hand behind",
+        "Person raising axe high",
+        "Person striking downward forcefully",
+        "Wood splitting successfully",
+        "Axe getting stuck in stump",
+        "Person stepping forward to pull axe out",
+        "Person using hand to press down on axe handle"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a person wearing a khaki hat.",
+        "There is a person wearing a gray-green long-sleeve shirt.",
+        "There is a person wearing gray-green pants.",
+        "There is a small tree stump.",
+        "There is a large piece of wood on the stump.",
+        "There are many pieces of split firewood on the ground.",
+        "There is a man wearing a brown hat.",
+        "There is a man wearing a white long-sleeve shirt.",
+        "There is a man wearing blue denim jeans.",
+        "There is a small blue house.",
+        "There is a silver ladder leaning against a tree.",
+        "There is a small truck parked in front of the house."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "core_event_candidate": "This video showcases the complete process of a person slicing a tomato, dressed in an orange chef's uniform.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases the complete process of a person slicing a tomato, dressed in an orange chef's uniform. In his right hand, he holds a fruit knife, while his left hand steadies a tomato. He stands in front of a marble countertop, which features a white cutting board. On the board, there are the tomato he is slicing, along with pre-cut carrot sticks, diced carrots, and other vegetables. Behind the cutting board, three vegetable peelers are placed. To his left, some uncut vegetables are neatly arranged in bowls and a basin, while a stove is positioned to his right, with a cabinet situated behind him.The video begins with a close-up on a small tomato before zooming out to capture the entire scene of the chef cutting the tomato. He first slices the tomato evenly and slowly in half. The camera then zooms in again on the tomato, where the chef’s hands cut each half into quarters. At this point, the camera zooms in on the chef, allowing viewers to see his mouth moving as he speaks while he continues cutting the tomato.The filming perspective initially employs a third-person view for a close-up of the tomato, then shifts back to a right-front view until he has sliced the tomato in half. After he proceeds to cut one of the halves into quarters, the perspective switches back to the right front view until the tomato is fully diced, before finally returning to a close-up of the diced tomato on the cutting board. This all illustrates a skilled and relaxed demonstration of tomato slicing, clearly showing the meticulous and composed nature of this individual.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases the complete process of a person slicing a tomato while dressed in an orange chef's coat. With a fruit knife in his right hand and a tomato held steady in his left, he stands in front of a marble countertop. On the surface, there's a white cutting board featuring the tomato he is currently slicing, alongside cut carrot sticks, diced carrots, and other vegetables. Behind the cutting board, three peelers are neatly arranged. To his left, there are various uncut vegetables stored in bowls and basins, while a stove is positioned to his right. In the background, there is a cabinet.",
+      "temporal_caption": "This video showcases the complete process of a person slicing a tomato. It begins by focusing on a small tomato before zooming out to reveal the entire scene of the chef cutting the tomato. The chef first slices the tomato in half slowly and steadily from the middle. The camera then shifts to a close-up of the tomato, capturing the chef’s hands as they cut each half into quarters. At this moment, the camera zooms in on the chef, allowing us to see him speaking while he continues to slice the tomato. The video initially uses a third-person perspective for a close-up of the tomato, then pulls back to capture the view from the chef's right front as he divides the tomato in half. After he cuts the halved tomato into quarters, the perspective returns to the right front until the slicing is completed, ultimately switching back to a close-up of the tomato on the cutting board.",
+      "llm_extracted_events_NOT_gold": [
+        "Chef slices tomato in half",
+        "Chef cuts each half into quarters",
+        "Chef speaks while slicing",
+        "Camera zooms in on chef",
+        "Chef divides tomato in half",
+        "Chef completes slicing tomato"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is an orange chef's coat.",
+        "There is a fruit knife.",
+        "There is a tomato.",
+        "There is a marble countertop.",
+        "There is a white cutting board.",
+        "There are cut carrot sticks.",
+        "There are diced carrots.",
+        "There are three peelers.",
+        "There are uncut vegetables in bowls.",
+        "There is a stove.",
+        "There is a cabinet."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00006714_0",
+      "core_event_candidate": "This video captures a scene of a man swiftly climbing a tree.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video captures a scene of a man swiftly climbing a tree. The man in the video is dressed in a gray long-sleeve sweatshirt and a pair of jeans, with gray athletic shoes on his feet. He is scaling a particularly forked tree that has lost all its leaves, leaving it completely bare. In the footage, the man first reaches for a branch with both hands and pushes off the ground with his feet, effortlessly hanging onto the tree. He then positions his legs on a branch and squats on it, using his right hand to grasp the higher branches. Next, he places his left leg on a forked branch to his left, grips another branch with his left hand, and pushes himself up with his right foot on a branch to the right, using his right hand to continue his ascent. His hands propel him up the sides of the trunk as he climbs up and down. The camera then shifts to an upward angle from below, showing him clinging to one of the branches as he alternates between climbing up with his right leg and then his left. The shot closely zooms in as he tosses his hair, leaning against the branch while striking a cool pose. The video is filmed from a third-person perspective, and the man climbs with remarkable speed, his movements fluid and rapid.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video captures a scene of a man quickly climbing a tree. In the video, the man is wearing a gray long-sleeved sweatshirt and a pair of denim jeans, complemented by gray athletic shoes. He is scaling a particularly forked tree, which is completely bare as its leaves have all fallen off.",
+      "temporal_caption": "This video captures a scene of a man quickly climbing a tree. At the beginning, the man reaches for a branch with both hands and uses his feet to push off the ground with great force, allowing his entire body to hang from the tree. He then places his legs on the branch and perches himself there while stretching his right hand up to grab another branch above. Next, he puts his left leg on a fork of a branch to his left and uses his left hand to climb higher, following with his right foot on a right-side branch while pulling himself up with his right hand. His hands propel his body as he skillfully maneuvers back and forth, climbing higher along the sides of the trunk. The camera angle shifts to a low-angle shot from beneath, showcasing the man as he begins to ascend further by hugging one of the branches, first using his right leg and then his left, alternating as he climbs higher. The shot then zooms in, capturing a moment where he flips his hair back and leans against the branch.",
+      "llm_extracted_events_NOT_gold": [
+        "Man reaches for branch with both hands",
+        "Man perches on branch and stretches right hand",
+        "Man puts left leg on fork of branch",
+        "Man climbs higher using left hand",
+        "Man climbs higher using right foot",
+        "Man maneuvers back and forth along trunk",
+        "Man ascends further by hugging branch",
+        "Man uses right leg to climb higher",
+        "Man uses left leg to climb higher",
+        "Man flips hair back and leans against branch"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a man wearing a gray long-sleeved sweatshirt.",
+        "There is a man wearing a pair of denim jeans.",
+        "There is a man wearing gray athletic shoes.",
+        "There is a forked tree.",
+        "There is a tree that is completely bare.",
+        "There is a scene of a man climbing a tree."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "core_event_candidate": "This video captures a scene of a middle-aged woman trimming the toenails of a little child, approximately four or five years old.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video captures a scene of a middle-aged woman trimming the toenails of a little child, approximately four or five years old. The woman has medium-length hair and is wearing rimless glasses. Her complexion appears slightly pale, and her lips lack vibrant color. From her voice, it’s evident that she is speaking in English. The child is holding an orange-yellow toy and occasionally puts it in his mouth to play with it. The woman is dressed in a sky-blue short-sleeve top and is leaning against a gray-white cushion while seated on a purple-black fabric sofa. Behind the sofa, there are white blinds hanging on the wall, and to the left, there’s a small wooden table with a few green and white items on it. On the right side of the sofa's backrest, there is a light blue folding umbrella placed. Beneath the gray-white cushion, there’s a ball of creamy yellow clothing, which appears to belong to the child. The child is dressed in an orange-red short-sleeve top and a pair of red and white striped long pants. The woman gently holds the child and lifts his left foot to start trimming his toenails. Her movements seem somewhat heavy, causing the child to emit reluctant sounds. Despite this, the woman in the video appears very focused and makes an effort to soothe the child’s emotions. While the child shows a slight desire to break free, the entire process exudes a warm atmosphere. This video is shot from a third-person perspective, capturing this intimate yet ordinary moment.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video captures a scene of a middle-aged woman trimming the toenails of a young child, who appears to be around four or five years old. The woman has medium-length hair and wears frameless glasses. Her complexion is slightly pale, and her lips lack vibrancy. The child is holding a bright orange-yellow toy. The woman is dressed in a light blue short-sleeve top and is seated against a gray-white cushion on a dark purple fabric sofa. Behind the sofa, there are white blinds hanging on the wall. To the left, there is a small wooden table adorned with some green and white items, while to the right, on the back of the sofa, rests a light lavender folding umbrella. Beneath the gray-white cushion, there is a bundle of creamy yellow clothing that seems to belong to the child. The child is dressed in an orange-red short-sleeve top and red-and-white striped long pants.",
+      "temporal_caption": "This video captures a scene of a middle-aged woman trimming the toenails of a child who is around four or five years old. The little one occasionally puts a toy in their mouth and plays with it. The woman gently holds the child, lifts their left foot, and begins to trim the toenails. The child shows a slight inclination to wriggle free, and the woman tries to soothe the child's feelings.",
+      "llm_extracted_events_NOT_gold": [
+        "Woman trims child's toenails",
+        "Child puts toy in mouth",
+        "Woman lifts child's left foot",
+        "Woman tries to soothe child's feelings",
+        "Child wriggles slightly",
+        "Child plays with toy",
+        "Woman holds child gently"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a middle-aged woman with medium-length hair.",
+        "There is a middle-aged woman with frameless glasses.",
+        "There is a young child with a bright orange-yellow toy.",
+        "There is a light blue short-sleeve top.",
+        "There is a gray-white cushion.",
+        "There is a dark purple fabric sofa.",
+        "There are white blinds on the wall.",
+        "There is a small wooden table.",
+        "There is a light lavender folding umbrella.",
+        "There is a bundle of creamy yellow clothing."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "core_event_candidate": "In this video, a female athlete demonstrates her high jump technique.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "In this video, a female athlete demonstrates her high jump technique. She has long, flowing golden hair pulled back into a spirited high ponytail, and she is dressed in a black athletic outfit consisting of a hoodie and matching long pants, complemented by a pair of white and green running shoes. As she prepares to jump, she positions herself about three meters away from the high jump mat, with three other athletes waiting for their turn behind her. Before the official jump, this female competitor angles her body to the side of the mat and performs a J-shaped approach on a black mat marked with triangular indicators, taking about ten strides. When she reaches the jump point, she raises her arms overhead and, facing away from the bar, utilizes the Fosbury Flop technique to complete her jump. Although her legs touch the bar, it doesn't fall; it merely wobbles slightly. Ultimately, she lands on the high jump mat. The video captures her entire jumping process, showcasing a very standard technique and her successful completion of the challenge. Filmed from an observer's perspective, it clearly documents this fluid and accomplished high jump action.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "In this video, a female athlete demonstrates her high jump technique. She has long, golden hair styled into a sleek, high ponytail, and is dressed in a black athletic outfit—a sweatshirt paired with matching long pants, and she wears a pair of white and green running shoes. On the ground, there are several black mats marked with triangle indicators. She stands about three meters away from the high jump mat, with three other athletes waiting behind her for their turn.",
+      "temporal_caption": "In this video, a female athlete demonstrates her high jump technique. Before taking her official jump, she stands sideways to the high jump mat and performs approximately ten steps of a J-shaped approach on the flat surface. Upon reaching the jump point, she raises her arms overhead and, using the Fosbury Flop technique while facing away from the bar, executes the jump. Although her legs make contact with the bar, it remains in place, only wobbling slightly. Ultimately, she lands safely on the high jump mat.",
+      "llm_extracted_events_NOT_gold": [
+        "Female athlete demonstrates high jump technique",
+        "Performs j-shaped approach on flat surface",
+        "Raises arms overhead at jump point",
+        "Executes jump using fosbury flop technique",
+        "Legs make contact with the bar",
+        "Bar wobbles slightly but remains in place",
+        "Lands safely on high jump mat"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a female athlete with long golden hair.",
+        "There is a high ponytail.",
+        "There is a black sweatshirt.",
+        "There is a pair of black long pants.",
+        "There is a pair of white and green running shoes.",
+        "There are several black mats.",
+        "There are triangle indicators on the mats.",
+        "There is a high jump mat.",
+        "There are three other athletes.",
+        "There is a distance of three meters."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "core_event_candidate": "The video captures the heartwarming moment of a woman embracing her dog.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "The video captures the heartwarming moment of a woman embracing her dog. Set outdoors under a brilliant sun, it features a brown-haired woman wearing a black tank top, holding her black dog close. In the background, there's a red and white vehicle adorned with paw print decals. Initially, she gazes down at the side profile of her dog, one arm wrapped around it while the other gently strokes its fur. As the camera rotates clockwise, the dog playfully sticks out its tongue, attempting to lick her. She closes her eyes and turns away, wearing a blissful expression, while both hands continue to caress the dog's neck and head.Later on, she lifts her dog's front paws towards the camera while still scratching its neck. At this moment, another person's arm appears on the right side of the frame, gently rubbing the dog's chin. The woman plants a kiss on the dog's forehead, then leans her head closely against the small pup. The dog tilts its head outward, prompting her to start playing with its front paws using her left hand. She then embraces the dog tightly once more, tenderly stroking the fur on its chin with her right index finger. A man's hand reaches in from the right side of the frame to give the dog some affectionate scratches on its head.As the camera gradually pulls back, the woman continues to stroke the dog's back with her left hand while nuzzling her head against it. The video is shot from a third-person perspective, with the camera positioned very close to the woman and her dog. The scene is filled with the warmth of their embrace, creating a wonderfully intimate atmosphere.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "The video captures the moment a woman embraces her dog. Set outdoors in glorious sunshine, the scene features a brown-haired woman wearing a black tank top, holding her black dog close. In the background, there is a red and white vehicle adorned with paw print patterns.",
+      "temporal_caption": "The video captures the tender moment of a woman embracing her dog. At first, she gazes down at the dog's side profile, with one hand wrapped around the dog and the other gently stroking it. As the camera rotates clockwise, the dog eagerly sticks out its tongue, attempting to lick her, but she closes her eyes and turns away, using both hands to caress the dog's neck and head. Later, she lifts the dog's two front paws to face the camera while continuing to scratch its neck. At this point, another person's arm appears on the right side of the video, reaching out to pet the puppy's chin. The woman kisses the dog's forehead and then presses her head closely against the small dog's. The dog tilts its head outward, and the woman begins to manipulate its front paws with her left hand. She then pulls the dog in tightly, continuing to pet it and gently brushing her right index finger along its chin fur. Just outside the frame on the right, a man extends his hand to pet the dog, scratching its head. As the camera gradually zooms out, the woman uses her left hand to stroke the puppy's back from top to bottom, while also nuzzling her head against its.",
+      "llm_extracted_events_NOT_gold": [
+        "Woman embraces dog",
+        "Woman strokes dog's head",
+        "Dog tries to lick woman",
+        "Woman lifts dog's front paws",
+        "Another person pets dog's chin",
+        "Woman kisses dog's forehead",
+        "Woman nuzzles head with dog's",
+        "Woman strokes dog's back"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a brown-haired woman.",
+        "There is a black tank top.",
+        "There is a black dog.",
+        "There is a red and white vehicle.",
+        "There is a paw print pattern."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "core_event_candidate": "This video captures a male athlete during javelin throwing training in a stadium.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video captures a male athlete during javelin throwing training in a stadium. He is wearing a white short-sleeve athletic shirt on top, black athletic pants on the bottom, and a pair of sneakers on his feet. Standing on the stadium's red track, he is flanked by a few green plants, with other athletes and staff around him, while the empty stands can be seen in the background. In the footage, the male athlete raises a white javelin high over his right shoulder, leaning his body weight back, with his left hand reaching out forward and his right hand pulled back, preparing for a powerful throw. He then shifts his body, leading with his right leg before his left leg takes a big step forward, alternating his legs in a forceful run and jump, progressively picking up speed. Finally, as he reaches his optimal throwing point, he unleashes power from his right shoulder, forcefully launching the javelin into the air from his shoulder. The entire video is shot from a third-person perspective in slow motion, clearly documenting the detailed process of this male athlete's run-up to the javelin throw, showcasing his status as a well-trained professional athlete.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video captures a male athlete training for javelin throwing in a stadium. He is wearing a white short-sleeve sports shirt on top and black athletic pants below, complemented by a pair of sports shoes. Standing on the stadium's red track, he is accompanied by a few green plants nearby, while other athletes and staff are present around him. In the distance, the empty bleachers can be seen.",
+      "temporal_caption": "This video captures a male athlete practicing javelin throwing in a sports arena. In the footage, the athlete raises a javelin high above his shoulder with his right hand, his body leaning slightly backward, while his left hand reaches forward. His right hand is pulled back tightly, preparing for the throw. He then steps sideways, first launching his right leg, followed by a powerful leap with his left leg, alternating between running and jumping as he gradually accelerates. Ultimately, as he reaches the optimal throwing point, he explosively uses his right shoulder to launch the javelin forcefully into the air from his shoulder. The entire process is recorded in slow motion throughout the video.",
+      "llm_extracted_events_NOT_gold": [
+        "Athlete raises javelin above right shoulder",
+        "Left hand reaches forward",
+        "Athlete steps sideways",
+        "Launches right leg first",
+        "Powerful leap with left leg",
+        "Gradually accelerates while running and jumping",
+        "Reaches optimal throwing point",
+        "Explosively launches javelin from right shoulder",
+        "Video recorded in slow motion"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a male athlete",
+        "There is a white short-sleeve sports shirt",
+        "There are black athletic pants",
+        "There are sports shoes",
+        "There is a red track",
+        "There are green plants",
+        "There are other athletes",
+        "There are staff members",
+        "There are empty bleachers"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "core_event_candidate": "This video showcases a person cleaning the floor with a broom.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases a person cleaning the floor with a broom. The individual is dressed entirely in pink, with a short-sleeved V-neck top on the upper half and long pants on the lower half. They are wearing green and white sneakers and have plastic gloves on both hands. In their left hand, they hold a broom, which has a green handle and a blue bristle head. The setting is indoors, featuring white tiled flooring and a beautifully adorned Christmas tree, decorated with numerous golden ornaments. There is also a small blue plastic bucket on the floor, while the walls are painted yellow. As the person sweeps, they bend forward, using the broom in their left hand to sweep toward their body from the outside. They gradually step back while extending their hands forward to clean thoroughly, turning their body to change direction as they sweep from their right side to the left. To ensure a more effective clean, they pivot to sweep in a different direction and then straighten up once the task is complete. The video is primarily filmed from the perspective in front of the person sweeping, and the camera follows their movements. The individual's sweeping actions appear quite skilled, and they engage in casual conversation while working, indicating that they are accustomed to cleaning tasks.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases a person cleaning the floor with a broom. The individual is dressed entirely in pink, wearing a short-sleeved V-neck top and long pants, paired with green and white sneakers. Both hands are covered with plastic gloves, and in the left hand, they hold a broom featuring a green handle and a blue base. The filming location is indoors, with the floor covered in white tiles, and there is a Christmas tree adorned with numerous golden ornaments. Additionally, a small blue plastic bucket sits on the floor, and the walls are painted yellow.",
+      "temporal_caption": "This video showcases a person cleaning the floor with a broom. During the sweeping process, the individual bends slightly at the waist, holding the broom in their left hand and sweeping inwards from the outside. As they sweep, they gently step backwards, extending their hand forward to carefully clean with the broom while rotating their body and changing directions, sweeping from the right side to the left. To ensure a more thorough cleaning, they turn around to continue sweeping. Once finished, they straighten their body and stand up.",
+      "llm_extracted_events_NOT_gold": [
+        "Person cleaning the floor with a broom",
+        "Bending slightly at the waist",
+        "Holding the broom in their left hand",
+        "Sweeping inwards from the outside",
+        "Stepping backwards gently",
+        "Extending hand forward",
+        "Rotating body and changing directions",
+        "Turning around to continue sweeping",
+        "Straightening their body",
+        "Standing up"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a person dressed in pink",
+        "There is a short-sleeved V-neck top",
+        "There are long pants",
+        "There are green and white sneakers",
+        "There are plastic gloves",
+        "There is a broom with a green handle",
+        "There is a broom with a blue base",
+        "There are white tiles on the floor",
+        "There is a Christmas tree with golden ornaments",
+        "There is a small blue plastic bucket",
+        "There are yellow walls"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00009795_0",
+      "core_event_candidate": "This video captures a scene of an elderly man playing the accordion on a grassy field.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video captures a scene of an elderly man playing the accordion on a grassy field. The gentleman, with his thinning gray hair, is dressed in a formal white shirt and gray suit pants, complemented by a pair of reading glasses. A black strap slung over his right shoulder supports a bright red accordion hanging in front of him. He stands on a spacious green lawn, surrounded by lush green trees. With his left hand positioned on the black bass keyboard of the accordion, his right hand gracefully dances across the white treble keys, pressing different notes to control the pitch and rhythm. Meanwhile, his left hand continuously taps the bass keyboard while skillfully pulling and pushing the bellows, producing a variety of tones and volumes. Occasionally, he lowers his gaze to watch his right hand, before lifting his eyes to gaze into the distance, eventually breaking into a smile. The video is shot from a third-person perspective, gradually zooming in and out, capturing the fluid and intricate movements of this elderly accordionist as he plays.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video depicts a scene of an elderly man playing the accordion on a grassy field. The elderly gentleman, with thinning white hair, is dressed in a formal white shirt on top and gray dress pants on the bottom, complemented by a pair of reading glasses. He has a black strap slung across his right shoulder, with a red accordion hanging in front of him. He stands in a spacious, lush green meadow, surrounded by a multitude of vibrant green trees.",
+      "temporal_caption": "This video depicts a scene where an elderly man is playing the accordion on a grassy field. He has his left hand resting on the black bass keys on the left side of the accordion, while his right hand dances deftly over the white treble keys. His fingers skillfully glide across the keyboard, pressing different notes, while his left hand continuously taps the bass keys, simultaneously pushing and pulling the bellows. At times, the elderly man looks down at his right hand, and at other moments, he gazes into the distance, ultimately breaking into a smile. The camera moves from a wide shot to a close-up and then pulls back again.",
+      "llm_extracted_events_NOT_gold": [
+        "Elderly man plays accordion on grassy field",
+        "Left hand rests on black bass keys",
+        "Right hand dances over white treble keys",
+        "Fingers skillfully press different notes",
+        "Left hand taps bass keys continuously",
+        "Elderly man looks down at right hand",
+        "Elderly man gazes into distance",
+        "Elderly man breaks into smile",
+        "Camera moves from wide shot to close-up"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is an elderly man with thinning white hair.",
+        "There is a formal white shirt.",
+        "There are gray dress pants.",
+        "There is a pair of reading glasses.",
+        "There is a black strap.",
+        "There is a red accordion.",
+        "There is a spacious, lush green meadow.",
+        "There are vibrant green trees."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "core_event_candidate": "This video vividly captures the entire performance of a young man delivering an impressive musical show on a bridge over a river.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video vividly captures the entire performance of a young man delivering an impressive musical show on a bridge over a river. Dressed in a carefully coordinated outfit, he wears a blue shirt complemented by a tie featuring a blue checkered pattern, paired with a colorful vest. His lower half is adorned with a short skirt in a mix of red, blue, and yellow checks that gracefully reaches just above his knees. He completes the look with black knee-high boots and a stylish black beret, exuding a blend of fashion and artistic flair. Standing on the bridge with a vast expanse of river behind him, dotted with a few boats that enhance the scenic view, he adds an element of poetry and artistry to his performance. Casually leaning against the bridge's rail, the performer stands tall, exuding elegance and composure as he immerses himself in the music. With cheeks puffed out, he cradles his instrument with both hands—left hand on top and right hand below—his fingers dancing nimbly between the holes, producing a melodious and captivating tune.As the video progresses, a man dressed in gray passes by, followed by another man in black, and then a woman in yellow, culminating in a family walking by. Filmed from directly in front of the performer, the video shows that despite the hurried pace of the pedestrians around him, he maintains his own rhythm and flow, undisturbed by external distractions, demonstrating his focus and dedication to the art of music.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video vividly captures the entire performance of a young male artist playing an impressive musical piece on a bridge above the river. The performer is dressed in a meticulously coordinated outfit, featuring a blue shirt complemented by a vest adorned with a blue checkered tie. His lower attire consists of a short skirt with a lively pattern of red, blue, and yellow checks, perfectly reaching the knee. He wears black knee-high boots and a stylish black beret, creating a look that is both fashionable and artistically striking. Standing tall on the bridge, he has the expansive river as his backdrop, with several boats gently floating on the water. He leans slightly against the railing, exuding a sense of poise and confidence.",
+      "temporal_caption": "This video vividly captures the entire performance of a young man giving an impressive musical display on a bridge over a river. In the footage, the performer puffs out his cheeks as he cradles his instrument, with his left hand positioned above and his right hand below, gracefully maneuvering his fingers among the finger holes. In front of him passes a man in gray, followed by another man in black, then a woman dressed in yellow, and finally, a family strolls by.",
+      "llm_extracted_events_NOT_gold": [
+        "Performer cradles instrument",
+        "Man in gray passes",
+        "Man in black follows",
+        "Woman in yellow walks by",
+        "Family strolls past"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a young male artist.",
+        "There is a blue shirt.",
+        "There is a vest.",
+        "There is a blue checkered tie.",
+        "There is a short skirt.",
+        "There is a lively pattern of red, blue, and yellow checks.",
+        "There are black knee-high boots.",
+        "There is a stylish black beret.",
+        "There is a bridge.",
+        "There is a river.",
+        "There are several boats."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00010336_1",
+      "core_event_candidate": "This video showcases the process of two people playing musical instruments.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases the process of two people playing musical instruments. One person, who is seated closer to the camera, is playing the cello, while the other, positioned further away, plays the harp. Both individuals are dressed in black suit outfits, with music stands in front of them holding sheet music. They are situated in a corridor featuring a brown brick wall behind them, alongside which a long bench with wooden tones and armrests is placed. At the far end of the corridor, there is a table covered with a white tablecloth, adorned with various items.In the video, both musicians are engaged in their performance. The cellist, who is closer to the lens, is drawing the bow with significant movement in his right hand while sliding his left hand up and down the strings. Throughout the performance, he occasionally lifts his head to gaze into the distance. Finally, the camera shifts to focus outside the corridor, revealing a patch of shrubbery. Filmed from a third-person perspective, this video captures the essence of their musical performance, highlighting their skilled technique and evident enjoyment of the music.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases the process of two individuals playing musical instruments. One person plays the cello, sitting closer to the camera, while the other plays the harp, positioned further away. Both musicians are dressed in black suits, and in front of them are music stands holding their sheet music. They are situated in a corridor, with a backdrop of brown brick walls. Against the walls, there are long benches in a natural wood finish, complete with armrests. At the end of the corridor, there is a table draped with a white tablecloth, adorned with various items. Outside the corridor, there is a patch of shrubs.",
+      "temporal_caption": "This video showcases the process of two people playing musical instruments. In the footage, one person, who is closer to the camera, is playing the cello. His right hand is moving the bow with grand strokes, while his left hand glides up and down the strings. As he plays, he occasionally lifts his head to gaze into the distance. Finally, the camera shifts its focus to the hallway outside.",
+      "llm_extracted_events_NOT_gold": [
+        "Person playing cello with grand strokes on bow",
+        "Person sliding left hand up and down strings",
+        "Person occasionally gazing into the distance"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a cello.",
+        "There is a harp.",
+        "There is a black suit.",
+        "There is a music stand.",
+        "There is sheet music.",
+        "There is a brown brick wall.",
+        "There is a long bench.",
+        "There is a natural wood finish.",
+        "There is a white tablecloth.",
+        "There is a patch of shrubs."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00011374_0",
+      "core_event_candidate": "This video showcases a man playing the saxophone indoors.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases a man playing the saxophone indoors. He is wearing a long-sleeve shirt with a deep yellow and white checkered pattern, with the sleeves rolled up. His left wrist is adorned with a brown-strapped watch featuring a white dial, and he holds a golden saxophone in his hands, with a black strap around his neck. In front of him stands a silver speaker. On the right side of the video, there is white text that reads \"Colin Tulley.\" The setting is indoors, with white walls that include a protruding square section adorned with circular patterns. On the wall to the right, there is also a double socket. In the bottom right corner, a small black sofa is visible. As he plays, his left hand presses the keys on the saxophone while his right hand simultaneously engages the lower keys, with the mouthpiece securely in his mouth, puffing out his cheeks as he performs. His body sways back and forth with the music, clearly immersed in the moment. The text gradually fades away as the camera slowly rises. The entire video is shot from a perspective in front and to the left of this man, capturing his smooth and melodious performance, revealing his evident expertise and ease.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases a man playing the saxophone indoors. He is wearing a long-sleeved shirt adorned with a deep yellow and white plaid pattern, with the sleeves rolled up to his elbows. On his left wrist, he sports a brown-banded watch with a white face. In his hands, he holds a golden saxophone, while a black saxophone strap hangs around his neck. In front of him, there is a silver receiver standing upright. On the right side of the video, white text appears, reading \"Colin Tulley.\" The atmosphere of the video is set in a room with white walls, featuring a protruding square section adorned with circular patterns. Additionally, there is a double socket on the wall to the right of the video frame. In the lower right corner, a small black sofa can be seen.",
+      "temporal_caption": "This video features a man playing the saxophone indoors. As he plays, his left hand is positioned on the upper keys of the saxophone while his right hand is pressing the lower keys. He holds the mouthpiece with his lips, puffing out his cheeks to produce sound in coordination with the keys he presses. His body sways gently back and forth to the rhythm of the music. As the text gradually fades away, the camera slowly rises.",
+      "llm_extracted_events_NOT_gold": [
+        "Man plays saxophone indoors",
+        "Left hand on upper keys",
+        "Right hand presses lower keys",
+        "Holds mouthpiece with lips",
+        "Puff out cheeks to produce sound",
+        "Body sways back and forth",
+        "Text fades away gradually",
+        "Camera rises slowly"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a man wearing a long-sleeved shirt.",
+        "There is a long-sleeved shirt with a deep yellow and white plaid pattern.",
+        "There is a brown-banded watch with a white face.",
+        "There is a golden saxophone.",
+        "There is a black saxophone strap.",
+        "There is a silver receiver.",
+        "There is white text reading 'Colin Tulley'.",
+        "There is a room with white walls.",
+        "There is a protruding square section with circular patterns.",
+        "There is a double socket on the wall.",
+        "There is a small black sofa."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00012062_0",
+      "core_event_candidate": "The video showcases a boy wearing black-rimmed glasses as he plays a brass instrument in a minimalist indoor setting.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "The video showcases a boy wearing black-rimmed glasses as he plays a brass instrument in a minimalist indoor setting. With short black hair and dressed in a white T-shirt, the boy appears focused, with his lips firmly pressed against the mouthpiece of the instrument. His hands grasp the instrument steadily, reflecting a serious practice session. The walls of the room are adorned with posters and decorations of numerical balloons, creating a casual and relaxed atmosphere that indicates this is his usual space for study or practice. At the beginning of the video, the boy slightly purses his lips before placing them on the mouthpiece. Meanwhile, his right-hand fingers are seen pressing several buttons on the instrument's body. He then begins to blow into the instrument with vigor, resulting in a rhythmic movement of his right fingers. As the video concludes, the boy finishes playing, pulls the instrument away from his lips, and rotates it 90 degrees to hold it in front of himself while gazing at it. The camera angle captures him from a slightly left-leaning frontal view, creating an intimate and natural feeling, as if the audience is right there in the same room, observing his performance up close. The overall stylistic approach of the video is simple yet effective, emphasizing the boy's concentration and the details of the instrument, evoking an atmosphere reminiscent of family practice or online teaching.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "The video showcases a boy wearing black-framed glasses who is playing a brass instrument in a minimalist indoor setting. With short black hair and dressed in a white T-shirt, the boy presses his lips firmly against the mouthpiece of the instrument, while his hands hold it steadily. The walls of the room are adorned with several posters and decorative balloons in the shape of numbers.",
+      "temporal_caption": "The video features a boy wearing black-framed glasses, who is playing a brass instrument in a minimalist indoor setting. At the beginning of the video, the boy first purses his lips and then places them firmly against the mouthpiece of the instrument. You can see his right hand fingers pressing several buttons on the body of the instrument in a rhythmic manner. As he starts to blow into the instrument with force, his fingers move methodically. At the end of the video, when the boy finishes playing, he carefully removes the instrument from his lips, rotates it 90 degrees, and holds it in front of himself, simultaneously gazing at the instrument.",
+      "llm_extracted_events_NOT_gold": [
+        "Boy purses lips",
+        "Boy places lips on mouthpiece",
+        "Boy presses buttons rhythmically",
+        "Boy blows into instrument",
+        "Boy's fingers move methodically",
+        "Boy finishes playing",
+        "Boy removes instrument from lips",
+        "Boy rotates instrument 90 degrees",
+        "Boy holds instrument in front of himself",
+        "Boy gazes at instrument"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a boy with black-framed glasses.",
+        "There is a boy with short black hair.",
+        "There is a boy in a white T-shirt.",
+        "There is a brass instrument.",
+        "There is a mouthpiece of a brass instrument.",
+        "There are walls in a room.",
+        "There are posters on the walls.",
+        "There are decorative balloons on the walls.",
+        "There are balloons in the shape of numbers."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00012246_0",
+      "core_event_candidate": "In this video, a young boy is playing the violin.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "In this video, a young boy is playing the violin. He is wearing a light yellow T-shirt adorned with red and black stripes. The boy has short black hair. Behind him, there is a wooden-colored piano, which is opened, and on top of it rests some sheet music. An elegant picture frame and a metallic-colored lamp are also placed on the piano. To the left of the boy, there is a curtain with blue and white stripes that has been drawn up. The boy is diligently practicing his violin; he holds the instrument in his left hand and the bow in his right. His eyes are slightly closed as he focuses intently on his hand movements. His left fingers are gently rubbing the strings while his right hand maneuvers the bow, eventually bringing it to a stop. His movements are very slow and deliberate. The video is shot from a third-person perspective, with scrolling subtitles in the first half. It is evident from the video that the boy is a beginner violinist, as his playing is not yet very polished.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "In this video, a young boy is playing the violin. He is wearing a light yellow T-shirt adorned with red and black striped decorations. The boy has short black hair. Behind him stands a wooden-colored piano, which is open, revealing sheet music resting on top. There is also a picture frame placed on the piano, along with a metallic-colored desk lamp. To the left of the boy, there is a raised curtain featuring a blue and white striped pattern.",
+      "temporal_caption": "In this video, there is a little boy playing the violin. The boy is practicing his violin skills, holding the instrument with his left hand and the bow with his right hand. His eyes are cast downward, slightly closed, as he focuses intently on the movements of his hands. His left fingers are gently pressing against the strings, while his right hand pulls the bow, and eventually, he brings the bow down. His movements are very slow and deliberate, with a rhythmic quality to them. In the first half of the video, there are scrolling subtitles.",
+      "llm_extracted_events_NOT_gold": [
+        "Little boy playing the violin",
+        "Practicing violin skills",
+        "Holding instrument with left hand",
+        "Holding bow with right hand",
+        "Eyes cast downward",
+        "Fingers pressing against strings",
+        "Pulling the bow with right hand",
+        "Bringing the bow down",
+        "Slow and deliberate movements",
+        "Scrolling subtitles in first half"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a young boy playing the violin.",
+        "There is a light yellow T-shirt.",
+        "There is a T-shirt with red stripes.",
+        "There is a T-shirt with black stripes.",
+        "There is a wooden-colored piano.",
+        "There is sheet music on the piano.",
+        "There is a picture frame on the piano.",
+        "There is a metallic-colored desk lamp.",
+        "There is a raised curtain.",
+        "There is a curtain with a blue and white striped pattern."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00012568_0",
+      "core_event_candidate": "This video showcases a male athlete during a pole vaulting competition.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases a male athlete during a pole vaulting competition. The athlete is dressed in a white sports tank top on his upper body and black athletic shorts on his lower body, with a pair of predominantly white sneakers on his feet. The runway is primarily orange, and to the left of it is the stands where many spectators are seated on orange-colored steps, eagerly watching the competition. On the right side of the runway, athletes and referees prepare for their turns. During the pole vaulting process, the athlete begins with a running start, gripping the long white pole with both hands. He strides confidently into the take-off area, and as a whistle blows, he plants the pole firmly into the ground. With the pole's elasticity propelling him upward, he leaps high into the air, legs lifted and head angled downward. After clearing the bar, the athlete executes a smooth rotation, releasing the pole from his left and right hands one after the other as he descends, successfully completing his jump.The camera follows his movement, capturing the activity of additional people walking around the sides of the jumping area. The entire video is filmed from a right-side perspective of the runway, highlighting the athlete's fluid motions as he ultimately accomplishes a successful jump.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases a male athlete during a pole vault competition. The athlete is wearing a white sports tank top on his upper body and a pair of black athletic shorts on his lower half, complemented by predominantly white athletic shoes. The track is primarily orange, with the left side featuring stands filled with enthusiastic spectators seated on orange steps, all eagerly watching the event unfold. To the right of the track, there are other athletes and judges gearing up for their turn. The competitor is holding a long, white pole with both hands, ready for his attempt.",
+      "temporal_caption": "This video showcases a male athlete during a pole vault competition. The athlete begins with a strong running approach, gripping the pole with both hands. As he strides towards the take-off area, he plants the pole firmly into the ground. Using the pole's elastic bounce, he propels himself high into the air, with his legs extending upwards and his head pointed downwards. After successfully clearing the bar, he pivots, sequentially releasing the pole with his left and right hands before descending to complete his jump. The camera follows his movement, capturing the lively atmosphere with people walking around on both sides of the jumping area.",
+      "llm_extracted_events_NOT_gold": [
+        "Athlete begins running approach",
+        "Athlete grips pole with both hands",
+        "Athlete plants pole into the ground",
+        "Athlete propels himself high into the air",
+        "Athlete extends legs upwards",
+        "Athlete points head downwards",
+        "Athlete successfully clears the bar",
+        "Athlete pivots after clearing the bar",
+        "Athlete releases pole with left hand",
+        "Athlete releases pole with right hand"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a male athlete",
+        "There is a white sports tank top",
+        "There is a pair of black athletic shorts",
+        "There are predominantly white athletic shoes",
+        "There is an orange track",
+        "There are stands with orange steps",
+        "There are enthusiastic spectators",
+        "There are other athletes",
+        "There are judges",
+        "There is a long white pole"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "core_event_candidate": "The video showcases a male makeup artist applying eye makeup on a female model, capturing part of the process.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "The video showcases a male makeup artist applying eye makeup on a female model, capturing part of the process. Set against a pure black background, the frame focuses on the model's face, but also reveals a portion of the makeup artist's head from the left side. In the scene, the makeup artist uses his left hand to lift the upper eyelid of the model's right eye while holding a pink-packaged mascara with a black brush head in his right hand, gently brushing the model's upper lashes several times. The video features a voiceover that breaks down and explains the artist's technique, mentioning that the key to applying eye makeup is to first layer a few thin coats of eyeshadow on both sides of the upper lash line. The second statement notes that once the final layer of mascara has been applied, the video abruptly ends, leaving the last part of the sentence unfinished. Shot from a third-person perspective, the video clearly presents the actions of both the model and the makeup artist, who are facing each other. The model serves as the focal point of the frame while the makeup artist's head only appears partially, enhancing the sense of interaction within the scene. The camera is not stationary; at the beginning of the video, there is a slight movement towards the upper left corner.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "The video showcases a male makeup artist applying eye makeup to a female model. Set against a pure black background, the camera focuses on the model's face, but a portion of the makeup artist's head can be seen on the left side of the frame. The mascara is in pink packaging with a black brush head.",
+      "temporal_caption": "The video showcases a male makeup artist applying eye makeup to a female model. In the footage, the makeup artist uses his left hand to lift the model's right eyelid while holding a mascara wand in his right hand. He gently brushes the model's upper lashes upwards several times. At the beginning of the video, the camera makes a subtle movement to the upper left corner.",
+      "llm_extracted_events_NOT_gold": [
+        "Makeup artist applies eye makeup on model",
+        "Artist lifts model's right eyelid",
+        "Artist holds mascara wand in right hand",
+        "Artist brushes model's upper lashes upwards",
+        "Camera makes subtle movement to upper left corner"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a male makeup artist",
+        "There is a female model",
+        "There is a pure black background",
+        "There is a camera",
+        "There is the model's face",
+        "There is the makeup artist's head",
+        "There is a left side of the frame",
+        "There is a mascara",
+        "There is a pink packaging",
+        "There is a black brush head"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00013412_0",
+      "core_event_candidate": "This video showcases the handshake between Mr. Donald Trump and Mr. Kim Jong-un.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases the handshake between Mr. Donald Trump and Mr. Kim Jong-un. In the footage, Mr. Trump stands on the left side of the frame, sporting his trademark blonde hair, dressed in a black suit jacket with a striped tie and a crisp white shirt, complemented by black trousers. On the right side stands Mr. Kim, with dark hair and wearing a Mao suit. Behind them, the American and North Korean flags, featuring red, white, and blue colors, are crossed together. The top right corner of the video is marked with the word \"RUPTLY.\" Throughout the video, the sound of camera shutters fills the air as Mr. Trump first shakes hands with Mr. Kim using his right hand. The two face the camera, and Mr. Trump then reaches over with his left hand to pat Mr. Kim on the back, allowing it to fall naturally by his side. They shake hands with an up and down motion while maintaining their gaze towards the camera, before each withdrawing their hands. Mr. Trump again gives Mr. Kim a light pat on the back with his left hand. The entire video is filmed from a viewpoint in front of them, capturing the moment of their handshake in a formal setting, where both men occasionally smile, indicating a warm atmosphere.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases the moment when Mr. Trump and Mr. Kim Jong-un shake hands. In the video, Mr. Trump is positioned on the left side of the frame, sporting a head of golden hair. He is dressed in a sleek black suit jacket with a striped tie, complemented by a crisp white shirt and black trousers. Meanwhile, Mr. Kim is situated on the right side, with black hair and wearing a traditional Zhongshan suit. At times, both men are seen smiling. Behind them, the American and North Korean flags, in red, white, and blue, are displayed crossed over one another. In the upper right corner of the video, the word \"RUPTLY\" is prominently featured.",
+      "temporal_caption": "This video showcases the handshake between Mr. Trump and Mr. Kim Jong-un. Trump first extends his right hand to shake hands with Kim’s right hand, both facing the camera. Trump then places his left hand on Kim's back and gives it a light pat before letting it hang naturally by his side. The two continue to shake hands, moving their arms up and down while facing the camera, and then each withdraws their hands. Trump gives Kim another gentle pat on the back with his left hand.",
+      "llm_extracted_events_NOT_gold": [
+        "Trump extends right hand to shake hands with Kim",
+        "Trump places left hand on Kim's back",
+        "Trump gives Kim a light pat on the back",
+        "Both continue to shake hands facing the camera",
+        "Both move their arms up and down while shaking hands",
+        "Trump withdraws his hand from Kim's",
+        "Trump gives Kim another gentle pat on the back"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is Mr. Trump with golden hair.",
+        "There is Mr. Trump wearing a black suit jacket.",
+        "There is Mr. Trump with a striped tie.",
+        "There is Mr. Trump wearing a white shirt.",
+        "There is Mr. Trump wearing black trousers.",
+        "There is Mr. Kim Jong-un with black hair.",
+        "There is Mr. Kim Jong-un wearing a traditional Zhongshan suit.",
+        "There is an American flag in red, white, and blue.",
+        "There is a North Korean flag in red, white, and blue.",
+        "There is the word 'RUPTLY' in the upper right corner."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "core_event_candidate": "This video showcases a diving athlete performing an impressive aerial maneuver above an indoor swimming pool, all captured in slow motion.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases a diving athlete performing an impressive aerial maneuver above an indoor swimming pool, all captured in slow motion. The athlete is dressed in black swimming trunks, while the background reveals the ceiling of the swimming arena along with various facilities by the poolside. Blurry glimpses of distant spectator stands and decorative flags around the pool can also be seen. The ceiling is adorned with numerous bright lights, creating a well-lit environment. At the start of the video, the athlete stands on the diving board, balancing on his left foot while raising both arms upward and lifting his right leg until his thigh is parallel to the ground, preparing to leap. He then jumps forcefully upward, extending his legs straight in the air as he lands on the bouncing board. Subsequently, he swings his arms vigorously backward, tilting his body forward while bending his legs, exerting force that causes the board to flex downwards. As the board rebounds, he thrusts his arms straight up and leaps to great heights. In mid-air, he bends his upper body and rotates sideways, turning his back to the camera while his arms continue to stretch back. He then readjusts his upper body downward with effort, palms facing the water, and dives in headfirst, entering the water in a streamlined position. The video gradually becomes more blurred. Filmed from a third-person perspective, the footage captures the dynamic movements of the diver in mid-air, emphasizing his impressive aerial performance due to the angle of the shot, which enhances his stature and conveys a sense of focused concentration and professional skill.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "The video showcases a scene of a diver performing complex aerial maneuvers while diving from above an indoor swimming pool, presented in slow motion. The athlete is wearing black swim trunks, and in the background, the ceiling of the indoor swimming facility can be observed, along with various amenities around the pool. There are also blurred glimpses of the audience stands and decorative flags near the pool in the distance. The ceiling of the venue is adorned with numerous lights, creating a brilliantly illuminated atmosphere.",
+      "temporal_caption": "This video showcases a diver performing a series of complex aerial maneuvers above an indoor swimming pool, all captured in slow motion. The footage begins with the athlete balancing on the edge of the diving board with his left foot, while simultaneously raising both arms upward and lifting his right leg until it is parallel to the ground as he prepares to spring into the air. As he leaps upward, his legs extend straight out mid-air before he lands back on the swaying diving board. With a powerful thrust, he swings his arms backward, leans his body forward, and bends his legs, exerting force to significantly flex the board downward. Shortly after, the diver straightens his arms vertically and, propelled by the board's bounce, soars high into the air. While airborne, he bends his torso and executes a full rotation, turning his back to the camera. With his arms still swinging backward, he then adjusts his upper body forcefully downward, positioning his palms towards the surface of the water before diving in. As his body enters the water in a streamlined manner, the video gradually blurs to a close.",
+      "llm_extracted_events_NOT_gold": [
+        "Diver balances on diving board edge",
+        "Diver raises both arms upward",
+        "Diver springs into the air",
+        "Diver swings arms backward",
+        "Diver soars high into the air",
+        "Diver executes full rotation mid-air",
+        "Diver adjusts upper body downward",
+        "Diver positions palms towards water surface",
+        "Diver dives into water in streamlined position"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a diver wearing black swim trunks.",
+        "There is an indoor swimming pool.",
+        "There is a ceiling of an indoor swimming facility.",
+        "There are amenities around the pool.",
+        "There are audience stands in the distance.",
+        "There are decorative flags near the pool.",
+        "There are numerous lights on the ceiling.",
+        "There is a brilliantly illuminated atmosphere."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "core_event_candidate": "This video captures a worker actively trimming the leaves of a coconut tree.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video captures a worker actively trimming the leaves of a coconut tree. The worker is dressed in a light-colored shirt and is wearing a bright orange safety helmet. He is standing on a crane, which has a yellow arm and is equipped with a white hanging basket, where the worker is positioned. In his hand, he holds a saw, preparing to prune the coconut tree. Behind him stands a tall coconut tree, its trunk already dried out, with leaves displaying a mix of yellow and green hues. In the video, the crane first rotates counterclockwise, bringing the worker closer to the coconut tree. The camera then experiences a brief blur, followed by the crane's arm descending, enabling the worker to reach the tree's leaves. The image blurs once more before the segment ends. Throughout this process, the wind in the air is quite strong, causing the coconut tree's leaves to sway chaotically. The entire sequence is filmed from a third-person perspective, clearly illustrating that pruning coconut tree branches and leaves is an extremely hazardous task. The winds on the island are notably strong, adding to the difficulty of maintaining the tree's foliage.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video captures a scene of a worker trimming the leaves of a coconut tree. The worker is dressed in a light-colored shirt and is wearing a bright orange safety helmet. He is standing on a crane, which has a yellow arm and is equipped with a white sling basket, where he stands. In his hands, he holds a saw, ready to trim the coconut tree. Behind him, there is a tall coconut tree with a dry trunk and leaves exhibiting a mix of yellow and green. Throughout the process, the wind in the air is quite strong, causing the leaves of the coconut tree to flutter chaotically.",
+      "temporal_caption": "This video captures the scene of a worker trimming the leaves of a coconut tree. At the beginning, the crane rotates counterclockwise to bring the worker right in front of the coconut tree. Then, the camera briefly goes out of focus before the crane's arm descends, allowing the worker to reach the leaves of the coconut tree. Finally, the camera blurs again for a moment.",
+      "llm_extracted_events_NOT_gold": [
+        "Crane rotates counterclockwise",
+        "Brings worker in front of coconut tree",
+        "Camera briefly goes out of focus",
+        "Crane's arm descends",
+        "Worker reaches leaves of coconut tree",
+        "Camera blurs momentarily"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a worker with a light-colored shirt.",
+        "There is a worker with a bright orange safety helmet.",
+        "There is a crane with a yellow arm.",
+        "There is a white sling basket.",
+        "There is a saw.",
+        "There is a coconut tree with a dry trunk.",
+        "There is a coconut tree with yellow and green leaves.",
+        "There is a strong wind."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00015732_0",
+      "core_event_candidate": "This video showcases a man meticulously trimming the edges of bushes to enhance the beauty of his front lawn.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases a man meticulously trimming the edges of bushes to enhance the beauty of his front lawn. The protagonist is wearing a light blue short-sleeved T-shirt and khaki shorts. Behind him stands a charming red brick house with white windows. In front of the house, there are lush green shrubs and bushes. Next to the bushes is a concrete pathway, and on the lawn, there are two lamps, an abandoned gray traffic barrier, and some square stones scattered around. From the very beginning, the video plays in fast motion; he holds the trimmer steady with his right hand for balance while maneuvering it with his left. The bushes he is trimming are positioned against a wall, and the trimmer moves back and forth along the edges, clearing away the weeds. He moves counterclockwise around the bushes, starting by trimming the top to create a flat surface, and then rounds off the sides. At one point, he makes a brief clockwise turn to re-trim a portion of the bushes. His movements are skilled and fluid, and the loud noise of the trimmer creates a noticeable buzzing sound. The video is shot from a third-person perspective, with a low angle and a close-up frame, capturing the man's efficient actions.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases the process of a man trimming the edges of some bushes to enhance the appearance of a lawn in front of his house. The protagonist is a male dressed in a light blue short-sleeve T-shirt and khaki shorts. Behind him stands a red brick house with white windows. In front of the house, there are green shrubs and bushes. Next to the bushes, there is a cement path, and on the lawn, there are two lamps, an abandoned gray barricade, and some square stones. The bushes he is trimming are positioned against the wall.",
+      "temporal_caption": "This video showcases a man meticulously trimming the edges of shrubs to enhance the beauty of his front lawn. From the very beginning, the footage is played in fast motion, with his right hand securely holding the back of the trimmer for balance, while his left hand guides the front for directional control. The trimmer moves back and forth along the edges of the shrubs, effectively clearing away any overgrown weeds. He circles around the bushes counterclockwise, starting by cutting the top to create a neat, flat surface, and then moves on to trim the sides, giving them a rounded appearance. At one point, he turns clockwise to revisit a section for some additional trimming.",
+      "llm_extracted_events_NOT_gold": [
+        "Man trimming shrub edges",
+        "Guiding trimmer for directional control",
+        "Clearing overgrown weeds",
+        "Cutting top of bushes",
+        "Trimming sides for rounded appearance",
+        "Revisiting section for additional trimming"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a man in a light blue short-sleeve T-shirt.",
+        "There is a man in khaki shorts.",
+        "There is a red brick house.",
+        "There is a house with white windows.",
+        "There are green shrubs.",
+        "There are green bushes.",
+        "There is a cement path.",
+        "There are two lamps on the lawn.",
+        "There is an abandoned gray barricade.",
+        "There are some square stones on the lawn."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00015865_14",
+      "core_event_candidate": "The video showcases a scene of a golden-haired woman training for the triple jump.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "The video showcases a scene of a golden-haired woman training for the triple jump. Dressed in a yellow cropped athletic tank top, black triangle shorts, and black running shoes, she is on a slightly worn track. Around her, there are athletes either seated or standing; some are returning to the starting line, others are changing clothes, while a few are just observing their surroundings. The outer perimeter of the track is enclosed by a fence adorned with white or blue posters. Spectators gather outside, and nearby, staff are busily setting up the competition area alongside a referee clad in red, with a standing white scorecard visible as well. With her body coiled, the woman sprints forward, pumping her arms vigorously alongside her. Upon reaching the takeoff line, she seems to lose her balance slightly, stumbling as she jumps. Her time in the air is quite brief, and she ultimately lands right on the edge of the sandpit, failing to achieve a long distance jump. The video captures the entire process from a bird's-eye view, illustrating her jump from afar to her entrance into the sandpit. It is evident from the footage that she is somewhat unsteady in her jumping technique and will benefit from further practice.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "The video showcases a scene of a woman with golden hair training for the triple jump. She is wearing a yellow cropped sports tank top paired with black triangular shorts and black running shoes. The setting is on a slightly worn track, with athletes either sitting or standing nearby. Surrounding the track, there is a fence adorned with white and blue posters. In the background, a crowd of spectators watches, while staff members are busy organizing the competition near the sandpit. Additionally, a referee in a red outfit is present, along with a standing white scoreboard.",
+      "temporal_caption": "The video features a scene of a blond-haired girl training for the triple jump. Nearby, some athletes are returning to the starting point, some are changing their clothes, while others are gazing around. The girl crouches down, sprinting forward quickly as she swings her arms energetically from side to side. Upon reaching the take-off line, she stumbles slightly before jumping, spending only a brief moment in the air before ultimately landing at the edge of the sandpit.",
+      "llm_extracted_events_NOT_gold": [
+        "Blond-haired girl training for triple jump",
+        "Athletes returning to starting point",
+        "Some athletes changing clothes",
+        "Others gazing around",
+        "Girl sprinting forward quickly",
+        "Girl swinging arms energetically",
+        "Girl stumbling slightly before jumping",
+        "Girl spending brief moment in air",
+        "Girl landing at edge of sandpit"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a woman with golden hair.",
+        "There is a yellow cropped sports tank top.",
+        "There are black triangular shorts.",
+        "There are black running shoes.",
+        "There is a slightly worn track.",
+        "There is a fence adorned with white and blue posters.",
+        "There is a crowd of spectators.",
+        "There is a referee in a red outfit.",
+        "There is a standing white scoreboard.",
+        "There is a sandpit."
+      ]
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "core_event_candidate": "This video showcases the process a woman goes through to clean vegetables before placing them in the refrigerator.",
+      "core_event_source": "human_caption_opening_overview_sentence_candidate",
+      "core_event_status": "UNVERIFIED_CANDIDATE_REQUIRES_PILOT_A2_HUMAN_AUDIT",
+      "reference_caption": "This video showcases the process a woman goes through to clean vegetables before placing them in the refrigerator. In the footage, we can see a pair of hands; the right hand is adorned with a gold bracelet intricately carved with numerous designs, revealing the blue patterned cuff of her sleeve. At the center of the frame, there is a stainless steel bowl with handles on either side, the handles made of black plastic. Below the bowl, there's a plastic bag labeled \"OXFORD.\" The bowl is filled with water, in which dozens of vibrant green vegetables are floating. As the woman washes the vegetables, two lines of subtitles appear at the bottom of the screen, reading: \"Always wash vegetables before putting them in the fridge.\" The woman stirs the water with both hands, causing the vegetables to move. She randomly selects a green bean, lifts it out of the water for individual cleaning, and after rinsing it, she tosses it back into the bowl. After washing a few vegetables this way, she decides to speed up the process by grabbing a handful and scrubbing them together in the water. Once she’s done, her left hand holds the bowl while her right hand scoops out the cleaned beans and places them into it. The camera captures the scene from the woman’s right side, including her hands and the bowl, but the image is somewhat blurry with a lower pixel quality.",
+      "human_reference_fields": [
+        "caption",
+        "spatial_caption",
+        "temporal_caption"
+      ],
+      "spatial_caption": "This video showcases the process a woman follows to wash vegetables before placing them in the refrigerator. In the footage, there is a pair of hands; the right hand is adorned with a golden bracelet intricately carved with various designs, while the sleeve features a blue pattern. At the center of the frame is a stainless steel basin, which has handles on both sides made of black plastic. Beneath the basin, there's a plastic bag labeled \"OXFORD.\" The basin is filled with water, in which dozens of vibrant green vegetables are floating. As the woman washes the vegetables, two lines of white subtitles with black text appear at the bottom of the video, reading: \"Always wash vegetables before putting them in the fridge.\"",
+      "temporal_caption": "This video showcases a woman’s process of washing vegetables before putting them in the refrigerator. She stirs the water in the basin with her hands, causing the vegetables to swirl around. She randomly selects a green bean, lifts it out of the water to wash it separately, and then returns it to the water after cleaning. After washing a few like this, she decides to change her method and starts grabbing handfuls from the water, giving them a few rubs to clean them more efficiently. Once she finishes washing, she holds a basin in her left hand while using her right hand to scoop the cleaned green beans from the water and place them into the basin.",
+      "llm_extracted_events_NOT_gold": [
+        "woman stirs water in basin",
+        "woman washes green bean separately",
+        "woman changes washing method",
+        "woman rubs handfuls of vegetables",
+        "woman scoops green beans from water"
+      ],
+      "llm_extracted_objects_NOT_gold": [
+        "There is a golden bracelet with intricate designs.",
+        "There is a blue-patterned sleeve.",
+        "There is a stainless steel basin.",
+        "There are black plastic handles on the basin.",
+        "There is a plastic bag labeled 'OXFORD'.",
+        "There is water in the basin.",
+        "There are dozens of vibrant green vegetables.",
+        "There are white subtitles with black text."
+      ]
+    }
+  ],
+  "lock_sha256": "6692d1dd20aa09f16b4815892c56547d72ead07b920790cee6d47bfacb94c552"
+}

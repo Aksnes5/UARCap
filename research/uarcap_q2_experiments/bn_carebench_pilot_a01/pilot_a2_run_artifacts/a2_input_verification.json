@@ -1,0 +1,48 @@
+{
+  "schema_version": "uarcap_q2.pilot_a2_input_verification.v1",
+  "timestamp_utc": "2026-11-25T17:38:31.214810+00:00",
+  "a1_dir": "/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_carebench_v1",
+  "a1_run_status": "REAL_RUNTIME_PASS",
+  "a1_files": {
+    "predictions.jsonl": {
+      "path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_carebench_v1/predictions.jsonl",
+      "expected_sha256": "f958c87c83d31b7f28468e6637c22a3f45df338f36fc94f36c317f034a119428",
+      "actual_sha256": "f958c87c83d31b7f28468e6637c22a3f45df338f36fc94f36c317f034a119428",
+      "match": true
+    },
+    "input_traces.jsonl": {
+      "path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_carebench_v1/input_traces.jsonl",
+      "expected_sha256": "cbf789fe4261f0431d4949c398eba424036c8c2d01400210112ef8dca2bbd133",
+      "actual_sha256": "cbf789fe4261f0431d4949c398eba424036c8c2d01400210112ef8dca2bbd133",
+      "match": true
+    },
+    "retrieval_candidates.jsonl": {
+      "path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_carebench_v1/retrieval_candidates.jsonl",
+      "expected_sha256": "14f29dde5ae9f5484b5ae404946b42a695e468eaf24821df34d32aa0dc86c2dd",
+      "actual_sha256": "14f29dde5ae9f5484b5ae404946b42a695e468eaf24821df34d32aa0dc86c2dd",
+      "match": true
+    },
+    "run_receipt.json": {
+      "path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_carebench_v1/run_receipt.json",
+      "expected_sha256": "e792d35ba5b9d3e8a45d5b7278a6d3542961426797a8be906f3e19b0b5703ae3",
+      "actual_sha256": "e792d35ba5b9d3e8a45d5b7278a6d3542961426797a8be906f3e19b0b5703ae3",
+      "match": true
+    }
+  },
+  "metadata": {
+    "path": "/home/bn/uarcap_q2_runtime/data/carebench/json/metadata.json",
+    "expected_sha256": "740f43b71a1f8131521e2a6cde95a59c3db10a5c4bdd554dc64959b48b0fc951",
+    "actual_sha256": "740f43b71a1f8131521e2a6cde95a59c3db10a5c4bdd554dc64959b48b0fc951",
+    "match": true
+  },
+  "frozen_manifest": {
+    "path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_carebench_v1/FROZEN_SAMPLING_MANIFEST.json",
+    "file_sha256": "bda8828d813f6c0146b2452cdb69fcf28dc944322525c1dee8ed168908986c34",
+    "internal_manifest_sha256": "26fbf6abaf7ed12309ca5be40ccc583c068e5bd2c9b427f0753c4600d5b5bd21",
+    "expected_internal_sha256": "26fbf6abaf7ed12309ca5be40ccc583c068e5bd2c9b427f0753c4600d5b5bd21",
+    "match": true
+  },
+  "n_frozen_queries": 30,
+  "missing_metadata_queries": [],
+  "all_verified": true
+}

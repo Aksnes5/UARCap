@@ -52,6 +52,11 @@ OVERVIEW_OPENING_RE = re.compile(
     r"^(?:this\s+video|the\s+video|in\s+this\s+video|the\s+clip|this\s+clip)\b",
     re.I,
 )
+# Common abbreviations whose trailing period must not terminate the sentence.
+_ABBREV_DOT_RE = re.compile(
+    r"\b(Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|vs|etc|No|Fig|approx|U\.S|U\.K)\.",
+    re.I,
+)
 
 
 def parse_fineaction_parent_id(video_name: str) -> tuple[str | None, int | None]:
@@ -76,7 +81,9 @@ def extract_opening_overview_candidate(caption: str) -> tuple[str | None, bool]:
     text = (caption or "").strip()
     if not text:
         return None, False
-    sents = [s.strip() for s in re.split(r"(?<=[.!?])\s+", text) if s.strip()]
+    # Protect common abbreviations (e.g. "Mr. Trump") from being treated as sentence ends.
+    protected = _ABBREV_DOT_RE.sub(lambda m: m.group(0).replace(".", ""), text)
+    sents = [s.replace("", ".").strip() for s in re.split(r"(?<=[.!?])\s+", protected) if s.strip()]
     if not sents:
         return None, False
     first = sents[0]

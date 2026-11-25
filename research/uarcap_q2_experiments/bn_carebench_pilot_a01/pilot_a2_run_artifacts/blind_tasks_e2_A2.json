@@ -1,0 +1,2569 @@
+{
+  "schema_version": "uarcap-q2-blind-e2-v2",
+  "bundle_version": "e2-v2",
+  "annotator_id": "A2",
+  "instructions": "Phase 1: Watch the muted video ONLY and record 1-2 main core events before revealing captions. Phase 2: Evaluate each anonymous caption's claims strictly against what is visible in the video.",
+  "tasks": [
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V001_6d98d1",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00013274_1.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V001_6d98d1_C01",
+          "caption": "a makeup artist is applying eyeliner to a model",
+          "claims": [
+            {
+              "claim_id": "V001_6d98d1_C01_F01",
+              "text": "A makeup artist is applying eyeliner.",
+              "norm_key": "a makeup artist is applying eyeliner"
+            },
+            {
+              "claim_id": "V001_6d98d1_C01_F02",
+              "text": "The eyeliner is being applied to a model.",
+              "norm_key": "the eyeliner is being applied to a model"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V001_6d98d1_C02",
+          "caption": "a man is applying makeup to a woman",
+          "claims": [
+            {
+              "claim_id": "V001_6d98d1_C02_F01",
+              "text": "A man is applying makeup.",
+              "norm_key": "a man is applying makeup"
+            },
+            {
+              "claim_id": "V001_6d98d1_C02_F02",
+              "text": "The recipient of the makeup is a woman.",
+              "norm_key": "the recipient of the makeup is a woman"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V001_6d98d1_C03",
+          "caption": "a man is applying makeup to a woman",
+          "claims": [
+            {
+              "claim_id": "V001_6d98d1_C03_F01",
+              "text": "A man is applying makeup.",
+              "norm_key": "a man is applying makeup"
+            },
+            {
+              "claim_id": "V001_6d98d1_C03_F02",
+              "text": "The recipient of the makeup is a woman.",
+              "norm_key": "the recipient of the makeup is a woman"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V002_bffa9c",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00011374_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00011374_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V002_bffa9c_C01",
+          "caption": "a man is playing a saxophone",
+          "claims": [
+            {
+              "claim_id": "V002_bffa9c_C01_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V002_bffa9c_C01_F02",
+              "text": "The man is playing an instrument.",
+              "norm_key": "the man is playing an instrument"
+            },
+            {
+              "claim_id": "V002_bffa9c_C01_F03",
+              "text": "The instrument is a saxophone.",
+              "norm_key": "the instrument is a saxophone"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V002_bffa9c_C02",
+          "caption": "a man is playing a saxophone",
+          "claims": [
+            {
+              "claim_id": "V002_bffa9c_C02_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V002_bffa9c_C02_F02",
+              "text": "The man is playing an instrument.",
+              "norm_key": "the man is playing an instrument"
+            },
+            {
+              "claim_id": "V002_bffa9c_C02_F03",
+              "text": "The instrument is a saxophone.",
+              "norm_key": "the instrument is a saxophone"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V002_bffa9c_C03",
+          "caption": "a man is playing a saxophone",
+          "claims": [
+            {
+              "claim_id": "V002_bffa9c_C03_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V002_bffa9c_C03_F02",
+              "text": "The man is playing an instrument.",
+              "norm_key": "the man is playing an instrument"
+            },
+            {
+              "claim_id": "V002_bffa9c_C03_F03",
+              "text": "The instrument is a saxophone.",
+              "norm_key": "the instrument is a saxophone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V003_fdbd57",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002328_16.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V003_fdbd57_C01",
+          "caption": "a man is shaving his hair",
+          "claims": [
+            {
+              "claim_id": "V003_fdbd57_C01_F01",
+              "text": "A man is shaving hair.",
+              "norm_key": "a man is shaving hair"
+            },
+            {
+              "claim_id": "V003_fdbd57_C01_F02",
+              "text": "The hair being shaved belongs to a man.",
+              "norm_key": "the hair being shaved belongs to a man"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V003_fdbd57_C02",
+          "caption": "a man is shaving his head",
+          "claims": [
+            {
+              "claim_id": "V003_fdbd57_C02_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V003_fdbd57_C02_F02",
+              "text": "The man is shaving his head.",
+              "norm_key": "the man is shaving his head"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V003_fdbd57_C03",
+          "caption": "a man is shaving his hair",
+          "claims": [
+            {
+              "claim_id": "V003_fdbd57_C03_F01",
+              "text": "A man is shaving hair.",
+              "norm_key": "a man is shaving hair"
+            },
+            {
+              "claim_id": "V003_fdbd57_C03_F02",
+              "text": "The hair being shaved belongs to a man.",
+              "norm_key": "the hair being shaved belongs to a man"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V004_348654",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002093_8.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V004_348654_C01",
+          "caption": "a woman is applying makeup to her face with a black eyeliner",
+          "claims": [
+            {
+              "claim_id": "V004_348654_C01_F01",
+              "text": "A woman is present.",
+              "norm_key": "a woman is present"
+            },
+            {
+              "claim_id": "V004_348654_C01_F02",
+              "text": "The woman is applying makeup.",
+              "norm_key": "the woman is applying makeup"
+            },
+            {
+              "claim_id": "V004_348654_C01_F03",
+              "text": "The makeup is being applied to the woman's face.",
+              "norm_key": "the makeup is being applied to the woman's face"
+            },
+            {
+              "claim_id": "V004_348654_C01_F04",
+              "text": "The makeup is black eyeliner.",
+              "norm_key": "the makeup is black eyeliner"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V004_348654_C02",
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim_id": "V004_348654_C02_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V004_348654_C02_F02",
+              "text": "The woman is applying makeup.",
+              "norm_key": "the woman is applying makeup"
+            },
+            {
+              "claim_id": "V004_348654_C02_F03",
+              "text": "The makeup is being applied to the woman's face.",
+              "norm_key": "the makeup is being applied to the woman's face"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V004_348654_C03",
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim_id": "V004_348654_C03_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V004_348654_C03_F02",
+              "text": "The woman is applying makeup.",
+              "norm_key": "the woman is applying makeup"
+            },
+            {
+              "claim_id": "V004_348654_C03_F03",
+              "text": "The makeup is being applied to the woman's face.",
+              "norm_key": "the makeup is being applied to the woman's face"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V005_8a4026",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00012568_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012568_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V005_8a4026_C01",
+          "caption": "a man is pole vaulting",
+          "claims": [
+            {
+              "claim_id": "V005_8a4026_C01_F01",
+              "text": "A man is pole vaulting.",
+              "norm_key": "a man is pole vaulting"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V005_8a4026_C02",
+          "caption": "a man is pole vaulting",
+          "claims": [
+            {
+              "claim_id": "V005_8a4026_C02_F01",
+              "text": "A man is pole vaulting.",
+              "norm_key": "a man is pole vaulting"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V005_8a4026_C03",
+          "caption": "a man is pole vaulting",
+          "claims": [
+            {
+              "claim_id": "V005_8a4026_C03_F01",
+              "text": "A man is pole vaulting.",
+              "norm_key": "a man is pole vaulting"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V006_4c4679",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00005595_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005595_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V006_4c4679_C01",
+          "caption": "two kids are playing with each other",
+          "claims": [
+            {
+              "claim_id": "V006_4c4679_C01_F01",
+              "text": "There are two kids.",
+              "norm_key": "there are two kids"
+            },
+            {
+              "claim_id": "V006_4c4679_C01_F02",
+              "text": "The kids are playing.",
+              "norm_key": "the kids are playing"
+            },
+            {
+              "claim_id": "V006_4c4679_C01_F03",
+              "text": "The kids are playing with each other.",
+              "norm_key": "the kids are playing with each other"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V006_4c4679_C02",
+          "caption": "two kids are playing with each other",
+          "claims": [
+            {
+              "claim_id": "V006_4c4679_C02_F01",
+              "text": "There are two kids.",
+              "norm_key": "there are two kids"
+            },
+            {
+              "claim_id": "V006_4c4679_C02_F02",
+              "text": "The kids are playing.",
+              "norm_key": "the kids are playing"
+            },
+            {
+              "claim_id": "V006_4c4679_C02_F03",
+              "text": "The kids are playing with each other.",
+              "norm_key": "the kids are playing with each other"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V006_4c4679_C03",
+          "caption": "two kids are playing with each other",
+          "claims": [
+            {
+              "claim_id": "V006_4c4679_C03_F01",
+              "text": "There are two kids.",
+              "norm_key": "there are two kids"
+            },
+            {
+              "claim_id": "V006_4c4679_C03_F02",
+              "text": "The kids are playing.",
+              "norm_key": "the kids are playing"
+            },
+            {
+              "claim_id": "V006_4c4679_C03_F03",
+              "text": "The kids are playing with each other.",
+              "norm_key": "the kids are playing with each other"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V007_818356",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00009795_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009795_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V007_818356_C01",
+          "caption": "a man is playing an accordion",
+          "claims": [
+            {
+              "claim_id": "V007_818356_C01_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V007_818356_C01_F02",
+              "text": "The man is playing an accordion.",
+              "norm_key": "the man is playing an accordion"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V007_818356_C02",
+          "caption": "a man is playing the accordion",
+          "claims": [
+            {
+              "claim_id": "V007_818356_C02_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V007_818356_C02_F02",
+              "text": "The man is playing an instrument.",
+              "norm_key": "the man is playing an instrument"
+            },
+            {
+              "claim_id": "V007_818356_C02_F03",
+              "text": "The instrument is an accordion.",
+              "norm_key": "the instrument is an accordion"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V007_818356_C03",
+          "caption": "a man is playing an accordion",
+          "claims": [
+            {
+              "claim_id": "V007_818356_C03_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V007_818356_C03_F02",
+              "text": "The man is playing an accordion.",
+              "norm_key": "the man is playing an accordion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V008_922521",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00005805_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005805_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V008_922521_C01",
+          "caption": "a man is cutting wood with an axe",
+          "claims": [
+            {
+              "claim_id": "V008_922521_C01_F01",
+              "text": "A man is present.",
+              "norm_key": "a man is present"
+            },
+            {
+              "claim_id": "V008_922521_C01_F02",
+              "text": "The man is cutting wood.",
+              "norm_key": "the man is cutting wood"
+            },
+            {
+              "claim_id": "V008_922521_C01_F03",
+              "text": "The man is using an axe.",
+              "norm_key": "the man is using an axe"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V008_922521_C02",
+          "caption": "a man is cutting wood with an axe",
+          "claims": [
+            {
+              "claim_id": "V008_922521_C02_F01",
+              "text": "A man is present.",
+              "norm_key": "a man is present"
+            },
+            {
+              "claim_id": "V008_922521_C02_F02",
+              "text": "The man is cutting wood.",
+              "norm_key": "the man is cutting wood"
+            },
+            {
+              "claim_id": "V008_922521_C02_F03",
+              "text": "The man is using an axe.",
+              "norm_key": "the man is using an axe"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V008_922521_C03",
+          "caption": "a man is cutting wood with an axe",
+          "claims": [
+            {
+              "claim_id": "V008_922521_C03_F01",
+              "text": "A man is present.",
+              "norm_key": "a man is present"
+            },
+            {
+              "claim_id": "V008_922521_C03_F02",
+              "text": "The man is cutting wood.",
+              "norm_key": "the man is cutting wood"
+            },
+            {
+              "claim_id": "V008_922521_C03_F03",
+              "text": "The man is using an axe.",
+              "norm_key": "the man is using an axe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V009_2ef4b2",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00015732_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015732_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V009_2ef4b2_C01",
+          "caption": "a man is mowing his lawn",
+          "claims": [
+            {
+              "claim_id": "V009_2ef4b2_C01_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V009_2ef4b2_C01_F02",
+              "text": "The man is mowing a lawn.",
+              "norm_key": "the man is mowing a lawn"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V009_2ef4b2_C02",
+          "caption": "a man is mowing his lawn",
+          "claims": [
+            {
+              "claim_id": "V009_2ef4b2_C02_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V009_2ef4b2_C02_F02",
+              "text": "The man is mowing a lawn.",
+              "norm_key": "the man is mowing a lawn"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V009_2ef4b2_C03",
+          "caption": "a man is mowing his lawn",
+          "claims": [
+            {
+              "claim_id": "V009_2ef4b2_C03_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V009_2ef4b2_C03_F02",
+              "text": "The man is mowing a lawn.",
+              "norm_key": "the man is mowing a lawn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V010_891a42",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00010336_1.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010336_1/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V010_891a42_C01",
+          "caption": "two musicians are playing a violin and a cello",
+          "claims": [
+            {
+              "claim_id": "V010_891a42_C01_F01",
+              "text": "There are two musicians.",
+              "norm_key": "there are two musicians"
+            },
+            {
+              "claim_id": "V010_891a42_C01_F02",
+              "text": "One musician is playing a violin.",
+              "norm_key": "one musician is playing a violin"
+            },
+            {
+              "claim_id": "V010_891a42_C01_F03",
+              "text": "One musician is playing a cello.",
+              "norm_key": "one musician is playing a cello"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V010_891a42_C02",
+          "caption": "two people are playing instruments",
+          "claims": [
+            {
+              "claim_id": "V010_891a42_C02_F01",
+              "text": "There are two people.",
+              "norm_key": "there are two people"
+            },
+            {
+              "claim_id": "V010_891a42_C02_F02",
+              "text": "The people are playing instruments.",
+              "norm_key": "the people are playing instruments"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V010_891a42_C03",
+          "caption": "two people are playing music",
+          "claims": [
+            {
+              "claim_id": "V010_891a42_C03_F01",
+              "text": "There are two people.",
+              "norm_key": "there are two people"
+            },
+            {
+              "claim_id": "V010_891a42_C03_F02",
+              "text": "The people are playing music.",
+              "norm_key": "the people are playing music"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V011_19c692",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00013412_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013412_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V011_19c692_C01",
+          "caption": "donald trump and barack obama are shaking hands",
+          "claims": [
+            {
+              "claim_id": "V011_19c692_C01_F01",
+              "text": "Donald Trump is a person.",
+              "norm_key": "donald trump is a person"
+            },
+            {
+              "claim_id": "V011_19c692_C01_F02",
+              "text": "Barack Obama is a person.",
+              "norm_key": "barack obama is a person"
+            },
+            {
+              "claim_id": "V011_19c692_C01_F03",
+              "text": "Donald Trump and Barack Obama are shaking hands.",
+              "norm_key": "donald trump and barack obama are shaking hands"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V011_19c692_C02",
+          "caption": "the president of the united states is shaking hands with the president of north korea",
+          "claims": [
+            {
+              "claim_id": "V011_19c692_C02_F01",
+              "text": "The president of the United States is shaking hands with someone.",
+              "norm_key": "the president of the united states is shaking hands with someone"
+            },
+            {
+              "claim_id": "V011_19c692_C02_F02",
+              "text": "The person the president of the United States is shaking hands with is the president of North Korea.",
+              "norm_key": "the person the president of the united states is shaking hands with is the president of north korea"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V011_19c692_C03",
+          "caption": "donald trump and barack obama are shaking hands",
+          "claims": [
+            {
+              "claim_id": "V011_19c692_C03_F01",
+              "text": "Donald Trump is a person.",
+              "norm_key": "donald trump is a person"
+            },
+            {
+              "claim_id": "V011_19c692_C03_F02",
+              "text": "Barack Obama is a person.",
+              "norm_key": "barack obama is a person"
+            },
+            {
+              "claim_id": "V011_19c692_C03_F03",
+              "text": "Donald Trump and Barack Obama are shaking hands.",
+              "norm_key": "donald trump and barack obama are shaking hands"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V012_afe4c1",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00007888_2.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00007888_2/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V012_afe4c1_C01",
+          "caption": "a woman is jumping over a hurdle",
+          "claims": [
+            {
+              "claim_id": "V012_afe4c1_C01_F01",
+              "text": "A woman is jumping.",
+              "norm_key": "a woman is jumping"
+            },
+            {
+              "claim_id": "V012_afe4c1_C01_F02",
+              "text": "The woman is jumping over a hurdle.",
+              "norm_key": "the woman is jumping over a hurdle"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V012_afe4c1_C02",
+          "caption": "a woman is jumping over a hurdle",
+          "claims": [
+            {
+              "claim_id": "V012_afe4c1_C02_F01",
+              "text": "A woman is jumping.",
+              "norm_key": "a woman is jumping"
+            },
+            {
+              "claim_id": "V012_afe4c1_C02_F02",
+              "text": "The woman is jumping over a hurdle.",
+              "norm_key": "the woman is jumping over a hurdle"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V012_afe4c1_C03",
+          "caption": "a woman is jumping over hurdles on a track",
+          "claims": [
+            {
+              "claim_id": "V012_afe4c1_C03_F01",
+              "text": "A woman is jumping.",
+              "norm_key": "a woman is jumping"
+            },
+            {
+              "claim_id": "V012_afe4c1_C03_F02",
+              "text": "The woman is jumping over hurdles.",
+              "norm_key": "the woman is jumping over hurdles"
+            },
+            {
+              "claim_id": "V012_afe4c1_C03_F03",
+              "text": "The hurdles are on a track.",
+              "norm_key": "the hurdles are on a track"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V013_d3a324",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00006909_1.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V013_d3a324_C01",
+          "caption": "a woman is feeding a baby",
+          "claims": [
+            {
+              "claim_id": "V013_d3a324_C01_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V013_d3a324_C01_F02",
+              "text": "A baby exists.",
+              "norm_key": "a baby exists"
+            },
+            {
+              "claim_id": "V013_d3a324_C01_F03",
+              "text": "The woman is feeding the baby.",
+              "norm_key": "the woman is feeding the baby"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V013_d3a324_C02",
+          "caption": "a woman is feeding a baby",
+          "claims": [
+            {
+              "claim_id": "V013_d3a324_C02_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V013_d3a324_C02_F02",
+              "text": "A baby exists.",
+              "norm_key": "a baby exists"
+            },
+            {
+              "claim_id": "V013_d3a324_C02_F03",
+              "text": "The woman is feeding the baby.",
+              "norm_key": "the woman is feeding the baby"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V013_d3a324_C03",
+          "caption": "a woman is feeding a baby",
+          "claims": [
+            {
+              "claim_id": "V013_d3a324_C03_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V013_d3a324_C03_F02",
+              "text": "A baby exists.",
+              "norm_key": "a baby exists"
+            },
+            {
+              "claim_id": "V013_d3a324_C03_F03",
+              "text": "The woman is feeding the baby.",
+              "norm_key": "the woman is feeding the baby"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V014_aab12a",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00005904_11.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V014_aab12a_C01",
+          "caption": "a man in a red shirt is cutting vegetables on a cutting board",
+          "claims": [
+            {
+              "claim_id": "V014_aab12a_C01_F01",
+              "text": "A man is present.",
+              "norm_key": "a man is present"
+            },
+            {
+              "claim_id": "V014_aab12a_C01_F02",
+              "text": "The man is wearing a red shirt.",
+              "norm_key": "the man is wearing a red shirt"
+            },
+            {
+              "claim_id": "V014_aab12a_C01_F03",
+              "text": "The man is cutting vegetables.",
+              "norm_key": "the man is cutting vegetables"
+            },
+            {
+              "claim_id": "V014_aab12a_C01_F04",
+              "text": "The vegetables are on a cutting board.",
+              "norm_key": "the vegetables are on a cutting board"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V014_aab12a_C02",
+          "caption": "a man in a red shirt is cutting vegetables on a cutting board",
+          "claims": [
+            {
+              "claim_id": "V014_aab12a_C02_F01",
+              "text": "A man is present.",
+              "norm_key": "a man is present"
+            },
+            {
+              "claim_id": "V014_aab12a_C02_F02",
+              "text": "The man is wearing a red shirt.",
+              "norm_key": "the man is wearing a red shirt"
+            },
+            {
+              "claim_id": "V014_aab12a_C02_F03",
+              "text": "The man is cutting vegetables.",
+              "norm_key": "the man is cutting vegetables"
+            },
+            {
+              "claim_id": "V014_aab12a_C02_F04",
+              "text": "The vegetables are on a cutting board.",
+              "norm_key": "the vegetables are on a cutting board"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V014_aab12a_C03",
+          "caption": "a chef is cutting vegetables on a cutting board with a knife",
+          "claims": [
+            {
+              "claim_id": "V014_aab12a_C03_F01",
+              "text": "A chef is present.",
+              "norm_key": "a chef is present"
+            },
+            {
+              "claim_id": "V014_aab12a_C03_F02",
+              "text": "The chef is cutting vegetables.",
+              "norm_key": "the chef is cutting vegetables"
+            },
+            {
+              "claim_id": "V014_aab12a_C03_F03",
+              "text": "The vegetables are on a cutting board.",
+              "norm_key": "the vegetables are on a cutting board"
+            },
+            {
+              "claim_id": "V014_aab12a_C03_F04",
+              "text": "A knife is being used.",
+              "norm_key": "a knife is being used"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V015_f5fe4a",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00008320_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008320_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V015_f5fe4a_C01",
+          "caption": "a woman is petting a dog",
+          "claims": [
+            {
+              "claim_id": "V015_f5fe4a_C01_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V015_f5fe4a_C01_F02",
+              "text": "The woman is petting a dog.",
+              "norm_key": "the woman is petting a dog"
+            },
+            {
+              "claim_id": "V015_f5fe4a_C01_F03",
+              "text": "A dog exists.",
+              "norm_key": "a dog exists"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V015_f5fe4a_C02",
+          "caption": "a woman is talking about her dog",
+          "claims": [
+            {
+              "claim_id": "V015_f5fe4a_C02_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V015_f5fe4a_C02_F02",
+              "text": "The woman is talking.",
+              "norm_key": "the woman is talking"
+            },
+            {
+              "claim_id": "V015_f5fe4a_C02_F03",
+              "text": "The woman has a dog.",
+              "norm_key": "the woman has a dog"
+            },
+            {
+              "claim_id": "V015_f5fe4a_C02_F04",
+              "text": "The dog is an animal.",
+              "norm_key": "the dog is an animal"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V015_f5fe4a_C03",
+          "caption": "a woman is petting a dog",
+          "claims": [
+            {
+              "claim_id": "V015_f5fe4a_C03_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V015_f5fe4a_C03_F02",
+              "text": "The woman is petting a dog.",
+              "norm_key": "the woman is petting a dog"
+            },
+            {
+              "claim_id": "V015_f5fe4a_C03_F03",
+              "text": "A dog exists.",
+              "norm_key": "a dog exists"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V016_26f1c0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00012062_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012062_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V016_26f1c0_C01",
+          "caption": "a boy is playing a trumpet",
+          "claims": [
+            {
+              "claim_id": "V016_26f1c0_C01_F01",
+              "text": "A boy exists.",
+              "norm_key": "a boy exists"
+            },
+            {
+              "claim_id": "V016_26f1c0_C01_F02",
+              "text": "The boy is playing an instrument.",
+              "norm_key": "the boy is playing an instrument"
+            },
+            {
+              "claim_id": "V016_26f1c0_C01_F03",
+              "text": "The instrument is a trumpet.",
+              "norm_key": "the instrument is a trumpet"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V016_26f1c0_C02",
+          "caption": "a boy is playing a trumpet",
+          "claims": [
+            {
+              "claim_id": "V016_26f1c0_C02_F01",
+              "text": "A boy exists.",
+              "norm_key": "a boy exists"
+            },
+            {
+              "claim_id": "V016_26f1c0_C02_F02",
+              "text": "The boy is playing an instrument.",
+              "norm_key": "the boy is playing an instrument"
+            },
+            {
+              "claim_id": "V016_26f1c0_C02_F03",
+              "text": "The instrument is a trumpet.",
+              "norm_key": "the instrument is a trumpet"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V016_26f1c0_C03",
+          "caption": "a boy is playing a trumpet",
+          "claims": [
+            {
+              "claim_id": "V016_26f1c0_C03_F01",
+              "text": "A boy exists.",
+              "norm_key": "a boy exists"
+            },
+            {
+              "claim_id": "V016_26f1c0_C03_F02",
+              "text": "The boy is playing an instrument.",
+              "norm_key": "the boy is playing an instrument"
+            },
+            {
+              "claim_id": "V016_26f1c0_C03_F03",
+              "text": "The instrument is a trumpet.",
+              "norm_key": "the instrument is a trumpet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V017_29d184",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00015614_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V017_29d184_C01",
+          "caption": "a man is operating a crane",
+          "claims": [
+            {
+              "claim_id": "V017_29d184_C01_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V017_29d184_C01_F02",
+              "text": "The man is operating a crane.",
+              "norm_key": "the man is operating a crane"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V017_29d184_C02",
+          "caption": "a man is operating a crane",
+          "claims": [
+            {
+              "claim_id": "V017_29d184_C02_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V017_29d184_C02_F02",
+              "text": "The man is operating a crane.",
+              "norm_key": "the man is operating a crane"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V017_29d184_C03",
+          "caption": "a crane is lifting a tree",
+          "claims": [
+            {
+              "claim_id": "V017_29d184_C03_F01",
+              "text": "A crane is lifting a tree.",
+              "norm_key": "a crane is lifting a tree"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V018_516521",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00010075_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V018_516521_C01",
+          "caption": "a man is playing a bagpipe",
+          "claims": [
+            {
+              "claim_id": "V018_516521_C01_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V018_516521_C01_F02",
+              "text": "The man is playing an instrument.",
+              "norm_key": "the man is playing an instrument"
+            },
+            {
+              "claim_id": "V018_516521_C01_F03",
+              "text": "The instrument is a bagpipe.",
+              "norm_key": "the instrument is a bagpipe"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V018_516521_C02",
+          "caption": "a man is playing a bagpipe",
+          "claims": [
+            {
+              "claim_id": "V018_516521_C02_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V018_516521_C02_F02",
+              "text": "The man is playing an instrument.",
+              "norm_key": "the man is playing an instrument"
+            },
+            {
+              "claim_id": "V018_516521_C02_F03",
+              "text": "The instrument is a bagpipe.",
+              "norm_key": "the instrument is a bagpipe"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V018_516521_C03",
+          "caption": "a man in a kilt is playing a bagpipe",
+          "claims": [
+            {
+              "claim_id": "V018_516521_C03_F01",
+              "text": "A man is present.",
+              "norm_key": "a man is present"
+            },
+            {
+              "claim_id": "V018_516521_C03_F02",
+              "text": "The man is wearing a kilt.",
+              "norm_key": "the man is wearing a kilt"
+            },
+            {
+              "claim_id": "V018_516521_C03_F03",
+              "text": "The man is playing a bagpipe.",
+              "norm_key": "the man is playing a bagpipe"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V019_6b6c28",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002077_10.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002077_10/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V019_6b6c28_C01",
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim_id": "V019_6b6c28_C01_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V019_6b6c28_C01_F02",
+              "text": "The woman is applying makeup.",
+              "norm_key": "the woman is applying makeup"
+            },
+            {
+              "claim_id": "V019_6b6c28_C01_F03",
+              "text": "The makeup is being applied to the woman's face.",
+              "norm_key": "the makeup is being applied to the woman's face"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V019_6b6c28_C02",
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim_id": "V019_6b6c28_C02_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V019_6b6c28_C02_F02",
+              "text": "The woman is applying makeup.",
+              "norm_key": "the woman is applying makeup"
+            },
+            {
+              "claim_id": "V019_6b6c28_C02_F03",
+              "text": "The makeup is being applied to the woman's face.",
+              "norm_key": "the makeup is being applied to the woman's face"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V019_6b6c28_C03",
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim_id": "V019_6b6c28_C03_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V019_6b6c28_C03_F02",
+              "text": "The woman is applying makeup.",
+              "norm_key": "the woman is applying makeup"
+            },
+            {
+              "claim_id": "V019_6b6c28_C03_F03",
+              "text": "The makeup is being applied to the woman's face.",
+              "norm_key": "the makeup is being applied to the woman's face"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V020_5daa85",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00006714_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006714_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V020_5daa85_C01",
+          "caption": "a man is climbing a tree",
+          "claims": [
+            {
+              "claim_id": "V020_5daa85_C01_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V020_5daa85_C01_F02",
+              "text": "The man is climbing.",
+              "norm_key": "the man is climbing"
+            },
+            {
+              "claim_id": "V020_5daa85_C01_F03",
+              "text": "A tree exists.",
+              "norm_key": "a tree exists"
+            },
+            {
+              "claim_id": "V020_5daa85_C01_F04",
+              "text": "The man is climbing the tree.",
+              "norm_key": "the man is climbing the tree"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V020_5daa85_C02",
+          "caption": "a man is climbing a tree",
+          "claims": [
+            {
+              "claim_id": "V020_5daa85_C02_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V020_5daa85_C02_F02",
+              "text": "The man is climbing.",
+              "norm_key": "the man is climbing"
+            },
+            {
+              "claim_id": "V020_5daa85_C02_F03",
+              "text": "A tree exists.",
+              "norm_key": "a tree exists"
+            },
+            {
+              "claim_id": "V020_5daa85_C02_F04",
+              "text": "The man is climbing the tree.",
+              "norm_key": "the man is climbing the tree"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V020_5daa85_C03",
+          "caption": "a man is climbing a tree",
+          "claims": [
+            {
+              "claim_id": "V020_5daa85_C03_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V020_5daa85_C03_F02",
+              "text": "The man is climbing.",
+              "norm_key": "the man is climbing"
+            },
+            {
+              "claim_id": "V020_5daa85_C03_F03",
+              "text": "A tree exists.",
+              "norm_key": "a tree exists"
+            },
+            {
+              "claim_id": "V020_5daa85_C03_F04",
+              "text": "The man is climbing the tree.",
+              "norm_key": "the man is climbing the tree"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V021_84a4fa",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00015865_14.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015865_14/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V021_84a4fa_C01",
+          "caption": "a woman is running on a track",
+          "claims": [
+            {
+              "claim_id": "V021_84a4fa_C01_F01",
+              "text": "A woman is running.",
+              "norm_key": "a woman is running"
+            },
+            {
+              "claim_id": "V021_84a4fa_C01_F02",
+              "text": "The woman is on a track.",
+              "norm_key": "the woman is on a track"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V021_84a4fa_C02",
+          "caption": "a woman is running and jumping in a track meet",
+          "claims": [
+            {
+              "claim_id": "V021_84a4fa_C02_F01",
+              "text": "A woman is running.",
+              "norm_key": "a woman is running"
+            },
+            {
+              "claim_id": "V021_84a4fa_C02_F02",
+              "text": "A woman is jumping.",
+              "norm_key": "a woman is jumping"
+            },
+            {
+              "claim_id": "V021_84a4fa_C02_F03",
+              "text": "The activity is happening in a track meet.",
+              "norm_key": "the activity is happening in a track meet"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V021_84a4fa_C03",
+          "caption": "a woman is running on a track in a stadium",
+          "claims": [
+            {
+              "claim_id": "V021_84a4fa_C03_F01",
+              "text": "A woman is running.",
+              "norm_key": "a woman is running"
+            },
+            {
+              "claim_id": "V021_84a4fa_C03_F02",
+              "text": "The woman is on a track.",
+              "norm_key": "the woman is on a track"
+            },
+            {
+              "claim_id": "V021_84a4fa_C03_F03",
+              "text": "The track is in a stadium.",
+              "norm_key": "the track is in a stadium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V022_c760a6",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00008693_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V022_c760a6_C01",
+          "caption": "a man in a white shirt walks to the starting line of a track and field event",
+          "claims": [
+            {
+              "claim_id": "V022_c760a6_C01_F01",
+              "text": "A man is present.",
+              "norm_key": "a man is present"
+            },
+            {
+              "claim_id": "V022_c760a6_C01_F02",
+              "text": "The man is wearing a white shirt.",
+              "norm_key": "the man is wearing a white shirt"
+            },
+            {
+              "claim_id": "V022_c760a6_C01_F03",
+              "text": "The man is walking.",
+              "norm_key": "the man is walking"
+            },
+            {
+              "claim_id": "V022_c760a6_C01_F04",
+              "text": "The man is walking to a starting line.",
+              "norm_key": "the man is walking to a starting line"
+            },
+            {
+              "claim_id": "V022_c760a6_C01_F05",
+              "text": "The starting line is part of a track and field event.",
+              "norm_key": "the starting line is part of a track and field event"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V022_c760a6_C02",
+          "caption": "a man in a white shirt walks to the starting line of a track and field event",
+          "claims": [
+            {
+              "claim_id": "V022_c760a6_C02_F01",
+              "text": "A man is present.",
+              "norm_key": "a man is present"
+            },
+            {
+              "claim_id": "V022_c760a6_C02_F02",
+              "text": "The man is wearing a white shirt.",
+              "norm_key": "the man is wearing a white shirt"
+            },
+            {
+              "claim_id": "V022_c760a6_C02_F03",
+              "text": "The man is walking.",
+              "norm_key": "the man is walking"
+            },
+            {
+              "claim_id": "V022_c760a6_C02_F04",
+              "text": "The man is walking to a starting line.",
+              "norm_key": "the man is walking to a starting line"
+            },
+            {
+              "claim_id": "V022_c760a6_C02_F05",
+              "text": "The starting line is part of a track and field event.",
+              "norm_key": "the starting line is part of a track and field event"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V022_c760a6_C03",
+          "caption": "a man in a white shirt and black pants walks to the starting line of a track and field event",
+          "claims": [
+            {
+              "claim_id": "V022_c760a6_C03_F01",
+              "text": "A man is present.",
+              "norm_key": "a man is present"
+            },
+            {
+              "claim_id": "V022_c760a6_C03_F02",
+              "text": "The man is wearing a white shirt.",
+              "norm_key": "the man is wearing a white shirt"
+            },
+            {
+              "claim_id": "V022_c760a6_C03_F03",
+              "text": "The man is wearing black pants.",
+              "norm_key": "the man is wearing black pants"
+            },
+            {
+              "claim_id": "V022_c760a6_C03_F04",
+              "text": "The man is walking.",
+              "norm_key": "the man is walking"
+            },
+            {
+              "claim_id": "V022_c760a6_C03_F05",
+              "text": "The man is walking to a starting line.",
+              "norm_key": "the man is walking to a starting line"
+            },
+            {
+              "claim_id": "V022_c760a6_C03_F06",
+              "text": "The starting line is for a track and field event.",
+              "norm_key": "the starting line is for a track and field event"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V023_0d6acd",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00012246_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00012246_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V023_0d6acd_C01",
+          "caption": "a boy is playing a violin",
+          "claims": [
+            {
+              "claim_id": "V023_0d6acd_C01_F01",
+              "text": "A boy exists.",
+              "norm_key": "a boy exists"
+            },
+            {
+              "claim_id": "V023_0d6acd_C01_F02",
+              "text": "The boy is playing an instrument.",
+              "norm_key": "the boy is playing an instrument"
+            },
+            {
+              "claim_id": "V023_0d6acd_C01_F03",
+              "text": "The instrument is a violin.",
+              "norm_key": "the instrument is a violin"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V023_0d6acd_C02",
+          "caption": "a boy is playing a violin",
+          "claims": [
+            {
+              "claim_id": "V023_0d6acd_C02_F01",
+              "text": "A boy exists.",
+              "norm_key": "a boy exists"
+            },
+            {
+              "claim_id": "V023_0d6acd_C02_F02",
+              "text": "The boy is playing an instrument.",
+              "norm_key": "the boy is playing an instrument"
+            },
+            {
+              "claim_id": "V023_0d6acd_C02_F03",
+              "text": "The instrument is a violin.",
+              "norm_key": "the instrument is a violin"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V023_0d6acd_C03",
+          "caption": "a boy is playing the violin",
+          "claims": [
+            {
+              "claim_id": "V023_0d6acd_C03_F01",
+              "text": "A boy exists.",
+              "norm_key": "a boy exists"
+            },
+            {
+              "claim_id": "V023_0d6acd_C03_F02",
+              "text": "The boy is playing an instrument.",
+              "norm_key": "the boy is playing an instrument"
+            },
+            {
+              "claim_id": "V023_0d6acd_C03_F03",
+              "text": "The instrument is a violin.",
+              "norm_key": "the instrument is a violin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V024_48c1ab",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00016057_5.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V024_48c1ab_C01",
+          "caption": "a woman is cooking",
+          "claims": [
+            {
+              "claim_id": "V024_48c1ab_C01_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V024_48c1ab_C01_F02",
+              "text": "The woman is cooking.",
+              "norm_key": "the woman is cooking"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V024_48c1ab_C02",
+          "caption": "a woman is preparing a vegetable dish",
+          "claims": [
+            {
+              "claim_id": "V024_48c1ab_C02_F01",
+              "text": "A woman is present.",
+              "norm_key": "a woman is present"
+            },
+            {
+              "claim_id": "V024_48c1ab_C02_F02",
+              "text": "The woman is preparing a dish.",
+              "norm_key": "the woman is preparing a dish"
+            },
+            {
+              "claim_id": "V024_48c1ab_C02_F03",
+              "text": "The dish contains vegetables.",
+              "norm_key": "the dish contains vegetables"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V024_48c1ab_C03",
+          "caption": "a woman is cooking",
+          "claims": [
+            {
+              "claim_id": "V024_48c1ab_C03_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V024_48c1ab_C03_F02",
+              "text": "The woman is cooking.",
+              "norm_key": "the woman is cooking"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V025_fdd692",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00004040_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00004040_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V025_fdd692_C01",
+          "caption": "people are swimming in a pool",
+          "claims": [
+            {
+              "claim_id": "V025_fdd692_C01_F01",
+              "text": "People are swimming.",
+              "norm_key": "people are swimming"
+            },
+            {
+              "claim_id": "V025_fdd692_C01_F02",
+              "text": "There is a pool.",
+              "norm_key": "there is a pool"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V025_fdd692_C02",
+          "caption": "people are swimming in a pool",
+          "claims": [
+            {
+              "claim_id": "V025_fdd692_C02_F01",
+              "text": "People are swimming.",
+              "norm_key": "people are swimming"
+            },
+            {
+              "claim_id": "V025_fdd692_C02_F02",
+              "text": "There is a pool.",
+              "norm_key": "there is a pool"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V025_fdd692_C03",
+          "caption": "people are swimming in a pool",
+          "claims": [
+            {
+              "claim_id": "V025_fdd692_C03_F01",
+              "text": "People are swimming.",
+              "norm_key": "people are swimming"
+            },
+            {
+              "claim_id": "V025_fdd692_C03_F02",
+              "text": "There is a pool.",
+              "norm_key": "there is a pool"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V026_49decd",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00009485_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00009485_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V026_49decd_C01",
+          "caption": "a boy is cleaning the floor with a broom",
+          "claims": [
+            {
+              "claim_id": "V026_49decd_C01_F01",
+              "text": "A boy exists.",
+              "norm_key": "a boy exists"
+            },
+            {
+              "claim_id": "V026_49decd_C01_F02",
+              "text": "The boy is cleaning the floor.",
+              "norm_key": "the boy is cleaning the floor"
+            },
+            {
+              "claim_id": "V026_49decd_C01_F03",
+              "text": "The boy is using a broom.",
+              "norm_key": "the boy is using a broom"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V026_49decd_C02",
+          "caption": "a boy in a pink shirt is cleaning the floor with a broom",
+          "claims": [
+            {
+              "claim_id": "V026_49decd_C02_F01",
+              "text": "A boy is present.",
+              "norm_key": "a boy is present"
+            },
+            {
+              "claim_id": "V026_49decd_C02_F02",
+              "text": "The boy is wearing a pink shirt.",
+              "norm_key": "the boy is wearing a pink shirt"
+            },
+            {
+              "claim_id": "V026_49decd_C02_F03",
+              "text": "The boy is cleaning the floor.",
+              "norm_key": "the boy is cleaning the floor"
+            },
+            {
+              "claim_id": "V026_49decd_C02_F04",
+              "text": "The boy is using a broom.",
+              "norm_key": "the boy is using a broom"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V026_49decd_C03",
+          "caption": "a boy is cleaning the floor with a broom",
+          "claims": [
+            {
+              "claim_id": "V026_49decd_C03_F01",
+              "text": "A boy exists.",
+              "norm_key": "a boy exists"
+            },
+            {
+              "claim_id": "V026_49decd_C03_F02",
+              "text": "The boy is cleaning the floor.",
+              "norm_key": "the boy is cleaning the floor"
+            },
+            {
+              "claim_id": "V026_49decd_C03_F03",
+              "text": "The boy is using a broom.",
+              "norm_key": "the boy is using a broom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V027_bab408",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00014430_1.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00014430_1/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V027_bab408_C01",
+          "caption": "a man dives into a swimming pool",
+          "claims": [
+            {
+              "claim_id": "V027_bab408_C01_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V027_bab408_C01_F02",
+              "text": "The man is diving.",
+              "norm_key": "the man is diving"
+            },
+            {
+              "claim_id": "V027_bab408_C01_F03",
+              "text": "There is a swimming pool.",
+              "norm_key": "there is a swimming pool"
+            },
+            {
+              "claim_id": "V027_bab408_C01_F04",
+              "text": "The man is diving into the swimming pool.",
+              "norm_key": "the man is diving into the swimming pool"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V027_bab408_C02",
+          "caption": "a man is diving into a pool",
+          "claims": [
+            {
+              "claim_id": "V027_bab408_C02_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V027_bab408_C02_F02",
+              "text": "The man is diving.",
+              "norm_key": "the man is diving"
+            },
+            {
+              "claim_id": "V027_bab408_C02_F03",
+              "text": "There is a pool.",
+              "norm_key": "there is a pool"
+            },
+            {
+              "claim_id": "V027_bab408_C02_F04",
+              "text": "The man is diving into the pool.",
+              "norm_key": "the man is diving into the pool"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V027_bab408_C03",
+          "caption": "a man dives into a swimming pool",
+          "claims": [
+            {
+              "claim_id": "V027_bab408_C03_F01",
+              "text": "A man exists.",
+              "norm_key": "a man exists"
+            },
+            {
+              "claim_id": "V027_bab408_C03_F02",
+              "text": "The man is diving.",
+              "norm_key": "the man is diving"
+            },
+            {
+              "claim_id": "V027_bab408_C03_F03",
+              "text": "There is a swimming pool.",
+              "norm_key": "there is a swimming pool"
+            },
+            {
+              "claim_id": "V027_bab408_C03_F04",
+              "text": "The man is diving into the swimming pool.",
+              "norm_key": "the man is diving into the swimming pool"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V028_dae7dd",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002283_1.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V028_dae7dd_C01",
+          "caption": "a woman is riding a scooter",
+          "claims": [
+            {
+              "claim_id": "V028_dae7dd_C01_F01",
+              "text": "A woman is riding a scooter.",
+              "norm_key": "a woman is riding a scooter"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V028_dae7dd_C02",
+          "caption": "a woman is riding a scooter",
+          "claims": [
+            {
+              "claim_id": "V028_dae7dd_C02_F01",
+              "text": "A woman is riding a scooter.",
+              "norm_key": "a woman is riding a scooter"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V028_dae7dd_C03",
+          "caption": "a girl is riding a scooter",
+          "claims": [
+            {
+              "claim_id": "V028_dae7dd_C03_F01",
+              "text": "A girl is riding a scooter.",
+              "norm_key": "a girl is riding a scooter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V029_46e551",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00005394_0.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005394_0/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V029_46e551_C01",
+          "caption": "people are swimming in a pool",
+          "claims": [
+            {
+              "claim_id": "V029_46e551_C01_F01",
+              "text": "People are swimming.",
+              "norm_key": "people are swimming"
+            },
+            {
+              "claim_id": "V029_46e551_C01_F02",
+              "text": "There is a pool.",
+              "norm_key": "there is a pool"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V029_46e551_C02",
+          "caption": "people are swimming in a pool",
+          "claims": [
+            {
+              "claim_id": "V029_46e551_C02_F01",
+              "text": "People are swimming.",
+              "norm_key": "people are swimming"
+            },
+            {
+              "claim_id": "V029_46e551_C02_F02",
+              "text": "There is a pool.",
+              "norm_key": "there is a pool"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V029_46e551_C03",
+          "caption": "people are swimming in a pool",
+          "claims": [
+            {
+              "claim_id": "V029_46e551_C03_F01",
+              "text": "People are swimming.",
+              "norm_key": "people are swimming"
+            },
+            {
+              "claim_id": "V029_46e551_C03_F02",
+              "text": "There is a pool.",
+              "norm_key": "there is a pool"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "task_type": "E2_FACT_AUDIT",
+      "blind_video_id": "V030_43eda6",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002096_7.mp4",
+      "sampled_frame_paths": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_15.jpg"
+      ],
+      "phase1_core_events_required": true,
+      "captions": [
+        {
+          "blind_caption_id": "V030_43eda6_C01",
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim_id": "V030_43eda6_C01_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V030_43eda6_C01_F02",
+              "text": "The woman is applying makeup.",
+              "norm_key": "the woman is applying makeup"
+            },
+            {
+              "claim_id": "V030_43eda6_C01_F03",
+              "text": "The makeup is being applied to the woman's face.",
+              "norm_key": "the makeup is being applied to the woman's face"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V030_43eda6_C02",
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim_id": "V030_43eda6_C02_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V030_43eda6_C02_F02",
+              "text": "The woman is applying makeup.",
+              "norm_key": "the woman is applying makeup"
+            },
+            {
+              "claim_id": "V030_43eda6_C02_F03",
+              "text": "The makeup is being applied to the woman's face.",
+              "norm_key": "the makeup is being applied to the woman's face"
+            }
+          ]
+        },
+        {
+          "blind_caption_id": "V030_43eda6_C03",
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim_id": "V030_43eda6_C03_F01",
+              "text": "A woman exists.",
+              "norm_key": "a woman exists"
+            },
+            {
+              "claim_id": "V030_43eda6_C03_F02",
+              "text": "The woman is applying makeup.",
+              "norm_key": "the woman is applying makeup"
+            },
+            {
+              "claim_id": "V030_43eda6_C03_F03",
+              "text": "The makeup is being applied to the woman's face.",
+              "norm_key": "the makeup is being applied to the woman's face"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "bundle_sha256": "1677668c3387bb126d10a540f98260b0817bec5c1da1e8d7a82c59c25ef0b038"
+}

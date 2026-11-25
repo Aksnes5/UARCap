@@ -1,0 +1,19 @@
+{
+  "schema_version": "uarcap_q2.pilot_a2_dimension_enrichment.v1",
+  "eval_jsonl": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/a2_ref_fact_eval.jsonl",
+  "backup_jsonl": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/a2_ref_fact_eval.pre_detail_enrich.jsonl",
+  "n_rows": 90,
+  "n_claims": 248,
+  "n_new_detail_labels": 0,
+  "detail_counts": {
+    "object_entity": 100,
+    "attribute": 7,
+    "action_event": 12,
+    "relation_spatial": 1,
+    "mixed": 99,
+    "unclassified": 29
+  },
+  "semantic_sha256_before": "c7ca7f0e4f104213d150ad99eadec007bff44ffdb13ae069e8c3f060b7e92fed",
+  "semantic_sha256_after": "c7ca7f0e4f104213d150ad99eadec007bff44ffdb13ae069e8c3f060b7e92fed",
+  "claim_text_or_label_changed": false
+}

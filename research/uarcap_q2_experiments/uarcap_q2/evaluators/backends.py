@@ -26,6 +26,7 @@ class JudgeBackendConfig:
     gpu_memory_utilization: float = 0.85
     max_model_len: int = 8192
     enable_thinking: bool = False
+    language_model_only: bool = False
 
 
 class JudgeBackend(ABC):
@@ -34,6 +35,10 @@ class JudgeBackend(ABC):
     @abstractmethod
     def complete(self, system_prompt: str, user_prompt: str) -> str:
         """Return raw text response from judge LLM."""
+
+    def complete_batch(self, prompts: list[tuple[str, str]]) -> list[str]:
+        """Default batch adapter; backends with native batching should override this."""
+        return [self.complete(sp, up) for sp, up in prompts]
 
 
 class LocalTransformersJudgeBackend(JudgeBackend):
@@ -88,6 +93,9 @@ class LocalVLLMJudgeBackend(JudgeBackend):
     def _lazy_load(self) -> Any:
         if self._engine is not None:
             return self._engine
+        # FlashInfer's sampling JIT requires a `ninja` binary that is absent in this
+        # shared env; the native vLLM sampler is deterministic at temperature 0.
+        os.environ.setdefault("VLLM_USE_FLASHINFER_SAMPLER", "0")
         from vllm import LLM  # type: ignore[import-not-found]
 
         kwargs: dict[str, Any] = {
@@ -97,6 +105,8 @@ class LocalVLLMJudgeBackend(JudgeBackend):
         }
         if self.cfg.quantization:
             kwargs["quantization"] = self.cfg.quantization
+        if self.cfg.language_model_only:
+            kwargs["language_model_only"] = True
         self._engine = LLM(**kwargs)
         return self._engine
 
@@ -114,7 +124,11 @@ class LocalVLLMJudgeBackend(JudgeBackend):
             sp_obj: Any = SamplingParams(temperature=self.cfg.temperature, max_tokens=self.cfg.max_new_tokens)
         except ImportError:
             sp_obj = {"temperature": self.cfg.temperature, "max_tokens": self.cfg.max_new_tokens}
-        outs = engine.chat(convs, sampling_params=sp_obj, chat_template_kwargs={"enable_thinking": self.cfg.enable_thinking})
+        chat_kwargs: dict[str, Any] = {}
+        if self.cfg.enable_thinking:
+            # Only Qwen-style templates accept this flag; passing it to Gemma/Mistral is unnecessary.
+            chat_kwargs["chat_template_kwargs"] = {"enable_thinking": True}
+        outs = engine.chat(convs, sampling_params=sp_obj, **chat_kwargs)
         res: list[str] = []
         for o in outs:
             txt = str(o.get("text", "")) if isinstance(o, dict) else str(o.outputs[0].text)
@@ -278,6 +292,34 @@ class MockJudgeBackend(JudgeBackend):
             raw_parts = [p.strip(" .") for p in re.split(r"[.;]|,\s+and\s+|\s+and\s+", cap) if p.strip(" .")]
             claims = [p for p in raw_parts if len(p.split()) >= 2] or ([cap.strip(" .")] if cap.strip() else [])
             return json.dumps({"claims": claims}, ensure_ascii=False)
+
+        if "[TASK:CORE_EVENT_CHECK_SINGLE]" in user_prompt:
+            m_cap = re.search(r"CAPTION:\s*(.*?)\nCORE_EVENT:", user_prompt, re.S)
+            m_ev = re.search(r"CORE_EVENT:\s*(.+)", user_prompt, re.S)
+            cap = (m_cap.group(1).strip().lower() if m_cap else "")
+            event = (m_ev.group(1).strip().lower() if m_ev else "")
+            cap_words = set(re.findall(r"[a-z0-9']+", cap))
+            e_words = set(re.findall(r"[a-z0-9']+", event))
+            overlap = len(e_words & cap_words) / max(len(e_words), 1)
+            if overlap >= 0.45:
+                return json.dumps({"label": "entailed", "evidence": "Captured by the caption."})
+            return json.dumps({"label": "unmentioned", "evidence": "Caption omits this event."})
+
+        if "[TASK:CORE_EVENT_CHECK]" in user_prompt:
+            m_cap = re.search(r"CAPTION:\s*(.*?)\nCORE_EVENTS_JSON:", user_prompt, re.S)
+            m_ev = re.search(r"CORE_EVENTS_JSON:\s*(\[.*\])", user_prompt, re.S)
+            cap = (m_cap.group(1).strip().lower() if m_cap else "")
+            cap_words = set(re.findall(r"[a-z0-9']+", cap))
+            events = json.loads(m_ev.group(1)) if m_ev else []
+            verdicts = []
+            for event in events:
+                e_words = set(re.findall(r"[a-z0-9']+", str(event).lower()))
+                overlap = len(e_words & cap_words) / max(len(e_words), 1)
+                if overlap >= 0.45:
+                    verdicts.append({"label": "entailed", "evidence": "Captured by the caption."})
+                else:
+                    verdicts.append({"label": "unmentioned", "evidence": "Caption omits this event."})
+            return json.dumps({"verdicts": verdicts}, ensure_ascii=False)
 
         if "[TASK:3WAY_REF_NLI]" in user_prompt:
             m_ref = re.search(r"REFERENCE:\s*(.*?)\nCLAIMS_JSON:", user_prompt, re.S)

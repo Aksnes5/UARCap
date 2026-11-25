@@ -1,0 +1,996 @@
+{
+  "schema_version": "uarcap_q2.pilot_a2_auto_diagnostics.v1",
+  "status": "AUTO_EVAL_UNCALIBRATED",
+  "warning": "All fact labels are automatic judge outputs and are NOT yet validated by human annotators. Do not interpret as accuracy, hallucination rate, or significance.",
+  "n_eval_rows": 90,
+  "n_parse_failures": 0,
+  "parse_failure_rate": 0.0,
+  "parse_failure_rows": [],
+  "arm_stats": {
+    "ARM_A0": {
+      "n_captions": 30,
+      "n_captions_parsed_ok": 30,
+      "n_claims": 85,
+      "entailed": 66,
+      "contradicted": 7,
+      "unmentioned": 12,
+      "mean_claims_per_caption": 2.833,
+      "support_rate": 0.7765,
+      "contradiction_rate": 0.0824,
+      "unmentioned_rate": 0.1412,
+      "mean_core_event_coverage": 0.6667
+    },
+    "ARM_A1": {
+      "n_captions": 30,
+      "n_captions_parsed_ok": 30,
+      "n_claims": 80,
+      "entailed": 64,
+      "contradicted": 7,
+      "unmentioned": 9,
+      "mean_claims_per_caption": 2.667,
+      "support_rate": 0.8,
+      "contradiction_rate": 0.0875,
+      "unmentioned_rate": 0.1125,
+      "mean_core_event_coverage": 0.7
+    },
+    "ARM_A7": {
+      "n_captions": 30,
+      "n_captions_parsed_ok": 30,
+      "n_claims": 83,
+      "entailed": 63,
+      "contradicted": 7,
+      "unmentioned": 13,
+      "mean_claims_per_caption": 2.767,
+      "support_rate": 0.759,
+      "contradiction_rate": 0.0843,
+      "unmentioned_rate": 0.1566,
+      "mean_core_event_coverage": 0.6667
+    }
+  },
+  "fact_dimension_breakdown": {
+    "ARM_A0": {
+      "static_entity_attribute": {
+        "total": 17,
+        "entailed": 11,
+        "contradicted": 1,
+        "unmentioned": 5
+      },
+      "dynamic_action_temporal": {
+        "total": 30,
+        "entailed": 26,
+        "contradicted": 2,
+        "unmentioned": 2
+      },
+      "mixed": {
+        "total": 2,
+        "entailed": 1,
+        "contradicted": 0,
+        "unmentioned": 1
+      },
+      "unclassified": {
+        "total": 36,
+        "entailed": 28,
+        "contradicted": 4,
+        "unmentioned": 4
+      }
+    },
+    "ARM_A1": {
+      "static_entity_attribute": {
+        "total": 14,
+        "entailed": 10,
+        "contradicted": 1,
+        "unmentioned": 3
+      },
+      "dynamic_action_temporal": {
+        "total": 31,
+        "entailed": 25,
+        "contradicted": 3,
+        "unmentioned": 3
+      },
+      "mixed": {
+        "total": 2,
+        "entailed": 1,
+        "contradicted": 0,
+        "unmentioned": 1
+      },
+      "unclassified": {
+        "total": 33,
+        "entailed": 28,
+        "contradicted": 3,
+        "unmentioned": 2
+      }
+    },
+    "ARM_A7": {
+      "static_entity_attribute": {
+        "total": 15,
+        "entailed": 11,
+        "contradicted": 1,
+        "unmentioned": 3
+      },
+      "dynamic_action_temporal": {
+        "total": 32,
+        "entailed": 23,
+        "contradicted": 3,
+        "unmentioned": 6
+      },
+      "mixed": {
+        "total": 1,
+        "entailed": 0,
+        "contradicted": 0,
+        "unmentioned": 1
+      },
+      "unclassified": {
+        "total": 35,
+        "entailed": 29,
+        "contradicted": 3,
+        "unmentioned": 3
+      }
+    }
+  },
+  "fact_dimension_detail_breakdown": {
+    "ARM_A0": {
+      "object_entity": {
+        "total": 35,
+        "entailed": 27,
+        "contradicted": 3,
+        "unmentioned": 5
+      },
+      "attribute": {
+        "total": 2,
+        "entailed": 2,
+        "contradicted": 0,
+        "unmentioned": 0
+      },
+      "action_event": {
+        "total": 3,
+        "entailed": 3,
+        "contradicted": 0,
+        "unmentioned": 0
+      },
+      "relation_spatial": {
+        "total": 0,
+        "entailed": 0,
+        "contradicted": 0,
+        "unmentioned": 0
+      },
+      "mixed": {
+        "total": 33,
+        "entailed": 26,
+        "contradicted": 3,
+        "unmentioned": 4
+      },
+      "unclassified": {
+        "total": 12,
+        "entailed": 8,
+        "contradicted": 1,
+        "unmentioned": 3
+      }
+    },
+    "ARM_A1": {
+      "object_entity": {
+        "total": 33,
+        "entailed": 27,
+        "contradicted": 3,
+        "unmentioned": 3
+      },
+      "attribute": {
+        "total": 3,
+        "entailed": 3,
+        "contradicted": 0,
+        "unmentioned": 0
+      },
+      "action_event": {
+        "total": 5,
+        "entailed": 4,
+        "contradicted": 1,
+        "unmentioned": 0
+      },
+      "relation_spatial": {
+        "total": 1,
+        "entailed": 1,
+        "contradicted": 0,
+        "unmentioned": 0
+      },
+      "mixed": {
+        "total": 31,
+        "entailed": 24,
+        "contradicted": 3,
+        "unmentioned": 4
+      },
+      "unclassified": {
+        "total": 7,
+        "entailed": 5,
+        "contradicted": 0,
+        "unmentioned": 2
+      }
+    },
+    "ARM_A7": {
+      "object_entity": {
+        "total": 32,
+        "entailed": 27,
+        "contradicted": 2,
+        "unmentioned": 3
+      },
+      "attribute": {
+        "total": 2,
+        "entailed": 2,
+        "contradicted": 0,
+        "unmentioned": 0
+      },
+      "action_event": {
+        "total": 4,
+        "entailed": 3,
+        "contradicted": 1,
+        "unmentioned": 0
+      },
+      "relation_spatial": {
+        "total": 0,
+        "entailed": 0,
+        "contradicted": 0,
+        "unmentioned": 0
+      },
+      "mixed": {
+        "total": 35,
+        "entailed": 24,
+        "contradicted": 3,
+        "unmentioned": 8
+      },
+      "unclassified": {
+        "total": 10,
+        "entailed": 7,
+        "contradicted": 1,
+        "unmentioned": 2
+      }
+    }
+  },
+  "transitions": {
+    "ARM_A0->ARM_A1": {
+      "added_facts": 11,
+      "removed_facts": 16,
+      "label_flips": 0,
+      "replacement_pairs_jaccard_ge_0.6": 3,
+      "examples_added": [
+        {
+          "query_id": "carebench_v_00009485_0",
+          "claim": "A boy exists.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00010336_1",
+          "claim": "One musician is playing a violin.",
+          "label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00010336_1",
+          "claim": "One musician is playing a cello.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00013412_0",
+          "claim": "The president of the United States is shaking hands with someone.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00013412_0",
+          "claim": "The person the president of the United States is shaking hands with is the president of North Korea.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00015865_14",
+          "claim": "The woman is on a track.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00016057_5",
+          "claim": "A woman exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00016057_5",
+          "claim": "The woman is cooking.",
+          "label": "unmentioned"
+        }
+      ],
+      "examples_removed": [
+        {
+          "query_id": "carebench_v_00007888_2",
+          "claim": "The hurdles are on a track.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00009485_0",
+          "claim": "A boy is present.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00009485_0",
+          "claim": "The boy is wearing a pink shirt.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00009795_0",
+          "claim": "The instrument is an accordion.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00010336_1",
+          "claim": "The people are playing instruments.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00013412_0",
+          "claim": "Donald Trump is a person.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00013412_0",
+          "claim": "Barack Obama is a person.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00013412_0",
+          "claim": "Donald Trump and Barack Obama are shaking hands.",
+          "label": "contradicted"
+        }
+      ],
+      "examples_replaced": [
+        {
+          "query_id": "carebench_v_00007888_2",
+          "from": "The woman is jumping over hurdles.",
+          "to": "The woman is jumping over a hurdle.",
+          "jaccard": 0.625,
+          "from_label": "contradicted",
+          "to_label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00009795_0",
+          "from": "The man is playing an instrument.",
+          "to": "The man is playing an accordion.",
+          "jaccard": 0.714,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00010336_1",
+          "from": "There are two people.",
+          "to": "There are two musicians.",
+          "jaccard": 0.6,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        }
+      ]
+    },
+    "ARM_A1->ARM_A7": {
+      "added_facts": 27,
+      "removed_facts": 24,
+      "label_flips": 0,
+      "replacement_pairs_jaccard_ge_0.6": 7,
+      "examples_added": [
+        {
+          "query_id": "carebench_v_00002093_8",
+          "claim": "A woman is present.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002093_8",
+          "claim": "The makeup is black eyeliner.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "claim": "A man exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "claim": "The man is shaving his head.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "claim": "A knife is being used.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The woman is talking.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The woman has a dog.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The dog is an animal.",
+          "label": "entailed"
+        }
+      ],
+      "examples_removed": [
+        {
+          "query_id": "carebench_v_00002093_8",
+          "claim": "A woman exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "claim": "A man is shaving hair.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "claim": "The hair being shaved belongs to a man.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "claim": "The man is wearing a red shirt.",
+          "label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The woman is petting a dog.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "A dog exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00010075_0",
+          "claim": "A man exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00010075_0",
+          "claim": "The man is playing an instrument.",
+          "label": "entailed"
+        }
+      ],
+      "examples_replaced": [
+        {
+          "query_id": "carebench_v_00002283_1",
+          "from": "A woman is riding a scooter.",
+          "to": "A girl is riding a scooter.",
+          "jaccard": 0.667,
+          "from_label": "unmentioned",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "from": "A man is present.",
+          "to": "A chef is present.",
+          "jaccard": 0.6,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "from": "The man is cutting vegetables.",
+          "to": "The chef is cutting vegetables.",
+          "jaccard": 0.667,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008693_0",
+          "from": "The starting line is part of a track and field event.",
+          "to": "The starting line is for a track and field event.",
+          "jaccard": 0.75,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00010336_1",
+          "from": "There are two musicians.",
+          "to": "There are two people.",
+          "jaccard": 0.6,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00014430_1",
+          "from": "There is a swimming pool.",
+          "to": "There is a pool.",
+          "jaccard": 0.8,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        }
+      ]
+    },
+    "ARM_A0->ARM_A7": {
+      "added_facts": 29,
+      "removed_facts": 31,
+      "label_flips": 0,
+      "replacement_pairs_jaccard_ge_0.6": 9,
+      "examples_added": [
+        {
+          "query_id": "carebench_v_00002093_8",
+          "claim": "A woman is present.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002093_8",
+          "claim": "The makeup is black eyeliner.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "claim": "A man exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "claim": "The man is shaving his head.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "claim": "A knife is being used.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The woman is talking.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The woman has a dog.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The dog is an animal.",
+          "label": "entailed"
+        }
+      ],
+      "examples_removed": [
+        {
+          "query_id": "carebench_v_00002093_8",
+          "claim": "A woman exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "claim": "A man is shaving hair.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "claim": "The hair being shaved belongs to a man.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "claim": "The man is wearing a red shirt.",
+          "label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00007888_2",
+          "claim": "The hurdles are on a track.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The woman is petting a dog.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "A dog exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00009485_0",
+          "claim": "A boy is present.",
+          "label": "unmentioned"
+        }
+      ],
+      "examples_replaced": [
+        {
+          "query_id": "carebench_v_00002283_1",
+          "from": "A woman is riding a scooter.",
+          "to": "A girl is riding a scooter.",
+          "jaccard": 0.667,
+          "from_label": "unmentioned",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "from": "A man is present.",
+          "to": "A chef is present.",
+          "jaccard": 0.6,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "from": "The man is cutting vegetables.",
+          "to": "The chef is cutting vegetables.",
+          "jaccard": 0.667,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00007888_2",
+          "from": "The woman is jumping over hurdles.",
+          "to": "The woman is jumping over a hurdle.",
+          "jaccard": 0.625,
+          "from_label": "contradicted",
+          "to_label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00008693_0",
+          "from": "The starting line is part of a track and field event.",
+          "to": "The starting line is for a track and field event.",
+          "jaccard": 0.75,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00009795_0",
+          "from": "The man is playing an instrument.",
+          "to": "The man is playing an accordion.",
+          "jaccard": 0.714,
+          "from_label": "entailed",
+          "to_label": "entailed"
+        }
+      ]
+    }
+  },
+  "focus_videos": {
+    "carebench_v_00002093_8": {
+      "core_event_candidate": "This video portrays a scene of a woman applying her makeup.",
+      "reference_caption": "This video portrays a scene of a woman applying her makeup. Throughout the footage, we can see her entire face, complemented by her long, brown hair. She is wearing a soft lotus pink nail polish. Her eyebrows and the eye makeup on her left eye, as well as her foundation, are already perfectly done. A nose ring adorns the center of her nose, and on the lower right side of her bottom lip, there is a lip stud. In her hand, she holds a black pen with a stainless steel and black bristle brush head. Her eye makeup features pink eyeshadow applied to her eyelids, while a brown eyeshadow is used in her eye socket. However, her right eye's eyelashes appear pale, with traces of eyeshadow powder lingering on them. Throughout the video, she uses the brush to dab and sweep lightly across her right eyelid, moving gently from side to side along the crease. She first focuses on the eyeshadow in the middle of her eyelid, then shifts her attention to the area near her inner corner, and finally, she tends to the outer edge and the eyelid as a whole. The video is filmed from a side angle, and her overall movements are minimal yet stable. Her demeanor appears natural and composed throughout.",
+      "arms": {
+        "ARM_A0": {
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim": "A woman exists.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The woman is applying makeup.",
+              "label": "entailed",
+              "dimension": "dynamic_action_temporal"
+            },
+            {
+              "claim": "The makeup is being applied to the woman's face.",
+              "label": "entailed",
+              "dimension": "dynamic_action_temporal"
+            }
+          ],
+          "core_coverage": 1.0,
+          "parse_status": "OK"
+        },
+        "ARM_A1": {
+          "caption": "a woman is applying makeup to her face",
+          "claims": [
+            {
+              "claim": "A woman exists.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The woman is applying makeup.",
+              "label": "entailed",
+              "dimension": "dynamic_action_temporal"
+            },
+            {
+              "claim": "The makeup is being applied to the woman's face.",
+              "label": "entailed",
+              "dimension": "dynamic_action_temporal"
+            }
+          ],
+          "core_coverage": 1.0,
+          "parse_status": "OK"
+        },
+        "ARM_A7": {
+          "caption": "a woman is applying makeup to her face with a black eyeliner",
+          "claims": [
+            {
+              "claim": "A woman is present.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The woman is applying makeup.",
+              "label": "entailed",
+              "dimension": "dynamic_action_temporal"
+            },
+            {
+              "claim": "The makeup is being applied to the woman's face.",
+              "label": "entailed",
+              "dimension": "dynamic_action_temporal"
+            },
+            {
+              "claim": "The makeup is black eyeliner.",
+              "label": "unmentioned",
+              "dimension": "static_entity_attribute"
+            }
+          ],
+          "core_coverage": 1.0,
+          "parse_status": "OK"
+        }
+      }
+    },
+    "carebench_v_00008320_0": {
+      "core_event_candidate": "The video captures the heartwarming moment of a woman embracing her dog.",
+      "reference_caption": "The video captures the heartwarming moment of a woman embracing her dog. Set outdoors under a brilliant sun, it features a brown-haired woman wearing a black tank top, holding her black dog close. In the background, there's a red and white vehicle adorned with paw print decals. Initially, she gazes down at the side profile of her dog, one arm wrapped around it while the other gently strokes its fur. As the camera rotates clockwise, the dog playfully sticks out its tongue, attempting to lick her. She closes her eyes and turns away, wearing a blissful expression, while both hands continue to caress the dog's neck and head.Later on, she lifts her dog's front paws towards the camera while still scratching its neck. At this moment, another person's arm appears on the right side of the frame, gently rubbing the dog's chin. The woman plants a kiss on the dog's forehead, then leans her head closely against the small pup. The dog tilts its head outward, prompting her to start playing with its front paws using her left hand. She then embraces the dog tightly once more, tenderly stroking the fur on its chin with her right index finger. A man's hand reaches in from the right side of the frame to give the dog some affectionate scratches on its head.As the camera gradually pulls back, the woman continues to stroke the dog's back with her left hand while nuzzling her head against it. The video is shot from a third-person perspective, with the camera positioned very close to the woman and her dog. The scene is filled with the warmth of their embrace, creating a wonderfully intimate atmosphere.",
+      "arms": {
+        "ARM_A0": {
+          "caption": "a woman is petting a dog",
+          "claims": [
+            {
+              "claim": "A woman exists.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The woman is petting a dog.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "A dog exists.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            }
+          ],
+          "core_coverage": 1.0,
+          "parse_status": "OK"
+        },
+        "ARM_A1": {
+          "caption": "a woman is petting a dog",
+          "claims": [
+            {
+              "claim": "A woman exists.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The woman is petting a dog.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "A dog exists.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            }
+          ],
+          "core_coverage": 1.0,
+          "parse_status": "OK"
+        },
+        "ARM_A7": {
+          "caption": "a woman is talking about her dog",
+          "claims": [
+            {
+              "claim": "A woman exists.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The woman is talking.",
+              "label": "unmentioned",
+              "dimension": "dynamic_action_temporal"
+            },
+            {
+              "claim": "The woman has a dog.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The dog is an animal.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            }
+          ],
+          "core_coverage": 0.0,
+          "parse_status": "OK"
+        }
+      }
+    },
+    "carebench_v_00010336_1": {
+      "core_event_candidate": "This video showcases the process of two people playing musical instruments.",
+      "reference_caption": "This video showcases the process of two people playing musical instruments. One person, who is seated closer to the camera, is playing the cello, while the other, positioned further away, plays the harp. Both individuals are dressed in black suit outfits, with music stands in front of them holding sheet music. They are situated in a corridor featuring a brown brick wall behind them, alongside which a long bench with wooden tones and armrests is placed. At the far end of the corridor, there is a table covered with a white tablecloth, adorned with various items.In the video, both musicians are engaged in their performance. The cellist, who is closer to the lens, is drawing the bow with significant movement in his right hand while sliding his left hand up and down the strings. Throughout the performance, he occasionally lifts his head to gaze into the distance. Finally, the camera shifts to focus outside the corridor, revealing a patch of shrubbery. Filmed from a third-person perspective, this video captures the essence of their musical performance, highlighting their skilled technique and evident enjoyment of the music.",
+      "arms": {
+        "ARM_A0": {
+          "caption": "two people are playing instruments",
+          "claims": [
+            {
+              "claim": "There are two people.",
+              "label": "entailed",
+              "dimension": "static_entity_attribute"
+            },
+            {
+              "claim": "The people are playing instruments.",
+              "label": "entailed",
+              "dimension": "dynamic_action_temporal"
+            }
+          ],
+          "core_coverage": 1.0,
+          "parse_status": "OK"
+        },
+        "ARM_A1": {
+          "caption": "two musicians are playing a violin and a cello",
+          "claims": [
+            {
+              "claim": "There are two musicians.",
+              "label": "entailed",
+              "dimension": "static_entity_attribute"
+            },
+            {
+              "claim": "One musician is playing a violin.",
+              "label": "contradicted",
+              "dimension": "dynamic_action_temporal"
+            },
+            {
+              "claim": "One musician is playing a cello.",
+              "label": "entailed",
+              "dimension": "dynamic_action_temporal"
+            }
+          ],
+          "core_coverage": 1.0,
+          "parse_status": "OK"
+        },
+        "ARM_A7": {
+          "caption": "two people are playing music",
+          "claims": [
+            {
+              "claim": "There are two people.",
+              "label": "entailed",
+              "dimension": "static_entity_attribute"
+            },
+            {
+              "claim": "The people are playing music.",
+              "label": "entailed",
+              "dimension": "dynamic_action_temporal"
+            }
+          ],
+          "core_coverage": 1.0,
+          "parse_status": "OK"
+        }
+      }
+    },
+    "carebench_v_00013412_0": {
+      "core_event_candidate": "This video showcases the handshake between Mr. Donald Trump and Mr. Kim Jong-un.",
+      "reference_caption": "This video showcases the handshake between Mr. Donald Trump and Mr. Kim Jong-un. In the footage, Mr. Trump stands on the left side of the frame, sporting his trademark blonde hair, dressed in a black suit jacket with a striped tie and a crisp white shirt, complemented by black trousers. On the right side stands Mr. Kim, with dark hair and wearing a Mao suit. Behind them, the American and North Korean flags, featuring red, white, and blue colors, are crossed together. The top right corner of the video is marked with the word \"RUPTLY.\" Throughout the video, the sound of camera shutters fills the air as Mr. Trump first shakes hands with Mr. Kim using his right hand. The two face the camera, and Mr. Trump then reaches over with his left hand to pat Mr. Kim on the back, allowing it to fall naturally by his side. They shake hands with an up and down motion while maintaining their gaze towards the camera, before each withdrawing their hands. Mr. Trump again gives Mr. Kim a light pat on the back with his left hand. The entire video is filmed from a viewpoint in front of them, capturing the moment of their handshake in a formal setting, where both men occasionally smile, indicating a warm atmosphere.",
+      "arms": {
+        "ARM_A0": {
+          "caption": "donald trump and barack obama are shaking hands",
+          "claims": [
+            {
+              "claim": "Donald Trump is a person.",
+              "label": "entailed",
+              "dimension": "static_entity_attribute"
+            },
+            {
+              "claim": "Barack Obama is a person.",
+              "label": "unmentioned",
+              "dimension": "static_entity_attribute"
+            },
+            {
+              "claim": "Donald Trump and Barack Obama are shaking hands.",
+              "label": "contradicted",
+              "dimension": "unclassified"
+            }
+          ],
+          "core_coverage": 0.0,
+          "parse_status": "OK"
+        },
+        "ARM_A1": {
+          "caption": "the president of the united states is shaking hands with the president of north korea",
+          "claims": [
+            {
+              "claim": "The president of the United States is shaking hands with someone.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The person the president of the United States is shaking hands with is the president of North Korea.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            }
+          ],
+          "core_coverage": 1.0,
+          "parse_status": "OK"
+        },
+        "ARM_A7": {
+          "caption": "donald trump and barack obama are shaking hands",
+          "claims": [
+            {
+              "claim": "Donald Trump is a person.",
+              "label": "entailed",
+              "dimension": "static_entity_attribute"
+            },
+            {
+              "claim": "Barack Obama is a person.",
+              "label": "unmentioned",
+              "dimension": "static_entity_attribute"
+            },
+            {
+              "claim": "Donald Trump and Barack Obama are shaking hands.",
+              "label": "contradicted",
+              "dimension": "unclassified"
+            }
+          ],
+          "core_coverage": 0.0,
+          "parse_status": "OK"
+        }
+      }
+    },
+    "carebench_v_00015614_0": {
+      "core_event_candidate": "This video captures a worker actively trimming the leaves of a coconut tree.",
+      "reference_caption": "This video captures a worker actively trimming the leaves of a coconut tree. The worker is dressed in a light-colored shirt and is wearing a bright orange safety helmet. He is standing on a crane, which has a yellow arm and is equipped with a white hanging basket, where the worker is positioned. In his hand, he holds a saw, preparing to prune the coconut tree. Behind him stands a tall coconut tree, its trunk already dried out, with leaves displaying a mix of yellow and green hues. In the video, the crane first rotates counterclockwise, bringing the worker closer to the coconut tree. The camera then experiences a brief blur, followed by the crane's arm descending, enabling the worker to reach the tree's leaves. The image blurs once more before the segment ends. Throughout this process, the wind in the air is quite strong, causing the coconut tree's leaves to sway chaotically. The entire sequence is filmed from a third-person perspective, clearly illustrating that pruning coconut tree branches and leaves is an extremely hazardous task. The winds on the island are notably strong, adding to the difficulty of maintaining the tree's foliage.",
+      "arms": {
+        "ARM_A0": {
+          "caption": "a man is operating a crane",
+          "claims": [
+            {
+              "claim": "A man exists.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The man is operating a crane.",
+              "label": "contradicted",
+              "dimension": "unclassified"
+            }
+          ],
+          "core_coverage": 0.0,
+          "parse_status": "OK"
+        },
+        "ARM_A1": {
+          "caption": "a man is operating a crane",
+          "claims": [
+            {
+              "claim": "A man exists.",
+              "label": "entailed",
+              "dimension": "unclassified"
+            },
+            {
+              "claim": "The man is operating a crane.",
+              "label": "contradicted",
+              "dimension": "unclassified"
+            }
+          ],
+          "core_coverage": 0.0,
+          "parse_status": "OK"
+        },
+        "ARM_A7": {
+          "caption": "a crane is lifting a tree",
+          "claims": [
+            {
+              "claim": "A crane is lifting a tree.",
+              "label": "contradicted",
+              "dimension": "dynamic_action_temporal"
+            }
+          ],
+          "core_coverage": 0.0,
+          "parse_status": "OK"
+        }
+      }
+    }
+  },
+  "workload_estimate": {
+    "n_videos": 30,
+    "n_caption_cards_in_blind_bundle": 90,
+    "n_unique_captions_within_video": 50,
+    "n_reusable_duplicate_caption_cards": 40,
+    "n_total_atomic_claims": 248,
+    "n_unique_normalized_claims_within_video": 119,
+    "n_claim_labels_avoidable_via_within_video_reuse": 129,
+    "estimated_minutes_range": [
+      80.9,
+      143.1
+    ],
+    "estimate_basis": "90-150s video watch + 30-60s core events per video; 8-15s per unique claim; 6-10s per unique caption; duplicates within a video reuse labels (blind)."
+  },
+  "core_event_lock_sha256": "6692d1dd20aa09f16b4815892c56547d72ead07b920790cee6d47bfacb94c552"
+}
