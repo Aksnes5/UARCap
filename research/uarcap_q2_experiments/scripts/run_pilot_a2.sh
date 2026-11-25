@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Execute Authorized Pilot A2 (Isolated Cross-Family 3-Way Evaluator + Human Calibration Prep)
+# Execute Authorized Pilot A2 (Reads A1 outputs -> 3-way evaluator -> blind annotation package -> human calibration)
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -7,26 +7,40 @@ EXP_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 PATHS_CFG="${PATHS_CFG:-${EXP_ROOT}/configs/bn_paths.local.yaml}"
 Q2_ROOT="${Q2_ROOT:-/home/bn/uarcap_q2_runtime}"
 AUTH_RECEIPT="${AUTH_RECEIPT:-${Q2_ROOT}/authorizations/pilot_a2_auth.json}"
-PRIOR_A1="${PRIOR_A1:-${Q2_ROOT}/outputs/pilot_a1/pilot_a1_dream1k_v1/run_receipt.json}"
+A1_DIR="${A1_DIR:-${Q2_ROOT}/outputs/pilot_a1/pilot_a1_dream1k_v1}"
+PRIOR_A1="${PRIOR_A1:-${A1_DIR}/run_receipt.json}"
+A1_PREDS="${A1_PREDS:-${A1_DIR}/predictions.jsonl}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 RUN_ID="${RUN_ID:-pilot_a2_eval_v1}"
+OUT_DIR="${Q2_ROOT}/outputs/pilot_a2/${RUN_ID}"
 
-if [[ ! -f "${PRIOR_A1}" ]]; then
-  echo "[run_pilot_a2] BLOCKED: Prerequisite Pilot A1 receipt missing: ${PRIOR_A1}" >&2
-  exit 3
-fi
-
+# Strictly verify REAL_RUNTIME_PASS on PILOT_A1 (rejects missing file AND rejects MOCK_PASS!)
 "${PYTHON_BIN}" "${EXP_ROOT}/deployment/authorization_gate.py" \
   --stage PILOT_A2 \
-  --auth-receipt "${AUTH_RECEIPT}"
+  --auth-receipt "${AUTH_RECEIPT}" \
+  --prior-a1 "${PRIOR_A1}"
 
+set +e
 "${PYTHON_BIN}" "${EXP_ROOT}/deployment/run_stage_cli.py" \
   --stage PILOT_A2 \
   --paths-config "${PATHS_CFG}" \
   --stage-config "${EXP_ROOT}/configs/pilot_a23_config.yaml" \
-  --out-dir "${Q2_ROOT}/outputs/pilot_a2/${RUN_ID}" \
+  --out-dir "${OUT_DIR}" \
   --run-id "${RUN_ID}" \
   --auth-receipt "${AUTH_RECEIPT}" \
+  --prior-a1 "${PRIOR_A1}" \
+  --a1-predictions "${A1_PREDS}" \
   "$@"
+RC=$?
+set -e
 
-echo "[run_pilot_a2] Completed. Export blind annotation package & verify A7 differential bias before A3."
+if [[ "${RC}" -eq 10 ]]; then
+  echo "[run_pilot_a2] PAUSED (HUMAN_VALIDATION_PENDING): Blind annotation package ready under ${OUT_DIR}/blind_annotation_package"
+  echo "[run_pilot_a2] Complete human annotation, then re-run with --human-annotations <adjudicated.json>."
+  exit 10
+elif [[ "${RC}" -ne 0 ]]; then
+  echo "[run_pilot_a2] FAILED or BLOCKED (exit code ${RC})." >&2
+  exit "${RC}"
+fi
+
+echo "[run_pilot_a2] Calibration receipt written: ${OUT_DIR}/calibration_receipt.json"

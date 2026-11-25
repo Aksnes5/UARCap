@@ -106,13 +106,22 @@ def test_fault_injection_pilot_leak_and_unauthorized_formal_b_blocked(tmp_path: 
     with pytest.raises(AuthorizationError, match="HARD-BLOCKED"):
         verify_stage_authorization(PilotStage.FORMAL_B, auth_receipt_path=None, allow_cpu_mock=True)
 
-    # Partial authorization (missing A3 PASS receipt) still blocked!
+    # Partial authorization (missing A3 REAL_RUNTIME_PASS receipt) still blocked!
     auth = atomic_write_json(
         tmp_path / "formal_auth.json",
-        {"stage": "FORMAL_B", "approved": True, "approval_id": "TEST_ID", "frozen_pilot_params_confirmed": True},
+        {
+            "stage": "FORMAL_B",
+            "approved": True,
+            "approval_id": "TEST_ID",
+            "frozen_pilot_params_confirmed": True,
+            "frozen_formal_config_sha256": "abc123",
+            "evaluator_version": "mistral-24b-v1",
+            "asset_manifest_sha256": "def456",
+            "pilot_exclusion_manifest_sha256": "ghi789",
+        },
     )
-    a1 = atomic_write_json(tmp_path / "a1.json", {"verdict": "PASS"})
-    a2 = atomic_write_json(tmp_path / "a2.json", {"verdict": "PASS"})
+    a1 = atomic_write_json(tmp_path / "a1.json", {"status": "REAL_RUNTIME_PASS"})
+    a2 = atomic_write_json(tmp_path / "a2.json", {"status": "REAL_RUNTIME_PASS", "human_calibration_completed": True})
     with pytest.raises(AuthorizationError, match="missing prerequisite receipt for PILOT_A3"):
         verify_stage_authorization(PilotStage.FORMAL_B, auth, prior_receipts={"PILOT_A1": a1, "PILOT_A2": a2})
 

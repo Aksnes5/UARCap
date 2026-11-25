@@ -1,6 +1,6 @@
 {
-  "manifest_version": "uarcap-q2-bn-deployment-v1",
-  "status": "OFFLINE_IMPLEMENTATION_READY_AWAITING_BN_ACCESS",
+  "manifest_version": "uarcap-q2-bn-deployment-v2",
+  "status": "OFFLINE_REAL_EXECUTION_IMPLEMENTED_AWAITING_BN_RUNTIME_VERIFICATION",
   "protocol_commit": "761dea2c51ab07c083b88805168ad1757db53d67",
   "bn_live_status_verified_in_this_round": false,
   "historical_receipt_source": "research/uarcap_v06_followup_deployment/bn_readonly_receipts/BN_DEPLOYMENT_PATH_BINDINGS.json",

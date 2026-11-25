@@ -93,10 +93,11 @@ def test_video_decoder_all_pathologies_and_evcap_tsv_packing(
     assert len(imgs) == 16 and rep.unique_frame_hashes >= 12 and rep.mean_consecutive_l1_diff > 1.0
     assert len(rep.frame_dhashes) == 16
 
-    # 2. Pack into exact frozen EVCap TSV + lineidx + yaml
+    # 2. Pack into exact frozen EVCap 18-col TSV + lineidx + yaml (vision_language_tsv.py L311: qid + num_frames + 16 frames)
     bundle = pack_evcap_frame_tsv_bundle([("dream1k_0001", imgs, "a moving colored bar")], tmp_path / "tsv")
     assert bundle["yaml"].is_file() and bundle["img"].is_file() and bundle["img_lineidx"].is_file()
-    assert len(bundle["img"].read_text(encoding="utf-8").splitlines()[0].split("\t")) == 17  # qid + 16 frames
+    cols = bundle["img"].read_text(encoding="utf-8").splitlines()[0].split("\t")
+    assert len(cols) == 18 and cols[0] == "dream1k_0001" and cols[1] == "16"
 
     # 3. Short 4-frame video (< 16 frames -> deterministic resampling with warning)
     imgs_s, rep_s = decode_and_sample_video(pathological_videos["short_4f"], num_frames=16)

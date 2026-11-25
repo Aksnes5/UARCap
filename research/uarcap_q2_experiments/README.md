@@ -1,8 +1,8 @@
 # UARCap Q2 Upgrade Experiments — Offline Implementation & BN Deployment Package
 
-> **Engineering Status**: `OFFLINE_IMPLEMENTATION_READY_AWAITING_BN_ACCESS`  
+> **Engineering Status**: `OFFLINE_REAL_EXECUTION_IMPLEMENTED_AWAITING_BN_RUNTIME_VERIFICATION`  
 > **Protocol Baseline**: `761dea2c51ab07c083b88805168ad1757db53d67` (`antigravity/uarcap-q2-pilot-a-protocol-v1.2-final`)  
-> **Important Notice**: All 43 CPU unit, end-to-end simulation, fault-injection, web annotation UI, and `bash -n` syntax tests passed on Windows CPU. **No real GPU inference, full dataset download, or formal human annotation has been executed yet.**
+> **Important Notice**: All 52 CPU tests (43 unit/E2E/fault-injection/`bash -n` tests + 9 real-entrypoint contract & golden historical regression tests) pass on Windows CPU. **No real BN GPU inference, full dataset download, or formal human annotation has been executed yet.**
 
 ## Directory Layout
 

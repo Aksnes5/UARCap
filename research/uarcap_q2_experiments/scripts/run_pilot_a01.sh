@@ -9,8 +9,9 @@ Q2_ROOT="${Q2_ROOT:-/home/bn/uarcap_q2_runtime}"
 AUTH_RECEIPT="${AUTH_RECEIPT:-${Q2_ROOT}/authorizations/pilot_a01_auth.json}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 RUN_ID="${RUN_ID:-pilot_a1_dream1k_v1}"
+OUT_DIR="${Q2_ROOT}/outputs/pilot_a1/${RUN_ID}"
 
-# 1. Verify authorization receipt before touching GPU
+# 1. Verify PILOT_A1 authorization receipt BEFORE touching GPU
 "${PYTHON_BIN}" "${EXP_ROOT}/deployment/authorization_gate.py" \
   --stage PILOT_A1 \
   --auth-receipt "${AUTH_RECEIPT}"
@@ -22,14 +23,17 @@ bash "${SCRIPT_DIR}/run_preflight.sh" --verify-ckpt-sha
 "${PYTHON_BIN}" "${EXP_ROOT}/deployment/stage_assets.py" \
   verify --data-root "${Q2_ROOT}/data" --asset dream1k_videos
 
-# 4. Run Pilot A1 stage CLI (cooperative gpu.lock enforced inside runner)
+# 4. Run real Pilot A1 pipeline (real VideoUFO X-CLIP retriever + frozen Video-LLaMA batch adapter + gpu.lock)
 "${PYTHON_BIN}" "${EXP_ROOT}/deployment/run_stage_cli.py" \
   --stage PILOT_A1 \
   --paths-config "${PATHS_CFG}" \
   --stage-config "${EXP_ROOT}/configs/pilot_a01_config.yaml" \
-  --out-dir "${Q2_ROOT}/outputs/pilot_a1/${RUN_ID}" \
+  --out-dir "${OUT_DIR}" \
   --run-id "${RUN_ID}" \
   --auth-receipt "${AUTH_RECEIPT}" \
   "$@"
 
-echo "[run_pilot_a01] Completed. Review PILOT_A1_GO_NO_GO.md before authorizing Pilot A2."
+if [[ -f "${OUT_DIR}/run_receipt.json" ]]; then
+  echo "[run_pilot_a01] Receipt written: ${OUT_DIR}/run_receipt.json"
+  echo "[run_pilot_a01] Review ${OUT_DIR}/PILOT_A1_GO_NO_GO.md before authorizing Pilot A2."
+fi

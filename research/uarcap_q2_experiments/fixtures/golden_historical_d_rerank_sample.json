@@ -1,0 +1,853 @@
+{
+  "source_commit": "52b5ed3a69e4b84a8e16ed747f141eefb5b1e2ec",
+  "queries": {
+    "datasets/MSRVTT-v2/videos/video7010.mp4": {
+      "top20": [
+        {
+          "caption": "A person is using a music production software to record and mix a song.",
+          "score": 0.27685546875,
+          "clip_ids": [
+            "aI8nxtEgUXw.1"
+          ],
+          "topics": [
+            "music production"
+          ]
+        },
+        {
+          "caption": "The user is using a software to create and edit music compositions.",
+          "score": 0.275634765625,
+          "clip_ids": [
+            "KSl9aYixSKk.5"
+          ],
+          "topics": [
+            "unreal engine"
+          ]
+        },
+        {
+          "caption": "The user is browsing a music website and searching for songs on the search bar.",
+          "score": 0.272705078125,
+          "clip_ids": [
+            "QRPe2Whdkz8.4"
+          ],
+          "topics": [
+            "data"
+          ]
+        },
+        {
+          "caption": "The user is using a music production software with a graphical user interface.",
+          "score": 0.27197265625,
+          "clip_ids": [
+            "EpzBafdsqRA.0",
+            "Op1f29QKY_A.0",
+            "_8x5x_ekn-g.0"
+          ],
+          "topics": [
+            "music production",
+            "sound"
+          ]
+        },
+        {
+          "caption": "The user is using a music production software to create and edit music.",
+          "score": 0.27197265625,
+          "clip_ids": [
+            "Dx9Sj2m-UyU.2"
+          ],
+          "topics": [
+            "record"
+          ]
+        },
+        {
+          "caption": "A person is using a music production software and is able to understand the visual content that the user provides.",
+          "score": 0.271484375,
+          "clip_ids": [
+            "EQaGn65RS-g.7"
+          ],
+          "topics": [
+            "rave"
+          ]
+        },
+        {
+          "caption": "The user is downloading a file with the name save the audio.",
+          "score": 0.2705078125,
+          "clip_ids": [
+            "GVt--xIRBKw.7"
+          ],
+          "topics": [
+            "android"
+          ]
+        },
+        {
+          "caption": "The user is using a software to manage their audio files and add them to a playlist.",
+          "score": 0.27001953125,
+          "clip_ids": [
+            "JlL6_Y8cmGw.2"
+          ],
+          "topics": [
+            "workspace"
+          ]
+        },
+        {
+          "caption": "A screen shot of a web page with a red arrow pointing to a list of songs.",
+          "score": 0.27001953125,
+          "clip_ids": [
+            "lkBJiXE7EcM.1"
+          ],
+          "topics": [
+            "search"
+          ]
+        },
+        {
+          "caption": "A document with the words step 4 read the discussion and conclusion.",
+          "score": 0.26953125,
+          "clip_ids": [
+            "Fm6pdg3uAPA.5"
+          ],
+          "topics": [
+            "read"
+          ]
+        },
+        {
+          "caption": "The user is using a digital audio workstation daw software to record and edit music.",
+          "score": 0.269287109375,
+          "clip_ids": [
+            "1y5OsGub5kQ.1",
+            "5UWsgKIvb18.0",
+            "GBpT1DF_qJk.1",
+            "NHvSOdAHRTs.2",
+            "O46RpDI6ZTY.0",
+            "cLGzXruWoP0.0",
+            "kNW2rcqb7gs.1",
+            "vU-xNqkyXyo.0",
+            "vU-xNqkyXyo.2"
+          ],
+          "topics": [
+            "digital",
+            "drum",
+            "dua lipa",
+            "lo-fi",
+            "music production",
+            "piano",
+            "sound"
+          ]
+        },
+        {
+          "caption": "The user is using a digital audio workstation daw software to create and edit music.",
+          "score": 0.26904296875,
+          "clip_ids": [
+            "l4e54DTWLQQ.1"
+          ],
+          "topics": [
+            "sound"
+          ]
+        },
+        {
+          "caption": "The user is providing a video transcription service and recommends using a microphone, headphones, and software to transcribe audio to text.",
+          "score": 0.268310546875,
+          "clip_ids": [
+            "SunfWtF27vM.0"
+          ],
+          "topics": [
+            "box"
+          ]
+        },
+        {
+          "caption": "A screenshot of a website with a keyboard and blue sky in the background.",
+          "score": 0.26806640625,
+          "clip_ids": [
+            "ppV-FjYphoc.5"
+          ],
+          "topics": [
+            "android"
+          ]
+        },
+        {
+          "caption": "The user is using a software program to create a document with text and images.",
+          "score": 0.267822265625,
+          "clip_ids": [
+            "iTNuYLlA3ko.4"
+          ],
+          "topics": [
+            "data"
+          ]
+        },
+        {
+          "caption": "A person is using a digital audio workstation daw software to record and edit music.",
+          "score": 0.267578125,
+          "clip_ids": [
+            "35qTbOc_0J4.0"
+          ],
+          "topics": [
+            "music production"
+          ]
+        },
+        {
+          "caption": "A music producer is working on a music production project in a digital audio workstation.",
+          "score": 0.266845703125,
+          "clip_ids": [
+            "hn9CBddc-fg.0"
+          ],
+          "topics": [
+            "afterlife"
+          ]
+        },
+        {
+          "caption": "A blue and white page with the words downloading as an attachment.",
+          "score": 0.265380859375,
+          "clip_ids": [
+            "sLHMH1vB5Rg.1"
+          ],
+          "topics": [
+            "conversion"
+          ]
+        },
+        {
+          "caption": "It is a blue background with white text that reads create stable link to cloud workspace in the center of the image.",
+          "score": 0.264892578125,
+          "clip_ids": [
+            "XMOSuNB_kBg.0"
+          ],
+          "topics": [
+            "cloud"
+          ]
+        },
+        {
+          "caption": "A screen shot of a music editing program.",
+          "score": 0.2646484375,
+          "clip_ids": [
+            "-NT_3P0ARMU.0",
+            "D427S-a0ECY.0",
+            "EQaGn65RS-g.1",
+            "EQaGn65RS-g.3",
+            "F_Rhh75Kfek.0",
+            "NHvSOdAHRTs.4",
+            "OBlmgEbWXww.0",
+            "U-poBu8xpM4.0",
+            "d7SJVSVzx_c.0",
+            "egjb5tyJ7eY.3",
+            "o2pgBafKJv4.0",
+            "vnTNaAKqjqM.0",
+            "xSHPFcCiNNY.0"
+          ],
+          "topics": [
+            "dua lipa",
+            "gothic",
+            "music production",
+            "rave",
+            "record"
+          ]
+        }
+      ],
+      "expected_d7_cap": [
+        [
+          "The user is using a music production software to create and edit music.",
+          "The user is using a digital audio workstation daw software to create and edit music.",
+          "The user is using a software to create and edit music compositions.",
+          "The user is using a digital audio workstation daw software to record and edit music.",
+          "The user is using a software program to create a document with text and images.",
+          "A person is using a music production software to record and mix a song.",
+          "A person is using a digital audio workstation daw software to record and edit music."
+        ],
+        [
+          0.425751333862789,
+          0.3990209672309412,
+          0.39737392905936736,
+          0.3949926973224535,
+          0.37541541566930187,
+          0.359650569095532,
+          0.3591602637063459
+        ],
+        [
+          [
+            "Dx9Sj2m-UyU.2"
+          ],
+          [
+            "l4e54DTWLQQ.1"
+          ],
+          [
+            "KSl9aYixSKk.5"
+          ],
+          [
+            "1y5OsGub5kQ.1",
+            "5UWsgKIvb18.0",
+            "GBpT1DF_qJk.1",
+            "NHvSOdAHRTs.2",
+            "O46RpDI6ZTY.0",
+            "cLGzXruWoP0.0",
+            "kNW2rcqb7gs.1",
+            "vU-xNqkyXyo.0",
+            "vU-xNqkyXyo.2"
+          ],
+          [
+            "iTNuYLlA3ko.4"
+          ],
+          [
+            "aI8nxtEgUXw.1"
+          ],
+          [
+            "35qTbOc_0J4.0"
+          ]
+        ]
+      ],
+      "expected_d7_sims": [
+        [
+          "The user is using a music production software to create and edit music.",
+          "The user is using a digital audio workstation daw software to create and edit music.",
+          "The user is using a software to create and edit music compositions.",
+          "The user is using a digital audio workstation daw software to record and edit music.",
+          "The user is using a software program to create a document with text and images.",
+          "A person is using a music production software to record and mix a song.",
+          "A person is using a digital audio workstation daw software to record and edit music."
+        ],
+        [
+          0.27197265625,
+          0.26904296875,
+          0.275634765625,
+          0.269287109375,
+          0.267822265625,
+          0.27685546875,
+          0.267578125
+        ]
+      ]
+    },
+    "datasets/MSRVTT-v2/videos/video7011.mp4": {
+      "top20": [
+        {
+          "caption": "A cartoon of a purple and pink machine with a hand pointing at it.",
+          "score": 0.2247314453125,
+          "clip_ids": [
+            "UwyPkPiM_K0.7"
+          ],
+          "topics": [
+            "halloween"
+          ]
+        },
+        {
+          "caption": "A purple and yellow background with a red arrow pointing to the left and a blue arrow pointing to the right.",
+          "score": 0.2232666015625,
+          "clip_ids": [
+            "FqAPHfPAc9Y.1"
+          ],
+          "topics": [
+            "flag"
+          ]
+        },
+        {
+          "caption": "A person pouring a drink into a blue bucket.",
+          "score": 0.2196044921875,
+          "clip_ids": [
+            "c2_RbFN4jXk.2"
+          ],
+          "topics": [
+            "bar"
+          ]
+        },
+        {
+          "caption": "A picture of a purple robot with a yellow arrow pointing to it.",
+          "score": 0.215576171875,
+          "clip_ids": [
+            "Na1lDpvSUJQ.2"
+          ],
+          "topics": [
+            "mecha"
+          ]
+        },
+        {
+          "caption": "A cartoon of a group of pink and yellow characters on a blue background.",
+          "score": 0.215087890625,
+          "clip_ids": [
+            "kgpcCKr8mwc.29"
+          ],
+          "topics": [
+            "infant"
+          ]
+        },
+        {
+          "caption": "A person is pouring a blue drink into a glass on a yellow background.",
+          "score": 0.2144775390625,
+          "clip_ids": [
+            "dLcKD2ECAo8.0"
+          ],
+          "topics": [
+            "cocktail"
+          ]
+        },
+        {
+          "caption": "A person in purple gloves holding a paint brush.",
+          "score": 0.211181640625,
+          "clip_ids": [
+            "dejNz4sk3cM.2"
+          ],
+          "topics": [
+            "bottle"
+          ]
+        },
+        {
+          "caption": "A cartoon character with purple glasses and a bottle of alcohol.",
+          "score": 0.210693359375,
+          "clip_ids": [
+            "_Ektrlwl99Q.4"
+          ],
+          "topics": [
+            "existentialism"
+          ]
+        },
+        {
+          "caption": "A cartoon character in a yellow and blue outfit.",
+          "score": 0.210693359375,
+          "clip_ids": [
+            "lhbsa2JoHc0.2"
+          ],
+          "topics": [
+            "warrior"
+          ]
+        },
+        {
+          "caption": "A cartoon character holding a pink bottle with a crown on it.",
+          "score": 0.21044921875,
+          "clip_ids": [
+            "ryj7-sPmSSQ.0"
+          ],
+          "topics": [
+            "princess"
+          ]
+        },
+        {
+          "caption": "A woman in a yellow jacket drinking a drink.",
+          "score": 0.208251953125,
+          "clip_ids": [
+            "56BzEkZ-KoM.13"
+          ],
+          "topics": [
+            "cafe"
+          ]
+        },
+        {
+          "caption": "A person wearing yellow gloves holding a blue bucket.",
+          "score": 0.2081298828125,
+          "clip_ids": [
+            "3JnMScavfIY.7"
+          ],
+          "topics": [
+            "clothe"
+          ]
+        },
+        {
+          "caption": "There is a person wearing a purple shirt and standing in front of a table with various objects on it, including paintbrushes and cans of paint.",
+          "score": 0.2080078125,
+          "clip_ids": [
+            "_h7nyssGkgk.9"
+          ],
+          "topics": [
+            "expressionism"
+          ]
+        },
+        {
+          "caption": "A cartoon character standing next to a green bottle and a purple bottle.",
+          "score": 0.2066650390625,
+          "clip_ids": [
+            "-uDkYjKFmKc.4"
+          ],
+          "topics": [
+            "anthropomorphism"
+          ]
+        },
+        {
+          "caption": "A person is painting a yellow bucket with a paintbrush.",
+          "score": 0.206298828125,
+          "clip_ids": [
+            "52pO8qfB6gA.3"
+          ],
+          "topics": [
+            "graffiti"
+          ]
+        },
+        {
+          "caption": "A person in purple gloves pouring something into a bowl.",
+          "score": 0.2054443359375,
+          "clip_ids": [
+            "i1FOp34F7xM.1"
+          ],
+          "topics": [
+            "sand"
+          ]
+        },
+        {
+          "caption": "A screenshot of a website showing a variety of colors.",
+          "score": 0.2054443359375,
+          "clip_ids": [
+            "tLVHY1xJYwI.3"
+          ],
+          "topics": [
+            "color"
+          ]
+        },
+        {
+          "caption": "A person in purple gloves holding a test tube with a red liquid in it.",
+          "score": 0.2052001953125,
+          "clip_ids": [
+            "lLon4_f48qY.24"
+          ],
+          "topics": [
+            "meet"
+          ]
+        },
+        {
+          "caption": "A cartoon character in a purple costume holding a glass of orange juice in front of a purple couch.",
+          "score": 0.205078125,
+          "clip_ids": [
+            "zgMgiwv6Q94.1"
+          ],
+          "topics": [
+            "banana"
+          ]
+        },
+        {
+          "caption": "A cartoon character standing in front of a large yellow and blue robot.",
+          "score": 0.204345703125,
+          "clip_ids": [
+            "-2fU2JoJRtY.13"
+          ],
+          "topics": [
+            "action"
+          ]
+        }
+      ],
+      "expected_d7_cap": [
+        [
+          "A cartoon character in a yellow and blue outfit.",
+          "A cartoon character holding a pink bottle with a crown on it.",
+          "A cartoon character standing in front of a large yellow and blue robot.",
+          "A person pouring a drink into a blue bucket.",
+          "A cartoon of a purple and pink machine with a hand pointing at it.",
+          "A person in purple gloves holding a test tube with a red liquid in it.",
+          "A person is painting a yellow bucket with a paintbrush."
+        ],
+        [
+          0.35094246086056274,
+          0.3384962577737827,
+          0.33670289132901876,
+          0.33593989481018266,
+          0.33559902839473577,
+          0.3263053804086282,
+          0.3254825964345233
+        ],
+        [
+          [
+            "lhbsa2JoHc0.2"
+          ],
+          [
+            "ryj7-sPmSSQ.0"
+          ],
+          [
+            "-2fU2JoJRtY.13"
+          ],
+          [
+            "c2_RbFN4jXk.2"
+          ],
+          [
+            "UwyPkPiM_K0.7"
+          ],
+          [
+            "lLon4_f48qY.24"
+          ],
+          [
+            "52pO8qfB6gA.3"
+          ]
+        ]
+      ],
+      "expected_d7_sims": [
+        [
+          "A cartoon character in a yellow and blue outfit.",
+          "A cartoon character holding a pink bottle with a crown on it.",
+          "A cartoon character standing in front of a large yellow and blue robot.",
+          "A person pouring a drink into a blue bucket.",
+          "A cartoon of a purple and pink machine with a hand pointing at it.",
+          "A person in purple gloves holding a test tube with a red liquid in it.",
+          "A person is painting a yellow bucket with a paintbrush."
+        ],
+        [
+          0.210693359375,
+          0.21044921875,
+          0.204345703125,
+          0.2196044921875,
+          0.2247314453125,
+          0.2052001953125,
+          0.206298828125
+        ]
+      ]
+    },
+    "datasets/MSRVTT-v2/videos/video7012.mp4": {
+      "top20": [
+        {
+          "caption": "An advertisement for a course on speaking confidently in front of a microphone.",
+          "score": 0.286865234375,
+          "clip_ids": [
+            "HYvyDxsMteo.4"
+          ],
+          "topics": [
+            "communication"
+          ]
+        },
+        {
+          "caption": "A podcast with a blue background and a speech bubble.",
+          "score": 0.2802734375,
+          "clip_ids": [
+            "p29-hR6VyKs.0"
+          ],
+          "topics": [
+            "perspective"
+          ]
+        },
+        {
+          "caption": "A sign that says thanks for watching on a red background.",
+          "score": 0.279296875,
+          "clip_ids": [
+            "Ag1W7w30zj0.13"
+          ],
+          "topics": [
+            "spice"
+          ]
+        },
+        {
+          "caption": "A flyer for the theatrical academy podcast.",
+          "score": 0.279296875,
+          "clip_ids": [
+            "MRJaWj4P8Os.0"
+          ],
+          "topics": [
+            "gender"
+          ]
+        },
+        {
+          "caption": "A woman is speaking at a conference and gesturing with her hands.",
+          "score": 0.27783203125,
+          "clip_ids": [
+            "5h43_J_QNQE.12"
+          ],
+          "topics": [
+            "consultation"
+          ]
+        },
+        {
+          "caption": "A green background with a thank you for watching sign.",
+          "score": 0.277587890625,
+          "clip_ids": [
+            "cA9_hZga4K8.3"
+          ],
+          "topics": [
+            "landscape"
+          ]
+        },
+        {
+          "caption": "A black screen with a red heart on it.",
+          "score": 0.277587890625,
+          "clip_ids": [
+            "_RtadJSOAS0.10",
+            "_RtadJSOAS0.13",
+            "_RtadJSOAS0.19"
+          ],
+          "topics": [
+            "diamond"
+          ]
+        },
+        {
+          "caption": "A picture of a chair with a blue arrow pointing to it.",
+          "score": 0.2763671875,
+          "clip_ids": [
+            "eB6EX3VyAUw.1"
+          ],
+          "topics": [
+            "conversation"
+          ]
+        },
+        {
+          "caption": "A picture of a sign that says learn more on a green background.",
+          "score": 0.276123046875,
+          "clip_ids": [
+            "ZzCegQVljdY.8"
+          ],
+          "topics": [
+            "wealth"
+          ]
+        },
+        {
+          "caption": "A green screen with the words'appropriate audiences 'on it.",
+          "score": 0.276123046875,
+          "clip_ids": [
+            "H374aUTaqEw.0"
+          ],
+          "topics": [
+            "fan"
+          ]
+        },
+        {
+          "caption": "An advertisement for an academy in english on a red background.",
+          "score": 0.27587890625,
+          "clip_ids": [
+            "9kG2vPzMx8s.2"
+          ],
+          "topics": [
+            "student"
+          ]
+        },
+        {
+          "caption": "A blue background with the words introduction to data science.",
+          "score": 0.275146484375,
+          "clip_ids": [
+            "3KKekkiv1Cs.3"
+          ],
+          "topics": [
+            "data"
+          ]
+        },
+        {
+          "caption": "A green background with a red arrow pointing to youtube.",
+          "score": 0.274658203125,
+          "clip_ids": [
+            "UNvy213If0g.6"
+          ],
+          "topics": [
+            "display"
+          ]
+        },
+        {
+          "caption": "A black background with text that says videos may contain content that may not be suitable for all audiences.",
+          "score": 0.2744140625,
+          "clip_ids": [
+            "gjYjJkm7rO0.4"
+          ],
+          "topics": [
+            "perfume"
+          ]
+        },
+        {
+          "caption": "A red background with a megaphone and the words we are hiring.",
+          "score": 0.273681640625,
+          "clip_ids": [
+            "N9l91r6AvrY.1"
+          ],
+          "topics": [
+            "employment"
+          ]
+        },
+        {
+          "caption": "A red background with the words token economics course info.",
+          "score": 0.273193359375,
+          "clip_ids": [
+            "xDntQtVULa0.0"
+          ],
+          "topics": [
+            "economics"
+          ]
+        },
+        {
+          "caption": "A green screen with the words library policies have changed and the circulation needs to be updated.",
+          "score": 0.27294921875,
+          "clip_ids": [
+            "bUOQHfFqWNM.0"
+          ],
+          "topics": [
+            "circulation"
+          ]
+        },
+        {
+          "caption": "An advertisement for a news program in german.",
+          "score": 0.272705078125,
+          "clip_ids": [
+            "dut7vo7Bj58.0",
+            "iiCZ-yM3U60.0"
+          ],
+          "topics": [
+            "chaos",
+            "interview"
+          ]
+        },
+        {
+          "caption": "A blue background with the words what do you know about data science?.",
+          "score": 0.272705078125,
+          "clip_ids": [
+            "1hWI2I8uhRo.0"
+          ],
+          "topics": [
+            "data"
+          ]
+        },
+        {
+          "caption": "A woman is standing in front of the camera and making hand gestures.",
+          "score": 0.27197265625,
+          "clip_ids": [
+            "zos8G3E3VZk.1"
+          ],
+          "topics": [
+            "record"
+          ]
+        }
+      ],
+      "expected_d7_cap": [
+        [
+          "A green background with a red arrow pointing to youtube.",
+          "A red background with a megaphone and the words we are hiring.",
+          "A blue background with the words introduction to data science.",
+          "A green background with a thank you for watching sign.",
+          "A red background with the words token economics course info.",
+          "A black screen with a red heart on it.",
+          "A picture of a chair with a blue arrow pointing to it."
+        ],
+        [
+          0.27534446653846545,
+          0.2721105537445236,
+          0.26347772521178403,
+          0.2556742822158265,
+          0.2545011775624675,
+          0.24685506543499047,
+          0.24026799136479396
+        ],
+        [
+          [
+            "UNvy213If0g.6"
+          ],
+          [
+            "N9l91r6AvrY.1"
+          ],
+          [
+            "3KKekkiv1Cs.3"
+          ],
+          [
+            "cA9_hZga4K8.3"
+          ],
+          [
+            "xDntQtVULa0.0"
+          ],
+          [
+            "_RtadJSOAS0.10",
+            "_RtadJSOAS0.13",
+            "_RtadJSOAS0.19"
+          ],
+          [
+            "eB6EX3VyAUw.1"
+          ]
+        ]
+      ],
+      "expected_d7_sims": [
+        [
+          "A green background with a red arrow pointing to youtube.",
+          "A red background with a megaphone and the words we are hiring.",
+          "A blue background with the words introduction to data science.",
+          "A green background with a thank you for watching sign.",
+          "A red background with the words token economics course info.",
+          "A black screen with a red heart on it.",
+          "A picture of a chair with a blue arrow pointing to it."
+        ],
+        [
+          0.274658203125,
+          0.273681640625,
+          0.275146484375,
+          0.277587890625,
+          0.273193359375,
+          0.277587890625,
+          0.2763671875
+        ]
+      ]
+    }
+  }
+}

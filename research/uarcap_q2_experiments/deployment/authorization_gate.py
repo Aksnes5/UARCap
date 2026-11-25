@@ -1,4 +1,4 @@
-"""CLI Authorization Gate Enforcer invoked by BN bash entrypoints before any GPU stage."""
+"""CLI Authorization Gate Enforcer invoked by BN bash entrypoints (P0-5 remediated)."""
 
 from __future__ import annotations
 
@@ -15,15 +15,18 @@ from uarcap_q2.common.gates import AuthorizationError, verify_stage_authorizatio
 from uarcap_q2.common.schemas import PilotStage
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser(description="Verify stage authorization receipt before execution")
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description="Verify unified stage authorization & real prerequisite receipts")
     ap.add_argument("--stage", choices=[s.value for s in PilotStage], required=True)
     ap.add_argument("--auth-receipt", type=Path, default=None)
     ap.add_argument("--prior-a1", type=Path, default=None)
     ap.add_argument("--prior-a2", type=Path, default=None)
     ap.add_argument("--prior-a3", type=Path, default=None)
+    ap.add_argument("--formal-config", type=Path, default=None)
+    ap.add_argument("--asset-manifest", type=Path, default=None)
+    ap.add_argument("--pilot-exclusion", type=Path, default=None)
     ap.add_argument("--allow-cpu-mock", action="store_true")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     priors = {}
     if args.prior_a1:
@@ -39,6 +42,9 @@ def main() -> int:
             auth_receipt_path=args.auth_receipt,
             prior_receipts=priors,
             allow_cpu_mock=args.allow_cpu_mock,
+            formal_config_path=args.formal_config,
+            asset_manifest_path=args.asset_manifest,
+            pilot_exclusion_path=args.pilot_exclusion,
         )
         print(json.dumps(res, indent=2))
         return 0

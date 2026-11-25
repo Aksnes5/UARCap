@@ -1,69 +1,40 @@
-# BN 服务器恢复后一键操作指南（BN SERVER QUICKSTART）
+# BN 服务器恢复后一键操作指南（BN SERVER QUICKSTART — 真实执行链整改版）
 
-> 本指南覆盖从恢复 BN 服务器访问到完成 **Pilot A0 + A1** 并导出人工标注包的全部核对命令。  
-> **安全红线**：绝不升级旧 Video-LLaMA 环境（`/media/bn/.../repro_evcap/venv`），绝不杀死其他项目 GPU 进程，绝不向 GitHub 提交 HF Token、原始视频或模型权重。
+> 适用分支：`antigravity/uarcap-q2-real-execution-integration`  
+> 本指南所有命令均对应已修复的真实执行入口（零 `READY_FOR_BN_REAL_ADAPTER` 占位；严格执行 `StageRunStatus` 状态机与 `stage_unlock` 授权门控）。
 
 ---
 
-## 第 1 步：进入工作目录并拉取最新离线工程分支
+## 第 1 步：拉取最新整改分支并进入工程目录
 
 ```bash
 cd /home/bn
-git clone https://github.com/Aksnes5/UARCap.git uarcap_q2_repo   # 若目录已存在则 cd uarcap_q2_repo && git fetch origin
+git clone https://github.com/Aksnes5/UARCap.git uarcap_q2_repo   # 若已存在：cd /home/bn/uarcap_q2_repo && git fetch origin
 cd /home/bn/uarcap_q2_repo
-git checkout antigravity/uarcap-q2-complete-offline-implementation
-git pull origin antigravity/uarcap-q2-complete-offline-implementation
+git checkout antigravity/uarcap-q2-real-execution-integration
+git pull origin antigravity/uarcap-q2-real-execution-integration
 cd /home/bn/uarcap_q2_repo/research/uarcap_q2_experiments
 ```
 
-## 第 2 步：一键初始化环境、目录与历史资产配置
+## 第 2 步：一键初始化目录、历史资产配置与 CPU 环境
 
 ```bash
 bash scripts/bootstrap_bn.sh
+conda activate uarcap_q2_cpu
 ```
 
-- 自动在 `/home/bn/uarcap_q2_runtime`（NVMe 可写分区）创建全部数据与输出目录；
-- 自动生成 `configs/bn_paths.local.yaml`（已预填全部历史回执路径；仅当服务器路径发生变动时编辑此唯一文件）；
-- 自动创建隔离的 CPU 分析环境 `uarcap_q2_cpu`（旧 Video-LLaMA 环境 100% 保持只读不动）。
+确认自动生成的 `configs/bn_paths.local.yaml` 中历史路径（已预填 `VideoUFO.csv`、`clips_full.tsv`、`videoufo_brief_text_fp16.npy`、`X-CLIP` 路径、冻结 Video-LLaMA 检查点与 `/home/bn/videoufo_research/gpu.lock`）与现场一致；**旧 Video-LLaMA 环境（`Transformers 4.28.0`）保持 100% 只读不动**。
 
-## 第 3 步：执行非破坏性 CPU/路径/GPU 锁预检（Pilot A0）
+## 第 3 步：执行 Pilot A0 非破坏性预检
 
 ```bash
-conda activate uarcap_q2_cpu
-export HF_TOKEN="<your_huggingface_token_after_accepting_DREAM1K_agreement>"   # 严禁写入任何文件或提交 Git
+export HF_TOKEN="<接受 DREAM-1K gated 协议后的 HF Token，严禁写入文件或提交 Git>"
 bash scripts/run_preflight.sh --verify-ckpt-sha --check-hf-network
 ```
 
-查看输出与 `/home/bn/uarcap_q2_runtime/outputs/pilot_a0/preflight_receipt.json`，确认：
-- `historical_assets` 全部 `exists: true` 且 `canonical_checkpoint` SHA-256 匹配；
-- `disk.ok: true`（剩余空间 $\ge 150\text{ GB}$）；
-- `gpu_non_destructive_probe.active_compute_apps` 为空且 `shared_gpu_lock.exists: true`；
-- `dream1k_hf_access.accessible: true`（若受阻，先在浏览器打开 `https://huggingface.co/datasets/omni-research/DREAM-1K` 点击同意协议，或改用下方路线 2 离线中转）。
+检查 `/home/bn/uarcap_q2_runtime/outputs/pilot_a0/preflight_receipt.json`，确认全部历史资产存在、检查点 SHA-256 匹配、磁盘剩余 $\ge 150\text{ GB}$、GPU 空闲且 `dream1k_hf_access.accessible == true`。
 
-## 第 4 步：准备 DREAM-1K 数据（仅 3.59 GiB；暂不下载 VidHalluc 15.60 GiB）
-
-- **路线 1（BN 直连下载，优先）**：
-```bash
-python deployment/stage_assets.py download --data-root /home/bn/uarcap_q2_runtime/data --asset dream1k_metadata --confirm-download
-python deployment/stage_assets.py download --data-root /home/bn/uarcap_q2_runtime/data --asset dream1k_videos --confirm-download
-```
-
-- **路线 2（若 BN 无法连 HF：Windows 本地下载分卷后上传至 BN 导入）**：
-```bash
-# 在 Windows 本地执行分卷：
-# python deployment/stage_assets.py split --src <local_video.zip> --out-dir D:\transfer_chunks --chunk-mb 512
-# 将 D:\transfer_chunks 传至 BN /home/bn/uarcap_q2_runtime/staging/ 后在 BN 执行校验重组：
-python deployment/stage_assets.py import \
-  --manifest /home/bn/uarcap_q2_runtime/staging/video.zip.transfer_manifest.json \
-  --dest /home/bn/uarcap_q2_runtime/data/dream1k/video/video.zip
-```
-
-验证完整性：
-```bash
-python deployment/stage_assets.py verify --data-root /home/bn/uarcap_q2_runtime/data --asset dream1k_videos
-```
-
-## 第 5 步：写入 Pilot A0/A1 授权收据并启动 Pilot A0 + A1
+## 第 4 步：签发 Pilot A0/A1 授权收据并下载/导入 DREAM-1K（仅 3.59 GiB）
 
 ```bash
 cat > /home/bn/uarcap_q2_runtime/authorizations/pilot_a01_auth.json <<'EOF'
@@ -73,44 +44,57 @@ cat > /home/bn/uarcap_q2_runtime/authorizations/pilot_a01_auth.json <<'EOF'
   "approval_id": "USER_APPROVED_PILOT_A01"
 }
 EOF
+```
 
-# 先跑 dry-run 核对命令与路径（0 GPU）：
+- **路线 1（BN 直连，须带 `--auth-receipt` 通过 `stage_unlock` 校验）**：
+```bash
+python deployment/stage_assets.py download --data-root /home/bn/uarcap_q2_runtime/data --asset dream1k_metadata --confirm-download
+python deployment/stage_assets.py download --data-root /home/bn/uarcap_q2_runtime/data --asset dream1k_videos --confirm-download \
+  --auth-receipt /home/bn/uarcap_q2_runtime/authorizations/pilot_a01_auth.json
+```
+- **路线 2（Windows 分卷中转后在 BN 校验重组）**：
+```bash
+python deployment/stage_assets.py import \
+  --manifest /home/bn/uarcap_q2_runtime/staging/video.zip.transfer_manifest.json \
+  --dest /home/bn/uarcap_q2_runtime/data/dream1k/video/video.zip
+```
+解压 `video.zip` 至 `/home/bn/uarcap_q2_runtime/data/dream1k/video/` 后验证：
+```bash
+python deployment/stage_assets.py verify --data-root /home/bn/uarcap_q2_runtime/data --asset dream1k_videos
+```
+
+## 第 5 步：启动真实 Pilot A0 + A1（真实 VideoUFO X-CLIP + 冻结 Video-LLaMA 批量执行）
+
+```bash
+# 先 dry-run 核对配置（0 GPU）：
 bash scripts/run_pilot_a01.sh --dry-run
 
-# 确认无误后正式启动 Pilot A0 + A1（30 视频 × 3 臂 = 90 生成）：
+# 正式运行 Pilot A0 + A1（每臂仅加载一次 7B 模型；共 30×3=90 次生成 + 真实前向 hook trace）：
 bash scripts/run_pilot_a01.sh
 ```
 
-## 第 6 步：查看实时状态与安全断点恢复
-
+监控与安全断点续跑：
 ```bash
-# 随时非破坏性查看进度、GPU 锁与输出行数：
 bash scripts/status.sh
-
-# 若意外中断，安全跳过已完成项续跑：
 bash scripts/resume.sh pilot_a01
 ```
 
-## 第 7 步：停在 A2/A3 之前，审阅 Pilot A1 报告并导出人工标注包
+完成后审阅 `/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_dream1k_v1/` 下的 `run_receipt.json`（确认 `status == "REAL_RUNTIME_PASS"`）及三份报告 `PILOT_A1_EXECUTION_REPORT.md`、`PILOT_A1_INTEGRITY_REPORT.md`、`PILOT_A1_GO_NO_GO.md`。
 
-Pilot A1 结束后会自动停止于 A2 之前（未写入 `pilot_a2_auth.json` 时 `run_pilot_a2.sh` 会自动拦截）。先审阅自动生成的三份报告：
-- `/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_dream1k_v1/PILOT_A1_EXECUTION_REPORT.md`
-- `/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_dream1k_v1/PILOT_A1_INTEGRITY_REPORT.md`
-- `/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_dream1k_v1/PILOT_A1_GO_NO_GO.md`
+## 第 6 步：A1 通过后方可执行 Pilot A2（自动停于人工核验节点，退出码 10）
 
-仅当 `PILOT_A1_GO_NO_GO.md` 为 `PASS` 后，再决定是否创建隔离环境 `env_text_evaluator.yaml` 与 `pilot_a2_auth.json` 并启动 `bash scripts/run_pilot_a2.sh`。
-
-### 启动本地网页人工核验工具（Windows 或 Ubuntu 通用）
-
+1. 在隔离环境 `configs/envs/env_text_evaluator.yaml` 部署 1 款跨家族文本裁判并签发 `pilot_a2_auth.json`；
+2. 首次执行 `bash scripts/run_pilot_a2.sh --judge-model-path <local_judge_dir>`（或 `--judge-api-url`）：系统自动读取 A1 `predictions.jsonl`、运行三值代理评测、生成盲法标注包并安全停于 **`HUMAN_VALIDATION_PENDING`（退出码 10）**；
+3. 两位标注员运行本地网页工具完成双盲静音标注与仲裁：
 ```bash
 python scripts/launch_annotation_ui.py \
-  --bundle /path/to/blind_tasks_e2_A1.json \
-  --save-dir /path/to/annotation_saves \
+  --bundle /home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_eval_v1/blind_annotation_package/blind_tasks_e2_A1.json \
+  --save-dir /home/bn/uarcap_q2_runtime/annotation_saves \
   --port 8765
 ```
+4. 传入仲裁真值完成校准收据：`bash scripts/run_pilot_a2.sh --judge-model-path <local_judge_dir> --human-annotations <adjudicated.json>`（确认 `status == "REAL_RUNTIME_PASS"` 且 `human_calibration_completed == true`）。
 
-浏览器自动打开 `http://127.0.0.1:8765/`：先看静音视频填写 Phase 1 核心事件，再点击解锁 Phase 2 匿名字幕，逐条一键点击四类视频真值；每次点击原子化自动保存，随时退出续标，结束后点击右上角导出 JSONL/CSV。
+## 第 7 步：A2 通过后方可执行 Pilot A3 与（经冻结授权后的）Formal B
 
-## 第 8 步：仅导出小型可公开审计报告并提交 GitHub
-
-仅将 `PILOT_A1_*.md`、`run_receipt.json` 等小型非受限文本报告复制回仓库对应记录目录并推送（**严禁提交视频、权重、Token 或 VidHalluc 原始 JSON**）。
+- **Pilot A3**：构建隔离环境 `configs/envs/env_modern_vlm.yaml`、签发 `pilot_a3_auth.json`、带 `--auth-receipt` 与 `--prior-a2` 下载 VidHalluc `15.60 GiB`、运行 `bash scripts/run_pilot_a3.sh --modern-vlm-path <local_qwen25vl_dir> --judge-model-path <local_judge_dir>`（未提供人工审批候选时自动停在退出码 10 等待 5 项审核，审批后传入 `--approved-e3-candidates` 完成 A3）；
+- **Formal B**：默认硬阻断，必须由用户在 Pilot A1/A2/A3 全部取得 `REAL_RUNTIME_PASS` 后冻结配置与全部 SHA-256 绑定并签发 `formal_b_auth.json` 才可运行 `bash scripts/run_formal_b.sh`。

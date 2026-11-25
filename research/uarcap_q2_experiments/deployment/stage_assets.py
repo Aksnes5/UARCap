@@ -1,9 +1,9 @@
-"""CLI for Route 1 BN resumable downloads and Route 2 Windows-to-BN chunked offline transfer.
+"""Stage-gated dataset downloader & Route 2 offline chunk transfer (P0-5 remediated: actively enforces stage_unlock!).
 
-Strictly enforces stage-gated unlocking:
-  - PILOT_A1: DREAM-1K video.zip (3.59 GiB) + metadata only.
-  - PILOT_A3: VidHalluc ACH_videos.zip (15.60 GiB) + JSONs only after A2 approval.
-NEVER logs or persists HF_TOKEN!
+Rules:
+  - dream1k_metadata (PILOT_A0): permitted during A0 preflight with --confirm-download.
+  - dream1k_videos (PILOT_A1, 3.59 GiB): REQUIRES valid PILOT_A1 --auth-receipt!
+  - vidhalluc_ach_* (PILOT_A3, 15.60 GiB): REQUIRES valid PILOT_A3 --auth-receipt AND PILOT_A2 REAL_RUNTIME_PASS --prior-a2!
 """
 
 from __future__ import annotations
@@ -17,6 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from uarcap_q2.common.gates import AuthorizationError, verify_asset_download_authorization
+from uarcap_q2.common.schemas import PilotStage
 from uarcap_q2.datasets.asset_transfer import (
     AssetSpec,
     download_with_resume,
@@ -78,7 +80,7 @@ KNOWN_ASSETS: dict[str, AssetSpec] = {
 }
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Stage-gated dataset downloader & Route 2 offline chunk transfer")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
@@ -86,10 +88,13 @@ def main() -> int:
     p_ver.add_argument("--data-root", type=Path, required=True)
     p_ver.add_argument("--asset", choices=sorted(KNOWN_ASSETS), required=True)
 
-    p_dl = sub.add_parser("download", help="Download a single stage-approved asset with HTTP resume")
+    p_dl = sub.add_parser("download", help="Download a single stage-authorized asset with HTTP resume")
     p_dl.add_argument("--data-root", type=Path, required=True)
     p_dl.add_argument("--asset", choices=sorted(KNOWN_ASSETS), required=True)
-    p_dl.add_argument("--confirm-download", action="store_true", help="Required explicit flag to prevent accidental downloads")
+    p_dl.add_argument("--confirm-download", action="store_true")
+    p_dl.add_argument("--auth-receipt", type=Path, default=None, help="Required for PILOT_A1/A3 gated assets")
+    p_dl.add_argument("--prior-a1", type=Path, default=None)
+    p_dl.add_argument("--prior-a2", type=Path, default=None)
 
     p_sp = sub.add_parser("split", help="Route 2: Split local archive into SHA-256 verified transfer chunks")
     p_sp.add_argument("--src", type=Path, required=True)
@@ -100,16 +105,26 @@ def main() -> int:
     p_im.add_argument("--manifest", type=Path, required=True)
     p_im.add_argument("--dest", type=Path, required=True)
 
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
     if args.cmd == "verify":
         res = verify_local_asset(args.data_root, KNOWN_ASSETS[args.asset])
         print(json.dumps(res, indent=2))
         return 0 if res["ok"] else 2
     if args.cmd == "download":
         if not args.confirm_download:
-            print("Refusing download without --confirm-download (offline design safety guard).", file=sys.stderr)
+            print("Refusing download without --confirm-download (offline safety guard).", file=sys.stderr)
             return 2
         spec = KNOWN_ASSETS[args.asset]
+        priors = {}
+        if args.prior_a1:
+            priors[PilotStage.PILOT_A1.value] = args.prior_a1
+        if args.prior_a2:
+            priors[PilotStage.PILOT_A2.value] = args.prior_a2
+        try:
+            verify_asset_download_authorization(spec.asset_id, spec.stage_unlock, args.auth_receipt, priors)
+        except AuthorizationError as exc:
+            print(f"[STAGE_UNLOCK_BLOCKED] Asset '{spec.asset_id}' requires stage {spec.stage_unlock}: {exc}", file=sys.stderr)
+            return 3
         res = download_with_resume(
             url=spec.source_url,
             dest_path=args.data_root / spec.relative_path,

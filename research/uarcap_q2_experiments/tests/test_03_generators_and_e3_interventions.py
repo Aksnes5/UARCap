@@ -58,10 +58,13 @@ def test_modern_vlm_config_prompt_and_trace(synthetic_dream1k_dir: Path) -> None
 
     cfg = ModernVLMConfig(local_model_path="/tmp/qwen25vl", pinned_revision="rev_test_01")
     adapter = Qwen25VLAdapter(cfg)
-    msgs0, trace0 = adapter.build_messages_and_trace(recs[0], pkt_a0, PilotStage.PILOT_A3, "vis_sha_1", list(range(16)))
-    msgs7, trace7 = adapter.build_messages_and_trace(recs[0], pkt_a7, PilotStage.PILOT_A3, "vis_sha_1", list(range(16)))
-    assert len(msgs0) == 2 and trace0.text_evidence == []
-    assert len(trace7.text_evidence) == 7 and trace0.prompt_rendered_sha256 != trace7.prompt_rendered_sha256
+    from PIL import Image
+
+    dummy_frames = [Image.new("RGB", (32, 32), color=(i * 10, 20, 30)) for i in range(16)]
+    msgs0, rend0 = adapter.build_messages(pkt_a0, dummy_frames)
+    msgs7, rend7 = adapter.build_messages(pkt_a7, dummy_frames)
+    assert len(msgs0) == 2 and len(msgs7) == 2
+    assert rend0["user"] != rend7["user"]
     p0 = render_modern_vlm_prompt(pkt_a0, "short_aligned")
     assert "8-18 words" in p0["user"]
 

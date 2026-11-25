@@ -11,9 +11,14 @@ host:
   min_free_disk_gb: 150
 
 historical_frozen_assets:
-  # Read-only frozen paths verified in BN_DEPLOYMENT_PATH_BINDINGS.json (2026-11-24)
+  # Read-only frozen paths verified in BN_DEPLOYMENT_PATH_BINDINGS.json & 52b5ed3a:scripts/make_external_retrieval_test.py
   videoufo_dataset_root: "/home/bn/datasets/VideoUFO"
+  videoufo_csv_path: "/home/bn/datasets/VideoUFO/metadata/VideoUFO.csv"
   videoufo_research_root: "/home/bn/videoufo_research"
+  clips_full_tsv_path: "/home/bn/videoufo_research/manifests/clips_full.tsv"
+  brief_text_emb_npy_path: "/home/bn/videoufo_research/embeddings/videoufo_brief_text_fp16.npy"
+  xclip_repo_dir: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/EvcapProject/X-CLIP"
+  xclip_ckpt_path: "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/EvcapProject/X-CLIP/modelpth/k600_16_16.pth"
   original_evcap_root: "/home/bn/videoufo_research/evcap_external"
   v06_runtime_inputs: "/home/bn/uar_v06_runtime/inputs"
   v06_runtime_evcap_work: "/home/bn/uar_v06_runtime/evcap_work"

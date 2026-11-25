@@ -67,6 +67,18 @@ class VerdictStatus(str, Enum):
     INCONCLUSIVE = "INCONCLUSIVE"
 
 
+class StageRunStatus(str, Enum):
+    """Unified stage execution state machine (strictly separates MOCK_PASS vs REAL_RUNTIME_PASS)."""
+
+    MOCK_PASS = "MOCK_PASS"
+    REAL_RUNTIME_PASS = "REAL_RUNTIME_PASS"
+    HUMAN_VALIDATION_PENDING = "HUMAN_VALIDATION_PENDING"
+    INCONCLUSIVE = "INCONCLUSIVE"
+    FAILED = "FAILED"
+    BLOCKED = "BLOCKED"
+    SCIENTIFIC_PROTOCOL_PENDING = "SCIENTIFIC_PROTOCOL_PENDING"
+
+
 class FailureCategory(str, Enum):
     DATA_UNAVAILABLE = "DATA_UNAVAILABLE"
     MODEL_INCOMPATIBLE = "MODEL_INCOMPATIBLE"
@@ -150,6 +162,8 @@ class InputTrace:
     rng_seed: int
     decoding_config: dict[str, Any]
     base_visual_mode: str = "NONE"  # NONE | BASE_A0 | BASE_B3
+    injection_interface: str = "BIMODAL_CROSS_GATING"  # BIMODAL_CROSS_GATING | PROMPT_TEXT_ONLY
+    actual_processor_telemetry: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

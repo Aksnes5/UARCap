@@ -1,17 +1,20 @@
-"""Deterministic CPU Mock Generator with controllable fault-injection modes for offline E2E testing."""
+"""Deterministic CPU Mock Generator with controllable fault-injection modes for offline CPU tests ONLY."""
 
 from __future__ import annotations
 
 from time import perf_counter
+from typing import Any
 
 from ..common.io_utils import primitive_hash
 from ..common.schemas import ExpArm, InputTrace, PilotStage, QueryRecord
 from ..retrieval.arm_builder import ArmInputPacket
-from .base import GenerationOutput, GeneratorAdapter, GeneratorOOMError, verify_actual_input_trace
+from .base import GenerationOutput, GeneratorAdapter, GeneratorOOMError
 
 
 class MockGeneratorAdapter(GeneratorAdapter):
     """CPU-only deterministic mock generator. NEVER produces real scientific findings."""
+
+    injection_interface = "BIMODAL_CROSS_GATING"
 
     def __init__(
         self,
@@ -35,6 +38,7 @@ class MockGeneratorAdapter(GeneratorAdapter):
         stage: PilotStage,
         visual_input_sha256: str,
         frame_indices: list[int],
+        frame_images: list[Any] | None = None,
     ) -> GenerationOutput:
         t0 = perf_counter()
         fault = self.fault_mode if self._should_fault(query.query_id) else None
@@ -51,6 +55,7 @@ class MockGeneratorAdapter(GeneratorAdapter):
             else list(packet.text_evidence)
         )
 
+        # Intentionally return trace WITHOUT pre-raising so orchestrator's post-generation trace gate is exercised too!
         trace = InputTrace(
             query_id=query.query_id,
             dataset_id=query.dataset_id,
@@ -67,14 +72,12 @@ class MockGeneratorAdapter(GeneratorAdapter):
             rng_seed=42,
             decoding_config={"mock": True, "max_new_tokens": 32},
             base_visual_mode=packet.base_visual_mode,
+            injection_interface=self.injection_interface,
         )
-        # Always verify actual trace before emitting output!
-        verify_actual_input_trace(trace, packet, self.expected_checkpoint_sha256, visual_input_sha256)
 
         if fault == "empty_output":
             caption = ""
         elif packet.arm == ExpArm.E3_CON.value and query.candidate_conflict_fact:
-            # Deterministic synthetic behavior for E3 pipeline testing only
             caption = f"A person is {query.candidate_conflict_fact} outside."
         elif packet.arm == ExpArm.E3_SUP.value and query.target_true_fact:
             caption = f"A person is {query.target_true_fact} outdoors."

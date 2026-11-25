@@ -1,9 +1,11 @@
-"""Faithful frozen D consensus reranker (full-caption mean pairwise ROUGE-L) and retriever adapters.
+"""Byte-faithful frozen D consensus reranker (matching 52b5ed3a:scripts/make_external_retrieval_test.py) and retriever interface.
 
-Preserves exact v0.8 reproducibility fidelity:
-  - External caption deduplication groups by `.strip()` only (matching frozen UARCap implementation).
-  - D quality score = mean pairwise full-caption ROUGE-L F1 across the top-M grouped candidates.
-  - Provides clean RetrieverAdapter abstraction plus MockXCLIPRetriever for deterministic CPU E2E tests.
+Verified 1:1 fidelity against frozen historical BN implementation (make_external_retrieval_test.py):
+  1. External caption grouping: Brief Caption.strip() only; clip_ids sorted lexicographically so clip_ids[0]
+     is the exact canonical representative clip ID.
+  2. ROUGE-L F1: lowercased whitespace split (`a.lower().split()`, `b.lower().split()`) exact LCS F1.
+  3. Consensus D rerank score: mean pairwise ROUGE-L F1 over the remaining M-1 candidates.
+  4. Tie-break: strictly `sorted(range(len(caps)), key=lambda i: (-q[i], i))` (original retrieval rank ascending).
 """
 
 from __future__ import annotations
@@ -19,34 +21,34 @@ from ..common.schemas import QueryRecord, RetrievalCandidate
 def _lcs_length(a: list[str], b: list[str]) -> int:
     if not a or not b:
         return 0
-    m, n = len(a), len(b)
-    prev = [0] * (n + 1)
+    prev = [0] * (len(b) + 1)
     for tok_a in a:
-        curr = [0] * (n + 1)
+        curr = [0] * (len(b) + 1)
         for j, tok_b in enumerate(b, 1):
             if tok_a == tok_b:
                 curr[j] = prev[j - 1] + 1
             else:
                 curr[j] = curr[j - 1] if curr[j - 1] >= prev[j] else prev[j]
         prev = curr
-    return prev[n]
+    return prev[-1]
 
 
 def rouge_l_f1(cand_a: str, cand_b: str) -> float:
-    toks_a = cand_a.strip().split()
-    toks_b = cand_b.strip().split()
-    if not toks_a or not toks_b:
+    """Exact replica of frozen make_external_retrieval_test.py::rouge_l (lowercased whitespace tokens)."""
+    x = cand_a.lower().split()
+    y = cand_b.lower().split()
+    if not x or not y:
         return 0.0
-    lcs = _lcs_length(toks_a, toks_b)
+    lcs = _lcs_length(x, y)
     if lcs == 0:
         return 0.0
-    prec = lcs / len(toks_a)
-    rec = lcs / len(toks_b)
-    return 2.0 * prec * rec / (prec + rec)
+    p = lcs / len(x)
+    r = lcs / len(y)
+    return 2.0 * p * r / (p + r)
 
 
 def group_external_candidates_strip_only(raw_hits: list[dict[str, Any]], top_m: int = 20) -> list[RetrievalCandidate]:
-    """Group external VideoUFO hits by caption.strip() only (exact v0.8 predecessor fidelity)."""
+    """Group external VideoUFO hits by caption.strip() only with lexicographically sorted clip_ids."""
     grouped: OrderedDict[str, dict[str, Any]] = OrderedDict()
     for hit in raw_hits:
         cap = str(hit["caption"]).strip()
@@ -69,12 +71,14 @@ def group_external_candidates_strip_only(raw_hits: list[dict[str, Any]], top_m: 
 
     out: list[RetrievalCandidate] = []
     for idx, item in enumerate(grouped.values()):
+        sorted_clips = sorted(item["clip_ids"])
+        sorted_sources = sorted(set(item["source_ids"]))
         out.append(
             RetrievalCandidate(
                 caption=item["caption"],
                 score=item["score"],
-                clip_ids=item["clip_ids"],
-                source_ids=item["source_ids"],
+                clip_ids=sorted_clips,
+                source_ids=sorted_sources,
                 original_rank=idx,
             )
         )
@@ -82,30 +86,35 @@ def group_external_candidates_strip_only(raw_hits: list[dict[str, Any]], top_m: 
 
 
 def rerank_d_consensus(candidates: list[RetrievalCandidate]) -> list[RetrievalCandidate]:
-    """Frozen D quality-aware consensus reranker: full-caption mean pairwise ROUGE-L F1."""
+    """Exact replica of frozen make_external_retrieval_test.py D consensus reranker.
+
+    Computes q[i] = mean_{j != i} rouge_l_f1(caps[i], caps[j]) and sorts strictly by (-q[i], i)
+    where i is the original retrieval position (0-based).
+    """
     n = len(candidates)
     if n == 0:
         return []
-    scored: list[tuple[float, float, int, RetrievalCandidate]] = []
-    for i, ci in enumerate(candidates):
-        if n == 1:
-            mean_rl = 1.0
-        else:
-            rl_sum = sum(rouge_l_f1(ci.caption, cj.caption) for j, cj in enumerate(candidates) if j != i)
-            mean_rl = rl_sum / (n - 1)
-        scored.append((mean_rl, ci.score, -(ci.original_rank if ci.original_rank is not None else i), ci))
+    caps = [c.caption for c in candidates]
+    if n == 1:
+        q_scores = [1.0]
+    else:
+        q_scores = [
+            sum(rouge_l_f1(caps[i], caps[j]) for j in range(n) if j != i) / (n - 1)
+            for i in range(n)
+        ]
 
-    scored.sort(key=lambda t: (t[0], t[1], t[2]), reverse=True)
+    order = sorted(range(n), key=lambda i: (-q_scores[i], i))
     reranked: list[RetrievalCandidate] = []
-    for r_idx, (mean_rl, _, _, cand) in enumerate(scored):
+    for r_idx, orig_i in enumerate(order):
+        cand = candidates[orig_i]
         reranked.append(
             RetrievalCandidate(
                 caption=cand.caption,
                 score=cand.score,
-                clip_ids=list(cand.clip_ids),
+                clip_ids=sorted(cand.clip_ids),
                 source_ids=list(cand.source_ids),
-                rerank_score=round(mean_rl, 6),
-                original_rank=cand.original_rank,
+                rerank_score=q_scores[orig_i],
+                original_rank=cand.original_rank if cand.original_rank is not None else orig_i,
                 rerank_rank=r_idx,
             )
         )
@@ -113,13 +122,20 @@ def rerank_d_consensus(candidates: list[RetrievalCandidate]) -> list[RetrievalCa
 
 
 class RetrieverAdapter(ABC):
+    retriever_id: str = "abstract_retriever"
+
     @abstractmethod
     def retrieve_top20(self, query: QueryRecord) -> list[RetrievalCandidate]:
-        """Return up to 20 grouped external VideoUFO candidates sorted by X-CLIP similarity."""
+        """Return up to 20 grouped external VideoUFO candidates sorted by query-conditioned X-CLIP similarity."""
+
+    def get_asset_manifest(self) -> dict[str, Any]:
+        return {"retriever_id": self.retriever_id}
 
 
 class MockXCLIPRetriever(RetrieverAdapter):
-    """Deterministic CPU mock retriever returning 20 realistic VideoUFO-style candidates per query."""
+    """Deterministic CPU mock retriever returning 20 VideoUFO-style candidates per query (CPU tests ONLY)."""
+
+    retriever_id = "mock_xclip_cpu_only"
 
     def __init__(self, corpus_pool: list[dict[str, Any]] | None = None) -> None:
         self.corpus_pool = corpus_pool or self._default_pool()

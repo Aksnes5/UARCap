@@ -1,9 +1,10 @@
-"""Abstract generator interface, trace verification, bounded retry, and OOM/timeout guards."""
+"""Abstract generator interface, BatchItem carrying real decoded frames, and strict actual-input trace verifier."""
 
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
+from pathlib import Path
 from typing import Any
 
 from ..common.schemas import ExpArm, InputTrace, PilotStage, QueryRecord
@@ -15,7 +16,16 @@ class GeneratorOOMError(MemoryError):
 
 
 class TraceVerificationError(ValueError):
-    """Raised when actual model inputs deviate from the declared arm packet or checkpoint contract."""
+    """Raised when actual model inputs deviate from the declared arm packet, visual contract, or checkpoint."""
+
+
+@dataclass
+class BatchItem:
+    query: QueryRecord
+    packet: ArmInputPacket
+    visual_input_sha256: str
+    frame_indices: list[int]
+    frame_images: list[Any] = field(default_factory=list)  # Actual decoded PIL.Image frames
 
 
 @dataclass
@@ -44,7 +54,7 @@ def verify_actual_input_trace(
     expected_checkpoint_sha256: str,
     expected_visual_sha256: str,
 ) -> None:
-    """Verify actual passed model inputs rather than trusting declarative config alone."""
+    """Verify actual observed model inputs rather than trusting declarative config alone."""
     if trace.query_id != packet.query_id:
         raise TraceVerificationError(f"Query mismatch in trace: {trace.query_id} != {packet.query_id}")
     if trace.arm != packet.arm:
@@ -63,15 +73,34 @@ def verify_actual_input_trace(
             raise TraceVerificationError(f"ARM_A0 trace violation for {trace.query_id}: non-empty external evidence")
     if trace.text_evidence != packet.text_evidence:
         raise TraceVerificationError(f"Actual text_evidence in trace differs from arm packet for {trace.query_id}")
-    if trace.visual_evidence_ids != packet.visual_clip_ids:
-        raise TraceVerificationError(f"Actual visual_evidence_ids in trace differ from arm packet for {trace.query_id}")
+
+    if trace.injection_interface == "PROMPT_TEXT_ONLY":
+        # Modern VLM uses text-only prompt injection: MUST NOT falsely log external visual features it never received!
+        if trace.visual_evidence_ids or trace.visual_evidence_scores:
+            raise TraceVerificationError(
+                f"PROMPT_TEXT_ONLY model {trace.model_id} falsely logged external visual evidence for {trace.query_id}"
+            )
+        tel = trace.actual_processor_telemetry or {}
+        if not tel.get("actual_frames_received") or tel.get("input_ids_len", 0) <= 0:
+            raise TraceVerificationError(
+                f"PROMPT_TEXT_ONLY trace missing real processor telemetry (frames/tokens) for {trace.query_id}"
+            )
+        if tel.get("actual_frames_sha256") != expected_visual_sha256:
+            raise TraceVerificationError(
+                f"Actual frames passed to processor differ from decoded visual hash for {trace.query_id}"
+            )
+    else:
+        if trace.visual_evidence_ids != packet.visual_clip_ids:
+            raise TraceVerificationError(
+                f"Actual visual_evidence_ids in trace differ from arm packet for {trace.query_id}"
+            )
 
 
 class GeneratorAdapter(ABC):
     model_id: str
     expected_checkpoint_sha256: str
+    injection_interface: str = "BIMODAL_CROSS_GATING"
 
-    @abstractmethod
     def generate_one(
         self,
         query: QueryRecord,
@@ -79,5 +108,26 @@ class GeneratorAdapter(ABC):
         stage: PilotStage,
         visual_input_sha256: str,
         frame_indices: list[int],
+        frame_images: list[Any] | None = None,
     ) -> GenerationOutput:
-        """Run single-query generation and return caption + verified InputTrace."""
+        raise NotImplementedError("Override generate_one or generate_batch")
+
+    def generate_batch(
+        self,
+        items: list[BatchItem],
+        stage: PilotStage,
+        work_dir: Path | str,
+        run_id: str = "run",
+    ) -> list[GenerationOutput]:
+        """Default batch loop; batch-native 7B adapters (FrozenVideoLLaMAAdapter) override to load once per arm."""
+        return [
+            self.generate_one(
+                it.query,
+                it.packet,
+                stage,
+                it.visual_input_sha256,
+                it.frame_indices,
+                frame_images=it.frame_images,
+            )
+            for it in items
+        ]
