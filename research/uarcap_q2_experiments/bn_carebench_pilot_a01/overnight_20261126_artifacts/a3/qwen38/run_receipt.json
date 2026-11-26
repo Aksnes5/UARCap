@@ -1,0 +1,26 @@
+{
+  "schema": "uarcap_q2.a3_carebench_exploratory.v1",
+  "status": "EXPLORATORY_COMPLETED_UNCALIBRATED",
+  "run_id": "a3_exploratory_qwen38_carebench_v1",
+  "timestamp_utc": "2026-11-25T18:36:00.054808+00:00",
+  "execution_mode": "EXPLORATORY_A3_CAREBENCH_CROSS_MODEL",
+  "model_id": "Qwen/Qwen3.8-27B-FP8",
+  "model_path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.8-27B-FP8",
+  "multimodal_input_key": "image",
+  "num_frames": 16,
+  "max_new_tokens": 48,
+  "temperature": 0.0,
+  "prompt_regime": "short_aligned",
+  "frames_source": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames",
+  "retrieval_source": "/home/bn/uarcap_q2_runtime/outputs/pilot_a1/pilot_a1_carebench_v1/retrieval_candidates.jsonl",
+  "n_predictions": 90,
+  "per_arm": {
+    "ARM_A0": 30,
+    "ARM_A1": 30,
+    "ARM_A7": 30
+  },
+  "elapsed_sec": 113.9,
+  "peak_vram_mib": 42364,
+  "n_failed_rows_in_failures": 0,
+  "note": "Exploratory cross-model generation only. Old model used visual+text evidence; Qwen uses retrieval text only. Not a formal gate pass."
+}

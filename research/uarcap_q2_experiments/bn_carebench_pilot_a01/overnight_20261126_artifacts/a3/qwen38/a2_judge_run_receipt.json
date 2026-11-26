@@ -1,0 +1,17 @@
+{
+  "schema": "uarcap_q2.machine_caption_eval.v1",
+  "status": "MACHINE_ASSISTED_UNCALIBRATED",
+  "timestamp_utc": "2026-11-25T18:40:50.609186+00:00",
+  "judge_model_id": "RedHatAI/gemma-3-27b-it-FP8-dynamic",
+  "judge_model_path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M04_gemma3_27b",
+  "predictions_path": "/home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen38/predictions.jsonl",
+  "n_items": 90,
+  "n_rows": 90,
+  "n_unique_captions": 68,
+  "n_duplicate_reuses": 22,
+  "n_retries": 0,
+  "n_parse_failures": 0,
+  "n_raw_calls": 204,
+  "elapsed_sec": 287.1,
+  "core_event_lock_sha256": "6692d1dd20aa09f16b4815892c56547d72ead07b920790cee6d47bfacb94c552"
+}

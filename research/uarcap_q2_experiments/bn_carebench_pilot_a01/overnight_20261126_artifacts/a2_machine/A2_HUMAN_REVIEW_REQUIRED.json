@@ -1,0 +1,661 @@
+{
+  "schema": "uarcap_q2.a2_human_review_required.v1",
+  "generated_utc": "2026-11-25T18:19:51.692956+00:00",
+  "n_items": 17,
+  "items": [
+    {
+      "query_id": "carebench_v_00002093_8",
+      "claim": "The makeup is black eyeliner.",
+      "reference": "Caption: This video portrays a scene of a woman applying her makeup. Throughout the footage, we can see her entire face, complemented by her long, brown hair. She is wearing a soft lotus pink nail polish. Her eyebrows and the eye makeup on her left eye, as well as her foundation, are already perfectly done. A nose ring adorns the center of her nose, and on the lower right side of her bottom lip, there is a lip stud. In her hand, she holds a black pen with a stainless steel and black bristle brush head. Her eye makeup features pink eyeshadow applied to her eyelids, while a brown eyeshadow is used in her eye socket. However, her right eye's eyelashes appear pale, with traces of eyeshadow powder lingering on them. Throughout the video, she uses the brush to dab and sweep lightly across her right eyelid, moving gently from side to side along the crease. She first focuses on the eyeshadow in the middle of her eyelid, then shifts her attention to the area near her inner corner, and finally, she tends to the outer edge and the eyelid as a whole. The video is filmed from a side angle, and her overall movements are minimal yet stable. Her demeanor appears natural and composed throughout.\nSpatial: This video depicts a scene of a woman applying her makeup. In the video, we can see her entire face, complemented by her long brown hair. She has on a light pink nail polish. Her eyebrows, along with the eye makeup on her left eye and her base makeup, are already flawlessly completed. A nose ring adorns the center of her nose. On the right side of her lower lip, there is a lip stud, and she is gripping a black pen-like brush with a stainless steel middle section and a black bristle tip. Her eye makeup features pink eyeshadow elegantly applied on her eyelids, while brown eyeshadow accents her eye sockets. However, the lashes on her right eye appear whitened, with remnants of eyeshadow powder clinging to them.\nTemporal: This video depicts a scene of a woman applying her makeup. Throughout the video, she holds a brush and dabs and sweeps on her right eyelid, gliding it gently back and forth along her eye socket. She starts by focusing on the eyeshadow in the center of her eyelid, then moves on to the area near the inner corner of her eye, and finally she attends to the outer corner of her eyelid and the overall appearance of her eyelid.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002093_8.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002093_8/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "unmentioned",
+        "llama": "contradicted",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The makeup is being applied to the woman's face.",
+      "reference": "Caption: This video showcases the process of an individual applying blue lipstick to complete their makeup look. The person is wearing a green headscarf, has a blue and pink gradient eye makeup, and some black accents scattered on both sides of their cheeks. In one hand, they hold a silver pencil, while their right hand is occupied with a mirror. The background features a white, concentric circle pattern. During the lipstick application, the individual keeps their gaze fixed on the mirror. With their left hand, they first draw two gentle strokes in the center of their lower lip at a slow pace before quickly sweeping towards the left corner of their mouth, coating that side thoroughly with lipstick. They then tilt their head to the left. Subsequently, they make a few delicate strokes from the right corner inward towards the center of the lips, and after that, they apply back-and-forth strokes on the lower lip. They also touch up the area of the right corner that hasn't been covered with lipstick. Once they finish defining the center of the upper lip, they smoothly apply lipstick back and forth from the left corner to the right corner, ensuring even coverage. The video is shot from the front, clearly showing the individual's remarkable skill in applying lipstick as they achieve a flawless and even finish without any mistakes.\nSpatial: This video showcases a person applying blue lipstick to complete their makeup look. The individual wears a green headscarf, and their face is adorned with a blue-to-pink gradient makeup, accented with some black splashes on either cheek. They hold a silver pencil in one hand, while the other hand is occupied with a mirror. The background features a white pattern of concentric circles.\nTemporal: This video showcases the process of a person applying blue lipstick to complete their makeup look. Throughout the lipstick application, the individual keeps their eyes focused on the mirror. With their left hand holding the lipstick, they first make two gentle and slow strokes in the center of the lower lip before swiftly gliding the color towards the left corner of their mouth, filling in the left side completely. Then, they tilt their head to the left and lightly swipe from the right corner of their mouth towards the center a few times. After that, they apply the lipstick back and forth on the lower lip, touching up the areas that were still bare on the right corner. Once they carefully outline the center of the upper lip with lipstick, they smoothly apply it from the left corner to the right corner, layering it as they go.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002096_7.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "entailed",
+        "llama": "unmentioned",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "A woman exists.",
+      "reference": "Caption: This video showcases the process of an individual applying blue lipstick to complete their makeup look. The person is wearing a green headscarf, has a blue and pink gradient eye makeup, and some black accents scattered on both sides of their cheeks. In one hand, they hold a silver pencil, while their right hand is occupied with a mirror. The background features a white, concentric circle pattern. During the lipstick application, the individual keeps their gaze fixed on the mirror. With their left hand, they first draw two gentle strokes in the center of their lower lip at a slow pace before quickly sweeping towards the left corner of their mouth, coating that side thoroughly with lipstick. They then tilt their head to the left. Subsequently, they make a few delicate strokes from the right corner inward towards the center of the lips, and after that, they apply back-and-forth strokes on the lower lip. They also touch up the area of the right corner that hasn't been covered with lipstick. Once they finish defining the center of the upper lip, they smoothly apply lipstick back and forth from the left corner to the right corner, ensuring even coverage. The video is shot from the front, clearly showing the individual's remarkable skill in applying lipstick as they achieve a flawless and even finish without any mistakes.\nSpatial: This video showcases a person applying blue lipstick to complete their makeup look. The individual wears a green headscarf, and their face is adorned with a blue-to-pink gradient makeup, accented with some black splashes on either cheek. They hold a silver pencil in one hand, while the other hand is occupied with a mirror. The background features a white pattern of concentric circles.\nTemporal: This video showcases the process of a person applying blue lipstick to complete their makeup look. Throughout the lipstick application, the individual keeps their eyes focused on the mirror. With their left hand holding the lipstick, they first make two gentle and slow strokes in the center of the lower lip before swiftly gliding the color towards the left corner of their mouth, filling in the left side completely. Then, they tilt their head to the left and lightly swipe from the right corner of their mouth towards the center a few times. After that, they apply the lipstick back and forth on the lower lip, touching up the areas that were still bare on the right corner. Once they carefully outline the center of the upper lip with lipstick, they smoothly apply it from the left corner to the right corner, layering it as they go.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002096_7.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002096_7/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "entailed",
+        "llama": "unmentioned",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00002283_1",
+      "claim": "A woman is riding a scooter.",
+      "reference": "Caption: This video showcases the joyful journey of a little girl gliding along on her scooter. She is dressed in a blue T-shirt and dark blue leggings, while wearing a black helmet on her head. The sides of the pathway are lined with lush green lawns, and in the distance, you can see many thriving trees and houses, along with a few utility poles. The road itself is quite flat and appears to be made of concrete, making it perfect for scootering. At the beginning of the footage, the camera is positioned in front of the girl, capturing her as she glides toward the viewer from afar. She stands with her legs together on the scooter, holding onto the handlebars with both hands, her arms slightly bent, and her face lit up with a big smile, radiating happiness. As she moves forward, she approaches a point on the path where a gentle slope rises and falls. When she reaches this intersection, she bends slightly at the waist and knees, lowering her center of gravity to maintain stability. The perspective then shifts to show her from the side and gradually transitions to her rear, while she continues to maintain her initial posture. Her hands expertly steer the scooter in a graceful \"S\" shape as she navigates the path. The camera cuts again, now facing the girl directly, and her movements remain unchanged as she glides along the winding course, still smiling radiantly. The entire video is filmed from a third-person perspective, with varying angles that highlight the girl's carefree gliding style, showcasing her evident skill and technique on the scooter, all while exuding a sense of freedom and joy.\nSpatial: This video showcases a little girl joyfully gliding along on her scooter. She is dressed in a blue T-shirt and deep blue leggings, with a black helmet securely on her head. Flanking her on both sides are lush green lawns, and in the distance, you can see a number of flourishing trees and houses, along with a few utility poles. The path is beautifully smooth, resembling a concrete road, perfect for riding a scooter. The little girl maintains a bright smile on her face as she approaches a section of the path that features gentle slopes, both downhill and uphill, though the incline is quite mild. The camera initially captures the scene from in front of her, where the girl stands with her legs together on the scooter, hands firmly gripping the handlebars while her arms are slightly bent.\nTemporal: This video showcases the delightful journey of a little girl joyfully riding her scooter. The scene opens with a shot from the front, capturing the girl as she glides in from a distance. As she reaches an intersection, she slightly bends her waist and legs to lower her center of gravity for better stability. The perspective then shifts to her side and gradually moves to her rear, where she maintains the same position while skillfully maneuvering her scooter to create an \"S\" shaped curve with her hands gripping the handlebars. The camera then transitions again, this time facing her directly as she continues to glide playfully forward.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002283_1.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002283_1/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "unmentioned",
+        "llama": "contradicted",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00002328_16",
+      "claim": "The hair being shaved belongs to a man.",
+      "reference": "Caption: This video captures the process of a barber shaving someone's head. In the footage, the person getting their head shaved is facing away from the camera, with very short, black hair. The right side of their hair has already been shaved clean, while the left side remains untouched, and a yellow-green ointment is visible on the lower part of their hair. The barber holds a silver razor in his right hand. Throughout the video, his left thumb presses against the person's scalp while his right hand uses the razor to smoothly move back and forth across the lower section of hair, shaving off several centimeters. As he proceeds, his left thumb shifts downward, allowing the razor to continue cutting lower. This action is repeated as his left thumb moves down again, and the razor follows suit. The video is shot from the barber's first-person perspective, clearly demonstrating his skillful and precise shaving movements, while also showcasing the barber's gentle and attentive technique.\nSpatial: This video captures the process of a barber shaving someone's head. In the video, the person being shaved is facing away from the camera; he has very short black hair. The right side of his head has already been shaved, while the left side remains untouched, and there is a yellow-green ointment applied to the lower half of his hair. The barber is holding a silver shaving razor in his right hand.\nTemporal: This video captures the process of a barber shaving someone's head. In the footage, the barber holds a silver razor in his right hand. His left thumb is positioned against the person's scalp, while he moves the razor up and down across the hair just below his thumb, shaving off several centimeters of hair. After that, his left thumb moves down again, and the razor continues its downward stroke. Once more, his left thumb shifts lower, and the razor continues to shave downward. Following this, his left thumb moves down again, with the razor proceeding to shave further.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002328_16.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00002328_16/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "unmentioned",
+        "llama": "entailed",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "The chef is cutting vegetables.",
+      "reference": "Caption: This video showcases the complete process of a person slicing a tomato, dressed in an orange chef's uniform. In his right hand, he holds a fruit knife, while his left hand steadies a tomato. He stands in front of a marble countertop, which features a white cutting board. On the board, there are the tomato he is slicing, along with pre-cut carrot sticks, diced carrots, and other vegetables. Behind the cutting board, three vegetable peelers are placed. To his left, some uncut vegetables are neatly arranged in bowls and a basin, while a stove is positioned to his right, with a cabinet situated behind him.The video begins with a close-up on a small tomato before zooming out to capture the entire scene of the chef cutting the tomato. He first slices the tomato evenly and slowly in half. The camera then zooms in again on the tomato, where the chef’s hands cut each half into quarters. At this point, the camera zooms in on the chef, allowing viewers to see his mouth moving as he speaks while he continues cutting the tomato.The filming perspective initially employs a third-person view for a close-up of the tomato, then shifts back to a right-front view until he has sliced the tomato in half. After he proceeds to cut one of the halves into quarters, the perspective switches back to the right front view until the tomato is fully diced, before finally returning to a close-up of the diced tomato on the cutting board. This all illustrates a skilled and relaxed demonstration of tomato slicing, clearly showing the meticulous and composed nature of this individual.\nSpatial: This video showcases the complete process of a person slicing a tomato while dressed in an orange chef's coat. With a fruit knife in his right hand and a tomato held steady in his left, he stands in front of a marble countertop. On the surface, there's a white cutting board featuring the tomato he is currently slicing, alongside cut carrot sticks, diced carrots, and other vegetables. Behind the cutting board, three peelers are neatly arranged. To his left, there are various uncut vegetables stored in bowls and basins, while a stove is positioned to his right. In the background, there is a cabinet.\nTemporal: This video showcases the complete process of a person slicing a tomato. It begins by focusing on a small tomato before zooming out to reveal the entire scene of the chef cutting the tomato. The chef first slices the tomato in half slowly and steadily from the middle. The camera then shifts to a close-up of the tomato, capturing the chef’s hands as they cut each half into quarters. At this moment, the camera zooms in on the chef, allowing us to see him speaking while he continues to slice the tomato. The video initially uses a third-person perspective for a close-up of the tomato, then pulls back to capture the view from the chef's right front as he divides the tomato in half. After he cuts the halved tomato into quarters, the perspective returns to the right front until the slicing is completed, ultimately switching back to a close-up of the tomato on the cutting board.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00005904_11.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "entailed",
+        "llama": "contradicted",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "The man is cutting vegetables.",
+      "reference": "Caption: This video showcases the complete process of a person slicing a tomato, dressed in an orange chef's uniform. In his right hand, he holds a fruit knife, while his left hand steadies a tomato. He stands in front of a marble countertop, which features a white cutting board. On the board, there are the tomato he is slicing, along with pre-cut carrot sticks, diced carrots, and other vegetables. Behind the cutting board, three vegetable peelers are placed. To his left, some uncut vegetables are neatly arranged in bowls and a basin, while a stove is positioned to his right, with a cabinet situated behind him.The video begins with a close-up on a small tomato before zooming out to capture the entire scene of the chef cutting the tomato. He first slices the tomato evenly and slowly in half. The camera then zooms in again on the tomato, where the chef’s hands cut each half into quarters. At this point, the camera zooms in on the chef, allowing viewers to see his mouth moving as he speaks while he continues cutting the tomato.The filming perspective initially employs a third-person view for a close-up of the tomato, then shifts back to a right-front view until he has sliced the tomato in half. After he proceeds to cut one of the halves into quarters, the perspective switches back to the right front view until the tomato is fully diced, before finally returning to a close-up of the diced tomato on the cutting board. This all illustrates a skilled and relaxed demonstration of tomato slicing, clearly showing the meticulous and composed nature of this individual.\nSpatial: This video showcases the complete process of a person slicing a tomato while dressed in an orange chef's coat. With a fruit knife in his right hand and a tomato held steady in his left, he stands in front of a marble countertop. On the surface, there's a white cutting board featuring the tomato he is currently slicing, alongside cut carrot sticks, diced carrots, and other vegetables. Behind the cutting board, three peelers are neatly arranged. To his left, there are various uncut vegetables stored in bowls and basins, while a stove is positioned to his right. In the background, there is a cabinet.\nTemporal: This video showcases the complete process of a person slicing a tomato. It begins by focusing on a small tomato before zooming out to reveal the entire scene of the chef cutting the tomato. The chef first slices the tomato in half slowly and steadily from the middle. The camera then shifts to a close-up of the tomato, capturing the chef’s hands as they cut each half into quarters. At this moment, the camera zooms in on the chef, allowing us to see him speaking while he continues to slice the tomato. The video initially uses a third-person perspective for a close-up of the tomato, then pulls back to capture the view from the chef's right front as he divides the tomato in half. After he cuts the halved tomato into quarters, the perspective returns to the right front until the slicing is completed, ultimately switching back to a close-up of the tomato on the cutting board.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00005904_11.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00005904_11/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "entailed",
+        "llama": "contradicted",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "claim": "A baby exists.",
+      "reference": "Caption: This video captures a scene of a middle-aged woman trimming the toenails of a little child, approximately four or five years old. The woman has medium-length hair and is wearing rimless glasses. Her complexion appears slightly pale, and her lips lack vibrant color. From her voice, it’s evident that she is speaking in English. The child is holding an orange-yellow toy and occasionally puts it in his mouth to play with it. The woman is dressed in a sky-blue short-sleeve top and is leaning against a gray-white cushion while seated on a purple-black fabric sofa. Behind the sofa, there are white blinds hanging on the wall, and to the left, there’s a small wooden table with a few green and white items on it. On the right side of the sofa's backrest, there is a light blue folding umbrella placed. Beneath the gray-white cushion, there’s a ball of creamy yellow clothing, which appears to belong to the child. The child is dressed in an orange-red short-sleeve top and a pair of red and white striped long pants. The woman gently holds the child and lifts his left foot to start trimming his toenails. Her movements seem somewhat heavy, causing the child to emit reluctant sounds. Despite this, the woman in the video appears very focused and makes an effort to soothe the child’s emotions. While the child shows a slight desire to break free, the entire process exudes a warm atmosphere. This video is shot from a third-person perspective, capturing this intimate yet ordinary moment.\nSpatial: This video captures a scene of a middle-aged woman trimming the toenails of a young child, who appears to be around four or five years old. The woman has medium-length hair and wears frameless glasses. Her complexion is slightly pale, and her lips lack vibrancy. The child is holding a bright orange-yellow toy. The woman is dressed in a light blue short-sleeve top and is seated against a gray-white cushion on a dark purple fabric sofa. Behind the sofa, there are white blinds hanging on the wall. To the left, there is a small wooden table adorned with some green and white items, while to the right, on the back of the sofa, rests a light lavender folding umbrella. Beneath the gray-white cushion, there is a bundle of creamy yellow clothing that seems to belong to the child. The child is dressed in an orange-red short-sleeve top and red-and-white striped long pants.\nTemporal: This video captures a scene of a middle-aged woman trimming the toenails of a child who is around four or five years old. The little one occasionally puts a toy in their mouth and plays with it. The woman gently holds the child, lifts their left foot, and begins to trim the toenails. The child shows a slight inclination to wriggle free, and the woman tries to soothe the child's feelings.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00006909_1.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00006909_1/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "entailed",
+        "llama": "unmentioned",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The man is walking to a starting line.",
+      "reference": "Caption: This video captures a male athlete during javelin throwing training in a stadium. He is wearing a white short-sleeve athletic shirt on top, black athletic pants on the bottom, and a pair of sneakers on his feet. Standing on the stadium's red track, he is flanked by a few green plants, with other athletes and staff around him, while the empty stands can be seen in the background. In the footage, the male athlete raises a white javelin high over his right shoulder, leaning his body weight back, with his left hand reaching out forward and his right hand pulled back, preparing for a powerful throw. He then shifts his body, leading with his right leg before his left leg takes a big step forward, alternating his legs in a forceful run and jump, progressively picking up speed. Finally, as he reaches his optimal throwing point, he unleashes power from his right shoulder, forcefully launching the javelin into the air from his shoulder. The entire video is shot from a third-person perspective in slow motion, clearly documenting the detailed process of this male athlete's run-up to the javelin throw, showcasing his status as a well-trained professional athlete.\nSpatial: This video captures a male athlete training for javelin throwing in a stadium. He is wearing a white short-sleeve sports shirt on top and black athletic pants below, complemented by a pair of sports shoes. Standing on the stadium's red track, he is accompanied by a few green plants nearby, while other athletes and staff are present around him. In the distance, the empty bleachers can be seen.\nTemporal: This video captures a male athlete practicing javelin throwing in a sports arena. In the footage, the athlete raises a javelin high above his shoulder with his right hand, his body leaning slightly backward, while his left hand reaches forward. His right hand is pulled back tightly, preparing for the throw. He then steps sideways, first launching his right leg, followed by a powerful leap with his left leg, alternating between running and jumping as he gradually accelerates. Ultimately, as he reaches the optimal throwing point, he explosively uses his right shoulder to launch the javelin forcefully into the air from his shoulder. The entire process is recorded in slow motion throughout the video.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00008693_0.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "unmentioned",
+        "llama": "contradicted",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The starting line is for a track and field event.",
+      "reference": "Caption: This video captures a male athlete during javelin throwing training in a stadium. He is wearing a white short-sleeve athletic shirt on top, black athletic pants on the bottom, and a pair of sneakers on his feet. Standing on the stadium's red track, he is flanked by a few green plants, with other athletes and staff around him, while the empty stands can be seen in the background. In the footage, the male athlete raises a white javelin high over his right shoulder, leaning his body weight back, with his left hand reaching out forward and his right hand pulled back, preparing for a powerful throw. He then shifts his body, leading with his right leg before his left leg takes a big step forward, alternating his legs in a forceful run and jump, progressively picking up speed. Finally, as he reaches his optimal throwing point, he unleashes power from his right shoulder, forcefully launching the javelin into the air from his shoulder. The entire video is shot from a third-person perspective in slow motion, clearly documenting the detailed process of this male athlete's run-up to the javelin throw, showcasing his status as a well-trained professional athlete.\nSpatial: This video captures a male athlete training for javelin throwing in a stadium. He is wearing a white short-sleeve sports shirt on top and black athletic pants below, complemented by a pair of sports shoes. Standing on the stadium's red track, he is accompanied by a few green plants nearby, while other athletes and staff are present around him. In the distance, the empty bleachers can be seen.\nTemporal: This video captures a male athlete practicing javelin throwing in a sports arena. In the footage, the athlete raises a javelin high above his shoulder with his right hand, his body leaning slightly backward, while his left hand reaches forward. His right hand is pulled back tightly, preparing for the throw. He then steps sideways, first launching his right leg, followed by a powerful leap with his left leg, alternating between running and jumping as he gradually accelerates. Ultimately, as he reaches the optimal throwing point, he explosively uses his right shoulder to launch the javelin forcefully into the air from his shoulder. The entire process is recorded in slow motion throughout the video.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00008693_0.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "entailed",
+        "llama": "unmentioned",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The starting line is part of a track and field event.",
+      "reference": "Caption: This video captures a male athlete during javelin throwing training in a stadium. He is wearing a white short-sleeve athletic shirt on top, black athletic pants on the bottom, and a pair of sneakers on his feet. Standing on the stadium's red track, he is flanked by a few green plants, with other athletes and staff around him, while the empty stands can be seen in the background. In the footage, the male athlete raises a white javelin high over his right shoulder, leaning his body weight back, with his left hand reaching out forward and his right hand pulled back, preparing for a powerful throw. He then shifts his body, leading with his right leg before his left leg takes a big step forward, alternating his legs in a forceful run and jump, progressively picking up speed. Finally, as he reaches his optimal throwing point, he unleashes power from his right shoulder, forcefully launching the javelin into the air from his shoulder. The entire video is shot from a third-person perspective in slow motion, clearly documenting the detailed process of this male athlete's run-up to the javelin throw, showcasing his status as a well-trained professional athlete.\nSpatial: This video captures a male athlete training for javelin throwing in a stadium. He is wearing a white short-sleeve sports shirt on top and black athletic pants below, complemented by a pair of sports shoes. Standing on the stadium's red track, he is accompanied by a few green plants nearby, while other athletes and staff are present around him. In the distance, the empty bleachers can be seen.\nTemporal: This video captures a male athlete practicing javelin throwing in a sports arena. In the footage, the athlete raises a javelin high above his shoulder with his right hand, his body leaning slightly backward, while his left hand reaches forward. His right hand is pulled back tightly, preparing for the throw. He then steps sideways, first launching his right leg, followed by a powerful leap with his left leg, alternating between running and jumping as he gradually accelerates. Ultimately, as he reaches the optimal throwing point, he explosively uses his right shoulder to launch the javelin forcefully into the air from his shoulder. The entire process is recorded in slow motion throughout the video.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00008693_0.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00008693_0/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "entailed",
+        "llama": "unmentioned",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "The instrument is a bagpipe.",
+      "reference": "Caption: This video vividly captures the entire performance of a young man delivering an impressive musical show on a bridge over a river. Dressed in a carefully coordinated outfit, he wears a blue shirt complemented by a tie featuring a blue checkered pattern, paired with a colorful vest. His lower half is adorned with a short skirt in a mix of red, blue, and yellow checks that gracefully reaches just above his knees. He completes the look with black knee-high boots and a stylish black beret, exuding a blend of fashion and artistic flair. Standing on the bridge with a vast expanse of river behind him, dotted with a few boats that enhance the scenic view, he adds an element of poetry and artistry to his performance. Casually leaning against the bridge's rail, the performer stands tall, exuding elegance and composure as he immerses himself in the music. With cheeks puffed out, he cradles his instrument with both hands—left hand on top and right hand below—his fingers dancing nimbly between the holes, producing a melodious and captivating tune.As the video progresses, a man dressed in gray passes by, followed by another man in black, and then a woman in yellow, culminating in a family walking by. Filmed from directly in front of the performer, the video shows that despite the hurried pace of the pedestrians around him, he maintains his own rhythm and flow, undisturbed by external distractions, demonstrating his focus and dedication to the art of music.\nSpatial: This video vividly captures the entire performance of a young male artist playing an impressive musical piece on a bridge above the river. The performer is dressed in a meticulously coordinated outfit, featuring a blue shirt complemented by a vest adorned with a blue checkered tie. His lower attire consists of a short skirt with a lively pattern of red, blue, and yellow checks, perfectly reaching the knee. He wears black knee-high boots and a stylish black beret, creating a look that is both fashionable and artistically striking. Standing tall on the bridge, he has the expansive river as his backdrop, with several boats gently floating on the water. He leans slightly against the railing, exuding a sense of poise and confidence.\nTemporal: This video vividly captures the entire performance of a young man giving an impressive musical display on a bridge over a river. In the footage, the performer puffs out his cheeks as he cradles his instrument, with his left hand positioned above and his right hand below, gracefully maneuvering his fingers among the finger holes. In front of him passes a man in gray, followed by another man in black, then a woman dressed in yellow, and finally, a family strolls by.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00010075_0.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "unmentioned",
+        "llama": "entailed",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "The man is wearing a kilt.",
+      "reference": "Caption: This video vividly captures the entire performance of a young man delivering an impressive musical show on a bridge over a river. Dressed in a carefully coordinated outfit, he wears a blue shirt complemented by a tie featuring a blue checkered pattern, paired with a colorful vest. His lower half is adorned with a short skirt in a mix of red, blue, and yellow checks that gracefully reaches just above his knees. He completes the look with black knee-high boots and a stylish black beret, exuding a blend of fashion and artistic flair. Standing on the bridge with a vast expanse of river behind him, dotted with a few boats that enhance the scenic view, he adds an element of poetry and artistry to his performance. Casually leaning against the bridge's rail, the performer stands tall, exuding elegance and composure as he immerses himself in the music. With cheeks puffed out, he cradles his instrument with both hands—left hand on top and right hand below—his fingers dancing nimbly between the holes, producing a melodious and captivating tune.As the video progresses, a man dressed in gray passes by, followed by another man in black, and then a woman in yellow, culminating in a family walking by. Filmed from directly in front of the performer, the video shows that despite the hurried pace of the pedestrians around him, he maintains his own rhythm and flow, undisturbed by external distractions, demonstrating his focus and dedication to the art of music.\nSpatial: This video vividly captures the entire performance of a young male artist playing an impressive musical piece on a bridge above the river. The performer is dressed in a meticulously coordinated outfit, featuring a blue shirt complemented by a vest adorned with a blue checkered tie. His lower attire consists of a short skirt with a lively pattern of red, blue, and yellow checks, perfectly reaching the knee. He wears black knee-high boots and a stylish black beret, creating a look that is both fashionable and artistically striking. Standing tall on the bridge, he has the expansive river as his backdrop, with several boats gently floating on the water. He leans slightly against the railing, exuding a sense of poise and confidence.\nTemporal: This video vividly captures the entire performance of a young man giving an impressive musical display on a bridge over a river. In the footage, the performer puffs out his cheeks as he cradles his instrument, with his left hand positioned above and his right hand below, gracefully maneuvering his fingers among the finger holes. In front of him passes a man in gray, followed by another man in black, then a woman dressed in yellow, and finally, a family strolls by.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00010075_0.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00010075_0/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "contradicted",
+        "llama": "entailed",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "claim": "A makeup artist is applying eyeliner.",
+      "reference": "Caption: The video showcases a male makeup artist applying eye makeup on a female model, capturing part of the process. Set against a pure black background, the frame focuses on the model's face, but also reveals a portion of the makeup artist's head from the left side. In the scene, the makeup artist uses his left hand to lift the upper eyelid of the model's right eye while holding a pink-packaged mascara with a black brush head in his right hand, gently brushing the model's upper lashes several times. The video features a voiceover that breaks down and explains the artist's technique, mentioning that the key to applying eye makeup is to first layer a few thin coats of eyeshadow on both sides of the upper lash line. The second statement notes that once the final layer of mascara has been applied, the video abruptly ends, leaving the last part of the sentence unfinished. Shot from a third-person perspective, the video clearly presents the actions of both the model and the makeup artist, who are facing each other. The model serves as the focal point of the frame while the makeup artist's head only appears partially, enhancing the sense of interaction within the scene. The camera is not stationary; at the beginning of the video, there is a slight movement towards the upper left corner.\nSpatial: The video showcases a male makeup artist applying eye makeup to a female model. Set against a pure black background, the camera focuses on the model's face, but a portion of the makeup artist's head can be seen on the left side of the frame. The mascara is in pink packaging with a black brush head.\nTemporal: The video showcases a male makeup artist applying eye makeup to a female model. In the footage, the makeup artist uses his left hand to lift the model's right eyelid while holding a mascara wand in his right hand. He gently brushes the model's upper lashes upwards several times. At the beginning of the video, the camera makes a subtle movement to the upper left corner.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00013274_1.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00013274_1/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "unmentioned",
+        "llama": "contradicted",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "claim": "The man is operating a crane.",
+      "reference": "Caption: This video captures a worker actively trimming the leaves of a coconut tree. The worker is dressed in a light-colored shirt and is wearing a bright orange safety helmet. He is standing on a crane, which has a yellow arm and is equipped with a white hanging basket, where the worker is positioned. In his hand, he holds a saw, preparing to prune the coconut tree. Behind him stands a tall coconut tree, its trunk already dried out, with leaves displaying a mix of yellow and green hues. In the video, the crane first rotates counterclockwise, bringing the worker closer to the coconut tree. The camera then experiences a brief blur, followed by the crane's arm descending, enabling the worker to reach the tree's leaves. The image blurs once more before the segment ends. Throughout this process, the wind in the air is quite strong, causing the coconut tree's leaves to sway chaotically. The entire sequence is filmed from a third-person perspective, clearly illustrating that pruning coconut tree branches and leaves is an extremely hazardous task. The winds on the island are notably strong, adding to the difficulty of maintaining the tree's foliage.\nSpatial: This video captures a scene of a worker trimming the leaves of a coconut tree. The worker is dressed in a light-colored shirt and is wearing a bright orange safety helmet. He is standing on a crane, which has a yellow arm and is equipped with a white sling basket, where he stands. In his hands, he holds a saw, ready to trim the coconut tree. Behind him, there is a tall coconut tree with a dry trunk and leaves exhibiting a mix of yellow and green. Throughout the process, the wind in the air is quite strong, causing the leaves of the coconut tree to flutter chaotically.\nTemporal: This video captures the scene of a worker trimming the leaves of a coconut tree. At the beginning, the crane rotates counterclockwise to bring the worker right in front of the coconut tree. Then, the camera briefly goes out of focus before the crane's arm descends, allowing the worker to reach the leaves of the coconut tree. Finally, the camera blurs again for a moment.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00015614_0.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00015614_0/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "contradicted",
+        "llama": "entailed",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The woman is cooking.",
+      "reference": "Caption: This video showcases the process a woman goes through to clean vegetables before placing them in the refrigerator. In the footage, we can see a pair of hands; the right hand is adorned with a gold bracelet intricately carved with numerous designs, revealing the blue patterned cuff of her sleeve. At the center of the frame, there is a stainless steel bowl with handles on either side, the handles made of black plastic. Below the bowl, there's a plastic bag labeled \"OXFORD.\" The bowl is filled with water, in which dozens of vibrant green vegetables are floating. As the woman washes the vegetables, two lines of subtitles appear at the bottom of the screen, reading: \"Always wash vegetables before putting them in the fridge.\" The woman stirs the water with both hands, causing the vegetables to move. She randomly selects a green bean, lifts it out of the water for individual cleaning, and after rinsing it, she tosses it back into the bowl. After washing a few vegetables this way, she decides to speed up the process by grabbing a handful and scrubbing them together in the water. Once she’s done, her left hand holds the bowl while her right hand scoops out the cleaned beans and places them into it. The camera captures the scene from the woman’s right side, including her hands and the bowl, but the image is somewhat blurry with a lower pixel quality.\nSpatial: This video showcases the process a woman follows to wash vegetables before placing them in the refrigerator. In the footage, there is a pair of hands; the right hand is adorned with a golden bracelet intricately carved with various designs, while the sleeve features a blue pattern. At the center of the frame is a stainless steel basin, which has handles on both sides made of black plastic. Beneath the basin, there's a plastic bag labeled \"OXFORD.\" The basin is filled with water, in which dozens of vibrant green vegetables are floating. As the woman washes the vegetables, two lines of white subtitles with black text appear at the bottom of the video, reading: \"Always wash vegetables before putting them in the fridge.\"\nTemporal: This video showcases a woman’s process of washing vegetables before putting them in the refrigerator. She stirs the water in the basin with her hands, causing the vegetables to swirl around. She randomly selects a green bean, lifts it out of the water to wash it separately, and then returns it to the water after cleaning. After washing a few like this, she decides to change her method and starts grabbing handfuls from the water, giving them a few rubs to clean them more efficiently. Once she finishes washing, she holds a basin in her left hand while using her right hand to scoop the cleaned green beans from the water and place them into the basin.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00016057_5.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "unmentioned",
+        "llama": "contradicted",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The woman is preparing a dish.",
+      "reference": "Caption: This video showcases the process a woman goes through to clean vegetables before placing them in the refrigerator. In the footage, we can see a pair of hands; the right hand is adorned with a gold bracelet intricately carved with numerous designs, revealing the blue patterned cuff of her sleeve. At the center of the frame, there is a stainless steel bowl with handles on either side, the handles made of black plastic. Below the bowl, there's a plastic bag labeled \"OXFORD.\" The bowl is filled with water, in which dozens of vibrant green vegetables are floating. As the woman washes the vegetables, two lines of subtitles appear at the bottom of the screen, reading: \"Always wash vegetables before putting them in the fridge.\" The woman stirs the water with both hands, causing the vegetables to move. She randomly selects a green bean, lifts it out of the water for individual cleaning, and after rinsing it, she tosses it back into the bowl. After washing a few vegetables this way, she decides to speed up the process by grabbing a handful and scrubbing them together in the water. Once she’s done, her left hand holds the bowl while her right hand scoops out the cleaned beans and places them into it. The camera captures the scene from the woman’s right side, including her hands and the bowl, but the image is somewhat blurry with a lower pixel quality.\nSpatial: This video showcases the process a woman follows to wash vegetables before placing them in the refrigerator. In the footage, there is a pair of hands; the right hand is adorned with a golden bracelet intricately carved with various designs, while the sleeve features a blue pattern. At the center of the frame is a stainless steel basin, which has handles on both sides made of black plastic. Beneath the basin, there's a plastic bag labeled \"OXFORD.\" The basin is filled with water, in which dozens of vibrant green vegetables are floating. As the woman washes the vegetables, two lines of white subtitles with black text appear at the bottom of the video, reading: \"Always wash vegetables before putting them in the fridge.\"\nTemporal: This video showcases a woman’s process of washing vegetables before putting them in the refrigerator. She stirs the water in the basin with her hands, causing the vegetables to swirl around. She randomly selects a green bean, lifts it out of the water to wash it separately, and then returns it to the water after cleaning. After washing a few like this, she decides to change her method and starts grabbing handfuls from the water, giving them a few rubs to clean them more efficiently. Once she finishes washing, she holds a basin in her left hand while using her right hand to scoop the cleaned green beans from the water and place them into the basin.",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00016057_5.mp4",
+      "sampled_frames": [
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_00.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_01.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_02.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_03.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_04.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_05.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_06.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_07.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_08.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_09.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_10.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_11.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_12.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_13.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_14.jpg",
+        "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/blind_annotation_package/frames/carebench_v_00016057_5/frame_15.jpg"
+      ],
+      "model_opinions": {
+        "gemma": "unmentioned",
+        "llama": "contradicted",
+        "qwen_visual": null
+      },
+      "why_review": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "choices": [
+        "entailed",
+        "contradicted",
+        "unmentioned",
+        "split_error"
+      ]
+    }
+  ]
+}

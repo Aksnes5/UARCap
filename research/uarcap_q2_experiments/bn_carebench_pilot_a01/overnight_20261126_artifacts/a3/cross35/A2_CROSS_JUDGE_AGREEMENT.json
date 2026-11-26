@@ -1,0 +1,403 @@
+{
+  "schema": "uarcap_q2.a2_cross_judge.v1",
+  "status": "MACHINE_ASSISTED_UNCALIBRATED",
+  "generated_utc": "2026-11-26T00:57:38.394016+00:00",
+  "judge_model_id": "meta-llama/Llama-3.3-70B-Instruct-W4A16",
+  "judge_model_path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b",
+  "n_unique_claims": 247,
+  "n_evaluated": 247,
+  "n_parse_failed": 0,
+  "observed_agreement_unique": 0.8664,
+  "cohen_kappa_unique": 0.6489,
+  "label_counts_gemma": {
+    "entailed": 197,
+    "unmentioned": 33,
+    "contradicted": 17
+  },
+  "label_counts_second_judge": {
+    "entailed": 183,
+    "contradicted": 23,
+    "unmentioned": 41
+  },
+  "per_arm_claims": {
+    "ARM_A0": {
+      "n": 152,
+      "agreement": 0.8553,
+      "gemma_counts": {
+        "entailed": 127,
+        "unmentioned": 18,
+        "contradicted": 7
+      },
+      "llama_counts": {
+        "entailed": 112,
+        "contradicted": 14,
+        "unmentioned": 26
+      }
+    },
+    "ARM_A1": {
+      "n": 138,
+      "agreement": 0.8623,
+      "gemma_counts": {
+        "entailed": 112,
+        "unmentioned": 13,
+        "contradicted": 13
+      },
+      "llama_counts": {
+        "entailed": 105,
+        "contradicted": 16,
+        "unmentioned": 17
+      }
+    },
+    "ARM_A7": {
+      "n": 145,
+      "agreement": 0.8621,
+      "gemma_counts": {
+        "entailed": 122,
+        "unmentioned": 15,
+        "contradicted": 8
+      },
+      "llama_counts": {
+        "entailed": 113,
+        "contradicted": 14,
+        "unmentioned": 18
+      }
+    }
+  },
+  "n_disagreements": 33,
+  "n_need_video": 4,
+  "n_ambiguous": 3,
+  "n_atomic_split_suspect": 0,
+  "disagreements": [
+    {
+      "query_id": "carebench_v_00002077_10",
+      "claim": "The eyeshadow is pink.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "Her eye makeup is a blend of pink and orange, with orange dominating the eyelid area and pink concentrated near the eye socket.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The person has colorful face paint.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The person is using a brush.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "they hold a silver pencil in one hand, while the other hand is occupied with a mirror",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "The tomato is being sliced into wedges.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "he cuts each half into quarters",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "claim": "The child is eating a snack.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "claim": "The athlete is running.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "She performs a J-shaped approach on a black mat marked with triangular indicators, taking about ten strides",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "claim": "The athlete is running on a track.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a black mat marked with triangular indicators",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The dog is black and tan.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a black dog",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The boy is wearing gloves.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The boy is sweeping a floor.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The boy is using a broom.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010336_1",
+      "claim": "The area is outdoors.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "situated in a corridor, with a backdrop of brown brick walls",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011374_0",
+      "claim": "There is a microphone.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011374_0",
+      "claim": "The man is standing in front of the microphone.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012062_0",
+      "claim": "The boy is playing a trumpet.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012062_0",
+      "claim": "The trumpet is in the room.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013412_0",
+      "claim": "The men are wearing dark suits.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "Mr. Trump stands on the left side of the frame, sporting his trademark blonde hair, dressed in a black suit jacket with a striped tie and a crisp white shirt, complemented by black trousers. Mr. Kim, with dark hair and wearing a Mao suit.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The dive is from a high platform.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "claim": "The worker is trimming the top of a palm tree.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "This video captures a worker actively trimming the leaves of a coconut tree",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "claim": "The palm tree is tall.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The vegetables are in a metal pot.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "stainless steel bowl",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The metal pot is filled with water.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The makeup is bright.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "blue and pink gradient eye makeup",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005805_0",
+      "claim": "The wood chopping is happening near a cabin.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009795_0",
+      "claim": "The accordion is red and white.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "a bright red accordion hanging in front of him... his right hand gracefully dances across the white treble keys",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015732_0",
+      "claim": "The debris is on a grassy area.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "on the lawn, there are two lamps, an abandoned gray traffic barrier, and some square stones scattered around",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The person is wearing face paint.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006714_0",
+      "claim": "The area is wooded.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "a particularly forked tree that has lost all its leaves, leaving it completely bare",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The dachshund is small.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The dachshund is black and tan.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "black dog",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The person is wearing pink scrubs.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012062_0",
+      "claim": "The person is playing a trumpet.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "claim": "A brush is being used to apply the eyeliner.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the makeup artist uses his left hand to lift the upper eyelid of the model's right eye while holding a pink-packaged mascara with a black brush head in his right hand, gently brushing the model's upper lashes several times",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    }
+  ],
+  "warning": "Machine-assisted cross-judge only; NOT human Gold and NOT a human agreement statistic."
+}

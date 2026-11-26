@@ -1,0 +1,398 @@
+{
+  "formal_videollama": {
+    "per_arm": {
+      "ARM_A0": {
+        "captions": 600,
+        "claims": 1627,
+        "entailed": 1290,
+        "contradicted": 172,
+        "unmentioned": 165,
+        "support_rate": 0.7929,
+        "conflict_rate": 0.1057,
+        "unmentioned_rate": 0.1014,
+        "core_coverage": 0.6167
+      },
+      "ARM_A1": {
+        "captions": 600,
+        "claims": 1657,
+        "entailed": 1368,
+        "contradicted": 147,
+        "unmentioned": 142,
+        "support_rate": 0.8256,
+        "conflict_rate": 0.0887,
+        "unmentioned_rate": 0.0857,
+        "core_coverage": 0.6717
+      },
+      "ARM_A7": {
+        "captions": 600,
+        "claims": 1732,
+        "entailed": 1397,
+        "contradicted": 144,
+        "unmentioned": 191,
+        "support_rate": 0.8066,
+        "conflict_rate": 0.0831,
+        "unmentioned_rate": 0.1103,
+        "core_coverage": 0.6767
+      }
+    },
+    "judge_bias": {
+      "ARM_A0": {
+        "claims": 1627,
+        "gemma_label_counts": {
+          "entailed": 1290,
+          "unmentioned": 165,
+          "contradicted": 172
+        },
+        "llama_label_counts": {
+          "entailed": 1206,
+          "unmentioned": 156,
+          "contradicted": 265
+        },
+        "disagreement_rate": 0.1168,
+        "n_cross": 1627,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.0516,
+          "contradicted": 0.0572,
+          "unmentioned": -0.0055
+        }
+      },
+      "ARM_A1": {
+        "claims": 1657,
+        "gemma_label_counts": {
+          "entailed": 1368,
+          "unmentioned": 142,
+          "contradicted": 147
+        },
+        "llama_label_counts": {
+          "entailed": 1289,
+          "unmentioned": 134,
+          "contradicted": 234
+        },
+        "disagreement_rate": 0.105,
+        "n_cross": 1657,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.0477,
+          "contradicted": 0.0525,
+          "unmentioned": -0.0048
+        }
+      },
+      "ARM_A7": {
+        "claims": 1732,
+        "gemma_label_counts": {
+          "entailed": 1397,
+          "unmentioned": 191,
+          "contradicted": 144
+        },
+        "llama_label_counts": {
+          "entailed": 1331,
+          "unmentioned": 174,
+          "contradicted": 227
+        },
+        "disagreement_rate": 0.108,
+        "n_cross": 1732,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.0381,
+          "contradicted": 0.0479,
+          "unmentioned": -0.0098
+        }
+      }
+    }
+  },
+  "formal_qwen": {
+    "per_arm": {
+      "ARM_A0": {
+        "captions": 600,
+        "claims": 2928,
+        "entailed": 2185,
+        "contradicted": 280,
+        "unmentioned": 463,
+        "support_rate": 0.7462,
+        "conflict_rate": 0.0956,
+        "unmentioned_rate": 0.1581,
+        "core_coverage": 0.7267
+      },
+      "ARM_A1": {
+        "captions": 600,
+        "claims": 2967,
+        "entailed": 2253,
+        "contradicted": 279,
+        "unmentioned": 435,
+        "support_rate": 0.7594,
+        "conflict_rate": 0.094,
+        "unmentioned_rate": 0.1466,
+        "core_coverage": 0.7533
+      },
+      "ARM_A7": {
+        "captions": 600,
+        "claims": 3018,
+        "entailed": 2296,
+        "contradicted": 297,
+        "unmentioned": 425,
+        "support_rate": 0.7608,
+        "conflict_rate": 0.0984,
+        "unmentioned_rate": 0.1408,
+        "core_coverage": 0.7567
+      }
+    },
+    "judge_bias": {
+      "ARM_A0": {
+        "claims": 2928,
+        "gemma_label_counts": {
+          "entailed": 2185,
+          "unmentioned": 463,
+          "contradicted": 280
+        },
+        "llama_label_counts": {
+          "entailed": 2073,
+          "unmentioned": 437,
+          "contradicted": 417
+        },
+        "disagreement_rate": 0.1179,
+        "n_cross": 2927,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.038,
+          "contradicted": 0.0468,
+          "unmentioned": -0.0088
+        }
+      },
+      "ARM_A1": {
+        "claims": 2967,
+        "gemma_label_counts": {
+          "entailed": 2253,
+          "unmentioned": 435,
+          "contradicted": 279
+        },
+        "llama_label_counts": {
+          "entailed": 2145,
+          "unmentioned": 420,
+          "contradicted": 401
+        },
+        "disagreement_rate": 0.1146,
+        "n_cross": 2966,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.0362,
+          "contradicted": 0.0412,
+          "unmentioned": -0.005
+        }
+      },
+      "ARM_A7": {
+        "claims": 3018,
+        "gemma_label_counts": {
+          "entailed": 2296,
+          "unmentioned": 425,
+          "contradicted": 297
+        },
+        "llama_label_counts": {
+          "entailed": 2179,
+          "unmentioned": 432,
+          "contradicted": 407
+        },
+        "disagreement_rate": 0.112,
+        "n_cross": 3018,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.0388,
+          "contradicted": 0.0364,
+          "unmentioned": 0.0023
+        }
+      }
+    }
+  },
+  "a3_qwen38": {
+    "per_arm": {
+      "ARM_A0": {
+        "captions": 30,
+        "claims": 147,
+        "entailed": 111,
+        "contradicted": 9,
+        "unmentioned": 27,
+        "support_rate": 0.7551,
+        "conflict_rate": 0.0612,
+        "unmentioned_rate": 0.1837,
+        "core_coverage": 0.7667
+      },
+      "ARM_A1": {
+        "captions": 30,
+        "claims": 143,
+        "entailed": 112,
+        "contradicted": 7,
+        "unmentioned": 24,
+        "support_rate": 0.7832,
+        "conflict_rate": 0.049,
+        "unmentioned_rate": 0.1678,
+        "core_coverage": 0.8333
+      },
+      "ARM_A7": {
+        "captions": 30,
+        "claims": 154,
+        "entailed": 116,
+        "contradicted": 13,
+        "unmentioned": 25,
+        "support_rate": 0.7532,
+        "conflict_rate": 0.0844,
+        "unmentioned_rate": 0.1623,
+        "core_coverage": 0.8333
+      }
+    },
+    "judge_bias": {
+      "ARM_A0": {
+        "claims": 147,
+        "gemma_label_counts": {
+          "entailed": 111,
+          "unmentioned": 27,
+          "contradicted": 9
+        },
+        "llama_label_counts": {
+          "entailed": 101,
+          "contradicted": 20,
+          "unmentioned": 26
+        },
+        "disagreement_rate": 0.1565,
+        "n_cross": 147,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.068,
+          "contradicted": 0.0748,
+          "unmentioned": -0.0068
+        }
+      },
+      "ARM_A1": {
+        "claims": 143,
+        "gemma_label_counts": {
+          "entailed": 112,
+          "unmentioned": 24,
+          "contradicted": 7
+        },
+        "llama_label_counts": {
+          "entailed": 95,
+          "contradicted": 22,
+          "unmentioned": 26
+        },
+        "disagreement_rate": 0.2028,
+        "n_cross": 143,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.1189,
+          "contradicted": 0.1049,
+          "unmentioned": 0.014
+        }
+      },
+      "ARM_A7": {
+        "claims": 154,
+        "gemma_label_counts": {
+          "entailed": 116,
+          "contradicted": 13,
+          "unmentioned": 25
+        },
+        "llama_label_counts": {
+          "entailed": 105,
+          "contradicted": 24,
+          "unmentioned": 25
+        },
+        "disagreement_rate": 0.1883,
+        "n_cross": 154,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.0714,
+          "contradicted": 0.0714,
+          "unmentioned": 0.0
+        }
+      }
+    }
+  },
+  "a3_qwen35": {
+    "per_arm": {
+      "ARM_A0": {
+        "captions": 30,
+        "claims": 152,
+        "entailed": 127,
+        "contradicted": 7,
+        "unmentioned": 18,
+        "support_rate": 0.8355,
+        "conflict_rate": 0.0461,
+        "unmentioned_rate": 0.1184,
+        "core_coverage": 0.9
+      },
+      "ARM_A1": {
+        "captions": 30,
+        "claims": 138,
+        "entailed": 112,
+        "contradicted": 13,
+        "unmentioned": 13,
+        "support_rate": 0.8116,
+        "conflict_rate": 0.0942,
+        "unmentioned_rate": 0.0942,
+        "core_coverage": 0.9
+      },
+      "ARM_A7": {
+        "captions": 30,
+        "claims": 145,
+        "entailed": 122,
+        "contradicted": 8,
+        "unmentioned": 15,
+        "support_rate": 0.8414,
+        "conflict_rate": 0.0552,
+        "unmentioned_rate": 0.1034,
+        "core_coverage": 0.9
+      }
+    },
+    "judge_bias": {
+      "ARM_A0": {
+        "claims": 152,
+        "gemma_label_counts": {
+          "entailed": 127,
+          "unmentioned": 18,
+          "contradicted": 7
+        },
+        "llama_label_counts": {
+          "entailed": 112,
+          "contradicted": 14,
+          "unmentioned": 26
+        },
+        "disagreement_rate": 0.1447,
+        "n_cross": 152,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.0987,
+          "contradicted": 0.0461,
+          "unmentioned": 0.0526
+        }
+      },
+      "ARM_A1": {
+        "claims": 138,
+        "gemma_label_counts": {
+          "entailed": 112,
+          "unmentioned": 13,
+          "contradicted": 13
+        },
+        "llama_label_counts": {
+          "entailed": 105,
+          "contradicted": 16,
+          "unmentioned": 17
+        },
+        "disagreement_rate": 0.1377,
+        "n_cross": 138,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.0507,
+          "contradicted": 0.0217,
+          "unmentioned": 0.029
+        }
+      },
+      "ARM_A7": {
+        "claims": 145,
+        "gemma_label_counts": {
+          "entailed": 122,
+          "unmentioned": 15,
+          "contradicted": 8
+        },
+        "llama_label_counts": {
+          "entailed": 113,
+          "contradicted": 14,
+          "unmentioned": 18
+        },
+        "disagreement_rate": 0.1379,
+        "n_cross": 145,
+        "delta_llama_minus_gemma": {
+          "entailed": -0.0621,
+          "contradicted": 0.0414,
+          "unmentioned": 0.0207
+        }
+      }
+    }
+  }
+}

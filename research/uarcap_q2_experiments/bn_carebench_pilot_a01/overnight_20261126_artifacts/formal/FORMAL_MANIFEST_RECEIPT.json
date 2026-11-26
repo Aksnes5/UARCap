@@ -1,0 +1,12 @@
+{
+  "schema": "uarcap_q2.formal_manifest_receipt.v1",
+  "status": "FORMAL_CANDIDATE_MANIFEST_FROZEN_UNVALIDATED",
+  "utc": "2026-11-25T18:24:02.618321+00:00",
+  "n_selected": 600,
+  "n_validation": 60,
+  "manifest_sha256": "ebc02155e73dbce4c848a9e96b5b9a57d40c85058d3998de1368660c2e96a3b3",
+  "core_lock_sha256": "217a62a785d02b0f7e359221e98102e195c2405a5644db291d0cfdf243e496af",
+  "parent_isolation_verified": true,
+  "n_eligible_pool": 883,
+  "note": "Generation-only; no confirmatory statistics; sample size pre-frozen at 600 within protocol range."
+}

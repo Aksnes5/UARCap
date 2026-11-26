@@ -1,0 +1,543 @@
+{
+  "schema": "uarcap_overnight_queue_v1",
+  "updated_utc": "2026-11-25T18:32:06.917049+00:00",
+  "tasks": [
+    {
+      "id": "a2_cross_judge",
+      "priority": 10,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=a2_cross_judge PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_cross_judge.py --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a2_machine --model-path /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b --model-id meta-llama/Llama-3.3-70B-Instruct-W4A16 --model-family llama --max-model-len 2048 --max-new-tokens 256 --gpu-mem 0.95 --chunk 8 --max-retries 2",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": []
+    },
+    {
+      "id": "a3_qwen_smoke",
+      "priority": 20,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "set -o pipefail; export OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_qwen_smoke; PY=/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python; MP=/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.8-27B-FP8; MI=Qwen/Qwen3.8-27B-FP8; MODE=video; if ! $PY -u tasks/a3_carebench_qwen.py --smoke-only --model-path $MP --model-id $MI --multimodal-key video --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/_smoke_q38_video --chunk 1; then MODE=image; if ! $PY -u tasks/a3_carebench_qwen.py --smoke-only --model-path $MP --model-id $MI --multimodal-key image --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/_smoke_q38_image --chunk 1; then MP=/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.5-27B-FP8; MI=Qwen/Qwen3.5-27B; MODE=video; if ! $PY -u tasks/a3_carebench_qwen.py --smoke-only --model-path $MP --model-id $MI --multimodal-key video --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/_smoke_q35_video --chunk 1; then MODE=image; $PY -u tasks/a3_carebench_qwen.py --smoke-only --model-path $MP --model-id $MI --multimodal-key image --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/_smoke_q35_image --chunk 1; fi; fi; fi; echo $MODE > qwen_mode.txt; echo $MP > qwen_model_path.txt; echo $MI > qwen_model_id.txt; echo SMOKE_MODE=$MODE MODEL=$MI",
+      "timeout_sec": 2400,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a2_cross_judge"
+      ]
+    },
+    {
+      "id": "a3_carebench_qwen",
+      "priority": 30,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "export OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_carebench_qwen; /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a3_carebench_qwen.py --model-path $(cat qwen_model_path.txt) --model-id $(cat qwen_model_id.txt) --multimodal-key $(cat qwen_mode.txt) --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen38 --chunk 5",
+      "timeout_sec": 10800,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_qwen_smoke"
+      ]
+    },
+    {
+      "id": "a2_visual_verify",
+      "priority": 15,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a2_visual_verify /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_visual_verify.py --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a2_machine_visual --batch 4 --max-claims 120",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_qwen_smoke"
+      ]
+    },
+    {
+      "id": "a3_eval_gemma",
+      "priority": 40,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_eval_gemma /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/eval_captions_gemma.py --predictions /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen38/predictions.jsonl --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen38_eval --gpu-mem 0.85 --chunk 16 --max-retries 2",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_carebench_qwen_v2"
+      ]
+    },
+    {
+      "id": "a3_cross_judge",
+      "priority": 50,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_cross_judge /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_cross_judge.py --a2-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen38_eval --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_machine_cross_judge --model-path /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b --model-id meta-llama/Llama-3.3-70B-Instruct-W4A16 --model-family llama --max-model-len 2048 --max-new-tokens 256 --gpu-mem 0.95 --chunk 8 --max-retries 2",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_eval_gemma"
+      ]
+    },
+    {
+      "id": "a3_visual_verify",
+      "priority": 60,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_visual_verify /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_visual_verify.py --a2-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen38_eval --cross-judge-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_machine_cross_judge --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_machine_visual --batch 4 --max-claims 120",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_cross_judge"
+      ]
+    },
+    {
+      "id": "a2_machine_report_text",
+      "priority": 70,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/make_a2_machine_report.py --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a2_machine --allow-missing-visual",
+      "timeout_sec": 600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "a2_cross_judge"
+      ]
+    },
+    {
+      "id": "a2_machine_report_final",
+      "priority": 75,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/make_a2_machine_report.py --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a2_machine",
+      "timeout_sec": 600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "a2_visual_verify_v3"
+      ]
+    },
+    {
+      "id": "a3_qwen35",
+      "priority": 500,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "set -o pipefail; export OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_qwen35; MODE=video; if ! /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a3_carebench_qwen.py --model-path /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.5-27B-FP8 --model-id Qwen/Qwen3.5-27B --multimodal-key video --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen35 --chunk 5; then MODE=image; /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a3_carebench_qwen.py --model-path /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.5-27B-FP8 --model-id Qwen/Qwen3.5-27B --multimodal-key image --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen35 --chunk 5; fi",
+      "timeout_sec": 10800,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_qwen_smoke"
+      ]
+    },
+    {
+      "id": "a3_qwen35_eval",
+      "priority": 501,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_qwen35_eval /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/eval_captions_gemma.py --predictions /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen35/predictions.jsonl --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen35_eval --gpu-mem 0.85 --chunk 16 --max-retries 2",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_qwen35"
+      ]
+    },
+    {
+      "id": "a3_qwen35_cross",
+      "priority": 502,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_qwen35_cross /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_cross_judge.py --a2-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen35_eval --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_machine_cross_judge_qwen35 --model-path /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b --model-id meta-llama/Llama-3.3-70B-Instruct-W4A16 --model-family llama --max-model-len 2048 --max-new-tokens 256 --gpu-mem 0.95 --chunk 8 --max-retries 2",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_qwen35_eval"
+      ]
+    },
+    {
+      "id": "a3_qwen35_visual",
+      "priority": 503,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_qwen35_visual /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_visual_verify.py --a2-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen35_eval --cross-judge-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_machine_cross_judge_qwen35 --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_machine_visual_qwen35 --batch 4 --max-claims 120",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_qwen35_cross"
+      ]
+    },
+    {
+      "id": "formal_manifest",
+      "priority": 100,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=formal_manifest /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/formal_pipeline.py --stage manifest",
+      "timeout_sec": 1800,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": []
+    },
+    {
+      "id": "formal_retrieval",
+      "priority": 101,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=formal_retrieval /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -u tasks/formal_pipeline.py --stage retrieval",
+      "timeout_sec": 10800,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_manifest"
+      ]
+    },
+    {
+      "id": "formal_features",
+      "priority": 102,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=formal_features /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/formal_pipeline.py --stage features",
+      "timeout_sec": 10800,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_retrieval_v2"
+      ]
+    },
+    {
+      "id": "formal_frames",
+      "priority": 103,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=formal_frames /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/formal_pipeline.py --stage frames",
+      "timeout_sec": 10800,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "formal_manifest"
+      ]
+    },
+    {
+      "id": "formal_videollama",
+      "priority": 104,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=formal_videollama /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/formal_generate.py --generator videollama --chunk 40",
+      "timeout_sec": 18000,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_features",
+        "formal_frames"
+      ]
+    },
+    {
+      "id": "formal_qwen",
+      "priority": 105,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=formal_qwen VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/formal_generate.py --generator qwen --chunk 5 --qwen-mode image",
+      "timeout_sec": 18000,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_videollama"
+      ]
+    },
+    {
+      "id": "formal_eval_videollama",
+      "priority": 106,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=formal_eval_videollama VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/eval_captions_gemma.py --predictions /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/videollama/predictions.jsonl --core-lock /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_core_lock.json --out-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/videollama_eval --gpu-mem 0.85 --chunk 16 --max-retries 2",
+      "timeout_sec": 14400,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_videollama"
+      ]
+    },
+    {
+      "id": "formal_eval_qwen",
+      "priority": 107,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=formal_eval_qwen VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/eval_captions_gemma.py --predictions /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/qwen/predictions.jsonl --core-lock /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_core_lock.json --out-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/qwen_eval --gpu-mem 0.85 --chunk 16 --max-retries 2",
+      "timeout_sec": 14400,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_qwen"
+      ]
+    },
+    {
+      "id": "a2_visual_verify_v2",
+      "priority": 15,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a2_visual_verify_v2 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_visual_verify.py --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a2_machine_visual --batch 4 --max-claims 120",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_qwen_smoke"
+      ]
+    },
+    {
+      "id": "a3_carebench_qwen_v2",
+      "priority": 30,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "export OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_carebench_qwen_v2; /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a3_carebench_qwen.py --model-path $(cat qwen_model_path.txt) --model-id $(cat qwen_model_id.txt) --multimodal-key $(cat qwen_mode.txt) --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen38 --chunk 5",
+      "timeout_sec": 10800,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_qwen_smoke"
+      ]
+    },
+    {
+      "id": "formal_retrieval_v2",
+      "priority": 101,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=formal_retrieval_v2 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display/repro_evcap/venv/bin/python -u tasks/formal_pipeline.py --stage retrieval",
+      "timeout_sec": 10800,
+      "max_retries": 2,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_manifest"
+      ]
+    },
+    {
+      "id": "formal_cross_videollama",
+      "priority": 108,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=formal_cross_videollama /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_cross_judge.py --a2-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/videollama_eval --out-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/videollama_machine_cross --model-path /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b --model-id meta-llama/Llama-3.3-70B-Instruct-W4A16 --model-family llama --max-model-len 2048 --max-new-tokens 256 --gpu-mem 0.95 --chunk 8 --max-retries 2",
+      "timeout_sec": 14400,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_eval_videollama"
+      ]
+    },
+    {
+      "id": "formal_cross_qwen",
+      "priority": 109,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=formal_cross_qwen /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_cross_judge.py --a2-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/qwen_eval --out-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/qwen_machine_cross --model-path /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b --model-id meta-llama/Llama-3.3-70B-Instruct-W4A16 --model-family llama --max-model-len 2048 --max-new-tokens 256 --gpu-mem 0.95 --chunk 8 --max-retries 2",
+      "timeout_sec": 14400,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_eval_qwen"
+      ]
+    },
+    {
+      "id": "vidhalluc_extract",
+      "priority": 80,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_extract PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage extract",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": []
+    },
+    {
+      "id": "vidhalluc_prepare",
+      "priority": 81,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_prepare PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage prepare",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "vidhalluc_extract"
+      ]
+    },
+    {
+      "id": "vidhalluc_screen_text",
+      "priority": 82,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_screen_text PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage screen_text",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_prepare"
+      ]
+    },
+    {
+      "id": "vidhalluc_screen_visual",
+      "priority": 83,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_screen_visual PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage screen_visual",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_screen_text"
+      ]
+    },
+    {
+      "id": "vidhalluc_approve",
+      "priority": 84,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_approve PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage approve",
+      "timeout_sec": 600,
+      "max_retries": 0,
+      "requires_gpu": false,
+      "depends_on": [
+        "vidhalluc_screen_visual"
+      ]
+    },
+    {
+      "id": "vidhalluc_generate_videollama",
+      "priority": 85,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_generate_videollama PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage generate_videollama",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_approve"
+      ]
+    },
+    {
+      "id": "vidhalluc_generate_qwen",
+      "priority": 86,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_generate_qwen PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage generate_qwen",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_approve"
+      ]
+    },
+    {
+      "id": "vidhalluc_evaluate",
+      "priority": 87,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_evaluate PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage evaluate",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_generate_videollama",
+        "vidhalluc_generate_qwen"
+      ]
+    },
+    {
+      "id": "vidhalluc_report",
+      "priority": 88,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_report PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage report",
+      "timeout_sec": 600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "vidhalluc_evaluate"
+      ]
+    },
+    {
+      "id": "a2_visual_verify_v3",
+      "priority": 15,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a2_visual_verify_v3 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_visual_verify.py --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a2_machine_visual --batch 4 --max-claims 120",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_qwen_smoke"
+      ]
+    },
+    {
+      "id": "a3_visual_verify_v3",
+      "priority": 60,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=a3_visual_verify_v3 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_visual_verify.py --a2-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/carebench_qwen38_eval --cross-judge-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_machine_cross_judge --out-dir /home/bn/uarcap_q2_runtime/outputs/pilot_a3_machine_visual --batch 4 --max-claims 120",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "a3_cross_judge"
+      ]
+    },
+    {
+      "id": "vidhalluc_frames_v2",
+      "priority": 83,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=vidhalluc_frames_v2 /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage frames",
+      "timeout_sec": 1800,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "vidhalluc_screen_text"
+      ]
+    },
+    {
+      "id": "vidhalluc_screen_visual_v2",
+      "priority": 84,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "mv -f /home/bn/uarcap_q2_runtime/outputs/pilot_e3_exploratory/E3_VISUAL_SCREEN.jsonl /home/bn/uarcap_q2_runtime/outputs/pilot_e3_exploratory/E3_VISUAL_SCREEN.failed_av.jsonl 2>/dev/null; OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=vidhalluc_screen_visual_v2 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage screen_visual",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_frames_v2"
+      ]
+    },
+    {
+      "id": "vidhalluc_approve_v2",
+      "priority": 85,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=vidhalluc_approve_v2 /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage approve",
+      "timeout_sec": 600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "vidhalluc_screen_visual_v2"
+      ]
+    },
+    {
+      "id": "vidhalluc_generate_videollama_v2",
+      "priority": 86,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=vidhalluc_generate_videollama_v2 /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage generate_videollama",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_approve_v2"
+      ]
+    },
+    {
+      "id": "vidhalluc_generate_qwen_v2",
+      "priority": 87,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=vidhalluc_generate_qwen_v2 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage generate_qwen",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_approve_v2"
+      ]
+    },
+    {
+      "id": "vidhalluc_evaluate_v2",
+      "priority": 88,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=vidhalluc_evaluate_v2 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage evaluate",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_generate_videollama_v2",
+        "vidhalluc_generate_qwen_v2"
+      ]
+    },
+    {
+      "id": "vidhalluc_report_v2",
+      "priority": 89,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=vidhalluc_report_v2 /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage report",
+      "timeout_sec": 600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "vidhalluc_evaluate_v2"
+      ]
+    },
+    {
+      "id": "formal_cross_qwen_v2",
+      "priority": 108,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=formal_cross_qwen_v2 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_cross_judge.py --a2-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/qwen_eval --out-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/qwen_machine_cross --model-path /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b --model-id meta-llama/Llama-3.3-70B-Instruct-W4A16 --model-family llama --max-model-len 2048 --max-new-tokens 256 --gpu-mem 0.95 --chunk 8 --max-retries 2",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "formal_eval_qwen"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3333 @@
+{
+  "schema": "uarcap_q2.a2_cross_judge.v1",
+  "status": "MACHINE_ASSISTED_UNCALIBRATED",
+  "generated_utc": "2026-11-25T23:36:12.494102+00:00",
+  "judge_model_id": "meta-llama/Llama-3.3-70B-Instruct-W4A16",
+  "judge_model_path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b",
+  "n_unique_claims": 2660,
+  "n_evaluated": 2660,
+  "n_parse_failed": 0,
+  "observed_agreement_unique": 0.8774,
+  "cohen_kappa_unique": 0.7026,
+  "label_counts_gemma": {
+    "entailed": 2045,
+    "unmentioned": 327,
+    "contradicted": 288
+  },
+  "label_counts_second_judge": {
+    "entailed": 1925,
+    "unmentioned": 295,
+    "contradicted": 440
+  },
+  "per_arm_claims": {
+    "ARM_A0": {
+      "n": 1627,
+      "agreement": 0.8832,
+      "gemma_counts": {
+        "entailed": 1290,
+        "unmentioned": 165,
+        "contradicted": 172
+      },
+      "llama_counts": {
+        "entailed": 1206,
+        "unmentioned": 156,
+        "contradicted": 265
+      }
+    },
+    "ARM_A1": {
+      "n": 1657,
+      "agreement": 0.895,
+      "gemma_counts": {
+        "entailed": 1368,
+        "unmentioned": 142,
+        "contradicted": 147
+      },
+      "llama_counts": {
+        "entailed": 1289,
+        "unmentioned": 134,
+        "contradicted": 234
+      }
+    },
+    "ARM_A7": {
+      "n": 1732,
+      "agreement": 0.892,
+      "gemma_counts": {
+        "entailed": 1397,
+        "unmentioned": 191,
+        "contradicted": 144
+      },
+      "llama_counts": {
+        "entailed": 1331,
+        "unmentioned": 174,
+        "contradicted": 227
+      }
+    }
+  },
+  "n_disagreements": 326,
+  "n_need_video": 14,
+  "n_ambiguous": 15,
+  "n_atomic_split_suspect": 1,
+  "disagreements": [
+    {
+      "query_id": "carebench_v_00001370_1",
+      "claim": "A man exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00001370_1",
+      "claim": "The something is a piece of meat.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003905_0",
+      "claim": "The flowers are on a grave.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "kneeling on the grass",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003953_2",
+      "claim": "A woman is present.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003956_4",
+      "claim": "A woman is present.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The individual appears only with their hands visible",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003956_4",
+      "claim": "The woman is demonstrating a process.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The individual appears only with their hands visible",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005709_0",
+      "claim": "The man is cutting down a tree.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a woman chopping wood outdoors on a grassy lawn.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005881_5",
+      "claim": "A man is present.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005889_0",
+      "claim": "A woman is present.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The person in the video holds the knife in their right hand",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005889_0",
+      "claim": "The woman is cutting vegetables.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The person in the video holds the knife in their right hand",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005895_0",
+      "claim": "The vegetables are on a cutting board.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "All the ingredients are neatly arranged on a large black and gray marble countertop. To the right of the ingredients, there's a polished deep brown wooden cutting board",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005907_0",
+      "claim": "The person is cutting vegetables.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "sweet potatoes",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005908_2",
+      "claim": "The woman is cutting vegetables.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "the person chopping scallions",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006262_0",
+      "claim": "The people are climbing.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "five workers are seen cleaning the outer walls; on the left side, one worker is suspended, while three workers are on the right, and a fourth worker is positioned lower in the middle",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006262_0",
+      "claim": "The people are climbing up a building.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "five workers are seen cleaning the outer walls; on the left side, one worker is suspended, while three workers are on the right, and a fourth worker is positioned lower in the middle",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006264_1",
+      "claim": "The man and child are playing.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The entire video is filmed from the boy’s front perspective, looking from inside the house outwards, creating a harmonious, loving, and cozy atmosphere. The boy is cleaning outdoor glass with a sponge, and the man behind him watches with a warm smile.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006289_0",
+      "claim": "A man exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006382_0",
+      "claim": "A man is climbing.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "he is kneeling on the rooftop while leaning over the glass",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006382_0",
+      "claim": "The man is climbing up a window.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "he is kneeling on the rooftop while leaning over the glass",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007046_1",
+      "claim": "The man is digging a hole.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007046_1",
+      "claim": "The woman is digging a hole.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007196_1",
+      "claim": "The child is playing.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007262_0",
+      "claim": "A little girl is playing.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007262_0",
+      "claim": "The little girl is playing with her clothes.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The scene depicts a little girl tidying up clothes by the bedside. She is ... folding them inward. Next, she holds the hem of the shirt and folds it upward, creating a tidy stack, which she presses down firmly.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007266_3",
+      "claim": "A child is present.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007282_0",
+      "claim": "The child is cleaning.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007282_0",
+      "claim": "The child is cleaning the floor.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the girl is squatting on the floor, continuously pressing the pants down from the middle to the sides with her hands, then using her left hand to fold one end of the pants halfway to the other end",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007307_0",
+      "claim": "The little girl is playing with the toy.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The video showcases a scene of a girl folding towels at a table",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009432_0",
+      "claim": "The little girl is cleaning the floor.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "Her movements are quite awkward, giving the impression that she is more like a child exploring the act of mopping rather than actually cleaning. It feels more like a playful experience than a chore for her.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009504_0",
+      "claim": "A man is walking.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "he begins mopping from the area closest to the camera, swaying the mop left and right as he moves backwards",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009504_0",
+      "claim": "The man is walking down a hallway.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "he begins mopping from the area closest to the camera, swaying the mop left and right as he moves backwards",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009664_0",
+      "claim": "A man is riding a lawn mower.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a weeder sitting on a red weeding machine",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015743_0",
+      "claim": "The man is using a chainsaw.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "he holds a red and black lawn mower, while his left hand grips the handle, diligently clearing a patch of grass",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016021_3",
+      "claim": "The vegetables are in the sink.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016203_0",
+      "claim": "The woman is washing dishes.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016217_5",
+      "claim": "There is a group of girls.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "three women",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016562_0",
+      "claim": "The plant is growing.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016585_0",
+      "claim": "A little girl is playing.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016591_0",
+      "claim": "The man is watering a plant.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016591_0",
+      "claim": "The man is using a hose.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016883_4",
+      "claim": "A woman is painting something.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "His strong arms are exposed, and he has nearly transparent plastic gloves on both hands.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016883_4",
+      "claim": "The thing being painted is a piece of furniture.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002049_5",
+      "claim": "The woman is attempting to resemble a monster.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "Her face is painted with a mix of yellow and green face paint, complemented by bold black eyeliner and false eyelashes. Her nose area is smeared with a mud-like substance, and deep green stripes are drawn along the edges of her face.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002113_2",
+      "claim": "The woman is applying nail polish.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002113_2",
+      "claim": "The nail polish is being applied to her nails.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002352_0",
+      "claim": "Another man is shaving the first man's head.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "the barber stands behind the man, with his left hand splayed across the man’s scalp while his right hand, gripping the razor, moves back and forth on the right side of the man’s head",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003184_0",
+      "claim": "The person is putting on a shoe.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The video provides a detailed demonstration of how to tie shoelaces into a basic bow knot",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003195_0",
+      "claim": "The man is putting on a shoe.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a man is demonstrating the process with a left shoe that is black in color, featuring a purple sole and purple insole. He begins by threading a black shoelace through the front two eyelets of the shoe.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003197_0",
+      "claim": "The man is putting on shoes.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003204_2",
+      "claim": "A woman is present.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The person in the video is wearing this shoe and standing on a white circular stool. He begins by tightening the shoelaces into a knot",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003204_2",
+      "claim": "The woman is demonstrating an action.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The person in the video is wearing this shoe and standing on a white circular stool. He begins by tightening the shoelaces into a knot",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003359_0",
+      "claim": "A woman is present.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The individual is dressed in a black tank top, with a silver ring adorning their left ring finger. The person holds the white bottle cap with their right thumb and index finger",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003359_0",
+      "claim": "The woman is applying nail polish.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The individual is dressed in a black tank top, with a silver ring adorning their left ring finger. The person holds the white bottle cap with their right thumb and index finger",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003359_0",
+      "claim": "The nail polish is being applied to her nails.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The individual is dressed in a black tank top, with a silver ring adorning their left ring finger. The person holds the white bottle cap with their right thumb and index finger",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003360_2",
+      "claim": "A woman is drawing.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00004656_5",
+      "claim": "The woman is brushing her hair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "In the footage, the girl is sitting with her back to the camera, showcasing her long hair; the upper half is black while the lower half is blonde, and she already has two braids in place. ... She tucks the small braid underneath the flowing hair with her left hand, combs through a few strands with her right hand",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00004669_0",
+      "claim": "The woman is brushing her hair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "uses the comb in her right to first smooth it out",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00004983_0",
+      "claim": "The woman is using a spoon.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "In her right hand, she holds a white children's toothbrush",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005056_0",
+      "claim": "The person being fed is a baby.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The child has short brown hair and is wearing a green top and black pants",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006934_0",
+      "claim": "The child is playing with a toy.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "he carefully trims his left nails",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006963_0",
+      "claim": "A baby exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006980_2",
+      "claim": "The woman is petting a cat.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "delicately holds one of the cat's front paws with her left hand, using her index finger to steady its small paw while carefully trimming its nails with a pair of clippers in her right hand",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006989_2",
+      "claim": "The person is playing with the bug.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases an individual engaged in the process of trimming their toenails.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006995_0",
+      "claim": "A girl is playing.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the girl tilts her head, appearing exceptionally focused and serious as she attends to the nail trimming task. Her expression reflects a very earnest attitude towards the job",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007069_1",
+      "claim": "The woman is brushing her hair.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "applying conditioner to her hair with a comb",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007075_4",
+      "claim": "A woman exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007089_3",
+      "claim": "The woman is brushing her hair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "Their right hand is busy combing through their hair with a few fingers, meticulously arranging it.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007121_2",
+      "claim": "The man is making a wig.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the model's head is positioned on a black stand, and her hair is a light brown color",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007132_1",
+      "claim": "The woman is styling her hair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a young girl styling her hair",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009230_10",
+      "claim": "The woman is brushing her hair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "she holds a small comb, gripping it by the tooth section",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015977_0",
+      "claim": "A woman is present.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015977_0",
+      "claim": "The woman is washing her feet.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015977_0",
+      "claim": "The woman is washing her feet in a bowl.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The foot bath basin is brown and initially filled to the brim with water",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015977_0",
+      "claim": "The bowl contains water.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a semi-transparent brown bowl filled with lemon slices",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015987_10",
+      "claim": "The woman is washing her feet.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015987_10",
+      "claim": "The woman is washing her feet in a bowl.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The service provider uses her left thumb to press down on the arch of the client’s left foot, supporting the foot submerged in the water with her left palm, while her right thumb kneads and presses the area near the inner big toe.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016097_0",
+      "claim": "The man is having his foot soaked.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016373_0",
+      "claim": "The dishes are being washed in a sink.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016397_0",
+      "claim": "A man exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016408_0",
+      "claim": "The woman is demonstrating an action.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016408_0",
+      "claim": "The hands being washed are yours.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016409_0",
+      "claim": "A girl is present.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "This video showcases a woman washing her hands at the sink in a restroom.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016412_0",
+      "claim": "The hands being washed are yours.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a woman washing her hands at a sink",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016419_0",
+      "claim": "The woman is demonstrating an action.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016419_0",
+      "claim": "The hands being washed are yours.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016760_1",
+      "claim": "The two women are talking to each other.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the girl on the left is speaking to the camera",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016796_3",
+      "claim": "The shirt has white stripes.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a long-sleeved shirt with a white base adorned with red, green, and purple stripes",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016796_3",
+      "claim": "The man is talking to the camera.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "mumbling something to himself",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002178_0",
+      "claim": "An interview is taking place.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a scene of an adult man maneuvering a wheelchair alone along a street",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002181_0",
+      "claim": "The man is riding.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "an adult man in a wheelchair moving forward",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002196_0",
+      "claim": "The street is snowy.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "patches of snow and ice are visible on the pavement",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002240_0",
+      "claim": "A man exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002242_1",
+      "claim": "A man is riding a bicycle.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a boy riding a bicycle.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002242_1",
+      "claim": "The man is in a parking lot.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the lower half of the video depicts a gray ground marked with numerous black overlapping streaks",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002267_0",
+      "claim": "A woman is riding a bicycle.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a girl practicing how to ride a bicycle.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002271_1",
+      "claim": "A man is riding a bike.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005633_1",
+      "claim": "The baby is in a baby carrier.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "the child is snugly wrapped in a khaki pouch",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005921_1",
+      "claim": "The man is talking.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "He gazes at the camera with a tight-lipped expression",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005921_1",
+      "claim": "The man is talking to the camera.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "He gazes at the camera with a tight-lipped expression",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005946_0",
+      "claim": "Kids are dancing.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008369_2",
+      "claim": "The people are on a rooftop.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The setting takes place in front of a wall",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008410_2",
+      "claim": "A little girl is dancing.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases the entire experience of a Black child playing with a hula hoop. ... the child enthusiastically engages with a pink hula hoop. ... He plays in the open space of the living room",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009126_2",
+      "claim": "The woman is applying lotion.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "body oil",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009165_0",
+      "claim": "A woman is laying on a table.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The customer is lying face down on the bed, her bare feet resting on the surface, her head supported by a specialized cushion, and her arms are outstretched at her sides, hanging down over the edge of the bed.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009792_1",
+      "claim": "A man is walking.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "he takes a step back with his left foot, leans his body backward, then quickly returns to his original position before taking a significant step forward, leaning slightly forward before regaining his stance, and tapping the tip of his left foot forward. This series of movements flows seamlessly and rhythmically.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009792_1",
+      "claim": "The man has a backpack.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "an instrument bag is open on the ground",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009824_0",
+      "claim": "The man is on a balcony.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "He stands in a corridor next to a large red box that has a black horn on top, and behind him are several houses.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010034_0",
+      "claim": "The men are wearing kilts.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "red plaid pleated skirts",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010161_0",
+      "claim": "Men are playing bagpipes.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010353_0",
+      "claim": "The man is playing an instrument.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the boy is wearing a gray top and black pants, with white socks resting on the carpet beneath him. He is seated on a small stool, holding a cello",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010444_1",
+      "claim": "A woman is playing an instrument.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The woman is described as accompanying the little boy as he plays the drums, and watching him intently, but there is no mention of her playing an instrument herself.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011376_0",
+      "claim": "The girl is playing an instrument.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "the young woman operates the organ's handles",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011378_0",
+      "claim": "A little girl is playing the piano.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "two-tiered pipe organ",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011456_0",
+      "claim": "The instrument is a piano.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "two-tiered keyboard organ",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011529_0",
+      "claim": "The man is walking.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the man bending down as he adjusts the equipment in front of him. Once everything is ready, the lights turn on, casting a red glow across the stage. The man then stands up, turns his head to the right, and raises his right hand to greet the audience with a smile on his face.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011529_0",
+      "claim": "The man is walking up the staircase.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "He stands behind a silver railing and a red curtain, facing away from the camera. In front of him is a small room filled with musical instruments and a small display screen.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011915_0",
+      "claim": "The people are on a pier.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012244_0",
+      "claim": "A woman is playing an instrument.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The girl in the video is wearing a short-sleeved black and gray striped top and has light-colored hair tied up in a ponytail. She is also sporting a pair of rimless glasses. ... The girl is facing the camera while sitting, with her left hand holding the violin and her right hand holding the bow",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013115_0",
+      "claim": "The man is walking down a sidewalk.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "navigating an outdoor parking lot in a wheelchair",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013474_1",
+      "claim": "A man exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013474_1",
+      "claim": "Another man exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013515_1",
+      "claim": "A woman is talking to the baby boy.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the man in the video is only seen from the waist down, with his right hand resting on the tabletop in front of him. The man then closes his hand around the boy's, gently shaking it while saying, \"Shaking… How do you do?\"",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013859_0",
+      "claim": "The game is taking place in a gym.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The walls feature a mix of light and dark yellow hues, adorned with black and white basketball hoops, while a few pull-up bars are placed along the sides.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013860_2",
+      "claim": "There is a group of kids.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "two women dressed in matching black tops and pants",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013863_0",
+      "claim": "A woman is present.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013869_0",
+      "claim": "The fighting is happening in a ring.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the stage floor is primarily gray, adorned with yellow and black text and patterns",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013880_1",
+      "claim": "The girls are dancing.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "perform an impressive jump rope routine",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013891_2",
+      "claim": "A woman is exercising.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a girl dressed in a blue sports tank top and black shorts",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013891_2",
+      "claim": "The woman is in a gym.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015005_0",
+      "claim": "A boy is swinging.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The woman is seated on the swing on the left side of the frame, while the boy stands on the right. ... the boy grabs the swing and gives her a little push, causing her to spin clockwise for another round. ... the boy grabs the swing again, slowing it down to a stop. The woman extends her arms towards him as he prepares to take his turn on the swing.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015103_2",
+      "claim": "The fishing is happening in the river.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015105_1",
+      "claim": "A girl is jumping.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The little boy is dressed in a red shirt and blue shorts, sitting on one of the two swings attached to the swing set.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015105_1",
+      "claim": "The girl is on a trampoline.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video primarily features a child playing on a swing. The little boy is dressed in a red shirt and blue shorts, sitting on one of the two swings attached to the swing set.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00000598_12",
+      "claim": "The tennis match is being played in a stadium.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "badminton match",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00000617_2",
+      "claim": "The activity is taking place in a gym.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "a basketball hoop visible on the wall in the background",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00001947_0",
+      "claim": "People are watching a competition.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003596_0",
+      "claim": "The man shoots a bow.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "we see her drawing the bowstring: her left arm extends forward to hold the bow straight while her right arm bends and slowly pulls back the string",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003596_0",
+      "claim": "The man shoots an arrow.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "we see her drawing the bowstring: her left arm extends forward to hold the bow straight while her right arm bends and slowly pulls back the string. ... The entire video is filmed from a third-person perspective and is accompanied by beautiful background music, with the scene set in a playground, featuring a building on the right side and a business vehicle parked in front on the right. The whole video is presented in slow motion, and it appears that the angle from which it was filmed, slightly to the back of the woman's left side, is intentionally chosen to highlight the entire archery process.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003601_0",
+      "claim": "A man is present.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The cameraman continuously speaking to the boy, attempting to guide and correct his archery posture and movements",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003601_0",
+      "claim": "The man is shooting.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The boy on the left is wearing a dark blue short-sleeved training uniform, with a patch on his right sleeve. He holds a red bow in his left hand while his right arm is bent, and he pulls the string back with his right hand.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003865_1",
+      "claim": "The men are sitting.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "with his right elbow resting on the counter",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005164_0",
+      "claim": "The man is hanging.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005164_0",
+      "claim": "There is a zip line.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005181_0",
+      "claim": "A man is riding on a tube.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The man in the video is bungee jumping over a pond, with his arms outstretched, he leaps downwards. In the pond, a blue inflatable rescue boat circles around the man, ensuring his safety.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005181_0",
+      "claim": "The tube is in the water.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "a blue inflatable rescue boat circles around the man, ensuring his safety",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005268_0",
+      "claim": "A man is climbing.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video captures the thrilling scene of a woman bungee jumping between cliffs.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005268_0",
+      "claim": "The man is climbing up a cliff.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video captures the thrilling scene of a woman bungee jumping between cliffs.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005279_0",
+      "claim": "The person is walking.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "he initially stands on the launch platform before leaping forward with his feet pointed downwards",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005279_0",
+      "claim": "A bridge exists.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006670_0",
+      "claim": "A man exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006670_0",
+      "claim": "The man is climbing.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a teenage boy attempting to climb a tree",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006670_0",
+      "claim": "The man is climbing the tree.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a teenage boy attempting to climb a tree",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006705_0",
+      "claim": "The man is climbing the tree.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The man is performing pull-ups on a tree and later tries to climb down the tree",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006717_0",
+      "claim": "A dog is present.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video captures the process of a man and a woman assisting another woman in climbing a tree.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006717_0",
+      "claim": "The man is playing with the dog.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video captures the process of a man and a woman assisting another woman in climbing a tree.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006717_0",
+      "claim": "The woman is playing with the dog.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video captures the process of a man and a woman assisting another woman in climbing a tree.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006717_0",
+      "claim": "The man and woman are playing on a tree.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "This video captures the process of a man and a woman assisting another woman in climbing a tree",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006748_0",
+      "claim": "A man is climbing a tree.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a teenage boy as he climbs a coconut tree",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006748_0",
+      "claim": "The tree is a palm tree.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "coconut tree",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007163_6",
+      "claim": "There are two men.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007163_6",
+      "claim": "The men are fighting.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007164_1",
+      "claim": "People are practicing martial arts.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007170_12",
+      "claim": "There are two men.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007170_12",
+      "claim": "The fighting is happening in a ring.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007171_0",
+      "claim": "There are two men.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007929_1",
+      "claim": "The woman is jumping over a hurdle.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "high jump mat",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008655_0",
+      "claim": "The man is wearing a red shirt.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "He is dressed in a red short-sleeve athletic shirt",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008655_0",
+      "claim": "The man is throwing a javelin.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "the athlete grips the blue javelin's handle firmly with his right hand, holding it high above his shoulder while maintaining a steady posture. He then takes a powerful running start... With a powerful throw, he releases the javelin into the distance.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008986_0",
+      "claim": "The man is throwing a javelin.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases the entire long jump process of an athlete dressed in black attire.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009099_12",
+      "claim": "A man is present.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009099_12",
+      "claim": "The man is wearing a blue shirt.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "The athlete is seen wearing a blue tracksuit, which features large red and white patches on the shoulders.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012405_0",
+      "claim": "The activity is taking place in a gym.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012406_0",
+      "claim": "The women are playing volleyball.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012414_0",
+      "claim": "The woman is on the beach.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012553_0",
+      "claim": "The man is jumping.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a female athlete practicing pole vaulting on a sunny day.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012658_2",
+      "claim": "The people are competing.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012667_2",
+      "claim": "There is a trampoline.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013712_0",
+      "claim": "The woman is wearing a red shirt.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "She is dressed in an athletic top with colors of red, black, and green",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013712_0",
+      "claim": "The woman is standing at a starting line.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the preparation platform is a round, white surface, surrounded by a red running track and lush green grass",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013712_0",
+      "claim": "The starting line is part of a track and field event.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014268_4",
+      "claim": "A man exists.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014299_5",
+      "claim": "The location is a gym.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The filming location is indoors, featuring a deep blue mat on the ground and white walls. In front of him, there is an open window, along with several black-and-white racks displaying various sizes of barbells and weight plates.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014429_0",
+      "claim": "A man is jumping.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a diver clad in a deep purple swimsuit stands at the edge of a high diving platform, facing away from the pool with her feet positioned close to the edge",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014429_0",
+      "claim": "The man is jumping off a diving board.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a diver clad in a deep purple swimsuit stands at the edge of a high diving platform, facing away from the pool with her feet positioned close to the edge",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014429_0",
+      "claim": "The man is jumping into a pool.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a diver clad in a deep purple swimsuit stands at the edge of a high diving platform, facing away from the pool with her feet positioned close to the edge",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014496_1",
+      "claim": "People are swimming.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The video features slow-motion footage of a moment during a diving competition taking place in an indoor swimming pool. The main focus is on a male diver, dressed in light-colored swim trunks, who is standing on a narrow diving board with his back towards the pool.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015775_0",
+      "claim": "A woman is running.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "She is jumping on an outdoor playground, specifically on a red track",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015775_0",
+      "claim": "The woman is in a track race.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video captures the process of a tall athlete performing a triple jump",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015801_0",
+      "claim": "There is a trampoline.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015844_0",
+      "claim": "The man is wearing a red shirt.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "dressed in a striking red competition suit",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00001379_10",
+      "claim": "A knife is being used.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a large cleaver, chopping forcefully",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003956_4",
+      "claim": "A vase exists.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "flowerpot",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005877_0",
+      "claim": "The onions and garlic are on a wooden cutting board.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "In front of him sits a wooden cutting board, displaying prominent wood grain. To the right of the board are colorful bell peppers, while fresh ginger and onions are placed at the front.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006262_0",
+      "claim": "The men are climbing.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "five workers are seen cleaning the outer walls; on the left side, one worker is suspended, while three workers are on the right, and a fourth worker is positioned lower in the middle",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006262_0",
+      "claim": "The men are climbing up the side of a building.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "five workers are seen cleaning the outer walls; on the left side, one worker is suspended, while three workers are on the right, and a fourth worker is positioned lower in the middle",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006329_0",
+      "claim": "The man is using a power washer.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "high-pressure water gun",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007052_0",
+      "claim": "The man is cutting wood.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The man on the left is wielding a shovel. The man on the right is holding a power drill, drilling into the ground",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007052_0",
+      "claim": "The man is using a saw.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The man on the left is wielding a shovel. On the right, the other man is holding a power drill.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015752_0",
+      "claim": "The man is using pruning shears.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The individual, whose upper body is not visible, is dressed in khaki work pants. In his right hand, he holds a red pruning machine, while his left hand steadies the handle.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016063_5",
+      "claim": "The dish is in a bowl.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016133_0",
+      "claim": "The woman is washing vegetables.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016220_0",
+      "claim": "The kids are playing.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The entire video captures two little boys washing dishes together by the kitchen sink at home.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016896_1",
+      "claim": "The child is folding something.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "He wipes the table while smiling and initially works from right to left. With his right hand, he uses the cloth to brush crumbs off the table... He diligently follows the edge of the table all the way to the center... He lifts the cloth with his right hand and then puts it down again, humming to himself while using both hands to wipe the table.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002040_11",
+      "claim": "The eyeliner is being applied to the woman's eyelids.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "She starts by applying eyeliner to her right eye. She draws a triangular shape from the outer corner of her eye, extending it upwards above the pupil before filling in the triangle.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002113_2",
+      "claim": "A woman is painting her nails.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003359_0",
+      "claim": "A woman is painting her nails.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The individual is dressed in a black tank top, with a silver ring adorning their left ring finger... The person holds the white bottle cap with their right thumb and index finger",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003360_2",
+      "claim": "A woman is painting her nails.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003377_1",
+      "claim": "A woman is painting her nails.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005010_0",
+      "claim": "The woman is using a toothbrush.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the little boy is dressed in a gray top... and he holds a pink children's toothbrush as he brushes his teeth. Sitting beside him is his mother, who is kneeling on the floor...",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007075_4",
+      "claim": "A woman is present.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007120_5",
+      "claim": "The woman is curling her hair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "removes her freshly curled hair",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007553_1",
+      "claim": "A young boy exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007553_1",
+      "claim": "The boy is getting his hair cut.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016267_1",
+      "claim": "The little girl is taking a bath.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The video depicts a little girl standing on the toilet to wash her feet",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016370_0",
+      "claim": "A baby is present.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a little boy",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016397_0",
+      "claim": "A man is present.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016760_1",
+      "claim": "The two women are talking.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "the girl on the left is speaking to the camera",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016796_3",
+      "claim": "A man is wearing a red hat.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "black and red hat",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002179_0",
+      "claim": "The man is being helped.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "He grips the movement devices on both sides of his wheelchair with his hands and maneuvers the wheels to move forward. He then expertly controls the wheelchair to move rightward and enters the room beyond the glass door. This video presents multiple steps of a disabled individual entering a room from a third-person perspective, and it serves an educational purpose.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002271_1",
+      "claim": "A man is riding a bicycle.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008410_2",
+      "claim": "A little girl is playing.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "the child is referred to as 'he' and 'a Black child' without any indication of the child being a girl",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008410_2",
+      "claim": "The girl is playing with a hula hoop.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "the child is referred to as 'he' and 'a Black child' with no indication of the child being a girl",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009792_1",
+      "claim": "The man is carrying a black backpack.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "an instrument bag is open on the ground",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011529_0",
+      "claim": "The person is walking.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the man bending down as he adjusts the equipment in front of him. Once everything is ready, the lights turn on, casting a red glow across the stage. The man then stands up, turns his head to the right, and raises his right hand to greet the audience with a smile on his face.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011529_0",
+      "claim": "The person is walking up the staircase.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "He stands behind a silver railing and a red curtain, facing away from the camera. In front of him is a small room filled with musical instruments and a small display screen.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012216_0",
+      "claim": "The man is walking.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "He then strides forward, facing the camera, and pauses momentarily while directing the bow toward the lens.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012216_0",
+      "claim": "The man is walking down the street.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "He then strides forward, facing the camera, and pauses momentarily while directing the bow toward the lens.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013474_1",
+      "claim": "A man is shaking hands with another man.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "one boy teaching another how to properly shake hands",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013863_0",
+      "claim": "The woman is wearing a white t-shirt.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The girl is dressed in a white short-sleeved top",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005164_0",
+      "claim": "The rope is in a jungle.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "a dense forest, with a concrete path winding through the trees below",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005170_0",
+      "claim": "A person is flying.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The individual in the video is bungee jumping from a cable car, not flying",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005181_0",
+      "claim": "A person is riding on something.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005181_0",
+      "claim": "The thing the person is riding on is a water toy.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "his bungee jumping platform is a tall white structure",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005268_0",
+      "claim": "There is a canyon.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005268_0",
+      "claim": "The bridge is over the canyon.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006463_0",
+      "claim": "The building is on fire.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007153_1",
+      "claim": "There are two men.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007171_0",
+      "claim": "The men are fighting.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007944_3",
+      "claim": "The people are running.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "dozens of enthusiastic spectators cheering her on in the background",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007944_3",
+      "claim": "The people are running on a track.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "she stands about three meters away from the high jump mat",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008674_0",
+      "claim": "The activity is taking place in an outdoor stadium.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "sports field",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008754_0",
+      "claim": "The location is an outdoor stadium.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "on a sports field",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012553_0",
+      "claim": "A man is present.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a female athlete practicing pole vaulting",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012553_0",
+      "claim": "The pole vault is happening in front of the crowd.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012658_2",
+      "claim": "The competition is a pole vault competition.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013624_0",
+      "claim": "The athletes are competing.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013648_0",
+      "claim": "The location is a gym.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a green surface marked with white lines, adorned with small triangular flags in red, blue, yellow, and other colors",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015275_0",
+      "claim": "The man is throwing a discus.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a man practicing shot put on a training field.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015322_14",
+      "claim": "The location is a gym.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The filming location is indoors, with yellow walls and flooring, and there are also two green mats on the ground. To the left of the video frame, there are two chairs upholstered in brown and light gray, while on the right, there's a wooden armchair. Additionally, the right-side wall has a window and a bulletin board.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015828_1",
+      "claim": "There is a group of athletes.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a fair-skinned female athlete",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015828_1",
+      "claim": "The athletes are competing in a race.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "She races along a red rubber track marked with white lane and distance lines... She lowers her center of gravity and sprints forward, her pace quickening... Upon reaching the first take-off line, she jumps upwards with slightly bent knees, landing firmly on one foot.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00001387_0",
+      "claim": "The action is taking place in a kitchen.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "metal countertop, sink filled with uncut watermelons, garbage bin",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003956_4",
+      "claim": "A vase is present.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "flowerpot",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003969_2",
+      "claim": "The flowers are in a vase.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a larger pot of flowers waiting to be trimmed",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005876_0",
+      "claim": "The man is wearing a white apron.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the chef is dressed in a white chef's uniform",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005877_0",
+      "claim": "The onions and garlic are on a cutting board.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "In front of him sits a wooden cutting board, displaying prominent wood grain. To the right of the board are colorful bell peppers, while fresh ginger and onions are placed at the front.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005890_3",
+      "claim": "The salad includes vegetables.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "a few green vegetables in the top left corner",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005890_3",
+      "claim": "The salad includes other ingredients.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "with mushrooms on the left and a few green vegetables in the top left corner",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006292_0",
+      "claim": "A man is present.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007052_0",
+      "claim": "The tool used for cutting is a circular saw.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The man on the right is holding a power drill",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007196_1",
+      "claim": "The little girl is playing.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016063_5",
+      "claim": "Cucumbers are ingredients in the salad.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016063_5",
+      "claim": "Onions are ingredients in the salad.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016195_3",
+      "claim": "The hands are being washed in a sink.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016213_0",
+      "claim": "The dishes are in the kitchen.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The background features a messy sink cluttered with numerous bottles and miscellaneous items, with the faucet running continuously.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016213_0",
+      "claim": "The activity is happening in the kitchen.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "a woman records herself washing dishes. The background features a messy sink cluttered with numerous bottles and miscellaneous items, with the faucet running continuously.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00000179_3",
+      "claim": "The makeup is being applied to the eyebrows.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "In the lower left corner, another black rectangular frame shows her process of applying foundation. ... In the lower left frame, the creator initially smiles and taps her phone, then looks at the camera while putting the phone down. She bows her head to search for something while speaking, then takes a brush to dip into foundation. After applying it twice on her left cheek, she dips the brush again, lifts her head, and applies it twice on her right cheek, continuing her conversation throughout the process.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00004669_0",
+      "claim": "A hairdresser exists.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "This video features a woman who teaches everyone how to style their hair.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00004669_0",
+      "claim": "The hairdresser is styling the woman's hair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "She lifts her hair with her left hand and then uses the comb in her right to first smooth it out, followed by sectioning it off strand by strand.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006963_0",
+      "claim": "The woman is using a spoon.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the mother is intently using her right hand to carefully trim the child's nails with the nail clippers",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006989_2",
+      "claim": "The thing picked up is a bug.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a pair of nail clippers",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006995_0",
+      "claim": "A little girl is playing.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the girl tilts her head, appearing exceptionally focused and serious as she attends to the nail trimming task. Her expression reflects a very earnest attitude towards the job",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007553_1",
+      "claim": "The young boy is getting his hair cut.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007553_1",
+      "claim": "The barber is cutting hair.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The parent stands behind the child, first using their right hand to comb through the hair and sectioning off a chunk.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016097_0",
+      "claim": "A woman is present.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a scene where a well-dressed man washes another person's feet. The two men face each other as the foot washer first grasps the ankle of the foot being washed with his left hand",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016419_0",
+      "claim": "The hands are in the sink.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "They wash both hands together under the stream of water",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002177_0",
+      "claim": "The babies are in strollers.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "one of the little girls is sitting in a purple wheelchair, which features large front wheels and smaller rear wheels, and the other little girl is sitting in a black stroller",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002242_1",
+      "claim": "The bicycle is on the street.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002267_0",
+      "claim": "A woman is riding a bike.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a girl practicing how to ride a bicycle.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009165_0",
+      "claim": "A professional masseuse is present.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The entire video depicts a woman giving a full-body massage to another woman",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009175_34",
+      "claim": "The woman is receiving a foot massage.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a young woman dressed in a red spaghetti strap dress is giving a foot massage to a male customer",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009204_119",
+      "claim": "Another woman is present.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The video showcases a person undergoing a soothing head massage. In the video, a woman is seen wearing a white tank top, her long hair cascading down her shoulders, with her eyes closed and a relaxed expression on her face as she enjoys the massage.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009204_119",
+      "claim": "The second woman is performing a face massage.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": true
+    },
+    {
+      "query_id": "carebench_v_00009204_119",
+      "claim": "The face massage is being done on the first woman.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009792_1",
+      "claim": "The man is standing in front of the building.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a staircase behind him where a bronze statue of a man is prominently displayed",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009914_0",
+      "claim": "A man exists.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "an elderly person beside her",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009914_0",
+      "claim": "The man is playing an instrument.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the woman is holding a black accordion in her lap while sitting on a blue bench",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010133_1",
+      "claim": "The people are dressed in traditional Scottish clothing.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010136_1",
+      "claim": "The people are playing bagpipes.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "two musicians on the left side of the video are playing the saxophone",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010427_0",
+      "claim": "The band is on a cruise ship.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010771_0",
+      "claim": "A little girl exists.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The little one is dressed in a white infant outfit adorned with orange floral prints, and is wearing a pair of white cotton socks. The baby is kneeling on the floor, and behind him stands a woman with reddish-brown hair, dressed in a black sweatshirt and black pants.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010771_0",
+      "claim": "The little girl is playing.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The little one is dressed in a white infant outfit adorned with orange floral prints, and is wearing a pair of white cotton socks. The baby is kneeling on the floor, and behind him stands a woman with reddish-brown hair, dressed in a black sweatshirt and black pants.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010771_0",
+      "claim": "The little girl is in a room.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010823_1",
+      "claim": "A man is playing the guitar.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "the boy deftly grips the guitar's neck with his left hand, skillfully changing the positions of his fingers across the different strings while his right hand strums them",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011337_2",
+      "claim": "There is a group of young women.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011337_2",
+      "claim": "The young women are playing cellos.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The woman on the far left is playing a deep brown cello. The woman on the far right begins by playing the harp... The woman in the middle... holds a violin in her left hand",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00011529_0",
+      "claim": "The person is playing a video game.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a small room filled with musical instruments and a small display screen",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013086_1",
+      "claim": "A man is in a wheelchair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "One boy is sitting in a black wheelchair, wearing a black short-sleeved shirt with a gray pattern across the chest.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013086_1",
+      "claim": "Another man is pushing the wheelchair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "One boy is sitting in a black wheelchair... The other boy is also dressed in a black short-sleeved shirt, featuring a white pattern on the left side of his chest. He is wearing khaki cargo shorts and black sandals, and he is holding a drink in his right hand... the standing boy first pulls the wheelchair backward, then grabs the armrest behind the wheelchair with his left hand.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013086_1",
+      "claim": "There are two men in the scene.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "two boys",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013863_0",
+      "claim": "The location is a gym.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "indoor venue",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013880_1",
+      "claim": "The dancing is happening in a gym.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00000598_12",
+      "claim": "The activity is happening in an indoor stadium.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "a tiered white audience seating where a scattering of spectators are seated",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003565_0",
+      "claim": "The people are shooting arrows.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The man shooting arrows is dressed in a dark blue short-sleeved shirt on the top and light mint green pants on the bottom, complemented by a pair of sunglasses. He holds the bow with his left hand and pulls the string with his right.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003596_0",
+      "claim": "A man is practicing archery.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a woman shooting arrows at a target on a playground... a man in dark clothing and black pants approaching from her right rear",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003596_0",
+      "claim": "The man is using a bow.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a man in dark clothing and black pants approaching from her right rear",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00003596_0",
+      "claim": "The man is using an arrow.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a man in dark clothing and black pants approaching from her right rear",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005181_0",
+      "claim": "A person is riding in a boat.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005268_0",
+      "claim": "There is a suspension bridge.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005268_0",
+      "claim": "The suspension bridge is over a river.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005279_0",
+      "claim": "There is a suspension bridge.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006578_1",
+      "claim": "The child is climbing.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The video showcases a one- or two-year-old child slowly making their way down a ladder all by themselves",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007170_12",
+      "claim": "The men are fighting.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007686_0",
+      "claim": "The woman is walking.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The scene depicts a woman playing golf alone on a golf course... She stands on a patch of yellow-green grass, bending slightly at the waist as she focuses on the ball at her feet.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008689_0",
+      "claim": "The activity is taking place in an outdoor stadium.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The video captures the process of a male athlete throwing a javelin outdoors. He stands on a red track, surrounded by vast green grass and towering trees that provide a lush backdrop.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012446_0",
+      "claim": "The other team is wearing blue.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "On the opposite side, the players don white tops and dark shorts, with their libero also in dark uniforms.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012560_0",
+      "claim": "There is a group of athletes.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a male athlete",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012560_0",
+      "claim": "The athletes are running.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The athlete first grips the pole with one hand above the other as he approaches the take-off area.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012658_2",
+      "claim": "The people are practicing pole vaulting.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "athletes training and some coaches nearby",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012667_2",
+      "claim": "A gymnast is performing.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a young foreign athlete utilizing a long pole to complete a high jump",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012681_0",
+      "claim": "A woman is present.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "He has a lean physique and is dressed in black long-sleeve shirt and long pants, with the sleeves rolled up. The footage begins directly at the moment he launches off the pole; with perfect timing, he drives the green pole into the ground and springs upward. One of the boys standing nearby even runs in to give him a push, adding some extra momentum for his jump.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012681_0",
+      "claim": "The woman is doing pole vault.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a young and energetic man as he performs the latter half of a pole vault",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013624_0",
+      "claim": "The game is rugby.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases a man's preparation process before throwing a shot put",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015293_0",
+      "claim": "The activity is happening in an outdoor park.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "a lush green lawn, and just a short distance away, the outlines of houses can be seen",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015775_0",
+      "claim": "The track is in a stadium.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "outdoor playground",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015828_1",
+      "claim": "The track is in a stadium.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    }
+  ],
+  "warning": "Machine-assisted cross-judge only; NOT human Gold and NOT a human agreement statistic."
+}

@@ -1,0 +1,243 @@
+{
+  "schema": "uarcap_q2.a2_cross_judge.v1",
+  "status": "MACHINE_ASSISTED_UNCALIBRATED",
+  "generated_utc": "2026-11-25T18:12:01.461600+00:00",
+  "judge_model_id": "meta-llama/Llama-3.3-70B-Instruct-W4A16",
+  "judge_model_path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b",
+  "n_unique_claims": 119,
+  "n_evaluated": 119,
+  "n_parse_failed": 0,
+  "observed_agreement_unique": 0.8571,
+  "cohen_kappa_unique": 0.6713,
+  "label_counts_gemma": {
+    "entailed": 88,
+    "unmentioned": 20,
+    "contradicted": 11
+  },
+  "label_counts_second_judge": {
+    "entailed": 85,
+    "unmentioned": 17,
+    "contradicted": 17
+  },
+  "per_arm_claims": {
+    "ARM_A0": {
+      "n": 85,
+      "agreement": 0.8706,
+      "gemma_counts": {
+        "entailed": 66,
+        "unmentioned": 12,
+        "contradicted": 7
+      },
+      "llama_counts": {
+        "entailed": 64,
+        "unmentioned": 11,
+        "contradicted": 10
+      }
+    },
+    "ARM_A1": {
+      "n": 80,
+      "agreement": 0.8625,
+      "gemma_counts": {
+        "entailed": 64,
+        "unmentioned": 9,
+        "contradicted": 7
+      },
+      "llama_counts": {
+        "entailed": 62,
+        "unmentioned": 8,
+        "contradicted": 10
+      }
+    },
+    "ARM_A7": {
+      "n": 83,
+      "agreement": 0.8795,
+      "gemma_counts": {
+        "entailed": 63,
+        "unmentioned": 13,
+        "contradicted": 7
+      },
+      "llama_counts": {
+        "entailed": 59,
+        "contradicted": 11,
+        "unmentioned": 13
+      }
+    }
+  },
+  "n_disagreements": 17,
+  "n_need_video": 0,
+  "n_ambiguous": 3,
+  "n_atomic_split_suspect": 0,
+  "disagreements": [
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "A woman exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The makeup is being applied to the woman's face.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002283_1",
+      "claim": "A woman is riding a scooter.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a little girl gliding along on her scooter",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002328_16",
+      "claim": "The hair being shaved belongs to a man.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "the person getting their head shaved is facing away from the camera, with very short, black hair",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "The man is cutting vegetables.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "he is slicing a tomato",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "claim": "A baby exists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The man is walking to a starting line.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "alternating his legs in a forceful run and jump, progressively picking up speed",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The starting line is part of a track and field event.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "The instrument is a bagpipe.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "he cradles his instrument with both hands—left hand on top and right hand below—his fingers dancing nimbly between the holes, producing a melodious and captivating tune",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "claim": "The man is operating a crane.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "He is standing on a crane, which has a yellow arm and is equipped with a white hanging basket, where the worker is positioned.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The woman is preparing a dish.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases the process a woman goes through to clean vegetables before placing them in the refrigerator.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The woman is cooking.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video showcases the process a woman goes through to clean vegetables before placing them in the refrigerator.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002093_8",
+      "claim": "The makeup is black eyeliner.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "Her eye makeup features pink eyeshadow applied to her eyelids, while a brown eyeshadow is used in her eye socket",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "The chef is cutting vegetables.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "the chef is slicing a tomato",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The starting line is for a track and field event.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "The man is wearing a kilt.",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "llama_evidence": "His lower half is adorned with a short skirt in a mix of red, blue, and yellow checks that gracefully reaches just above his knees.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "claim": "A makeup artist is applying eyeliner.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the makeup artist uses his left hand to lift the upper eyelid of the model's right eye while holding a pink-packaged mascara with a black brush head in his right hand, gently brushing the model's upper lashes several times",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    }
+  ],
+  "warning": "Machine-assisted cross-judge only; NOT human Gold and NOT a human agreement statistic."
+}

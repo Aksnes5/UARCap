@@ -1,0 +1,17 @@
+{
+  "schema": "uarcap_q2.formal_generation.v1",
+  "status": "FORMAL_CANDIDATE_GENERATION_UNVALIDATED",
+  "generator": "qwen",
+  "model_id": "Qwen/Qwen3.8-27B-FP8",
+  "utc": "2026-11-25T21:38:40.691385+00:00",
+  "n_predictions": 1800,
+  "per_arm": {
+    "ARM_A0": 600,
+    "ARM_A1": 600,
+    "ARM_A7": 600
+  },
+  "n_failures": 0,
+  "elapsed_sec": 1909.7,
+  "peak_vram_mib": 43332,
+  "note": "Generation-only; no confirmatory statistics; sample order frozen independent of outputs."
+}

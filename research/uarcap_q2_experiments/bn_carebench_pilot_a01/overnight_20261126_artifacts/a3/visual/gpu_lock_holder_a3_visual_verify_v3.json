@@ -1,0 +1,8 @@
+{
+  "run_id": "a3_visual_verify_v3",
+  "pid": 2088636,
+  "host": "bn",
+  "gpu_uuid": "GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d",
+  "lock_path": "/home/bn/videoufo_research/gpu.lock",
+  "acquired_at_utc": "2026-11-26T04:38:01.055982+00:00"
+}

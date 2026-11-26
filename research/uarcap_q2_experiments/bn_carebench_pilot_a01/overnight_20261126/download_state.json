@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETED",
+  "started_utc": "2026-11-25T18:09:21.546184+00:00",
+  "expected_bytes": 16754119398,
+  "expected_sha256": "8f163f29a72f5bc8d15720847b1c0b125c8a593d3bdaedfabbeb4f83e3c25af5",
+  "dest": "/home/bn/uarcap_q2_runtime/data/vidhalluc/data/ACH_videos.zip",
+  "pid": 1779405,
+  "attempts": 3,
+  "bytes_on_disk": 16754119398,
+  "percent": 100.0,
+  "speed_kbps": 102.4,
+  "updated_utc": "2026-11-25T18:31:50.626173+00:00",
+  "last_error": "Range download failed [4160749568-4294967295] after 5 attempts: <urlopen error _ssl.c:983: The handshake operation timed out>",
+  "result": {
+    "status": "DOWNLOADED_VERIFIED",
+    "path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/data/ACH_videos.zip",
+    "bytes": 16754119398,
+    "sha256": "8f163f29a72f5bc8d15720847b1c0b125c8a593d3bdaedfabbeb4f83e3c25af5",
+    "chunks": 125,
+    "workers": 32,
+    "elapsed_sec": 366.3,
+    "sources": [
+      "already-complete",
+      "https://hf-mirror.com/datasets/chaoyuli/VidHalluc/resolve/main/data/ACH_videos.zip"
+    ]
+  },
+  "completed_utc": "2026-11-25T18:32:01.575847+00:00"
+}

@@ -1,0 +1,718 @@
+{
+  "schema": "uarcap_q2.formal_integrity_audit.v1",
+  "generated_utc": "2026-11-26T04:38:24.034538+00:00",
+  "checks": {
+    "candidate_count_600": {
+      "ok": true,
+      "n": 600
+    },
+    "pilot_parents_excluded": {
+      "ok": true,
+      "overlap": []
+    },
+    "validation_disjoint_main": {
+      "ok": true,
+      "n_val": 60,
+      "overlap": 0
+    },
+    "parent_isolation": {
+      "ok": true,
+      "value": true
+    },
+    "near_duplicate_scan_executed": {
+      "ok": true,
+      "n_auto_near_dup_excluded": 0,
+      "n_eligible_pool": 883,
+      "parent_dedup": {
+        "dataset_id": "CaReBench",
+        "n_raw_clips": 1000,
+        "n_unique_fineaction_parents": 913,
+        "n_multi_clip_parents": 68,
+        "n_dropped_same_parent_siblings": 87,
+        "dropped_siblings": [
+          {
+            "query_id": "carebench_v_00000203_5",
+            "parent_video_id": "v_00000203",
+            "kept_query_id": "carebench_v_00000203_1",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00000253_5",
+            "parent_video_id": "v_00000253",
+            "kept_query_id": "carebench_v_00000253_4",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00000567_3",
+            "parent_video_id": "v_00000567",
+            "kept_query_id": "carebench_v_00000567_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00000617_6",
+            "parent_video_id": "v_00000617",
+            "kept_query_id": "carebench_v_00000617_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00000617_10",
+            "parent_video_id": "v_00000617",
+            "kept_query_id": "carebench_v_00000617_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00000617_15",
+            "parent_video_id": "v_00000617",
+            "kept_query_id": "carebench_v_00000617_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00000702_15",
+            "parent_video_id": "v_00000702",
+            "kept_query_id": "carebench_v_00000702_6",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00001383_5",
+            "parent_video_id": "v_00001383",
+            "kept_query_id": "carebench_v_00001383_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00001393_1",
+            "parent_video_id": "v_00001393",
+            "kept_query_id": "carebench_v_00001393_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00001476_1",
+            "parent_video_id": "v_00001476",
+            "kept_query_id": "carebench_v_00001476_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00001476_2",
+            "parent_video_id": "v_00001476",
+            "kept_query_id": "carebench_v_00001476_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00001476_5",
+            "parent_video_id": "v_00001476",
+            "kept_query_id": "carebench_v_00001476_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00001831_4",
+            "parent_video_id": "v_00001831",
+            "kept_query_id": "carebench_v_00001831_3",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002068_12",
+            "parent_video_id": "v_00002068",
+            "kept_query_id": "carebench_v_00002068_11",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002071_13",
+            "parent_video_id": "v_00002071",
+            "kept_query_id": "carebench_v_00002071_12",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002071_15",
+            "parent_video_id": "v_00002071",
+            "kept_query_id": "carebench_v_00002071_12",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002074_48",
+            "parent_video_id": "v_00002074",
+            "kept_query_id": "carebench_v_00002074_46",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002077_26",
+            "parent_video_id": "v_00002077",
+            "kept_query_id": "carebench_v_00002077_10",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002094_3",
+            "parent_video_id": "v_00002094",
+            "kept_query_id": "carebench_v_00002094_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002094_27",
+            "parent_video_id": "v_00002094",
+            "kept_query_id": "carebench_v_00002094_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002094_42",
+            "parent_video_id": "v_00002094",
+            "kept_query_id": "carebench_v_00002094_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002113_4",
+            "parent_video_id": "v_00002113",
+            "kept_query_id": "carebench_v_00002113_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002113_5",
+            "parent_video_id": "v_00002113",
+            "kept_query_id": "carebench_v_00002113_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002203_9",
+            "parent_video_id": "v_00002203",
+            "kept_query_id": "carebench_v_00002203_4",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002240_4",
+            "parent_video_id": "v_00002240",
+            "kept_query_id": "carebench_v_00002240_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002282_4",
+            "parent_video_id": "v_00002282",
+            "kept_query_id": "carebench_v_00002282_3",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002283_2",
+            "parent_video_id": "v_00002283",
+            "kept_query_id": "carebench_v_00002283_1",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002337_39",
+            "parent_video_id": "v_00002337",
+            "kept_query_id": "carebench_v_00002337_31",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002376_86",
+            "parent_video_id": "v_00002376",
+            "kept_query_id": "carebench_v_00002376_81",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002441_3",
+            "parent_video_id": "v_00002441",
+            "kept_query_id": "carebench_v_00002441_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002441_5",
+            "parent_video_id": "v_00002441",
+            "kept_query_id": "carebench_v_00002441_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00002476_6",
+            "parent_video_id": "v_00002476",
+            "kept_query_id": "carebench_v_00002476_5",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00004040_1",
+            "parent_video_id": "v_00004040",
+            "kept_query_id": "carebench_v_00004040_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005181_1",
+            "parent_video_id": "v_00005181",
+            "kept_query_id": "carebench_v_00005181_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005394_1",
+            "parent_video_id": "v_00005394",
+            "kept_query_id": "carebench_v_00005394_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005394_2",
+            "parent_video_id": "v_00005394",
+            "kept_query_id": "carebench_v_00005394_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005394_3",
+            "parent_video_id": "v_00005394",
+            "kept_query_id": "carebench_v_00005394_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005394_4",
+            "parent_video_id": "v_00005394",
+            "kept_query_id": "carebench_v_00005394_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005394_6",
+            "parent_video_id": "v_00005394",
+            "kept_query_id": "carebench_v_00005394_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005455_1",
+            "parent_video_id": "v_00005455",
+            "kept_query_id": "carebench_v_00005455_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005455_3",
+            "parent_video_id": "v_00005455",
+            "kept_query_id": "carebench_v_00005455_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005455_4",
+            "parent_video_id": "v_00005455",
+            "kept_query_id": "carebench_v_00005455_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005595_1",
+            "parent_video_id": "v_00005595",
+            "kept_query_id": "carebench_v_00005595_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005595_2",
+            "parent_video_id": "v_00005595",
+            "kept_query_id": "carebench_v_00005595_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005633_2",
+            "parent_video_id": "v_00005633",
+            "kept_query_id": "carebench_v_00005633_1",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005805_1",
+            "parent_video_id": "v_00005805",
+            "kept_query_id": "carebench_v_00005805_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00005910_8",
+            "parent_video_id": "v_00005910",
+            "kept_query_id": "carebench_v_00005910_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00006461_2",
+            "parent_video_id": "v_00006461",
+            "kept_query_id": "carebench_v_00006461_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00007041_10",
+            "parent_video_id": "v_00007041",
+            "kept_query_id": "carebench_v_00007041_5",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00007046_2",
+            "parent_video_id": "v_00007046",
+            "kept_query_id": "carebench_v_00007046_1",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00007089_4",
+            "parent_video_id": "v_00007089",
+            "kept_query_id": "carebench_v_00007089_3",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00007121_5",
+            "parent_video_id": "v_00007121",
+            "kept_query_id": "carebench_v_00007121_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00007126_5",
+            "parent_video_id": "v_00007126",
+            "kept_query_id": "carebench_v_00007126_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00007174_6",
+            "parent_video_id": "v_00007174",
+            "kept_query_id": "carebench_v_00007174_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00007435_6",
+            "parent_video_id": "v_00007435",
+            "kept_query_id": "carebench_v_00007435_4",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00007985_17",
+            "parent_video_id": "v_00007985",
+            "kept_query_id": "carebench_v_00007985_3",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00007985_35",
+            "parent_video_id": "v_00007985",
+            "kept_query_id": "carebench_v_00007985_3",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00008354_3",
+            "parent_video_id": "v_00008354",
+            "kept_query_id": "carebench_v_00008354_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00008428_10",
+            "parent_video_id": "v_00008428",
+            "kept_query_id": "carebench_v_00008428_3",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00009105_4",
+            "parent_video_id": "v_00009105",
+            "kept_query_id": "carebench_v_00009105_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00009165_5",
+            "parent_video_id": "v_00009165",
+            "kept_query_id": "carebench_v_00009165_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00009374_2",
+            "parent_video_id": "v_00009374",
+            "kept_query_id": "carebench_v_00009374_1",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00009586_1",
+            "parent_video_id": "v_00009586",
+            "kept_query_id": "carebench_v_00009586_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00009664_1",
+            "parent_video_id": "v_00009664",
+            "kept_query_id": "carebench_v_00009664_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00009854_3",
+            "parent_video_id": "v_00009854",
+            "kept_query_id": "carebench_v_00009854_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00010353_1",
+            "parent_video_id": "v_00010353",
+            "kept_query_id": "carebench_v_00010353_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00010781_4",
+            "parent_video_id": "v_00010781",
+            "kept_query_id": "carebench_v_00010781_3",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00010783_6",
+            "parent_video_id": "v_00010783",
+            "kept_query_id": "carebench_v_00010783_4",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00012045_4",
+            "parent_video_id": "v_00012045",
+            "kept_query_id": "carebench_v_00012045_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00013155_2",
+            "parent_video_id": "v_00013155",
+            "kept_query_id": "carebench_v_00013155_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00013274_2",
+            "parent_video_id": "v_00013274",
+            "kept_query_id": "carebench_v_00013274_1",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00013341_7",
+            "parent_video_id": "v_00013341",
+            "kept_query_id": "carebench_v_00013341_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00013352_8",
+            "parent_video_id": "v_00013352",
+            "kept_query_id": "carebench_v_00013352_6",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00013414_2",
+            "parent_video_id": "v_00013414",
+            "kept_query_id": "carebench_v_00013414_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00013414_4",
+            "parent_video_id": "v_00013414",
+            "kept_query_id": "carebench_v_00013414_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00013697_3",
+            "parent_video_id": "v_00013697",
+            "kept_query_id": "carebench_v_00013697_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00014268_7",
+            "parent_video_id": "v_00014268",
+            "kept_query_id": "carebench_v_00014268_4",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00014469_3",
+            "parent_video_id": "v_00014469",
+            "kept_query_id": "carebench_v_00014469_1",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00014469_5",
+            "parent_video_id": "v_00014469",
+            "kept_query_id": "carebench_v_00014469_1",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00015103_5",
+            "parent_video_id": "v_00015103",
+            "kept_query_id": "carebench_v_00015103_2",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00015334_8",
+            "parent_video_id": "v_00015334",
+            "kept_query_id": "carebench_v_00015334_5",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00016063_6",
+            "parent_video_id": "v_00016063",
+            "kept_query_id": "carebench_v_00016063_5",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00016092_6",
+            "parent_video_id": "v_00016092",
+            "kept_query_id": "carebench_v_00016092_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00016129_3",
+            "parent_video_id": "v_00016129",
+            "kept_query_id": "carebench_v_00016129_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00016848_12",
+            "parent_video_id": "v_00016848",
+            "kept_query_id": "carebench_v_00016848_8",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00016889_3",
+            "parent_video_id": "v_00016889",
+            "kept_query_id": "carebench_v_00016889_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          },
+          {
+            "query_id": "carebench_v_00016890_1",
+            "parent_video_id": "v_00016890",
+            "kept_query_id": "carebench_v_00016890_0",
+            "reason": "FINEACTION_SAME_PARENT_VIDEO_DEDUP"
+          }
+        ],
+        "parent_video_dedup_does_not_prove_independent_youtube_sources": true,
+        "residual_source_overlap_notice": "Deduplicating to distinct FineAction parent IDs removes known within-FineAction multi-clip clustering, but does not prove independent original YouTube sources or exact YouTube-ID zero-overlap with VideoUFO."
+      }
+    },
+    "all_candidates_decoded_16_frames": {
+      "ok": true,
+      "n_frames": 600,
+      "errors": []
+    },
+    "top7_features_present": {
+      "ok": true,
+      "n_missing": 0
+    },
+    "retrieval_top20_rerank7": {
+      "ok": true,
+      "n": 600,
+      "bad": []
+    },
+    "videollama_1800_unique": {
+      "ok": true,
+      "n": 1800,
+      "n_traces": 1800
+    },
+    "videollama_trace_linkage": {
+      "ok": true,
+      "n_bad": 0,
+      "sample": []
+    },
+    "videollama_a0_zero_evidence": {
+      "ok": true,
+      "n_bad": 0,
+      "sample": []
+    },
+    "videollama_a1_prefix_a7": {
+      "ok": true,
+      "n_bad": 0,
+      "sample": []
+    },
+    "videollama_frames_16_and_arm_hash": {
+      "ok": true,
+      "n_bad": 0,
+      "sample": []
+    },
+    "videollama_checkpoint_constant": {
+      "ok": true,
+      "checkpoints": [
+        "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+      ],
+      "model_ids": [
+        "videollama_evcap_frozen_v08"
+      ]
+    },
+    "qwen_1800_unique": {
+      "ok": true,
+      "n": 1800,
+      "n_traces": 1800
+    },
+    "qwen_trace_linkage": {
+      "ok": true,
+      "n_bad": 0,
+      "sample": []
+    },
+    "qwen_a0_zero_evidence": {
+      "ok": true,
+      "n_bad": 0,
+      "sample": []
+    },
+    "qwen_a1_prefix_a7": {
+      "ok": true,
+      "n_bad": 0,
+      "sample": []
+    },
+    "qwen_frames_16_and_arm_hash": {
+      "ok": true,
+      "n_bad": 0,
+      "sample": []
+    },
+    "qwen_checkpoint_constant": {
+      "ok": true,
+      "checkpoints": [
+        "revision:LOCAL_BN_QWEN38_FP8_66SHARDS"
+      ],
+      "model_ids": [
+        "Qwen/Qwen3.8-27B-FP8"
+      ]
+    }
+  },
+  "all_passed": true,
+  "models": {
+    "videollama": {
+      "n_predictions": 1800,
+      "checkpoint_sha256": [
+        "a8b5af79d55a2c7e684771475d645be6373208bdaae5a4211bee556581eb8002"
+      ],
+      "model_ids": [
+        "videollama_evcap_frozen_v08"
+      ]
+    },
+    "qwen": {
+      "n_predictions": 1800,
+      "checkpoint_sha256": [
+        "revision:LOCAL_BN_QWEN38_FP8_66SHARDS"
+      ],
+      "model_ids": [
+        "Qwen/Qwen3.8-27B-FP8"
+      ]
+    }
+  },
+  "manifest_receipt": {
+    "schema": "uarcap_q2.formal_manifest_receipt.v1",
+    "status": "FORMAL_CANDIDATE_MANIFEST_FROZEN_UNVALIDATED",
+    "utc": "2026-11-25T18:24:02.618321+00:00",
+    "n_selected": 600,
+    "n_validation": 60,
+    "manifest_sha256": "ebc02155e73dbce4c848a9e96b5b9a57d40c85058d3998de1368660c2e96a3b3",
+    "core_lock_sha256": "217a62a785d02b0f7e359221e98102e195c2405a5644db291d0cfdf243e496af",
+    "parent_isolation_verified": true,
+    "n_eligible_pool": 883,
+    "note": "Generation-only; no confirmatory statistics; sample size pre-frozen at 600 within protocol range."
+  },
+  "artifacts": {
+    "formal_candidates.jsonl": {
+      "bytes": 1778721,
+      "sha256": "80eaa547d18d615e27b4d3db5261cf1b14999da066da7b35b0b466abb69dc11b"
+    },
+    "formal_retrieval.jsonl": {
+      "bytes": 6096575,
+      "sha256": "d4e7d5b4436e7e5414b81bd19a416ccb82458fd6640d1d5676094c0b5215f504"
+    },
+    "formal_core_lock.json": {
+      "bytes": 1678682,
+      "sha256": "41a66c02b5cc0b5b3d5fe09ef5c5098e0a839dab0fcb26dc9c545e010ebf994e"
+    },
+    "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json": {
+      "bytes": 252918,
+      "sha256": "ebc02155e73dbce4c848a9e96b5b9a57d40c85058d3998de1368660c2e96a3b3"
+    },
+    "videollama/predictions.jsonl": {
+      "bytes": 3822652,
+      "sha256": "14108bc97fc278ac3ebc7ff91f729bcaebbae68793dab2de9e49fcff7f114104"
+    },
+    "videollama/input_traces.jsonl": {
+      "bytes": 3181723,
+      "sha256": "be351026041a04628819555002bdf0e6c4e3a596b3370501ce57dbb0c3202f7a"
+    },
+    "qwen/predictions.jsonl": {
+      "bytes": 3768391,
+      "sha256": "ef7d61ededda05a0ce34b5729d0328ef23ac061597e642a7f4b5d74299edd2d7"
+    },
+    "qwen/input_traces.jsonl": {
+      "bytes": 3093144,
+      "sha256": "415b91c348932e543553f9137776296ff879a63c01cd1e218eca473a917c6132"
+    },
+    "videollama_eval/a2_ref_fact_eval.jsonl": {
+      "bytes": 5630937,
+      "sha256": "931a0a52cdd388fddc9ac7dc70b512b758d464548312cff6c7a672c9bf372c0d"
+    },
+    "qwen_eval/a2_ref_fact_eval.jsonl": {
+      "bytes": 6900561,
+      "sha256": "325ea412b76afb4017e1659fc4563243b6f6edf397a5410e519a80c39a65cb43"
+    }
+  }
+}

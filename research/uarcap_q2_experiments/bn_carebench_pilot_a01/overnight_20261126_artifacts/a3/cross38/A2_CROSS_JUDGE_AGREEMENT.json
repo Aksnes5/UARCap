@@ -1,0 +1,583 @@
+{
+  "schema": "uarcap_q2.a2_cross_judge.v1",
+  "status": "MACHINE_ASSISTED_UNCALIBRATED",
+  "generated_utc": "2026-11-25T18:46:57.625424+00:00",
+  "judge_model_id": "meta-llama/Llama-3.3-70B-Instruct-W4A16",
+  "judge_model_path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b",
+  "n_unique_claims": 260,
+  "n_evaluated": 260,
+  "n_parse_failed": 0,
+  "observed_agreement_unique": 0.8038,
+  "cohen_kappa_unique": 0.6038,
+  "label_counts_gemma": {
+    "entailed": 184,
+    "unmentioned": 57,
+    "contradicted": 19
+  },
+  "label_counts_second_judge": {
+    "entailed": 164,
+    "contradicted": 40,
+    "unmentioned": 56
+  },
+  "per_arm_claims": {
+    "ARM_A0": {
+      "n": 147,
+      "agreement": 0.8435,
+      "gemma_counts": {
+        "entailed": 111,
+        "unmentioned": 27,
+        "contradicted": 9
+      },
+      "llama_counts": {
+        "entailed": 101,
+        "contradicted": 20,
+        "unmentioned": 26
+      }
+    },
+    "ARM_A1": {
+      "n": 143,
+      "agreement": 0.7972,
+      "gemma_counts": {
+        "entailed": 112,
+        "unmentioned": 24,
+        "contradicted": 7
+      },
+      "llama_counts": {
+        "entailed": 95,
+        "contradicted": 22,
+        "unmentioned": 26
+      }
+    },
+    "ARM_A7": {
+      "n": 154,
+      "agreement": 0.8117,
+      "gemma_counts": {
+        "entailed": 116,
+        "contradicted": 13,
+        "unmentioned": 25
+      },
+      "llama_counts": {
+        "entailed": 105,
+        "contradicted": 24,
+        "unmentioned": 25
+      }
+    }
+  },
+  "n_disagreements": 51,
+  "n_need_video": 1,
+  "n_ambiguous": 5,
+  "n_atomic_split_suspect": 0,
+  "disagreements": [
+    {
+      "query_id": "carebench_v_00002077_10",
+      "claim": "The eyeshadow is pink.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "Her eye makeup is a blend of pink and orange, with orange dominating the eyelid area and pink concentrated near the eye socket.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The makeup is bright blue.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "A small brush is used to apply the makeup.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "they hold a silver pencil in one hand, while the other hand is occupied with a mirror",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002283_1",
+      "claim": "The scooter is red and silver.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "She is dressed in a blue T-shirt and dark blue leggings, while wearing a black helmet on her head.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002328_16",
+      "claim": "The person is using a straight razor.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a silver razor",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005595_0",
+      "claim": "The baby is wearing white pajamas.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "The younger child is dressed in a onesie with a white base, decorated with numerous little flowers.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005595_0",
+      "claim": "The girl is helping the baby.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The older child, a girl, is wearing a pink short-sleeved top adorned with a floral pattern on the upper half of her body, paired with white long pants that also feature flowers. The younger child is dressed in a onesie with a white base, decorated with numerous little flowers. The filming takes place indoors, where the two children are sitting closely together on a small blue sofa.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "claim": "The toddler is on the woman's lap.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The woman gently holds the child and lifts his left foot to start trimming his toenails.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "claim": "The athlete is running.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "She performs a J-shaped approach on a black mat marked with triangular indicators, taking about ten strides",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "claim": "The athlete is running on a track.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a black mat marked with triangular indicators",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The dog is black and tan.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a black dog",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The boy is sweeping a floor.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The boy is using a broom.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "The man is wearing traditional Scottish attire.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012062_0",
+      "claim": "The boy plays a trumpet.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012062_0",
+      "claim": "The trumpet is made of brass.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012246_0",
+      "claim": "The violin is red.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "He is wearing a light yellow T-shirt adorned with red and black stripes",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013412_0",
+      "claim": "The men are wearing dark suits.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "Mr. Trump stands on the left side of the frame, sporting his trademark blonde hair, dressed in a black suit jacket with a striped tie and a crisp white shirt, complemented by black trousers. Mr. Kim, with dark hair and wearing a Mao suit.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The diver is performing the backflip off a high diving board.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "He then jumps forcefully upward, extending his legs straight in the air as he lands on the bouncing board. Subsequently, he swings his arms vigorously backward, tilting his body forward while bending his legs, exerting force that causes the board to flex downwards. As the board rebounds, he thrusts his arms straight up and leaps to great heights. In mid-air, he bends his upper body and rotates sideways, turning his back to the camera while his arms continue to stretch back.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "claim": "The worker is trimming the top of a palm tree.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "This video captures a worker actively trimming the leaves of a coconut tree",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "claim": "The palm tree is tall.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The green beans are in a metal pot.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "stainless steel bowl",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The metal pot is filled with water.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The woman has colorful face paint.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002283_1",
+      "claim": "The path is in a park.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002328_16",
+      "claim": "The person is shaving hair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "the person getting their head shaved is facing away from the camera, with very short, black hair. The right side of their hair has already been shaved clean, while the left side remains untouched",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00005595_0",
+      "claim": "A young girl is sitting in a chair.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "a little girl is sitting on a couch",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "claim": "The child is on the woman's lap.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The woman gently holds the child and lifts his left foot to start trimming his toenails.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "claim": "They are both looking at an object.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The child is holding an orange-yellow toy and occasionally puts it in his mouth to play with it.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The man is walking.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "alternating his legs in a forceful run and jump, progressively picking up speed",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The man is walking across a red track.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "alternating his legs in a forceful run and jump, progressively picking up speed",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "Another person is throwing a javelin.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "This video captures a male athlete during javelin throwing training in a stadium. He is wearing a white short-sleeve athletic shirt on top, black athletic pants on the bottom, and a pair of sneakers on his feet.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00010336_1",
+      "claim": "The area is outdoors.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "situated in a corridor, with a backdrop of brown brick walls",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00012568_0",
+      "claim": "The bar is high.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The gymnast is female.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "The athlete is dressed in black swimming trunks",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The gymnast performs aerial flips.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The gymnast performs twists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00015732_0",
+      "claim": "The debris is on a grassy area.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "on the lawn, there are two lamps, an abandoned gray traffic barrier, and some square stones scattered around",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002283_1",
+      "claim": "A woman is riding a scooter.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a little girl gliding along on her scooter",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00002283_1",
+      "claim": "The setting is a park.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "claim": "The athlete is jumping over the mat.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "she lands on the high jump mat",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The dachshund is small.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The dachshund is black and tan.",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "llama_evidence": "black dog",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The person is wearing pink scrubs.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The broom is near the Christmas tree.",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "llama_evidence": "The setting is indoors, featuring white tiled flooring and a beautifully adorned Christmas tree, decorated with numerous golden ornaments. There is also a small blue plastic bucket on the floor, while the walls are painted yellow. As the person sweeps, they bend forward, using the broom in their left hand to sweep toward their body from the outside.",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "claim": "A makeup artist is applying eyeliner.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "the makeup artist uses his left hand to lift the upper eyelid of the model's right eye while holding a pink-packaged mascara with a black brush head in his right hand, gently brushing the model's upper lashes several times",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "claim": "A small brush is being used to apply the eyeliner.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a black brush head in his right hand, gently brushing the model's upper lashes several times",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "A gymnast is performing.",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "llama_evidence": "a diving athlete performing an impressive aerial maneuver above an indoor swimming pool",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The gymnast is performing twists.",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "There is a blue mat.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": false,
+      "atomic_split_error": false
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The gymnast is above the mat.",
+      "gemma": "contradicted",
+      "llama": "unmentioned",
+      "llama_evidence": "",
+      "needs_video": false,
+      "ambiguous": true,
+      "atomic_split_error": false
+    }
+  ],
+  "warning": "Machine-assisted cross-judge only; NOT human Gold and NOT a human agreement statistic."
+}

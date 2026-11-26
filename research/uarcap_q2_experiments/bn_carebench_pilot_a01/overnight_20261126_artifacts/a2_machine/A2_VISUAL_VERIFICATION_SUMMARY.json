@@ -1,0 +1,38 @@
+{
+  "schema": "uarcap_q2.a2_visual_verification.v1",
+  "status": "MACHINE_ASSISTED_UNCALIBRATED",
+  "generated_utc": "2026-11-26T04:37:57.873117+00:00",
+  "model_id": "Qwen/Qwen3.8-27B-FP8",
+  "model_path": "/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.8-27B-FP8",
+  "n_flagged": 41,
+  "n_verified": 41,
+  "n_parse_failed": 0,
+  "video_truth_counts": {
+    "contradicted": 11,
+    "entailed": 28,
+    "unverifiable": 2
+  },
+  "visible_16f_counts": {
+    "yes": 39,
+    "no": 2
+  },
+  "by_reason": {
+    "gemma_unmentioned": {
+      "contradicted": 6,
+      "entailed": 12,
+      "unverifiable": 2
+    },
+    "judge_disagreement": {
+      "contradicted": 5,
+      "entailed": 11,
+      "unverifiable": 1
+    },
+    "visual_attribute_object_position": {
+      "contradicted": 5,
+      "unverifiable": 1,
+      "entailed": 11
+    }
+  },
+  "n_still_uncertain": 2,
+  "warning": "Qwen is machine assistance only; its outputs are never human Gold, and it is not used as an independent confirmation when Qwen also generates text in A3."
+}

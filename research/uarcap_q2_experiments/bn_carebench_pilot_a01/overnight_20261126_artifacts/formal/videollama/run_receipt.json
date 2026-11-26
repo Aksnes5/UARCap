@@ -1,0 +1,17 @@
+{
+  "schema": "uarcap_q2.formal_generation.v1",
+  "status": "FORMAL_CANDIDATE_GENERATION_UNVALIDATED",
+  "generator": "videollama",
+  "model_id": "videollama_evcap_frozen_v08",
+  "utc": "2026-11-25T21:06:49.944627+00:00",
+  "n_predictions": 1800,
+  "per_arm": {
+    "ARM_A0": 600,
+    "ARM_A1": 600,
+    "ARM_A7": 600
+  },
+  "n_failures": 0,
+  "elapsed_sec": 6524.9,
+  "peak_vram_mib": 20252,
+  "note": "Generation-only; no confirmatory statistics; sample order frozen independent of outputs."
+}

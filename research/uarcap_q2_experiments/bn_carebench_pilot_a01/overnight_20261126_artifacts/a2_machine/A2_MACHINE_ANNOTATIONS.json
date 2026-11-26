@@ -1,0 +1,2713 @@
+{
+  "schema": "uarcap_q2.a2_machine_annotations.v1",
+  "status": "MACHINE_ASSISTED_UNCALIBRATED",
+  "generated_utc": "2026-11-25T18:19:51.691945+00:00",
+  "n_claims": 119,
+  "n_requires_human_review": 17,
+  "annotations": [
+    {
+      "query_id": "carebench_v_00002077_10",
+      "claim": "The makeup is being applied to the woman's face.",
+      "norm_key": "makeup is being applied to woman's face",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002077_10::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00002077_10::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00002077_10::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002077_10",
+      "claim": "A woman exists.",
+      "norm_key": "woman exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002077_10::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00002077_10::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00002077_10::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002077_10",
+      "claim": "The woman is applying makeup.",
+      "norm_key": "woman is applying makeup",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002077_10::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00002077_10::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00002077_10::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002093_8",
+      "claim": "The makeup is being applied to the woman's face.",
+      "norm_key": "makeup is being applied to woman's face",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002093_8::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00002093_8::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00002093_8::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002093_8",
+      "claim": "The makeup is black eyeliner.",
+      "norm_key": "makeup is black eyeliner",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002093_8::ARM_A7::videollama_evcap_frozen_v08::C04"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002093_8",
+      "claim": "A woman exists.",
+      "norm_key": "woman exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00002093_8::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00002093_8::ARM_A1::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002093_8",
+      "claim": "The woman is applying makeup.",
+      "norm_key": "woman is applying makeup",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002093_8::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00002093_8::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00002093_8::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002093_8",
+      "claim": "A woman is present.",
+      "norm_key": "woman is present",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002093_8::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The makeup is being applied to the woman's face.",
+      "norm_key": "makeup is being applied to woman's face",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002096_7::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00002096_7::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00002096_7::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "A woman exists.",
+      "norm_key": "woman exists",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002096_7::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00002096_7::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00002096_7::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002096_7",
+      "claim": "The woman is applying makeup.",
+      "norm_key": "woman is applying makeup",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002096_7::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00002096_7::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00002096_7::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002283_1",
+      "claim": "A girl is riding a scooter.",
+      "norm_key": "girl is riding scooter",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002283_1::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002283_1",
+      "claim": "A woman is riding a scooter.",
+      "norm_key": "woman is riding scooter",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00002283_1::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00002283_1::ARM_A1::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002328_16",
+      "claim": "The hair being shaved belongs to a man.",
+      "norm_key": "hair being shaved belongs to man",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00002328_16::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00002328_16::ARM_A1::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002328_16",
+      "claim": "A man exists.",
+      "norm_key": "man exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002328_16::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002328_16",
+      "claim": "A man is shaving hair.",
+      "norm_key": "man is shaving hair",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00002328_16::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00002328_16::ARM_A1::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00002328_16",
+      "claim": "The man is shaving his head.",
+      "norm_key": "man is shaving his head",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00002328_16::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00004040_0",
+      "claim": "People are swimming.",
+      "norm_key": "people are swimming",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00004040_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00004040_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00004040_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00004040_0",
+      "claim": "There is a pool.",
+      "norm_key": "there is pool",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00004040_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00004040_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00004040_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005394_0",
+      "claim": "People are swimming.",
+      "norm_key": "people are swimming",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005394_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00005394_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00005394_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005394_0",
+      "claim": "There is a pool.",
+      "norm_key": "there is pool",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005394_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00005394_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00005394_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005595_0",
+      "claim": "The kids are playing.",
+      "norm_key": "kids are playing",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005595_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00005595_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00005595_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005595_0",
+      "claim": "The kids are playing with each other.",
+      "norm_key": "kids are playing with each other",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005595_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00005595_0::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00005595_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005595_0",
+      "claim": "There are two kids.",
+      "norm_key": "there are two kids",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005595_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00005595_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00005595_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005805_0",
+      "claim": "The man is cutting wood.",
+      "norm_key": "man is cutting wood",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005805_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00005805_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00005805_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005805_0",
+      "claim": "A man is present.",
+      "norm_key": "man is present",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005805_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00005805_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00005805_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005805_0",
+      "claim": "The man is using an axe.",
+      "norm_key": "man is using axe",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005805_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00005805_0::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00005805_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "The chef is cutting vegetables.",
+      "norm_key": "chef is cutting vegetables",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005904_11::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "A chef is present.",
+      "norm_key": "chef is present",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005904_11::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "A knife is being used.",
+      "norm_key": "knife is being used",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005904_11::ARM_A7::videollama_evcap_frozen_v08::C04"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "The man is cutting vegetables.",
+      "norm_key": "man is cutting vegetables",
+      "gemma": "entailed",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00005904_11::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00005904_11::ARM_A1::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "A man is present.",
+      "norm_key": "man is present",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00005904_11::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00005904_11::ARM_A1::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "The man is wearing a red shirt.",
+      "norm_key": "man is wearing red shirt",
+      "gemma": "contradicted",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "contradicted",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00005904_11::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00005904_11::ARM_A1::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00005904_11",
+      "claim": "The vegetables are on a cutting board.",
+      "norm_key": "vegetables are on cutting board",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00005904_11::ARM_A0::videollama_evcap_frozen_v08::C04",
+        "carebench_v_00005904_11::ARM_A1::videollama_evcap_frozen_v08::C04",
+        "carebench_v_00005904_11::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00006714_0",
+      "claim": "A man exists.",
+      "norm_key": "man exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00006714_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00006714_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00006714_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00006714_0",
+      "claim": "The man is climbing.",
+      "norm_key": "man is climbing",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00006714_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00006714_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00006714_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00006714_0",
+      "claim": "The man is climbing the tree.",
+      "norm_key": "man is climbing tree",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00006714_0::ARM_A0::videollama_evcap_frozen_v08::C04",
+        "carebench_v_00006714_0::ARM_A1::videollama_evcap_frozen_v08::C04",
+        "carebench_v_00006714_0::ARM_A7::videollama_evcap_frozen_v08::C04"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00006714_0",
+      "claim": "A tree exists.",
+      "norm_key": "tree exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00006714_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00006714_0::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00006714_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "claim": "A baby exists.",
+      "norm_key": "baby exists",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00006909_1::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00006909_1::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00006909_1::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "claim": "A woman exists.",
+      "norm_key": "woman exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00006909_1::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00006909_1::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00006909_1::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00006909_1",
+      "claim": "The woman is feeding the baby.",
+      "norm_key": "woman is feeding baby",
+      "gemma": "contradicted",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "contradicted",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00006909_1::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00006909_1::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00006909_1::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "claim": "The hurdles are on a track.",
+      "norm_key": "hurdles are on track",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00007888_2::ARM_A0::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "claim": "A woman is jumping.",
+      "norm_key": "woman is jumping",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00007888_2::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00007888_2::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00007888_2::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "claim": "The woman is jumping over a hurdle.",
+      "norm_key": "woman is jumping over hurdle",
+      "gemma": "contradicted",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "contradicted",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00007888_2::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00007888_2::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00007888_2",
+      "claim": "The woman is jumping over hurdles.",
+      "norm_key": "woman is jumping over hurdles",
+      "gemma": "contradicted",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "contradicted",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00007888_2::ARM_A0::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "A dog exists.",
+      "norm_key": "dog exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00008320_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00008320_0::ARM_A1::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The dog is an animal.",
+      "norm_key": "dog is animal",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008320_0::ARM_A7::videollama_evcap_frozen_v08::C04"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "A woman exists.",
+      "norm_key": "woman exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008320_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00008320_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00008320_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The woman has a dog.",
+      "norm_key": "woman has dog",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008320_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The woman is petting a dog.",
+      "norm_key": "woman is petting dog",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00008320_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00008320_0::ARM_A1::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008320_0",
+      "claim": "The woman is talking.",
+      "norm_key": "woman is talking",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008320_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "A man is present.",
+      "norm_key": "man is present",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008693_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00008693_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00008693_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The man is walking.",
+      "norm_key": "man is walking",
+      "gemma": "contradicted",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "contradicted",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008693_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00008693_0::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00008693_0::ARM_A7::videollama_evcap_frozen_v08::C04"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The man is walking to a starting line.",
+      "norm_key": "man is walking to starting line",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008693_0::ARM_A0::videollama_evcap_frozen_v08::C04",
+        "carebench_v_00008693_0::ARM_A1::videollama_evcap_frozen_v08::C04",
+        "carebench_v_00008693_0::ARM_A7::videollama_evcap_frozen_v08::C05"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The man is wearing black pants.",
+      "norm_key": "man is wearing black pants",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008693_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The man is wearing a white shirt.",
+      "norm_key": "man is wearing white shirt",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008693_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00008693_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00008693_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The starting line is for a track and field event.",
+      "norm_key": "starting line is for track and field event",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00008693_0::ARM_A7::videollama_evcap_frozen_v08::C06"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00008693_0",
+      "claim": "The starting line is part of a track and field event.",
+      "norm_key": "starting line is part of track and field event",
+      "gemma": "entailed",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00008693_0::ARM_A0::videollama_evcap_frozen_v08::C05",
+        "carebench_v_00008693_0::ARM_A1::videollama_evcap_frozen_v08::C05"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "A boy exists.",
+      "norm_key": "boy exists",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00009485_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00009485_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The boy is cleaning the floor.",
+      "norm_key": "boy is cleaning floor",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00009485_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00009485_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00009485_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "A boy is present.",
+      "norm_key": "boy is present",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00009485_0::ARM_A0::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The boy is using a broom.",
+      "norm_key": "boy is using broom",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00009485_0::ARM_A0::videollama_evcap_frozen_v08::C04",
+        "carebench_v_00009485_0::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00009485_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00009485_0",
+      "claim": "The boy is wearing a pink shirt.",
+      "norm_key": "boy is wearing pink shirt",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00009485_0::ARM_A0::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00009795_0",
+      "claim": "The instrument is an accordion.",
+      "norm_key": "instrument is accordion",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00009795_0::ARM_A0::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00009795_0",
+      "claim": "A man exists.",
+      "norm_key": "man exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00009795_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00009795_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00009795_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00009795_0",
+      "claim": "The man is playing an accordion.",
+      "norm_key": "man is playing accordion",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00009795_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00009795_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00009795_0",
+      "claim": "The man is playing an instrument.",
+      "norm_key": "man is playing instrument",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00009795_0::ARM_A0::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "The instrument is a bagpipe.",
+      "norm_key": "instrument is bagpipe",
+      "gemma": "unmentioned",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00010075_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00010075_0::ARM_A1::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "A man exists.",
+      "norm_key": "man exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00010075_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00010075_0::ARM_A1::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "The man is playing a bagpipe.",
+      "norm_key": "man is playing bagpipe",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00010075_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "The man is playing an instrument.",
+      "norm_key": "man is playing instrument",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00010075_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00010075_0::ARM_A1::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "A man is present.",
+      "norm_key": "man is present",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00010075_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010075_0",
+      "claim": "The man is wearing a kilt.",
+      "norm_key": "man is wearing kilt",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00010075_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010336_1",
+      "claim": "One musician is playing a cello.",
+      "norm_key": "one musician is playing cello",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00010336_1::ARM_A1::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010336_1",
+      "claim": "One musician is playing a violin.",
+      "norm_key": "one musician is playing violin",
+      "gemma": "contradicted",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "contradicted",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00010336_1::ARM_A1::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010336_1",
+      "claim": "The people are playing instruments.",
+      "norm_key": "people are playing instruments",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00010336_1::ARM_A0::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010336_1",
+      "claim": "The people are playing music.",
+      "norm_key": "people are playing music",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00010336_1::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010336_1",
+      "claim": "There are two musicians.",
+      "norm_key": "there are two musicians",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00010336_1::ARM_A1::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00010336_1",
+      "claim": "There are two people.",
+      "norm_key": "there are two people",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00010336_1::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00010336_1::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00011374_0",
+      "claim": "The instrument is a saxophone.",
+      "norm_key": "instrument is saxophone",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00011374_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00011374_0::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00011374_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00011374_0",
+      "claim": "A man exists.",
+      "norm_key": "man exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00011374_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00011374_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00011374_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00011374_0",
+      "claim": "The man is playing an instrument.",
+      "norm_key": "man is playing instrument",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00011374_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00011374_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00011374_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00012062_0",
+      "claim": "A boy exists.",
+      "norm_key": "boy exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00012062_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00012062_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00012062_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00012062_0",
+      "claim": "The boy is playing an instrument.",
+      "norm_key": "boy is playing instrument",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00012062_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00012062_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00012062_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00012062_0",
+      "claim": "The instrument is a trumpet.",
+      "norm_key": "instrument is trumpet",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00012062_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00012062_0::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00012062_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00012246_0",
+      "claim": "A boy exists.",
+      "norm_key": "boy exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00012246_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00012246_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00012246_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00012246_0",
+      "claim": "The boy is playing an instrument.",
+      "norm_key": "boy is playing instrument",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00012246_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00012246_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00012246_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00012246_0",
+      "claim": "The instrument is a violin.",
+      "norm_key": "instrument is violin",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00012246_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00012246_0::ARM_A1::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00012246_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00012568_0",
+      "claim": "A man is pole vaulting.",
+      "norm_key": "man is pole vaulting",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00012568_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00012568_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00012568_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "claim": "The eyeliner is being applied to a model.",
+      "norm_key": "eyeliner is being applied to model",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00013274_1::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "claim": "A makeup artist is applying eyeliner.",
+      "norm_key": "makeup artist is applying eyeliner",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00013274_1::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "claim": "A man is applying makeup.",
+      "norm_key": "man is applying makeup",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00013274_1::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00013274_1::ARM_A1::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00013274_1",
+      "claim": "The recipient of the makeup is a woman.",
+      "norm_key": "recipient of makeup is woman",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00013274_1::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00013274_1::ARM_A1::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00013412_0",
+      "claim": "Barack Obama is a person.",
+      "norm_key": "barack obama is person",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00013412_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00013412_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00013412_0",
+      "claim": "Donald Trump and Barack Obama are shaking hands.",
+      "norm_key": "donald trump and barack obama are shaking hands",
+      "gemma": "contradicted",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "contradicted",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00013412_0::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00013412_0::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00013412_0",
+      "claim": "Donald Trump is a person.",
+      "norm_key": "donald trump is person",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00013412_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00013412_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00013412_0",
+      "claim": "The person the president of the United States is shaking hands with is the president of North Korea.",
+      "norm_key": "person president of united states is shaking hands with is president of north korea",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00013412_0::ARM_A1::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00013412_0",
+      "claim": "The president of the United States is shaking hands with someone.",
+      "norm_key": "president of united states is shaking hands with someone",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00013412_0::ARM_A1::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "A man exists.",
+      "norm_key": "man exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00014430_1::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00014430_1::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00014430_1::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The man is diving.",
+      "norm_key": "man is diving",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00014430_1::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00014430_1::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00014430_1::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The man is diving into the pool.",
+      "norm_key": "man is diving into pool",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00014430_1::ARM_A7::videollama_evcap_frozen_v08::C04"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "The man is diving into the swimming pool.",
+      "norm_key": "man is diving into swimming pool",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00014430_1::ARM_A0::videollama_evcap_frozen_v08::C04",
+        "carebench_v_00014430_1::ARM_A1::videollama_evcap_frozen_v08::C04"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "There is a pool.",
+      "norm_key": "there is pool",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00014430_1::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00014430_1",
+      "claim": "There is a swimming pool.",
+      "norm_key": "there is swimming pool",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00014430_1::ARM_A0::videollama_evcap_frozen_v08::C03",
+        "carebench_v_00014430_1::ARM_A1::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "claim": "A crane is lifting a tree.",
+      "norm_key": "crane is lifting tree",
+      "gemma": "contradicted",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "contradicted",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00015614_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "claim": "A man exists.",
+      "norm_key": "man exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00015614_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00015614_0::ARM_A1::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015614_0",
+      "claim": "The man is operating a crane.",
+      "norm_key": "man is operating crane",
+      "gemma": "contradicted",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1"
+      ],
+      "claim_ids": [
+        "carebench_v_00015614_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00015614_0::ARM_A1::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015732_0",
+      "claim": "A man exists.",
+      "norm_key": "man exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00015732_0::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00015732_0::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00015732_0::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015732_0",
+      "claim": "The man is mowing a lawn.",
+      "norm_key": "man is mowing lawn",
+      "gemma": "contradicted",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "contradicted",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00015732_0::ARM_A0::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00015732_0::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00015732_0::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015865_14",
+      "claim": "The activity is happening in a track meet.",
+      "norm_key": "activity is happening in track meet",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00015865_14::ARM_A0::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015865_14",
+      "claim": "The track is in a stadium.",
+      "norm_key": "track is in stadium",
+      "gemma": "unmentioned",
+      "llama": "unmentioned",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "unmentioned",
+      "requires_human_review": false,
+      "reasons": [
+        "reference_unmentioned"
+      ],
+      "arms": [
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00015865_14::ARM_A7::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015865_14",
+      "claim": "A woman is jumping.",
+      "norm_key": "woman is jumping",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00015865_14::ARM_A0::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015865_14",
+      "claim": "The woman is on a track.",
+      "norm_key": "woman is on track",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00015865_14::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00015865_14::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00015865_14",
+      "claim": "A woman is running.",
+      "norm_key": "woman is running",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0",
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00015865_14::ARM_A0::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00015865_14::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00015865_14::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The dish contains vegetables.",
+      "norm_key": "dish contains vegetables",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00016057_5::ARM_A0::videollama_evcap_frozen_v08::C03"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "A woman exists.",
+      "norm_key": "woman exists",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00016057_5::ARM_A1::videollama_evcap_frozen_v08::C01",
+        "carebench_v_00016057_5::ARM_A7::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The woman is cooking.",
+      "norm_key": "woman is cooking",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A1",
+        "ARM_A7"
+      ],
+      "claim_ids": [
+        "carebench_v_00016057_5::ARM_A1::videollama_evcap_frozen_v08::C02",
+        "carebench_v_00016057_5::ARM_A7::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "The woman is preparing a dish.",
+      "norm_key": "woman is preparing dish",
+      "gemma": "unmentioned",
+      "llama": "contradicted",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": null,
+      "requires_human_review": true,
+      "reasons": [
+        "reference_unmentioned",
+        "text_judges_disagree"
+      ],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00016057_5::ARM_A0::videollama_evcap_frozen_v08::C02"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    },
+    {
+      "query_id": "carebench_v_00016057_5",
+      "claim": "A woman is present.",
+      "norm_key": "woman is present",
+      "gemma": "entailed",
+      "llama": "entailed",
+      "visual_video_truth": null,
+      "visual_visible_16f": null,
+      "machine_label": "entailed",
+      "requires_human_review": false,
+      "reasons": [],
+      "arms": [
+        "ARM_A0"
+      ],
+      "claim_ids": [
+        "carebench_v_00016057_5::ARM_A0::videollama_evcap_frozen_v08::C01"
+      ],
+      "machine_assisted_only": true,
+      "not_human_gold": true
+    }
+  ]
+}

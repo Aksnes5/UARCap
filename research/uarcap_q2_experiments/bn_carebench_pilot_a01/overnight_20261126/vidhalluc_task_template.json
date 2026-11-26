@@ -1,0 +1,112 @@
+{
+  "schema": "uarcap_overnight_vidhalluc_template_v1",
+  "tasks": [
+    {
+      "id": "vidhalluc_extract",
+      "priority": 80,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_extract PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage extract",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": []
+    },
+    {
+      "id": "vidhalluc_prepare",
+      "priority": 81,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_prepare PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage prepare",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "vidhalluc_extract"
+      ]
+    },
+    {
+      "id": "vidhalluc_screen_text",
+      "priority": 82,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_screen_text PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage screen_text",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_prepare"
+      ]
+    },
+    {
+      "id": "vidhalluc_screen_visual",
+      "priority": 83,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_screen_visual PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage screen_visual",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_screen_text"
+      ]
+    },
+    {
+      "id": "vidhalluc_approve",
+      "priority": 84,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_approve PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage approve",
+      "timeout_sec": 600,
+      "max_retries": 0,
+      "requires_gpu": false,
+      "depends_on": [
+        "vidhalluc_screen_visual"
+      ]
+    },
+    {
+      "id": "vidhalluc_generate_videollama",
+      "priority": 85,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_generate_videollama PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage generate_videollama",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_approve"
+      ]
+    },
+    {
+      "id": "vidhalluc_generate_qwen",
+      "priority": 86,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_generate_qwen PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage generate_qwen",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_approve"
+      ]
+    },
+    {
+      "id": "vidhalluc_evaluate",
+      "priority": 87,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_evaluate PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage evaluate",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_generate_videollama",
+        "vidhalluc_generate_qwen"
+      ]
+    },
+    {
+      "id": "vidhalluc_report",
+      "priority": 88,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=vidhalluc_report PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage report",
+      "timeout_sec": 600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "vidhalluc_evaluate"
+      ]
+    }
+  ]
+}

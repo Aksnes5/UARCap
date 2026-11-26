@@ -1,0 +1,1582 @@
+{
+  "schema": "uarcap_q2.e3_formal_candidates.v1",
+  "status": "MACHINE_ASSISTED_UNVALIDATED",
+  "utc": "2026-11-26T04:39:00.214217+00:00",
+  "n_requested": 180,
+  "n_prepared": 180,
+  "n_pool_after_filters": 1555,
+  "source_audit": {
+    "dataset_id": "VidHalluc-ACH",
+    "count_before": 3897,
+    "overlap_videoufo_count": 2,
+    "overlap_historical_count": 0,
+    "same_source_duplicate_count": 1979,
+    "unknown_source_excluded_count": 331,
+    "eligible_unique_source_count": 1585,
+    "excluded_examples": [
+      {
+        "query_id": "vidhalluc_--6bJUbfpnQ_clip_2",
+        "source_id": "--6bJUbfpnQ",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_--bv0V6ZjWI_clip_10",
+        "source_id": "--bv0V6ZjWI",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-2VzSMAdzl4_clip_4",
+        "source_id": "-2VzSMAdzl4",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-2VzSMAdzl4_clip_5",
+        "source_id": "-2VzSMAdzl4",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-2dxp-mv2zo_clip_2",
+        "source_id": "-2dxp-mv2zo",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-2dxp-mv2zo_clip_3",
+        "source_id": "-2dxp-mv2zo",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-2dxp-mv2zo_clip_6",
+        "source_id": "-2dxp-mv2zo",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-2dxp-mv2zo_clip_7",
+        "source_id": "-2dxp-mv2zo",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-76d-7Ju7L0_clip_2",
+        "source_id": "-76d-7Ju7L0",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-A3zsFeU_OI",
+        "reason": "UNKNOWN_SOURCE_ID"
+      },
+      {
+        "query_id": "vidhalluc_-AfxeTnCbVQ_clip_7",
+        "source_id": "-AfxeTnCbVQ",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-C1nnsyw7R0_clip_4",
+        "source_id": "-C1nnsyw7R0",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-C1nnsyw7R0_clip_5",
+        "source_id": "-C1nnsyw7R0",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-FEPOSP7ay0",
+        "reason": "UNKNOWN_SOURCE_ID"
+      },
+      {
+        "query_id": "vidhalluc_-Hav5URxl74",
+        "reason": "UNKNOWN_SOURCE_ID"
+      },
+      {
+        "query_id": "vidhalluc_-M-Dr6HqDhU_clip_4",
+        "source_id": "-M-Dr6HqDhU",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-OH1BDqao9w_clip_5",
+        "source_id": "-OH1BDqao9w",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-OH1BDqao9w_clip_7",
+        "source_id": "-OH1BDqao9w",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-ORd4EBliqw_clip_11",
+        "source_id": "-ORd4EBliqw",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-SWaCArvQug",
+        "reason": "UNKNOWN_SOURCE_ID"
+      },
+      {
+        "query_id": "vidhalluc_-Vt__PL1bgk",
+        "reason": "UNKNOWN_SOURCE_ID"
+      },
+      {
+        "query_id": "vidhalluc_-eyDS81FADw_clip_7",
+        "source_id": "-eyDS81FADw",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-fMxoShIXiM_clip_5",
+        "source_id": "-fMxoShIXiM",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-fMxoShIXiM_clip_6",
+        "source_id": "-fMxoShIXiM",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      },
+      {
+        "query_id": "vidhalluc_-fMxoShIXiM_clip_7",
+        "source_id": "-fMxoShIXiM",
+        "reason": "SAME_SOURCE_DUPLICATE"
+      }
+    ]
+  },
+  "pilot_excluded_sources": 30,
+  "candidates": [
+    {
+      "query_id": "vidhalluc_-eyDS81FADw_clip_3",
+      "source_id": "-eyDS81FADw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/-eyDS81FADw_clip_3.mp4",
+      "true_action": "chopping various vegetables",
+      "conflict_action": "adding various ingredients to the bowl",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_-geDRZmY-E8_clip_1",
+      "source_id": "-geDRZmY-E8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/-geDRZmY-E8_clip_1.mp4",
+      "true_action": "boiling water",
+      "conflict_action": "placing toppings on the noodles",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_-jZ_U3neOcI_clip_1",
+      "source_id": "-jZ_U3neOcI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/-jZ_U3neOcI_clip_1.mp4",
+      "true_action": "adding ingredients to the water",
+      "conflict_action": "boiling noodles",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_-sQXBqu-_1w_clip_2",
+      "source_id": "-sQXBqu-_1w",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/-sQXBqu-_1w_clip_2.mp4",
+      "true_action": "Peeling ginger and garlic",
+      "conflict_action": "Chopping vegetables for a salad",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_0h45uztur-o_clip_11",
+      "source_id": "0h45uztur-o",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/0h45uztur-o_clip_11.mp4",
+      "true_action": "decorating a gift",
+      "conflict_action": "wrapping a present",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_16g-sBraeKE_clip_4",
+      "source_id": "16g-sBraeKE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/16g-sBraeKE_clip_4.mp4",
+      "true_action": "applying fake nails",
+      "conflict_action": "painting nails",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_1HK-p8abRq8_clip_2",
+      "source_id": "1HK-p8abRq8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/1HK-p8abRq8_clip_2.mp4",
+      "true_action": "mixing eggs, milk, dry mixture, and butter",
+      "conflict_action": "turning over the pancake",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_1Vs6LSUz9lA_clip_1",
+      "source_id": "1Vs6LSUz9lA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/1Vs6LSUz9lA_clip_1.mp4",
+      "true_action": "mixing the cabbage with salt",
+      "conflict_action": "pouring water into the pan and covering it",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_1k64hSAAAd4_clip_3",
+      "source_id": "1k64hSAAAd4",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/1k64hSAAAd4_clip_3.mp4",
+      "true_action": "spreading butter on the dish",
+      "conflict_action": "mixing the sauce with butter, cayenne pepper, and salt",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_2I9xymLVssI_clip_1",
+      "source_id": "2I9xymLVssI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/2I9xymLVssI_clip_1.mp4",
+      "true_action": "getting into a truck",
+      "conflict_action": "climbing a ladder",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_2Jr1K1wBKfQ_clip_1",
+      "source_id": "2Jr1K1wBKfQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/2Jr1K1wBKfQ_clip_1.mp4",
+      "true_action": "talking to the camera",
+      "conflict_action": "practicing archery",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_2NITA0d4vqo_clip_5",
+      "source_id": "2NITA0d4vqo",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/2NITA0d4vqo_clip_5.mp4",
+      "true_action": "Playing table tennis with unusual objects",
+      "conflict_action": "Practicing table tennis serves",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_2fPWPaNrUEM_clip_4",
+      "source_id": "2fPWPaNrUEM",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/2fPWPaNrUEM_clip_4.mp4",
+      "true_action": "adding oil to the dough in the mixer",
+      "conflict_action": "rolling a piece of dough into a ball",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_36JC5C6I4sg_clip_3",
+      "source_id": "36JC5C6I4sg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/36JC5C6I4sg_clip_3.mp4",
+      "true_action": "washing a car",
+      "conflict_action": "showing the inside of a car",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_3PC5_h68qkc_clip_2",
+      "source_id": "3PC5_h68qkc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/3PC5_h68qkc_clip_2.mp4",
+      "true_action": "rafting down a river",
+      "conflict_action": "zip lining",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_3PiN6rDgg_E_clip_2",
+      "source_id": "3PiN6rDgg_E",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/3PiN6rDgg_E_clip_2.mp4",
+      "true_action": "talking to the camera",
+      "conflict_action": "applying makeup to hair",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_3t0DOJgK1vs_clip_4",
+      "source_id": "3t0DOJgK1vs",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/3t0DOJgK1vs_clip_4.mp4",
+      "true_action": "adding various spices to the potatoes",
+      "conflict_action": "slicing the disk in half",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_4if72iBIiJ8_clip_3",
+      "source_id": "4if72iBIiJ8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/4if72iBIiJ8_clip_3.mp4",
+      "true_action": "mixing the ingredients and spreading the sauce on the dough",
+      "conflict_action": "kneading the dough",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_5SMOBHTBPjA_clip_10",
+      "source_id": "5SMOBHTBPjA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/5SMOBHTBPjA_clip_10.mp4",
+      "true_action": "talking",
+      "conflict_action": "stirring the ingredients",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_5olHoTWB1Hw_clip_2",
+      "source_id": "5olHoTWB1Hw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/5olHoTWB1Hw_clip_2.mp4",
+      "true_action": "boiling the macaroni",
+      "conflict_action": "seasoning the mixture",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_6-1wDYxvhGM_clip_1",
+      "source_id": "6-1wDYxvhGM",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/6-1wDYxvhGM_clip_1.mp4",
+      "true_action": "blending ingredients in a food processor",
+      "conflict_action": "chopping vegetables on a cutting board",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_6koP53YFNjg_clip_2",
+      "source_id": "6koP53YFNjg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/6koP53YFNjg_clip_2.mp4",
+      "true_action": "knocking over a cup",
+      "conflict_action": "reaching for a ball",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_81w6SClSFMU_clip_2",
+      "source_id": "81w6SClSFMU",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/81w6SClSFMU_clip_2.mp4",
+      "true_action": "mounting a camera to a tube",
+      "conflict_action": "dancing with a hula hoop",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_8zq6C0SRyDQ_clip_1",
+      "source_id": "8zq6C0SRyDQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/8zq6C0SRyDQ_clip_1.mp4",
+      "true_action": "decorating a cake",
+      "conflict_action": "celebrating a birthday party",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_91ozOcjKl5M_clip_3",
+      "source_id": "91ozOcjKl5M",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/91ozOcjKl5M_clip_3.mp4",
+      "true_action": "adding pasta to a pan",
+      "conflict_action": "pouring the sauce on top of the pasta",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_9dSOQrpovQI_clip_1",
+      "source_id": "9dSOQrpovQI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/9dSOQrpovQI_clip_1.mp4",
+      "true_action": "washing dishes",
+      "conflict_action": "showing a strainer and dishes",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_9elfMU_LRKc_clip_1",
+      "source_id": "9elfMU_LRKc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/9elfMU_LRKc_clip_1.mp4",
+      "true_action": "talking",
+      "conflict_action": "repairing the bike",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_9y2BKvWMN9Y_clip_6",
+      "source_id": "9y2BKvWMN9Y",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/9y2BKvWMN9Y_clip_6.mp4",
+      "true_action": "frying tofu in a pan",
+      "conflict_action": "placing the tofu and vegetables in the buns",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_9zqwA2munL0_clip_10",
+      "source_id": "9zqwA2munL0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/9zqwA2munL0_clip_10.mp4",
+      "true_action": "adding ingredients to the wok",
+      "conflict_action": "julienning the noodles",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_AFdqkU6FyqY_clip_1",
+      "source_id": "AFdqkU6FyqY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/AFdqkU6FyqY_clip_1.mp4",
+      "true_action": "driving",
+      "conflict_action": "wakeboarding",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_ANB_IQfi9kA_clip_1",
+      "source_id": "ANB_IQfi9kA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ANB_IQfi9kA_clip_1.mp4",
+      "true_action": "a man running",
+      "conflict_action": "surfing waves",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_C67CT1mdkzI_clip_4",
+      "source_id": "C67CT1mdkzI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/C67CT1mdkzI_clip_4.mp4",
+      "true_action": "shaping the dough",
+      "conflict_action": "removing the roti from the pan and placing it directly on the fire",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_Cc_DmDsXm6M_clip_1",
+      "source_id": "Cc_DmDsXm6M",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/Cc_DmDsXm6M_clip_1.mp4",
+      "true_action": "water skiing",
+      "conflict_action": "falling into the water",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_DDRzeomsyzU_clip_2",
+      "source_id": "DDRzeomsyzU",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/DDRzeomsyzU_clip_2.mp4",
+      "true_action": "Adding ingredients to a bowl and mixing them",
+      "conflict_action": "Chopping vegetables for a salad",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_E2sbaDQabkA_clip_1",
+      "source_id": "E2sbaDQabkA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/E2sbaDQabkA_clip_1.mp4",
+      "true_action": "preparing for jump rope",
+      "conflict_action": "a cartwheel",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_EHVkkRI7mBQ_clip_2",
+      "source_id": "EHVkkRI7mBQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/EHVkkRI7mBQ_clip_2.mp4",
+      "true_action": "snowboarding",
+      "conflict_action": "standing and discussing in the parking lot",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_ETXVbDoMKbQ_clip_1",
+      "source_id": "ETXVbDoMKbQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ETXVbDoMKbQ_clip_1.mp4",
+      "true_action": "blending the ingredients",
+      "conflict_action": "adding oil and paprika",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_EwYgRPVDQWQ_clip_2",
+      "source_id": "EwYgRPVDQWQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/EwYgRPVDQWQ_clip_2.mp4",
+      "true_action": "cutting wrapping paper",
+      "conflict_action": "washing vegetables",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_FHvZgt3ExDI_clip_2",
+      "source_id": "FHvZgt3ExDI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/FHvZgt3ExDI_clip_2.mp4",
+      "true_action": "shaping the dough and placing it onto the pan",
+      "conflict_action": "baking the pizza",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_FUtv6PjKjDE_clip_1",
+      "source_id": "FUtv6PjKjDE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/FUtv6PjKjDE_clip_1.mp4",
+      "true_action": "preheating the oven and preparing a pan",
+      "conflict_action": "cooking in the oven",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_FV2TzKt9MdI_clip_1",
+      "source_id": "FV2TzKt9MdI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/FV2TzKt9MdI_clip_1.mp4",
+      "true_action": "Burpee workout",
+      "conflict_action": "Performing yoga stretches",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_FplIx3-XZvs_clip_3",
+      "source_id": "FplIx3-XZvs",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/FplIx3-XZvs_clip_3.mp4",
+      "true_action": "filling the dough",
+      "conflict_action": "cooking the pierogi in boiling water",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_FpzbVOkHh_M_clip_1",
+      "source_id": "FpzbVOkHh_M",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/FpzbVOkHh_M_clip_1.mp4",
+      "true_action": "adding spices to a pan of hot oil",
+      "conflict_action": "adding tea to the pan",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_G4fSvtn1HAw_clip_2",
+      "source_id": "G4fSvtn1HAw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/G4fSvtn1HAw_clip_2.mp4",
+      "true_action": "cutting chocolate bars",
+      "conflict_action": "baking cookies",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_H_Spgfds1iY_clip_1",
+      "source_id": "H_Spgfds1iY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/H_Spgfds1iY_clip_1.mp4",
+      "true_action": "interviewing a man",
+      "conflict_action": "playing pool",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_HytB88Fhqw8_clip_1",
+      "source_id": "HytB88Fhqw8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/HytB88Fhqw8_clip_1.mp4",
+      "true_action": "wrapping a gift",
+      "conflict_action": "baking cookies",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_IqD6qnug7tc_clip_5",
+      "source_id": "IqD6qnug7tc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/IqD6qnug7tc_clip_5.mp4",
+      "true_action": "mixing ingredients",
+      "conflict_action": "boiling water for pasta",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_J3wZ7wYPVTI_clip_1",
+      "source_id": "J3wZ7wYPVTI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/J3wZ7wYPVTI_clip_1.mp4",
+      "true_action": "draining and rinsing chickpeas",
+      "conflict_action": "adding water and blending again",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_JAF3Bpy-AsY_clip_3",
+      "source_id": "JAF3Bpy-AsY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/JAF3Bpy-AsY_clip_3.mp4",
+      "true_action": "cutting up a pear and an onion",
+      "conflict_action": "slicing tomatoes for a salad",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_JBTiD2-FcR0_clip_1",
+      "source_id": "JBTiD2-FcR0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/JBTiD2-FcR0_clip_1.mp4",
+      "true_action": "Is the prominent action showing sand cement plaster",
+      "conflict_action": "Measuring dimensions for plastering",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_JQ3mObvro1s_clip_4",
+      "source_id": "JQ3mObvro1s",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/JQ3mObvro1s_clip_4.mp4",
+      "true_action": "pouring baking soda",
+      "conflict_action": "lacing shoes",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_JRr3BruqS2Y_clip_1",
+      "source_id": "JRr3BruqS2Y",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/JRr3BruqS2Y_clip_1.mp4",
+      "true_action": "rollerskating across a crosswalk",
+      "conflict_action": "talking",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_JWFJGkUKVfk_clip_2",
+      "source_id": "JWFJGkUKVfk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/JWFJGkUKVfk_clip_2.mp4",
+      "true_action": "Welding",
+      "conflict_action": "Chiseling and beating rust off",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_JlXYqpEWUuA_clip_1",
+      "source_id": "JlXYqpEWUuA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/JlXYqpEWUuA_clip_1.mp4",
+      "true_action": "frying the sausages",
+      "conflict_action": "boiling water for pasta",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_KsKUIIHiMg0_clip_1",
+      "source_id": "KsKUIIHiMg0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/KsKUIIHiMg0_clip_1.mp4",
+      "true_action": "washing clothes",
+      "conflict_action": "hanging laundry on a clothesline",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_L3x9HDsfpBY_clip_10",
+      "source_id": "L3x9HDsfpBY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/L3x9HDsfpBY_clip_10.mp4",
+      "true_action": "frying green onions",
+      "conflict_action": "putting the prepared mixture in the tacos",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_LNLsmdVMCmY_clip_5",
+      "source_id": "LNLsmdVMCmY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/LNLsmdVMCmY_clip_5.mp4",
+      "true_action": "demonstrating a product's use",
+      "conflict_action": "showing products",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_LRjJqoeprqg_clip_1",
+      "source_id": "LRjJqoeprqg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/LRjJqoeprqg_clip_1.mp4",
+      "true_action": "brushing the bread with melted butter",
+      "conflict_action": "cooking in the broiler for a few minutes",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_LtQTtCplKz0_clip_3",
+      "source_id": "LtQTtCplKz0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/LtQTtCplKz0_clip_3.mp4",
+      "true_action": "running",
+      "conflict_action": "working out in a gym",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_LublNVXGH5I_clip_2",
+      "source_id": "LublNVXGH5I",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/LublNVXGH5I_clip_2.mp4",
+      "true_action": "picking up a roll of paper towels",
+      "conflict_action": "cleaning the window",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_MeHEDK_Y8sE_clip_3",
+      "source_id": "MeHEDK_Y8sE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/MeHEDK_Y8sE_clip_3.mp4",
+      "true_action": "applying heat to hair wrapped in foil",
+      "conflict_action": "spinning in front of the camera",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_MjHlAvy2qVY_clip_1",
+      "source_id": "MjHlAvy2qVY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/MjHlAvy2qVY_clip_1.mp4",
+      "true_action": "applying sunscreen",
+      "conflict_action": "about packing up stuff in box",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_N0DA6RpIf5Y_clip_1",
+      "source_id": "N0DA6RpIf5Y",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/N0DA6RpIf5Y_clip_1.mp4",
+      "true_action": "Raking leaves",
+      "conflict_action": "Walking a dog",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_NwiypvZAymk_clip_11",
+      "source_id": "NwiypvZAymk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/NwiypvZAymk_clip_11.mp4",
+      "true_action": "covering and cooking it for 15 minutes on low flame",
+      "conflict_action": "adding garlic paste and sautéing it",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_O0dbSxAKljk_clip_2",
+      "source_id": "O0dbSxAKljk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/O0dbSxAKljk_clip_2.mp4",
+      "true_action": "grating the potato",
+      "conflict_action": "placing the hash browns in the pan",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_OBb4013eIc8_clip_1",
+      "source_id": "OBb4013eIc8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/OBb4013eIc8_clip_1.mp4",
+      "true_action": "turning the steering wheel",
+      "conflict_action": "wakeboarding",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_OKTxSQMS560_clip_2",
+      "source_id": "OKTxSQMS560",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/OKTxSQMS560_clip_2.mp4",
+      "true_action": "a lady talking",
+      "conflict_action": "grooming a dog",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_ORHuKU5vxRg_clip_1",
+      "source_id": "ORHuKU5vxRg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ORHuKU5vxRg_clip_1.mp4",
+      "true_action": "Peeling and cutting the potatoes",
+      "conflict_action": "Chopping vegetables for a salad",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_OhydQlKoSUw_clip_1",
+      "source_id": "OhydQlKoSUw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/OhydQlKoSUw_clip_1.mp4",
+      "true_action": "grabbing a surfboard",
+      "conflict_action": "surfing",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_OyV4eki18GE_clip_1",
+      "source_id": "OyV4eki18GE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/OyV4eki18GE_clip_1.mp4",
+      "true_action": "baby lying down",
+      "conflict_action": "playing with a ball while holding a baby",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_P7XOVPrxEaQ_clip_1",
+      "source_id": "P7XOVPrxEaQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/P7XOVPrxEaQ_clip_1.mp4",
+      "true_action": "mixing chicken with sauce",
+      "conflict_action": "adding seasoning to the wok",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_P7bsYTDILps_clip_11",
+      "source_id": "P7bsYTDILps",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/P7bsYTDILps_clip_11.mp4",
+      "true_action": "pouring the mixture over the meatloaf and spreading it evenly",
+      "conflict_action": "mixing various ingredients together",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_PKcwRi9jh0E_clip_2",
+      "source_id": "PKcwRi9jh0E",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/PKcwRi9jh0E_clip_2.mp4",
+      "true_action": "cutting the potatoes",
+      "conflict_action": "pouring dairy into a pan and adding butter",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_PPWGxMrCKHo_clip_1",
+      "source_id": "PPWGxMrCKHo",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/PPWGxMrCKHo_clip_1.mp4",
+      "true_action": "heating up the grill",
+      "conflict_action": "placing the item on the grill",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_Rig-KeXvcyk_clip_12",
+      "source_id": "Rig-KeXvcyk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/Rig-KeXvcyk_clip_12.mp4",
+      "true_action": "flipping the eggs with a spatula",
+      "conflict_action": "placing bread on top of the cheese",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_Rvsc5eymWIg_clip_1",
+      "source_id": "Rvsc5eymWIg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/Rvsc5eymWIg_clip_1.mp4",
+      "true_action": "removing a car wheel",
+      "conflict_action": "driving on a road",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_Sd08rsPTroE_clip_3",
+      "source_id": "Sd08rsPTroE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/Sd08rsPTroE_clip_3.mp4",
+      "true_action": "demonstrating an equipment",
+      "conflict_action": "talking while sitting behind drums",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_SlR-Yh3gebM_clip_2",
+      "source_id": "SlR-Yh3gebM",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/SlR-Yh3gebM_clip_2.mp4",
+      "true_action": "cutting up the kelp into smaller pieces",
+      "conflict_action": "blending the ingredients",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_SsafTopywFo_clip_10",
+      "source_id": "SsafTopywFo",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/SsafTopywFo_clip_10.mp4",
+      "true_action": "blending the mixture",
+      "conflict_action": "peeling and chopping potatoes",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_SuKgZbVHL2o_clip_2",
+      "source_id": "SuKgZbVHL2o",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/SuKgZbVHL2o_clip_2.mp4",
+      "true_action": "adding flour and mixing it again",
+      "conflict_action": "frying the shrimp",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_TsEyXJqB4vk_clip_5",
+      "source_id": "TsEyXJqB4vk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/TsEyXJqB4vk_clip_5.mp4",
+      "true_action": "combining ingredients in a bowl",
+      "conflict_action": "placing the ingredients onto the bread",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_UN0bAa_ko4I_clip_1",
+      "source_id": "UN0bAa_ko4I",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/UN0bAa_ko4I_clip_1.mp4",
+      "true_action": "showing a city view",
+      "conflict_action": "dancing",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_UVHIuuQ0-nA_clip_2",
+      "source_id": "UVHIuuQ0-nA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/UVHIuuQ0-nA_clip_2.mp4",
+      "true_action": "cutting scallions into pieces",
+      "conflict_action": "adding sliced carrots",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_UmH4VPH0KG4_clip_1",
+      "source_id": "UmH4VPH0KG4",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/UmH4VPH0KG4_clip_1.mp4",
+      "true_action": "welding",
+      "conflict_action": "talking to the camera",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_VSrY0ORD394_clip_11",
+      "source_id": "VSrY0ORD394",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/VSrY0ORD394_clip_11.mp4",
+      "true_action": "pouring water into the pan",
+      "conflict_action": "adding an egg and mixing the filling",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_W4nvDoCtdHM_clip_2",
+      "source_id": "W4nvDoCtdHM",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/W4nvDoCtdHM_clip_2.mp4",
+      "true_action": "Preparing a sandwich with mustard, ham, and cheese",
+      "conflict_action": "Cooking the dish in the oven and serving it",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_WO4EXX5DJHQ_clip_3",
+      "source_id": "WO4EXX5DJHQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/WO4EXX5DJHQ_clip_3.mp4",
+      "true_action": "adding wine to the pan",
+      "conflict_action": "adding various seasonings to a bowl",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_WRtoMalV4Zo_clip_12",
+      "source_id": "WRtoMalV4Zo",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/WRtoMalV4Zo_clip_12.mp4",
+      "true_action": "adding ingredients and mixing them into a dough",
+      "conflict_action": "adding various vegetables to the pot and stirring",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_WU4ISFy651Y_clip_2",
+      "source_id": "WU4ISFy651Y",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/WU4ISFy651Y_clip_2.mp4",
+      "true_action": "making a cookie on a stick",
+      "conflict_action": "showing a cookie on a stick",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_WUYSGCwm6OM_clip_3",
+      "source_id": "WUYSGCwm6OM",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/WUYSGCwm6OM_clip_3.mp4",
+      "true_action": "looking at something on the finger",
+      "conflict_action": "cleaning a contact lens with solution",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_We4NsM_moJQ_clip_5",
+      "source_id": "We4NsM_moJQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/We4NsM_moJQ_clip_5.mp4",
+      "true_action": "seasoning the dish",
+      "conflict_action": "dissolving sugar in warm water",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_Wir90-9HmAI_clip_1",
+      "source_id": "Wir90-9HmAI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/Wir90-9HmAI_clip_1.mp4",
+      "true_action": "sitting and talking",
+      "conflict_action": "walking and laughing",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_X1mE2IWeamI_clip_1",
+      "source_id": "X1mE2IWeamI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/X1mE2IWeamI_clip_1.mp4",
+      "true_action": "pouring boiled water over the noodles",
+      "conflict_action": "heating oil in a pan",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_Y4svcMuQgBw_clip_3",
+      "source_id": "Y4svcMuQgBw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/Y4svcMuQgBw_clip_3.mp4",
+      "true_action": "ironing a garment",
+      "conflict_action": "folding laundry",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_YMcabXHzylg_clip_6",
+      "source_id": "YMcabXHzylg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/YMcabXHzylg_clip_6.mp4",
+      "true_action": "removing the wings from the pot and placing them in a strainer",
+      "conflict_action": "dipping the wings into the sauce and plating them",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_YQiTt8b6N60_clip_3",
+      "source_id": "YQiTt8b6N60",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/YQiTt8b6N60_clip_3.mp4",
+      "true_action": "scuba diving",
+      "conflict_action": "smiling",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_YgFwFoqglKc_clip_1",
+      "source_id": "YgFwFoqglKc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/YgFwFoqglKc_clip_1.mp4",
+      "true_action": "combining the ingredients and mixing them together",
+      "conflict_action": "adding the cooked chicken and seasonings, then mixing everything together",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_Yojuicji624_clip_3",
+      "source_id": "Yojuicji624",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/Yojuicji624_clip_3.mp4",
+      "true_action": "slacklining",
+      "conflict_action": "riding a tiny bicycle",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_Z8xhli297v8_clip_4",
+      "source_id": "Z8xhli297v8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/Z8xhli297v8_clip_4.mp4",
+      "true_action": "adding water to the pan",
+      "conflict_action": "adding various ingredients to a bowl and mixing them",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_ZwDfAhQVKLQ_clip_1",
+      "source_id": "ZwDfAhQVKLQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ZwDfAhQVKLQ_clip_1.mp4",
+      "true_action": "walking down stairs",
+      "conflict_action": "working out with a rowing machine",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc__3xMhj4mbsk_clip_3",
+      "source_id": "_3xMhj4mbsk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/_3xMhj4mbsk_clip_3.mp4",
+      "true_action": "painting a table",
+      "conflict_action": "creating items with milk paint",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc__5T4SAo7S-E_clip_2",
+      "source_id": "_5T4SAo7S-E",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/_5T4SAo7S-E_clip_2.mp4",
+      "true_action": "finely chopping a carrot and adding it to the shrimp bowl",
+      "conflict_action": "adding seasoning and sauce to the bowls",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc__j-0ElzS88Q_clip_13",
+      "source_id": "_j-0ElzS88Q",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/_j-0ElzS88Q_clip_13.mp4",
+      "true_action": "frying",
+      "conflict_action": "squeezing lemon on the fried pieces",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc__rrJbjpCOXs_clip_1",
+      "source_id": "_rrJbjpCOXs",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/_rrJbjpCOXs_clip_1.mp4",
+      "true_action": "Preparing and dicing a fennel bulb",
+      "conflict_action": "Sautéing vegetables in a pan",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_a2vaM_aRHv4_clip_4",
+      "source_id": "a2vaM_aRHv4",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/a2vaM_aRHv4_clip_4.mp4",
+      "true_action": "Blending ingredients in an electric mixer",
+      "conflict_action": "Measuring ingredients with a scale",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_aAY_M6M26TI_clip_1",
+      "source_id": "aAY_M6M26TI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/aAY_M6M26TI_clip_1.mp4",
+      "true_action": "playing ping pong",
+      "conflict_action": "talking to the camera",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_bM5VpCdPOrw_clip_1",
+      "source_id": "bM5VpCdPOrw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/bM5VpCdPOrw_clip_1.mp4",
+      "true_action": "guiding a tour in a desert",
+      "conflict_action": "riding camels",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_bNR0MmJ9d8I_clip_2",
+      "source_id": "bNR0MmJ9d8I",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/bNR0MmJ9d8I_clip_2.mp4",
+      "true_action": "opening a box",
+      "conflict_action": "attaching both pedals onto the bicycle",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_baSx0q9LKg0_clip_1",
+      "source_id": "baSx0q9LKg0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/baSx0q9LKg0_clip_1.mp4",
+      "true_action": "eating a chocolate cake",
+      "conflict_action": "mixing eggs and sugar",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_cCAct_Q8QTw_clip_1",
+      "source_id": "cCAct_Q8QTw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/cCAct_Q8QTw_clip_1.mp4",
+      "true_action": "bringing a pot of salted water to a boil",
+      "conflict_action": "cooking pasta",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_cMndipw7_As_clip_3",
+      "source_id": "cMndipw7_As",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/cMndipw7_As_clip_3.mp4",
+      "true_action": "using a hammer to remove debris",
+      "conflict_action": "using a flat equipment to move the dumbbell shaped steels",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_cdcn6XP1N6A_clip_2",
+      "source_id": "cdcn6XP1N6A",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/cdcn6XP1N6A_clip_2.mp4",
+      "true_action": "playing the flute",
+      "conflict_action": "walking",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_e9l3PzP4uGQ_clip_1",
+      "source_id": "e9l3PzP4uGQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/e9l3PzP4uGQ_clip_1.mp4",
+      "true_action": "mixing ingredients",
+      "conflict_action": "baking cookies",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_elgmPvU19K8_clip_3",
+      "source_id": "elgmPvU19K8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/elgmPvU19K8_clip_3.mp4",
+      "true_action": "jumping into the water",
+      "conflict_action": "flying a drone",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_fetFXsc6G5s_clip_11",
+      "source_id": "fetFXsc6G5s",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/fetFXsc6G5s_clip_11.mp4",
+      "true_action": "tearing the naan from the pan and brushing it with melted butter",
+      "conflict_action": "rolling out the dough for the naan",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_g9b-kCC79kQ_clip_1",
+      "source_id": "g9b-kCC79kQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/g9b-kCC79kQ_clip_1.mp4",
+      "true_action": "attending a casino event",
+      "conflict_action": "playing blackjack in a casino",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_gB6Fd4D697s_clip_2",
+      "source_id": "gB6Fd4D697s",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/gB6Fd4D697s_clip_2.mp4",
+      "true_action": "cooking the pork in the pan",
+      "conflict_action": "adding noodles and stir-frying them",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_hTTcCbxQS98_clip_5",
+      "source_id": "hTTcCbxQS98",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/hTTcCbxQS98_clip_5.mp4",
+      "true_action": "adding chopped green pepper",
+      "conflict_action": "stirring the sauce to combine ingredients",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_ifDsS6ZRsRM_clip_1",
+      "source_id": "ifDsS6ZRsRM",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ifDsS6ZRsRM_clip_1.mp4",
+      "true_action": "a ballet warm-up",
+      "conflict_action": "talking",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_ixaY3TcKFFA_clip_1",
+      "source_id": "ixaY3TcKFFA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ixaY3TcKFFA_clip_1.mp4",
+      "true_action": "adding various seasonings to the chicken",
+      "conflict_action": "placing the chicken in the oil",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_j2HzT9LHiUE_clip_11",
+      "source_id": "j2HzT9LHiUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/j2HzT9LHiUE_clip_11.mp4",
+      "true_action": "putting filling onto dough and folding it shut",
+      "conflict_action": "pouring water into the pan and flipping the dumplings",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_j5SX_9JKtfs_clip_1",
+      "source_id": "j5SX_9JKtfs",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/j5SX_9JKtfs_clip_1.mp4",
+      "true_action": "placing a bottle with blue liquid",
+      "conflict_action": "cleaning the sinks",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_jxMQRNpUsXc_clip_3",
+      "source_id": "jxMQRNpUsXc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/jxMQRNpUsXc_clip_3.mp4",
+      "true_action": "mixing ingredients together",
+      "conflict_action": "garnishing the spaghetti",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_k-aTILi_nLY_clip_4",
+      "source_id": "k-aTILi_nLY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/k-aTILi_nLY_clip_4.mp4",
+      "true_action": "Straining and squeezing the water out of the potatoes",
+      "conflict_action": "Flattening the hash browns",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_k4WHaby5jd8_clip_1",
+      "source_id": "k4WHaby5jd8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/k4WHaby5jd8_clip_1.mp4",
+      "true_action": "taking a bike out of a case",
+      "conflict_action": "assembling a bicycle",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_kD25U-pM1Qw_clip_1",
+      "source_id": "kD25U-pM1Qw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/kD25U-pM1Qw_clip_1.mp4",
+      "true_action": "adding vinegar to rice",
+      "conflict_action": "slicing the roll",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_ksSC0Fnjg00_clip_5",
+      "source_id": "ksSC0Fnjg00",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ksSC0Fnjg00_clip_5.mp4",
+      "true_action": "slicing the bread lengthwise",
+      "conflict_action": "adding vegetarian ham to the sandwich",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_l6Wblq6yIk0_clip_3",
+      "source_id": "l6Wblq6yIk0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/l6Wblq6yIk0_clip_3.mp4",
+      "true_action": "chopping vegetables",
+      "conflict_action": "Boiling pasta for a salad",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_lMNneVHjxk8_clip_4",
+      "source_id": "lMNneVHjxk8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/lMNneVHjxk8_clip_4.mp4",
+      "true_action": "slicing the roasted pork",
+      "conflict_action": "heating oil in a pan and adding chopped garlic and onion",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_lQXNAjrNzus_clip_2",
+      "source_id": "lQXNAjrNzus",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/lQXNAjrNzus_clip_2.mp4",
+      "true_action": "adding beef to the pan and stirring",
+      "conflict_action": "seasoning vegetables in a bowl",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_lhSHtL-fMYA_clip_1",
+      "source_id": "lhSHtL-fMYA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/lhSHtL-fMYA_clip_1.mp4",
+      "true_action": "chopping various ingredients",
+      "conflict_action": "adding water and duck to the pot",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_lqDgvgDkphY_clip_5",
+      "source_id": "lqDgvgDkphY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/lqDgvgDkphY_clip_5.mp4",
+      "true_action": "adding spices and mixing them",
+      "conflict_action": "cooking with the lid on",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_luS_76U4OCw_clip_4",
+      "source_id": "luS_76U4OCw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/luS_76U4OCw_clip_4.mp4",
+      "true_action": "adding bacon to a hot pot",
+      "conflict_action": "adding the meat back into the pan",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_mga0jybosxE_clip_1",
+      "source_id": "mga0jybosxE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/mga0jybosxE_clip_1.mp4",
+      "true_action": "Peeling and cutting potatoes",
+      "conflict_action": "Draining the potatoes",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_nF67_d1HHnI_clip_1",
+      "source_id": "nF67_d1HHnI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/nF67_d1HHnI_clip_1.mp4",
+      "true_action": "adding an ingredient to the mixer",
+      "conflict_action": "spreading mustard on a bread slice and adding seasonings",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_nRageCYhbO8_clip_2",
+      "source_id": "nRageCYhbO8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/nRageCYhbO8_clip_2.mp4",
+      "true_action": "boiling noodles",
+      "conflict_action": "rolling up and folding the edges",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_nShRXseBM4Y_clip_2",
+      "source_id": "nShRXseBM4Y",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/nShRXseBM4Y_clip_2.mp4",
+      "true_action": "whisking ingredients in a bowl",
+      "conflict_action": "cooking bread on a grill",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_nbiOaHaKuKs_clip_3",
+      "source_id": "nbiOaHaKuKs",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/nbiOaHaKuKs_clip_3.mp4",
+      "true_action": "frying bacon",
+      "conflict_action": "putting toppings on the bread",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_nfYzqyureLo_clip_5",
+      "source_id": "nfYzqyureLo",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/nfYzqyureLo_clip_5.mp4",
+      "true_action": "slicing a fruit",
+      "conflict_action": "pouring sauce over the mussels",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_o4gTZoW0SXI_clip_1",
+      "source_id": "o4gTZoW0SXI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/o4gTZoW0SXI_clip_1.mp4",
+      "true_action": "adding ingredients to cooked rice",
+      "conflict_action": "cooking finely chopped vegetables with shrimp",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_o8n1YnT8ZZ8_clip_1",
+      "source_id": "o8n1YnT8ZZ8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/o8n1YnT8ZZ8_clip_1.mp4",
+      "true_action": "juicing lemons",
+      "conflict_action": "making sparkling lemonade",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_oVPr2LAyhRM_clip_10",
+      "source_id": "oVPr2LAyhRM",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/oVPr2LAyhRM_clip_10.mp4",
+      "true_action": "garnishing the dish",
+      "conflict_action": "slicing an apple and adding lemon juice and olive oil",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_ofrX4WyAM-0_clip_11",
+      "source_id": "ofrX4WyAM-0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ofrX4WyAM-0_clip_11.mp4",
+      "true_action": "waving",
+      "conflict_action": "setting a timer",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_olwrZ-zMOqU_clip_5",
+      "source_id": "olwrZ-zMOqU",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/olwrZ-zMOqU_clip_5.mp4",
+      "true_action": "placing the veal onto a hot pan",
+      "conflict_action": "placing butter on the veal",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_pQfW229-ozg_clip_2",
+      "source_id": "pQfW229-ozg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/pQfW229-ozg_clip_2.mp4",
+      "true_action": "blending the ingredients",
+      "conflict_action": "flipping the falafels and baking them",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_pUmjiLjhxgc_clip_12",
+      "source_id": "pUmjiLjhxgc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/pUmjiLjhxgc_clip_12.mp4",
+      "true_action": "mixing the ingredients",
+      "conflict_action": "Mixing flour and water to make dough.",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_pc5_pexVob8_clip_1",
+      "source_id": "pc5_pexVob8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/pc5_pexVob8_clip_1.mp4",
+      "true_action": "playing guitar",
+      "conflict_action": "chopping lettuce",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_pp_J6AzUu4s_clip_2",
+      "source_id": "pp_J6AzUu4s",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/pp_J6AzUu4s_clip_2.mp4",
+      "true_action": "mixing ingredients in a bowl",
+      "conflict_action": "grating cheese",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_pwPid8YHHpU_clip_1",
+      "source_id": "pwPid8YHHpU",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/pwPid8YHHpU_clip_1.mp4",
+      "true_action": "putting on a matador outfit",
+      "conflict_action": "bullfighting",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_qdg_pmS934Q_clip_1",
+      "source_id": "qdg_pmS934Q",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/qdg_pmS934Q_clip_1.mp4",
+      "true_action": "mixing and blending ingredients to make a smooth sauce",
+      "conflict_action": "adding various ingredients to a bowl and mixing them well",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_qpxPlQ0IfLk_clip_5",
+      "source_id": "qpxPlQ0IfLk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/qpxPlQ0IfLk_clip_5.mp4",
+      "true_action": "flipping the chicken breast",
+      "conflict_action": "blending the ingredients",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_qtyJmyLVclQ_clip_4",
+      "source_id": "qtyJmyLVclQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/qtyJmyLVclQ_clip_4.mp4",
+      "true_action": "peeling potatoes",
+      "conflict_action": "Boiling pasta in a pot",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_rAuz_Pf3lp8_clip_4",
+      "source_id": "rAuz_Pf3lp8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/rAuz_Pf3lp8_clip_4.mp4",
+      "true_action": "floating on water tubes",
+      "conflict_action": "people walking",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_rVxxAI6wlXk_clip_1",
+      "source_id": "rVxxAI6wlXk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/rVxxAI6wlXk_clip_1.mp4",
+      "true_action": "carrying a suitcase",
+      "conflict_action": "shaving a man's beard",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_sR3_5j8pUdI_clip_1",
+      "source_id": "sR3_5j8pUdI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/sR3_5j8pUdI_clip_1.mp4",
+      "true_action": "Displaying a rowing machine",
+      "conflict_action": "Pushing buttons on the display",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_s_XdqaQj0uI_clip_11",
+      "source_id": "s_XdqaQj0uI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/s_XdqaQj0uI_clip_11.mp4",
+      "true_action": "giving a thumbs up",
+      "conflict_action": "talking to the camera",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_sb58mkT8_ak_clip_2",
+      "source_id": "sb58mkT8_ak",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/sb58mkT8_ak_clip_2.mp4",
+      "true_action": "Grating garlic",
+      "conflict_action": "Cooking the noodles",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_sgwg1C3i-Vw_clip_3",
+      "source_id": "sgwg1C3i-Vw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/sgwg1C3i-Vw_clip_3.mp4",
+      "true_action": "walking with bags",
+      "conflict_action": "running in the snow",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_syy0FVZ7SkQ_clip_3",
+      "source_id": "syy0FVZ7SkQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/syy0FVZ7SkQ_clip_3.mp4",
+      "true_action": "mopping the floor",
+      "conflict_action": "talking",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_taO9hPOvMz0_clip_1",
+      "source_id": "taO9hPOvMz0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/taO9hPOvMz0_clip_1.mp4",
+      "true_action": "walking on the beach",
+      "conflict_action": "surfing on large waves",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_uM6ErLnAGW4_clip_2",
+      "source_id": "uM6ErLnAGW4",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/uM6ErLnAGW4_clip_2.mp4",
+      "true_action": "carving bell peppers",
+      "conflict_action": "adding ingredients to a bowl",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_uXbkxyyOEr4_clip_1",
+      "source_id": "uXbkxyyOEr4",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/uXbkxyyOEr4_clip_1.mp4",
+      "true_action": "devening shrimp",
+      "conflict_action": "slicing vegetables for a salad",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_unI7FhokvbM_clip_7",
+      "source_id": "unI7FhokvbM",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/unI7FhokvbM_clip_7.mp4",
+      "true_action": "pressing the carpet down onto the ground",
+      "conflict_action": "sitting in front of a fireplace",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_uxEhH6MPH28_clip_5",
+      "source_id": "uxEhH6MPH28",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/uxEhH6MPH28_clip_5.mp4",
+      "true_action": "coating the chicken",
+      "conflict_action": "transferring the chicken from the pot to a rack",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_v-GtKLHLmsU_clip_1",
+      "source_id": "v-GtKLHLmsU",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/v-GtKLHLmsU_clip_1.mp4",
+      "true_action": "seasoning the bacon",
+      "conflict_action": "seasoning the bacon with pepper before cooking",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_vHpqMItXGzg_clip_2",
+      "source_id": "vHpqMItXGzg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/vHpqMItXGzg_clip_2.mp4",
+      "true_action": "cutting the chicken into bite-sized chunks",
+      "conflict_action": "mixing the sauce with seasonings",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_vL2hqbnR5HY_clip_1",
+      "source_id": "vL2hqbnR5HY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/vL2hqbnR5HY_clip_1.mp4",
+      "true_action": "adding ingredients to a pan",
+      "conflict_action": "cooking sausages on a grill",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_vPmMb42q16g_clip_1",
+      "source_id": "vPmMb42q16g",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/vPmMb42q16g_clip_1.mp4",
+      "true_action": "bringing water to a boil",
+      "conflict_action": "adding ingredients to the salad",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_vow-kxTPatc_clip_11",
+      "source_id": "vow-kxTPatc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/vow-kxTPatc_clip_11.mp4",
+      "true_action": "plating the food",
+      "conflict_action": "adding ingredients to the flour",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_woUdHiRWKMg_clip_2",
+      "source_id": "woUdHiRWKMg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/woUdHiRWKMg_clip_2.mp4",
+      "true_action": "looking through the owner's manual",
+      "conflict_action": "jacking up the car",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_x41ze5sLnBY_clip_3",
+      "source_id": "x41ze5sLnBY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/x41ze5sLnBY_clip_3.mp4",
+      "true_action": "plaxing the onion rings on a wire rack",
+      "conflict_action": "frying chicken in a pan",
+      "question": "What is the primary action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_xS78EktJZZA_clip_13",
+      "source_id": "xS78EktJZZA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/xS78EktJZZA_clip_13.mp4",
+      "true_action": "frying the potatoes in the pan and placing them on a plate",
+      "conflict_action": "adding milk to the potatoes and mashing them",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_y-Jxli-JfPg_clip_3",
+      "source_id": "y-Jxli-JfPg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/y-Jxli-JfPg_clip_3.mp4",
+      "true_action": "mixing an egg, salt, and pepper with the potatoes",
+      "conflict_action": "adding oil to a pan",
+      "question": "What is the key action shown in the video?"
+    },
+    {
+      "query_id": "vidhalluc_yQzUEWyn6SM_clip_1",
+      "source_id": "yQzUEWyn6SM",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/yQzUEWyn6SM_clip_1.mp4",
+      "true_action": "grinding soaked chickpeas with herbs",
+      "conflict_action": "mixing ingredients to prepare tahini sauce",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_yVsOoFr61x4_clip_1",
+      "source_id": "yVsOoFr61x4",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/yVsOoFr61x4_clip_1.mp4",
+      "true_action": "walking to the end of a diving board",
+      "conflict_action": "swimming to the edge",
+      "question": "What is the main activity in the video?"
+    },
+    {
+      "query_id": "vidhalluc_zLjAfrfqRcc_clip_1",
+      "source_id": "zLjAfrfqRcc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/zLjAfrfqRcc_clip_1.mp4",
+      "true_action": "driving down a rural road",
+      "conflict_action": "viewing the lake through the trees",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_zO7LIiIMVgk_clip_1",
+      "source_id": "zO7LIiIMVgk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/zO7LIiIMVgk_clip_1.mp4",
+      "true_action": "mincing chives and preparing them",
+      "conflict_action": "slicing tomatoes for a salad",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_zQ4HbFGX7t0_clip_1",
+      "source_id": "zQ4HbFGX7t0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/zQ4HbFGX7t0_clip_1.mp4",
+      "true_action": "closing a door and opening a car door",
+      "conflict_action": "turning off the lights",
+      "question": "What is the prominent action in the video?"
+    },
+    {
+      "query_id": "vidhalluc_zia8N3EN69s_clip_10",
+      "source_id": "zia8N3EN69s",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/zia8N3EN69s_clip_10.mp4",
+      "true_action": "boiling the soup",
+      "conflict_action": "frying meat",
+      "question": "What is the predominant action captured in the video?"
+    },
+    {
+      "query_id": "vidhalluc_zrnxRV3yLR8_clip_3",
+      "source_id": "zrnxRV3yLR8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/zrnxRV3yLR8_clip_3.mp4",
+      "true_action": "applying wallpaper",
+      "conflict_action": "smoothing wallpaper with a spatula",
+      "question": "What is the key action shown in the video?"
+    }
+  ]
+}

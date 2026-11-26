@@ -1,0 +1,695 @@
+{
+  "utc": "2026-11-25T18:53:27.093092+00:00",
+  "items": [
+    {
+      "query_id": "vidhalluc_-rKS00dzFxQ_clip_15",
+      "clip_key": "-rKS00dzFxQ_clip_15",
+      "source_id": "-rKS00dzFxQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/-rKS00dzFxQ_clip_15.mp4",
+      "question": "What is the prominent action in the video?",
+      "true_action": "mashing something in a pot",
+      "conflict_action": "cutting garlic",
+      "all_distractors": [
+        "stirring a sauce",
+        "boiling water",
+        "cutting garlic"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are common in cooking, but distinct. Mashing implies working with something already cooked or soft, while cutting is a preparation step. They wouldn't typically be done *simultaneously* as a direct response to the same prompt."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_17ODXa4CEmI_clip_1",
+      "clip_key": "17ODXa4CEmI_clip_1",
+      "source_id": "17ODXa4CEmI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/17ODXa4CEmI_clip_1.mp4",
+      "question": "What is the key action shown in the video?",
+      "true_action": "garnishing lemon slices on glasses",
+      "conflict_action": "squeezing lemons",
+      "all_distractors": [
+        "mixing a cocktail",
+        "pouring lemonade into glasses",
+        "squeezing lemons"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions relate to lemons, but are distinct. Garnishing is adding a decorative element, while squeezing is extracting juice. Performing one makes performing the other simultaneously unlikely."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_29aDIi7qxXY_clip_3",
+      "clip_key": "29aDIi7qxXY_clip_3",
+      "source_id": "29aDIi7qxXY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/29aDIi7qxXY_clip_3.mp4",
+      "question": "What is the key action shown in the video?",
+      "true_action": "making cuts into the chicken leg",
+      "conflict_action": "adding various spices to the pan",
+      "all_distractors": [
+        "washing vegetables in the sink",
+        "adding various spices to the pan",
+        "grilling chicken on the barbecue"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are plausible in a chicken cooking scenario, but they are distinct and don't occur simultaneously. 'Making cuts' is a physical alteration of the chicken, while 'adding spices' is an addition to the cooking environment. The conflict action is clearly different, not a synonym or substep of the true action."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_2UY6Fztzpng_clip_5",
+      "clip_key": "2UY6Fztzpng_clip_5",
+      "source_id": "2UY6Fztzpng",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/2UY6Fztzpng_clip_5.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "whisking the sauce",
+      "conflict_action": "preheating the grill",
+      "all_distractors": [
+        "preheating the grill",
+        "chopping vegetables",
+        "sautéing onions"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are distinct cooking steps and unlikely to occur simultaneously in the same focused action. There's no inherent ambiguity in understanding what each action entails."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_3cjtV-ldvto_clip_2",
+      "clip_key": "3cjtV-ldvto_clip_2",
+      "source_id": "3cjtV-ldvto",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/3cjtV-ldvto_clip_2.mp4",
+      "question": "What is the primary action in the video?",
+      "true_action": "mixing ingredients in a bowl",
+      "conflict_action": "wrapping dough",
+      "all_distractors": [
+        "sifting flour into a bowl",
+        "kneading the dough",
+        "wrapping dough"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are distinct steps in a cooking process, but are not directly related. Mixing ingredients is about combining, while wrapping dough is about enclosing. A person wouldn't typically do both *simultaneously* as the primary action."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_A1SuSeqDTEI_clip_1",
+      "clip_key": "A1SuSeqDTEI_clip_1",
+      "source_id": "A1SuSeqDTEI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/A1SuSeqDTEI_clip_1.mp4",
+      "question": "What is the main activity in the video?",
+      "true_action": "preparing to get in a kayak",
+      "conflict_action": "kayaking in rapids",
+      "all_distractors": [
+        "kayaking in rapids",
+        "setting up a picnic by the river",
+        "fishing from the shore"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are distinct phases of kayaking. Preparing is a prerequisite, but not the same as actively kayaking, especially in rapids. The conflict action clearly shows a different, more advanced stage."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_EHPkhM261nk_clip_3",
+      "clip_key": "EHPkhM261nk_clip_3",
+      "source_id": "EHPkhM261nk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/EHPkhM261nk_clip_3.mp4",
+      "question": "What is the primary action in the video?",
+      "true_action": "chopping an onion",
+      "conflict_action": "cutting the dough",
+      "all_distractors": [
+        "cutting the dough",
+        "slicing a tomato",
+        "peeling a carrot"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are common cooking tasks, but distinct. 'Chopping an onion' and 'cutting the dough' are not typically done simultaneously or as part of the same immediate step in a recipe. The conflict action is a clear different action, not a synonym or substep of the true action."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_JA-B3KK9A-I_clip_3",
+      "clip_key": "JA-B3KK9A-I_clip_3",
+      "source_id": "JA-B3KK9A-I",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/JA-B3KK9A-I_clip_3.mp4",
+      "question": "What is the prominent action in the video?",
+      "true_action": "diving",
+      "conflict_action": "pressing a button",
+      "all_distractors": [
+        "pressing a button",
+        "swimming laps",
+        "performing a flip"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are plausible in different contexts, but are clearly distinct. There's no inherent reason someone diving would *also* be pressing a button, or vice-versa, making them suitable for a controlled intervention where one action is desired and the other is to be avoided."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_LlzW9bBIPoA_clip_4",
+      "clip_key": "LlzW9bBIPoA_clip_4",
+      "source_id": "LlzW9bBIPoA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/LlzW9bBIPoA_clip_4.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "adding herbs",
+      "conflict_action": "cutting the bread into small pieces",
+      "all_distractors": [
+        "stirring a pot of soup",
+        "measuring ingredients for a recipe",
+        "cutting the bread into small pieces"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are distinct and plausible in a kitchen setting, but clearly not done simultaneously or as part of the same process. The conflict action isn't a synonym or a step *within* adding herbs."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_MM5mreexkI8_clip_2",
+      "clip_key": "MM5mreexkI8_clip_2",
+      "source_id": "MM5mreexkI8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/MM5mreexkI8_clip_2.mp4",
+      "question": "What is the primary action in the video?",
+      "true_action": "vacuuming the floor",
+      "conflict_action": "vacuuming around windows",
+      "all_distractors": [
+        "vacuuming around windows",
+        "sweeping the carpet",
+        "mopping the floor"
+      ],
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "The conflict action is a *subset* of the true action. Vacuuming around windows is a specific instance of vacuuming the floor, not a different action that would prevent it. They are not mutually exclusive; you can vacuum the floor *and* vacuum around windows.  While natural English and similar length, the lack of a true conflict makes it unsuitable for a controlled intervention."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_NK2xHVWojgY_clip_1",
+      "clip_key": "NK2xHVWojgY_clip_1",
+      "source_id": "NK2xHVWojgY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/NK2xHVWojgY_clip_1.mp4",
+      "question": "What is the primary action in the video?",
+      "true_action": "cutting chicken breast into cubes and placing them in a bowl",
+      "conflict_action": "adding various ingredients to the pan and frying them",
+      "all_distractors": [
+        "marinating chicken pieces in a bowl",
+        "adding various ingredients to the pan and frying them",
+        "washing vegetables in a sink"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are clearly distinct. One involves preparing the chicken *before* cooking, the other is the cooking process itself.  There's no overlap or ambiguity in what each action entails."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_NkJA_0tErGY_clip_2",
+      "clip_key": "NkJA_0tErGY_clip_2",
+      "source_id": "NkJA_0tErGY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/NkJA_0tErGY_clip_2.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "mixing ingredients in a bowl",
+      "conflict_action": "making a sandwich",
+      "all_distractors": [
+        "making a sandwich",
+        "boiling water in a pot",
+        "chopping vegetables on a cutting board"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are clearly distinct. Mixing ingredients is a component of *making* something, but not a sandwich specifically. Making a sandwich is a complete action in itself. There's no reasonable scenario where both are happening simultaneously in a predominant way."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_UU8a7vp6tgY_clip_1",
+      "clip_key": "UU8a7vp6tgY_clip_1",
+      "source_id": "UU8a7vp6tgY",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/UU8a7vp6tgY_clip_1.mp4",
+      "question": "What is the key action shown in the video?",
+      "true_action": "assembling a stand",
+      "conflict_action": "decorating a Christmas tree",
+      "all_distractors": [
+        "wrapping gifts",
+        "decorating a Christmas tree",
+        "setting up a table"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are distinct and unlikely to occur simultaneously. The actions are described in natural English and are of similar length. There's no ambiguity in understanding what each action entails."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_ZOeQh2-ci3M_clip_1",
+      "clip_key": "ZOeQh2-ci3M_clip_1",
+      "source_id": "ZOeQh2-ci3M",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ZOeQh2-ci3M_clip_1.mp4",
+      "question": "What is the main activity in the video?",
+      "true_action": "using the toilet in a stall",
+      "conflict_action": "washing hands",
+      "all_distractors": [
+        "checking the mirror",
+        "washing hands",
+        "waiting in line for a stall"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are common in a restroom setting, but distinct and can occur independently. The conflict action isn't a direct part of the true action, nor is it a synonym.  A person can use the toilet *without* washing their hands (though undesirable), and can wash their hands without using the toilet."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_ZTHsS5lQyvQ_clip_1",
+      "clip_key": "ZTHsS5lQyvQ_clip_1",
+      "source_id": "ZTHsS5lQyvQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ZTHsS5lQyvQ_clip_1.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "talking to the camera",
+      "conflict_action": "stirring the chocolate",
+      "all_distractors": [
+        "setting the table",
+        "stirring the chocolate",
+        "preparing a salad"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are clearly distinct and unlikely to occur simultaneously. The actions are described in natural English and are of similar length. There's no inherent ambiguity in understanding either action."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_aNE5ZWD5E34_clip_1",
+      "clip_key": "aNE5ZWD5E34_clip_1",
+      "source_id": "aNE5ZWD5E34",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/aNE5ZWD5E34_clip_1.mp4",
+      "question": "What is the key action shown in the video?",
+      "true_action": "talking to the camera",
+      "conflict_action": "spraying sunscreen",
+      "all_distractors": [
+        "spraying sunscreen",
+        "gesturing to a graphic",
+        "reading from a script"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are plausible in an outdoor setting, but clearly distinct and not typically done *at the same time* as the primary action. The conflict action isn't a component of the true action."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_e2t_1Atddaw_clip_5",
+      "clip_key": "e2t_1Atddaw_clip_5",
+      "source_id": "e2t_1Atddaw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/e2t_1Atddaw_clip_5.mp4",
+      "question": "What is the main activity in the video?",
+      "true_action": "stirring cabbage with oil",
+      "conflict_action": "boiling the broccoli",
+      "all_distractors": [
+        "sautéing onions with garlic",
+        "boiling the broccoli",
+        "chopping carrots for a salad"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are distinct cooking steps, involving different vegetables and methods. There's no inherent reason someone would do both *instead* of the other in response to a question about the main activity."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_htIpLVWrs0U_clip_2",
+      "clip_key": "htIpLVWrs0U_clip_2",
+      "source_id": "htIpLVWrs0U",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/htIpLVWrs0U_clip_2.mp4",
+      "question": "What is the main activity in the video?",
+      "true_action": "mixing various ingredients together",
+      "conflict_action": "frying the fish",
+      "all_distractors": [
+        "frying the fish",
+        "chopping vegetables",
+        "boiling pasta"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are common cooking activities, but clearly distinct. Mixing ingredients and frying fish are not typically done simultaneously or as part of the same direct step in a recipe. The question asks for the *main* activity, making the conflict a plausible alternative."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_mer7ECSKflk_clip_2",
+      "clip_key": "mer7ECSKflk_clip_2",
+      "source_id": "mer7ECSKflk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/mer7ECSKflk_clip_2.mp4",
+      "question": "What is the prominent action in the video?",
+      "true_action": "Marinating the meat",
+      "conflict_action": "Chopping vegetables",
+      "all_distractors": [
+        "Chopping vegetables",
+        "Grilling the chicken",
+        "Heating up the tortillas"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are common food preparation steps, but can be done independently.  There's no inherent reason why marinating meat *requires* chopping vegetables, or vice-versa. They represent distinct processes."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_nJzDfRIb9T0_clip_1",
+      "clip_key": "nJzDfRIb9T0_clip_1",
+      "source_id": "nJzDfRIb9T0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/nJzDfRIb9T0_clip_1.mp4",
+      "question": "What is the main activity in the video?",
+      "true_action": "cutting the beef",
+      "conflict_action": "cooking the onions",
+      "all_distractors": [
+        "cooking the onions",
+        "marinating the chicken",
+        "slicing the vegetables"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are plausible in a cooking context, but they are distinct steps. Cutting beef and cooking onions can happen independently, or one before the other, making them mutually exclusive *in the moment* of the main activity. The question asks for the *main* activity, and either could be it, but they aren't the same."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_ny7G1uw36J0_clip_1",
+      "clip_key": "ny7G1uw36J0_clip_1",
+      "source_id": "ny7G1uw36J0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ny7G1uw36J0_clip_1.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "adding fruit to a blender",
+      "conflict_action": "placing vegetables and mint on the lettuce",
+      "all_distractors": [
+        "pouring juice into a glass",
+        "slicing fruit on a cutting board",
+        "placing vegetables and mint on the lettuce"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are clearly distinct and don't overlap. Adding fruit to a blender and arranging vegetables/mint on lettuce are separate activities. The conflict action is a clear different action, not a synonym or substep of the true action."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_ofaghkdG2pU_clip_3",
+      "clip_key": "ofaghkdG2pU_clip_3",
+      "source_id": "ofaghkdG2pU",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ofaghkdG2pU_clip_3.mp4",
+      "question": "What is the main activity in the video?",
+      "true_action": "adding various seasonings and herbs",
+      "conflict_action": "covering the pot and cooking the mussels",
+      "all_distractors": [
+        "covering the pot and cooking the mussels",
+        "boiling pasta in a separate pot",
+        "chopping vegetables for a salad"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions relate to cooking mussels, but are distinct steps. One is about *what* is added, the other about *how* it's cooked.  A person wouldn't typically be doing both *simultaneously* as primary actions."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_oyljZJZJ7IA_clip_2",
+      "clip_key": "oyljZJZJ7IA_clip_2",
+      "source_id": "oyljZJZJ7IA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/oyljZJZJ7IA_clip_2.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "demonstrating features of a dog harness",
+      "conflict_action": "adjusting the collar harness",
+      "all_distractors": [
+        "training a dog to sit",
+        "showing how to clean a dog harness",
+        "adjusting the collar harness"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are distinct. Demonstrating features is about *showing* what a harness does, while adjusting is about *changing* its fit. While both relate to harnesses, they are not the same action. The conflict action is plausibly absent if the video focuses on the features, not the adjustment."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_qaDMnLE6NBU_clip_10",
+      "clip_key": "qaDMnLE6NBU_clip_10",
+      "source_id": "qaDMnLE6NBU",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/qaDMnLE6NBU_clip_10.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "Folding and rolling the rice paper to cover the stuffing completely",
+      "conflict_action": "Boiling water for cooking the rice paper",
+      "all_distractors": [
+        "Boiling water for cooking the rice paper",
+        "Transferring the contents to a jar and storing it",
+        "Chopping vegetables for the filling"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are clearly distinct steps in making spring rolls. One is about preparing the wrapper (boiling water), the other is about assembling the roll (folding/rolling).  They cannot happen simultaneously and represent different phases of the process."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_rfWlK9njyzg_clip_2",
+      "clip_key": "rfWlK9njyzg_clip_2",
+      "source_id": "rfWlK9njyzg",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/rfWlK9njyzg_clip_2.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "using a laptop",
+      "conflict_action": "panning the camera to different areas of the room",
+      "all_distractors": [
+        "making a phone call",
+        "writing notes in a notebook",
+        "panning the camera to different areas of the room"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are distinct and can occur independently. There's no inherent reason someone using a laptop *must* be panning a camera, or vice-versa. The actions are sufficiently different in nature to be considered a plausible conflict."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_w0FBc7-Acs8_clip_1",
+      "clip_key": "w0FBc7-Acs8_clip_1",
+      "source_id": "w0FBc7-Acs8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/w0FBc7-Acs8_clip_1.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "adding seasoning and liquid to the flour",
+      "conflict_action": "flipping the pan and cooking the dough",
+      "all_distractors": [
+        "kneading the dough with hands",
+        "flipping the pan and cooking the dough",
+        "sifting the flour into a bowl"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are clearly distinct steps in a cooking process, but not directly related. Adding seasoning/liquid to flour is a preparation step, while flipping/cooking dough is a later stage. There's no plausible scenario where doing one *requires* not doing the other."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_xXDNNCl1m6c_clip_2",
+      "clip_key": "xXDNNCl1m6c_clip_2",
+      "source_id": "xXDNNCl1m6c",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/xXDNNCl1m6c_clip_2.mp4",
+      "question": "What is the predominant action captured in the video?",
+      "true_action": "placing the keys in the ignition",
+      "conflict_action": "brushing snow off the car",
+      "all_distractors": [
+        "brushing snow off the car",
+        "turning on the windshield wipers",
+        "adjusting the rearview mirror"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are plausible pre-driving steps, but distinct. Placing keys in the ignition and brushing snow are not typically done *simultaneously* or as part of the same action. The conflict action is a clear, different action, not a synonym or substep of the true action."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_y0c17Wxj_TI_clip_2",
+      "clip_key": "y0c17Wxj_TI_clip_2",
+      "source_id": "y0c17Wxj_TI",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/y0c17Wxj_TI_clip_2.mp4",
+      "question": "What is the key action shown in the video?",
+      "true_action": "mixing ingredients",
+      "conflict_action": "beating eggs and milk together",
+      "all_distractors": [
+        "beating eggs and milk together",
+        "grilling meat on a barbecue",
+        "slicing vegetables for a salad"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions relate to food preparation, but 'mixing ingredients' is a broader action that doesn't *require* beating. Beating is a specific method of mixing, making them distinct enough for a conflict. The conflict action is a clear, different action, not just a synonym or substep of the true action."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_yUYTlwiP16E_clip_2",
+      "clip_key": "yUYTlwiP16E_clip_2",
+      "source_id": "yUYTlwiP16E",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/yUYTlwiP16E_clip_2.mp4",
+      "question": "What is the primary action in the video?",
+      "true_action": "shoveling snow",
+      "conflict_action": "talking to the camera",
+      "all_distractors": [
+        "walking a dog in the snow",
+        "clearing ice from a driveway",
+        "talking to the camera"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are clearly defined and distinct. Shoveling snow is a physical activity, while talking to the camera is a communicative one. It's highly unlikely someone would be *both* actively shoveling snow *and* simultaneously engaged in a focused conversation with the camera. The actions are of similar length and expressed in natural English."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_zJoy52YuVXs_clip_1",
+      "clip_key": "zJoy52YuVXs_clip_1",
+      "source_id": "zJoy52YuVXs",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/zJoy52YuVXs_clip_1.mp4",
+      "question": "What is the key action shown in the video?",
+      "true_action": "crushing the tomatoes",
+      "conflict_action": "adding leaves to the pizza",
+      "all_distractors": [
+        "boiling pasta for a dish",
+        "adding leaves to the pizza",
+        "slicing vegetables for a salad"
+      ],
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are plausible in a cooking context, but clearly distinct. Crushing tomatoes prepares an ingredient, while adding leaves finishes a pizza. There's no inherent reason to do one *instead* of the other, making them mutually exclusive for a single key action."
+      },
+      "visual_screen": {},
+      "machine_approved": false
+    }
+  ]
+}

@@ -75,6 +75,7 @@ class Qwen3VLLMConfig:
     quantization: str = "fp8"
     gpu_memory_utilization: float = 0.88
     max_model_len: int = 8192
+    max_num_seqs: int = 64
     enforce_eager: bool = False
     random_seed: int = 42
     device: str = "cuda:0"
@@ -225,6 +226,7 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
             "model": str(self.cfg.local_model_path),
             "gpu_memory_utilization": self.cfg.gpu_memory_utilization,
             "max_model_len": self.cfg.max_model_len,
+            "max_num_seqs": self.cfg.max_num_seqs,
             "enforce_eager": self.cfg.enforce_eager,
             "seed": self.cfg.random_seed,
             "limit_mm_per_prompt": {"video": 1} if self.cfg.multimodal_input_key == "video" else {"image": self.cfg.num_frames},
@@ -447,7 +449,7 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
         batch_rendered: list[dict[str, str]] = []
         batch_vsha: list[str] = []
         for it in items:
-            msgs, rendered, vsha = self.build_multimodal_messages(it.packet, it.frame_images or [], use_data_urls=False)
+            msgs, rendered, vsha = self.build_multimodal_messages(it.packet, it.frame_images or [], use_data_urls=True)
             batch_msgs.append(msgs)
             batch_rendered.append(rendered)
             batch_vsha.append(vsha)

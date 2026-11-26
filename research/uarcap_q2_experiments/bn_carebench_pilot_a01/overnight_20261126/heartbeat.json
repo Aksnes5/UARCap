@@ -1,0 +1,58 @@
+{
+  "updated_utc": "2026-11-26T04:38:39.169145+00:00",
+  "started_utc": "2026-11-25T18:09:21.512942+00:00",
+  "current_task": "a3_visual_verify_v3",
+  "current_task_pid": 2088636,
+  "progress": {
+    "task": "a3_visual_verify_v3",
+    "phase": "prepare",
+    "model": "Qwen3.8-27B-FP8",
+    "completed": 0,
+    "total": 120,
+    "updated_utc": "2026-11-26T04:38:01.041689+00:00",
+    "n_flagged": 120,
+    "n_unique": 260
+  },
+  "gpu": {
+    "utilization_pct": 99,
+    "memory_used_mib": 33632,
+    "memory_total_mib": 49140
+  },
+  "cumulative_task_elapsed_sec": 24114.8,
+  "task_counts": {
+    "RUNNING": 2,
+    "COMPLETED": 23,
+    "BLOCKED": 8,
+    "PENDING": 13
+  },
+  "n_tasks": 46,
+  "stop_requested": false,
+  "network_download": {
+    "status": "COMPLETED",
+    "started_utc": "2026-11-25T18:09:21.546184+00:00",
+    "expected_bytes": 16754119398,
+    "expected_sha256": "8f163f29a72f5bc8d15720847b1c0b125c8a593d3bdaedfabbeb4f83e3c25af5",
+    "dest": "/home/bn/uarcap_q2_runtime/data/vidhalluc/data/ACH_videos.zip",
+    "pid": 1779405,
+    "attempts": 3,
+    "bytes_on_disk": 16754119398,
+    "percent": 100.0,
+    "speed_kbps": 102.4,
+    "updated_utc": "2026-11-25T18:31:50.626173+00:00",
+    "last_error": "Range download failed [4160749568-4294967295] after 5 attempts: <urlopen error _ssl.c:983: The handshake operation timed out>",
+    "result": {
+      "status": "DOWNLOADED_VERIFIED",
+      "path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/data/ACH_videos.zip",
+      "bytes": 16754119398,
+      "sha256": "8f163f29a72f5bc8d15720847b1c0b125c8a593d3bdaedfabbeb4f83e3c25af5",
+      "chunks": 125,
+      "workers": 32,
+      "elapsed_sec": 366.3,
+      "sources": [
+        "already-complete",
+        "https://hf-mirror.com/datasets/chaoyuli/VidHalluc/resolve/main/data/ACH_videos.zip"
+      ]
+    },
+    "completed_utc": "2026-11-25T18:32:01.575847+00:00"
+  }
+}
