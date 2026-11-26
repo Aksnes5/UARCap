@@ -1,0 +1,70 @@
+{
+  "schema": "uarcap_q2.windows_cpu_test_receipt.v1",
+  "status": "PASS",
+  "baseline": "2027e4267dce105d47a60c8f9eedcef5c9099bda",
+  "date": "2026-11-26",
+  "platform": "Windows",
+  "python": "3.11.9",
+  "dependency_versions": {
+    "pytest": "9.1.1",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.2",
+    "java": "17.0.20.1"
+  },
+  "baseline_windows": {
+    "passed": 71,
+    "failed": 1,
+    "skipped": 1
+  },
+  "final": {
+    "command": "python -m pytest -q -rs",
+    "passed": 93,
+    "failed": 0,
+    "skipped": 0,
+    "elapsed_seconds": 21.4
+  },
+  "compile_command": "python -m compileall -q scripts uarcap_q2 deployment bn_carebench_pilot_a01/overnight_20261126/tasks",
+  "queue_sha256": "e345d6bf9cad46641a5ace6e19ce79054709d385567cc2b9fffccd38977dbdeb",
+  "queue_tasks": 55,
+  "additional_cpu_runs": {
+    "cohort_identity": {
+      "predictions": 3600,
+      "evaluation_rows": 3600,
+      "video_parents": 600,
+      "validation_captions": 360
+    },
+    "rebuilt_blind_package": {
+      "private": true,
+      "caption_records": 360,
+      "human_reviews": 0
+    },
+    "metric_bridge": {
+      "complete_scored_rows": 7200,
+      "fixed_reference_modes": 2,
+      "GPU": false
+    },
+    "confirmatory_without_human": {
+      "exit_code": 3,
+      "status": "HUMAN_ANNOTATION_IMPORT_REQUIRED"
+    },
+    "historical_bridge": {
+      "reused_frozen_captions": 180,
+      "n_sources": 60
+    },
+    "source_overlap": {
+      "video_ufo_sources": 345437,
+      "historical_overlap": 2
+    },
+    "evidence_relevance_stage": {
+      "top7_caption_inputs": 4200,
+      "evaluation": "PENDING"
+    },
+    "qwen_cross_check": {
+      "required": 5099,
+      "archived_valid": 5098
+    }
+  },
+  "real_bn_gpu_execution": false,
+  "real_human_validation": false
+}

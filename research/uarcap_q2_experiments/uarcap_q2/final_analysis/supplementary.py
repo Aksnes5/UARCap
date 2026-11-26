@@ -170,48 +170,14 @@ def verification_jobs(candidates_payload: dict | None = None) -> dict:
     return payload
 
 
-def merge_e3_bridge_verification(candidates_payload: dict, verdicts: list[dict],
-                                 min_valid: int = 30, expected_roles=("f_plus", "f_minus", "neutral")) -> dict:
-    """Approve only candidates with verified f+, verified-absent f- and verified-absent neutral."""
-    by = defaultdict(dict)
-    for v in verdicts:
-        by[v["bridge_id"]][v["role"]] = v
-    approved, rejected = [], []
-    reasons = Counter()
-    for c in candidates_payload["candidates"]:
-        v = by.get(c["bridge_id"], {})
-        miss = [r for r in expected_roles if r not in v or not v[r].get("parse_ok")]
-        if miss:
-            reasons["missing_or_unparsed_verification"] += 1
-            rejected.append({**c, "rejection": f"missing verification: {miss}"})
-            continue
-        fp, fm, nu = v["f_plus"], v["f_minus"], v["neutral"]
-        ok = (fp["video_truth"] == "entailed" and fp["visible_in_16_frames"] == "yes"
-              and fm["video_truth"] == "contradicted"
-              and nu["video_truth"] in ("contradicted", "unverifiable"))
-        if not ok:
-            reasons["verification_failed"] += 1
-            rejected.append({**c, "rejection": "verification criteria not met",
-                             "verdicts": {k: {"video_truth": x.get("video_truth"),
-                                              "visible": x.get("visible_in_16_frames")} for k, x in v.items()}})
-            continue
-        approved.append({**c, "status": "APPROVED_MACHINE_VERIFIED_NOT_HUMAN",
-                         "verification": {k: {"video_truth": x["video_truth"],
-                                              "visible_in_16_frames": x["visible_in_16_frames"],
-                                              "evidence": x.get("evidence", ""),
-                                              "frames_sha256": x.get("frames_sha256"),
-                                              "n_frames": x.get("n_frames", 16)} for k, x in v.items()},
-                         "human_verification": "PENDING"})
-    eligible = len(approved) >= min_valid
-    payload = {"schema": "uarcap_q2.e3_bridge_approved.v2", "utc": utcnow(),
-               "n_candidates": len(candidates_payload["candidates"]), "n_approved": len(approved),
-               "n_rejected": len(rejected), "min_valid_required": min_valid, "eligible": eligible,
-               "status": "APPROVED_MACHINE_VERIFIED_NOT_HUMAN" if eligible else "BLOCKED_INSUFFICIENT_VERIFIED_CANDIDATES",
-               "rejection_reasons": dict(reasons),
-               "requirements": "f+ entailed & visible yes; f- contradicted; neutral not entailed; all parsed",
-               "approved": approved, "rejected": rejected}
-    atomic_write(SUPP / "E3_BRIDGE_APPROVED_V2.json", payload)
-    return payload
+def merge_e3_bridge_verification(candidates_payload: dict, verdicts: list[dict], *, screened_plan: dict,
+                                 min_valid: int = 30) -> dict:
+    """Aggregate the strict V2 text, source and role-blind visual records."""
+    from ..interventions.neutral_repair import freeze
+    if min_valid != 30:
+        raise ValueError("The bridge cohort floor is frozen at 30")
+    result=freeze(candidates_payload,screened_plan,verdicts,bridge=True)
+    return {**result,"n_candidates":len(screened_plan["candidates"]),"n_rejected":len(result["rejected"])}
 
 
 # ---------------------------------------------------------------- descriptive supplementary analyses

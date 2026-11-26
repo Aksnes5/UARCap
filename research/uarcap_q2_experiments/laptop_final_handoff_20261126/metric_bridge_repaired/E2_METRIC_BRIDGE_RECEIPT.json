@@ -1,0 +1,80 @@
+{
+  "schema": "uarcap_q2.e2_metric_bridge.v1",
+  "status": "POST_HOC_EXPLORATORY",
+  "utc": "2026-11-26T08:08:46.943748+00:00",
+  "n_candidates": 600,
+  "n_predictions": 7200,
+  "models": [
+    "formal_videollama",
+    "formal_qwen"
+  ],
+  "reference_modes": [
+    "R-Full",
+    "R-Short"
+  ],
+  "reference_summary": {
+    "n_candidates": 600,
+    "n_valid_short": 600,
+    "full_words_mean": 228.09,
+    "full_words_median": 218.0,
+    "short_words_mean": 14.53,
+    "short_words_median": 14.0,
+    "short_validity_rate": 1.0,
+    "invalid_short_examples": []
+  },
+  "cider_idf": "single fixed reference set per mode and arm; IDF computed from the same 600 (or valid-short) references for all arms",
+  "limitations": [
+    "CaReBench is single-reference; MSR-VTT/MSVD are multi-reference",
+    "absolute CIDEr scores across datasets are not comparable",
+    "traditional metrics are real; fact-level labels are machine-assisted and uncalibrated",
+    "post-hoc analysis added after initial results; protocol primary endpoints unchanged"
+  ],
+  "spice_status": "SKIPPED",
+  "artifacts": {
+    "E2_METRIC_BRIDGE_PER_VIDEO.jsonl": {
+      "bytes": 8946194,
+      "sha256": "6ff04fc09763a17d8580dd73786b358300c2bdc1d4ba23fadd9b1d0b60c9ad81"
+    },
+    "E2_METRIC_BRIDGE_SUMMARY.csv": {
+      "bytes": 2100,
+      "sha256": "bd39ed127241c9e795f397cc463a2dd4d6b5529c8001e4464e2bff25de790ccf",
+      "as_generated_sha256": "a8c1d5304de2b1d1c41b56fe973af8d549998072496388504c9e6e9b0ff5506b"
+    },
+    "E2_METRIC_BRIDGE_PAIRED.json": {
+      "bytes": 5875,
+      "sha256": "12184a785c0cb6978139a86e74cd76448ef56e287168b947b79ed702f6f5cae4",
+      "as_generated_sha256": "50616a488da3b6d2f3d9cd09c6d96b85a3cb2b9145a86792659dcbc26a96e59a"
+    }
+  },
+  "local_only": [
+    "E2_METRIC_BRIDGE_PER_VIDEO.jsonl"
+  ],
+  "provenance": {
+    "metric_function_sha256": "3a3b84c3dcdadc56b3db03d2d777f97fb1395c91c18a1cbb55cae154d7458fcd",
+    "vendor_module_sha256": {
+      "pycocoevalcap/bleu/bleu.py": "19d384915db807189b4aa245f0ee7e4c39ab2fb7d6ed44273baacea191971aeb",
+      "pycocoevalcap/bleu/bleu_scorer.py": "c538cf5dc29a9be7c5c356c420e37f1ab2af9cd7d624c8e7a4b24582b9cf97ef",
+      "pycocoevalcap/bleu/__init__.py": "d02e91fe125b82e6e5f0642b897f7439094506d06f32771b40d00170deb8eae1",
+      "pycocoevalcap/cider/cider.py": "f35ade7ee7513bc06b36990251621addd41f6c669d11fdb43cd41b04c9d59774",
+      "pycocoevalcap/cider/cider_scorer.py": "299037838373391c3335e066c867ba2d6dd8617d2c8fb2c4193f32620a774adc",
+      "pycocoevalcap/cider/__init__.py": "d02e91fe125b82e6e5f0642b897f7439094506d06f32771b40d00170deb8eae1",
+      "pycocoevalcap/meteor/meteor.py": "cf6e322675cad01da3097af8df1f13cb0b3031578c7c7262d9337c19eef250bf",
+      "pycocoevalcap/meteor/meteor_back.py": "ea103020475184921a3903f3f2aa001a6e810c73012e6809f67e7727914d91bc",
+      "pycocoevalcap/meteor/__init__.py": "d02e91fe125b82e6e5f0642b897f7439094506d06f32771b40d00170deb8eae1",
+      "pycocoevalcap/rouge/rouge.py": "59f2ba8e43be852fcf277ff418409df5fd22ef44c57a904a0829dacbe9b8ce18",
+      "pycocoevalcap/rouge/__init__.py": "2d1098934cdf7b3e648c88708942987828d6eb1c4a0c64051570bd222566d4ed"
+    },
+    "meteor_jar_sha256": "1e57b4c72c0830ebe68558f1c799a624e96cbc1b6045c9f6330e26dcff6eafc2",
+    "local_java": "Microsoft OpenJDK 17.0.20.1",
+    "local_python": "3.11.9"
+  },
+  "legacy_corpus_score_max_absolute_difference": {
+    "BLEU_1": 0.0,
+    "BLEU_4": 0.0,
+    "METEOR": 0.0,
+    "ROUGE_L": 2.7755575615628914e-17,
+    "CIDEr": 5.551115123125783e-17
+  },
+  "all_7200_primary_metric_vectors_complete": true,
+  "supersedes_legacy_per_video_and_paired": true
+}

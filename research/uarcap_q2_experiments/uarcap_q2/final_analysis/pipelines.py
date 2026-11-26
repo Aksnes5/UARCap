@@ -6,14 +6,14 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 import json
-import math
+import os
 from pathlib import Path
 import re
 from typing import Any
 
 from .core import ARMS, norm_claim, read_jsonl, tokens
 
-O = Path("/home/bn/uarcap_q2_runtime/outputs")
+O = Path(os.environ.get("UARCAP_OUTPUTS","/home/bn/uarcap_q2_runtime/outputs"))
 FORMAL = O / "formal_candidate_unvalidated"
 E3 = O / "pilot_e3_exploratory"
 
@@ -23,21 +23,22 @@ def utcnow(): return datetime.now(timezone.utc).isoformat()
 
 def formal_e3_plan(min_approved: int = 150, candidates_path: Path | None = None) -> dict:
     """Formal E3 generation plan; refuses to run below the pre-declared candidate floor."""
-    p = candidates_path or (E3 / "E3_FORMAL_APPROVED.json")
+    p = candidates_path or (O/"laptop-20261126-v1/e3/E3_FORMAL_APPROVED_V2.json")
     data = json.loads(p.read_text(encoding="utf-8")) if p.is_file() else {"approved": [], "n_approved": 0}
-    n = int(data.get("n_approved", len(data.get("approved", []))))
+    from ..interventions.neutral_repair import V2
     approved = data.get("approved", [])
+    n = len(approved)
+    ready = data.get("schema") == V2 and data.get("eligible") is True and n >= max(150, min_approved)
     plan = {
         "schema": "uarcap_q2.formal_e3_plan.v1", "utc": utcnow(),
         "n_approved_candidates": n, "min_required": min_approved,
-        "eligible": n >= min_approved,
+        "eligible": ready,
         "models": ["videollama_evcap_frozen_v08", "Qwen/Qwen3.8-27B-FP8"],
         "arms": ["E3_BASE", "E3_SUP", "E3_CON", "E3_NEU"],
         "planned_generations": n * 4 * 2,
-        "status": "MACHINE_ASSISTED_UNVALIDATED" if n >= min_approved else "AWAITING_SUFFICIENT_CANDIDATES",
+        "status": "MACHINE_ASSISTED_UNVALIDATED" if ready else "AWAITING_SUFFICIENT_CANDIDATES",
         "note": "Formal E3 remains exploratory until real human verification; no fabricated human gate.",
     }
-    (E3 / "E3_FORMAL_PLAN.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
     return plan
 
 
@@ -101,13 +102,19 @@ def prepare_validation_package(out_dir: Path | None = None) -> dict:
     from hashlib import sha256
     from uarcap_q2.annotation.package_builder import build_blind_e2_annotation_package
 
-    out = Path(out_dir or (O / "final_analysis/validation_60"))
+    from ..common.io_utils import primitive_hash, sha256_file
+    from ..common.io_utils import read_json
+    core_lock = FORMAL / "formal_core_lock.json"
+    core_lock_sha = sha256_file(core_lock)
+    ref_lock={r["query_id"]:r for r in read_json(core_lock)["entries"]}
+    out = Path(out_dir or (O / "final_analysis/validation_60_v3"))
     out.mkdir(parents=True, exist_ok=True)
     manifest = json.loads((FORMAL / "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json").read_text(encoding="utf-8"))
     val_ids = set(manifest["e2_validation_set"]["validation_query_ids"])
     main_ids = set(manifest.get("formal_main_excluding_validation_ids") or []) or (
         set(manifest.get("selected_query_ids", [])) - val_ids)
-    assert val_ids.isdisjoint(main_ids), "validation/main isolation violated"
+    from .validation_identity import caption_key, index, require_cohort, verify_caption_pair
+    require_cohort(manifest)
     units = manifest.get("units", {})
     strata = manifest["e2_validation_set"]["strata"]
 
@@ -115,22 +122,28 @@ def prepare_validation_package(out_dir: Path | None = None) -> dict:
     frames_idx = {r["query_id"]: r.get("frames", []) for r in read_jsonl(FORMAL / "formal_frame_indices.jsonl")}
     model_dirs = {"videollama": FORMAL / "videollama_eval/a2_ref_fact_eval.jsonl",
                   "qwen": FORMAL / "qwen_eval/a2_ref_fact_eval.jsonl"}
-    evals = {m: {r["query_id"]: r for r in read_jsonl(p) if r.get("parse_status") == "OK"} for m, p in model_dirs.items()}
+    evals = {m: index(read_jsonl(p)) for m, p in model_dirs.items()}
     videos = {q: {"query_id": q, "dataset_id": "CaReBench", "video_path": cand[q]["video_path"],
-                  "sampled_frame_paths": frames_idx.get(q, []), "captions": []} for q in sorted(val_ids)}
+                  "sampled_frame_paths": frames_idx.get(q, []), "captions": [],
+                  "human_reference_spans":[ref_lock[q][field] for field in ("reference_caption","spatial_caption","temporal_caption")
+                                           if ref_lock[q].get(field)],
+                  "frozen_reference_core":ref_lock[q]["core_event_candidate"]} for q in sorted(val_ids)}
     counts = Counter()
     missing = []
     for m, _ in model_dirs.items():
-        for p in read_jsonl(FORMAL / m / "predictions.jsonl"):
+        for p in index(read_jsonl(FORMAL / m / "predictions.jsonl")).values():
             q = p["query_id"]
             if q not in videos:
                 continue
-            r = evals[m].get(q)
-            claims = [{"claim_id": c.get("claim_id"), "claim": c["claim"]} for c in (r or {}).get("claims", [])]
+            r = evals[m][caption_key(p)]
+            claims = [{"claim_id": c["claim_id"], "claim": c["claim"]} for c in verify_caption_pair(p, r)]
             if not claims:
                 missing.append({"model_id": p.get("model_id"), "query_id": q, "arm": p["arm"]})
             videos[q]["captions"].append({"arm": p["arm"], "model_id": p.get("model_id"),
-                                          "caption": p.get("caption", ""), "claims": claims})
+                                          "caption": p["caption"], "claims": claims, "caption_sha256": r["caption_sha256"],
+                                          "reference_description_sha256":r["reference_description_sha256"],
+                                          "evaluator_id":r["judge_model_id"], "claim_split_sha256": primitive_hash(claims),
+                                          "core_lock_sha256": core_lock_sha})
             counts[(p.get("model_id"), p["arm"])] += 1
     expected = len(val_ids) * 2 * 3
     actual = sum(len(v["captions"]) for v in videos.values())
@@ -139,6 +152,8 @@ def prepare_validation_package(out_dir: Path | None = None) -> dict:
     for q in videos:
         if len(videos[q]["captions"]) != 6:
             raise ValueError(f"{q}: expected 6 (model,arm) captions, got {len(videos[q]['captions'])}")
+    if any(len(v["sampled_frame_paths"])!=16 for v in videos.values()):
+        raise ValueError("Expected the sixteen original frame paths for every validation clip")
     pkg = build_blind_e2_annotation_package(list(videos.values()), ["V1", "V2"], out_dir=out)
     key_sha = sha256(pkg["blind_key"].read_bytes()).hexdigest()
     receipt = {
@@ -167,92 +182,17 @@ HUMAN_IMPORT_SCHEMA = "uarcap_q2.human_primary_endpoints.v1"
 
 
 def verify_human_primary_endpoints(path: Path, manifest: dict) -> dict:
-    """Validate an adjudicated human endpoint import before any calibration use.
-
-    Required schema fields are checked; audited IDs must be a subset of the frozen
-    validation set; per-qid inclusion probabilities must equal the pre-registered
-    stratified probabilities; two independent annotators plus an adjudication receipt
-    hash are mandatory. Anything missing is an error — never silently filled.
-    """
-    from hashlib import sha256
-    p = Path(path)
-    d = json.loads(p.read_text(encoding="utf-8"))
-    if d.get("schema") != HUMAN_IMPORT_SCHEMA:
-        raise ValueError(f"schema must be {HUMAN_IMPORT_SCHEMA}")
-    if d.get("dataset_id") != "CaReBench":
-        raise ValueError("dataset_id must be CaReBench")
-    if d.get("metric") not in ("n_contra_ref", "r_core_ref"):
-        raise ValueError("metric must be a protocol primary endpoint")
-    ann = d.get("annotator_ids") or []
-    if int(d.get("n_annotators", 0)) < 2 or len(set(ann)) < 2:
-        raise ValueError("at least two distinct annotators are required")
-    rec_path, rec_sha = d.get("adjudication_receipt_path"), d.get("adjudication_receipt_sha256")
-    if not rec_path or not rec_sha:
-        raise ValueError("adjudication_receipt_path and sha256 are required")
-    rp = Path(rec_path)
-    if not rp.is_file() or sha256(rp.read_bytes()).hexdigest() != rec_sha:
-        raise ValueError("adjudication receipt missing or hash mismatch")
-    val = set(manifest["e2_validation_set"]["validation_query_ids"])
-    units = manifest.get("units", {})
-    vals, inc, strat = d.get("values") or {}, d.get("inclusion_by_qid") or {}, d.get("stratum_by_qid") or {}
-    audited = set(vals)
-    if not audited:
-        raise ValueError("no audited queries")
-    if not audited <= val:
-        raise ValueError(f"audited IDs outside frozen validation set: {sorted(audited - val)[:5]}")
-    manifest_inc = {q: units[q]["val_inclusion_prob"] for q in val if q in units}
-    for q in audited:
-        arms = vals[q]
-        if not {"ARM_A0", "ARM_A1", "ARM_A7"} <= set(arms):
-            raise ValueError(f"{q}: missing required arm values")
-        for a in ("ARM_A0", "ARM_A1", "ARM_A7"):
-            v = arms[a]
-            if not isinstance(v, (int, float)) or not math.isfinite(float(v)) or float(v) < 0:
-                raise ValueError(f"{q}/{a}: invalid endpoint value {v!r}")
-        if q not in inc or not (0 < float(inc[q]) <= 1):
-            raise ValueError(f"{q}: missing/invalid inclusion probability")
-        if q not in manifest_inc or abs(float(inc[q]) - float(manifest_inc[q])) > 1e-6:
-            raise ValueError(f"{q}: inclusion probability deviates from pre-registered design")
-        if q not in units or strat.get(q) != units[q]["stratum"]:
-            raise ValueError(f"{q}: stratum missing or does not match manifest")
-    covered = {strat[q] for q in audited}
-    for s, meta in manifest["e2_validation_set"]["strata"].items():
-        if s not in covered:
-            raise ValueError(f"stratum {s} has zero audited units; two-phase estimate undefined")
-    excluded = set(d.get("calibration_excluded_ids") or [])
-    if excluded & audited:
-        raise ValueError("calibration IDs overlap audited validation IDs")
-    payload = {"schema": HUMAN_IMPORT_SCHEMA, "metric": d["metric"], "values": vals,
-               "inclusion_by_qid": {q: float(inc[q]) for q in audited},
-               "stratum_by_qid": {q: strat[q] for q in audited},
-               "calibration_excluded_ids": sorted(excluded)}
-    receipt = {"import_path": str(p), "import_sha256": sha256(p.read_bytes()).hexdigest(),
-               "n_audited": len(audited), "n_strata_covered": len(covered),
-               "annotator_ids": sorted(set(ann)), "adjudication_receipt_sha256": rec_sha,
-               "design_inclusion_match": True}
-    return {"payload": payload, "receipt": receipt}
+    """Validate a model-specific, fully bound human primary endpoint import."""
+    from ..annotation.human_endpoints import verify
+    return verify(path,manifest)
 
 
-def prepare_e3_bridge_approved(candidates_path: Path | None = None, min_items: int = 20) -> dict:
-    """Freeze machine-assisted E3-Bridge candidates into the shared E3 approved schema.
-
-    TRUE condition = external retrieved caption (natural evidence); CONFLICT = the model
-    claim contradicted by the human reference; NEU = unrelated action. Every pair remains
-    CANDIDATE_PENDING_VERIFICATION and may only be used in machine-assisted mode.
-    """
-    cp = Path(candidates_path or (O / "final_analysis/E3_BRIDGE_CANDIDATES.json"))
-    data = json.loads(cp.read_text(encoding="utf-8")) if cp.is_file() else {"candidates": []}
-    formal = {r["query_id"]: r for r in read_jsonl(FORMAL / "formal_candidates.jsonl")}
-    approved = []
-    for c in data.get("candidates", []):
-        f = formal.get(c["query_id"])
-        if not f: continue
-        approved.append({"query_id": c["query_id"], "source_id": None, "video_path": f["video_path"],
-                         "true_action": c["external_caption"], "conflict_action": c["model_claim"],
-                         "neutral_text": "reading a book in a library", "status": "CANDIDATE_PENDING_VERIFICATION",
-                         "bridge_requires_visual_check": True})
-    payload = {"schema": "uarcap_q2.e3_bridge_approved.v1", "status": "MACHINE_ASSISTED_UNVALIDATED",
-               "utc": utcnow(), "n_approved": len(approved), "min_required": min_items,
-               "eligible": len(approved) >= min_items, "approved": approved}
-    (O / "final_analysis/E3_BRIDGE_APPROVED.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    return payload
+def prepare_e3_bridge_approved(candidates_path: Path | None = None, min_items: int = 30) -> dict:
+    """Report eligibility from the versioned, outcome-blind bridge freeze."""
+    from ..interventions.neutral_repair import V2
+    cp=Path(candidates_path or (O/"laptop-20261126-v1/bridge/E3_BRIDGE_APPROVED_V2.json"))
+    data=json.loads(cp.read_text(encoding="utf-8")) if cp.is_file() else {}
+    if (data.get("schema")==V2 and data.get("scope")=="CAREB_BRIDGE" and data.get("eligible") is True
+        and len(data.get("approved",[]))>=max(30,min_items)):
+        return data
+    return {"eligible":False,"status":"BLOCKED_STRICT_VERIFICATION_REQUIRED","approved":[]}

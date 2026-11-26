@@ -78,26 +78,32 @@ def gates() -> dict:
     action with the required fields and the referenced artifact exists. Missing files,
     PENDING receipts, exploratory receipts and un-signed receipts all evaluate false.
     """
+    def bound(record, role):
+        path=record.get(role+"_path")
+        expected=record.get(role+"_sha256")
+        return bool(path and expected and _sha(Path(path))==expected)
+
     a2 = _read_json(A2_RECEIPT)
     a3 = _read_json(A3_HUMAN_RECEIPT)
     fb = _read_json(FORMAL_B_AUTH)
     a3_human = (
         a3.get("status") == "VALIDATION_PASS"
         and int(a3.get("n_annotators", 0)) >= 2
-        and bool(a3.get("adjudication_receipt_sha256"))
+        and bound(a3,"adjudication_receipt")
         and bool(a3.get("annotator_signatures"))
     )
     fb_ok = (
         fb.get("authorized") is True
         and fb.get("scope") in {"FORMAL_B_CONFIRMATORY", "FORMAL_B_E2_E3"}
-        and bool(fb.get("authorization_receipt_sha256"))
+        and bound(fb,"authorization_receipt")
         and bool(fb.get("approved_by"))
     )
     return {
         "a2_status": a2.get("status"),
         "a2_receipt": str(A2_RECEIPT),
         "a2_receipt_sha256": _sha(A2_RECEIPT),
-        "a2_human_calibration_completed": a2.get("human_calibration_completed") is True,
+        "a2_human_calibration_completed": (a2.get("human_calibration_completed") is True
+                                            and bound(a2,"adjudication_receipt") and bool(a2.get("annotator_signatures"))),
         "a3_status": a3.get("status"),
         "a3_receipt": str(A3_HUMAN_RECEIPT),
         "a3_receipt_sha256": _sha(A3_HUMAN_RECEIPT),
@@ -142,16 +148,21 @@ def machine_assisted_stats() -> dict:
              "mode": "MACHINE_ASSISTED_UNCALIBRATED"}
     pvals = {}
     primary, auxiliary = {}, {}
-    for name in MODELS:
+    from uarcap_q2.final_analysis.validation_identity import index, require_cohort
+    man = _read_json(FORMAL / "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json")
+    formal, _, _, _, _ = require_cohort(man)
+    for name in ("formal_videollama","formal_qwen38"):
         rows, _ = load_model(name)
-        if not rows: continue
+        actual = index(rows)
+        model_ids = {key[0] for key in actual}
+        if len(model_ids)!=1 or set(actual)!={(next(iter(model_ids)),q,a) for q in formal for a in ARMS}:
+            raise ValueError(f"{name}: expected full formal query-by-arm ledger")
         primary[name], auxiliary[name] = {}, {}
         for m in PRIMARY_METRICS:
             res = paired_arm_stats(rows, m)
             primary[name][m] = res
             for pair, v in res.items():
-                if v.get("p_two_sided") is not None:
-                    pvals[f"{name}|{m}|{pair}"] = v["p_two_sided"]
+                pvals[f"{name}|{m}|{pair}"] = v["p_two_sided"] if v.get("p_two_sided") is not None else 1.0
         for m in AUXILIARY_METRICS:
             auxiliary[name][m] = paired_arm_stats(rows, m)
     stats["primary"] = primary
@@ -165,27 +176,45 @@ def machine_assisted_stats() -> dict:
     return stats
 
 
-def human_calibrated_stats(path: Path) -> dict:
-    """Design-based two-phase (IPW) correction using an imported adjudicated human file.
-
-    Refuses to guess: the import schema, per-stratum audit coverage, inclusion
-    probabilities and calibration/validation isolation are all verified first.
-    """
+def human_calibrated_stats(paths: list[Path]) -> dict:
+    """Use model-specific human contrasts for the two locked endpoints."""
+    from uarcap_q2.annotation.human_endpoints import MODELS as MODEL_IDS, PINS
+    from uarcap_q2.common.io_utils import primitive_hash
+    from uarcap_q2.final_analysis.validation_identity import index, require_cohort
     man = _read_json(FORMAL / "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json")
-    valid = verify_human_primary_endpoints(path, man)
-    human = valid["payload"]
-    out = {"mode": "HUMAN_CALIBRATED_TWO_PHASE", "human_import": valid["receipt"],
-           "metric": human["metric"], "corrections": {}}
-    for name in MODELS:
-        rows, _ = load_model(name)
-        if not rows: continue
-        out["corrections"][name] = {}
+    formal, _, _, _, _ = require_cohort(man)
+    imports = [verify_human_primary_endpoints(p, man) for p in paths]
+    keys = {(x["payload"]["model_id"],x["payload"]["metric"]):x for x in imports}
+    if len(imports)!=4 or set(keys)!={(m,k) for m in MODEL_IDS for k in PRIMARY_METRICS}:
+        raise ValueError("Expected the four model-by-endpoint human imports")
+    if len({x["receipt"]["adjudication_receipt_sha256"] for x in imports})!=1:
+        raise ValueError("Use one complete adjudication ledger and consistent imports")
+    core_sha=_sha(FORMAL/"formal_core_lock.json")
+    out={"mode":"HUMAN_CALIBRATED_TWO_PHASE","corrections":{}}
+    strata={q:man["units"][q]["stratum"] for q in formal}
+    ledger=imports[0]["receipt"]["adjudicated_rows"]
+    for name, model in zip(("formal_videollama","formal_qwen38"),MODEL_IDS,strict=True):
+        auto,_=load_model(name)
+        rows=index(auto)
+        if set(rows)!={(model,q,a) for q in formal for a in ARMS}:
+            raise ValueError("Incomplete first-phase model grid")
+        for h in ledger:
+            if h["model_id"]!=model:
+                continue
+            ap=rows[model,h["query_id"],h["arm"]]
+            claims=[{"claim_id":c["claim_id"],"claim":c["claim"]} for c in ap["claims"]]
+            pins=dict(zip(PINS,(ap["caption_sha256"],primitive_hash(claims),ap["reference_description_sha256"],
+                              core_sha,ap["judge_model_id"]),strict=True))
+            if any(h[k]!=v for k,v in pins.items()):
+                raise ValueError("Adjudication uses a different candidate, fact split, reference or evaluator version")
         for metric in PRIMARY_METRICS:
-            out["corrections"][name][metric] = two_phase_primary_correction(
-                rows, human["values"], human["inclusion_by_qid"], human["stratum_by_qid"],
-                metric=metric, arm_low="ARM_A0", arm_high="ARM_A7",
-                calibration_excluded_ids=set(human.get("calibration_excluded_ids") or []),
-            )
+            record=keys[model,metric]
+            h=record["payload"]
+            out["corrections"][f"{model}|{metric}"]={
+                f"{high}-{low}":two_phase_primary_correction(auto,h["values"],h["inclusion_by_qid"],
+                    strata,metric=metric,arm_low=low,arm_high=high,
+                    calibration_excluded_ids=set(h.get("calibration_excluded_ids") or []))
+                for low,high in (("ARM_A0","ARM_A1"),("ARM_A1","ARM_A7"),("ARM_A0","ARM_A7"))}
     return out
 
 
@@ -201,9 +230,11 @@ def main(argv=None) -> int:
     ap.add_argument("--prepare-validation-package", action="store_true")
     ap.add_argument("--e3-plan", action="store_true")
     ap.add_argument("--e3-bridge", action="store_true")
-    ap.add_argument("--human-annotations", type=Path,
+    ap.add_argument("--human-annotations", type=Path, action="append",
                     help="Adjudicated human primary-endpoint import (see verify_human_primary_endpoints)")
     args = ap.parse_args(argv)
+    if sum((args.describe_only,args.machine_assisted,args.human_calibrated,args.confirmatory))>1:
+        ap.error("Select a single statistical mode")
     OUT.mkdir(parents=True, exist_ok=True)
     g = gates()
     if args.human_calibrated or args.confirmatory:
@@ -211,18 +242,25 @@ def main(argv=None) -> int:
             print(json.dumps({"status": "HUMAN_ANNOTATION_IMPORT_REQUIRED", "gates": g,
                               "expected_schema": "uarcap_q2.human_primary_endpoints.v1"}, indent=2)); return 3
         try:
-            hv = verify_human_primary_endpoints(args.human_annotations,
-                                                _read_json(FORMAL / "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json"))
+            cal = human_calibrated_stats(args.human_annotations)
         except Exception as e:
             print(json.dumps({"status": "HUMAN_IMPORT_REJECTED", "error": str(e), "gates": g}, indent=2)); return 3
         if not g["a2_human_calibration_completed"]:
             print(json.dumps({"status": "HUMAN_CALIBRATION_REQUIRED", "gates": g,
-                              "import_ok": hv["receipt"]}, indent=2)); return 3
+                              "import_ok": True}, indent=2)); return 3
     if args.confirmatory and not (g["a2_human_calibration_completed"] and g["a3_human_validation"] and g["formal_b_authorized"]):
         print(json.dumps({"status": "CONFIRMATORY_GATES_NOT_MET", "gates": g}, indent=2)); return 3
     if args.integrity_check:
-        audit = O / "final_audit/FORMAL_INTEGRITY_AUDIT.json"
-        print(audit.read_text() if audit.is_file() else json.dumps({"status": "PENDING"}))
+        from uarcap_q2.common.io_utils import atomic_write_json
+        from uarcap_q2.final_analysis.validation_identity import audit
+        try:
+            payload=audit(FORMAL/"FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json",
+                [FORMAL/f"{m}/predictions.jsonl" for m in ("videollama","qwen")],
+                [FORMAL/f"{m}_eval/a2_ref_fact_eval.jsonl" for m in ("videollama","qwen")])
+        except (ValueError,OSError,KeyError) as error:
+            ap.exit(3,f"HARD_BLOCK integrity audit: {error}\n")
+        atomic_write_json(OUT/"VALIDATION_SET_IDENTITY_RECEIPT.json",payload)
+        print(json.dumps(payload,indent=2))
         return 0
     if args.prepare_validation_package:
         print(json.dumps(prepare_validation_package(), indent=2)[:3000]); return 0
@@ -236,12 +274,11 @@ def main(argv=None) -> int:
     desc = descriptive_all()
     (OUT / "descriptive.json").write_text(json.dumps(desc, indent=2), encoding="utf-8")
     result = {"descriptive": desc, "mode": "MACHINE_ASSISTED_UNCALIBRATED", "gates": g}
-    if args.machine_assisted or args.confirmatory or args.human_calibrated:
+    if args.machine_assisted:
         stats = machine_assisted_stats()
         (OUT / "stats.json").write_text(json.dumps(stats, indent=2), encoding="utf-8")
         result["stats"] = stats
     if args.human_calibrated or args.confirmatory:
-        cal = human_calibrated_stats(args.human_annotations)
         (OUT / "human_calibrated_stats.json").write_text(json.dumps(cal, indent=2), encoding="utf-8")
         result["human_calibrated"] = cal
         result["mode"] = "HUMAN_CALIBRATED_TWO_PHASE" if args.human_calibrated else "CONFIRMATORY"

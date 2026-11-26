@@ -226,9 +226,11 @@ def metric_by_qid_arm(rows: list[dict], metric: str) -> dict[str, dict[str, floa
             if r.get("arm") == arm and r.get("parse_status") == "OK":
                 byq[r["query_id"]].append(r)
         for q, rs in byq.items():
-            n = sum(x.get("n_claims", 0) for x in rs)
+            if len(rs)!=1:
+                raise ValueError(f"Duplicate or mixed-model endpoint rows for {q}/{arm}")
+            n = rs[0].get("n_claims",0)
             if metric in ("n_contra_ref", "contra_count"):
-                v = float(sum(x.get("n_contra_ref", 0) or 0 for x in rs))
+                v = rs[0].get("n_contra_ref")
             elif metric in ("r_core_ref", "core_coverage"):
                 z = [x["r_core_ref"] for x in rs if x.get("r_core_ref") is not None]
                 v = float(np.mean(z)) if z else None
@@ -404,13 +406,23 @@ def two_phase_primary_correction(
     auto = metric_by_qid_arm(auto_rows, metric)
     low_map, high_map = auto.get(arm_low, {}), auto.get(arm_high, {})
     qids = sorted(set(low_map) & set(high_map))
+    if not human_arm_metric:
+        return {"status":"INCONCLUSIVE_EMPTY_STRATUM","n_units":len(qids),"n_human_sampled":0, "metric":metric}
+    if set(human_arm_metric)-set(qids):
+        raise ValueError("Missing machine endpoint for an audited query")
+    if set(qids)-stratum_by_qid.keys():
+        raise ValueError("All phase-one units require a stratum")
     units: list[TwoPhaseUnit] = []
+    residuals = []
     for q in qids:
         unit_human = human_arm_metric.get(q)
         in_sample = bool(unit_human and arm_low in unit_human and arm_high in unit_human)
         pi = float(inclusion_by_qid.get(q, 0.0)) if in_sample else 0.0
         if in_sample and not (0.0 < pi <= 1.0):
             raise ValueError(f"Missing/invalid inclusion probability for audited query {q}: {pi}")
+        if in_sample:
+            residuals.append({"query_id":q,"stratum":stratum_by_qid[q],"inclusion_prob":pi,"weight":1/pi,
+                              "low_residual":unit_human[arm_low]-low_map[q],"high_residual":unit_human[arm_high]-high_map[q]})
         units.append(TwoPhaseUnit(
             query_id=q,
             stratum=stratum_by_qid.get(q, "unknown"),
@@ -420,7 +432,7 @@ def two_phase_primary_correction(
             human_delta=float(unit_human[arm_high] - unit_human[arm_low]) if in_sample else None,
         ))
     res = estimate_two_phase_corrected_delta(units, calibration_excluded_ids=calibration_excluded_ids)
-    res.update({"metric": metric, "contrast": f"{arm_high}-{arm_low}", "n_units": len(units),
+    res.update({"phase_two_residuals":residuals,"metric": metric, "contrast": f"{arm_high}-{arm_low}", "n_units": len(units),
                 "n_human_sampled": sum(1 for u in units if u.in_human_sample),
                 "estimator": "two_phase_correction.py (stratified IPW; inclusion probabilities required)"})
     return res

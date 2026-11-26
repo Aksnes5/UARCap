@@ -17,7 +17,7 @@ import time
 BASE = Path(os.environ.get("OVERNIGHT_BASE", "/home/bn/uarcap_q2_runtime/overnight/20261126"))
 TASK_ID = os.environ.get("OVERNIGHT_TASK_ID", "eval_captions_gemma")
 PROGRESS = BASE / "progress" / f"{TASK_ID}.json"
-REPO = "/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments"
+REPO = str(Path(__file__).resolve().parents[3])
 sys.path.insert(0, REPO)
 
 
@@ -68,7 +68,12 @@ def main() -> int:
     from uarcap_q2.evaluators.backends import JudgeBackendConfig, LocalVLLMJudgeBackend
     from uarcap_q2.evaluators.batched_reference_fact_eval import evaluate_captions_batched
 
-    preds = read_jsonl(args.predictions)
+    from uarcap_q2.common.io_utils import primitive_hash, sha256_file, append_jsonl_durable, read_jsonl as read_resume
+    from uarcap_q2.final_analysis.validation_identity import caption_key, index
+    PROGRESS.parent.mkdir(parents=True,exist_ok=True)
+    preds = list(index(read_jsonl(args.predictions)).values())
+    if not preds or any(r.get("ok") is not True or not r.get("caption","").strip() for r in preds):
+        raise ValueError("Invalid generation ledger")
     lock = json.loads(args.core_lock.read_text(encoding="utf-8"))
     ref_by_qid = {}
     core_by_qid = {}
@@ -87,7 +92,7 @@ def main() -> int:
     for p in preds:
         qid = str(p["query_id"])
         if qid not in ref_by_qid:
-            continue
+            raise ValueError(f"Reference lock missing {qid}")
         items.append({"query_id": qid, "arm": str(p["arm"]), "model_id": str(p["model_id"]),
                       "caption": str(p.get("caption", "")), "reference_description": ref_by_qid[qid],
                       "reference_fields": ["caption", "spatial_caption", "temporal_caption"],
@@ -102,28 +107,49 @@ def main() -> int:
     lock_cfg = GPULockConfig(lock_path=Path("/home/bn/videoufo_research/gpu.lock"), run_id=TASK_ID,
                              gpu_uuid="GPU-66d83fcc-2695-33a7-33aa-af30b7e3d26d",
                              require_nvidia_smi_idle=True, sidecar_dir=args.out_dir)
-    t0 = time.time()
-    with acquire_cooperative_gpu_lock(lock_cfg):
-        res = evaluate_captions_batched(backend, items, max_retries=args.max_retries, chunk_size=args.chunk)
-    elapsed = round(time.time() - t0, 1)
-    write_jsonl(args.out_dir / "a2_ref_fact_eval.jsonl", res["rows"])
-    with (args.out_dir / "a2_judge_raw_calls.jsonl").open("w", encoding="utf-8") as f:
-        for r in res["raw_calls"]:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    binding=primitive_hash([sha256_file(args.predictions),sha256_file(args.core_lock),str(args.model_path),
+                            args.model_id,args.max_model_len,args.max_new_tokens,sha256_file(Path(__file__))])
+    ledger=args.out_dir/"eval_attempts.jsonl"
+    all_attempts=read_resume(ledger)
+    expected={caption_key(r) for r in preds}
+    done={}
+    for row in all_attempts:
+        key=caption_key(row)
+        if row["binding_sha256"]!=binding or key not in expected:
+            raise ValueError("Mixed or incompatible judge resume ledger")
+        if row["parse_status"]=="OK":
+            if key in done:
+                raise ValueError("Duplicate accepted judge record")
+            done[key]=row
+    pending=[r for r in items if caption_key(r) not in done]
+    t0=time.time()
+    if pending:
+        with acquire_cooperative_gpu_lock(lock_cfg):
+            for start in range(0,len(pending),args.chunk):
+                result=evaluate_captions_batched(backend,pending[start:start+args.chunk],
+                                                 max_retries=args.max_retries,chunk_size=args.chunk)
+                for raw in result["raw_calls"]:
+                    append_jsonl_durable(args.out_dir/"a2_judge_raw_calls.jsonl",raw)
+                for row in result["rows"]:
+                    row["binding_sha256"]=binding
+                    append_jsonl_durable(ledger,row)
+                    if row["parse_status"]=="OK":
+                        done[caption_key(row)]=row
+                progress("evaluation",len(done),len(expected))
+    elapsed=round(time.time()-t0,1)
+    write_jsonl(args.out_dir/"a2_ref_fact_eval.jsonl",[done[k] for k in sorted(done)])
     shutil.copy2(args.core_lock, args.out_dir / "a2_core_event_lock.json")
     receipt = {
         "schema": "uarcap_q2.machine_caption_eval.v1", "status": "MACHINE_ASSISTED_UNCALIBRATED",
         "timestamp_utc": utcnow(), "judge_model_id": args.model_id, "judge_model_path": args.model_path,
-        "predictions_path": str(args.predictions), "n_items": len(items), "n_rows": len(res["rows"]),
-        "n_unique_captions": res["unique_captions"], "n_duplicate_reuses": res["n_duplicate_reuses"],
-        "n_retries": res["n_retries"], "n_parse_failures": res["parse_failures"],
-        "n_raw_calls": len(res["raw_calls"]), "elapsed_sec": elapsed,
+        "predictions_path": str(args.predictions), "n_items": len(items), "n_rows": len(done),
+        "binding_sha256":binding,"n_parse_failures":len(expected)-len(done),"elapsed_sec":elapsed,
         "core_event_lock_sha256": lock.get("lock_sha256"),
     }
     atomic_write(args.out_dir / "a2_judge_run_receipt.json", receipt)
-    progress("completed", len(res["rows"]), len(items), parse_failures=res["parse_failures"])
-    print(json.dumps({k: receipt[k] for k in ("status", "n_rows", "n_unique_captions", "n_parse_failures", "elapsed_sec")}, indent=2))
-    return 0
+    progress("completed",len(done),len(items),parse_failures=len(expected)-len(done))
+    print(json.dumps({k: receipt[k] for k in ("status", "n_rows", "n_parse_failures", "elapsed_sec")}, indent=2))
+    return 0 if done.keys()==expected else 2
 
 
 if __name__ == "__main__":

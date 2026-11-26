@@ -1,0 +1,14 @@
+{
+  "schema": "uarcap_q2.cross_missing_audit.v1",
+  "evaluation_sha256": "325ea412b76afb4017e1659fc4563243b6f6edf397a5410e519a80c39a65cb43",
+  "cross_sha256": "cb035005f7d8408e3b8b57bf9200838aaa260e6159911b2938a9a8512ee5e756",
+  "required": 5099,
+  "valid": 5098,
+  "missing": [
+    {
+      "query_id": "carebench_v_00006986_4",
+      "norm_key": "paper is white"
+    }
+  ],
+  "extras": 0
+}

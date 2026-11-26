@@ -120,8 +120,7 @@ def test_e3_formal_generation_gate_refuses_under_floor(tmp_path: Path):
     import json, subprocess, sys
     p = tmp_path / "approved.json"; p.write_text(json.dumps({"n_approved": 2, "approved": [{}, {}]}))
     root = Path(__file__).resolve().parents[1]
-    script = Path("/home/bn/uarcap_q2_runtime/overnight/20261126/tasks/e3_formal_generate.py")
-    if not script.is_file(): pytest.skip("overnight script not present")
+    script = root / "bn_carebench_pilot_a01/overnight_20261126/tasks/e3_formal_generate.py"
     r = subprocess.run([sys.executable, str(script), "--generator", "qwen", "--approved", str(p), "--min-approved", "150"],
                        capture_output=True, text=True)
     assert r.returncode == 3 and "AWAITING_SUFFICIENT_CANDIDATES" in r.stdout

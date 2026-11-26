@@ -106,6 +106,7 @@ def build_blind_e2_annotation_package(
                             "claim_id": blind_cid,
                             "text": cl_txt,
                             "norm_key": normalize_claim_key(cl_txt),
+                            "exact_claim_key": sha256(cl_txt.encode("utf-8")).hexdigest(),
                         }
                     )
                     claim_id_map[blind_cid] = {
@@ -127,6 +128,7 @@ def build_blind_e2_annotation_package(
                     "arm": c["arm"],
                     "model_id": c["model_id"],
                     "claim_id_map": claim_id_map,
+                    **{field:c[field] for field in ("caption_sha256","claim_split_sha256","reference_description_sha256","core_lock_sha256","evaluator_id") if field in c},
                 }
 
             blind_tasks.append(
@@ -136,6 +138,8 @@ def build_blind_e2_annotation_package(
                     "video_path": str(v["video_path"]),
                     "sampled_frame_paths": list(v.get("sampled_frame_paths", [])),
                     "phase1_core_events_required": True,
+                    "human_reference_spans":v.get("human_reference_spans",[]),
+                    "frozen_reference_core":v.get("frozen_reference_core"),
                     "captions": blind_caps,
                 }
             )

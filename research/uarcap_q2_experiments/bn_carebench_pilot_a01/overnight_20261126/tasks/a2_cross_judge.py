@@ -9,6 +9,7 @@ and reports machine-machine agreement. This is MACHINE-ASSISTED evidence, never 
 from __future__ import annotations
 
 import argparse
+from contextlib import nullcontext
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from hashlib import sha256
@@ -128,9 +129,12 @@ def main() -> int:
     ap.add_argument("--chunk", type=int, default=12)
     ap.add_argument("--max-retries", type=int, default=2)
     ap.add_argument("--limit", type=int, default=0, help="debug: evaluate only the first N unique claims")
+    ap.add_argument("--seed-labels",type=Path)
+    ap.add_argument("--live-labels",type=Path)
+    ap.add_argument("--seed-sha256")
     args = ap.parse_args()
 
-    sys.path.insert(0, "/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments")
+    sys.path.insert(0,str(Path(__file__).resolve().parents[3]))
     from uarcap_q2.common.gpu_lock import GPULockConfig, acquire_cooperative_gpu_lock
     from uarcap_q2.evaluators.backends import JudgeBackendConfig, LocalVLLMJudgeBackend
 
@@ -165,6 +169,38 @@ def main() -> int:
     if labels_path.is_file():
         for x in read_jsonl(labels_path):
             done[(x["query_id"], x["norm_key"])] = x
+    from uarcap_q2.common.io_utils import sha256_file, primitive_hash, read_json
+    PROGRESS.parent.mkdir(parents=True,exist_ok=True)
+    if not order:
+        raise ValueError("Missing cross-judge facts")
+    binding={"eval_sha256":sha256_file(args.a2_dir/"a2_ref_fact_eval.jsonl"),
+             "core_sha256":sha256_file(args.a2_dir/"a2_core_event_lock.json"),
+             "judge":args.model_id,"judge_path":args.model_path,
+             "max_model_len":args.max_model_len,"max_new_tokens":args.max_new_tokens}
+    bound=args.out_dir/"CROSS_JUDGE_INPUT_BINDING.json"
+    if bound.exists() and read_json(bound)!=binding:
+        raise ValueError("Cross-judge configuration drift")
+    if done and not bound.exists():
+        raise ValueError("No binding for existing cross-judge rows")
+    atomic_write(bound,binding)
+    if args.seed_labels:
+        if sha256_file(args.seed_labels)!=args.seed_sha256:
+            raise ValueError("Legacy seed cross-judge hash mismatch")
+        for row in read_jsonl(args.seed_labels):
+            key=(row["query_id"],row["norm_key"])
+            if key not in uniq or norm(row["claim"])!=key[1] or row.get("judge_model_id")!=args.model_id:
+                raise ValueError("Legacy seed does not match scored claim and judge")
+            if key not in done and row.get("llama_label") in ("entailed","contradicted","unmentioned"):
+                append_jsonl(labels_path,row)
+                done[key]=row
+    if args.live_labels and args.live_labels.is_file():
+        for row in read_jsonl(args.live_labels):
+            key=(row["query_id"],row["norm_key"])
+            if key in uniq and key not in done and norm(row["claim"])==key[1] and (
+                row.get("judge_model_id")==args.model_id and row.get("llama_label") in ("entailed","contradicted","unmentioned")
+                and row.get("gemma_label")==uniq[key]["gemma_label"]):
+                append_jsonl(labels_path,{**row,"reused_live_label_sha256":sha256_file(args.live_labels)})
+                done[key]=row
     progress(len(done), len(order), "prepare", args.model_id)
 
     backend = LocalVLLMJudgeBackend(
@@ -192,7 +228,7 @@ def main() -> int:
         return out
 
     pending = [k for k in order if k not in done]
-    with acquire_cooperative_gpu_lock(lock_cfg):
+    with (acquire_cooperative_gpu_lock(lock_cfg) if pending else nullcontext()):
         for attempt in range(args.max_retries + 1):
             if not pending:
                 break

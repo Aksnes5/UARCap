@@ -20,9 +20,9 @@ import time
 BASE = Path(os.environ.get("OVERNIGHT_BASE", "/home/bn/uarcap_q2_runtime/overnight/20261126"))
 TASK_ID = os.environ.get("OVERNIGHT_TASK_ID", "supp_generate")
 PROGRESS = BASE / "progress" / f"{TASK_ID}.json"
-REPO = "/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments"
+REPO = str(Path(__file__).resolve().parents[3])
 __import__("sys").path.insert(0, REPO)
-FORMAL = Path("/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated")
+FORMAL = Path(os.environ.get("UARCAP_FORMAL","/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated"))
 
 
 def utcnow(): return datetime.now(timezone.utc).isoformat()
@@ -67,6 +67,40 @@ def sample_frames(video: Path, n: int):
     return out, idx
 
 
+def verify_supplementary_row(row,packet,anchor,n_frames,prompt_regime,generator):
+    t=row["input_trace"]
+    evcap=generator=="videollama"
+    if (row.get("ok") is not True or not row.get("caption","").strip()
+            or any(row[k]!=t[k] for k in ("query_id","model_id","arm"))
+            or t["checkpoint_sha256"]!=anchor["checkpoint_sha256"]
+            or t["text_evidence"]!=packet.text_evidence
+            or t["visual_evidence_ids"]!=(packet.visual_clip_ids if evcap else [])
+            or t["visual_evidence_scores"]!=(packet.visual_scores if evcap else [])
+            or len(t["frame_indices"])!=n_frames):
+        raise ValueError("Supplementary trace differs from model or evidence contract")
+    if n_frames==16:
+        for k in ("visual_input_sha256","frame_indices"):
+            if t[k]!=anchor[k]:
+                raise ValueError("Original visual frames differ")
+    if evcap or (n_frames==16 and prompt_regime=="short_aligned"):
+        if t["decoding_config"]!=anchor["decoding_config"]:
+            raise ValueError("Incompatible decode config")
+    if evcap:
+        observed=t["actual_processor_telemetry"]
+        ref=anchor["actual_processor_telemetry"]
+        if observed["image_tensor_sha256"]!=ref["image_tensor_sha256"]:
+            raise ValueError("EVCap query tensor changed")
+        if not packet.visual_clip_ids and observed["fused_nonzero"]!=0:
+            raise ValueError("EVCap zero-visual control is nonzero")
+        if packet.visual_clip_ids==anchor["visual_evidence_ids"] and observed["fused_aggregate_sha256"]!=ref["fused_aggregate_sha256"]:
+            raise ValueError("EVCap A7 visual aggregate changed")
+    if not evcap:
+        telemetry=t["actual_processor_telemetry"]
+        if (telemetry["actual_frames_received"]!=n_frames or
+                telemetry["local_model_manifest_sha256"]!=anchor["actual_processor_telemetry"]["local_model_manifest_sha256"]):
+            raise ValueError("Qwen processor or model manifest mismatch")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--generator", choices=["videollama", "qwen"], required=True)
@@ -79,10 +113,23 @@ def main() -> int:
     ap.add_argument("--max-new-tokens", type=int, default=0)
     ap.add_argument("--chunk", type=int, default=40)
     ap.add_argument("--condition", default="supplementary")
+    ap.add_argument("--config-sha256", required=True)
+    ap.add_argument("--smoke-queries",type=int,default=0)
+    ap.add_argument("--decoded-frames",type=Path)
+    ap.add_argument("--modality-ablation",action="store_true")
     args = ap.parse_args()
+    from uarcap_q2.common.io_utils import primitive_hash, sha256_file, append_jsonl_durable
     arms = [a.strip() for a in args.arms.split(",") if a.strip()]
-    if not arms:
-        raise SystemExit("no arms")
+    limits = {"ARM_A0":0,"ARM_A1":1,"ARM_A3":3,"ARM_A5":5,"ARM_A7":7}
+    from uarcap_q2.retrieval.arm_builder import MODALITY_ARMS, build_evcap_modality_arm
+    allowed=MODALITY_ARMS if args.modality_ablation else limits
+    if args.modality_ablation and args.generator!="videollama":
+        raise ValueError("Modality arms use the inherited EVCap fusion interface")
+    if not arms or len(set(arms)) != len(arms) or set(arms)-allowed.keys():
+        raise SystemExit("Invalid natural arms")
+    if args.generator=="videollama" and (args.prompt_regime!="short_aligned" or args.num_frames!=16 or args.max_new_tokens):
+        raise SystemExit("Frozen Video-LLaMA prompt/16-frame contract")
+    PROGRESS.parent.mkdir(parents=True,exist_ok=True)
     from PIL import Image
     from uarcap_q2.common.gpu_lock import GPULockConfig, acquire_cooperative_gpu_lock
     from uarcap_q2.common.schemas import PilotStage, QueryRecord
@@ -96,15 +143,42 @@ def main() -> int:
     frames_idx = {r["query_id"]: r for r in read_jsonl(FORMAL / "formal_frame_indices.jsonl")}
     qids = sorted(q for q in cands if q in retr)
     if args.qids_file:
-        qids = [q for q in read_jsonl(args.qids_file) if q in cands] if args.qids_file.suffix == ".jsonl" else json.loads(args.qids_file.read_text()).get("query_ids", [])
-        qids = [q for q in qids if q in cands]
+        qids = ([row["query_id"] for row in read_jsonl(args.qids_file)] if args.qids_file.suffix == ".jsonl"
+                else json.loads(args.qids_file.read_text(encoding="utf-8"))["query_ids"])
+    if not qids or len(set(qids))!=len(qids) or set(qids)-set(cands).intersection(retr,frames_idx):
+        raise ValueError("Invalid supplement cohort")
     if args.limit:
         qids = qids[: args.limit]
+    decoded=json.loads(args.decoded_frames.read_text(encoding="utf-8")) if args.decoded_frames else {}
+    if args.num_frames != 16 and (set(decoded.get("queries",{}))!=set(qids) or decoded.get("num_frames")!=args.num_frames):
+        raise ValueError("32/64-frame runs require a checked CPU-decoded manifest for exactly this cohort")
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)
     pred = out / "predictions.jsonl"; trace = out / "input_traces.jsonl"; fail = out / "failures.jsonl"
-    done = {(r["query_id"], r["arm"]) for r in read_jsonl(pred)}
-    pairs = [(q, a) for a in arms for q in qids if (q, a) not in done]
+    from uarcap_q2.final_analysis.validation_identity import index
+    from uarcap_q2.retrieval.arm_builder import verify_natural_prefix_consistency
+    anchor = index(read_jsonl(FORMAL / args.generator / "predictions.jsonl"))
+    by_query = {k[1]:r["input_trace"] for k,r in anchor.items() if k[2]=="ARM_A7"}
+    expected = {(q,a) for q in qids for a in arms}
+    binding = primitive_hash({"config_sha256":args.config_sha256, "arms":arms,"qids":qids, "generator":args.generator,
+        "prompt_regime":args.prompt_regime,"num_frames":args.num_frames,"max_tokens":args.max_new_tokens,
+        "decode_receipt":sha256_file(args.decoded_frames) if args.decoded_frames else None,
+        "sources":[sha256_file(FORMAL/name) for name in ("formal_candidates.jsonl","formal_frame_indices.jsonl","formal_retrieval.jsonl",
+                    args.generator+"/predictions.jsonl")]})
+    existing=read_jsonl(pred)
+    if any(r.get("binding_sha256")!=binding or (r["query_id"],r["arm"]) not in expected for r in existing):
+        raise ValueError("Mismatched supplemental resume binding")
+    done = {(r["query_id"], r["arm"]) for r in existing if r.get("ok") is True}
+    if len(done)!=len(existing):
+        raise ValueError("Duplicate or invalid sealed predictions")
+    natural={q:{a:build_natural_retrieval_arm(q,a,retr[q]) for a in limits} for q in qids}
+    for q,packets in natural.items():
+        verify_natural_prefix_consistency(packets)
+        if args.modality_ablation:
+            packets.update({a:build_evcap_modality_arm(q,a,retr[q]) for a in arms})
+    active_qids=qids[:args.smoke_queries] if args.smoke_queries else qids
+    active={(q,a) for q in active_qids for a in arms}
+    pairs = [(q, a) for a in arms for q in active_qids if (q,a) not in done]
     progress("prepare", len(done), len(pairs), generator=args.generator, condition=args.condition)
 
     if args.generator == "videollama":
@@ -159,7 +233,11 @@ def main() -> int:
                             frames = [Image.open(p).convert("RGB") for p in fi["frames"]]
                             fidx = list(fi.get("frame_indices", range(16)))
                         else:
-                            frames, fidx = sample_frames(Path(c["video_path"]), args.num_frames)
+                            info=decoded["queries"][qid]
+                            frames=[Image.open(p).convert("RGB") for p in info["paths"]]
+                            fidx=info["indices"]
+                            if info["video_path"]!=c["video_path"] or info["sha256"]!=hash_pil_frames(frames):
+                                raise ValueError("Decoded visual inputs changed")
                     except Exception as e:
                         append_jsonl(fail, {"query_id": qid, "arm": arm, "error": f"frames:{e}"}); continue
                     q = QueryRecord(query_id=qid, dataset_id="CaReBench", source_id=None, source_id_status="UNKNOWN_OPAQUE",
@@ -169,7 +247,7 @@ def main() -> int:
                                     split=f"supplementary_{args.condition}", eligibility_status="CANDIDATE_PENDING_VERIFICATION",
                                     metadata={"condition": args.condition, "prompt_regime": args.prompt_regime,
                                               "num_frames": args.num_frames, "frame_sampling": "uniform_decode"})
-                    packet = build_natural_retrieval_arm(qid, arm, retr[qid])
+                    packet = natural[qid][arm]
                     items.append(BatchItem(query=q, packet=packet, visual_input_sha256=hash_pil_frames(frames),
                                            frame_indices=list(fidx), frame_images=frames))
                 if not items:
@@ -182,7 +260,12 @@ def main() -> int:
                         row["condition"] = args.condition
                         row["prompt_regime"] = args.prompt_regime
                         row["num_frames"] = args.num_frames
-                        append_jsonl(pred, row); append_jsonl(trace, row["input_trace"])
+                        t=row["input_trace"]
+                        expected_trace=by_query[row["query_id"]]
+                        packet=natural[row["query_id"]][row["arm"]]
+                        verify_supplementary_row(row,packet,expected_trace,args.num_frames,args.prompt_regime,args.generator)
+                        row["binding_sha256"]=binding
+                        append_jsonl_durable(pred,row)
                 except Exception as e:
                     for it in items:
                         append_jsonl(fail, {"query_id": it.query.query_id, "arm": it.packet.arm, "error": str(e)[:800]})
@@ -191,15 +274,19 @@ def main() -> int:
         finally:
             stop.set(); th.join(timeout=3)
     rows = read_jsonl(pred)
+    from uarcap_q2.common.io_utils import atomic_write_jsonl
+    atomic_write_jsonl(trace,(r["input_trace"] for r in rows))
+    keys = {(r["query_id"],r["arm"]) for r in rows}
     receipt = {"schema": "uarcap_q2.supplementary_generation.v1", "status": "SUPPLEMENTARY_GENERATION_UNVALIDATED",
                "condition": args.condition, "generator": args.generator, "model_id": adapter.model_id,
                "utc": utcnow(), "n_predictions": len(rows), "per_arm": dict(Counter(r["arm"] for r in rows)),
                "n_failures": len(read_jsonl(fail)), "elapsed_sec": round(time.time() - t0, 1),
                "peak_vram_mib": peak["peak"], "prompt_regime": args.prompt_regime, "num_frames": args.num_frames,
-               "qids": len(qids), "note": "Machine generation only; no human validation; formal run untouched."}
-    atomic_write(out / "run_receipt.json", receipt)
+               "qids": len(qids), "n_expected":len(expected), "binding_sha256":binding, "predictions_sha256":sha256_file(pred) if pred.is_file() else None, "note": "Machine generation only; no human validation; formal run untouched."}
+    receipt["accepted_for_request"]=active<=keys
+    atomic_write(out / ("smoke_receipt.json" if args.smoke_queries else "run_receipt.json"), receipt)
     print(json.dumps(receipt, indent=2))
-    return 0 if rows else 2
+    return 0 if active<=keys<=expected and len(keys)==len(rows) else 2
 
 
 if __name__ == "__main__":

@@ -1,0 +1,66 @@
+{
+  "schema": "uarcap_q2.validation_identity.v1",
+  "manifest_sha256": "ebc02155e73dbce4c848a9e96b5b9a57d40c85058d3998de1368660c2e96a3b3",
+  "manifest_timestamp_utc": "2026-11-25T18:24:02.586092+00:00",
+  "sets": {
+    "formal": {
+      "queries": 600,
+      "ids_sha256": "5d4d37d0c35063b1579b5d1247d597225584dc69b6db115e81e53d3d021712de",
+      "parents": 600,
+      "parent_ids_sha256": "8ee27ad7ade9b03fc551b831561598091f189fd0bd3ba64ab479f131378bd963"
+    },
+    "main": {
+      "queries": 540,
+      "ids_sha256": "8afea2642e787ab029c60a28030034970201556f4cd9bf62cff40af79ea70c02",
+      "parents": 540,
+      "parent_ids_sha256": "9318d63bb5fa3b13cf57168f7de4a087c475a7a7378bd255abbfa99c690a3554"
+    },
+    "validation": {
+      "queries": 60,
+      "ids_sha256": "cfaeba76b66f8de6a18fae0cc47ef8c38a3305c170a22b5b4a29cfdda163753e",
+      "parents": 60,
+      "parent_ids_sha256": "33e7e6a1cdb13a0a35f69ebffa29e0b361007d6402853432262a3f3d201cf27f"
+    },
+    "pilot": {
+      "queries": 30,
+      "ids_sha256": "70708538ef030337af0597b83509e2d64d7bd27420f4de214509b91531baf9bd",
+      "parents": 30,
+      "parent_ids_sha256": "0cc497b910f848955623ca94882044022b63c45b0a0b274a8403f0071416a376"
+    }
+  },
+  "artifacts": {
+    "videollama_evcap_frozen_v08": {
+      "prediction_sha256": "14108bc97fc278ac3ebc7ff91f729bcaebbae68793dab2de9e49fcff7f114104",
+      "evaluation_sha256": "931a0a52cdd388fddc9ac7dc70b512b758d464548312cff6c7a672c9bf372c0d",
+      "total": 1800,
+      "main": 1620,
+      "validation": 180
+    },
+    "Qwen/Qwen3.8-27B-FP8": {
+      "prediction_sha256": "ef7d61ededda05a0ce34b5729d0328ef23ac061597e642a7f4b5d74299edd2d7",
+      "evaluation_sha256": "325ea412b76afb4017e1659fc4563243b6f6edf397a5410e519a80c39a65cb43",
+      "total": 1800,
+      "main": 1620,
+      "validation": 180
+    }
+  },
+  "intersections": {
+    "main_validation_queries": 0,
+    "main_validation_parents": 0,
+    "pilot_formal_queries": 0,
+    "pilot_formal_parents": 0
+  },
+  "package_receipt": {
+    "timestamp": "2026-11-26T05:56:39.995990+00:00",
+    "sha256": "5b4a7107b1e648eebdff1580949cae06446ce7dbdf766263c5ca876000c854f2"
+  },
+  "interpretation": "INTERNAL_PROBABILITY_SUBSAMPLE_ALREADY_GENERATED_AND_MACHINE_EVALUATED",
+  "review_workload": {
+    "videos": 60,
+    "caption_arm_records": 360,
+    "unique_exact_within_video_captions": 250,
+    "claim_occurrences": 1442,
+    "unique_exact_within_video_claims": 783,
+    "human_reviews_completed": 0
+  }
+}

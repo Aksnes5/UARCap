@@ -1,0 +1,80 @@
+{
+  "schema": "uarcap_q2.laptop_scientific_gates.v1",
+  "baseline": "2027e4267dce105d47a60c8f9eedcef5c9099bda",
+  "local_cpu": "VERIFIED",
+  "bn_execution": "PENDING",
+  "gpu_executed_this_phase": false,
+  "laptop_to_bn_deployment_ready": false,
+  "gates": [
+    {
+      "id": "E3_V2",
+      "status": "PENDING_REAL_TOKENIZERS_AND_VLM",
+      "minimum": 150,
+      "starting_candidates": 159,
+      "mapped_overlaps": 2,
+      "eligible_pre_screen_max": 157,
+      "old_neu": "INVALID",
+      "qwen_legacy_prediction_count": 0
+    },
+    {
+      "id": "CAREB_BRIDGE_V2",
+      "status": "PENDING_REAL_VLM",
+      "minimum": 30,
+      "starting_candidates": 60,
+      "intervention": "text_only_with_fixed_query_visuals"
+    },
+    {
+      "id": "CAREB_INTERNAL_HUMAN",
+      "status": "AWAITING_HUMAN",
+      "videos": 60,
+      "record_count": 360,
+      "annotators_required": 2,
+      "adjudicated": 0
+    },
+    {
+      "id": "FORMAL_CONFIRMATORY",
+      "status": "BLOCKED_HUMAN_CALIBRATION_AND_AUTHORIZATION",
+      "required": [
+        "real validation imports",
+        "Pilot A2 calibration with audited reference/video labels",
+        "Pilot A3 target-expression validation",
+        "signed Formal B authorization"
+      ]
+    },
+    {
+      "id": "SOURCE_VISUAL_DUPLICATION",
+      "status": "ASSET_DEPENDENT",
+      "carebench_youtube_join": "NOT_JOINABLE",
+      "required": [
+        "time-aligned signature receipts for actual query and retrieval clips"
+      ]
+    },
+    {
+      "id": "HISTORICAL_FACT_BRIDGE",
+      "status": "REUSED_CAPTIONS_STAGED_LOCAL_EVALUATION_PENDING",
+      "videos": 60,
+      "captions": 180
+    },
+    {
+      "id": "QWEN32_64",
+      "status": "PENDING_BN_SMOKE",
+      "question": "frame sensitivity at A7",
+      "budget_interaction": "not identified"
+    },
+    {
+      "id": "SPICE",
+      "status": "SKIPPED_OPTIONAL",
+      "acceptance": "actual historical Java scorer and dependencies"
+    },
+    {
+      "id": "QWEN_RETRIEVED_VISUAL_PARITY",
+      "status": "NOT_IMPLEMENTED",
+      "reason": "EVCap independent counts are prepared. Qwen injection of retrieved frames as an experimental control requires separately pinned paired input assets and processor parity."
+    },
+    {
+      "id": "EXTERNAL_FULL_VIDEO_TRUTH",
+      "status": "AWAITING_HUMAN",
+      "reason": "A denser 64-frame proxy does not provide complete clip truth."
+    }
+  ]
+}

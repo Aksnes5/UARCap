@@ -10,7 +10,7 @@ Enforces strict scientific invariants:
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from typing import Any
 
 from ..common.io_utils import primitive_hash
@@ -100,6 +100,21 @@ def build_natural_retrieval_arm(
         visual_contract_sha256=_visual_contract_digest(reps, scores, f"NATURAL_K{k}"),
         base_visual_mode="NONE",
     )
+
+
+MODALITY_ARMS = {"T1V0":(1,0),"T7V0":(7,0),"T7V1":(7,1),"T1V7":(1,7)}
+
+
+def build_evcap_modality_arm(query_id, arm, candidates):
+    """Vary consumed text and visual counts through the existing dual-prefix interface."""
+    text_n, visual_n=MODALITY_ARMS[arm]
+    # EVCap looks up fusion weights by caption key even when that caption is beyond the text prefix.
+    wire=build_natural_retrieval_arm(query_id,f"ARM_A{max(text_n,visual_n)}",candidates)
+    clips=wire.visual_clip_ids[:visual_n]
+    scores=wire.visual_scores[:visual_n]
+    return replace(wire,arm=arm,text_topn=text_n,visual_topn=visual_n,text_evidence=wire.text_evidence[:text_n],
+                   visual_clip_ids=clips,visual_scores=scores,base_visual_mode="FIXED_EVCAP_ABLATION",
+                   visual_contract_sha256=_visual_contract_digest(clips,scores,f"K{visual_n}"))
 
 
 def verify_natural_prefix_consistency(packets_by_arm: dict[str, ArmInputPacket]) -> None:

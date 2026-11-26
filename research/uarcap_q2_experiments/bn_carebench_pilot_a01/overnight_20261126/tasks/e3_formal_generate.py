@@ -11,7 +11,7 @@ from pathlib import Path
 from PIL import Image
 
 BASE=Path(os.environ.get("OVERNIGHT_BASE","/home/bn/uarcap_q2_runtime/overnight/20261126"))
-REPO="/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments"; sys.path.insert(0,REPO)
+REPO=str(Path(__file__).resolve().parents[3]); sys.path.insert(0,REPO)
 W=Path("/home/bn/uarcap_q2_runtime/outputs/pilot_e3_exploratory")
 APPROVED=W/"E3_FORMAL_APPROVED.json"
 FRAMES=W/"E3_FORMAL_FRAMES"
@@ -23,14 +23,29 @@ def read(p): return [json.loads(l) for l in open(p)] if Path(p).is_file() else [
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--generator",choices=["videollama","qwen"],required=True); ap.add_argument("--chunk",type=int,default=45)
     ap.add_argument("--approved",type=Path,default=APPROVED); ap.add_argument("--out-prefix",default="formal")
-    ap.add_argument("--frames-dir",type=Path,default=FRAMES); ap.add_argument("--min-approved",type=int,default=MIN); a=ap.parse_args()
+    ap.add_argument("--frames-dir",type=Path,default=FRAMES); ap.add_argument("--min-approved",type=int,default=MIN); ap.add_argument("--out-dir",type=Path); ap.add_argument("--reuse-predictions",type=Path); a=ap.parse_args()
     if not a.approved.is_file(): print(f"HARD_BLOCK: {a.approved} missing"); return 3
-    ap_data=json.loads(a.approved.read_text()); approved=ap_data.get("approved",[])
-    if len(approved)<a.min_approved:
+    from uarcap_q2.interventions.neutral_repair import V2
+    from uarcap_q2.common.io_utils import append_jsonl_durable, atomic_write_json, atomic_write_jsonl, primitive_hash, sha256_file
+    ap_data=json.loads(a.approved.read_text(encoding="utf-8"))
+    bridge=ap_data.get("scope")=="CAREB_BRIDGE"
+    minimum=max(30 if bridge else 150,a.min_approved)
+    approved=ap_data.get("approved",[])
+    if ap_data.get("schema")!=V2 or ap_data.get("eligible") is not True or len(approved)<minimum:
+        print("HARD_BLOCK unapproved or undersized E3 V2 freeze")
         print(json.dumps({"status":"AWAITING_SUFFICIENT_CANDIDATES","n_approved":len(approved),"min":a.min_approved})); return 3
-    out=W/(a.out_prefix+"_"+a.generator); out.mkdir(parents=True,exist_ok=True)
+    out=a.out_dir or W/(a.out_prefix+"_v2_"+a.generator); out.mkdir(parents=True,exist_ok=True)
     pred=out/"predictions.jsonl"; trace=out/"input_traces.jsonl"; fail=out/"failures.jsonl"
-    done={(r["query_id"],r["arm"]) for r in read(pred)}
+    arms=("E3_BASE","E3_SUP","E3_CON","E3_NEU")
+    cands={c["query_id"]:c for c in approved}
+    if len(cands)!=len(approved) or any(not (c.get("neutral_text") or "").strip() for c in approved):
+        raise ValueError("Duplicate candidates or missing verified neutral")
+    expected={(q,arm) for q in cands for arm in arms}
+    binding=primitive_hash([ap_data,str(a.frames_dir),a.generator,sha256_file(Path(__file__))])
+    existing=read(pred)
+    done={(r["query_id"],r["arm"]) for r in existing if r.get("binding_sha256")==binding and r.get("ok") is True}
+    if len(existing)!=len(done) or done-expected:
+        raise ValueError("Incompatible E3 V2 resume")
     from uarcap_q2.common.gpu_lock import GPULockConfig, acquire_cooperative_gpu_lock
     from uarcap_q2.common.schemas import PilotStage, QueryRecord
     from uarcap_q2.generators.base import BatchItem
@@ -57,8 +72,20 @@ def main():
             multimodal_input_key="image",prompt_regime="short_aligned",max_new_tokens=48,temperature=0.0,
             quantization="fp8",gpu_memory_utilization=0.88,max_model_len=8192,max_num_seqs=64))
         stage=PilotStage.PILOT_A3
+    from uarcap_q2.generators.videollama_adapter import FROZEN_BASE_ARGS, FROZEN_PROMPT_REL
+    from uarcap_q2.interventions.e3_output import can_reuse
+    if a.reuse_predictions and (bridge or a.generator!="videollama"):
+        raise ValueError("Legacy reuse only available for VidHalluc Video-LLaMA")
+    if a.reuse_predictions and a.reuse_predictions.is_file():
+        for original in read(a.reuse_predictions):
+            k=(original["query_id"],original["arm"])
+            if k in expected and k not in done and can_reuse(original,cands[k[0]],FROZEN_BASE_ARGS,FROZEN_PROMPT_REL):
+                row={**original,"binding_sha256":binding,"reuse_source_sha256":primitive_hash(original),
+                     "execution_mode":"FORMAL_E3_MACHINE_ASSISTED_UNVALIDATED_V2"}
+                append_jsonl_durable(pred,row)
+                done.add(k)
     with acquire_cooperative_gpu_lock(lock):
-        for arm in ("E3_BASE","E3_SUP","E3_CON","E3_NEU"):
+        for arm in arms:
             pend=[c for c in approved if (c["query_id"],arm) not in done]
             step=a.chunk if a.generator=="videollama" else 5
             for start in range(0,len(pend),step):
@@ -70,29 +97,39 @@ def main():
                         with fail.open("a") as f: f.write(json.dumps({"query_id":c["query_id"],"arm":arm,"error":"MISSING_NEUTRAL_TEXT"})+"\n")
                         continue
                     frames=[Image.open(p).convert("RGB") for p in fps]
+                    if hash_pil_frames(frames)!=c["frame_sha256"]:
+                        raise ValueError(f'{c["query_id"]}: mismatch to screened frames')
+                    positive = c["f_plus"] if bridge else c["true_action"]
+                    negative = c["f_minus"] if bridge else c["conflict_action"]
                     sid=str(c.get("source_id") or "")
                     sid_status="VERIFIED_EXACT" if len(sid)==11 and all(ch.isalnum() or ch in "-_" for ch in sid) else "UNKNOWN_OPAQUE"
-                    q=QueryRecord(query_id=c["query_id"],dataset_id="VidHalluc-ACH",source_id=(sid or None),source_id_status=sid_status,
-                        video_path=c["video_path"],video_sha256=None,duration=None,domain="ACH",reference_description=c["true_action"],
-                        reference_events=[c["true_action"]],core_events=[c["true_action"]],target_true_fact=c["true_action"],
-                        candidate_conflict_fact=c["conflict_action"],split="formal_e3_candidate_unvalidated",
+                    q=QueryRecord(query_id=c["query_id"],dataset_id="CaReBench-E3-Bridge" if bridge else "VidHalluc-ACH",source_id=(sid or None),source_id_status=sid_status,
+                        video_path=c["video_path"],video_sha256=None,duration=None,domain="ACH",reference_description=positive,
+                        reference_events=[positive],core_events=[positive],target_true_fact=positive,
+                        candidate_conflict_fact=negative,split="formal_e3_candidate_unvalidated",
                         eligibility_status="CANDIDATE_PENDING_VERIFICATION",
                         metadata={"frame_sampling":"16 uniformly sampled frames; not full video","neutral_text_provenance":c.get("neutral_provenance","UNVERIFIED_POOL")})
-                    pk=build_e3_intervention_arms(c["query_id"],c["true_action"],c["conflict_action"],c["neutral_text"],base_visual_mode="BASE_A0")
+                    pk=build_e3_intervention_arms(c["query_id"],positive,negative,c["neutral_text"],base_visual_mode="BASE_A0")
                     items.append(BatchItem(query=q,packet=pk[arm],visual_input_sha256=hash_pil_frames(frames),frame_indices=list(range(16)),frame_images=frames))
                 if not items: continue
                 try:
                     outs=adapter.generate_batch(items,stage,work_dir=out/"work",run_id="formal_e3")
                     for o in outs:
-                        row=o.to_dict(); row["execution_mode"]="FORMAL_E3_MACHINE_ASSISTED_UNVALIDATED"
-                        with pred.open("a") as f: f.write(json.dumps(row,ensure_ascii=False)+"\n")
-                        with trace.open("a") as f: f.write(json.dumps(row["input_trace"],ensure_ascii=False)+"\n")
+                        row=o.to_dict()
+                        from uarcap_q2.interventions.e3_output import verify_prediction
+                        c=cands[row["query_id"]]
+                        verify_prediction(row,c,bridge)
+                        row.update(binding_sha256=binding,execution_mode="FORMAL_E3_MACHINE_ASSISTED_UNVALIDATED_V2")
+                        append_jsonl_durable(pred,row)
                 except Exception as e:
                     for it in items:
                         with fail.open("a") as f: f.write(json.dumps({"query_id":it.query.query_id,"arm":arm,"error":str(e)[:600]})+"\n")
-    rows=read(pred); receipt={"schema":"uarcap_q2.formal_e3_generation.v1","status":"FORMAL_E3_MACHINE_ASSISTED_UNVALIDATED",
-        "generator":a.generator,"n_approved":len(approved),"n_predictions":len(rows),"n_failures":len(read(fail)),
+    rows=read(pred)
+    atomic_write_jsonl(trace,(r["input_trace"] for r in rows))
+    complete={(r["query_id"],r["arm"]) for r in rows}==expected and len(rows)==len(expected)
+    receipt={"schema":"uarcap_q2.formal_e3_generation.v1","status":"FORMAL_E3_MACHINE_ASSISTED_UNVALIDATED",
+        "generator":a.generator,"n_approved":len(approved),"n_predictions":len(rows),"n_expected":len(expected),"complete":complete,"binding_sha256":binding,"cohort_sha256":primitive_hash(ap_data),"n_failures":len(read(fail)),
         "utc":utcnow(),"note":"No human verification; no confirmatory statistics."}
-    (out/"run_receipt.json").write_text(json.dumps(receipt,indent=2)); print(json.dumps(receipt,indent=2)); return 0
+    atomic_write_json(out/"run_receipt.json",receipt); print(json.dumps(receipt,indent=2)); return 0 if complete else 2
 
 if __name__=="__main__": raise SystemExit(main())

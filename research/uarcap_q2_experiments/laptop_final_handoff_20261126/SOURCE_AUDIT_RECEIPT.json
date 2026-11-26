@@ -1,0 +1,31 @@
+{
+  "schema": "uarcap_q2.source_risk.v1",
+  "video_ufo_sources": 345437,
+  "pilot_sources": 30,
+  "formal_sources": 159,
+  "pilot_videoufo_overlap": 0,
+  "formal_exclusions": [
+    {
+      "query_id": "vidhalluc_SuKgZbVHL2o_clip_2",
+      "source_id": "SuKgZbVHL2o",
+      "overlap": [
+        "Historical"
+      ]
+    },
+    {
+      "query_id": "vidhalluc_X1mE2IWeamI_clip_1",
+      "source_id": "X1mE2IWeamI",
+      "overlap": [
+        "Historical"
+      ]
+    }
+  ],
+  "historical_overlap_status": "CHECKED_MAPPED_IDS",
+  "carebench_source_join": "NOT_JOINABLE",
+  "input_sha256": {
+    "clips_full.tsv": "f2bacf23ecb4803feb4cc585f24b149a49493f0c5f0d6882f43482a1e6ee4b5a",
+    "E3_PILOT_EXCLUSION.json": "81a0027cba296cb7ab61efa964ad72c378b5ec6faa860f4bbcfb5dad2f563633",
+    "E3_FORMAL_APPROVED.json": "bbe38f396628b45f256b743c91f34790f3b69e910c0f811bf8fe090f27129476",
+    "historical_youtube_ids.txt": "8e2579e6d0da32b5fa0d85ac261433f65242c0c49846023443cbd295b2d9afa9"
+  }
+}

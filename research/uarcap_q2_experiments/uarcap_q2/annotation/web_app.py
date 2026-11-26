@@ -261,11 +261,41 @@ function mergeClaims(bcid, claimIdsCsv) {
   render();
 }
 
+function setReferenceEndpoint(bcid, field, raw) {
+  const t = STATE.bundle.tasks[STATE.idx];
+  const rec = ensureRec(t);
+  if (!rec.captions[bcid]) rec.captions[bcid] = { claims: {}, added_claims: [] };
+  const chosen = t.captions.find(x => x.blind_caption_id === bcid);
+  const value = raw === '' ? null : Number(raw);
+  for (const c of t.captions.filter(x => x.caption === chosen.caption)) {
+    if (!rec.captions[c.blind_caption_id]) rec.captions[c.blind_caption_id] = { claims: {}, added_claims: [] };
+    const linked=rec.captions[c.blind_caption_id];
+    if (!linked.endpoints) linked.endpoints = {};
+    linked.endpoints[field] = value;
+  }
+  saveCurrent(false);
+}
+
+function escapeText(value) {
+  const element = document.createElement('span');
+  element.textContent = value || '';
+  return element.innerHTML;
+}
+
 async function saveCurrent(markComplete) {
   const t = STATE.bundle.tasks[STATE.idx];
   const rec = ensureRec(t);
   rec.elapsed_sec = (rec.elapsed_sec || 0) + STATE.secOnTask;
   STATE.secOnTask = 0;
+  if (markComplete && t.human_reference_spans?.length) {
+    const complete = t.captions.every(c => {
+      const values = rec.captions[c.blind_caption_id]?.endpoints;
+      return values && Number.isInteger(values.n_contra_ref) && values.n_contra_ref >= 0
+            && (values.r_core_ref === 0 || values.r_core_ref === 1);
+    });
+    if (!rec.phase1_confirmed || !complete) { alert('Complete both reference endpoints for each caption.'); return; }
+    rec.reference_endpoints_reviewed = true;
+  }
   if (markComplete) rec.completed = true;
   await fetch('/api/save', {
     method: 'POST', headers: {'Content-Type': 'application/json'},
@@ -299,31 +329,48 @@ function render() {
   if (t.task_type === 'E2_FACT_AUDIT') {
     const cls = rec.phase1_confirmed ? '' : 'locked';
     let html = `<div class="${cls}"><h3>Phase 2: Blind Caption Fact Verification</h3>`;
+    if (rec.phase1_confirmed && t.human_reference_spans?.length) {
+      html += `<details><summary>Frozen written references for the separate endpoint review</summary>
+                <p>Core event: ${escapeText(t.frozen_reference_core)}</p>
+                ${t.human_reference_spans.map(text => '<p>' + escapeText(text) + '</p>').join('')}
+               </details>`;
+    }
     for (const c of t.captions) {
       const crec = rec.captions[c.blind_caption_id] || { claims: {}, added_claims: [], core_covered: false, notes: '' };
-      html += `<div class="cap-card"><div><span class="pill">${c.blind_caption_id}</span> <strong>${c.caption}</strong></div>`;
+      html += `<div class="cap-card"><div><span class="pill">${c.blind_caption_id}</span> <strong>${escapeText(c.caption)}</strong></div>`;
       for (const cl of c.claims) {
-        const cacheKey = `${taskKey(t)}::${cl.norm_key}`;
+        const cacheKey = `${taskKey(t)}::${cl.exact_claim_key || cl.claim_id}`;
         const cur = crec.claims[cl.claim_id] || STATE.claimCache[cacheKey] || '';
         const reusedTag = (!crec.claims[cl.claim_id] && STATE.claimCache[cacheKey]) ? ' <span class="pill">reused suggestion</span>' : '';
-        html += `<div class="claim-box"><div>${cl.text}${reusedTag}</div><div>`;
+        html += `<div class="claim-box"><div>${escapeText(cl.text)}${reusedTag}</div><div>`;
         for (const [lbl, bcls] of LABELS) {
           const act = (cur === lbl) ? 'btn-active' : '';
-          html += `<button class="btn ${bcls} ${act}" onclick="setClaimLabel('${c.blind_caption_id}','${cl.claim_id}','${cl.norm_key}','${lbl}')">${lbl}</button>`;
+          html += `<button class="btn ${bcls} ${act}" onclick="setClaimLabel('${c.blind_caption_id}','${cl.claim_id}','${cl.exact_claim_key || cl.claim_id}','${lbl}')">${lbl}</button>`;
         }
         html += `<button class="btn" onclick="splitClaim('${c.blind_caption_id}','${cl.claim_id}')">Split</button>`;
         html += `</div></div>`;
       }
       if (crec.added_claims && crec.added_claims.length) {
-        html += `<div><em>Added claims:</em> ` + crec.added_claims.map(x => `${x.text} [${x.label}]`).join('; ') + `</div>`;
+        html += `<div><em>Added claims:</em> ` + crec.added_claims.map(x => `${escapeText(x.text)} [${escapeText(x.label)}]`).join('; ') + `</div>`;
       }
       if (crec.claim_revisions && crec.claim_revisions.length) {
         html += `<div><em>Revisions (split/merge):</em> ` + crec.claim_revisions.map(r => `${r.revision_type}(${r.source_claim_ids.join(',')})`).join('; ') + `</div>`;
       }
+      if (rec.phase1_confirmed && t.human_reference_spans?.length) {
+        const e = crec.endpoints || {};
+        html += `<div><strong>Written-reference endpoints</strong>
+          <label>Contradicted atomic facts <input type="number" min="0" step="1"
+           value="${e.n_contra_ref ?? ''}" onchange="setReferenceEndpoint('${c.blind_caption_id}','n_contra_ref',this.value)"></label>
+          <label>Core event expressed
+          <select onchange="setReferenceEndpoint('${c.blind_caption_id}','r_core_ref',this.value)">
+            <option value="">Pending</option><option value="0" ${e.r_core_ref===0?'selected':''}>No</option>
+            <option value="1" ${e.r_core_ref===1?'selected':''}>Yes</option>
+          </select></label></div>`;
+      }
       const allCids = c.claims.map(x => x.claim_id).join(',');
       html += `<div style="margin-top:6px;"><button class="btn" onclick="addMissingClaim('${c.blind_caption_id}')">+ Add Omitted Claim</button> <button class="btn" onclick="mergeClaims('${c.blind_caption_id}','${allCids}')">Merge Claims</button></div></div>`;
     }
-    html += `<button class="btn btn-ok" onclick="saveCurrent(true); nav(1);">Mark Video Complete & Next &rarr;</button></div>`;
+    html += `<button class="btn btn-ok" onclick="saveCurrent(true).then(() => { if (ensureRec(STATE.bundle.tasks[STATE.idx]).completed) nav(1); });">Mark Video Complete & Next &rarr;</button></div>`;
     work.innerHTML = html;
   } else {
     const e = rec.e3;
@@ -343,7 +390,7 @@ function render() {
         <label><input type="checkbox" ${e.partial ? 'checked' : ''} onchange="STATE.saved['${taskKey(t)}'].e3.partial=this.checked;saveCurrent(false);" /> Partial Match</label>
         <label><input type="checkbox" ${e.generic_only ? 'checked' : ''} onchange="STATE.saved['${taskKey(t)}'].e3.generic_only=this.checked;saveCurrent(false);" /> Generic Hypernym Only</label>
       </div>
-      <div style="margin-top:10px;"><button class="btn btn-ok" onclick="saveCurrent(true); nav(1);">Mark Complete & Next &rarr;</button></div>
+      <div style="margin-top:10px;"><button class="btn btn-ok" onclick="saveCurrent(true).then(() => { if (ensureRec(STATE.bundle.tasks[STATE.idx]).completed) nav(1); });">Mark Complete & Next &rarr;</button></div>
     `;
   }
 }

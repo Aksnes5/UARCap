@@ -30,7 +30,6 @@ ROOT = Path(__file__).resolve().parents[1]
 O = Path("/home/bn/uarcap_q2_runtime/outputs")
 FORMAL = O / "formal_candidate_unvalidated"
 OUT = O / "final_analysis/metric_bridge"
-OUT.mkdir(parents=True, exist_ok=True)
 
 
 def utcnow(): return datetime.now(timezone.utc).isoformat()
@@ -63,19 +62,30 @@ def compute_metrics(refs, preds, skip_spice=False):
     from pycocoevalcap.meteor.meteor import Meteor
     from pycocoevalcap.rouge.rouge import Rouge
     from pycocoevalcap.cider.cider import Cider
+    if refs.keys()!=preds.keys() or not refs:
+        raise ValueError("Metrics require identical nonempty reference and prediction IDs")
     qids = sorted(refs)
+    refs = {q:refs[q] for q in qids}
+    preds = {q:preds[q] for q in qids}
     res = {q: {} for q in qids}
     corpus = {}
     b4, bs = Bleu(4).compute_score(refs, preds)
     corpus.update({"BLEU_1": float(b4[0]), "BLEU_4": float(b4[3])})
-    for q, s in zip(qids, bs):
-        res[q]["BLEU_1"] = float(s[0]); res[q]["BLEU_4"] = float(s[3])
+    if len(bs)!=4 or any(len(column)!=len(qids) for column in bs):
+        raise ValueError("BLEU scorer returned an incompatible score matrix")
+    for q,b1,b4_item in zip(qids,bs[0],bs[3]):
+        res[q]["BLEU_1"]=float(b1)
+        res[q]["BLEU_4"]=float(b4_item)
     for key, scorer in (("METEOR", Meteor()), ("ROUGE_L", Rouge())):
         score, scores = scorer.compute_score(refs, preds)
         corpus[key] = float(score)
+        if len(scores)!=len(qids):
+            raise ValueError(f"{key} scorer returned wrong number of items")
         for q, s in zip(qids, scores): res[q][key] = float(s)
     score, scores = Cider().compute_score(refs, preds)
     corpus["CIDEr"] = float(score)
+    if len(scores)!=len(qids):
+        raise ValueError("CIDEr scorer returned wrong number of items")
     for q, s in zip(qids, scores): res[q]["CIDEr"] = float(s)
     corpus["SPICE"] = None; corpus["SPICE_status"] = "SKIPPED"
     if not skip_spice:
@@ -95,7 +105,18 @@ def Spice_fn():
 
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--skip-spice", action="store_true"); args = ap.parse_args()
+    global FORMAL, OUT
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--skip-spice", action="store_true")
+    ap.add_argument("--formal", type=Path, default=FORMAL)
+    ap.add_argument("--extension-root", type=Path)
+    ap.add_argument("--out-dir", type=Path, required=True)
+    args=ap.parse_args()
+    FORMAL=args.formal
+    OUT=args.out_dir
+    if OUT.resolve()==(O/"final_analysis/metric_bridge").resolve():
+        raise ValueError("Use versioned output for the repaired metric join")
+    OUT.mkdir(parents=True,exist_ok=True)
     candidates = read_jsonl(FORMAL / "formal_candidates.jsonl")
     cand = {c["query_id"]: c for c in candidates}
     short_rows = yaml_check_core_short(candidates)
@@ -108,6 +129,14 @@ def main():
              "formal_qwen": read_jsonl(FORMAL / "qwen_eval/a2_ref_fact_eval.jsonl")}
     cross = {"formal_videollama": {(r["query_id"], r["norm_key"]): r for r in read_jsonl(FORMAL / "videollama_machine_cross/A2_CROSS_JUDGE_LABELS.jsonl")},
              "formal_qwen": {(r["query_id"], r["norm_key"]): r for r in read_jsonl(FORMAL / "qwen_machine_cross/A2_CROSS_JUDGE_LABELS.jsonl")}}
+
+    if args.extension_root:
+        for label, slug in (("formal_videollama","videollama"),("formal_qwen","qwen")):
+            folder=args.extension_root/slug
+            preds[label]+=read_jsonl(folder/"predictions.jsonl")
+            evals[label]+=read_jsonl(folder/"eval/a2_ref_fact_eval.jsonl")
+            cross[label].update({(r["query_id"],r["norm_key"]):r for r in read_jsonl(folder/"cross/A2_CROSS_JUDGE_LABELS.jsonl")})
+    arms=("ARM_A0","ARM_A1","ARM_A3","ARM_A5","ARM_A7") if args.extension_root else ("ARM_A0","ARM_A1","ARM_A7")
 
     def fact_map(model):
         out = {}
@@ -128,7 +157,8 @@ def main():
                 key = " ".join(t for t in re.sub(r"[^a-z0-9'\s]", " ", cl["claim"].lower()).split() if t not in {"a","an","the"})
                 o = cross[model].get((q, key))
                 if o: c[o["llama_label"]] += 1
-            out[(q, arm)] = {"n_entail": c["entailed"], "n_contra": c["contradicted"], "n_unment": c["unmentioned"]}
+            if sum(c.values())==len(r["claims"]):
+                out[(q, arm)] = {"n_entail": c["entailed"], "n_contra": c["contradicted"], "n_unment": c["unmentioned"]}
         return out
 
     all_rows = []
@@ -138,62 +168,64 @@ def main():
         fmap = fact_map(model); lmap = llama_fact_map(model)
         by_arm = defaultdict(dict)
         for p in plist:
+            if p["query_id"] in by_arm[p["arm"]] or not p.get("ok") or not p.get("caption"):
+                raise ValueError("Duplicate or invalid prediction")
             by_arm[p["arm"]][p["query_id"]] = p
         for ref_mode, refs in (("R-Full", ref_full), ("R-Short", ref_short)):
-            for arm in ("ARM_A0", "ARM_A1", "ARM_A7"):
-                pred_dict = {q: str(by_arm[arm][q].get("caption", "")) for q in refs if q in by_arm[arm]}
+            for arm in arms:
+                if set(by_arm[arm])!=set(cand):
+                    raise ValueError("Budget arm is missing a frozen query")
+                pred_dict = {q: by_arm[arm][q]["caption"] for q in refs}
                 corpus, per = compute_metrics({q: [refs[q]] for q in pred_dict}, {q: [pred_dict[q]] for q in pred_dict}, args.skip_spice)
-                summaries.append({"model": model, "ref_mode": ref_mode, "arm": arm, "n_videos": len(pred_dict), **corpus})
+                summaries.append({"model": model, "ref_mode": ref_mode, "arm": arm, "n_videos": len(pred_dict), **corpus, "CIDEr_points_x100":corpus["CIDEr"]*100})
                 for q, sc in per.items():
                     f = fmap.get((q, arm)) or {}
                     l = lmap.get((q, arm)) or {}
                     all_rows.append({"model": model, "ref_mode": ref_mode, "query_id": q, "arm": arm,
-                                     "caption": pred_dict[q], "reference": refs[q],
+                                     "caption": pred_dict[q], "reference": refs[q], "CIDEr_points_x100":sc["CIDEr"]*100,
                                      **{k: sc.get(k) for k in ("BLEU_1","BLEU_4","METEOR","ROUGE_L","CIDEr","SPICE")},
                                      **{k: f.get(k) for k in ("n_entail","n_contra","n_unment","n_claims","r_core","caption_words")},
                                      "llama_n_entail": l.get("n_entail"), "llama_n_contra": l.get("n_contra")})
         # paired changes at video level
         for ref_mode in ("R-Full", "R-Short"):
             idx = {(r["query_id"], r["arm"]): r for r in all_rows if r["model"] == model and r["ref_mode"] == ref_mode}
-            for a, b in (("ARM_A0","ARM_A1"),("ARM_A1","ARM_A7"),("ARM_A0","ARM_A7")):
+            for a, b in [*(("ARM_A0",a) for a in arms[1:]),*zip(arms[1:],arms[2:])]:
                 qs = sorted({q for q, arm in idx if arm == a} & {q for q, arm in idx if arm == b})
                 if not qs: continue
-                def corr(kind):
-                    pairs = [(idx[(q,b)][kind] - idx[(q,a)][kind], (idx[(q,b)].get("n_entail",0) or 0) - (idx[(q,a)].get("n_entail",0) or 0)) for q in qs if idx[(q,a)].get(kind) is not None and idx[(q,b)].get(kind) is not None]
-                    if len(pairs) < 3: return None
-                    x = [p[0] for p in pairs]; y = [p[1] for p in pairs]
-                    try: return round(float(spearmanr(x, y).correlation), 4)
-                    except Exception: return None
                 def corr_field(kind, field):
-                    pairs = [(idx[(q,b)][kind] - idx[(q,a)][kind], (idx[(q,b)].get(field) or 0) - (idx[(q,a)].get(field) or 0)) for q in qs if idx[(q,a)].get(kind) is not None and idx[(q,b)].get(kind) is not None]
-                    if len(pairs) < 3: return None
+                    pairs = [(idx[(q,b)][kind] - idx[(q,a)][kind], idx[(q,b)][field] - idx[(q,a)][field])
+                             for q in qs if all(idx[q,z].get(key) is not None for z in (a,b) for key in (kind,field))]
+                    if len(pairs) < 3 or len({z[0] for z in pairs})<2 or len({z[1] for z in pairs})<2: return None
                     try: return round(float(spearmanr([p[0] for p in pairs], [p[1] for p in pairs]).correlation), 4)
                     except Exception: return None
-                down_support_up = sum(1 for q in qs if idx[(q,b)]["CIDEr"] < idx[(q,a)]["CIDEr"] and (idx[(q,b)].get("n_entail",0) or 0) > (idx[(q,a)].get("n_entail",0) or 0))
-                up_conflict_up = sum(1 for q in qs if idx[(q,b)]["CIDEr"] > idx[(q,a)]["CIDEr"] and (idx[(q,b)].get("n_contra",0) or 0) > (idx[(q,a)].get("n_contra",0) or 0))
+                judge_qs=[q for q in qs if all(idx[q,z].get(m) is not None for z in (a,b)
+                                                for m in ("n_entail","n_contra","llama_n_entail","llama_n_contra"))]
+                complete=[q for q in qs if all(idx[q,z].get(m) is not None for z in (a,b) for m in ("n_entail","n_contra"))]
+                down_support_up = sum(1 for q in complete if idx[(q,b)]["CIDEr"] < idx[(q,a)]["CIDEr"] and (idx[(q,b)].get("n_entail",0) or 0) > (idx[(q,a)].get("n_entail",0) or 0))
+                up_conflict_up = sum(1 for q in complete if idx[(q,b)]["CIDEr"] > idx[(q,a)]["CIDEr"] and (idx[(q,b)].get("n_contra",0) or 0) > (idx[(q,a)].get("n_contra",0) or 0))
                 paired[f"{model}|{ref_mode}|{a}->{b}"] = {
-                    "n": len(qs), "spearman_cider_vs_support": corr_field("CIDEr","n_entail"),
+                    "n": len(qs), "n_complete_facts":len(complete),"n_complete_dual_judge":len(judge_qs), "spearman_cider_vs_support": corr_field("CIDEr","n_entail"),
                     "spearman_cider_vs_conflict": corr_field("CIDEr","n_contra"),
                     "spearman_cider_vs_core": corr_field("CIDEr","r_core"),
                     "spearman_cider_vs_length": corr_field("CIDEr","caption_words"),
                     "cider_down_support_up_n": down_support_up,
-                    "cider_down_support_up_rate": round(down_support_up/len(qs), 4),
+                    "cider_down_support_up_rate": round(down_support_up/len(complete), 4) if complete else None,
                     "cider_up_conflict_up_n": up_conflict_up,
-                    "cider_up_conflict_up_rate": round(up_conflict_up/len(qs), 4),
-                    "judge_direction_consistency_support": round(sum(1 for q in qs if np.sign(((idx[(q,b)].get("n_entail",0) or 0)-(idx[(q,a)].get("n_entail",0) or 0))) == np.sign(((idx[(q,b)].get("llama_n_entail",0) or 0)-(idx[(q,a)].get("llama_n_entail",0) or 0))))/len(qs),4),
+                    "cider_up_conflict_up_rate": round(up_conflict_up/len(complete), 4) if complete else None,
+                    "judge_direction_consistency_support": round(sum(1 for q in judge_qs if np.sign(((idx[(q,b)].get("n_entail",0) or 0)-(idx[(q,a)].get("n_entail",0) or 0))) == np.sign(((idx[(q,b)].get("llama_n_entail",0) or 0)-(idx[(q,a)].get("llama_n_entail",0) or 0))))/len(judge_qs),4) if judge_qs else None,
                 }
     # write per-video + summary + receipt
     with (OUT/"E2_METRIC_BRIDGE_PER_VIDEO.jsonl").open("w", encoding="utf-8") as f:
         for r in all_rows: f.write(json.dumps(r, ensure_ascii=False) + "\n")
     with (OUT/"E2_METRIC_BRIDGE_SUMMARY.csv").open("w", newline="", encoding="utf-8") as f:
-        keys = list(summaries[0].keys()) if summaries else []
+        keys = list(dict.fromkeys(k for row in summaries for k in row))
         w = csv.DictWriter(f, fieldnames=keys); w.writeheader(); w.writerows(summaries)
     (OUT/"E2_METRIC_BRIDGE_PAIRED.json").write_text(json.dumps(paired, indent=2), encoding="utf-8")
     # figure
     try:
         import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
-        fig, ax = plt.subplots(figsize=(7,3.5))
-        labels = list(paired); vals = [paired[k]["cider_down_support_up_rate"] for k in labels]
+        fig, ax = plt.subplots(figsize=(8,max(3.5,len(paired)*.17)))
+        labels = list(paired); vals = [np.nan if paired[k]["cider_down_support_up_rate"] is None else paired[k]["cider_down_support_up_rate"] for k in labels]
         ax.barh(range(len(labels)), vals); ax.set_yticks(range(len(labels))); ax.set_yticklabels(labels, fontsize=7)
         ax.set_xlabel("P(CIDEr down & support facts up)"); ax.set_title("E2-Metric-Bridge paired changes (post-hoc)")
         for fmt in ("pdf","svg","png"): fig.savefig(OUT/f"fig_metric_bridge.{fmt}", bbox_inches="tight", dpi=200)
@@ -226,7 +258,7 @@ def main():
           f"- R-Short valid human substring rate: {ref_summary['short_validity_rate']} ({len(valid_short)}/{len(candidates)})",
           f"- Word length R-Full mean/median: {ref_summary['full_words_mean']} / {ref_summary['full_words_median']}; R-Short: {ref_summary['short_words_mean']} / {ref_summary['short_words_median']}",
           f"- SPICE: {receipt['spice_status']}", "",
-          "Traditional metrics are computed on the same 600 videos and same 3,600 captions. CaReBench is single-reference; absolute scores are NOT comparable to multi-reference MSR-VTT/MSVD.", "",
+          "Traditional metrics use one fixed reference cohort per mode across all arms. CaReBench is single-reference; absolute scores are NOT comparable to multi-reference MSR-VTT/MSVD.", "",
           "## Corpus summary", "", "| model | ref | arm | n | BLEU-1 | BLEU-4 | METEOR | ROUGE-L | CIDEr | SPICE |", "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
     for s in summaries: md.append(f"| {s['model']} | {s['ref_mode']} | {s['arm']} | {s['n_videos']} | {s.get('BLEU_1'):.4f} | {s.get('BLEU_4'):.4f} | {s.get('METEOR'):.4f} | {s.get('ROUGE_L'):.4f} | {s.get('CIDEr'):.4f} | {s.get('SPICE')} |")
     md += ["", "## Paired change relations (video-level, Spearman)", "", "| model | ref | transition | n | CIDEr~support | CIDEr~conflict | CIDEr~core | CIDEr~length | CIDEr↓ & support↑ | CIDEr↑ & conflict↑ | judge direction agreement |", "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
