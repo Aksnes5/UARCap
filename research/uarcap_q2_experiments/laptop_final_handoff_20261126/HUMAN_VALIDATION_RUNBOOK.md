@@ -10,3 +10,15 @@
 6. 原协议的 Pilot A2 校准与 Pilot A3 人工验证继续单独验收。参考终点已经有效仲裁仍需相应先决回执。Gemma/Llama 的机器分歧用于另行组织诊断与仲裁，主概率样本照原概率核验。若另抽分歧富集样本，按单独诊断报告，不将未登记纳入概率带入现有两阶段估计。E3 的全视频真值、原 16 帧可见性和 Neu 兼容性需要按 V2 被批准数量另建人工任务清单。
 
 当前已生成真实盲法任务包，尚无任何真实人工标签、签入或仲裁。严禁公开映射、私有审阅文件和媒体。[样本与工作量](VALIDATION_SET_IDENTITY_RECEIPT.json)
+
+## V2 统一门户
+
+保留原 60 视频概率任务及既定权重。使用现有 Pilot A2 双盲包完成视觉校准。V2 加载 `scripts/q2_human_portal.py build`，用 `--internal` 各传两人原参考包，用 `--pilot-a2` 各传两人现有 Pilot A2 包。按同一顺序给两个 `--annotator`。用随机私有密钥文件 `--secret`，管理员独占 `PRIVATE_PORTAL_KEY.json`。可用多个 `--input` 加载不同独立批次。
+
+`stage-e3 --module A3` 读取原 Pilot 候选账本和已存字幕，旧无效 Neu 留在历史。正式 E3 运行后，以 `E3_CANDIDATE` 及 `E3_BRIDGE` 从各自冻结候选、完整视频、16帧目录构建盲任务。三个角色每个各保留完整视频和帧可见性，界面中隐藏角色。以 `E3_OUTPUT` 从对应冻结包、真实生成收据和字幕文件选固定种子哈希顺序前 30 个查询，保留逐模型全臂双目标作为后设抽检。它不改变原概率样本或确认性检验族。
+
+管理员为每个评审在隔离账号/目录和回环端口启动 `scripts/launch_annotation_ui.py --bundle <blind.json> --save-dir <isolated-dir> --port <unique-port> --access-token-file <private-token-file> --no-browser`。连接该人独有的 SSH 隧道和浏览器配置，以 `/?access=<token>` 换取会话 cookie。仅此人可访问相应门户。完整视频可以定位时间，16 帧任务仅显示对应图像，表达任务只提供字幕和目标句。禁止共享另一位的访问凭证及盲法键。
+
+各自从门户点 Export JSON，附真实签收。运行 `q2_human_portal.py import --key <private> --review <first> --review <second> --attestation <first-receipt> --attestation <second-receipt> --out <private-review.json>`。未审、分歧和不确定保留在输出。仲裁员用 `--resolutions` 提交有独立签收及两份原始导出哈希的逐项判断。用原有参考终点导入脚本处理 60 视频，用 A2 校准入口处理其单独作用域。覆盖完成只表示评审齐备，校准及正式授权保持独立门槛。
+
+已有 A3 归档为 20 个源查询、80 条字幕。排除旧 Neu 后 60 条可供表达诊断，对应每人 120 个目标判断，常规估时约 0.6 小时。正式 E3/Bridge 以实际合格数计，每个候选每人有三份全视频判断和三份实际 16 帧判断。两模型均完成时，表达抽检 30 查询最多每人 480 个判断，约 2.4 小时，完全相同的源、字幕、命题及作用域可复用。实际唯一数、缺失分支和工时由每次包的 `HUMAN_WORKLOAD.json` 输出。视频加载、回看和独立仲裁的实际时间另计。

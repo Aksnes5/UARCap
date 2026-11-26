@@ -1,80 +1,73 @@
 {
-  "schema": "uarcap_q2.laptop_scientific_gates.v1",
-  "baseline": "2027e4267dce105d47a60c8f9eedcef5c9099bda",
-  "local_cpu": "VERIFIED",
-  "bn_execution": "PENDING",
-  "gpu_executed_this_phase": false,
-  "laptop_to_bn_deployment_ready": false,
-  "gates": [
-    {
-      "id": "E3_V2",
-      "status": "PENDING_REAL_TOKENIZERS_AND_VLM",
-      "minimum": 150,
-      "starting_candidates": 159,
-      "mapped_overlaps": 2,
-      "eligible_pre_screen_max": 157,
-      "old_neu": "INVALID",
-      "qwen_legacy_prediction_count": 0
+  "schema": "uarcap_q2.remaining_scientific_gates.v2",
+  "status": "ENGINEERING_COMPLETE_BN_AND_HUMAN_PENDING",
+  "queue_version": "laptop-20261126-v2",
+  "base_commit": "2027e4267dce105d47a60c8f9eedcef5c9099bda",
+  "gates": {
+    "E3_FORMAL_NEUTRAL_AND_RESERVE_V2": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": ">=150 independently screened VidHalluc candidates (excluding Pilot 30, VideoUFO, historical MSR-VTT mapped IDs, and debug IDs) with dual-tokenizer surface balance, Gemma semantic neutrality, and blind 16/64-frame Qwen visual verification; conditional reserve pool (`e3_reserve_pool.py`) requires explicit pre-generation operator approval receipt; floor 150 is never lowered and failure yields E3_INSUFFICIENT_VALID_CANDIDATES without blocking unrelated tasks."
     },
-    {
-      "id": "CAREB_BRIDGE_V2",
-      "status": "PENDING_REAL_VLM",
-      "minimum": 30,
-      "starting_candidates": 60,
-      "intervention": "text_only_with_fixed_query_visuals"
+    "E3_BRIDGE_CAREBENCH_V2": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": ">=30 verified CaReBench natural-retrieval conflict candidates under identical V2 semantic + blind 16/64-frame visual screening."
     },
-    {
-      "id": "CAREB_INTERNAL_HUMAN",
-      "status": "AWAITING_HUMAN",
-      "videos": 60,
-      "record_count": 360,
-      "annotators_required": 2,
-      "adjudicated": 0
+    "HUMAN_CALIBRATION_A2_AND_INTERNAL_60": {
+      "status": "REAL_HUMAN_VALIDATION_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Two independent blind human reviewers + independent adjudicator via unified scoped portal (`q2_human_portal.py` + `web_app.py`) on Pilot A2 visual calibration and 60-video probability sample (360 records, 250 unique captions, 783 unique claims) with signed attestations and separate written-reference endpoint receipts."
     },
-    {
-      "id": "FORMAL_CONFIRMATORY",
-      "status": "BLOCKED_HUMAN_CALIBRATION_AND_AUTHORIZATION",
-      "required": [
-        "real validation imports",
-        "Pilot A2 calibration with audited reference/video labels",
-        "Pilot A3 target-expression validation",
-        "signed Formal B authorization"
-      ]
+    "HUMAN_VALIDATION_A3_AND_E3_SCOPES": {
+      "status": "REAL_HUMAN_VALIDATION_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Independent blind human verification of Pilot A3 (excluding legacy invalid Neu), E3/E3-Bridge full-video truth, 16-frame visibility, and 30-query E3 output expression audit."
     },
-    {
-      "id": "SOURCE_VISUAL_DUPLICATION",
-      "status": "ASSET_DEPENDENT",
-      "carebench_youtube_join": "NOT_JOINABLE",
-      "required": [
-        "time-aligned signature receipts for actual query and retrieval clips"
-      ]
+    "EVALUATOR_KNOWN_ANSWER_STRESS_TEST": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Run 196 controlled text-level NLI & atomic-extraction cases (`evaluator_stress.py`) on real BN Gemma 3 27B and Llama 3.3 70B judges; quantifies text-level errors and shared failure modes only (never substitutes for human video truth)."
     },
-    {
-      "id": "HISTORICAL_FACT_BRIDGE",
-      "status": "REUSED_CAPTIONS_STAGED_LOCAL_EVALUATION_PENDING",
-      "videos": 60,
-      "captions": 180
+    "VISUAL_NEAR_DUPLICATE_SIGNATURES": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Compute real 16-frame dHash + pHash + center-crop pHash signatures on 600 CaReBench queries and 2,622 unique Top-7 VideoUFO representative clips (`generate_visual_signatures.py`) without bulk archive extraction, followed by risk screening and prespecified paired exclusion sensitivity (`q2_visual_risk_sensitivity.py`). Anonymous CaReBench IDs remain non-joinable and unresolved."
     },
-    {
-      "id": "QWEN32_64",
-      "status": "PENDING_BN_SMOKE",
-      "question": "frame sensitivity at A7",
-      "budget_interaction": "not identified"
+    "QWEN_CROSS_JUDGE_SINGLE_MISSING_KEY": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Reuse 5,098 hash-verified archived Llama labels and score the 1 missing key to reach 5,099/5,099."
     },
-    {
-      "id": "SPICE",
-      "status": "SKIPPED_OPTIONAL",
-      "acceptance": "actual historical Java scorer and dependencies"
+    "FULL_BUDGET_EXTENSION_A3_A5": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Generate 2,400 captions (600 x 2 arms x 2 models), evaluate with Gemma + Llama cross-judge, compute paired metrics (`e2_metric_bridge.py` with SPICE safely isolated), and produce both single-model and joint budget reports."
     },
-    {
-      "id": "QWEN_RETRIEVED_VISUAL_PARITY",
-      "status": "NOT_IMPLEMENTED",
-      "reason": "EVCap independent counts are prepared. Qwen injection of retrieved frames as an experimental control requires separately pinned paired input assets and processor parity."
+    "QWEN_UNIFORM_LENGTH_CONTROL_V2": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Pre-generation revision check confirming V1 detailed-length never started; 120 x 3 Qwen generations using archived short IQR target (13-15 words) without post-hoc truncation; report compliance rates and paired contrasts (exploratory post-hoc)."
     },
-    {
-      "id": "EXTERNAL_FULL_VIDEO_TRUTH",
-      "status": "AWAITING_HUMAN",
-      "reason": "A denser 64-frame proxy does not provide complete clip truth."
+    "QWEN_RETRIEVED_VISUAL_FACTORIAL_V2": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Fixed 40-query T0F0/T1F0/T0F1/T1F1 factorial (16 frozen query frames + 8 Top-1 retrieved frames in F1 cells) with vLLM processor image-block/token proof and full Input Trace (exploratory post-hoc)."
+    },
+    "QWEN_FRAMES_X_BUDGET_INTERACTION_32_64": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "150-query A7 at 32/64 frames + nested 60-query A0 at 32/64 frames for within-source 16/32/64 (A7-A0) DiD interaction. 64-frame failure is strictly isolated from 16/32-frame reporting; 64 frames is never called full video truth."
+    },
+    "PROVENANCE_RELEVANCE_HISTORICAL_CLOSURES": {
+      "status": "BN_RUNTIME_ACCEPTANCE_REQUIRED",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Full Gemma + 60-query Llama reliability sample for fact provenance, Top-7 retrieved fact relevance (4,200 captions), and MSR-VTT 60-video x 3-arm historical reverse fact bridge (180 archived captions)."
+    },
+    "FORMAL_CONFIRMATORY_INFERENCE": {
+      "status": "BLOCKED_BY_HUMAN_AND_AUTHORIZATION_GATES",
+      "engineering_status": "implemented_and_tested",
+      "requirement": "Hard-refused (`exit code 3`) until A2 human calibration, A3 human validation, 60-video human reference endpoint import, and explicit FORMAL_B_AUTHORIZATION receipt are all present and hash-verified."
     }
-  ]
+  }
 }

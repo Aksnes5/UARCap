@@ -99,11 +99,17 @@ def main():
     for name in ("retrieval","weights","out","lock"):
         parser.add_argument("--"+name,type=Path,required=True)
     parser.add_argument("--gpu-uuid",required=True)
+    parser.add_argument("--judge", choices=("gemma", "llama"), default="gemma")
+    parser.add_argument("--sample-queries", type=int)
     args=parser.parse_args()
     jobs={primitive_hash(j):j for j in job_records(args.predictions,args.eval,read_jsonl(args.retrieval))}
+    if args.sample_queries:
+        qids = sorted({j["query_id"] for j in jobs.values()}, key=lambda q: primitive_hash([20261126,q]))
+        keep = set(qids[:args.sample_queries])
+        jobs = {k:j for k,j in jobs.items() if j["query_id"] in keep}
     if not jobs:
         raise ValueError("No factuality comparisons")
-    binding=primitive_hash([sorted(jobs),PROMPT,str(args.weights),
+    binding=primitive_hash([sorted(jobs),PROMPT,args.judge,str(args.weights),
                            {p.name:sha256_file(p) for p in args.weights.glob("*config*.json")}])
     ledger=args.out/"FACT_PROVENANCE_ATTEMPTS.jsonl"
     accepted={}
@@ -116,9 +122,11 @@ def main():
             accepted[row["job_id"]]=row["relations"]
     pending=sorted(jobs.keys()-accepted.keys())
     if pending:
+        gemma = args.judge == "gemma"
         backend=LocalVLLMJudgeBackend(JudgeBackendConfig(backend_type="vllm_offline",
-                model_id="RedHatAI/gemma-3-27b-it-FP8-dynamic",model_family="gemma",local_model_path=str(args.weights),
-                temperature=0,max_new_tokens=1024,max_model_len=8192,gpu_memory_utilization=.85,language_model_only=True))
+                model_id="RedHatAI/gemma-3-27b-it-FP8-dynamic" if gemma else "meta-llama/Llama-3.3-70B-Instruct-W4A16",
+                model_family=args.judge, local_model_path=str(args.weights), temperature=0,max_new_tokens=1024,
+                max_model_len=8192,gpu_memory_utilization=.85 if gemma else .95,language_model_only=gemma))
         with acquire_cooperative_gpu_lock(GPULockConfig(args.lock,"q2_fact_provenance",args.gpu_uuid,True,args.out)):
             for attempt in range(1,3):
                 for start in range(0,len(pending),12):
@@ -167,7 +175,8 @@ def main():
             stat["added_conflicts_with_retrieved_text"]+=any(x=="contradicted" for x in labels)
         details.append({"job_id":key,**j,"relations":result,"visual_provenance":"UNRESOLVED"})
     atomic_write_json(args.out/"FACT_PROVENANCE.json",{"schema":"uarcap_q2.fact_provenance.v1","binding_sha256":binding,
-                      "status":"MACHINE_ASSISTED_UNVALIDATED","counts":counts,"rows":details})
+                      "status":"MACHINE_ASSISTED_UNVALIDATED","judge":args.judge,
+                      "expected_jobs":len(jobs), "counts":counts,"rows":details})
     return 0 if not pending else 2
 
 

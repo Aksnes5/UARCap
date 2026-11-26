@@ -93,7 +93,9 @@ def compute_metrics(refs, preds, skip_spice=False):
             t0 = time.time()
             score, scores = Spice_fn()(refs, preds)
             corpus["SPICE"] = float(score); corpus["SPICE_status"] = "OK"; corpus["SPICE_elapsed_sec"] = round(time.time()-t0, 1)
-            for q, s in zip(qids, scores): res[q]["SPICE"] = float(s)
+            for q, s in zip(qids, scores):
+                val = s["All"]["f"] if isinstance(s, dict) and isinstance(s.get("All"), dict) else s
+                res[q]["SPICE"] = float(val)
         except Exception as e:
             corpus["SPICE_status"] = f"BLOCKED: {type(e).__name__}: {str(e)[:300]}"
     return corpus, res
@@ -101,7 +103,7 @@ def compute_metrics(refs, preds, skip_spice=False):
 
 def Spice_fn():
     from pycocoevalcap.spice.spice import Spice
-    return Spice
+    return Spice().compute_score
 
 
 def main():
@@ -110,6 +112,7 @@ def main():
     ap.add_argument("--skip-spice", action="store_true")
     ap.add_argument("--formal", type=Path, default=FORMAL)
     ap.add_argument("--extension-root", type=Path)
+    ap.add_argument("--model", choices=("videollama","qwen"))
     ap.add_argument("--out-dir", type=Path, required=True)
     args=ap.parse_args()
     FORMAL=args.formal
@@ -130,12 +133,21 @@ def main():
     cross = {"formal_videollama": {(r["query_id"], r["norm_key"]): r for r in read_jsonl(FORMAL / "videollama_machine_cross/A2_CROSS_JUDGE_LABELS.jsonl")},
              "formal_qwen": {(r["query_id"], r["norm_key"]): r for r in read_jsonl(FORMAL / "qwen_machine_cross/A2_CROSS_JUDGE_LABELS.jsonl")}}
 
+    if args.model:
+        for table in (preds, evals, cross):
+            for key in list(table):
+                if key != "formal_" + args.model:
+                    del table[key]
     if args.extension_root:
         for label, slug in (("formal_videollama","videollama"),("formal_qwen","qwen")):
+            if label not in preds:
+                continue
             folder=args.extension_root/slug
             preds[label]+=read_jsonl(folder/"predictions.jsonl")
             evals[label]+=read_jsonl(folder/"eval/a2_ref_fact_eval.jsonl")
-            cross[label].update({(r["query_id"],r["norm_key"]):r for r in read_jsonl(folder/"cross/A2_CROSS_JUDGE_LABELS.jsonl")})
+            path=folder/"cross/A2_CROSS_JUDGE_LABELS.jsonl"
+            if path.is_file():
+                cross[label].update({(r["query_id"],r["norm_key"]):r for r in read_jsonl(path)})
     arms=("ARM_A0","ARM_A1","ARM_A3","ARM_A5","ARM_A7") if args.extension_root else ("ARM_A0","ARM_A1","ARM_A7")
 
     def fact_map(model):

@@ -24,7 +24,7 @@ def report_rows(pred_paths,eval_paths,cross_paths,metric_paths):
     results=[]
     for pred_path,eval_path,cross_path in zip(pred_paths,eval_paths,cross_paths,strict=True):
         pred,evaluations=index(read_jsonl(pred_path)),index(read_jsonl(eval_path))
-        cross={(r["query_id"],r["norm_key"]):r["llama_label"] for r in read_jsonl(cross_path)}
+        cross={(r["query_id"],r["norm_key"]):r["llama_label"] for r in read_jsonl(cross_path)} if cross_path.is_file() else {}
         if set(pred)!=set(evaluations):
             raise ValueError("Prediction/evaluation grid differs")
         subset=[]
@@ -162,7 +162,7 @@ def render(rows,out):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for action in ("predictions","eval","cross","metric"):
-        p.add_argument("--"+action,action="append",type=Path,required=True)
+        p.add_argument("--"+action,action="append",type=Path,required=action!="metric",default=[])
     p.add_argument("--out",type=Path,required=True)
     a=p.parse_args()
     rows=report_rows(a.predictions,a.eval,a.cross,a.metric)
@@ -183,6 +183,7 @@ def main():
     a.out.mkdir(parents=True,exist_ok=True)
     atomic_write_json(a.out/"Q2_BUDGET_REPORT.json",{"schema":"uarcap_q2.budget_report.v1","n_rows":len(rows),
         "status":"POST_HOC_MACHINE_ASSISTED","arm_means":aggregate,"paired_sensitivity":paired_sensitivity,
+        "judge_coverage":"LLAMA_LABELS_PRESENT" if any(r["llama_n_contra"] is not None for r in rows) else "GEMMA_ONLY",
         "judge_conflict_delta_difference":bias,"within_model_frontier":frontier,
         "cost_scope":"Observed per-caption generation fields. Retrieval, load and feature costs require separate receipts.",
         "pending":{"full_budget":not all(any(r.get("arm")==arm for r in aggregate) for arm in ("ARM_A3","ARM_A5")),

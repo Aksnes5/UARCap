@@ -197,6 +197,7 @@ def main():
     for k in ("candidates","screened","verdicts","out"):
         f.add_argument("--"+k,type=Path,required=True)
     f.add_argument("--bridge",action="store_true")
+    f.add_argument("--record-only",action="store_true",help="Write an ineligible intermediate freeze for conditional continuation")
     args=ap.parse_args()
     if args.command!="freeze":
         args.func(args)
@@ -206,7 +207,7 @@ def main():
     if args.out.resolve()==args.candidates.resolve() or (args.out.exists() and read_json(args.out)!=result):
         raise ValueError("Use a new freeze path. Existing freeze is immutable")
     atomic_write_json(args.out,result)
-    if result["eligible"]:
+    if result["eligible"] or args.record_only:
         return 0
     print(f"HARD_BLOCK {result['status']}: {result['n_approved']} / {result['minimum']}")
     return 3

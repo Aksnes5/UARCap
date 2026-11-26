@@ -67,15 +67,15 @@ def sample_frames(video: Path, n: int):
     return out, idx
 
 
-def verify_supplementary_row(row,packet,anchor,n_frames,prompt_regime,generator):
+def verify_supplementary_row(row,packet,anchor,n_frames,prompt_regime,generator,factorial=False):
     t=row["input_trace"]
     evcap=generator=="videollama"
     if (row.get("ok") is not True or not row.get("caption","").strip()
             or any(row[k]!=t[k] for k in ("query_id","model_id","arm"))
             or t["checkpoint_sha256"]!=anchor["checkpoint_sha256"]
             or t["text_evidence"]!=packet.text_evidence
-            or t["visual_evidence_ids"]!=(packet.visual_clip_ids if evcap else [])
-            or t["visual_evidence_scores"]!=(packet.visual_scores if evcap else [])
+            or t["visual_evidence_ids"]!=(packet.visual_clip_ids if evcap or factorial else [])
+            or t["visual_evidence_scores"]!=(packet.visual_scores if evcap or factorial else [])
             or len(t["frame_indices"])!=n_frames):
         raise ValueError("Supplementary trace differs from model or evidence contract")
     if n_frames==16:
@@ -99,6 +99,9 @@ def verify_supplementary_row(row,packet,anchor,n_frames,prompt_regime,generator)
         if (telemetry["actual_frames_received"]!=n_frames or
                 telemetry["local_model_manifest_sha256"]!=anchor["actual_processor_telemetry"]["local_model_manifest_sha256"]):
             raise ValueError("Qwen processor or model manifest mismatch")
+        if factorial and (telemetry["processor_image_blocks"] != n_frames + telemetry["external_frame_count"]
+                          or not telemetry["processor_prompt_token_ids_sha256"]):
+            raise ValueError("Qwen factorial consumption could not be verified")
 
 
 def main() -> int:
@@ -108,7 +111,7 @@ def main() -> int:
     ap.add_argument("--out-dir", type=Path, required=True)
     ap.add_argument("--qids-file", type=Path)
     ap.add_argument("--limit", type=int, default=0)
-    ap.add_argument("--prompt-regime", default="short_aligned", choices=["short_aligned", "detailed_sensitivity"])
+    ap.add_argument("--prompt-regime", default="short_aligned", choices=["short_aligned", "detailed_sensitivity", "uniform_length"])
     ap.add_argument("--num-frames", type=int, default=16)
     ap.add_argument("--max-new-tokens", type=int, default=0)
     ap.add_argument("--chunk", type=int, default=40)
@@ -117,12 +120,19 @@ def main() -> int:
     ap.add_argument("--smoke-queries",type=int,default=0)
     ap.add_argument("--decoded-frames",type=Path)
     ap.add_argument("--modality-ablation",action="store_true")
+    ap.add_argument("--factorial-frames", type=Path)
+    ap.add_argument("--length-design", type=Path)
     args = ap.parse_args()
     from uarcap_q2.common.io_utils import primitive_hash, sha256_file, append_jsonl_durable
     arms = [a.strip() for a in args.arms.split(",") if a.strip()]
     limits = {"ARM_A0":0,"ARM_A1":1,"ARM_A3":3,"ARM_A5":5,"ARM_A7":7}
     from uarcap_q2.retrieval.arm_builder import MODALITY_ARMS, build_evcap_modality_arm
-    allowed=MODALITY_ARMS if args.modality_ablation else limits
+    factorial_arms = {"T0F0": (0,0), "T1F0": (1,0), "T0F1": (0,1), "T1F1": (1,1)}
+    allowed=factorial_arms if args.factorial_frames else MODALITY_ARMS if args.modality_ablation else limits
+    if args.factorial_frames and (args.generator != "qwen" or args.num_frames != 16 or args.modality_ablation):
+        raise ValueError("Retrieved-frame controls require Qwen and all 16 frozen query frames")
+    if bool(args.length_design) != (args.prompt_regime == "uniform_length"):
+        raise ValueError("Need the approved length revision for uniform length")
     if args.modality_ablation and args.generator!="videollama":
         raise ValueError("Modality arms use the inherited EVCap fusion interface")
     if not arms or len(set(arms)) != len(arms) or set(arms)-allowed.keys():
@@ -150,8 +160,14 @@ def main() -> int:
     if args.limit:
         qids = qids[: args.limit]
     decoded=json.loads(args.decoded_frames.read_text(encoding="utf-8")) if args.decoded_frames else {}
-    if args.num_frames != 16 and (set(decoded.get("queries",{}))!=set(qids) or decoded.get("num_frames")!=args.num_frames):
-        raise ValueError("32/64-frame runs require a checked CPU-decoded manifest for exactly this cohort")
+    if args.num_frames != 16 and (not set(qids)<=set(decoded.get("queries",{})) or decoded.get("num_frames")!=args.num_frames):
+        raise ValueError("32/64-frame runs need the checked CPU-decoded manifest covering this cohort")
+    length = json.loads(args.length_design.read_text(encoding="utf-8")) if args.length_design else None
+    if length and (length.get("revision") != "DETAILED_TO_UNIFORM_LENGTH" or length["query_ids"] != qids):
+        raise ValueError("Length revision or cohort is unbound")
+    external = json.loads(args.factorial_frames.read_text(encoding="utf-8")) if args.factorial_frames else None
+    if external and set(external["queries"]) != set(qids):
+        raise ValueError("Frame factorial must cover the fixed query cohort")
     out = args.out_dir
     out.mkdir(parents=True, exist_ok=True)
     pred = out / "predictions.jsonl"; trace = out / "input_traces.jsonl"; fail = out / "failures.jsonl"
@@ -163,6 +179,8 @@ def main() -> int:
     binding = primitive_hash({"config_sha256":args.config_sha256, "arms":arms,"qids":qids, "generator":args.generator,
         "prompt_regime":args.prompt_regime,"num_frames":args.num_frames,"max_tokens":args.max_new_tokens,
         "decode_receipt":sha256_file(args.decoded_frames) if args.decoded_frames else None,
+        **({"length_receipt":sha256_file(args.length_design)} if args.length_design else {}),
+        **({"factorial_frames":sha256_file(args.factorial_frames)} if args.factorial_frames else {}),
         "sources":[sha256_file(FORMAL/name) for name in ("formal_candidates.jsonl","formal_frame_indices.jsonl","formal_retrieval.jsonl",
                     args.generator+"/predictions.jsonl")]})
     existing=read_jsonl(pred)
@@ -176,6 +194,14 @@ def main() -> int:
         verify_natural_prefix_consistency(packets)
         if args.modality_ablation:
             packets.update({a:build_evcap_modality_arm(q,a,retr[q]) for a in arms})
+        if external:
+            from dataclasses import replace
+            for a in arms:
+                t,f = factorial_arms[a]
+                base = packets["ARM_A1"]
+                packets[a] = replace(base, arm=a, text_topn=t, visual_topn=f, text_evidence=base.text_evidence[:t],
+                                     visual_clip_ids=base.visual_clip_ids[:f], visual_scores=base.visual_scores[:f],
+                                     base_visual_mode="QWEN_RETRIEVED_FRAME_FACTORIAL")
     active_qids=qids[:args.smoke_queries] if args.smoke_queries else qids
     active={(q,a) for q in active_qids for a in arms}
     pairs = [(q, a) for a in arms for q in active_qids if (q,a) not in done]
@@ -202,6 +228,7 @@ def main() -> int:
             model_id="Qwen/Qwen3.8-27B-FP8", local_model_path="/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models/Qwen3.8-27B-FP8",
             backend_mode="vllm_offline", pinned_revision="LOCAL_BN_QWEN38_FP8_66SHARDS", num_frames=args.num_frames,
             multimodal_input_key="image", prompt_regime=args.prompt_regime, max_new_tokens=mnt, temperature=0.0,
+            word_range=tuple(length["word_range"]) if length else None, external_frames=external["num_frames"] if external else 0,
             quantization="fp8", gpu_memory_utilization=0.88, max_model_len=8192, max_num_seqs=64))
         stage = PilotStage.PILOT_A3
 
@@ -248,8 +275,18 @@ def main() -> int:
                                     metadata={"condition": args.condition, "prompt_regime": args.prompt_regime,
                                               "num_frames": args.num_frames, "frame_sampling": "uniform_decode"})
                     packet = natural[qid][arm]
+                    extras = {}
+                    if external and packet.visual_clip_ids:
+                        info = external["queries"][qid]
+                        if info.get("clip_id") != packet.visual_clip_ids[0] or "paths" not in info:
+                            raise ValueError("Unverified Top-1 retrieved video")
+                        rframes = [Image.open(p).convert("RGB") for p in info["paths"]]
+                        if hash_pil_frames(rframes) != info["sha256"]:
+                            raise ValueError("Retrieved clip frames differ from bound manifest")
+                        extras = {"external_frame_images": rframes, "external_frame_indices": info["indices"],
+                                  "external_video_sha256": info["source_video_sha256"]}
                     items.append(BatchItem(query=q, packet=packet, visual_input_sha256=hash_pil_frames(frames),
-                                           frame_indices=list(fidx), frame_images=frames))
+                                           frame_indices=list(fidx), frame_images=frames, **extras))
                 if not items:
                     continue
                 try:
@@ -263,7 +300,7 @@ def main() -> int:
                         t=row["input_trace"]
                         expected_trace=by_query[row["query_id"]]
                         packet=natural[row["query_id"]][row["arm"]]
-                        verify_supplementary_row(row,packet,expected_trace,args.num_frames,args.prompt_regime,args.generator)
+                        verify_supplementary_row(row,packet,expected_trace,args.num_frames,args.prompt_regime,args.generator,bool(external))
                         row["binding_sha256"]=binding
                         append_jsonl_durable(pred,row)
                 except Exception as e:

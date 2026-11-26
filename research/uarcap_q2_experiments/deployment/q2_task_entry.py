@@ -39,8 +39,11 @@ def accept(rule, path):
         else:
             accepted=[r for r in rows if r["parse_status"]=="OK"]
             keys=unique(accepted,["model_id","query_id","arm","judge","target_id"])
-            if len(keys)!=16*read_json(rule["dynamic_cohort"])["n_approved"]:
+            cohort=read_json(rule["dynamic_cohort"])
+            if len(keys)!=rule.get("rows_per_candidate",16)*cohort["n_approved"]:
                 raise ValueError("Incomplete E3 target pairs")
+            if {k[1] for k in keys}!={r["query_id"] for r in cohort["approved"]}:
+                raise ValueError("E3 evaluator query grid changed")
         return
     doc=read_json(path)
     if kind=="json":
@@ -63,6 +66,32 @@ def accept(rule, path):
                 raise ValueError("Incomplete smoke")
         elif count!=len(values) or doc.get("n_expected")!=count:
             raise ValueError("Incomplete generation")
+        if "dynamic_cohort" in rule:
+            qids={r["query_id"] for r in read_json(rule["dynamic_cohort"])["approved"]}
+            arm_names={"E3_BASE","E3_SUP","E3_CON","E3_NEU"}
+        elif "query_manifest" in rule:
+            plan=Path(rule["query_manifest"])
+            if plan.suffix==".jsonl":
+                inputs=[r["query_id"] for r in read_jsonl(plan)]
+                if plan.name=="formal_candidates.jsonl":
+                    inputs.sort()
+            else:
+                inputs=read_json(plan)["query_ids"]
+            qids=set(inputs[:rule["queries"]])
+            arm_names=set(rule["arm_names"])
+            if rule.get("smoke"):
+                active=set(inputs[:2])
+                present={(q,arm) for _,q,arm in values}
+                if not {(q,arm) for q in active for arm in arm_names} <= present:
+                    raise ValueError("Smoke must cover the fixed first two queries and all arms")
+        else:
+            qids=set()
+            arm_names=set()
+        if qids:
+            target={(q,arm) for q in qids for arm in arm_names}
+            actual={(q,arm) for _,q,arm in values}
+            if len(actual)!=len(values) or not actual<=target or (not rule.get("smoke") and actual!=target):
+                raise ValueError("Generation rows do not match the declared query × arm grid")
         if doc.get("predictions_sha256") and sha256_file(predictions)!=doc["predictions_sha256"]:
             raise ValueError("Prediction hash differs")
     elif kind=="cross":
@@ -120,7 +149,7 @@ def main():
             if not ok:
                 p.exit(3,f"HARD_BLOCK cannot verify GPU occupancy: {reason}\n")
             held=True
-            with open(GPU,"rb") as lock:
+            with open(GPU,"a+b") as lock:
                 try:
                     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
                     held=False

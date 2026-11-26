@@ -1,0 +1,183 @@
+{
+  "schema": "uarcap_q2.v2_task_completion_matrix.v1",
+  "date": "2026-11-26",
+  "branch": "antigravity/uarcap-q2-laptop-final-development-v2-20261126",
+  "base_commit_v1": "1693dbb65ed43d962bcf8915fa390d46d8d57761",
+  "bn_handoff_commit": "2027e4267dce105d47a60c8f9eedcef5c9099bda",
+  "status_legend": [
+    "implemented_and_tested",
+    "implemented_untested",
+    "partial",
+    "unimplemented",
+    "bn_runtime_acceptance_required",
+    "real_human_validation_required"
+  ],
+  "items": [
+    {
+      "id": "TAKEOVER-RECOVERY",
+      "name": "Codex Interrupted Workspace Protection, Recovery & Bug Audit",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "none",
+      "files": [
+        "laptop_final_handoff_20261126/CODEX_INTERRUPTED_WORK_RECOVERY_REPORT.md",
+        "scripts/e3_reserve_pool.py",
+        "scripts/e2_metric_bridge.py",
+        "deployment/q2_task_entry.py"
+      ],
+      "evidence": "All 39 uncommitted files backed up to D:\\Antigravity\\uarcap_codex_v2_recovery_20261126\\ with SHA-256 manifest; fixed missing `import re` in e3_reserve_pool.py, Spice_fn() invocation in e2_metric_bridge.py, lock open mode in q2_task_entry.py, and 12 queue fingerprint drifts."
+    },
+    {
+      "id": "P0-1",
+      "name": "E3 Legal Reserve Candidate Pool & >=150 Floor Failure Isolation",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "scripts/e3_reserve_pool.py",
+        "scripts/e3_repair.py",
+        "bn_carebench_pilot_a01/overnight_20261126/tasks/e3_formal_generate.py",
+        "laptop_final_handoff_20261126/E3_RESERVE_POOL_PROTOCOL.md"
+      ],
+      "evidence": "Verified source exclusions (Pilot 30, Formal 180, VideoUFO, historical MSR-VTT, debug IDs), fixed seed 20261126 ordering, pre-generation approval receipt binding, E3_INSUFFICIENT_VALID_CANDIDATES exit 3 isolation, and regression test for `continue_screen()` regex check."
+    },
+    {
+      "id": "P0-2",
+      "name": "Unified Blind Human Validation Portal & Roundtrip Verification",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "real_human_validation_required",
+      "files": [
+        "scripts/q2_human_portal.py",
+        "uarcap_q2/annotation/web_app.py",
+        "scripts/launch_annotation_ui.py",
+        "laptop_final_handoff_20261126/HUMAN_VALIDATION_RUNBOOK.md"
+      ],
+      "evidence": "Supports Pilot A2, Pilot A3 (excluding legacy invalid Neu), 60-video internal probability sample, E3/E3-Bridge full-video & 16-frame scopes, and E3 output expression audit; enforces per-reviewer loopback access token, Range seeking, strict scope isolation, attestation & adjudication verification. Zero real human labels fabricated."
+    },
+    {
+      "id": "P0-3",
+      "name": "Known-Answer Controlled Evaluator Stress Test (196 Cases)",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "scripts/evaluator_stress.py",
+        "laptop_final_handoff_20261126/EVALUATOR_STRESS_TEST_SPEC.md"
+      ],
+      "evidence": "196 deterministic text cases across 14 categories (182 3-way NLI + 14 atomic split/merge) using production NLI_SYS/EXTRACT_SYS prompts and parsers; Gemma/Llama runners and joint confusion/paraphrase/shared-error summary tested on CPU fixture; explicitly scoped CONTROLLED_TEXT_ONLY."
+    },
+    {
+      "id": "P0-4",
+      "name": "Real Visual Near-Duplicate Signatures & Prespecified Sensitivity",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "scripts/generate_visual_signatures.py",
+        "scripts/source_and_visual_risk.py",
+        "scripts/q2_visual_risk_sensitivity.py",
+        "laptop_final_handoff_20261126/VISUAL_SIGNATURE_GENERATION_RUNBOOK.md"
+      ],
+      "evidence": "Single-member safe zip/tar reading (path traversal rejected), 16-frame dHash/pHash/center-crop pHash with content-bound cache, real archived denominator verified (600 queries, 2,622 unique Top-7 clips), temporal-shift & unverified risk screening, and prespecified parent-clustered sensitivity."
+    },
+    {
+      "id": "P1-1",
+      "name": "True Uniform Target Word-Range Length Control (13-15 Words)",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "scripts/q2_controlled_sensitivity.py",
+        "bn_carebench_pilot_a01/overnight_20261126/tasks/supp_generate.py",
+        "uarcap_q2/generators/qwen3_vllm_adapter.py"
+      ],
+      "evidence": "Replayed on real archived 360 Qwen short captions -> exact IQR [13, 15] words; enforces pre-generation legacy V1 non-started check; no post-hoc truncation; reports compliance and paired contrasts."
+    },
+    {
+      "id": "P1-2",
+      "name": "Qwen External Visual Evidence Modality Factorial (T0F0..T1F1)",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "scripts/generate_visual_signatures.py",
+        "uarcap_q2/generators/qwen3_vllm_adapter.py",
+        "bn_carebench_pilot_a01/overnight_20261126/tasks/supp_generate.py",
+        "scripts/q2_controlled_sensitivity.py"
+      ],
+      "evidence": "Fixed 40-query subset, 16 frozen query frames + 8 Top-1 retrieved frames in F1 cells, explicit role boundary prompts, vLLM `<|vision_start|>`/`<|image_pad|>` processor consumption guard, and full Input Trace verification."
+    },
+    {
+      "id": "P1-3",
+      "name": "Frames x Budget Interaction (16/32/64 A7-A0 DiD + 64-Frame Isolation)",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "scripts/q2_controlled_sensitivity.py",
+        "deployment/q2_laptop_queue.py",
+        "bn_carebench_pilot_a01/overnight_20261126/tasks/supp_generate.py"
+      ],
+      "evidence": "150-query A7 + nested 60-query A0 at 32 and 64 frames; within-source DiD verified on CPU; 64-frame tasks strictly isolated from 16/32-frame reports (`report_visual32_*`), budget reports, and final snapshot."
+    },
+    {
+      "id": "P1-4",
+      "name": "Supplemental Closed Loops (Provenance, Top-7 Relevance, Historical Bridge)",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "scripts/fact_provenance.py",
+        "scripts/retrieved_fact_relevance.py",
+        "scripts/historical_fact_bridge.py",
+        "scripts/q2_module_report.py",
+        "deployment/q2_laptop_queue.py"
+      ],
+      "evidence": "Connected end-to-end with Gemma primary, 60-query Llama reliability sample, separate gemma-only & dual-judge reporting, cluster bootstrap CIs, vector/raster plotting (svg/pdf/png), and archive manifest registration."
+    },
+    {
+      "id": "QUEUE-AND-DEPLOY",
+      "name": "111-Task V2 Queue, Zero-Drift Audit, One-Click BN Installer & Preflight",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "deployment/q2_laptop_queue.py",
+        "deployment/q2_task_entry.py",
+        "deployment/install_q2_v2_bn.sh",
+        "deployment/q2_v2_bn_preflight.py",
+        "scripts/audit_q2_queue.py",
+        "laptop_final_handoff_20261126/REMAINING_GPU_TASK_QUEUE.json",
+        "laptop_final_handoff_20261126/EXPECTED_OUTPUT_ARTIFACTS.json"
+      ],
+      "evidence": "111 tasks (60 GPU wrappers, 51 CPU wrappers; 52 videollama2 / 56 vllm / 3 repro_evcap); `audit_q2_queue.py` passes with 0 errors and 29 real `--help` checks; `EXPECTED_OUTPUT_ARTIFACTS.json` synced 1-to-1; safe V1 pending retirement and rollback verified."
+    },
+    {
+      "id": "UNIFIED-RELEASE-AND-PAPER",
+      "name": "Unified Release Report, Archiving & Final Paper Manuscript Scaffold",
+      "laptop_engineering_status": "implemented_and_tested",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "scripts/q2_release_report.py",
+        "laptop_final_handoff_20261126/FINAL_PAPER_MANUSCRIPT_SCAFFOLD.md",
+        "laptop_final_handoff_20261126/Q2_PAPER_EVIDENCE_CHAIN.md",
+        "laptop_final_handoff_20261126/Q2_REVIEWER_ATTACK_MATRIX.md"
+      ],
+      "evidence": "Collects accepted & partial outputs independently, writes FINAL_EXPERIMENT_MATRIX.json, ARCHIVE_MANIFEST.json, and MANUSCRIPT_EVIDENCE.md; keeps confirmatory gates strictly false when human receipts are absent; leaves missing BN cells blank."
+    },
+    {
+      "id": "REAL-BN-EXECUTION",
+      "name": "BN GPU/vLLM/Video-LLaMA/Video-Decode Runtime Execution",
+      "laptop_engineering_status": "bn_runtime_acceptance_required",
+      "bn_or_human_gate": "bn_runtime_acceptance_required",
+      "files": [
+        "laptop_final_handoff_20261126/BN_DEPLOYMENT_AND_EXECUTION_PROMPT.md",
+        "laptop_final_handoff_20261126/BN_FINAL_DEPLOYMENT_CHECKLIST.md",
+        "laptop_final_handoff_20261126/BN_RESOURCE_ESTIMATE.md"
+      ],
+      "evidence": "Not executed on Windows laptop (no GPU, weights, or full video corpora). Ready for operator-authorized checkout and preflight on BN."
+    },
+    {
+      "id": "REAL-HUMAN-ANNOTATION",
+      "name": "Real Independent Dual-Reviewer Human Validation & Adjudication",
+      "laptop_engineering_status": "real_human_validation_required",
+      "bn_or_human_gate": "real_human_validation_required",
+      "files": [
+        "laptop_final_handoff_20261126/HUMAN_VALIDATION_RUNBOOK.md",
+        "laptop_final_handoff_20261126/REMAINING_SCIENTIFIC_GATES.json"
+      ],
+      "evidence": "Zero real human reviews completed. Confirmatory inference remains hard-blocked until real human labels, attestations, and authorization receipts exist."
+    }
+  ]
+}

@@ -19,3 +19,14 @@
 | 主要终点是否被改写 | 仅原两个终点进入既定家族，预算与采样、成本另报。 | 人工收据全未提供。 |
 | 如何解释负面结果 | 同样保留效应估计、分母、未确认及科学门禁。 | 不把不显著解释为不存在。 |
 | 有何应用意义 | 同系统对预算、质量、参考冲突、覆盖和实际算时作权衡。 | 全预算曲线与必要资产仍 PENDING。 |
+
+## V2 boundaries
+
+| Reviewer question | Bound response |
+| --- | --- |
+| Length or detail? | A common 13–15 word target depends only on archived short captions. Report noncompliance and keep the original main analysis. |
+| Matched query frames? | The Qwen contrast fixes 16 query frames and adds eight frames only in the external-frame cells. Artifact acceptance requires observed vLLM image token markers. |
+| Could dense frames offset retrieval effects? | Within-source 16/32/64 A7−A0 contrasts and difference-in-differences are based on one fixed nested cohort. A failed 64-frame setting does not invalidate 32. |
+| Is common judge error measured? | Controlled NLI and extraction fixtures test explicable text-level errors. Real probability review retains separate scope and weights. |
+| Could video overlap produce the improvement? | Report both prespecified visual-risk exclusions and unknown assets. Perceptual hashes give only a risk screen. |
+| Was E3 adjusted after outcome? | Pool and maximum prefix derive from source-based policy. Actual sufficiency depends on equal screens and approved cohort changes before generation. |

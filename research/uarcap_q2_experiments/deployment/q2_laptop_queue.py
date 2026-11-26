@@ -18,8 +18,8 @@ from uarcap_q2.common.io_utils import atomic_write_json, primitive_hash, read_js
 
 BASE="/home/bn/uarcap_q2_runtime/overnight/20261126"
 DATA="/home/bn/uarcap_q2_runtime"
-RELEASE=f"{DATA}/deploy/laptop-20261126-v1/research/uarcap_q2_experiments"
-OUT=f"{DATA}/outputs/laptop-20261126-v1"
+RELEASE=f"{DATA}/deploy/laptop-20261126-v2/research/uarcap_q2_experiments"
+OUT=f"{DATA}/outputs/laptop-20261126-v2"
 DISPLAY="/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Display"
 JNH="/media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag"
 CPU="/home/bn/anaconda3/envs/videollama2/bin/python"
@@ -41,10 +41,14 @@ FROZEN="2027e4267dce105d47a60c8f9eedcef5c9099bda"
 SCHEMA="uarcap_overnight_queue_v1"
 
 
-def build():
+def build(version="v1"):
+    v2=version=="v2"
+    RELEASE=f"{DATA}/deploy/laptop-20261126-{version}/research/uarcap_q2_experiments"
+    OUT=f"{DATA}/outputs/laptop-20261126-{version}"
+    task_prefix=f"q2l_{version}_"
     tasks=[]
     def task(name, env, script, argv, inputs, artifact, expected, depends=(), gpu=False, priority=50, timeout=14400, gate=""):
-        tid="q2l_v1_"+name
+        tid=task_prefix+name
         cmd=[env,"-u",f"{RELEASE}/{script}",*argv]
         contract={"argv":cmd,"inputs":inputs,"output":artifact,"expected":expected,"gate":gate,
                   "script_sha256":sha256_file(ROOT/script)}
@@ -57,7 +61,7 @@ def build():
             generation_sha=primitive_hash([scope,contract["script_sha256"]])
             cmd+=["--config-sha256",generation_sha]
         entry={"id":tid,"priority":priority,"cwd":RELEASE,"python":env,"script":script,
-               "timeout_sec":timeout,"max_retries":2,"requires_gpu":gpu,"depends_on":["q2l_v1_"+d for d in depends],
+               "timeout_sec":timeout,"max_retries":2,"requires_gpu":gpu,"depends_on":[task_prefix+d for d in depends],
                "config_sha256":config,"inputs":inputs,"output":artifact,"acceptance":expected,
                "science_gate":gate,"resume_key":"declared artifact key and input/config fingerprint",
                "failure_policy":"Retain validated records. Retry incomplete work. Isolate scientific blocks."}
@@ -71,6 +75,26 @@ def build():
         return name
 
     shared=["--lock",GPU,"--gpu-uuid",UUID]
+    clips="/home/bn/videoufo_research/manifests/clips_full.tsv"
+    historical=f"{RELEASE}/laptop_final_handoff_20261126/msrvtt_mapped_source_ids.txt"
+    pilot=f"{RELEASE}/{ARCH}/vidhalluc/E3_PILOT_EXCLUSION.json"
+    vicuna=f"{DISPLAY}/repro_evcap/models/vicuna-7b-v1.3"
+    sig=f"{DATA}/data/source_witness"
+    clip_location=f"{sig}/videoufo_clip_locations.jsonl"
+    formal_retrieval=f"{FORMAL}/formal_retrieval.jsonl"
+    formal_manifest=f"{FORMAL}/FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json"
+    short=f"{FORMAL}/qwen"
+    frozen_plans=f"{RELEASE}/{ARCH}/supplementary"
+    designs=f"{OUT}/control_designs"
+    design=f"{designs}/design.json"
+    if v2:
+        len_plan=f"{frozen_plans}/LENGTH_CONTROL_PLAN.json"
+        visual_plan=f"{frozen_plans}/VISUAL_SAMPLING_PLAN.json"
+        design_task=task("control_design",CPU,"scripts/q2_controlled_sensitivity.py",
+            ["plan","--length",len_plan,"--visual",visual_plan,"--short",f"{short}/predictions.jsonl",
+             "--out",designs,"--state",f"{BASE}/task_state.json","--legacy-output",f"{DATA}/outputs/laptop-20261126-v1/length/qwen"],
+            [len_plan,visual_plan,f"{short}/predictions.jsonl",f"{BASE}/task_state.json"],design,
+            {"kind":"json","schema":"uarcap_q2.controlled_sensitivity.v2"},priority=5)
     for bridge in (False,True):
         slug="bridge" if bridge else "e3"
         prefix=f"{OUT}/{slug}"
@@ -103,11 +127,28 @@ def build():
         verification=task(slug+"_vision",VLLM,"scripts/vlm_statement_verify.py",
             ["verify","--jobs",jobs,"--frames",decoded,"--qwen",QWEN,"--out",verdicts,*shared],
             [jobs,decoded,QWEN],verdicts,{"kind":"comparison_ledger","jobs":jobs},[decoding],gpu=True,priority=priority+3,timeout=43200)
+        intermediate=f"{prefix}/ORIGINAL_SCREEN_FREEZE.json" if v2 and not bridge else approved
         freezing=task(slug+"_freeze",CPU,"scripts/e3_repair.py",
-            ["freeze","--candidates",original,"--screened",screened,"--verdicts",verdicts,"--out",approved,
-             *(["--bridge"] if bridge else [])],[original,screened,verdicts],approved,
-            {"kind":"json","schema":"uarcap_q2.e3_neutral_approved.v2","eligible":True},[verification],priority=priority+4,
+            ["freeze","--candidates",original,"--screened",screened,"--verdicts",verdicts,"--out",intermediate,
+             *(["--bridge"] if bridge else ["--record-only"] if v2 else [])],[original,screened,verdicts],intermediate,
+            {"kind":"json","schema":"uarcap_q2.e3_neutral_approved.v2",**({"eligible":True} if intermediate==approved else {})},[verification],priority=priority+4,
             gate=f"At least {30 if bridge else 150} fully screened distinct candidates")
+        if v2 and not bridge:
+            pool=f"{prefix}/E3_RESERVE_POOL.json"
+            raw=f"{DATA}/data/vidhalluc/ach_mcq.json"
+            roster=f"{RELEASE}/{ARCH}/vidhalluc/E3_FORMAL_CANDIDATES_180.json"
+            debug=f"{sig}/vidhalluc_debug_source_ids.txt"
+            auth=f"{DATA}/deploy/laptop-v2-e3-reserve-approval.json"
+            task("e3_reserve_pool",CPU,"scripts/e3_reserve_pool.py",
+                 ["pool","--ach",raw,"--video-root",f"{DATA}/data/vidhalluc/videos","--formal",roster,
+                  "--debug",debug,"--clips",clips,"--pilot",pilot,"--historical",historical,"--out",pool],
+                 [raw,roster,debug,clips,pilot,historical],pool,{"kind":"json","schema":"uarcap_q2.e3_reserve_pool.v1"},priority=8)
+            freezing=task("e3_reserve_continue",CPU,"scripts/e3_reserve_pool.py",
+                 ["continue","--base",intermediate,"--pool",pool,"--approval",auth,"--out",approved,
+                  "--vicuna",vicuna,"--qwen",QWEN,"--clips",clips,"--historical",historical,"--pilot",pilot,
+                  "--gemma",GEMMA,"--gemma-id",GEMMA_ID,"--vllm",VLLM,*shared],
+                 [intermediate],approved,{"kind":"json","schema":"uarcap_q2.e3_neutral_approved.v2","eligible":True},
+                 [freezing],priority=priority+5,timeout=86400,gate="GPU subcommands only on authorized insufficiency; shared lock")
         generation=[]
         for model,env in (("videollama",CPU),("qwen",VLLM)):
             folder=f"{prefix}/{model}"
@@ -117,6 +158,27 @@ def build():
                  "30" if bridge else "150",*reuse],[approved,frames],f"{folder}/run_receipt.json",
                 {"kind":"generation","dynamic_cohort":approved,"arms":4},[freezing],gpu=True,priority=priority+5,
                 gate="V2 freeze and exact generation evidence traces"))
+        if v2:
+            for i,model in enumerate(("videollama","qwen")):
+                pred=f"{prefix}/{model}/predictions.jsonl"
+                judge_root=f"{prefix}/{model}/analysis"
+                options=["--approved",approved,"--"+("old" if i==0 else "qwen"),pred,"--out",judge_root]
+                for judge,weights in (("gemma",GEMMA),("llama",LLAMA)):
+                    ran=task(f"{slug}_{model}_judge_{judge}",VLLM,"scripts/evaluate_e3_v2.py",
+                         [*options,"--judge",judge,"--weights",weights,*shared],[approved,pred,weights],f"{judge_root}/{judge}.jsonl",
+                         {"kind":"e3_evaluation","dynamic_cohort":approved,"rows_per_candidate":8},[generation[i]],
+                         gpu=True,priority=priority+7,timeout=43200)
+                    if judge=="gemma":
+                        primary_eval=ran
+                    else:
+                        second_eval=ran
+                for name,dep in (("single",primary_eval),("dual",second_eval)):
+                    report_folder=judge_root if name=="dual" else f"{judge_root}/primary"
+                    task(f"{slug}_{model}_analyze_{name}",CPU,"scripts/evaluate_e3_v2.py",
+                         [*options,"--judge","summarize","--report-out",report_folder], [approved,pred],
+                         f"{report_folder}/E3_ANALYSIS.json",{"kind":"json","schema":"uarcap_q2.e3_analysis.v2"},
+                         [dep],priority=priority+8)
+            continue
         evals=[]
         evfolder=f"{prefix}/evaluation"
         pred=[f"{prefix}/videollama/predictions.jsonl",f"{prefix}/qwen/predictions.jsonl"]
@@ -146,11 +208,14 @@ def build():
         path=f"{OUT}/{slug}/{model}"
         gen=[ "--generator",model,"--arms",",".join(arms),"--condition",slug,"--out-dir",path,*extra]
         inputs=[f"{FORMAL}/{model}/predictions.jsonl",f"{FORMAL}/formal_retrieval.jsonl",
-                *[extra[i+1] for i,key in enumerate(extra) if key in ("--qids-file","--decoded-frames")]]
-        expected={"kind":"generation","count":n*len(arms),"arms":len(arms)}
+                *[extra[i+1] for i,key in enumerate(extra) if key in ("--qids-file","--decoded-frames","--factorial-frames","--length-design")]]
+        qid_path=next((extra[i+1] for i,key in enumerate(extra) if key=="--qids-file"),f"{FORMAL}/formal_candidates.jsonl")
+        grid={"arm_names":arms,"query_manifest":qid_path,"queries":n}
+        expected={"kind":"generation","count":n*len(arms),"arms":len(arms),**(grid if v2 else {})}
         if smoke:
             s=task(f"{slug}_{model}_smoke",env,f"{TASKS}/supp_generate.py",[*gen,"--smoke-queries","2"],
-                   inputs,f"{path}/smoke_receipt.json",{"kind":"generation","count":2*len(arms),"smoke":True},
+                   inputs,f"{path}/smoke_receipt.json",{"kind":"generation","count":2*len(arms),"smoke":True,
+                                                       **(grid if v2 else {})},
                    dependencies,gpu=True,priority=priority,timeout=3600)
             dependencies=[*dependencies,s]
         g=task(f"{slug}_{model}",env,f"{TASKS}/supp_generate.py",gen,inputs,f"{path}/run_receipt.json",expected,
@@ -174,22 +239,63 @@ def build():
          ["--formal",FORMAL,"--out-dir",f"{OUT}/metrics","--extension-root",f"{OUT}/budget","--skip-spice"],
          [f"{FORMAL}/formal_candidates.jsonl"],f"{OUT}/metrics/E2_METRIC_BRIDGE_RECEIPT.json",
          {"kind":"metric","count":12000},[v[1] for v in budget.values()],priority=47)
+    if v2:
+        for m,(gemma_done,llama_done,folder) in budget.items():
+            base_cross=(f"{FORMAL}/videollama_machine_cross" if m=="videollama" else f"{OUT}/formal_qwen_cross")
+            dest=f"{OUT}/metrics_{m}"
+            measure=task(f"budget_metrics_{m}",METRIC,"scripts/e2_metric_bridge.py",
+                 ["--formal",FORMAL,"--out-dir",dest,"--extension-root",f"{OUT}/budget","--model",m,"--skip-spice"],
+                 [f"{FORMAL}/formal_candidates.jsonl",f"{folder}/predictions.jsonl"],f"{dest}/E2_METRIC_BRIDGE_RECEIPT.json",
+                 {"kind":"metric","count":6000},[gemma_done],priority=46)
+            task(f"budget_report_{m}",CPU,"scripts/q2_budget_report.py",
+                 ["--predictions",f"{FORMAL}/{m}/predictions.jsonl","--eval",f"{FORMAL}/{m}_eval/a2_ref_fact_eval.jsonl",
+                  "--cross",f"{base_cross}/A2_CROSS_JUDGE_LABELS.jsonl","--predictions",f"{folder}/predictions.jsonl",
+                  "--eval",f"{folder}/eval/a2_ref_fact_eval.jsonl","--cross",f"{folder}/cross/A2_CROSS_JUDGE_LABELS.jsonl",
+                  "--metric",f"{dest}/E2_METRIC_BRIDGE_PER_VIDEO.jsonl","--out",f"{OUT}/budget_report_{m}"],
+                 [f"{dest}/E2_METRIC_BRIDGE_PER_VIDEO.jsonl"],f"{OUT}/budget_report_{m}/Q2_BUDGET_REPORT.json",
+                 {"kind":"json","schema":"uarcap_q2.budget_report.v1"},[measure],priority=65)
     src_pred=[]
     src_eval=[]
     for model,(_,_,path) in budget.items():
         src_pred+=["--predictions",f"{FORMAL}/{model}/predictions.jsonl","--predictions",f"{path}/predictions.jsonl"]
         src_eval+=["--eval",f"{FORMAL}/{model}_eval/a2_ref_fact_eval.jsonl","--eval",f"{path}/eval/a2_ref_fact_eval.jsonl"]
-    task("fact_provenance",VLLM,"scripts/fact_provenance.py",
+    provenance=task("fact_provenance",VLLM,"scripts/fact_provenance.py",
           [*src_pred,*src_eval,"--retrieval",f"{FORMAL}/formal_retrieval.jsonl","--weights",GEMMA,"--out",f"{OUT}/provenance",*shared],
           [src_pred[1],src_pred[3],src_pred[5],src_pred[7],src_eval[1],src_eval[3],src_eval[5],src_eval[7]],
           f"{OUT}/provenance/FACT_PROVENANCE.json",{"kind":"json","schema":"uarcap_q2.fact_provenance.v1"},
           [v[0] for v in budget.values()],gpu=True,priority=60,timeout=43200)
+    if v2:
+        provenance_second=task("fact_provenance_second",VLLM,"scripts/fact_provenance.py",
+              [*src_pred,*src_eval,"--retrieval",formal_retrieval,"--weights",LLAMA,"--judge","llama","--sample-queries","60",
+               "--out",f"{OUT}/provenance_second",*shared],[formal_retrieval,LLAMA],
+              f"{OUT}/provenance_second/FACT_PROVENANCE.json",{"kind":"json","schema":"uarcap_q2.fact_provenance.v1"},
+              [v[0] for v in budget.values()],gpu=True,priority=68,timeout=43200)
+        for mode in ("gemma","dual"):
+            second=f"{OUT}/provenance_second/FACT_PROVENANCE.json"
+            artifact=f"{OUT}/provenance/REPORT_{mode}.json"
+            task("provenance_report_"+mode,CPU,"scripts/q2_module_report.py",
+                 ["--kind","provenance","--input",f"{OUT}/provenance/FACT_PROVENANCE.json",
+                  *(["--second",second] if mode=="dual" else []),"--out",artifact],[],artifact,
+                 {"kind":"json","schema":"uarcap_q2.module_report.v2"},[provenance,*([provenance_second] if mode=="dual" else [])],priority=69)
 
-    frozen_plans=f"{RELEASE}/{ARCH}/supplementary"
-    sensitivities.append(supplement("length","qwen",["ARM_A0","ARM_A1","ARM_A7"],120,
+    if v2:
+        length_run=supplement("length","qwen",["ARM_A0","ARM_A1","ARM_A7"],120,
+               ["--qids-file",f"{frozen_plans}/LENGTH_CONTROL_PLAN.json","--prompt-regime","uniform_length","--length-design",design],
+               [design_task],priority=100)
+        factorial_plan=f"{designs}/factorial.json"
+        factorial_frames=f"{OUT}/qwen_factorial/decoded_top1.json"
+        factorial_prepare=task("qwen_factorial_decode",CPU,"scripts/generate_visual_signatures.py",
+             ["factorial","--plan",factorial_plan,"--retrieval",formal_retrieval,"--clips",clips,"--location",clip_location,"--out",factorial_frames],
+             [factorial_plan,formal_retrieval,clips,clip_location],factorial_frames,
+             {"kind":"json","schema":"uarcap_q2.factorial_frames.v1"},[design_task],priority=106)
+        factorial_run=supplement("qwen_factorial","qwen",["T0F0","T1F0","T0F1","T1F1"],40,
+             ["--qids-file",factorial_plan,"--factorial-frames",factorial_frames],[factorial_prepare],smoke=True,priority=107)
+    else:
+        sensitivities.append(supplement("length","qwen",["ARM_A0","ARM_A1","ARM_A7"],120,
                ["--qids-file",f"{frozen_plans}/LENGTH_CONTROL_PLAN.json","--prompt-regime","detailed_sensitivity"],priority=100))
     supplement("modality","videollama",["T1V0","T7V0","T7V1","T1V7"],40,
                ["--qids-file",f"{frozen_plans}/LENGTH_CONTROL_PLAN.json","--modality-ablation","--limit","40"],smoke=True,priority=110)
+    controls={}
     for n in (32,64):
         plan=f"{frozen_plans}/VISUAL_SAMPLING_PLAN.json"
         dec=f"{OUT}/visual{n}/decoded.json"
@@ -197,8 +303,26 @@ def build():
                ["--plan",plan,"--candidates",f"{FORMAL}/formal_candidates.jsonl","--frame-root",f"{OUT}/visual{n}/frames",
                 "--out",dec,"--num-frames",str(n)],[plan,f"{FORMAL}/formal_candidates.jsonl"],dec,
                {"kind":"json","schema":"uarcap_q2.qwen_sampling_decode.v1"},priority=100)
-        sensitivities.append(supplement(f"visual{n}","qwen",["ARM_A7"],150,
-                   ["--qids-file",plan,"--num-frames",str(n),"--decoded-frames",dec],[d],priority=101))
+        a7=supplement(f"visual{n}","qwen",["ARM_A7"],150,
+                   ["--qids-file",plan,"--num-frames",str(n),"--decoded-frames",dec],[d],smoke=v2,priority=101)
+        sensitivities.append(a7)
+        if v2:
+            a0=supplement(f"visual{n}_a0","qwen",["ARM_A0"],60,
+                   ["--qids-file",f"{designs}/visual.json","--num-frames",str(n),"--decoded-frames",dec],[d,design_task],smoke=True,priority=103)
+            controls[f"visual{n}"]=(a0,a7)
+    if v2:
+        controls.update(length=(length_run,),factorial=(factorial_run,))
+        for name, runs in controls.items():
+            for cross_mode in (False, True):
+                slug=name+("_dual" if cross_mode else "_gemma")
+                artifact=f"{OUT}/controlled/{slug}.json"
+                additions=[v for item in runs for v in ("--addition",item[2])]
+                cross_option=["--baseline-cross",f"{OUT}/formal_qwen_cross/A2_CROSS_JUDGE_LABELS.jsonl"] if cross_mode else []
+                task(f"report_{slug}",CPU,"scripts/q2_controlled_sensitivity.py",
+                     ["report","--kind",name,"--design",design,"--baseline",short,"--baseline-eval",
+                      f"{FORMAL}/qwen_eval/a2_ref_fact_eval.jsonl",*additions,*cross_option,"--out",artifact],
+                     [design],artifact,{"kind":"json","schema":"uarcap_q2.controlled_sensitivity_report.v2"},
+                     [*(item[1 if cross_mode else 0] for item in runs),*([qwenfix] if cross_mode else [])],priority=121)
 
     def reporting(name, extensions, output_metric, deps):
         pp=[]
@@ -228,17 +352,38 @@ def build():
                "--out-dir",f"{history}/eval","--model-path",GEMMA,"--dataset-label","MSR-VTT"],
               [f"{history}/predictions.jsonl",f"{history}/historical_core_lock.json",GEMMA],f"{history}/eval/a2_ref_fact_eval.jsonl",
               {"kind":"rows","count":180,"keys":["model_id","query_id","arm"],"parse_status":"OK"},[hist],gpu=True,priority=116)
-    task("historical_llama",VLLM,f"{TASKS}/a2_cross_judge.py",
+    hist_cross=task("historical_llama",VLLM,f"{TASKS}/a2_cross_judge.py",
          ["--a2-dir",f"{history}/eval","--out-dir",f"{history}/cross",*cross_args],[f"{history}/eval/a2_ref_fact_eval.jsonl",LLAMA],
          f"{history}/cross/A2_CROSS_JUDGE_AGREEMENT.json",{"kind":"cross","eval":f"{history}/eval/a2_ref_fact_eval.jsonl"},
          [hist_eval],gpu=True,priority=117)
-    sig=f"{DATA}/data/source_witness"
-    task("visual_risk",CPU,"scripts/source_and_visual_risk.py",
-        ["visual","--query-signatures",f"{sig}/carebench_ordered_dhash.jsonl","--clip-signatures",f"{sig}/videoufo_top7_ordered_dhash.jsonl",
-         "--retrieval",f"{FORMAL}/formal_retrieval.jsonl","--out",f"{OUT}/visual_risk.json"],
-        [f"{sig}/carebench_ordered_dhash.jsonl",f"{sig}/videoufo_top7_ordered_dhash.jsonl",f"{FORMAL}/formal_retrieval.jsonl"],
+    sig_out=f"{OUT}/signatures" if v2 else sig
+    if v2:
+        for mode in ("gemma","dual"):
+            artifact=f"{history}/REPORT_{mode}.json"
+            task("historical_report_"+mode,CPU,"scripts/q2_module_report.py",
+                 ["--kind","history","--input",history,
+                  *(["--second",f"{history}/cross/A2_CROSS_JUDGE_LABELS.jsonl"] if mode=="dual" else []),"--out",artifact],
+                 [],artifact,{"kind":"json","schema":"uarcap_q2.module_report.v2"},[hist_cross if mode=="dual" else hist_eval],priority=118)
+        signature_task=task("visual_signature_generation",CPU,"scripts/generate_visual_signatures.py",
+             ["sign","--candidates",f"{FORMAL}/formal_candidates.jsonl","--retrieval",formal_retrieval,
+              "--clips",clips,"--location",clip_location,"--out",sig_out],
+             [f"{FORMAL}/formal_candidates.jsonl",formal_retrieval,clips],f"{sig_out}/SIGNATURE_INVENTORY.json",
+             {"kind":"json","schema":"uarcap_q2.visual_signature_inventory.v1"},priority=118,timeout=86400)
+    qsig=f"{sig_out}/"+("query_signatures.jsonl" if v2 else "carebench_ordered_dhash.jsonl")
+    csig=f"{sig_out}/"+("clip_signatures.jsonl" if v2 else "videoufo_top7_ordered_dhash.jsonl")
+    visual_risk=task("visual_risk",CPU,"scripts/source_and_visual_risk.py",
+        ["visual","--query-signatures",qsig,"--clip-signatures",csig,
+         "--retrieval",formal_retrieval,"--out",f"{OUT}/visual_risk.json"],
+        [qsig,csig,formal_retrieval],
         f"{OUT}/visual_risk.json",{"kind":"json","schema":"uarcap_q2.visual_risk.v1"},priority=119,
-        gate="Existing aligned perceptual signatures; missing inputs remain unresolved")
+        depends=[signature_task] if v2 else [],gate="Aligned perceptual signatures; missing inputs remain unresolved")
+    if v2:
+        for m in ("videollama","qwen"):
+            artifact=f"{OUT}/visual_risk_{m}_sensitivity.json"
+            task("visual_risk_sensitivity_"+m,CPU,"scripts/q2_visual_risk_sensitivity.py",
+                 ["--risk",f"{OUT}/visual_risk.json","--manifest",formal_manifest,"--predictions",f"{FORMAL}/{m}/predictions.jsonl",
+                  "--eval",f"{FORMAL}/{m}_eval/a2_ref_fact_eval.jsonl","--out",artifact],[formal_manifest],artifact,
+                 {"kind":"json","schema":"uarcap_q2.visual_risk_sensitivity.v2"},[visual_risk],priority=120)
 
     e=f"{OUT}/retrieval_relevance"
     ep=f"{e}/evidence.jsonl"
@@ -251,11 +396,45 @@ def build():
                       [ep,f"{FORMAL}/formal_core_lock.json",GEMMA],ee,
                       {"kind":"rows","count":4200,"keys":["model_id","query_id","arm"],"parse_status":"OK"},
                       [evidence_stage],gpu=True,priority=128,timeout=43200)
-    task("retrieval_relevance_report",CPU,"scripts/retrieved_fact_relevance.py",
+    rel=task("retrieval_relevance_report",CPU,"scripts/retrieved_fact_relevance.py",
          ["summarize","--predictions",ep,"--eval",ee,"--out",f"{e}/SEMANTIC_RELEVANCE.json"],
          [ep,ee],f"{e}/SEMANTIC_RELEVANCE.json",{"kind":"json","schema":"uarcap_q2.retrieved_fact_relevance.v1"},
          [evidence_judge],priority=129)
-    return {"schema":SCHEMA,"version":"laptop-20261126-v1","base_commit":FROZEN,"tasks":tasks}
+    if v2:
+        sample=f"{e}/sample"
+        rel_sample=task("relevance_cross_sample",CPU,"scripts/q2_module_report.py",
+             ["--kind","relevance-sample","--input",ee,"--second",f"{FORMAL}/formal_core_lock.json","--out",sample],
+             [ee,f"{FORMAL}/formal_core_lock.json"],f"{sample}/RELEVANCE_SAMPLE.json",
+             {"kind":"json","schema":"uarcap_q2.relevance_reliability_sample.v2"},[evidence_judge],priority=130)
+        rel_cross=task("relevance_sample_llama",VLLM,f"{TASKS}/a2_cross_judge.py",
+            ["--a2-dir",sample,"--out-dir",f"{e}/cross",*cross_args],
+            [f"{sample}/a2_ref_fact_eval.jsonl",LLAMA],f"{e}/cross/A2_CROSS_JUDGE_AGREEMENT.json",
+            {"kind":"cross","eval":f"{sample}/a2_ref_fact_eval.jsonl"},[rel_sample],gpu=True,priority=131)
+        for mode in ("gemma","dual"):
+            artifact=f"{e}/REPORT_{mode}.json"
+            task("relevance_report_"+mode,CPU,"scripts/q2_module_report.py",
+                 ["--kind","relevance","--input",f"{e}/SEMANTIC_RELEVANCE.json",
+                  *(["--second",f"{e}/cross/A2_CROSS_JUDGE_LABELS.jsonl","--sample",f"{sample}/a2_ref_fact_eval.jsonl"] if mode=="dual" else []),
+                  "--out",artifact],[],artifact,{"kind":"json","schema":"uarcap_q2.module_report.v2"},
+                 [rel,*([rel_cross] if mode=="dual" else [])],priority=132)
+        stress=f"{OUT}/evaluator_stress"
+        judges=[]
+        for model,weights,model_id in (("gemma",GEMMA,GEMMA_ID),("llama",LLAMA,LLAMA_ID)):
+            raw=f"{stress}/{model}.jsonl"
+            report=f"{stress}/{model}.json"
+            judges.append(task("stress_"+model,VLLM,"scripts/evaluator_stress.py",
+                 ["run","--weights",weights,"--model-id",model_id,"--family",model,"--raw",raw,"--out",report,*shared],
+                 [weights],report,{"kind":"json","schema":"uarcap_q2.evaluator_stress.v1"},gpu=True,priority=53))
+        task("stress_report",CPU,"scripts/evaluator_stress.py",
+             ["report","--gemma",f"{stress}/gemma.jsonl","--llama",f"{stress}/llama.jsonl","--out",f"{stress}/REPORT.json"],
+             [],f"{stress}/REPORT.json",{"kind":"json","schema":"uarcap_q2.evaluator_stress.v1"},judges,priority=54)
+        archive=f"{OUT}/final"
+        contract=f"{RELEASE}/laptop_final_handoff_20261126/REMAINING_GPU_TASK_QUEUE.json"
+        task("final_snapshot",CPU,"scripts/q2_release_report.py",
+             ["--queue",contract,"--state",f"{BASE}/task_state.json","--out",archive],
+             [contract],f"{archive}/FINAL_EXPERIMENT_MATRIX.json",
+             {"kind":"json","schema":"uarcap_q2.release_matrix.v2"},priority=200)
+    return {"schema":SCHEMA,"version":f"laptop-20261126-{version}","base_commit":FROZEN,"tasks":tasks}
 
 
 def validate(tasks):
@@ -305,6 +484,18 @@ def preserve_superseded(old,state):
     return [t for t in tasks if t["id"] not in retired],[t for t in tasks if t["id"] in retired]
 
 
+def retire_pending_v1(tasks, state):
+    v1 = {t["id"] for t in tasks if t["id"].startswith("q2l_v1_")}
+    for tid in v1:
+        row = state["tasks"].get(tid,{})
+        if row.get("status","PENDING") != "PENDING" or row.get("attempts"):
+            raise ValueError(f"{tid} has execution history. Reconcile existing receipts before installing V2")
+    active = [t for t in tasks if t["id"] not in v1]
+    if any(v1.intersection(t.get("depends_on",[])) for t in active):
+        raise ValueError("A retained task is bound to laptop V1")
+    return active,[t for t in tasks if t["id"] in v1]
+
+
 def process_ids(base,script):
     found=[]
     for p in Path("/proc").iterdir():
@@ -341,12 +532,17 @@ def deployment(args):
         live={name:process_ids(base,name) for name in ("run_overnight.py","overnight_supervisor.py","report_writer.py")}
         if any(len(pids)>1 for pids in live.values()):
             raise ValueError("Duplicate scheduler processes detected")
-        generated=build()
+        generated=build("v2")
         deployed=read_json(ROOT/"laptop_final_handoff_20261126/REMAINING_GPU_TASK_QUEUE.json")
         if generated!=deployed:
             raise ValueError("Versioned queue does not match release code")
         state=read_json(base/"task_state.json")
         active,retired=preserve_superseded(old,state)
+        if not args.rollback:
+            active,oldv1=retire_pending_v1(active,state)
+            if oldv1 and live["run_overnight.py"]:
+                raise ValueError("A live scheduler could dispatch a superseded V1 task during install")
+            retired.extend(oldv1)
         new=merge(active,deployed["tasks"])
         print(json.dumps({"running":live,"existing":len(old["tasks"]),"after_merge":len(new),"superseded":[t["id"] for t in retired],
                           "queue_sha256":sha256_file(queue)},indent=2))
@@ -369,24 +565,30 @@ def deployment(args):
         installed={**old,"updated_utc":datetime.now(timezone.utc).isoformat(),"tasks":new,
                    "superseded_task_records":[*old.get("superseded_task_records",[]),*retired]}
         if args.rollback:
-            if any(v.get("status")=="RUNNING" for k,v in state["tasks"].items() if k.startswith("q2l_v1_")):
+            if any(v.get("status")=="RUNNING" for k,v in state["tasks"].items() if k.startswith("q2l_v2_")):
                 raise ValueError("Wait for the current release task to finish before withdrawal")
-            installed["tasks"]=[t for t in old["tasks"] if not t["id"].startswith("q2l_v1_")]
-            installed["withdrawn_task_records"]=[t for t in old["tasks"] if t["id"].startswith("q2l_v1_")]
+            installed["tasks"]=[t for t in old["tasks"] if not t["id"].startswith("q2l_v2_")]
+            installed["withdrawn_task_records"]=[t for t in old["tasks"] if t["id"].startswith("q2l_v2_")]
             installed["superseded_task_records"]=old.get("superseded_task_records",[])
             validate(installed["tasks"])
         atomic_write_json(queue,installed)
         if args.rollback:
             return
+        if live["run_overnight.py"]:
+            atomic_write_json(base/"orchestrator.pid",{"pid":live["run_overnight.py"][0],"verified_utc":datetime.now(timezone.utc).isoformat()})
         for name,pids in live.items():
             if pids:
+                continue
+            if name=="run_overnight.py" and live["overnight_supervisor.py"]:
                 continue
             suffix=["--base",str(base)] if name!="report_writer.py" else []
             if name=="overnight_supervisor.py":
                 suffix+=["--check-interval","1800","--heartbeat","60","--duration-hours","48"]
-            with (base/("q2l_v1_"+name+".log")).open("ab") as log:
-                subprocess.Popen(["/usr/bin/python3","-u",str(base/name),*suffix],cwd=base,
-                                 stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+            with (base/("q2l_v2_"+name+".log")).open("ab") as log:
+                proc=subprocess.Popen(["/usr/bin/python3","-u",str(base/name),*suffix],cwd=base,
+                                      stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+                if name=="run_overnight.py":
+                    atomic_write_json(base/"orchestrator.pid",{"pid":proc.pid,"started_utc":datetime.now(timezone.utc).isoformat()})
 
 
 def main():
@@ -400,7 +602,7 @@ def main():
     p.add_argument("--gpu-approval",type=Path)
     a=p.parse_args()
     if a.emit:
-        data=build()
+        data=build("v2")
         validate(data["tasks"])
         atomic_write_json(a.emit,data)
     else:

@@ -38,11 +38,11 @@ def panel(rows, expected, judge):
     return latest
 
 
-def describe_panels(evaluations):
+def describe_panels(evaluations, models=MODELS, expected_qids=None):
     output={}
     for judge, rows in evaluations.items():
-        for model in MODELS:
-            qids=sorted({k[1] for k in rows if k[0]==model})
+        for model in models:
+            qids=expected_qids if expected_qids is not None else sorted({k[1] for k in rows if k[0]==model})
             for target in TARGETS:
                 values=defaultdict(dict)
                 for q in qids:
@@ -66,9 +66,10 @@ def describe_panels(evaluations):
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     for k in ("approved","old","qwen","out"):
-        ap.add_argument("--"+k,type=Path,required=True)
+        ap.add_argument("--"+k,type=Path,required=k in ("approved","out"))
     for k in ("lock","weights"):
         ap.add_argument("--"+k,type=Path)
+    ap.add_argument("--report-out",type=Path)
     ap.add_argument("--gpu-uuid")
     ap.add_argument("--judge",choices=("gemma","llama","summarize"),required=True)
     args=ap.parse_args()
@@ -81,8 +82,11 @@ def main():
         ap.exit(3,"HARD_BLOCK insufficient approved candidates\n")
     candidates={r["query_id"]:r for r in approved}
     pred={}
-    paths=[args.old,args.qwen]
-    for path, model in zip(paths,MODELS,strict=True):
+    model_paths=[(model,path) for model,path in zip(MODELS,(args.old,args.qwen),strict=True) if path is not None]
+    if not model_paths:
+        raise ValueError("Need at least one complete generator receipt")
+    paths=[p for _,p in model_paths]
+    for model,path in model_paths:
         receipt=read_json(path.parent/"run_receipt.json")
         if (not receipt.get("complete") or receipt["cohort_sha256"]!=primitive_hash(frozen)):
             raise ValueError("E3 generation receipt does not match freeze")
@@ -107,9 +111,10 @@ def main():
         out={"schema":"uarcap_q2.e3_analysis.v2","binding_sha256":binding,
              "scope":frozen["scope"],"status":"MACHINE_ASSISTED_UNVALIDATED","n_candidates":len(candidates),
              "n_expected_per_judge":len(jobs), "parsed_by_judge":{j:len(p) for j,p in panels.items()},
-             "results":describe_panels(panels)}
-        atomic_write_json(output/"E3_ANALYSIS.json",out)
-        return 0 if all(len(p)==len(jobs) for p in panels.values()) else 2
+             "judge_coverage":"DUAL_JUDGE_COMPLETE" if all(len(p)==len(jobs) for p in panels.values()) else "PARTIAL_JUDGE_COVERAGE",
+             "model_scope":[m for m,_ in model_paths],"results":describe_panels(panels,[m for m,_ in model_paths],sorted(candidates))}
+        atomic_write_json((args.report_out or output)/"E3_ANALYSIS.json",out)
+        return 0 if any(len(p)==len(jobs) for p in panels.values()) else 2
 
     from uarcap_q2.common.gpu_lock import GPULockConfig, acquire_cooperative_gpu_lock
     from uarcap_q2.evaluators.backends import JudgeBackendConfig, LocalVLLMJudgeBackend

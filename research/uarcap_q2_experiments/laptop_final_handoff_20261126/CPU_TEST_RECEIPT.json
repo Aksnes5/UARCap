@@ -1,7 +1,9 @@
 {
-  "schema": "uarcap_q2.windows_cpu_test_receipt.v1",
+  "schema": "uarcap_q2.windows_cpu_test_receipt.v2",
   "status": "PASS",
-  "baseline": "2027e4267dce105d47a60c8f9eedcef5c9099bda",
+  "branch": "antigravity/uarcap-q2-laptop-final-development-v2-20261126",
+  "v1_base_commit": "1693dbb65ed43d962bcf8915fa390d46d8d57761",
+  "bn_handoff_baseline": "2027e4267dce105d47a60c8f9eedcef5c9099bda",
   "date": "2026-11-26",
   "platform": "Windows",
   "python": "3.11.9",
@@ -9,58 +11,76 @@
     "pytest": "9.1.1",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "matplotlib": "3.11.2",
-    "java": "17.0.20.1"
+    "matplotlib": "3.11.2"
   },
-  "baseline_windows": {
-    "passed": 71,
-    "failed": 1,
-    "skipped": 1
-  },
-  "final": {
+  "final_pytest": {
     "command": "python -m pytest -q -rs",
-    "passed": 93,
+    "passed": 113,
     "failed": 0,
     "skipped": 0,
-    "elapsed_seconds": 21.4
+    "elapsed_seconds": 37.77
   },
-  "compile_command": "python -m compileall -q scripts uarcap_q2 deployment bn_carebench_pilot_a01/overnight_20261126/tasks",
-  "queue_sha256": "e345d6bf9cad46641a5ace6e19ce79054709d385567cc2b9fffccd38977dbdeb",
-  "queue_tasks": 55,
-  "additional_cpu_runs": {
-    "cohort_identity": {
-      "predictions": 3600,
-      "evaluation_rows": 3600,
-      "video_parents": 600,
-      "validation_captions": 360
+  "static_checks": {
+    "ast_unbound_names": 0,
+    "compile_command": "python -m compileall -q scripts uarcap_q2 deployment bn_carebench_pilot_a01/overnight_20261126/tasks",
+    "compile_exit_code": 0
+  },
+  "queue_audit": {
+    "command": "python scripts/audit_q2_queue.py --queue laptop_final_handoff_20261126/REMAINING_GPU_TASK_QUEUE.json --out <audit.json>",
+    "exit_code": 0,
+    "version": "laptop-20261126-v2",
+    "queue_sha256": "ef7c275a54e154d00fa65325108fa5fb0eed3dda6ac47a7d8e8d878aa45ee576",
+    "n_tasks": 111,
+    "n_gpu_wrapper_tasks": 60,
+    "n_cpu_wrapper_tasks": 51,
+    "runtime_counts": {
+      "videollama2_cpu": 52,
+      "venv_rag_vllm": 56,
+      "repro_evcap_metric": 3
     },
-    "rebuilt_blind_package": {
-      "private": true,
-      "caption_records": 360,
-      "human_reviews": 0
+    "n_actual_argparse_helps": 29,
+    "errors": []
+  },
+  "real_archive_and_cpu_replays": {
+    "controlled_sensitivity_plan": {
+      "word_range": [13, 15],
+      "length_baseline_n": 360,
+      "n_length_queries": 120,
+      "n_factorial_queries": 40,
+      "n_visual_nested_queries": 60,
+      "design_sha256": "025581f160680f5c9315d7995eb07d4ac7571e6ecc28fb9dcb6a731f0dcc3e65"
     },
-    "metric_bridge": {
-      "complete_scored_rows": 7200,
-      "fixed_reference_modes": 2,
-      "GPU": false
+    "top7_visual_signature_denominator": {
+      "n_queries": 600,
+      "n_total_top7_pairs": 4200,
+      "n_unique_top7_clips": 2622
+    },
+    "evaluator_stress_suite": {
+      "n_cases": 196,
+      "n_categories": 14
+    },
+    "release_report_snapshot": {
+      "schema": "uarcap_q2.release_matrix.v2",
+      "n_tracked_tasks": 110,
+      "confirmatory_gates_all_false": true
     },
     "confirmatory_without_human": {
       "exit_code": 3,
       "status": "HUMAN_ANNOTATION_IMPORT_REQUIRED"
     },
-    "historical_bridge": {
-      "reused_frozen_captions": 180,
-      "n_sources": 60
-    },
     "source_overlap": {
       "video_ufo_sources": 345437,
-      "historical_overlap": 2
+      "formal_sources": 159,
+      "historical_overlap_excluded": 2,
+      "carebench_source_join": "NOT_JOINABLE"
     },
-    "evidence_relevance_stage": {
-      "top7_caption_inputs": 4200,
-      "evaluation": "PENDING"
+    "cohort_identity_inherited": {
+      "predictions": 3600,
+      "evaluation_rows": 3600,
+      "video_parents": 600,
+      "validation_captions": 360
     },
-    "qwen_cross_check": {
+    "qwen_cross_check_inherited": {
       "required": 5099,
       "archived_valid": 5098
     }

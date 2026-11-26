@@ -14,12 +14,16 @@ Features:
 from __future__ import annotations
 
 import csv
+import hmac
+from http.cookies import CookieError, SimpleCookie
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import io
 import json
 import mimetypes
 from pathlib import Path
+import re
+from threading import RLock
 from typing import Any
 from urllib.parse import parse_qs, urlparse
 
@@ -32,6 +36,7 @@ HTML_PAGE = r"""<!DOCTYPE html>
 <title>UARCap Q2 Blind Video Factuality Annotator</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; margin: 0; background: #f4f6f9; color: #1b2631; }
+  [hidden] { display: none !important; }
   header { background: #1b4f72; color: #fff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
   .wrap { max-width: 1280px; margin: 16px auto; padding: 0 16px; display: grid; grid-template-columns: 460px 1fr; gap: 18px; }
   .card { background: #fff; border-radius: 8px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); margin-bottom: 14px; }
@@ -75,13 +80,13 @@ HTML_PAGE = r"""<!DOCTYPE html>
         </div>
       </div>
       <video id="vidPlayer" controls muted playsinline></video>
-      <div class="toolbar" style="margin-top:8px;">
+      <div id="video-toolbar" class="toolbar" style="margin-top:8px;">
         <button class="btn" onclick="replayVideo()">Replay</button>
         <button class="btn" onclick="toggleMute()">Toggle Mute</button>
         <button class="btn" onclick="toggleFrames()">Show/Hide Sampled Frames</button>
       </div>
       <div id="framesGrid" class="frames" style="display:none;"></div>
-      <div class="toolbar" style="margin-top:8px;">
+      <div id="legacy-visibility" class="toolbar" style="margin-top:8px;">
         <span style="font-size:12px;color:#566573;">16-frame visibility check:</span>
         <button id="fvSufficient" class="btn btn-ok" onclick="setFramesVisibility('sufficient')">Sufficient</button>
         <button id="fvInsufficient" class="btn btn-err" onclick="setFramesVisibility('insufficient')">Insufficient / misaligned</button>
@@ -90,7 +95,7 @@ HTML_PAGE = r"""<!DOCTYPE html>
         <textarea id="videoNotes" rows="2" placeholder="Optional video-level notes..." onchange="setVideoNotes(this.value)"></textarea>
       </div>
     </div>
-    <div class="card">
+    <div id="legacy-phase" class="card">
       <strong>Phase 1: Independent Core Events (Video-Only)</strong>
       <p style="font-size:12px;color:#566573;">Watch the muted video first and write 1–2 main core events before unlocking anonymous captions.</p>
       <textarea id="coreEventsInput" rows="3" placeholder="One core event per line..."></textarea>
@@ -199,7 +204,8 @@ function setClaimLabel(bcid, cid, normKey, lbl) {
   rec.captions[bcid].claims[cid] = lbl;
   // Blind within-video normalized-claim reuse cache (never reveals which caption/arm had it)
   if (normKey) {
-    const cacheKey = `${taskKey(t)}::${normKey}`;
+    const caption = t.captions.find(c => c.blind_caption_id === bcid).caption;
+    const cacheKey = JSON.stringify([taskKey(t), caption, normKey]);
     STATE.claimCache[cacheKey] = lbl;
   }
   saveCurrent(false);
@@ -287,6 +293,11 @@ async function saveCurrent(markComplete) {
   const rec = ensureRec(t);
   rec.elapsed_sec = (rec.elapsed_sec || 0) + STATE.secOnTask;
   STATE.secOnTask = 0;
+  if (markComplete && t.task_type === 'SCOPED_JUDGMENT' &&
+      (!t.labels.includes(rec.scope_label) || !rec.scope_rationale?.trim())) {
+    alert('Select a judgment and record the evidence or uncertainty.');
+    return;
+  }
   if (markComplete && t.human_reference_spans?.length) {
     const complete = t.captions.every(c => {
       const values = rec.captions[c.blind_caption_id]?.endpoints;
@@ -312,13 +323,27 @@ function updateProgress() {
 
 function render() {
   const t = STATE.bundle.tasks[STATE.idx];
+  if (!t) {
+    document.getElementById('workArea').textContent = 'No assigned tasks.';
+    return;
+  }
   const rec = ensureRec(t);
   updateProgress();
   document.getElementById('taskTitle').textContent = `${t.task_type} — ${taskKey(t)} (${STATE.idx + 1}/${STATE.bundle.tasks.length})`;
   const v = document.getElementById('vidPlayer');
-  v.src = '/media?path=' + encodeURIComponent(t.video_path);
-  v.muted = true;
+  const videoSource = t.video_path ? '/media?path=' + encodeURIComponent(t.video_path) : null;
+  if (v.getAttribute('src') !== videoSource) {
+    if (videoSource) { v.src = videoSource; }
+    else { v.removeAttribute('src'); v.load(); }
+    v.muted = true;
+  }
+  v.hidden = !videoSource;
+  document.getElementById('video-toolbar').hidden = !videoSource;
+  const scoped = t.task_type === 'SCOPED_JUDGMENT';
+  document.getElementById('legacy-phase').hidden = scoped;
+  document.getElementById('legacy-visibility').hidden = scoped;
   const fg = document.getElementById('framesGrid');
+  if (scoped) fg.style.display = t.scope === 'GENERATOR_FRAMES' ? 'grid' : 'none';
   fg.innerHTML = (t.sampled_frame_paths || []).map(p => `<img src="/media?path=${encodeURIComponent(p)}" />`).join('');
   document.getElementById('coreEventsInput').value = (rec.core_events || []).join('\n');
   document.getElementById('videoNotes').value = rec.notes || '';
@@ -326,7 +351,30 @@ function render() {
   document.getElementById('fvInsufficient').classList.toggle('btn-active', rec.frames_visibility === 'insufficient');
 
   const work = document.getElementById('workArea');
-  if (t.task_type === 'E2_FACT_AUDIT') {
+  if (scoped) {
+    const prompts = { FULL_VIDEO: 'Assess the claim against the entire video.',
+      GENERATOR_FRAMES: 'Assess visibility using only these 16 generator frames.',
+      CAPTION_EXPRESSION: 'Assess whether the written caption expresses the target claim.' };
+    work.innerHTML = '<h3>' + prompts[t.scope] + '</h3>' +
+      (t.caption ? '<div class="cap-card">' + escapeText(t.caption) + '</div>' : '') +
+      '<p><strong>Claim</strong> ' + escapeText(t.claim) + '</p>';
+    const select = document.createElement('select');
+    select.append(new Option('Pending', ''));
+    t.labels.forEach(label => select.append(new Option(label, label)));
+    select.value = rec.scope_label || '';
+    select.onchange = () => { rec.scope_label = select.value; rec.completed = false; saveCurrent(false); };
+    work.append(select);
+    const note = document.createElement('textarea');
+    note.placeholder = 'Evidence, timestamp or frame number, or reason for uncertainty';
+    note.value = rec.scope_rationale || '';
+    note.onchange = () => { rec.scope_rationale = note.value; rec.completed = false; saveCurrent(false); };
+    work.append(note);
+    const next = document.createElement('button');
+    next.className = 'btn btn-ok';
+    next.textContent = 'Mark Complete & Next';
+    next.onclick = async () => { await saveCurrent(true); if (rec.completed) nav(1); };
+    work.append(next);
+  } else if (t.task_type === 'E2_FACT_AUDIT') {
     const cls = rec.phase1_confirmed ? '' : 'locked';
     let html = `<div class="${cls}"><h3>Phase 2: Blind Caption Fact Verification</h3>`;
     if (rec.phase1_confirmed && t.human_reference_spans?.length) {
@@ -339,7 +387,7 @@ function render() {
       const crec = rec.captions[c.blind_caption_id] || { claims: {}, added_claims: [], core_covered: false, notes: '' };
       html += `<div class="cap-card"><div><span class="pill">${c.blind_caption_id}</span> <strong>${escapeText(c.caption)}</strong></div>`;
       for (const cl of c.claims) {
-        const cacheKey = `${taskKey(t)}::${cl.exact_claim_key || cl.claim_id}`;
+        const cacheKey = JSON.stringify([taskKey(t), c.caption, cl.exact_claim_key || cl.claim_id]);
         const cur = crec.claims[cl.claim_id] || STATE.claimCache[cacheKey] || '';
         const reusedTag = (!crec.claims[cl.claim_id] && STATE.claimCache[cacheKey]) ? ' <span class="pill">reused suggestion</span>' : '';
         html += `<div class="claim-box"><div>${escapeText(cl.text)}${reusedTag}</div><div>`;
@@ -414,6 +462,7 @@ class AnnotationStore:
         self.save_dir.mkdir(parents=True, exist_ok=True)
         self.state_file = self.save_dir / "progress.json"
         self.saved: dict[str, dict[str, Any]] = read_json(self.state_file) if self.state_file.is_file() else {}
+        self.lock = RLock()
         self.allowed_media: set[str] = set()
         for t in self.bundle.get("tasks", []):
             if t.get("video_path"):
@@ -422,9 +471,10 @@ class AnnotationStore:
                 self.allowed_media.add(str(Path(fp).resolve()))
 
     def save_record(self, task_key: str, record: dict[str, Any]) -> None:
-        self.saved[task_key] = record
-        atomic_write_json(self.state_file, self.saved)
-        atomic_write_jsonl(self.save_dir / "annotations.jsonl", list(self.saved.values()))
+        with self.lock:
+            self.saved[task_key] = record
+            atomic_write_json(self.state_file, self.saved)
+            atomic_write_jsonl(self.save_dir / "annotations.jsonl", list(self.saved.values()))
 
     def export_json_bytes(self) -> bytes:
         payload = {
@@ -462,6 +512,7 @@ def create_annotation_server(
     save_dir: Path | str,
     host: str = "127.0.0.1",
     port: int = 0,
+    access_token: str = "",
 ) -> tuple[ThreadingHTTPServer, AnnotationStore]:
     store = AnnotationStore(bundle_path, save_dir)
 
@@ -476,8 +527,29 @@ def create_annotation_server(
             self.end_headers()
             self.wfile.write(body)
 
+        def _has_access(self) -> bool:
+            if not access_token:
+                return True
+            cookie = SimpleCookie()
+            try:
+                cookie.load(self.headers.get("Cookie",""))
+            except (ValueError, CookieError):
+                return False
+            value = cookie.get("uarcap_review")
+            return value is not None and hmac.compare_digest(value.value,access_token)
+
         def do_GET(self) -> None:
             parsed = urlparse(self.path)
+            supplied = parse_qs(parsed.query).get("access",[""])[0]
+            if access_token and parsed.path == "/" and hmac.compare_digest(supplied,access_token):
+                self.send_response(HTTPStatus.SEE_OTHER)
+                self.send_header("Location","/")
+                self.send_header("Set-Cookie",f"uarcap_review={access_token}; HttpOnly; SameSite=Strict; Path=/")
+                self.end_headers()
+                return
+            if not self._has_access():
+                self._send(HTTPStatus.FORBIDDEN,b"Private reviewer session required","text/plain")
+                return
             if parsed.path == "/":
                 self._send(HTTPStatus.OK, HTML_PAGE.encode("utf-8"), "text/html; charset=utf-8")
                 return
@@ -504,11 +576,45 @@ def create_annotation_server(
                     self._send(HTTPStatus.FORBIDDEN, b"forbidden media path", "text/plain")
                     return
                 ctype = mimetypes.guess_type(resolved)[0] or "application/octet-stream"
-                self._send(HTTPStatus.OK, Path(resolved).read_bytes(), ctype)
+                path = Path(resolved)
+                size = path.stat().st_size
+                start, end = 0, size-1
+                requested = self.headers.get("Range")
+                if requested:
+                    match = re.fullmatch(r"bytes=(\d+)-(\d*)", requested)
+                    if not match or int(match[1]) >= size:
+                        self.send_response(HTTPStatus.REQUESTED_RANGE_NOT_SATISFIABLE)
+                        self.send_header("Content-Range",f"bytes */{size}")
+                        self.end_headers()
+                        return
+                    start = int(match[1])
+                    end = min(int(match[2]),size-1) if match[2] else size-1
+                    if end < start:
+                        self._send(HTTPStatus.BAD_REQUEST,b"invalid media range","text/plain")
+                        return
+                self.send_response(HTTPStatus.PARTIAL_CONTENT if requested else HTTPStatus.OK)
+                self.send_header("Accept-Ranges","bytes")
+                self.send_header("Content-Length",str(end-start+1))
+                self.send_header("Content-Type",ctype)
+                if requested:
+                    self.send_header("Content-Range",f"bytes {start}-{end}/{size}")
+                self.end_headers()
+                with path.open("rb") as media:
+                    media.seek(start)
+                    remaining=end-start+1
+                    while remaining:
+                        chunk=media.read(min(256*1024,remaining))
+                        if not chunk:
+                            break
+                        self.wfile.write(chunk)
+                        remaining-=len(chunk)
                 return
             self._send(HTTPStatus.NOT_FOUND, b"not found", "text/plain")
 
         def do_POST(self) -> None:
+            if not self._has_access():
+                self._send(HTTPStatus.FORBIDDEN,b"Private reviewer session required","text/plain")
+                return
             parsed = urlparse(self.path)
             if parsed.path == "/api/save":
                 length = int(self.headers.get("Content-Length", "0"))

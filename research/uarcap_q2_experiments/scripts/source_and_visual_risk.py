@@ -30,7 +30,7 @@ def source_audit(clips,pilot,formal,historical):
 
 
 def risk(query, retrieved):
-    if not query or not retrieved:
+    if not query or not retrieved or any(s.get("status") == "UNVERIFIED" for s in (query, retrieved)):
         return {"status":"UNVERIFIED","reason":"Missing visual signatures"}
     q_sha=query.get("video_sha256")
     if q_sha and q_sha==retrieved.get("video_sha256"):
@@ -38,15 +38,24 @@ def risk(query, retrieved):
     q,t=query.get("ordered_dhash"),retrieved.get("ordered_dhash")
     if not q or not t or len(q)!=len(t) or len(q)<8 or any(not re.fullmatch(r"[a-f0-9]{16}",x or "") for x in q+t):
         return {"status":"UNVERIFIED","reason":"Need aligned ordered dHash arrays"}
-    distance=[(int(a,16)^int(b,16)).bit_count() for a,b in zip(q,t,strict=True)]
-    close=sum(x<=5 for x in distance)/len(distance)
+    def alignment(left, right, shift, limit):
+        pairs = [(v, right[i+shift]) for i,v in enumerate(left) if 0<=i+shift<len(right)]
+        return sum(bin(int(a,16)^int(b,16)).count("1")<=limit for a,b in pairs)/len(pairs)
+    close=alignment(q,t,0,5)
     dq,dt=(x.get("duration_seconds") for x in (query,retrieved))
     duration_ratio=min(dq,dt)/max(dq,dt) if dq and dt else None
     if duration_ratio is None:
         return {"status":"UNVERIFIED","frame_close_fraction":close,"reason":"Need clip durations"}
-    high=close>=.75 and duration_ratio>=.8
+    phash_matches = []
+    for left_key, right_key in (("ordered_phash","ordered_phash"), ("ordered_center_phash","ordered_phash"),
+                                ("ordered_phash","ordered_center_phash")):
+        left, right = query.get(left_key, []), retrieved.get(right_key, [])
+        if len(left) == len(right) == len(q) and all(re.fullmatch(r"[a-f0-9]{16}", x) for x in left+right):
+            phash_matches.extend((alignment(left,right,shift,8), shift, left_key, right_key) for shift in range(-2,3))
+    best = max(phash_matches, default=None)
+    high=duration_ratio>=.8 and (close>=.75 or (best is not None and best[0]>=.85))
     return {"status":"HIGH_RISK_NEAR_DUPLICATE" if high else "NO_OBVIOUS_SIGNATURE_RISK",
-            "frame_close_fraction":close,"duration_ratio":duration_ratio}
+            "frame_close_fraction":close,"duration_ratio":duration_ratio,"best_phash_alignment":best}
 
 
 def main():
@@ -72,7 +81,8 @@ def main():
                 cid=item["clip_ids"][0]
                 rows.append({"query_id":q,"rank":rank,"clip_id":cid,**risk(query.get(q),clip.get(cid))})
         payload={"schema":"uarcap_q2.visual_risk.v1","rows":rows,
-                 "interpretation":"Time-aligned dHash screen conditional on existing signatures"}
+                 "input_sha256":{k:sha256_file(getattr(a,k)) for k in ("query_signatures","clip_signatures","retrieval")},
+                 "interpretation":"dHash and pHash screen with small temporal offsets and center-crop comparisons"}
     atomic_write_json(a.out,payload)
     return 0
 

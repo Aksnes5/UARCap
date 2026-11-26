@@ -26,6 +26,9 @@ class BatchItem:
     visual_input_sha256: str
     frame_indices: list[int]
     frame_images: list[Any] = field(default_factory=list)  # Actual decoded PIL.Image frames
+    external_frame_images: list[Any] = field(default_factory=list)
+    external_frame_indices: list[int] = field(default_factory=list)
+    external_video_sha256: str = ""
 
 
 @dataclass

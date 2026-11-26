@@ -1,19 +1,36 @@
-# Windows 开发与验证交付
+# UARCap Q2 V2 Windows 交付完成报告
 
-基线 `2027e4267dce105d47a60c8f9eedcef5c9099bda`。在独立检出目录进行改动。本阶段完成冻结数据的 CPU 校验、指标桥接修复、对照分组代码和版本化 BN 任务编排。真实 BN smoke、模型加载及新的研究结果仍待运行。
+- **交付分支**: `antigravity/uarcap-q2-laptop-final-development-v2-20261126`
+- **V1 起点提交**: `1693dbb65ed43d962bcf8915fa390d46d8d57761`
+- **BN 交接基线**: `2027e4267dce105d47a60c8f9eedcef5c9099bda`
+- **冻结 v0.8 论文基线**: `6421b6b9acd395420ce29dd630b8f1c5b15f84ec`
+- **当前状态**: `LAPTOP_ENGINEERING_COMPLETE_BN_ACCEPTANCE_PENDING`
 
-| 模块 | 实际工作及验收状态 |
+V2 使用独立分支、独立部署目录 (`/home/bn/uarcap_q2_runtime/deploy/laptop-20261126-v2`) 与独立输出目录 (`/home/bn/uarcap_q2_runtime/outputs/laptop-20261126-v2`)。旧代码、历史字幕、原 v0.8 论文与冻结主检验均完整保留。
+
+## 1. V2 本地工程闭环摘要
+
+| 本地交付模块 | 验证结果与关键产物 |
 | --- | --- |
-| 冻结数据 | 从两个完整预测和评价账本核验 3,600 条。主/内部人工分区 540/60，原始分母 600。两模型各 180 条内部评价已存在。 |
-| Qwen 交叉评价 | 找到可复现的 5,098/5,099 个唯一事实，一个事实尚无有效版本。版本化补齐从真实有效基线续跑并优先复用服务器已补的同键记录。 |
-| 传统指标 | 实测旧逐视频顺序错位。Windows 原评分实现重新执行 7,200 条派生评分，生成修正摘要、同查询差和完整性记录。SPICE 保持 SKIPPED。 |
-| 人工标注与 IPW | 查询—模型—臂严格映射。实际生成新版 360 条匿名任务，用两份独立人工导出和分层概率做签收与仲裁。两阶段路径校验模型/端点及完整抽样、记录逐臂残差。人工尚未开始。 |
-| E3 & Bridge | 真实来源核验排除两条历史重叠。双 tokenizer、文本语义、角色盲法、16/64 输入、V2 冻结、旧三臂严格复用、双判断器缺失规则和版本化合并。159 个旧 Neu 不可用。真实中性和视觉 V2 收据仍 PENDING。 |
-| 完整预算 | 新增 A3/A5 使用已有 Top-20 D 顺序。实际输入路径增加前缀、checkpoint、query tensor parity、配置保护和小规模 smoke 续跑绑定。新评分同时派出 Gemma、Llama 和固定参考传统指标。 |
-| P1 扩展 | Qwen 长提示、32/64 帧、EVCap 文本与视觉独立计数、语义溯源、历史 60 视频反向桥接及来源/帧签名入口具备执行命令。历史桥接的 180 条字幕纯复用，在本地验收实际资产和 60 个来源。 |
-| 论文与应用 | 根据真实产物更新 0/1/7 图表和指标关联。完整预算与成本、长度、采样以及评价器差分的入口以真实输出驱动。受控证据中性成立前不生成数值。 |
-| 编排 | 复用已有 BN 队列 schema。增加版本绑定、任务验收、依赖检测、回滚和停机服务恢复入口。未连接服务器验证实时部署。 |
+| Codex 中断恢复与缺陷修复 | 39 个未提交文件已独立只读备份至 `D:\Antigravity\uarcap_codex_v2_recovery_20261126\`；修复 `scripts/e3_reserve_pool.py` 缺失 `import re`、`scripts/e2_metric_bridge.py` `Spice_fn()` 调用、`deployment/q2_task_entry.py` 锁打开模式及 12 项队列指纹漂移。详见 [恢复审计报告](CODEX_INTERRUPTED_WORK_RECOVERY_REPORT.md)。 |
+| V2 111 任务队列与全量审计 | `REMAINING_GPU_TASK_QUEUE.json`（111 任务：60 GPU 包装 + 51 CPU 包装；52 `videollama2` / 56 `vllm` / 3 `repro_evcap`）与 `EXPECTED_OUTPUT_ARTIFACTS.json` 一一对齐；`audit_q2_queue.py` 通过 29 项真实 CLI `--help` 检查、DAG 无环与零指纹漂移验收（0 错误）。 |
+| P0-1 E3 候选储备与失败隔离 | 6 类源级排除、独立种子 20261126、同配双端筛查、预生成审批上限、150 门槛不可放宽；不足时明确输出 `E3_INSUFFICIENT_VALID_CANDIDATES`（exit 3）且不阻断 A3/A5 与其他模块。历史无效 Neu 保留在历史归档中。 |
+| P0-2 统一盲法人工门户 | `q2_human_portal.py` + `web_app.py` + `launch_annotation_ui.py` 统一加载 60 视频概率包、Pilot A2、Pilot A3（排除旧无效 Neu）、E3/E3-Bridge 全视频与 16 帧真值及 E3 表达盲审；强制回环隔离访问令牌、双人独立签收与独立仲裁回灌。 |
+| P0-3 已知答案评价器压力测试 | `evaluator_stress.py` 提供 196 项受控文本病例（14 类：182 NLI + 14 原子拆并），复用生产提示与解析器，CPU 夹具全链路通过；真实 Gemma/Llama 推理待 BN 执行。 |
+| P0-4 实际视频近重复签名与敏感性 | 真实归档 Top-7 核验为 600 查询 / 4,200 配对 / 2,622 去重代表 clip；`generate_visual_signatures.py` 支持不批量解压单件 zip/tar 读取、安全路径校验与 16 帧 dHash/pHash/center-crop pHash 缓存；`q2_visual_risk_sensitivity.py` 执行预定义父聚类敏感性排除。 |
+| P1-1 Qwen 统一长度控制 | 归档 120×3 条短字幕实测 IQR 为 **13–15 词**，三臂共享统一提示目标且不做后处理截断；如检测到 V1 详细提示已启动或存在产物则硬阻断替换。 |
+| P1-2 & P1-3 Qwen 模态因子与帧数×预算交互 | 固定 40 查询 `T0F0/T1F0/T0F1/T1F1` 因子（16 查询帧 + F1 加 8 Top-1 外部帧，带 vLLM processor token 消费硬验证）；150 查询 A7 + 嵌套前 60 查询 A0 的 16/32/64 帧 DiD 交互；64 帧失败与 16/32 帧严格隔离。 |
+| P1-4 补充模块闭环与统一总汇报 | 自然溯源、Top-7 相关性（4,200 字幕 + 420 Llama 抽检）、MSR-VTT 历史反向桥接（60 视频 180 字幕）全部接入单/双评价器独立报告、矢量/位图绘图及 `q2_release_report.py` 归档清单。 |
+| Windows CPU 全量测试 | `python -m pytest -q -rs`：**113 passed, 0 failed, 0 skipped (37.77s)**；AST 未绑定符号 **0**；`compileall` 退出码 **0**；7 项真实归档重放与 7 类失败隔离场景全部通过。 |
 
-Windows 共复现了两类真实问题。内部 60 样本不是独立未观察验证集。传统指标汇总值正确，但原本附带的逐视频配对分析有误。将这两处修改纳入所有后续科学表述。发现的历史来源重叠仅影响对应 E3 候选的新筛查范围。
+## 2. 仍待 BN 实机验收与真实人工核验的事项
 
-代码可交接做 BN 预检。严格的 `LAPTOP_TO_BN_DEPLOYMENT_READY` 在 BN 真运行验收和列出的工程边界闭合前保持未宣告。当前清楚区分机器辅助与人类验证。剩余范围包括人类 Pilot 先验门禁、完整视频人工真值、部分 Top-7 外部视频资产映射、真人支持的相似度—语义相关性，以及跨模型系统的进一步控制。[科学门禁](REMAINING_SCIENTIFIC_GATES.json) · [CPU 回执](CPU_TEST_RECEIPT.json)
+当前 BN GPU/vLLM/Video-LLaMA 实机运行、可用视频媒体、评价器真实标签和全部双人人工门禁均处于 `PENDING`。部署前需操作者在 BN 侧提供/确认：VideoUFO 媒体索引或位置清单 (`videoufo_clip_locations.jsonl`)、VidHalluc 调试排除清单 (`vidhalluc_debug_source_ids.txt`) 及绑定本次提交完整 SHA 的真实授权文件。若 BN 上 V1 已有执行历史，须先对齐现有回执与产物，不得覆盖或丢弃任何已完成结果。Windows 轻薄本未执行任何 BN GPU 任务，亦未伪造任何人工标注。
+
+## 3. 核心交付文件索引
+
+- [恢复审计报告](CODEX_INTERRUPTED_WORK_RECOVERY_REPORT.md) · [V2 完成度矩阵](V2_TASK_COMPLETION_MATRIX.json) · [端到端 CPU 测试报告](ALL_PIPELINES_END_TO_END_CPU_TEST_REPORT.md) · [CPU 测试回执](CPU_TEST_RECEIPT.json)
+- [BN 部署与执行提示词](BN_DEPLOYMENT_AND_EXECUTION_PROMPT.md) · [BN 最终验收清单](BN_FINAL_DEPLOYMENT_CHECKLIST.md) · [BN 资源估算](BN_RESOURCE_ESTIMATE.md)
+- [V2 完整任务队列 (111 项)](REMAINING_GPU_TASK_QUEUE.json) · [预期输出契约 (111 项)](EXPECTED_OUTPUT_ARTIFACTS.json) · [剩余科学门禁](REMAINING_SCIENTIFIC_GATES.json)
+- [E3 储备协议](E3_RESERVE_POOL_PROTOCOL.md) · [评价器压力测试规范](EVALUATOR_STRESS_TEST_SPEC.md) · [视觉签名手册](VISUAL_SIGNATURE_GENERATION_RUNBOOK.md) · [人工核验手册](HUMAN_VALIDATION_RUNBOOK.md)
+- [论文最终结构骨架](FINAL_PAPER_MANUSCRIPT_SCAFFOLD.md) · [论文证据链](Q2_PAPER_EVIDENCE_CHAIN.md) · [审稿人攻击矩阵](Q2_REVIEWER_ATTACK_MATRIX.md)

@@ -66,6 +66,8 @@ class Qwen3VLLMConfig:
     num_frames: int = 16
     multimodal_input_key: str = "video"  # video | image (multi-frame fallback)
     prompt_regime: str = "short_aligned"
+    word_range: tuple[int, int] | None = None
+    external_frames: int = 0
     max_new_tokens: int = 48
     do_sample: bool = False
     temperature: float = 0.0
@@ -89,8 +91,14 @@ class Qwen3VLLMConfig:
             raise ValueError(f"Unsupported backend_mode: {self.backend_mode}")
         if self.multimodal_input_key not in ("video", "image"):
             raise ValueError(f"Unsupported multimodal_input_key: {self.multimodal_input_key}")
-        if self.prompt_regime not in ("short_aligned", "detailed_sensitivity"):
+        if self.prompt_regime not in ("short_aligned", "detailed_sensitivity", "uniform_length"):
             raise ValueError(f"Unsupported prompt_regime: {self.prompt_regime}")
+        if self.prompt_regime == "uniform_length" and (not self.word_range or not 1 <= self.word_range[0] <= self.word_range[1] <= 30):
+            raise ValueError("Uniform length requires the frozen word range")
+        if self.external_frames and (self.backend_mode != "vllm_offline" or self.multimodal_input_key != "image" or self.prompt_regime != "short_aligned"):
+            raise ValueError("External frame factorial needs the offline image interface and short decoding")
+        if self.backend_mode == "vllm_subprocess" and self.prompt_regime == "uniform_length":
+            raise ValueError("Uniform length is only validated through the direct adapter")
         if self.prompt_regime == "short_aligned" and self.max_new_tokens > 64:
             raise ValueError("short_aligned regime must cap max_new_tokens <= 64 to prevent length drift")
         if self.backend_mode == "vllm_openai_http" and not self.api_base_url:
@@ -229,7 +237,7 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
             "max_num_seqs": self.cfg.max_num_seqs,
             "enforce_eager": self.cfg.enforce_eager,
             "seed": self.cfg.random_seed,
-            "limit_mm_per_prompt": {"video": 1} if self.cfg.multimodal_input_key == "video" else {"image": self.cfg.num_frames},
+            "limit_mm_per_prompt": {"video": 1} if self.cfg.multimodal_input_key == "video" else {"image": self.cfg.num_frames + self.cfg.external_frames},
         }
         if self.cfg.quantization:
             llm_kwargs["quantization"] = self.cfg.quantization
@@ -247,7 +255,15 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
             raise TraceVerificationError(
                 f"Qwen3 VLM requires exactly {self.cfg.num_frames} decoded PIL frames, got {len(frame_images) if frame_images else 0}"
             )
-        rendered = render_modern_vlm_prompt(packet, self.cfg.prompt_regime)
+        regime = self.cfg.prompt_regime
+        rendered = render_modern_vlm_prompt(packet, "short_aligned" if regime == "uniform_length" else regime)
+        if regime == "uniform_length":
+            lo, hi = self.cfg.word_range
+            rendered["system"] = rendered["system"].replace("8 to 18 words", f"{lo} to {hi} words")
+            instruction, count, suffix = rendered["user"].rpartition("(8-18 words)")
+            if not count or suffix != ".":
+                raise TraceVerificationError("Frozen short length instruction moved")
+            rendered["user"] = instruction + f"({lo}-{hi} words)" + suffix
         if use_data_urls:
             urls = encode_pil_frames_to_jpeg_data_urls(frame_images)
             visual_payload_sha = sha256_bytes("|".join(urls).encode("utf-8"))
@@ -270,6 +286,33 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
             {"role": "user", "content": user_content},
         ]
         return messages, rendered, visual_payload_sha
+
+    def factorial_messages(self, item):
+        messages, rendered, _ = self.build_multimodal_messages(item.packet, item.frame_images, use_data_urls=True)
+        media = messages[1]["content"][:-1]
+        ext_urls = encode_pil_frames_to_jpeg_data_urls(item.external_frame_images)
+        external = [{"type": "image_url", "image_url": {"url": url}} for url in ext_urls]
+        texts = item.packet.text_evidence
+        segments = ["Query-video frames (caption only this video):",
+                    "Retrieved-video frames (optional context from a different video):",
+                    "Retrieved caption (optional context from a different video): " + (texts[0] if texts else "[none]"),
+                    "Describe the main visible event in the query video in one concise sentence (8-18 words)."]
+        s = [{"type": "text", "text": t} for t in segments]
+        messages[1]["content"] = [s[0], *media, s[1], *external, *s[2:]]
+        rendered["user"] = "\n".join(segments[:1] + ["[query image block]"] + segments[1:2] +
+                                     (["[retrieved image block]"] if external else []) + segments[2:])
+        payload = primitive_hash([m["image_url"]["url"] for m in media + external])
+        return messages, rendered, payload
+
+    def verify_factorial_processor(self, engine, output, count):
+        tokenizer = engine.get_tokenizer()
+        start = tokenizer.convert_tokens_to_ids("<|vision_start|>")
+        image = tokenizer.convert_tokens_to_ids("<|image_pad|>")
+        ids = list(getattr(output, "prompt_token_ids", []) or [])
+        if start is None or image is None or start == image or ids.count(start) != count or ids.count(image) < count:
+            raise TraceVerificationError("vLLM prompt token IDs do not prove consumption of both image blocks")
+        return {"processor_image_blocks": ids.count(start), "processor_image_tokens": ids.count(image),
+                "processor_prompt_token_ids_sha256": primitive_hash(ids)}
 
     def _call_local_http(self, messages: list[dict[str, Any]]) -> dict[str, Any]:
         url = self.cfg.api_base_url.rstrip("/") + "/chat/completions"
@@ -304,6 +347,7 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
         completion_tokens: int,
         elapsed: float,
         peak_vram: int,
+        extra_telemetry: dict | None = None,
     ) -> GenerationOutput:
         if self.cfg.strip_thinking_tags:
             caption, had_think, stripped_chars = strip_thinking_block(raw_text)
@@ -321,8 +365,8 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
             visual_input_sha256=actual_frames_sha,
             frame_indices=list(frame_indices),
             text_evidence=list(packet.text_evidence),
-            visual_evidence_ids=[],  # PROMPT_TEXT_ONLY: never injects external visual clip IDs!
-            visual_evidence_scores=[],
+            visual_evidence_ids=list(packet.visual_clip_ids) if self.cfg.external_frames else [],
+            visual_evidence_scores=list(packet.visual_scores) if self.cfg.external_frames else [],
             prompt_rendered_sha256=primitive_hash({"rendered": rendered, "enable_thinking": self.cfg.enable_thinking}),
             rng_seed=self.cfg.random_seed,
             decoding_config={
@@ -336,9 +380,10 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
                 "quantization": self.cfg.quantization,
                 "num_frames": self.cfg.num_frames,
                 "bound_revision": self._manifest.get("bound_revision", self.cfg.pinned_revision),
+                **({"word_range": list(self.cfg.word_range)} if self.cfg.word_range else {}),
             },
             base_visual_mode=packet.base_visual_mode,
-            injection_interface=self.injection_interface,
+            injection_interface="RETRIEVED_FRAME_PROMPT_FACTORIAL" if self.cfg.external_frames else self.injection_interface,
             actual_processor_telemetry={
                 "backend_mode": self.cfg.backend_mode,
                 "actual_frames_received": len(frame_images),
@@ -353,6 +398,7 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
                 "input_ids_len": int(prompt_tokens),
                 "completion_token_count": int(completion_tokens),
                 "local_model_manifest_sha256": self._manifest.get("local_model_manifest_sha256", ""),
+                **(extra_telemetry or {}),
             },
         )
         verify_actual_input_trace(trace, packet, self.expected_checkpoint_sha256, actual_frames_sha)
@@ -409,6 +455,12 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
                     f"Decoded frame images hash ({fsha}) != expected visual_input_sha256 ({it.visual_input_sha256})"
                 )
             verified_hashes.append(fsha)
+            if self.cfg.external_frames:
+                count = self.cfg.external_frames if it.packet.visual_clip_ids else 0
+                if (len(it.external_frame_images) != count or len(set(it.external_frame_indices)) != count
+                        or (count and (not it.external_video_sha256 or len(it.packet.visual_clip_ids) != 1))
+                        or len(it.packet.text_evidence) > 1):
+                    raise TraceVerificationError("External frame count or frozen clip binding changed")
 
         if self.cfg.backend_mode == "vllm_subprocess":
             return self._generate_batch_subprocess(items, stage, work_dir=work_dir, run_id=run_id)
@@ -449,7 +501,7 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
         batch_rendered: list[dict[str, str]] = []
         batch_vsha: list[str] = []
         for it in items:
-            msgs, rendered, vsha = self.build_multimodal_messages(
+            msgs, rendered, vsha = self.factorial_messages(it) if self.cfg.external_frames else self.build_multimodal_messages(
                 it.packet, it.frame_images or [], use_data_urls=(self.cfg.multimodal_input_key == "image")
             )
             batch_msgs.append(msgs)
@@ -495,6 +547,8 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
             pass
 
         outputs = []
+        if len(engine_outputs) != len(items):
+            raise TraceVerificationError("Qwen engine returned an incomplete batch")
         for it, fsha, rendered, vsha, eo in zip(items, verified_hashes, batch_rendered, batch_vsha, engine_outputs):
             if isinstance(eo, dict):
                 raw_txt = str(eo.get("text", ""))
@@ -505,6 +559,15 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
                 raw_txt = str(first.text)
                 ptoks = len(getattr(eo, "prompt_token_ids", []) or [])
                 ctoks = len(getattr(first, "token_ids", []) or [])
+            extra = None
+            if self.cfg.external_frames:
+                count = len(it.external_frame_images)
+                extra = self.verify_factorial_processor(engine, eo, self.cfg.num_frames + count)
+                extra.update(external_frame_count=count, external_frame_indices=it.external_frame_indices,
+                             external_frames_sha256=hash_pil_frames(it.external_frame_images) if count else None,
+                             external_video_sha256=it.external_video_sha256 or None,
+                             input_scope="query images, retrieved images, text",
+                             text_token_subtotal=None)
             outputs.append(
                 self._finalize_output(
                     it.query,
@@ -520,6 +583,7 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
                     ctoks,
                     elapsed_each,
                     peak_vram,
+                    extra,
                 )
             )
         return outputs

@@ -91,7 +91,8 @@ def main():
             for start in range(0,len(pend),step):
                 batch=pend[start:start+step]; items=[]
                 for c in batch:
-                    fps=sorted((a.frames_dir/c["query_id"]).glob("frame_*.jpg"))
+                    frame_root=Path(c["verified_reserve_frames_dir"]) if c.get("verified_reserve_frames_dir") else a.frames_dir/c["query_id"]
+                    fps=sorted(frame_root.glob("frame_*.jpg"))
                     if len(fps)!=16: continue
                     if not str(c.get("neutral_text") or "").strip():
                         with fail.open("a") as f: f.write(json.dumps({"query_id":c["query_id"],"arm":arm,"error":"MISSING_NEUTRAL_TEXT"})+"\n")
@@ -129,6 +130,7 @@ def main():
     complete={(r["query_id"],r["arm"]) for r in rows}==expected and len(rows)==len(expected)
     receipt={"schema":"uarcap_q2.formal_e3_generation.v1","status":"FORMAL_E3_MACHINE_ASSISTED_UNVALIDATED",
         "generator":a.generator,"n_approved":len(approved),"n_predictions":len(rows),"n_expected":len(expected),"complete":complete,"binding_sha256":binding,"cohort_sha256":primitive_hash(ap_data),"n_failures":len(read(fail)),
+        "predictions_sha256":sha256_file(pred) if pred.is_file() else None,
         "utc":utcnow(),"note":"No human verification; no confirmatory statistics."}
     atomic_write_json(out/"run_receipt.json",receipt); print(json.dumps(receipt,indent=2)); return 0 if complete else 2
 
