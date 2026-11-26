@@ -1,0 +1,38 @@
+{
+  "schema": "uarcap_q2.e3_formal_partial_status.v1",
+  "generated_utc": "2026-11-26T14:40:00+08:00",
+  "status": "PARTIALLY_COMPLETED_INVALID_NEU_AND_QWEN_BLOCKED",
+  "human_validation": "NONE",
+  "n_approved_candidates": 159,
+  "videollama": {
+    "predictions": 636,
+    "per_arm": {"E3_BASE": 159, "E3_SUP": 159, "E3_CON": 159, "E3_NEU": 159},
+    "failures": 0,
+    "receipt": "videollama/run_receipt.json",
+    "validity": "E3_BASE/E3_SUP/E3_CON valid machine-assisted conditions. E3_NEU INVALID for scientific use: candidates had neutral_text=null, and the already-running generator fell back to the constant string 'reading a book in a library'. Do not treat E3_NEU as candidate-specific neutral evidence."
+  },
+  "qwen": {
+    "predictions": 0,
+    "failures": 636,
+    "failure_reason": "MISSING_NEUTRAL_TEXT (strict gate added before run; all four arms blocked because the frozen approved file has no neutral_text)",
+    "receipt": "qwen/run_receipt.json",
+    "status": "BLOCKED"
+  },
+  "dual_target_evaluation": {
+    "n_rows": 1272,
+    "n_pairs": 636,
+    "scope": "Video-LLaMA only; Qwen has no predictions",
+    "judges": ["gemma-3-27b-fp8", "llama-3.3-70b-w4a16"],
+    "true_agreement": 0.9575,
+    "conflict_agreement": 0.9733,
+    "parse_failures": 0,
+    "file": "evaluation/E3_FORMAL_EVAL.jsonl"
+  },
+  "not_done": [
+    "candidate-specific neutral assignment and visual neutral validation",
+    "Qwen formal E3 generation",
+    "human blind screening and verification",
+    "any confirmatory E3 statistic"
+  ],
+  "does_not_replace_human_validation": true
+}

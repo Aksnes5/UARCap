@@ -2,7 +2,7 @@
 
 Explicitly separates:
   - PilotStage (workflow stage: PILOT_A0, PILOT_A1, PILOT_A2, PILOT_A3, FORMAL_B)
-  - ExpArm (experimental condition: ARM_A0, ARM_A1, ARM_A3, ARM_A7, E3_BASE, E3_SUP, E3_CON, E3_NEU)
+  - ExpArm (experimental condition: ARM_A0, ARM_A1, ARM_A3, ARM_A5, ARM_A7, E3_BASE, E3_SUP, E3_CON, E3_NEU)
   - Reference-fact proxy labels vs. Human video ground-truth labels
   - E3 independent dual binary endpoints (Y_true, Y_conflict) allowing co-occurrence
 """
@@ -26,6 +26,7 @@ class ExpArm(str, Enum):
     ARM_A0 = "ARM_A0"  # k=0 strictly zero external evidence
     ARM_A1 = "ARM_A1"  # k=1 top-1 D text + visual evidence
     ARM_A3 = "ARM_A3"  # k=3 optional auxiliary D text + visual evidence
+    ARM_A5 = "ARM_A5"  # k=5 supplementary budget point (exact prefix of A7)
     ARM_A7 = "ARM_A7"  # k=7 top-7 D text + visual evidence
     E3_BASE = "E3_BASE"  # Controlled E3 base (Base=A0 or Base=B3)
     E3_SUP = "E3_SUP"  # Controlled E3 supporting target fact

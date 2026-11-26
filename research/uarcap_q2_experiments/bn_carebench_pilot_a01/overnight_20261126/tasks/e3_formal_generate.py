@@ -66,13 +66,19 @@ def main():
                 for c in batch:
                     fps=sorted((a.frames_dir/c["query_id"]).glob("frame_*.jpg"))
                     if len(fps)!=16: continue
+                    if not str(c.get("neutral_text") or "").strip():
+                        with fail.open("a") as f: f.write(json.dumps({"query_id":c["query_id"],"arm":arm,"error":"MISSING_NEUTRAL_TEXT"})+"\n")
+                        continue
                     frames=[Image.open(p).convert("RGB") for p in fps]
-                    q=QueryRecord(query_id=c["query_id"],dataset_id="VidHalluc-ACH",source_id=c["source_id"],source_id_status="VERIFIED_EXACT",
+                    sid=str(c.get("source_id") or "")
+                    sid_status="VERIFIED_EXACT" if len(sid)==11 and all(ch.isalnum() or ch in "-_" for ch in sid) else "UNKNOWN_OPAQUE"
+                    q=QueryRecord(query_id=c["query_id"],dataset_id="VidHalluc-ACH",source_id=(sid or None),source_id_status=sid_status,
                         video_path=c["video_path"],video_sha256=None,duration=None,domain="ACH",reference_description=c["true_action"],
                         reference_events=[c["true_action"]],core_events=[c["true_action"]],target_true_fact=c["true_action"],
                         candidate_conflict_fact=c["conflict_action"],split="formal_e3_candidate_unvalidated",
-                        eligibility_status="CANDIDATE_PENDING_VERIFICATION",metadata={})
-                    pk=build_e3_intervention_arms(c["query_id"],c["true_action"],c["conflict_action"],c.get("neutral_text","reading a book in a library"),base_visual_mode="BASE_A0")
+                        eligibility_status="CANDIDATE_PENDING_VERIFICATION",
+                        metadata={"frame_sampling":"16 uniformly sampled frames; not full video","neutral_text_provenance":c.get("neutral_provenance","UNVERIFIED_POOL")})
+                    pk=build_e3_intervention_arms(c["query_id"],c["true_action"],c["conflict_action"],c["neutral_text"],base_visual_mode="BASE_A0")
                     items.append(BatchItem(query=q,packet=pk[arm],visual_input_sha256=hash_pil_frames(frames),frame_indices=list(range(16)),frame_images=frames))
                 if not items: continue
                 try:

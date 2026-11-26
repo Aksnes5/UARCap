@@ -1,0 +1,23 @@
+{
+  "_template_only": true,
+  "_warning": "DO NOT fill with invented values. This file is a schema template. A real import must come from adjudicated human annotations exported by the annotation tool, with a real adjudication receipt file and its SHA-256.",
+  "schema": "uarcap_q2.human_primary_endpoints.v1",
+  "dataset_id": "CaReBench",
+  "stage": "FORMAL_E2_HUMAN_AUDIT",
+  "metric": "n_contra_ref",
+  "created_utc": null,
+  "annotator_ids": [],
+  "n_annotators": 0,
+  "adjudication_receipt_path": null,
+  "adjudication_receipt_sha256": null,
+  "calibration_excluded_ids": [],
+  "values": {},
+  "inclusion_by_qid": {},
+  "stratum_by_qid": {},
+  "_format": {
+    "values": "{query_id: {ARM_A0: number, ARM_A1: number, ARM_A7: number}}",
+    "inclusion_by_qid": "{query_id: probability in (0,1]; must equal the frozen manifest val_inclusion_prob}",
+    "stratum_by_qid": "{query_id: stratum name from FORMAL_CAREBENCH_ANALYSIS_MANIFEST.units}",
+    "adjudication_receipt_path": "absolute path on BN to the signed adjudication export"
+  }
+}

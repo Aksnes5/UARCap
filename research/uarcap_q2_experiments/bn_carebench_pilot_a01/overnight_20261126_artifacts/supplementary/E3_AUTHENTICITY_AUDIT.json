@@ -1,0 +1,17 @@
+{
+  "schema": "uarcap_q2.e3_authenticity_audit.v1",
+  "utc": "2026-11-26T06:34:40.439880+00:00",
+  "n_approved": 159,
+  "source_id_invalid": 0,
+  "source_id_examples_bad": [],
+  "neutral_text_missing": 159,
+  "eval_rows": 1272,
+  "eval_parse_failures": 0,
+  "parse_failure_policy": "None/excluded, never 0",
+  "videollama_predictions": 636,
+  "visual_trace_hash_mismatch": 0,
+  "frame_contract": "16 uniformly sampled frames; not full-video understanding",
+  "full_video_vs_16frames": "unresolved by design; report as limitation, sensitivity queued for Qwen only",
+  "neutral_visual_validation": "PENDING (VLM statement verification task queued)",
+  "human_screening": "PENDING; no human sign-off claimed"
+}

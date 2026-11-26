@@ -1,0 +1,2023 @@
+{
+  "schema": "uarcap_q2.e3_bridge_candidates.v2",
+  "utc": "2026-11-26T05:59:18.685634+00:00",
+  "n_candidates": 60,
+  "min_valid_required": 30,
+  "status": "PENDING_VERIFICATION",
+  "verification_model": "Qwen3.8-27B-FP8 (independent of data source; machine, not human)",
+  "candidates": [
+    {
+      "bridge_id": "bridge_001",
+      "query_id": "carebench_v_00000030_5",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000030_5.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000030_5",
+      "f_plus": "a woman meticulously perfecting her eyebrows using an eyebrow pencil",
+      "f_minus": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+      "neutral_text": "a person is repairing a bicycle tire",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+        "retrieved_rank": 2,
+        "retrieval_score": 0.25537109375,
+        "clip_ids": [
+          "Lb2EUaE1iTo.11"
+        ],
+        "retrieval_source_ids": [
+          "Lb2EUaE1iTo"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_002",
+      "query_id": "carebench_v_00000032_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000032_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000032_0",
+      "f_plus": "a woman as she meticulously draws her eyebrows using an eyebrow pencil and a small brush",
+      "f_minus": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+      "neutral_text": "a person is baking bread in an oven",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+        "retrieved_rank": 2,
+        "retrieval_score": 0.29052734375,
+        "clip_ids": [
+          "Lb2EUaE1iTo.11"
+        ],
+        "retrieval_source_ids": [
+          "Lb2EUaE1iTo"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4545,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_003",
+      "query_id": "carebench_v_00000065_94",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000065_94.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000065_94",
+      "f_plus": "a person demonstrating how to select an eyebrow brush and eyebrow powder",
+      "f_minus": "A woman is applying makeup to her eyes with a brush, using a matte powder to line her upper and lower lash lines and blending it into the crease.",
+      "neutral_text": "a person is shoveling snow from a driveway",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyes with a brush, using a matte powder to line her upper and lower lash lines and blending it into the crease.",
+        "retrieved_rank": 18,
+        "retrieval_score": 0.281005859375,
+        "clip_ids": [
+          "zbNfJRxvkV8.16"
+        ],
+        "retrieval_source_ids": [
+          "zbNfJRxvkV8"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_004",
+      "query_id": "carebench_v_00000204_2",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000204_2.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000204_2",
+      "f_plus": "an adult woman applying eyeliner",
+      "f_minus": "A woman is applying makeup to her eyes with a black eyeliner.",
+      "neutral_text": "a person is brushing their teeth in a bathroom",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyes with a black eyeliner.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.265625,
+        "clip_ids": [
+          "aLnSBl6GQlI.25"
+        ],
+        "retrieval_source_ids": [
+          "aLnSBl6GQlI"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4286,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_005",
+      "query_id": "carebench_v_00000253_4",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000253_4.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000253_4",
+      "f_plus": "a woman applying lipstick to another woman's lips",
+      "f_minus": "A woman is applying red lipstick on her lips.",
+      "neutral_text": "a person is washing a car outdoors",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying red lipstick on her lips.",
+        "retrieved_rank": 9,
+        "retrieval_score": 0.326416015625,
+        "clip_ids": [
+          "gTQhXQ-aYIU.8"
+        ],
+        "retrieval_source_ids": [
+          "gTQhXQ-aYIU"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.5714,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_006",
+      "query_id": "carebench_v_00000566_7",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000566_7.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000566_7",
+      "f_plus": "the delightful process of a little baby crawling toward a toy on the floor",
+      "f_minus": "A baby is crawling on a wooden floor.",
+      "neutral_text": "a person is shoveling snow from a driveway",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A baby is crawling on a wooden floor.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.309326171875,
+        "clip_ids": [
+          "14gWirURq6I.4",
+          "D9Ko7U1pLlg.25"
+        ],
+        "retrieval_source_ids": [
+          "14gWirURq6I",
+          "D9Ko7U1pLlg"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.375,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_007",
+      "query_id": "carebench_v_00000567_2",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000567_2.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000567_2",
+      "f_plus": "the adorable scene of a small baby playing with toys on the floor",
+      "f_minus": "A baby is crawling on the floor and playing with toys.",
+      "neutral_text": "a person is shoveling snow from a driveway",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A baby is crawling on the floor and playing with toys.",
+        "retrieved_rank": 5,
+        "retrieval_score": 0.317626953125,
+        "clip_ids": [
+          "14gWirURq6I.20",
+          "PP8COXkhsoQ.13"
+        ],
+        "retrieval_source_ids": [
+          "14gWirURq6I",
+          "PP8COXkhsoQ"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.5,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_008",
+      "query_id": "carebench_v_00000577_12",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000577_12.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000577_12",
+      "f_plus": "an intense doubles badminton match featuring four young female athletes on a badminton court",
+      "f_minus": "There is a group of people playing badminton in an indoor court.",
+      "neutral_text": "a person is reading a book in a library",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "There is a group of people playing badminton in an indoor court.",
+        "retrieved_rank": 4,
+        "retrieval_score": 0.250244140625,
+        "clip_ids": [
+          "hFE6rjR9HjE.0"
+        ],
+        "retrieval_source_ids": [
+          "hFE6rjR9HjE"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1333,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_009",
+      "query_id": "carebench_v_00000585_10",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000585_10.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000585_10",
+      "f_plus": "this video features a live broadcast of an international men's doubles badminton match",
+      "f_minus": "A screen shot of a badminton match.",
+      "neutral_text": "a person is typing on a laptop at a desk",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A screen shot of a badminton match.",
+        "retrieved_rank": 12,
+        "retrieval_score": 0.3173828125,
+        "clip_ids": [
+          "GbcVCfeTNQk.0"
+        ],
+        "retrieval_source_ids": [
+          "GbcVCfeTNQk"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_010",
+      "query_id": "carebench_v_00000598_12",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000598_12.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000598_12",
+      "f_plus": "a thrilling segment of a badminton match",
+      "f_minus": "A screen shot of a badminton match.",
+      "neutral_text": "a person is rowing a boat on a lake",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A screen shot of a badminton match.",
+        "retrieved_rank": 14,
+        "retrieval_score": 0.328369140625,
+        "clip_ids": [
+          "GbcVCfeTNQk.0"
+        ],
+        "retrieval_source_ids": [
+          "GbcVCfeTNQk"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.3333,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_011",
+      "query_id": "carebench_v_00000617_2",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000617_2.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000617_2",
+      "f_plus": "an intense badminton match",
+      "f_minus": "A screen shot of a badminton match.",
+      "neutral_text": "a person is assembling a wooden shelf",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A screen shot of a badminton match.",
+        "retrieved_rank": 13,
+        "retrieval_score": 0.305908203125,
+        "clip_ids": [
+          "GbcVCfeTNQk.0"
+        ],
+        "retrieval_source_ids": [
+          "GbcVCfeTNQk"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_012",
+      "query_id": "carebench_v_00000655_7",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000655_7.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000655_7",
+      "f_plus": "this video is a live broadcast of a badminton match",
+      "f_minus": "A screen shot of a badminton match.",
+      "neutral_text": "a person is assembling a wooden shelf",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A screen shot of a badminton match.",
+        "retrieved_rank": 14,
+        "retrieval_score": 0.320068359375,
+        "clip_ids": [
+          "GbcVCfeTNQk.0"
+        ],
+        "retrieval_source_ids": [
+          "GbcVCfeTNQk"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.3333,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_013",
+      "query_id": "carebench_v_00001351_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001351_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001351_0",
+      "f_plus": "the delightful journey of a baby swiftly crawling around",
+      "f_minus": "A baby is crawling on a wooden floor.",
+      "neutral_text": "a person is washing a car outdoors",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A baby is crawling on a wooden floor.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.3037109375,
+        "clip_ids": [
+          "14gWirURq6I.4",
+          "D9Ko7U1pLlg.25"
+        ],
+        "retrieval_source_ids": [
+          "14gWirURq6I",
+          "D9Ko7U1pLlg"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.25,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_014",
+      "query_id": "carebench_v_00001352_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001352_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001352_0",
+      "f_plus": "the adorable moment of a baby crawling towards a remote control placed on the floor",
+      "f_minus": "A baby is crawling on a wooden floor.",
+      "neutral_text": "a person is swimming in a pool",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A baby is crawling on a wooden floor.",
+        "retrieved_rank": 1,
+        "retrieval_score": 0.28125,
+        "clip_ids": [
+          "14gWirURq6I.4",
+          "D9Ko7U1pLlg.25"
+        ],
+        "retrieval_source_ids": [
+          "14gWirURq6I",
+          "D9Ko7U1pLlg"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.3,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_015",
+      "query_id": "carebench_v_00001353_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001353_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001353_0",
+      "f_plus": "in the video, a baby is crawling towards a large dog",
+      "f_minus": "A baby is crawling on a wooden floor.",
+      "neutral_text": "a person is riding a bicycle on a road",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A baby is crawling on a wooden floor.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.2919921875,
+        "clip_ids": [
+          "14gWirURq6I.4",
+          "D9Ko7U1pLlg.25"
+        ],
+        "retrieval_source_ids": [
+          "14gWirURq6I",
+          "D9Ko7U1pLlg"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2857,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_016",
+      "query_id": "carebench_v_00001358_22",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001358_22.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001358_22",
+      "f_plus": "a person cutting meat",
+      "f_minus": "A person is cutting meat on a wooden cutting board with a knife.",
+      "neutral_text": "a person is shoveling snow from a driveway",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A person is cutting meat on a wooden cutting board with a knife.",
+        "retrieved_rank": 2,
+        "retrieval_score": 0.29150390625,
+        "clip_ids": [
+          "-ZAEKpchMAg.1",
+          "0-vDlrwQxJU.0",
+          "3yVRslozxTc.0",
+          "60zJlYXIhvE.12",
+          "60zJlYXIhvE.8",
+          "7de5tR6Gr6M.6",
+          "8h7abkp6OG4.5",
+          "ARRXeqT--ps.0",
+          "AXlSU8UZ8VQ.0",
+          "B3yCRL7FvUE.6",
+          "B8PjRP9uqqY.0",
+          "CVwPrzfWZ9M.1",
+          "DF8i9CKK3RA.0",
+          "D_8okeWODPU.1",
+          "DinSceZ-UHg.8",
+          "Zag45mlnPDo.4",
+          "fzep1_aTKKE.8",
+          "nGCKvpUf5_8.4",
+          "oAPS-GR369A.1",
+          "z9I-nsXGRyc.0"
+        ],
+        "retrieval_source_ids": [
+          "-ZAEKpchMAg",
+          "0-vDlrwQxJU",
+          "3yVRslozxTc",
+          "60zJlYXIhvE",
+          "7de5tR6Gr6M",
+          "8h7abkp6OG4",
+          "ARRXeqT--ps",
+          "AXlSU8UZ8VQ",
+          "B3yCRL7FvUE",
+          "B8PjRP9uqqY",
+          "CVwPrzfWZ9M",
+          "DF8i9CKK3RA",
+          "D_8okeWODPU",
+          "DinSceZ-UHg",
+          "Zag45mlnPDo",
+          "fzep1_aTKKE",
+          "nGCKvpUf5_8",
+          "oAPS-GR369A",
+          "z9I-nsXGRyc"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_017",
+      "query_id": "carebench_v_00001379_10",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001379_10.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001379_10",
+      "f_plus": "a person chopping meat from bones",
+      "f_minus": "A person is cutting meat on a wooden chopping board with a knife.",
+      "neutral_text": "a person is writing notes on a whiteboard",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A person is cutting meat on a wooden chopping board with a knife.",
+        "retrieved_rank": 10,
+        "retrieval_score": 0.289306640625,
+        "clip_ids": [
+          "XfQTYDxgyOE.1",
+          "z9I-nsXGRyc.2"
+        ],
+        "retrieval_source_ids": [
+          "XfQTYDxgyOE",
+          "z9I-nsXGRyc"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2857,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_018",
+      "query_id": "carebench_v_00001385_1",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001385_1.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001385_1",
+      "f_plus": "a man slicing meat",
+      "f_minus": "A man is working in a butcher shop and cutting raw meat on a cutting board.",
+      "neutral_text": "a person is swimming in a pool",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A man is working in a butcher shop and cutting raw meat on a cutting board.",
+        "retrieved_rank": 17,
+        "retrieval_score": 0.30517578125,
+        "clip_ids": [
+          "OPgDqKcncLQ.2"
+        ],
+        "retrieval_source_ids": [
+          "OPgDqKcncLQ"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2222,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_019",
+      "query_id": "carebench_v_00001387_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001387_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001387_0",
+      "f_plus": "the complete process of a person cutting a watermelon",
+      "f_minus": "A person is cutting a watermelon with a knife and fork on a white plate.",
+      "neutral_text": "a person is rowing a boat on a lake",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A person is cutting a watermelon with a knife and fork on a white plate.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.306884765625,
+        "clip_ids": [
+          "APk95qdTYKs.0",
+          "z74KoJwY8ZA.0"
+        ],
+        "retrieval_source_ids": [
+          "APk95qdTYKs",
+          "z74KoJwY8ZA"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2857,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_020",
+      "query_id": "carebench_v_00001476_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001476_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001476_0",
+      "f_plus": "a woman blow-drying her hair",
+      "f_minus": "A woman is blow drying her hair with a blow dryer.",
+      "neutral_text": "a person is folding laundry indoors",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is blow drying her hair with a blow dryer.",
+        "retrieved_rank": 16,
+        "retrieval_score": 0.3056640625,
+        "clip_ids": [
+          "LxvRNksuSdE.1",
+          "eBGKOO35ySc.10",
+          "eBGKOO35ySc.15",
+          "sY2h7qlsNMM.1"
+        ],
+        "retrieval_source_ids": [
+          "LxvRNksuSdE",
+          "eBGKOO35ySc",
+          "sY2h7qlsNMM"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.8,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_021",
+      "query_id": "carebench_v_00001481_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001481_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001481_0",
+      "f_plus": "a scene where four individuals are performing a string duet with violins and a cello",
+      "f_minus": "There is a group of musicians performing on stage at night they are playing string instruments such as violins and cellos.",
+      "neutral_text": "a person is folding laundry indoors",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "There is a group of musicians performing on stage at night they are playing string instruments such as violins and cellos.",
+        "retrieved_rank": 12,
+        "retrieval_score": 0.30029296875,
+        "clip_ids": [
+          "ojgKcOlECdE.17"
+        ],
+        "retrieval_source_ids": [
+          "ojgKcOlECdE"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1667,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_022",
+      "query_id": "carebench_v_00001748_1",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001748_1.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001748_1",
+      "f_plus": "the video captures the process of a small baby crawling on a plastic grid floor",
+      "f_minus": "A baby crawling on a carpet on the floor.",
+      "neutral_text": "a person is riding a bicycle on a road",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A baby crawling on a carpet on the floor.",
+        "retrieved_rank": 3,
+        "retrieval_score": 0.287109375,
+        "clip_ids": [
+          "IIHk1sQCciY.11"
+        ],
+        "retrieval_source_ids": [
+          "IIHk1sQCciY"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.375,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_023",
+      "query_id": "carebench_v_00001829_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001829_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001829_0",
+      "f_plus": "the video features a woman sitting in a swaying small boat, which floats on the deep blue sea",
+      "f_minus": "A blonde woman in sunglasses is sitting on a boat and drinking beer.",
+      "neutral_text": "a person is painting a wall with a brush",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A blonde woman in sunglasses is sitting on a boat and drinking beer.",
+        "retrieved_rank": 9,
+        "retrieval_score": 0.263427734375,
+        "clip_ids": [
+          "ZpBP0htzN6k.0"
+        ],
+        "retrieval_source_ids": [
+          "ZpBP0htzN6k"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_024",
+      "query_id": "carebench_v_00001910_1",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001910_1.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001910_1",
+      "f_plus": "an exciting swimming competition featuring eight athletes as the main characters",
+      "f_minus": "There is a large indoor swimming pool with a blue roof and a crowd of people watching the swimming competition.",
+      "neutral_text": "a person is playing a guitar on a stage",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "There is a large indoor swimming pool with a blue roof and a crowd of people watching the swimming competition.",
+        "retrieved_rank": 3,
+        "retrieval_score": 0.296142578125,
+        "clip_ids": [
+          "CMwhb0MbIxg.3"
+        ],
+        "retrieval_source_ids": [
+          "CMwhb0MbIxg"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1176,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_025",
+      "query_id": "carebench_v_00001929_10",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001929_10.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001929_10",
+      "f_plus": "the entire process of a children's swimming competition training session",
+      "f_minus": "There is a swimming competition happening in a pool, with several people swimming in different lanes.",
+      "neutral_text": "a person is riding a bicycle on a road",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "There is a swimming competition happening in a pool, with several people swimming in different lanes.",
+        "retrieved_rank": 12,
+        "retrieval_score": 0.2734375,
+        "clip_ids": [
+          "CMwhb0MbIxg.4",
+          "zB7zn68Uvh8.1"
+        ],
+        "retrieval_source_ids": [
+          "CMwhb0MbIxg",
+          "zB7zn68Uvh8"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1538,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_026",
+      "query_id": "carebench_v_00001947_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00001947_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00001947_0",
+      "f_plus": "the tense yet orderly preparations of athletes before a swimming competition",
+      "f_minus": "The athletes are preparing for a triathlon competition and getting ready to start the race.",
+      "neutral_text": "a person is rowing a boat on a lake",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "The athletes are preparing for a triathlon competition and getting ready to start the race.",
+        "retrieved_rank": 19,
+        "retrieval_score": 0.273681640625,
+        "clip_ids": [
+          "djpOT62Z7K0.26"
+        ],
+        "retrieval_source_ids": [
+          "djpOT62Z7K0"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1429,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_027",
+      "query_id": "carebench_v_00002020_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002020_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002020_0",
+      "f_plus": "a scene of a woman applying eyeshadow",
+      "f_minus": "A woman is applying eyeliner to her eyelids.",
+      "neutral_text": "a person is writing notes on a whiteboard",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying eyeliner to her eyelids.",
+        "retrieved_rank": 1,
+        "retrieval_score": 0.26123046875,
+        "clip_ids": [
+          "Ya-55gg8aCs.5"
+        ],
+        "retrieval_source_ids": [
+          "Ya-55gg8aCs"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.3333,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_028",
+      "query_id": "carebench_v_00002024_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002024_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002024_0",
+      "f_plus": "the video primarily showcases a person applying eye makeup through a pair of closed eyes",
+      "f_minus": "A woman is applying makeup to her eyebrows with a brush.",
+      "neutral_text": "a person is taking a photograph with a camera",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows with a brush.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.307861328125,
+        "clip_ids": [
+          "6Vz_zU6YElg.20",
+          "8Pe3eeIF1As.3",
+          "RkZffXYwPZ4.2",
+          "XtVK5mQ-R4A.12",
+          "euCn52nR7Hw.10",
+          "il-9-wyp72A.11"
+        ],
+        "retrieval_source_ids": [
+          "6Vz_zU6YElg",
+          "8Pe3eeIF1As",
+          "RkZffXYwPZ4",
+          "XtVK5mQ-R4A",
+          "euCn52nR7Hw",
+          "il-9-wyp72A"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1818,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_029",
+      "query_id": "carebench_v_00002030_6",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002030_6.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002030_6",
+      "f_plus": "an adult woman applying eyeshadow",
+      "f_minus": "A woman is applying eyeliner to her eyelids.",
+      "neutral_text": "a person is flying a kite in a park",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying eyeliner to her eyelids.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.274169921875,
+        "clip_ids": [
+          "Ya-55gg8aCs.5"
+        ],
+        "retrieval_source_ids": [
+          "Ya-55gg8aCs"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.3333,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_030",
+      "query_id": "carebench_v_00002031_10",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002031_10.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002031_10",
+      "f_plus": "this video presents a scene where a woman demonstrates how to apply eyeshadow",
+      "f_minus": "A woman is using a makeup brush to apply eyebrow makeup.",
+      "neutral_text": "a person is driving a car on a highway",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is using a makeup brush to apply eyebrow makeup.",
+        "retrieved_rank": 8,
+        "retrieval_score": 0.28076171875,
+        "clip_ids": [
+          "3DyJlU0QcnI.23"
+        ],
+        "retrieval_source_ids": [
+          "3DyJlU0QcnI"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1667,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_031",
+      "query_id": "carebench_v_00002032_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002032_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002032_0",
+      "f_plus": "the video showcases a woman applying eyeshadow, with its focus primarily on her eye area and makeup tools",
+      "f_minus": "A woman is applying makeup to her eyebrows with a brush.",
+      "neutral_text": "a person is folding laundry indoors",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows with a brush.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.299560546875,
+        "clip_ids": [
+          "6Vz_zU6YElg.20",
+          "8Pe3eeIF1As.3",
+          "RkZffXYwPZ4.2",
+          "XtVK5mQ-R4A.12",
+          "euCn52nR7Hw.10",
+          "il-9-wyp72A.11"
+        ],
+        "retrieval_source_ids": [
+          "6Vz_zU6YElg",
+          "8Pe3eeIF1As",
+          "RkZffXYwPZ4",
+          "XtVK5mQ-R4A",
+          "euCn52nR7Hw",
+          "il-9-wyp72A"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2727,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_032",
+      "query_id": "carebench_v_00002033_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002033_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002033_0",
+      "f_plus": "a woman going through the process of applying her eye makeup",
+      "f_minus": "A woman is applying makeup on her eyebrows using a mirror and a pencil.",
+      "neutral_text": "a person is baking bread in an oven",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup on her eyebrows using a mirror and a pencil.",
+        "retrieved_rank": 2,
+        "retrieval_score": 0.278076171875,
+        "clip_ids": [
+          "AqX-aUwHMmg.3"
+        ],
+        "retrieval_source_ids": [
+          "AqX-aUwHMmg"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.3,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_033",
+      "query_id": "carebench_v_00002034_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002034_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002034_0",
+      "f_plus": "the video showcases a man as he goes through the process of applying eye makeup",
+      "f_minus": "A woman is applying makeup to her eyebrows.",
+      "neutral_text": "a person is typing on a laptop at a desk",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows.",
+        "retrieved_rank": 1,
+        "retrieval_score": 0.274658203125,
+        "clip_ids": [
+          "aLnSBl6GQlI.20",
+          "fR39BrigF2A.9",
+          "jHHv9X5dxao.2"
+        ],
+        "retrieval_source_ids": [
+          "aLnSBl6GQlI",
+          "fR39BrigF2A",
+          "jHHv9X5dxao"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.25,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_034",
+      "query_id": "carebench_v_00002038_7",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002038_7.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002038_7",
+      "f_plus": "the video primarily depicts a scene of a woman applying eyeshadow",
+      "f_minus": "A woman is applying makeup to her eyebrows with a brush.",
+      "neutral_text": "a person is repairing a bicycle tire",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows with a brush.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.2822265625,
+        "clip_ids": [
+          "6Vz_zU6YElg.20",
+          "8Pe3eeIF1As.3",
+          "RkZffXYwPZ4.2",
+          "XtVK5mQ-R4A.12",
+          "euCn52nR7Hw.10",
+          "il-9-wyp72A.11"
+        ],
+        "retrieval_source_ids": [
+          "6Vz_zU6YElg",
+          "8Pe3eeIF1As",
+          "RkZffXYwPZ4",
+          "XtVK5mQ-R4A",
+          "euCn52nR7Hw",
+          "il-9-wyp72A"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2222,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_035",
+      "query_id": "carebench_v_00002040_11",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002040_11.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002040_11",
+      "f_plus": "the video showcases the process of an adult applying eyeliner",
+      "f_minus": "A woman is applying eyeliner to her eyelids.",
+      "neutral_text": "a person is taking a photograph with a camera",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying eyeliner to her eyelids.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.26416015625,
+        "clip_ids": [
+          "Ya-55gg8aCs.5"
+        ],
+        "retrieval_source_ids": [
+          "Ya-55gg8aCs"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_036",
+      "query_id": "carebench_v_00002045_38",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002045_38.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002045_38",
+      "f_plus": "a blonde woman applying pink lipstick while looking into a mirror",
+      "f_minus": "A woman is applying pink lipstick to her lips.",
+      "neutral_text": "a person is taking a photograph with a camera",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying pink lipstick to her lips.",
+        "retrieved_rank": 4,
+        "retrieval_score": 0.30126953125,
+        "clip_ids": [
+          "uFnHfZWgD4w.6"
+        ],
+        "retrieval_source_ids": [
+          "uFnHfZWgD4w"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_037",
+      "query_id": "carebench_v_00002049_5",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002049_5.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002049_5",
+      "f_plus": "a woman humorously applying her eyebrow makeup",
+      "f_minus": "A painting of a woman with makeup on her face.",
+      "neutral_text": "a person is feeding a dog in a kitchen",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A painting of a woman with makeup on her face.",
+        "retrieved_rank": 19,
+        "retrieval_score": 0.31982421875,
+        "clip_ids": [
+          "LH6jHCAzLAc.1"
+        ],
+        "retrieval_source_ids": [
+          "LH6jHCAzLAc"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2857,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_038",
+      "query_id": "carebench_v_00002055_11",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002055_11.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002055_11",
+      "f_plus": "a woman applying eye makeup in a detailed manner",
+      "f_minus": "A woman is applying makeup to her eyebrows.",
+      "neutral_text": "a person is folding laundry indoors",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows.",
+        "retrieved_rank": 5,
+        "retrieval_score": 0.30908203125,
+        "clip_ids": [
+          "aLnSBl6GQlI.20",
+          "fR39BrigF2A.9",
+          "jHHv9X5dxao.2"
+        ],
+        "retrieval_source_ids": [
+          "aLnSBl6GQlI",
+          "fR39BrigF2A",
+          "jHHv9X5dxao"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4286,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_039",
+      "query_id": "carebench_v_00002066_5",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002066_5.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002066_5",
+      "f_plus": "a woman applying eyeshadow",
+      "f_minus": "A woman is applying makeup on her eyebrows using a mirror and a pencil.",
+      "neutral_text": "a person is reading a book in a library",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup on her eyebrows using a mirror and a pencil.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.28955078125,
+        "clip_ids": [
+          "AqX-aUwHMmg.3"
+        ],
+        "retrieval_source_ids": [
+          "AqX-aUwHMmg"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.25,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_040",
+      "query_id": "carebench_v_00002068_11",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002068_11.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002068_11",
+      "f_plus": "a woman applying makeup to her right eyebrow",
+      "f_minus": "A woman is applying eyebrow makeup.",
+      "neutral_text": "a person is swimming in a pool",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying eyebrow makeup.",
+        "retrieved_rank": 11,
+        "retrieval_score": 0.27099609375,
+        "clip_ids": [
+          "xsxruJEjmuo.1"
+        ],
+        "retrieval_source_ids": [
+          "xsxruJEjmuo"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.8,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_041",
+      "query_id": "carebench_v_00002070_2",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002070_2.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002070_2",
+      "f_plus": "a woman applying lipstick to her lips in the shape of glasses",
+      "f_minus": "A woman is applying lipstick to her lips.",
+      "neutral_text": "a person is flying a kite in a park",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying lipstick to her lips.",
+        "retrieved_rank": 5,
+        "retrieval_score": 0.31103515625,
+        "clip_ids": [
+          "74s9EVx06ZE.4",
+          "CEyMeBjlmCc.16",
+          "DJGTVb6YKtY.2",
+          "RlF6YPpqqMI.11",
+          "_h3OtMsx2Wo.4",
+          "uFnHfZWgD4w.4",
+          "uFnHfZWgD4w.7"
+        ],
+        "retrieval_source_ids": [
+          "74s9EVx06ZE",
+          "CEyMeBjlmCc",
+          "DJGTVb6YKtY",
+          "RlF6YPpqqMI",
+          "_h3OtMsx2Wo",
+          "uFnHfZWgD4w"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.6667,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_042",
+      "query_id": "carebench_v_00002072_20",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002072_20.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002072_20",
+      "f_plus": "a woman applying red lipstick on herself",
+      "f_minus": "A woman is applying red lipstick on her lips.",
+      "neutral_text": "a person is playing a guitar on a stage",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying red lipstick on her lips.",
+        "retrieved_rank": 3,
+        "retrieval_score": 0.31591796875,
+        "clip_ids": [
+          "gTQhXQ-aYIU.8"
+        ],
+        "retrieval_source_ids": [
+          "gTQhXQ-aYIU"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.6667,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_043",
+      "query_id": "carebench_v_00002074_46",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002074_46.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002074_46",
+      "f_plus": "a woman applying dark green lipstick to her lower lip",
+      "f_minus": "A woman is applying lipstick to her lips.",
+      "neutral_text": "a person is rowing a boat on a lake",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying lipstick to her lips.",
+        "retrieved_rank": 8,
+        "retrieval_score": 0.288330078125,
+        "clip_ids": [
+          "74s9EVx06ZE.4",
+          "CEyMeBjlmCc.16",
+          "DJGTVb6YKtY.2",
+          "RlF6YPpqqMI.11",
+          "_h3OtMsx2Wo.4",
+          "uFnHfZWgD4w.4",
+          "uFnHfZWgD4w.7"
+        ],
+        "retrieval_source_ids": [
+          "74s9EVx06ZE",
+          "CEyMeBjlmCc",
+          "DJGTVb6YKtY",
+          "RlF6YPpqqMI",
+          "_h3OtMsx2Wo",
+          "uFnHfZWgD4w"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.375,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_044",
+      "query_id": "carebench_v_00002078_1",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002078_1.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002078_1",
+      "f_plus": "the video presents a scene of a woman applying eyeshadow with her hands",
+      "f_minus": "A woman is applying a pink eye cream to her eyelids.",
+      "neutral_text": "a person is rowing a boat on a lake",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying a pink eye cream to her eyelids.",
+        "retrieved_rank": 5,
+        "retrieval_score": 0.283935546875,
+        "clip_ids": [
+          "kmPmjIreULE.1"
+        ],
+        "retrieval_source_ids": [
+          "kmPmjIreULE"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_045",
+      "query_id": "carebench_v_00002094_2",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002094_2.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002094_2",
+      "f_plus": "a woman explaining the process of drawing eyebrows",
+      "f_minus": "A woman is applying makeup to her eyebrows with a brush.",
+      "neutral_text": "a person is writing notes on a whiteboard",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows with a brush.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.28662109375,
+        "clip_ids": [
+          "6Vz_zU6YElg.20",
+          "8Pe3eeIF1As.3",
+          "RkZffXYwPZ4.2",
+          "XtVK5mQ-R4A.12",
+          "euCn52nR7Hw.10",
+          "il-9-wyp72A.11"
+        ],
+        "retrieval_source_ids": [
+          "6Vz_zU6YElg",
+          "8Pe3eeIF1As",
+          "RkZffXYwPZ4",
+          "XtVK5mQ-R4A",
+          "euCn52nR7Hw",
+          "il-9-wyp72A"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2857,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_046",
+      "query_id": "carebench_v_00002097_34",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002097_34.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002097_34",
+      "f_plus": "the video primarily features a blonde woman demonstrating techniques and tips for applying mascara in front of the camera",
+      "f_minus": "A woman is applying mascara to her eyelashes in front of a mirror.",
+      "neutral_text": "a person is flying a kite in a park",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying mascara to her eyelashes in front of a mirror.",
+        "retrieved_rank": 9,
+        "retrieval_score": 0.259033203125,
+        "clip_ids": [
+          "Ouos92z34dw.4"
+        ],
+        "retrieval_source_ids": [
+          "Ouos92z34dw"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.3077,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_047",
+      "query_id": "carebench_v_00002098_4",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002098_4.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002098_4",
+      "f_plus": "the video features a woman applying mascara to her upper and lower eyelashes, set against a striking black background sprinkled with shimmering silver glitter",
+      "f_minus": "A woman is applying mascara to her eyelashes.",
+      "neutral_text": "a person is brushing their teeth in a bathroom",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying mascara to her eyelashes.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.26171875,
+        "clip_ids": [
+          "6Vz_zU6YElg.25",
+          "GYM9mGbKzxA.5",
+          "HgFc7MRMxdc.0",
+          "RlF6YPpqqMI.8",
+          "Y7pAe9lXO-U.9",
+          "ZMaekgGlXoQ.5",
+          "aBMapNFhpuQ.4",
+          "c4dTatWAIP0.7",
+          "fR39BrigF2A.8",
+          "iORSNbMMArU.9",
+          "lycKPqPyJsc.16",
+          "o7Oy-001yzE.11",
+          "o7Oy-001yzE.12"
+        ],
+        "retrieval_source_ids": [
+          "6Vz_zU6YElg",
+          "GYM9mGbKzxA",
+          "HgFc7MRMxdc",
+          "RlF6YPpqqMI",
+          "Y7pAe9lXO-U",
+          "ZMaekgGlXoQ",
+          "aBMapNFhpuQ",
+          "c4dTatWAIP0",
+          "fR39BrigF2A",
+          "iORSNbMMArU",
+          "lycKPqPyJsc",
+          "o7Oy-001yzE"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.25,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_048",
+      "query_id": "carebench_v_00002113_2",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002113_2.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002113_2",
+      "f_plus": "this video provides a detailed tutorial on how to apply nail polish perfectly",
+      "f_minus": "A woman is painting her nails with a nail polish.",
+      "neutral_text": "a person is flying a kite in a park",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is painting her nails with a nail polish.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.317138671875,
+        "clip_ids": [
+          "tCl4i15jzgM.1"
+        ],
+        "retrieval_source_ids": [
+          "tCl4i15jzgM"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1818,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_049",
+      "query_id": "carebench_v_00002177_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002177_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002177_0",
+      "f_plus": "a scene of two adult women pushing two girls along a dirt path in the woods",
+      "f_minus": "Two elderly women walking in a park with a walker.",
+      "neutral_text": "a person is watering plants in a garden",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "Two elderly women walking in a park with a walker.",
+        "retrieved_rank": 17,
+        "retrieval_score": 0.26953125,
+        "clip_ids": [
+          "U0POSK6JctE.17"
+        ],
+        "retrieval_source_ids": [
+          "U0POSK6JctE"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1429,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_050",
+      "query_id": "carebench_v_00002178_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002178_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002178_0",
+      "f_plus": "a scene of an adult man maneuvering a wheelchair alone along a street",
+      "f_minus": "A man in a wheelchair is talking to the camera.",
+      "neutral_text": "a person is folding laundry indoors",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A man in a wheelchair is talking to the camera.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.300048828125,
+        "clip_ids": [
+          "CjhGxL3KXak.20",
+          "Wp4mnVvTrvs.13"
+        ],
+        "retrieval_source_ids": [
+          "CjhGxL3KXak",
+          "Wp4mnVvTrvs"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_051",
+      "query_id": "carebench_v_00002179_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002179_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002179_0",
+      "f_plus": "an adult male in a wheelchair as he opens a glass door to enter a new room",
+      "f_minus": "A man in a wheelchair is in a room with a door that opens and closes.",
+      "neutral_text": "a person is feeding a dog in a kitchen",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A man in a wheelchair is in a room with a door that opens and closes.",
+        "retrieved_rank": 7,
+        "retrieval_score": 0.336669921875,
+        "clip_ids": [
+          "bbTMiS9QoVY.0"
+        ],
+        "retrieval_source_ids": [
+          "bbTMiS9QoVY"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.3636,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_052",
+      "query_id": "carebench_v_00002181_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002181_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002181_0",
+      "f_plus": "the scene of an adult man in a wheelchair moving forward alongside a dog on the street",
+      "f_minus": "A man in a wheelchair is riding down the street.",
+      "neutral_text": "a person is repairing a bicycle tire",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A man in a wheelchair is riding down the street.",
+        "retrieved_rank": 3,
+        "retrieval_score": 0.275390625,
+        "clip_ids": [
+          "BplKUi_xSUs.3"
+        ],
+        "retrieval_source_ids": [
+          "BplKUi_xSUs"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2727,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_053",
+      "query_id": "carebench_v_00002188_4",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002188_4.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002188_4",
+      "f_plus": "a man accompanying a girl as she practices riding a bicycle",
+      "f_minus": "A man in a white shirt riding a bike.",
+      "neutral_text": "a person is brushing their teeth in a bathroom",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A man in a white shirt riding a bike.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.285400390625,
+        "clip_ids": [
+          "auRT2FQePac.0"
+        ],
+        "retrieval_source_ids": [
+          "auRT2FQePac"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2222,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_054",
+      "query_id": "carebench_v_00002196_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002196_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002196_0",
+      "f_plus": "a scene of a city street at night, filmed through a dashcam",
+      "f_minus": "A black car is driving down a city street at night, and there are people walking on the sidewalk.",
+      "neutral_text": "a person is taking a photograph with a camera",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A black car is driving down a city street at night, and there are people walking on the sidewalk.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.302001953125,
+        "clip_ids": [
+          "_CCGtXyMfBw.12"
+        ],
+        "retrieval_source_ids": [
+          "_CCGtXyMfBw"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_055",
+      "query_id": "carebench_v_00002203_4",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002203_4.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002203_4",
+      "f_plus": "a young man practicing his cycling skills",
+      "f_minus": "A young man and woman are riding a bicycle down the street, with the woman sitting on the back of the bike.",
+      "neutral_text": "a person is taking a photograph with a camera",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A young man and woman are riding a bicycle down the street, with the woman sitting on the back of the bike.",
+        "retrieved_rank": 16,
+        "retrieval_score": 0.28955078125,
+        "clip_ids": [
+          "-N2zyTMZ0cI.0"
+        ],
+        "retrieval_source_ids": [
+          "-N2zyTMZ0cI"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1538,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_056",
+      "query_id": "carebench_v_00002219_6",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002219_6.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002219_6",
+      "f_plus": "this video is divided into two parts, showcasing a young boy and a young girl riding their bicycles",
+      "f_minus": "A young girl is riding a bicycle in the outdoors on a sunny day.",
+      "neutral_text": "a person is playing a guitar on a stage",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A young girl is riding a bicycle in the outdoors on a sunny day.",
+        "retrieved_rank": 5,
+        "retrieval_score": 0.28955078125,
+        "clip_ids": [
+          "Bk7v3T2lNIs.3"
+        ],
+        "retrieval_source_ids": [
+          "Bk7v3T2lNIs"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2143,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_057",
+      "query_id": "carebench_v_00002220_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002220_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002220_0",
+      "f_plus": "the scene captures a mother accompanying her child outdoors as they ride bicycles together",
+      "f_minus": "A group of children are riding bicycles and having fun in the outdoors.",
+      "neutral_text": "a person is rowing a boat on a lake",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A group of children are riding bicycles and having fun in the outdoors.",
+        "retrieved_rank": 16,
+        "retrieval_score": 0.29345703125,
+        "clip_ids": [
+          "gDcAtaRMp3w.3"
+        ],
+        "retrieval_source_ids": [
+          "gDcAtaRMp3w"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1429,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_058",
+      "query_id": "carebench_v_00002223_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002223_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002223_0",
+      "f_plus": "the video showcases a scene of a child riding a bicycle outdoors",
+      "f_minus": "A child is riding a bicycle on a street.",
+      "neutral_text": "a person is playing a guitar on a stage",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A child is riding a bicycle on a street.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.30810546875,
+        "clip_ids": [
+          "7aijt4eeZ-4.7"
+        ],
+        "retrieval_source_ids": [
+          "7aijt4eeZ-4"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.5,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_059",
+      "query_id": "carebench_v_00002237_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002237_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002237_0",
+      "f_plus": "the experience of two individuals riding a motorcycle together",
+      "f_minus": "A person is riding a motorcycle on a racetrack and the camera is mounted on the handlebars of the motorcycle.",
+      "neutral_text": "a person is swimming in a pool",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A person is riding a motorcycle on a racetrack and the camera is mounted on the handlebars of the motorcycle.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.3056640625,
+        "clip_ids": [
+          "a3pkIVWzPlA.0"
+        ],
+        "retrieval_source_ids": [
+          "a3pkIVWzPlA"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_060",
+      "query_id": "carebench_v_00002240_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00002240_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00002240_0",
+      "f_plus": "a child riding a bicycle downhill under adult supervision",
+      "f_minus": "A woman is riding a bicycle on a sunny day.",
+      "neutral_text": "a person is writing notes on a whiteboard",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is riding a bicycle on a sunny day.",
+        "retrieved_rank": 0,
+        "retrieval_score": 0.258056640625,
+        "clip_ids": [
+          "nh_d2J959Ro.2"
+        ],
+        "retrieval_source_ids": [
+          "nh_d2J959Ro"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.2,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    }
+  ]
+}

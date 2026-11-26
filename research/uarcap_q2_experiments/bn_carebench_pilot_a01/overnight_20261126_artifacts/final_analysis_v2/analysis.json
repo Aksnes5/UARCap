@@ -1,0 +1,3695 @@
+{
+  "descriptive": {
+    "models": {
+      "formal_videollama": {
+        "ARM_A0": {
+          "captions": 600,
+          "parsed_ok": 600,
+          "parse_failure_rate": 0.0,
+          "claims": 1627,
+          "entailed": 1290,
+          "contradicted": 172,
+          "unmentioned": 165,
+          "support_rate": 0.7929,
+          "conflict_rate": 0.1057,
+          "unmentioned_rate": 0.1014,
+          "mean_claims_per_caption": 2.712,
+          "mean_caption_words": 7.57,
+          "mean_contra_ref_per_caption": 0.2867,
+          "core_coverage_mean": 0.6167,
+          "dimensions": {
+            "static_entity_attribute": 263,
+            "dynamic_action_temporal": 586,
+            "mixed": 62,
+            "unclassified": 716
+          }
+        },
+        "ARM_A1": {
+          "captions": 600,
+          "parsed_ok": 600,
+          "parse_failure_rate": 0.0,
+          "claims": 1657,
+          "entailed": 1368,
+          "contradicted": 147,
+          "unmentioned": 142,
+          "support_rate": 0.8256,
+          "conflict_rate": 0.0887,
+          "unmentioned_rate": 0.0857,
+          "mean_claims_per_caption": 2.762,
+          "mean_caption_words": 7.72,
+          "mean_contra_ref_per_caption": 0.245,
+          "core_coverage_mean": 0.6717,
+          "dimensions": {
+            "static_entity_attribute": 268,
+            "dynamic_action_temporal": 573,
+            "mixed": 66,
+            "unclassified": 750
+          }
+        },
+        "ARM_A7": {
+          "captions": 600,
+          "parsed_ok": 600,
+          "parse_failure_rate": 0.0,
+          "claims": 1732,
+          "entailed": 1397,
+          "contradicted": 144,
+          "unmentioned": 191,
+          "support_rate": 0.8066,
+          "conflict_rate": 0.0831,
+          "unmentioned_rate": 0.1103,
+          "mean_claims_per_caption": 2.887,
+          "mean_caption_words": 8.26,
+          "mean_contra_ref_per_caption": 0.24,
+          "core_coverage_mean": 0.6767,
+          "dimensions": {
+            "static_entity_attribute": 303,
+            "dynamic_action_temporal": 576,
+            "mixed": 72,
+            "unclassified": 781
+          }
+        }
+      },
+      "formal_qwen38": {
+        "ARM_A0": {
+          "captions": 600,
+          "parsed_ok": 600,
+          "parse_failure_rate": 0.0,
+          "claims": 2928,
+          "entailed": 2185,
+          "contradicted": 280,
+          "unmentioned": 463,
+          "support_rate": 0.7462,
+          "conflict_rate": 0.0956,
+          "unmentioned_rate": 0.1581,
+          "mean_claims_per_caption": 4.88,
+          "mean_caption_words": 13.96,
+          "mean_contra_ref_per_caption": 0.4667,
+          "core_coverage_mean": 0.7267,
+          "dimensions": {
+            "static_entity_attribute": 937,
+            "dynamic_action_temporal": 643,
+            "mixed": 202,
+            "unclassified": 1146
+          }
+        },
+        "ARM_A1": {
+          "captions": 600,
+          "parsed_ok": 600,
+          "parse_failure_rate": 0.0,
+          "claims": 2967,
+          "entailed": 2253,
+          "contradicted": 279,
+          "unmentioned": 435,
+          "support_rate": 0.7594,
+          "conflict_rate": 0.094,
+          "unmentioned_rate": 0.1466,
+          "mean_claims_per_caption": 4.945,
+          "mean_caption_words": 14.12,
+          "mean_contra_ref_per_caption": 0.465,
+          "core_coverage_mean": 0.7533,
+          "dimensions": {
+            "static_entity_attribute": 999,
+            "dynamic_action_temporal": 642,
+            "mixed": 176,
+            "unclassified": 1150
+          }
+        },
+        "ARM_A7": {
+          "captions": 600,
+          "parsed_ok": 600,
+          "parse_failure_rate": 0.0,
+          "claims": 3018,
+          "entailed": 2296,
+          "contradicted": 297,
+          "unmentioned": 425,
+          "support_rate": 0.7608,
+          "conflict_rate": 0.0984,
+          "unmentioned_rate": 0.1408,
+          "mean_claims_per_caption": 5.03,
+          "mean_caption_words": 14.35,
+          "mean_contra_ref_per_caption": 0.495,
+          "core_coverage_mean": 0.7567,
+          "dimensions": {
+            "static_entity_attribute": 1025,
+            "dynamic_action_temporal": 636,
+            "mixed": 185,
+            "unclassified": 1172
+          }
+        }
+      },
+      "a3_qwen38": {
+        "ARM_A0": {
+          "captions": 30,
+          "parsed_ok": 30,
+          "parse_failure_rate": 0.0,
+          "claims": 147,
+          "entailed": 111,
+          "contradicted": 9,
+          "unmentioned": 27,
+          "support_rate": 0.7551,
+          "conflict_rate": 0.0612,
+          "unmentioned_rate": 0.1837,
+          "mean_claims_per_caption": 4.9,
+          "mean_caption_words": 14.13,
+          "mean_contra_ref_per_caption": 0.3,
+          "core_coverage_mean": 0.7667,
+          "dimensions": {
+            "static_entity_attribute": 44,
+            "dynamic_action_temporal": 35,
+            "mixed": 7,
+            "unclassified": 61
+          }
+        },
+        "ARM_A1": {
+          "captions": 30,
+          "parsed_ok": 30,
+          "parse_failure_rate": 0.0,
+          "claims": 143,
+          "entailed": 112,
+          "contradicted": 7,
+          "unmentioned": 24,
+          "support_rate": 0.7832,
+          "conflict_rate": 0.049,
+          "unmentioned_rate": 0.1678,
+          "mean_claims_per_caption": 4.767,
+          "mean_caption_words": 14.63,
+          "mean_contra_ref_per_caption": 0.2333,
+          "core_coverage_mean": 0.8333,
+          "dimensions": {
+            "static_entity_attribute": 45,
+            "dynamic_action_temporal": 39,
+            "mixed": 6,
+            "unclassified": 53
+          }
+        },
+        "ARM_A7": {
+          "captions": 30,
+          "parsed_ok": 30,
+          "parse_failure_rate": 0.0,
+          "claims": 154,
+          "entailed": 116,
+          "contradicted": 13,
+          "unmentioned": 25,
+          "support_rate": 0.7532,
+          "conflict_rate": 0.0844,
+          "unmentioned_rate": 0.1623,
+          "mean_claims_per_caption": 5.133,
+          "mean_caption_words": 14.47,
+          "mean_contra_ref_per_caption": 0.4333,
+          "core_coverage_mean": 0.8333,
+          "dimensions": {
+            "static_entity_attribute": 53,
+            "dynamic_action_temporal": 41,
+            "mixed": 6,
+            "unclassified": 54
+          }
+        }
+      },
+      "a3_qwen35": {
+        "ARM_A0": {
+          "captions": 30,
+          "parsed_ok": 30,
+          "parse_failure_rate": 0.0,
+          "claims": 152,
+          "entailed": 127,
+          "contradicted": 7,
+          "unmentioned": 18,
+          "support_rate": 0.8355,
+          "conflict_rate": 0.0461,
+          "unmentioned_rate": 0.1184,
+          "mean_claims_per_caption": 5.067,
+          "mean_caption_words": 14.67,
+          "mean_contra_ref_per_caption": 0.2333,
+          "core_coverage_mean": 0.9,
+          "dimensions": {
+            "static_entity_attribute": 52,
+            "dynamic_action_temporal": 41,
+            "mixed": 1,
+            "unclassified": 58
+          }
+        },
+        "ARM_A1": {
+          "captions": 30,
+          "parsed_ok": 30,
+          "parse_failure_rate": 0.0,
+          "claims": 138,
+          "entailed": 112,
+          "contradicted": 13,
+          "unmentioned": 13,
+          "support_rate": 0.8116,
+          "conflict_rate": 0.0942,
+          "unmentioned_rate": 0.0942,
+          "mean_claims_per_caption": 4.6,
+          "mean_caption_words": 14.17,
+          "mean_contra_ref_per_caption": 0.4333,
+          "core_coverage_mean": 0.9,
+          "dimensions": {
+            "static_entity_attribute": 44,
+            "dynamic_action_temporal": 39,
+            "mixed": 4,
+            "unclassified": 51
+          }
+        },
+        "ARM_A7": {
+          "captions": 30,
+          "parsed_ok": 30,
+          "parse_failure_rate": 0.0,
+          "claims": 145,
+          "entailed": 122,
+          "contradicted": 8,
+          "unmentioned": 15,
+          "support_rate": 0.8414,
+          "conflict_rate": 0.0552,
+          "unmentioned_rate": 0.1034,
+          "mean_claims_per_caption": 4.833,
+          "mean_caption_words": 14.43,
+          "mean_contra_ref_per_caption": 0.2667,
+          "core_coverage_mean": 0.9,
+          "dimensions": {
+            "static_entity_attribute": 54,
+            "dynamic_action_temporal": 41,
+            "mixed": 3,
+            "unclassified": 47
+          }
+        }
+      }
+    },
+    "transitions": {
+      "formal_videollama": {
+        "ARM_A0->ARM_A1": {
+          "added_correct": 364,
+          "lost_correct": 286,
+          "added_error": 56,
+          "removed_error": 81,
+          "added_unmentioned": 51,
+          "removed_unmentioned": 65,
+          "label_flips": 43,
+          "replacements": 43,
+          "unmatched": 404,
+          "core_coverage_delta": 0.055,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 1223
+        },
+        "ARM_A1->ARM_A7": {
+          "added_correct": 322,
+          "lost_correct": 293,
+          "added_error": 58,
+          "removed_error": 61,
+          "added_unmentioned": 93,
+          "removed_unmentioned": 49,
+          "label_flips": 30,
+          "replacements": 30,
+          "unmatched": 378,
+          "core_coverage_delta": 0.005,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 1279
+        },
+        "ARM_A0->ARM_A7": {
+          "added_correct": 511,
+          "lost_correct": 404,
+          "added_error": 72,
+          "removed_error": 100,
+          "added_unmentioned": 127,
+          "removed_unmentioned": 91,
+          "label_flips": 40,
+          "replacements": 40,
+          "unmatched": 571,
+          "core_coverage_delta": 0.06,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 1056
+        }
+      },
+      "formal_qwen38": {
+        "ARM_A0->ARM_A1": {
+          "added_correct": 723,
+          "lost_correct": 655,
+          "added_error": 117,
+          "removed_error": 118,
+          "added_unmentioned": 152,
+          "removed_unmentioned": 191,
+          "label_flips": 83,
+          "replacements": 83,
+          "unmatched": 898,
+          "core_coverage_delta": 0.0267,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 2030
+        },
+        "ARM_A1->ARM_A7": {
+          "added_correct": 568,
+          "lost_correct": 525,
+          "added_error": 102,
+          "removed_error": 84,
+          "added_unmentioned": 109,
+          "removed_unmentioned": 115,
+          "label_flips": 80,
+          "replacements": 80,
+          "unmatched": 669,
+          "core_coverage_delta": 0.0033,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 2298
+        },
+        "ARM_A0->ARM_A7": {
+          "added_correct": 895,
+          "lost_correct": 784,
+          "added_error": 152,
+          "removed_error": 135,
+          "added_unmentioned": 172,
+          "removed_unmentioned": 213,
+          "label_flips": 94,
+          "replacements": 94,
+          "unmatched": 1067,
+          "core_coverage_delta": 0.03,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 1861
+        }
+      },
+      "a3_qwen38": {
+        "ARM_A0->ARM_A1": {
+          "added_correct": 27,
+          "lost_correct": 26,
+          "added_error": 4,
+          "removed_error": 6,
+          "added_unmentioned": 10,
+          "removed_unmentioned": 13,
+          "label_flips": 2,
+          "replacements": 2,
+          "unmatched": 44,
+          "core_coverage_delta": 0.0667,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 103
+        },
+        "ARM_A1->ARM_A7": {
+          "added_correct": 38,
+          "lost_correct": 34,
+          "added_error": 8,
+          "removed_error": 2,
+          "added_unmentioned": 9,
+          "removed_unmentioned": 11,
+          "label_flips": 10,
+          "replacements": 10,
+          "unmatched": 39,
+          "core_coverage_delta": 0.0,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 104
+        },
+        "ARM_A0->ARM_A7": {
+          "added_correct": 39,
+          "lost_correct": 34,
+          "added_error": 10,
+          "removed_error": 6,
+          "added_unmentioned": 13,
+          "removed_unmentioned": 15,
+          "label_flips": 11,
+          "replacements": 11,
+          "unmatched": 49,
+          "core_coverage_delta": 0.0667,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 98
+        }
+      },
+      "a3_qwen35": {
+        "ARM_A0->ARM_A1": {
+          "added_correct": 20,
+          "lost_correct": 35,
+          "added_error": 10,
+          "removed_error": 4,
+          "added_unmentioned": 5,
+          "removed_unmentioned": 8,
+          "label_flips": 6,
+          "replacements": 6,
+          "unmatched": 44,
+          "core_coverage_delta": 0.0,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 108
+        },
+        "ARM_A1->ARM_A7": {
+          "added_correct": 30,
+          "lost_correct": 20,
+          "added_error": 1,
+          "removed_error": 6,
+          "added_unmentioned": 7,
+          "removed_unmentioned": 7,
+          "label_flips": 7,
+          "replacements": 7,
+          "unmatched": 28,
+          "core_coverage_delta": 0.0,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 110
+        },
+        "ARM_A0->ARM_A7": {
+          "added_correct": 33,
+          "lost_correct": 38,
+          "added_error": 4,
+          "removed_error": 3,
+          "added_unmentioned": 8,
+          "removed_unmentioned": 10,
+          "label_flips": 5,
+          "replacements": 5,
+          "unmatched": 48,
+          "core_coverage_delta": 0.0,
+          "match_method": "lexical_jaccard_candidate",
+          "semantic_verified": false,
+          "uncertain_matches": 104
+        }
+      }
+    },
+    "reliability": {
+      "formal_videollama": {
+        "n_claims": 5016,
+        "confusion_gemma_to_llama": {
+          "entailed->entailed": 3768,
+          "entailed->unmentioned": 144,
+          "unmentioned->unmentioned": 283,
+          "unmentioned->contradicted": 169,
+          "entailed->contradicted": 143,
+          "contradicted->contradicted": 414,
+          "unmentioned->entailed": 46,
+          "contradicted->unmentioned": 37,
+          "contradicted->entailed": 12
+        },
+        "observed_agreement": 0.8902,
+        "cohen_kappa": 0.6956,
+        "per_arm": {
+          "ARM_A0": {
+            "n": 1627,
+            "disagreement_rate": 0.1168,
+            "directions": {
+              "entailed->unmentioned": 52,
+              "unmentioned->contradicted": 64,
+              "entailed->contradicted": 47,
+              "unmentioned->entailed": 9,
+              "contradicted->unmentioned": 12,
+              "contradicted->entailed": 6
+            }
+          },
+          "ARM_A1": {
+            "n": 1657,
+            "disagreement_rate": 0.105,
+            "directions": {
+              "entailed->unmentioned": 47,
+              "entailed->contradicted": 49,
+              "unmentioned->contradicted": 52,
+              "unmentioned->entailed": 12,
+              "contradicted->entailed": 5,
+              "contradicted->unmentioned": 9
+            }
+          },
+          "ARM_A7": {
+            "n": 1732,
+            "disagreement_rate": 0.108,
+            "directions": {
+              "entailed->unmentioned": 45,
+              "entailed->contradicted": 47,
+              "unmentioned->entailed": 25,
+              "unmentioned->contradicted": 53,
+              "contradicted->unmentioned": 16,
+              "contradicted->entailed": 1
+            }
+          }
+        },
+        "budget_differential": {
+          "disagreement_rate_A7_minus_A0": -0.0088
+        },
+        "judge_budget_effect_difference": {
+          "ARM_A0->ARM_A1|entailed": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0024,
+            "ci95": [
+              -0.0154,
+              0.0104
+            ],
+            "bootstrap_sd": 0.0066,
+            "n": 600,
+            "observed_mean": -0.0024,
+            "p_two_sided": 0.713257,
+            "mean_diff": -0.0024,
+            "cohen_dz": -0.0147
+          },
+          "ARM_A0->ARM_A1|contradicted": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0012,
+            "ci95": [
+              -0.0123,
+              0.0101
+            ],
+            "bootstrap_sd": 0.0057,
+            "n": 600,
+            "observed_mean": -0.0012,
+            "p_two_sided": 0.823035,
+            "mean_diff": -0.0012,
+            "cohen_dz": -0.009
+          },
+          "ARM_A1->ARM_A7|entailed": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0103,
+            "ci95": [
+              -0.0005,
+              0.0197
+            ],
+            "bootstrap_sd": 0.0051,
+            "n": 600,
+            "observed_mean": 0.0103,
+            "p_two_sided": 0.039792,
+            "mean_diff": 0.0103,
+            "cohen_dz": 0.0824
+          },
+          "ARM_A1->ARM_A7|contradicted": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0062,
+            "ci95": [
+              -0.0179,
+              0.0057
+            ],
+            "bootstrap_sd": 0.0062,
+            "n": 600,
+            "observed_mean": -0.0062,
+            "p_two_sided": 0.330534,
+            "mean_diff": -0.0062,
+            "cohen_dz": -0.0413
+          },
+          "ARM_A0->ARM_A7|entailed": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0079,
+            "ci95": [
+              -0.0068,
+              0.0221
+            ],
+            "bootstrap_sd": 0.0075,
+            "n": 600,
+            "observed_mean": 0.0079,
+            "p_two_sided": 0.294741,
+            "mean_diff": 0.0079,
+            "cohen_dz": 0.0433
+          },
+          "ARM_A0->ARM_A7|contradicted": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0075,
+            "ci95": [
+              -0.0223,
+              0.0077
+            ],
+            "bootstrap_sd": 0.0076,
+            "n": 600,
+            "observed_mean": -0.0075,
+            "p_two_sided": 0.336333,
+            "mean_diff": -0.0075,
+            "cohen_dz": -0.0406
+          },
+          "interpretation": "paired judge budget-effect difference (Llama minus Gemma), not overall agreement"
+        },
+        "disagreement_examples": [
+          {
+            "query_id": "carebench_v_00001370_1",
+            "claim": "A man exists.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00001370_1",
+            "claim": "The something is a piece of meat.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00003905_0",
+            "claim": "The flowers are on a grave.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00003953_2",
+            "claim": "A woman is present.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00003956_4",
+            "claim": "A woman is present.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00003956_4",
+            "claim": "The woman is demonstrating a process.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005709_0",
+            "claim": "The man is cutting down a tree.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005881_5",
+            "claim": "A man is present.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00005889_0",
+            "claim": "A woman is present.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005889_0",
+            "claim": "The woman is cutting vegetables.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005895_0",
+            "claim": "The vegetables are on a cutting board.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005907_0",
+            "claim": "The person is cutting vegetables.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005908_2",
+            "claim": "The woman is cutting vegetables.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00006262_0",
+            "claim": "The people are climbing.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00006262_0",
+            "claim": "The people are climbing up a building.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00006264_1",
+            "claim": "The man and child are playing.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00006289_0",
+            "claim": "A man exists.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00006382_0",
+            "claim": "A man is climbing.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00006382_0",
+            "claim": "The man is climbing up a window.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00007046_1",
+            "claim": "The man is digging a hole.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          }
+        ]
+      },
+      "formal_qwen38": {
+        "n_claims": 8911,
+        "confusion_gemma_to_llama": {
+          "entailed->entailed": 6201,
+          "unmentioned->unmentioned": 958,
+          "entailed->unmentioned": 235,
+          "contradicted->contradicted": 729,
+          "entailed->contradicted": 296,
+          "unmentioned->entailed": 165,
+          "unmentioned->contradicted": 200,
+          "contradicted->entailed": 31,
+          "contradicted->unmentioned": 96
+        },
+        "observed_agreement": 0.8852,
+        "cohen_kappa": 0.7286,
+        "per_arm": {
+          "ARM_A0": {
+            "n": 2927,
+            "disagreement_rate": 0.1179,
+            "directions": {
+              "entailed->unmentioned": 79,
+              "entailed->contradicted": 95,
+              "unmentioned->entailed": 53,
+              "unmentioned->contradicted": 80,
+              "contradicted->entailed": 10,
+              "contradicted->unmentioned": 28
+            }
+          },
+          "ARM_A1": {
+            "n": 2966,
+            "disagreement_rate": 0.1146,
+            "directions": {
+              "entailed->unmentioned": 77,
+              "entailed->contradicted": 100,
+              "unmentioned->entailed": 57,
+              "unmentioned->contradicted": 64,
+              "contradicted->unmentioned": 29,
+              "contradicted->entailed": 13
+            }
+          },
+          "ARM_A7": {
+            "n": 3018,
+            "disagreement_rate": 0.112,
+            "directions": {
+              "entailed->unmentioned": 79,
+              "entailed->contradicted": 101,
+              "unmentioned->entailed": 55,
+              "unmentioned->contradicted": 56,
+              "contradicted->unmentioned": 39,
+              "contradicted->entailed": 8
+            }
+          }
+        },
+        "budget_differential": {
+          "disagreement_rate_A7_minus_A0": -0.0059
+        },
+        "judge_budget_effect_difference": {
+          "ARM_A0->ARM_A1|entailed": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0025,
+            "ci95": [
+              -0.0103,
+              0.0146
+            ],
+            "bootstrap_sd": 0.0061,
+            "n": 600,
+            "observed_mean": 0.0025,
+            "p_two_sided": 0.671266,
+            "mean_diff": 0.0025,
+            "cohen_dz": 0.0168
+          },
+          "ARM_A0->ARM_A1|contradicted": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0066,
+            "ci95": [
+              -0.0167,
+              0.0034
+            ],
+            "bootstrap_sd": 0.0053,
+            "n": 600,
+            "observed_mean": -0.0066,
+            "p_two_sided": 0.212358,
+            "mean_diff": -0.0066,
+            "cohen_dz": -0.0515
+          },
+          "ARM_A1->ARM_A7|entailed": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0023,
+            "ci95": [
+              -0.0113,
+              0.0067
+            ],
+            "bootstrap_sd": 0.0046,
+            "n": 600,
+            "observed_mean": -0.0023,
+            "p_two_sided": 0.619476,
+            "mean_diff": -0.0023,
+            "cohen_dz": -0.0202
+          },
+          "ARM_A1->ARM_A7|contradicted": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0043,
+            "ci95": [
+              -0.0129,
+              0.004
+            ],
+            "bootstrap_sd": 0.0043,
+            "n": 600,
+            "observed_mean": -0.0043,
+            "p_two_sided": 0.330334,
+            "mean_diff": -0.0043,
+            "cohen_dz": -0.0404
+          },
+          "ARM_A0->ARM_A7|entailed": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0002,
+            "ci95": [
+              -0.0116,
+              0.0127
+            ],
+            "bootstrap_sd": 0.0062,
+            "n": 600,
+            "observed_mean": 0.0002,
+            "p_two_sided": 0.973405,
+            "mean_diff": 0.0002,
+            "cohen_dz": 0.0015
+          },
+          "ARM_A0->ARM_A7|contradicted": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0109,
+            "ci95": [
+              -0.0216,
+              -0.0002
+            ],
+            "bootstrap_sd": 0.0055,
+            "n": 600,
+            "observed_mean": -0.0109,
+            "p_two_sided": 0.053789,
+            "mean_diff": -0.0109,
+            "cohen_dz": -0.0798
+          },
+          "interpretation": "paired judge budget-effect difference (Llama minus Gemma), not overall agreement"
+        },
+        "disagreement_examples": [
+          {
+            "query_id": "carebench_v_00001358_22",
+            "claim": "The location is a market.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00001370_1",
+            "claim": "The butcher is using a cleaver.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00001370_1",
+            "claim": "The piece of meat is raw.",
+            "gemma": "unmentioned",
+            "llama": "entailed"
+          },
+          {
+            "query_id": "carebench_v_00001379_10",
+            "claim": "Customers are watching the butcher.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00003905_0",
+            "claim": "The man is at a grave.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00003905_0",
+            "claim": "The flowers are pink.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00003956_4",
+            "claim": "The candle is red.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00003956_4",
+            "claim": "The greenery and berries are around the candle.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00003958_1",
+            "claim": "A boy is present.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00003966_1",
+            "claim": "The vase is clear.",
+            "gemma": "unmentioned",
+            "llama": "entailed"
+          },
+          {
+            "query_id": "carebench_v_00005709_0",
+            "claim": "The man is in a backyard.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005739_0",
+            "claim": "The pole is yellow.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00005739_0",
+            "claim": "The person is splitting a log.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005876_0",
+            "claim": "The cucumbers are being sliced on a wooden cutting board.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005877_0",
+            "claim": "A person peels an onion.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005877_0",
+            "claim": "The onion is peeled.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005881_5",
+            "claim": "The vegetables are green.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00005890_3",
+            "claim": "The person is chopping orange vegetables.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005890_3",
+            "claim": "The chopping is happening on a white plate.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00005899_16",
+            "claim": "The woman is chopping vegetables.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          }
+        ]
+      },
+      "a3_qwen38": {
+        "n_claims": 444,
+        "confusion_gemma_to_llama": {
+          "entailed->entailed": 292,
+          "entailed->contradicted": 22,
+          "unmentioned->unmentioned": 47,
+          "entailed->unmentioned": 25,
+          "unmentioned->contradicted": 20,
+          "contradicted->contradicted": 24,
+          "unmentioned->entailed": 9,
+          "contradicted->unmentioned": 5
+        },
+        "observed_agreement": 0.8176,
+        "cohen_kappa": 0.5882,
+        "per_arm": {
+          "ARM_A0": {
+            "n": 147,
+            "disagreement_rate": 0.1565,
+            "directions": {
+              "entailed->contradicted": 6,
+              "entailed->unmentioned": 7,
+              "unmentioned->contradicted": 6,
+              "unmentioned->entailed": 3,
+              "contradicted->unmentioned": 1
+            }
+          },
+          "ARM_A1": {
+            "n": 143,
+            "disagreement_rate": 0.2028,
+            "directions": {
+              "entailed->contradicted": 9,
+              "entailed->unmentioned": 11,
+              "unmentioned->entailed": 3,
+              "unmentioned->contradicted": 6
+            }
+          },
+          "ARM_A7": {
+            "n": 154,
+            "disagreement_rate": 0.1883,
+            "directions": {
+              "entailed->contradicted": 7,
+              "entailed->unmentioned": 7,
+              "unmentioned->contradicted": 8,
+              "contradicted->unmentioned": 4,
+              "unmentioned->entailed": 3
+            }
+          }
+        },
+        "budget_differential": {
+          "disagreement_rate_A7_minus_A0": 0.0318
+        },
+        "judge_budget_effect_difference": {
+          "ARM_A0->ARM_A1|entailed": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0605,
+            "ci95": [
+              -0.1238,
+              -0.006
+            ],
+            "bootstrap_sd": 0.03,
+            "n": 30,
+            "observed_mean": -0.0605,
+            "p_two_sided": 0.066987,
+            "mean_diff": -0.0605,
+            "cohen_dz": -0.35
+          },
+          "ARM_A0->ARM_A1|contradicted": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0444,
+            "ci95": [
+              -0.0161,
+              0.1189
+            ],
+            "bootstrap_sd": 0.0342,
+            "n": 30,
+            "observed_mean": 0.0444,
+            "p_two_sided": 0.261948,
+            "mean_diff": 0.0444,
+            "cohen_dz": 0.2329
+          },
+          "ARM_A1->ARM_A7|entailed": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0563,
+            "ci95": [
+              -0.0009,
+              0.1189
+            ],
+            "bootstrap_sd": 0.0306,
+            "n": 30,
+            "observed_mean": 0.0563,
+            "p_two_sided": 0.092182,
+            "mean_diff": 0.0563,
+            "cohen_dz": 0.3267
+          },
+          "ARM_A1->ARM_A7|contradicted": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0426,
+            "ci95": [
+              -0.1238,
+              0.0346
+            ],
+            "bootstrap_sd": 0.04,
+            "n": 30,
+            "observed_mean": -0.0426,
+            "p_two_sided": 0.322336,
+            "mean_diff": -0.0426,
+            "cohen_dz": -0.1915
+          },
+          "ARM_A0->ARM_A7|entailed": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0042,
+            "ci95": [
+              -0.0475,
+              0.0422
+            ],
+            "bootstrap_sd": 0.0228,
+            "n": 30,
+            "observed_mean": -0.0042,
+            "p_two_sided": 0.872426,
+            "mean_diff": -0.0042,
+            "cohen_dz": -0.033
+          },
+          "ARM_A0->ARM_A7|contradicted": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0019,
+            "ci95": [
+              -0.047,
+              0.06
+            ],
+            "bootstrap_sd": 0.0273,
+            "n": 30,
+            "observed_mean": 0.0019,
+            "p_two_sided": 0.971806,
+            "mean_diff": 0.0019,
+            "cohen_dz": 0.0123
+          },
+          "interpretation": "paired judge budget-effect difference (Llama minus Gemma), not overall agreement"
+        },
+        "disagreement_examples": [
+          {
+            "query_id": "carebench_v_00002077_10",
+            "claim": "The eyeshadow is pink.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00002096_7",
+            "claim": "The makeup is bright blue.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00002096_7",
+            "claim": "A small brush is used to apply the makeup.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00002283_1",
+            "claim": "The scooter is red and silver.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00002328_16",
+            "claim": "The person is using a straight razor.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005595_0",
+            "claim": "The baby is wearing white pajamas.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005595_0",
+            "claim": "The girl is helping the baby.",
+            "gemma": "unmentioned",
+            "llama": "entailed"
+          },
+          {
+            "query_id": "carebench_v_00006909_1",
+            "claim": "The toddler is on the woman's lap.",
+            "gemma": "unmentioned",
+            "llama": "entailed"
+          },
+          {
+            "query_id": "carebench_v_00007888_2",
+            "claim": "The athlete is running.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00007888_2",
+            "claim": "The athlete is running on a track.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00008320_0",
+            "claim": "The dog is black and tan.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00009485_0",
+            "claim": "The boy is sweeping a floor.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00009485_0",
+            "claim": "The boy is using a broom.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00010075_0",
+            "claim": "The man is wearing traditional Scottish attire.",
+            "gemma": "contradicted",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00012062_0",
+            "claim": "The boy plays a trumpet.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00012062_0",
+            "claim": "The trumpet is made of brass.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00012246_0",
+            "claim": "The violin is red.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00013412_0",
+            "claim": "The men are wearing dark suits.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00014430_1",
+            "claim": "The diver is performing the backflip off a high diving board.",
+            "gemma": "unmentioned",
+            "llama": "entailed"
+          },
+          {
+            "query_id": "carebench_v_00015614_0",
+            "claim": "The worker is trimming the top of a palm tree.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          }
+        ]
+      },
+      "a3_qwen35": {
+        "n_claims": 435,
+        "confusion_gemma_to_llama": {
+          "entailed->entailed": 324,
+          "entailed->contradicted": 15,
+          "entailed->unmentioned": 22,
+          "unmentioned->contradicted": 11,
+          "unmentioned->unmentioned": 32,
+          "contradicted->contradicted": 18,
+          "contradicted->unmentioned": 7,
+          "unmentioned->entailed": 3,
+          "contradicted->entailed": 3
+        },
+        "observed_agreement": 0.8598,
+        "cohen_kappa": 0.5983,
+        "per_arm": {
+          "ARM_A0": {
+            "n": 152,
+            "disagreement_rate": 0.1447,
+            "directions": {
+              "entailed->contradicted": 6,
+              "entailed->unmentioned": 9,
+              "unmentioned->contradicted": 4,
+              "contradicted->unmentioned": 3
+            }
+          },
+          "ARM_A1": {
+            "n": 138,
+            "disagreement_rate": 0.1377,
+            "directions": {
+              "entailed->contradicted": 5,
+              "unmentioned->entailed": 2,
+              "entailed->unmentioned": 6,
+              "contradicted->entailed": 2,
+              "contradicted->unmentioned": 2,
+              "unmentioned->contradicted": 2
+            }
+          },
+          "ARM_A7": {
+            "n": 145,
+            "disagreement_rate": 0.1379,
+            "directions": {
+              "entailed->contradicted": 4,
+              "unmentioned->contradicted": 5,
+              "entailed->unmentioned": 7,
+              "unmentioned->entailed": 1,
+              "contradicted->unmentioned": 2,
+              "contradicted->entailed": 1
+            }
+          }
+        },
+        "budget_differential": {
+          "disagreement_rate_A7_minus_A0": -0.0068
+        },
+        "judge_budget_effect_difference": {
+          "ARM_A0->ARM_A1|entailed": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0508,
+            "ci95": [
+              0.0125,
+              0.0912
+            ],
+            "bootstrap_sd": 0.0201,
+            "n": 30,
+            "observed_mean": 0.0508,
+            "p_two_sided": 0.020596,
+            "mean_diff": 0.0508,
+            "cohen_dz": 0.4567
+          },
+          "ARM_A0->ARM_A1|contradicted": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0325,
+            "ci95": [
+              -0.072,
+              0.0096
+            ],
+            "bootstrap_sd": 0.0205,
+            "n": 30,
+            "observed_mean": -0.0325,
+            "p_two_sided": 0.133773,
+            "mean_diff": -0.0325,
+            "cohen_dz": -0.29
+          },
+          "ARM_A1->ARM_A7|entailed": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0095,
+            "ci95": [
+              -0.0535,
+              0.035
+            ],
+            "bootstrap_sd": 0.0231,
+            "n": 30,
+            "observed_mean": -0.0095,
+            "p_two_sided": 0.697261,
+            "mean_diff": -0.0095,
+            "cohen_dz": -0.0738
+          },
+          "ARM_A1->ARM_A7|contradicted": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.025,
+            "ci95": [
+              -0.0106,
+              0.0628
+            ],
+            "bootstrap_sd": 0.0188,
+            "n": 30,
+            "observed_mean": 0.025,
+            "p_two_sided": 0.238552,
+            "mean_diff": 0.025,
+            "cohen_dz": 0.2387
+          },
+          "ARM_A0->ARM_A7|entailed": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0413,
+            "ci95": [
+              0.0003,
+              0.0877
+            ],
+            "bootstrap_sd": 0.0226,
+            "n": 30,
+            "observed_mean": 0.0413,
+            "p_two_sided": 0.086183,
+            "mean_diff": 0.0413,
+            "cohen_dz": 0.3266
+          },
+          "ARM_A0->ARM_A7|contradicted": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0075,
+            "ci95": [
+              -0.0495,
+              0.0389
+            ],
+            "bootstrap_sd": 0.0221,
+            "n": 30,
+            "observed_mean": -0.0075,
+            "p_two_sided": 0.753449,
+            "mean_diff": -0.0075,
+            "cohen_dz": -0.0618
+          },
+          "interpretation": "paired judge budget-effect difference (Llama minus Gemma), not overall agreement"
+        },
+        "disagreement_examples": [
+          {
+            "query_id": "carebench_v_00002077_10",
+            "claim": "The eyeshadow is pink.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00002096_7",
+            "claim": "The person has colorful face paint.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00002096_7",
+            "claim": "The person is using a brush.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00005904_11",
+            "claim": "The tomato is being sliced into wedges.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00006909_1",
+            "claim": "The child is eating a snack.",
+            "gemma": "contradicted",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00007888_2",
+            "claim": "The athlete is running.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00007888_2",
+            "claim": "The athlete is running on a track.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00008320_0",
+            "claim": "The dog is black and tan.",
+            "gemma": "unmentioned",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00009485_0",
+            "claim": "The boy is wearing gloves.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00009485_0",
+            "claim": "The boy is sweeping a floor.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00009485_0",
+            "claim": "The boy is using a broom.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00010336_1",
+            "claim": "The area is outdoors.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00011374_0",
+            "claim": "There is a microphone.",
+            "gemma": "contradicted",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00011374_0",
+            "claim": "The man is standing in front of the microphone.",
+            "gemma": "contradicted",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00012062_0",
+            "claim": "The boy is playing a trumpet.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00012062_0",
+            "claim": "The trumpet is in the room.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00013412_0",
+            "claim": "The men are wearing dark suits.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00014430_1",
+            "claim": "The dive is from a high platform.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          },
+          {
+            "query_id": "carebench_v_00015614_0",
+            "claim": "The worker is trimming the top of a palm tree.",
+            "gemma": "entailed",
+            "llama": "contradicted"
+          },
+          {
+            "query_id": "carebench_v_00015614_0",
+            "claim": "The palm tree is tall.",
+            "gemma": "entailed",
+            "llama": "unmentioned"
+          }
+        ]
+      }
+    },
+    "random_agreed_audit": {
+      "formal_videollama": [
+        {
+          "query_id": "carebench_v_00007236_0",
+          "arm": "ARM_A1",
+          "claim": "The girl is folding clothes.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00003574_0",
+          "arm": "ARM_A1",
+          "claim": "A man is present.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00016591_0",
+          "arm": "ARM_A1",
+          "claim": "The person is watering something.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00006539_0",
+          "arm": "ARM_A7",
+          "claim": "A ladder exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00004657_0",
+          "arm": "ARM_A1",
+          "claim": "Someone is styling hair.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00007041_5",
+          "arm": "ARM_A7",
+          "claim": "Dirt exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00006509_0",
+          "arm": "ARM_A0",
+          "claim": "A man is present.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002006_4",
+          "arm": "ARM_A7",
+          "claim": "There is a pool.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00013115_0",
+          "arm": "ARM_A1",
+          "claim": "The man is walking.",
+          "label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00003905_0",
+          "arm": "ARM_A0",
+          "claim": "The woman is laying flowers.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002072_20",
+          "arm": "ARM_A7",
+          "claim": "The lipstick is being applied to her lips.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00007041_5",
+          "arm": "ARM_A1",
+          "claim": "The excavator is digging up dirt.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00009911_0",
+          "arm": "ARM_A7",
+          "claim": "The man is on a boat.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00006575_0",
+          "arm": "ARM_A7",
+          "claim": "A ladder exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00006858_1",
+          "arm": "ARM_A0",
+          "claim": "The woman is wearing a yellow shirt.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00016602_0",
+          "arm": "ARM_A7",
+          "claim": "The little girl is using a hose.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005739_0",
+          "arm": "ARM_A0",
+          "claim": "The man is chopping down a tree.",
+          "label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00009504_0",
+          "arm": "ARM_A7",
+          "claim": "The man is cleaning the floor.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00013474_1",
+          "arm": "ARM_A0",
+          "claim": "The first man is talking to the second man.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00003343_0",
+          "arm": "ARM_A1",
+          "claim": "A group of people exists.",
+          "label": "entailed"
+        }
+      ],
+      "formal_qwen38": [
+        {
+          "query_id": "carebench_v_00014299_5",
+          "arm": "ARM_A0",
+          "claim": "The barbell is being lifted from the floor.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00007043_40",
+          "arm": "ARM_A0",
+          "claim": "The hole is in the dirt.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002262_0",
+          "arm": "ARM_A0",
+          "claim": "The person is wearing a grey hoodie.",
+          "label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00002097_34",
+          "arm": "ARM_A7",
+          "claim": "The mascara is being applied to her eyelashes.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00001926_0",
+          "arm": "ARM_A1",
+          "claim": "A starting block list is shown before the dive.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00001748_1",
+          "arm": "ARM_A1",
+          "claim": "The baby is wearing an outfit.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00006858_1",
+          "arm": "ARM_A0",
+          "claim": "The woman is wearing a yellow shirt.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00007553_1",
+          "arm": "ARM_A1",
+          "claim": "The child is being patient.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00003209_0",
+          "arm": "ARM_A1",
+          "claim": "The shoe is black.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002219_6",
+          "arm": "ARM_A1",
+          "claim": "The child rides a bicycle.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005709_0",
+          "arm": "ARM_A7",
+          "claim": "The log is on a stump.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002240_0",
+          "arm": "ARM_A7",
+          "claim": "A child is present.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00009012_0",
+          "arm": "ARM_A0",
+          "claim": "The athlete is female.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00000253_4",
+          "arm": "ARM_A1",
+          "claim": "The makeup is applied to her lips.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00009105_0",
+          "arm": "ARM_A0",
+          "claim": "The athlete is sprinting.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005894_0",
+          "arm": "ARM_A1",
+          "claim": "The person is chopping garlic cloves.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00016370_0",
+          "arm": "ARM_A0",
+          "claim": "There is a bathroom sink.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00010615_1",
+          "arm": "ARM_A7",
+          "claim": "The man is wearing a maroon shirt.",
+          "label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00003197_0",
+          "arm": "ARM_A1",
+          "claim": "The shoelaces are white.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008644_0",
+          "arm": "ARM_A7",
+          "claim": "There is a grassy field.",
+          "label": "entailed"
+        }
+      ],
+      "a3_qwen38": [
+        {
+          "query_id": "carebench_v_00002093_8",
+          "arm": "ARM_A7",
+          "claim": "The brush is used for applying makeup.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002093_8",
+          "arm": "ARM_A7",
+          "claim": "The woman has long hair.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002077_10",
+          "arm": "ARM_A1",
+          "claim": "The woman is applying eyeshadow.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008693_0",
+          "arm": "ARM_A0",
+          "claim": "An athlete is present.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002093_8",
+          "arm": "ARM_A7",
+          "claim": "The woman's hair is brown.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005805_0",
+          "arm": "ARM_A0",
+          "claim": "A man is splitting firewood.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "arm": "ARM_A0",
+          "claim": "A tomato exists.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00012246_0",
+          "arm": "ARM_A7",
+          "claim": "There is a piano.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00013412_0",
+          "arm": "ARM_A0",
+          "claim": "Two men are present.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005805_0",
+          "arm": "ARM_A0",
+          "claim": "The man is using an axe.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00016057_5",
+          "arm": "ARM_A7",
+          "claim": "A person is washing green beans.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00012246_0",
+          "arm": "ARM_A1",
+          "claim": "A boy is young.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00016057_5",
+          "arm": "ARM_A0",
+          "claim": "A person is washing green beans.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00015614_0",
+          "arm": "ARM_A0",
+          "claim": "A worker is in a crane basket.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00008693_0",
+          "arm": "ARM_A0",
+          "claim": "The athlete is jumping.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00010075_0",
+          "arm": "ARM_A0",
+          "claim": "The man is on a bridge.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "arm": "ARM_A1",
+          "claim": "The chef is wearing a red shirt.",
+          "label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00012568_0",
+          "arm": "ARM_A0",
+          "claim": "A person is an athlete.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "arm": "ARM_A1",
+          "claim": "The chef is slicing a tomato.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "arm": "ARM_A0",
+          "claim": "The chef is wearing a red shirt.",
+          "label": "contradicted"
+        }
+      ],
+      "a3_qwen35": [
+        {
+          "query_id": "carebench_v_00002077_10",
+          "arm": "ARM_A7",
+          "claim": "A woman is present.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00006909_1",
+          "arm": "ARM_A0",
+          "claim": "A woman is sitting.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00014430_1",
+          "arm": "ARM_A1",
+          "claim": "The man is diving.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00015614_0",
+          "arm": "ARM_A0",
+          "claim": "A worker is in a crane bucket.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00012568_0",
+          "arm": "ARM_A1",
+          "claim": "The athlete cleared a bar.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00004040_0",
+          "arm": "ARM_A0",
+          "claim": "Spectators are watching.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00012062_0",
+          "arm": "ARM_A1",
+          "claim": "A boy is young.",
+          "label": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00013274_1",
+          "arm": "ARM_A1",
+          "claim": "A makeup artist is applying mascara.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00012246_0",
+          "arm": "ARM_A1",
+          "claim": "The boy is playing the violin.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00015865_14",
+          "arm": "ARM_A0",
+          "claim": "The athlete is jumping into a sand pit.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00014430_1",
+          "arm": "ARM_A1",
+          "claim": "A man is present.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005595_0",
+          "arm": "ARM_A0",
+          "claim": "The chair is blue.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00013412_0",
+          "arm": "ARM_A7",
+          "claim": "There are American and North Korean flags.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00012062_0",
+          "arm": "ARM_A0",
+          "claim": "The boy is in the room.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00015865_14",
+          "arm": "ARM_A7",
+          "claim": "The athlete is running down a track.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005595_0",
+          "arm": "ARM_A0",
+          "claim": "The girl is sitting in a chair.",
+          "label": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00006714_0",
+          "arm": "ARM_A7",
+          "claim": "The person is climbing up a tree.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005394_0",
+          "arm": "ARM_A7",
+          "claim": "Swimmers dive into the pool.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002093_8",
+          "arm": "ARM_A7",
+          "claim": "The woman is applying makeup.",
+          "label": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "arm": "ARM_A7",
+          "claim": "The person is shaving the side of a head.",
+          "label": "entailed"
+        }
+      ]
+    },
+    "missing_value_sensitivity": {
+      "formal_videollama": {
+        "ARM_A0": {
+          "support_per_claim": 0.7929,
+          "support_per_caption": 0.7885
+        },
+        "ARM_A1": {
+          "support_per_claim": 0.8256,
+          "support_per_caption": 0.8248
+        },
+        "ARM_A7": {
+          "support_per_claim": 0.8066,
+          "support_per_caption": 0.815
+        }
+      },
+      "formal_qwen38": {
+        "ARM_A0": {
+          "support_per_claim": 0.7462,
+          "support_per_caption": 0.7449
+        },
+        "ARM_A1": {
+          "support_per_claim": 0.7594,
+          "support_per_caption": 0.7585
+        },
+        "ARM_A7": {
+          "support_per_claim": 0.7608,
+          "support_per_caption": 0.7577
+        }
+      },
+      "a3_qwen38": {
+        "ARM_A0": {
+          "support_per_claim": 0.7551,
+          "support_per_caption": 0.7609
+        },
+        "ARM_A1": {
+          "support_per_claim": 0.7832,
+          "support_per_caption": 0.7927
+        },
+        "ARM_A7": {
+          "support_per_claim": 0.7532,
+          "support_per_caption": 0.7549
+        }
+      },
+      "a3_qwen35": {
+        "ARM_A0": {
+          "support_per_claim": 0.8355,
+          "support_per_caption": 0.8412
+        },
+        "ARM_A1": {
+          "support_per_claim": 0.8116,
+          "support_per_caption": 0.8183
+        },
+        "ARM_A7": {
+          "support_per_claim": 0.8414,
+          "support_per_caption": 0.8283
+        }
+      }
+    }
+  },
+  "mode": "MACHINE_ASSISTED_UNCALIBRATED",
+  "gates": {
+    "a2_status": "PILOT_A2_HUMAN_VALIDATION_PENDING",
+    "a2_receipt": "/home/bn/uarcap_q2_runtime/outputs/pilot_a2/pilot_a2_carebench_eval_v1/calibration_receipt.json",
+    "a2_receipt_sha256": "031da7e070695e6a5260c4a411668a4f0a8ec20f7cda756528e867e51e160e75",
+    "a2_human_calibration_completed": false,
+    "a3_status": null,
+    "a3_receipt": "/home/bn/uarcap_q2_runtime/outputs/pilot_a3_exploratory/A3_HUMAN_VALIDATION_RECEIPT.json",
+    "a3_receipt_sha256": null,
+    "a3_human_validation": false,
+    "formal_b_status": null,
+    "formal_b_receipt": "/home/bn/uarcap_q2_runtime/outputs/final_audit/FORMAL_B_AUTHORIZATION.json",
+    "formal_b_receipt_sha256": null,
+    "formal_b_authorized": false,
+    "input_versions": {
+      "formal_candidates_sha256": "80eaa547d18d615e27b4d3db5261cf1b14999da066da7b35b0b466abb69dc11b",
+      "formal_manifest_sha256": "ebc02155e73dbce4c848a9e96b5b9a57d40c85058d3998de1368660c2e96a3b3",
+      "videollama_eval_sha256": "931a0a52cdd388fddc9ac7dc70b512b758d464548312cff6c7a672c9bf372c0d",
+      "qwen_eval_sha256": "325ea412b76afb4017e1659fc4563243b6f6edf397a5410e519a80c39a65cb43",
+      "two_phase_correction_sha256": "13cbfe9a31c3bb04fa8a76cf5e8091994aff9cef4d45a477821283bced80e3e7"
+    }
+  },
+  "stats": {
+    "primary_metrics": [
+      "n_contra_ref",
+      "r_core_ref"
+    ],
+    "auxiliary_metrics": [
+      "support_rate",
+      "conflict_rate",
+      "unmentioned_rate",
+      "n_claims"
+    ],
+    "holm_family": "primary only (n_contra_ref, r_core_ref; all models; A0->A1, A1->A7, A0->A7)",
+    "mode": "MACHINE_ASSISTED_UNCALIBRATED",
+    "primary": {
+      "formal_videollama": {
+        "n_contra_ref": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0417,
+            "ci95": [
+              -0.0767,
+              -0.0083
+            ],
+            "bootstrap_sd": 0.0175,
+            "n": 600,
+            "observed_mean": -0.0417,
+            "p_two_sided": 0.023395,
+            "mean_diff": -0.0417,
+            "cohen_dz": -0.0955
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.005,
+            "ci95": [
+              -0.0383,
+              0.03
+            ],
+            "bootstrap_sd": 0.0175,
+            "n": 600,
+            "observed_mean": -0.005,
+            "p_two_sided": 0.85243,
+            "mean_diff": -0.005,
+            "cohen_dz": -0.0116
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0467,
+            "ci95": [
+              -0.0867,
+              -0.0067
+            ],
+            "bootstrap_sd": 0.0208,
+            "n": 600,
+            "observed_mean": -0.0467,
+            "p_two_sided": 0.027994,
+            "mean_diff": -0.0467,
+            "cohen_dz": -0.0924
+          }
+        },
+        "r_core_ref": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.055,
+            "ci95": [
+              0.0267,
+              0.0833
+            ],
+            "bootstrap_sd": 0.0142,
+            "n": 600,
+            "observed_mean": 0.055,
+            "p_two_sided": 0.0008,
+            "mean_diff": 0.055,
+            "cohen_dz": 0.1532
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.005,
+            "ci95": [
+              -0.02,
+              0.03
+            ],
+            "bootstrap_sd": 0.0128,
+            "n": 600,
+            "observed_mean": 0.005,
+            "p_two_sided": 0.793841,
+            "mean_diff": 0.005,
+            "cohen_dz": 0.0157
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.06,
+            "ci95": [
+              0.0267,
+              0.0917
+            ],
+            "bootstrap_sd": 0.0165,
+            "n": 600,
+            "observed_mean": 0.06,
+            "p_two_sided": 0.001,
+            "mean_diff": 0.06,
+            "cohen_dz": 0.1455
+          }
+        }
+      },
+      "formal_qwen38": {
+        "n_contra_ref": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0017,
+            "ci95": [
+              -0.05,
+              0.045
+            ],
+            "bootstrap_sd": 0.0251,
+            "n": 600,
+            "observed_mean": -0.0017,
+            "p_two_sided": 1.0,
+            "mean_diff": -0.0017,
+            "cohen_dz": -0.0027
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.03,
+            "ci95": [
+              -0.0117,
+              0.0733
+            ],
+            "bootstrap_sd": 0.0217,
+            "n": 600,
+            "observed_mean": 0.03,
+            "p_two_sided": 0.194161,
+            "mean_diff": 0.03,
+            "cohen_dz": 0.0567
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0283,
+            "ci95": [
+              -0.0267,
+              0.0783
+            ],
+            "bootstrap_sd": 0.0265,
+            "n": 600,
+            "observed_mean": 0.0283,
+            "p_two_sided": 0.318736,
+            "mean_diff": 0.0283,
+            "cohen_dz": 0.0438
+          }
+        },
+        "r_core_ref": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0267,
+            "ci95": [
+              0.0,
+              0.0533
+            ],
+            "bootstrap_sd": 0.0135,
+            "n": 600,
+            "observed_mean": 0.0267,
+            "p_two_sided": 0.059988,
+            "mean_diff": 0.0267,
+            "cohen_dz": 0.0819
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0033,
+            "ci95": [
+              -0.0183,
+              0.0233
+            ],
+            "bootstrap_sd": 0.0103,
+            "n": 600,
+            "observed_mean": 0.0033,
+            "p_two_sided": 0.872026,
+            "mean_diff": 0.0033,
+            "cohen_dz": 0.0129
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.03,
+            "ci95": [
+              0.0033,
+              0.0583
+            ],
+            "bootstrap_sd": 0.0142,
+            "n": 600,
+            "observed_mean": 0.03,
+            "p_two_sided": 0.046791,
+            "mean_diff": 0.03,
+            "cohen_dz": 0.0857
+          }
+        }
+      },
+      "a3_qwen38": {
+        "n_contra_ref": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0667,
+            "ci95": [
+              -0.3,
+              0.1333
+            ],
+            "bootstrap_sd": 0.1049,
+            "n": 30,
+            "observed_mean": -0.0667,
+            "p_two_sided": 0.764647,
+            "mean_diff": -0.0667,
+            "cohen_dz": -0.1143
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.2,
+            "ci95": [
+              0.0,
+              0.4333
+            ],
+            "bootstrap_sd": 0.1124,
+            "n": 30,
+            "observed_mean": 0.2,
+            "p_two_sided": 0.146171,
+            "mean_diff": 0.2,
+            "cohen_dz": 0.3277
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.1333,
+            "ci95": [
+              -0.0667,
+              0.3667
+            ],
+            "bootstrap_sd": 0.1137,
+            "n": 30,
+            "observed_mean": 0.1333,
+            "p_two_sided": 0.40132,
+            "mean_diff": 0.1333,
+            "cohen_dz": 0.212
+          }
+        },
+        "r_core_ref": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0667,
+            "ci95": [
+              -0.0667,
+              0.2
+            ],
+            "bootstrap_sd": 0.0669,
+            "n": 30,
+            "observed_mean": 0.0667,
+            "p_two_sided": 0.637672,
+            "mean_diff": 0.0667,
+            "cohen_dz": 0.1826
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0,
+            "ci95": [
+              -0.1,
+              0.1
+            ],
+            "bootstrap_sd": 0.046,
+            "n": 30,
+            "observed_mean": 0.0,
+            "p_two_sided": 1.0,
+            "mean_diff": 0.0,
+            "cohen_dz": 0.0
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0667,
+            "ci95": [
+              -0.1,
+              0.2333
+            ],
+            "bootstrap_sd": 0.0803,
+            "n": 30,
+            "observed_mean": 0.0667,
+            "p_two_sided": 0.693261,
+            "mean_diff": 0.0667,
+            "cohen_dz": 0.1482
+          }
+        }
+      },
+      "a3_qwen35": {
+        "n_contra_ref": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.2,
+            "ci95": [
+              0.0333,
+              0.3667
+            ],
+            "bootstrap_sd": 0.088,
+            "n": 30,
+            "observed_mean": 0.2,
+            "p_two_sided": 0.067586,
+            "mean_diff": 0.2,
+            "cohen_dz": 0.413
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.1667,
+            "ci95": [
+              -0.3,
+              -0.0333
+            ],
+            "bootstrap_sd": 0.0679,
+            "n": 30,
+            "observed_mean": -0.1667,
+            "p_two_sided": 0.061188,
+            "mean_diff": -0.1667,
+            "cohen_dz": -0.4397
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0333,
+            "ci95": [
+              -0.1333,
+              0.2
+            ],
+            "bootstrap_sd": 0.0883,
+            "n": 30,
+            "observed_mean": 0.0333,
+            "p_two_sided": 1.0,
+            "mean_diff": 0.0333,
+            "cohen_dz": 0.068
+          }
+        },
+        "r_core_ref": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_sd": 0.0,
+            "n": 30,
+            "observed_mean": 0.0,
+            "p_two_sided": 1.0,
+            "mean_diff": 0.0,
+            "cohen_dz": null
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_sd": 0.0,
+            "n": 30,
+            "observed_mean": 0.0,
+            "p_two_sided": 1.0,
+            "mean_diff": 0.0,
+            "cohen_dz": null
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "bootstrap_sd": 0.0,
+            "n": 30,
+            "observed_mean": 0.0,
+            "p_two_sided": 1.0,
+            "mean_diff": 0.0,
+            "cohen_dz": null
+          }
+        }
+      }
+    },
+    "auxiliary_exploratory": {
+      "formal_videollama": {
+        "support_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0363,
+            "ci95": [
+              0.0187,
+              0.0543
+            ],
+            "bootstrap_sd": 0.0091,
+            "n": 600,
+            "observed_mean": 0.0363,
+            "p_two_sided": 0.0006,
+            "mean_diff": 0.0363,
+            "cohen_dz": 0.1589
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0098,
+            "ci95": [
+              -0.0276,
+              0.0068
+            ],
+            "bootstrap_sd": 0.0087,
+            "n": 600,
+            "observed_mean": -0.0098,
+            "p_two_sided": 0.268346,
+            "mean_diff": -0.0098,
+            "cohen_dz": -0.0459
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0265,
+            "ci95": [
+              0.0049,
+              0.0476
+            ],
+            "bootstrap_sd": 0.0106,
+            "n": 600,
+            "observed_mean": 0.0265,
+            "p_two_sided": 0.013397,
+            "mean_diff": 0.0265,
+            "cohen_dz": 0.1007
+          }
+        },
+        "conflict_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0205,
+            "ci95": [
+              -0.036,
+              -0.0059
+            ],
+            "bootstrap_sd": 0.0076,
+            "n": 600,
+            "observed_mean": -0.0205,
+            "p_two_sided": 0.006399,
+            "mean_diff": -0.0205,
+            "cohen_dz": -0.1082
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0107,
+            "ci95": [
+              -0.0233,
+              0.0023
+            ],
+            "bootstrap_sd": 0.0065,
+            "n": 600,
+            "observed_mean": -0.0107,
+            "p_two_sided": 0.106179,
+            "mean_diff": -0.0107,
+            "cohen_dz": -0.0668
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0311,
+            "ci95": [
+              -0.0475,
+              -0.0147
+            ],
+            "bootstrap_sd": 0.0084,
+            "n": 600,
+            "observed_mean": -0.0311,
+            "p_two_sided": 0.0002,
+            "mean_diff": -0.0311,
+            "cohen_dz": -0.1516
+          }
+        },
+        "unmentioned_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0158,
+            "ci95": [
+              -0.0288,
+              -0.0026
+            ],
+            "bootstrap_sd": 0.0067,
+            "n": 600,
+            "observed_mean": -0.0158,
+            "p_two_sided": 0.019596,
+            "mean_diff": -0.0158,
+            "cohen_dz": -0.097
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0205,
+            "ci95": [
+              0.0075,
+              0.0336
+            ],
+            "bootstrap_sd": 0.0067,
+            "n": 600,
+            "observed_mean": 0.0205,
+            "p_two_sided": 0.002799,
+            "mean_diff": 0.0205,
+            "cohen_dz": 0.1246
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0047,
+            "ci95": [
+              -0.0108,
+              0.02
+            ],
+            "bootstrap_sd": 0.008,
+            "n": 600,
+            "observed_mean": 0.0047,
+            "p_two_sided": 0.569886,
+            "mean_diff": 0.0047,
+            "cohen_dz": 0.0238
+          }
+        },
+        "n_claims": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.05,
+            "ci95": [
+              -0.0117,
+              0.1167
+            ],
+            "bootstrap_sd": 0.0331,
+            "n": 600,
+            "observed_mean": 0.05,
+            "p_two_sided": 0.15217,
+            "mean_diff": 0.05,
+            "cohen_dz": 0.0611
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.125,
+            "ci95": [
+              0.0617,
+              0.1833
+            ],
+            "bootstrap_sd": 0.0317,
+            "n": 600,
+            "observed_mean": 0.125,
+            "p_two_sided": 0.0002,
+            "mean_diff": 0.125,
+            "cohen_dz": 0.1622
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.175,
+            "ci95": [
+              0.0933,
+              0.2583
+            ],
+            "bootstrap_sd": 0.0419,
+            "n": 600,
+            "observed_mean": 0.175,
+            "p_two_sided": 0.0002,
+            "mean_diff": 0.175,
+            "cohen_dz": 0.1706
+          }
+        }
+      },
+      "formal_qwen38": {
+        "support_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0137,
+            "ci95": [
+              -0.002,
+              0.0281
+            ],
+            "bootstrap_sd": 0.0077,
+            "n": 600,
+            "observed_mean": 0.0137,
+            "p_two_sided": 0.067986,
+            "mean_diff": 0.0137,
+            "cohen_dz": 0.0735
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0009,
+            "ci95": [
+              -0.0121,
+              0.0101
+            ],
+            "bootstrap_sd": 0.0057,
+            "n": 600,
+            "observed_mean": -0.0009,
+            "p_two_sided": 0.880424,
+            "mean_diff": -0.0009,
+            "cohen_dz": -0.006
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0128,
+            "ci95": [
+              -0.0027,
+              0.0289
+            ],
+            "bootstrap_sd": 0.0081,
+            "n": 600,
+            "observed_mean": 0.0128,
+            "p_two_sided": 0.113577,
+            "mean_diff": 0.0128,
+            "cohen_dz": 0.0644
+          }
+        },
+        "conflict_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0008,
+            "ci95": [
+              -0.0125,
+              0.0109
+            ],
+            "bootstrap_sd": 0.0058,
+            "n": 600,
+            "observed_mean": -0.0008,
+            "p_two_sided": 0.905219,
+            "mean_diff": -0.0008,
+            "cohen_dz": -0.0055
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0052,
+            "ci95": [
+              -0.0039,
+              0.0144
+            ],
+            "bootstrap_sd": 0.0047,
+            "n": 600,
+            "observed_mean": 0.0052,
+            "p_two_sided": 0.25155,
+            "mean_diff": 0.0052,
+            "cohen_dz": 0.0467
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.0045,
+            "ci95": [
+              -0.007,
+              0.0155
+            ],
+            "bootstrap_sd": 0.0058,
+            "n": 600,
+            "observed_mean": 0.0045,
+            "p_two_sided": 0.441912,
+            "mean_diff": 0.0045,
+            "cohen_dz": 0.0318
+          }
+        },
+        "unmentioned_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0129,
+            "ci95": [
+              -0.0245,
+              -0.0007
+            ],
+            "bootstrap_sd": 0.0061,
+            "n": 600,
+            "observed_mean": -0.0129,
+            "p_two_sided": 0.032593,
+            "mean_diff": -0.0129,
+            "cohen_dz": -0.0865
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0044,
+            "ci95": [
+              -0.0127,
+              0.0051
+            ],
+            "bootstrap_sd": 0.0045,
+            "n": 600,
+            "observed_mean": -0.0044,
+            "p_two_sided": 0.335133,
+            "mean_diff": -0.0044,
+            "cohen_dz": -0.0391
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": -0.0173,
+            "ci95": [
+              -0.0301,
+              -0.0042
+            ],
+            "bootstrap_sd": 0.0068,
+            "n": 600,
+            "observed_mean": -0.0173,
+            "p_two_sided": 0.011798,
+            "mean_diff": -0.0173,
+            "cohen_dz": -0.1028
+          }
+        },
+        "n_claims": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.065,
+            "ci95": [
+              -0.0283,
+              0.1533
+            ],
+            "bootstrap_sd": 0.0457,
+            "n": 600,
+            "observed_mean": 0.065,
+            "p_two_sided": 0.155569,
+            "mean_diff": 0.065,
+            "cohen_dz": 0.0594
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.085,
+            "ci95": [
+              0.02,
+              0.1533
+            ],
+            "bootstrap_sd": 0.0346,
+            "n": 600,
+            "observed_mean": 0.085,
+            "p_two_sided": 0.018596,
+            "mean_diff": 0.085,
+            "cohen_dz": 0.0982
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 600,
+            "n_observations": 600,
+            "mean": 0.15,
+            "ci95": [
+              0.0567,
+              0.24
+            ],
+            "bootstrap_sd": 0.0468,
+            "n": 600,
+            "observed_mean": 0.15,
+            "p_two_sided": 0.002,
+            "mean_diff": 0.15,
+            "cohen_dz": 0.129
+          }
+        }
+      },
+      "a3_qwen38": {
+        "support_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0318,
+            "ci95": [
+              -0.0211,
+              0.0879
+            ],
+            "bootstrap_sd": 0.0277,
+            "n": 30,
+            "observed_mean": 0.0318,
+            "p_two_sided": 0.278344,
+            "mean_diff": 0.0318,
+            "cohen_dz": 0.205
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0378,
+            "ci95": [
+              -0.13,
+              0.0543
+            ],
+            "bootstrap_sd": 0.0482,
+            "n": 30,
+            "observed_mean": -0.0378,
+            "p_two_sided": 0.465907,
+            "mean_diff": -0.0378,
+            "cohen_dz": -0.144
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.006,
+            "ci95": [
+              -0.0996,
+              0.081
+            ],
+            "bootstrap_sd": 0.0472,
+            "n": 30,
+            "observed_mean": -0.006,
+            "p_two_sided": 0.905619,
+            "mean_diff": -0.006,
+            "cohen_dz": -0.0234
+          }
+        },
+        "conflict_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.017,
+            "ci95": [
+              -0.0709,
+              0.0295
+            ],
+            "bootstrap_sd": 0.0251,
+            "n": 30,
+            "observed_mean": -0.017,
+            "p_two_sided": 0.554089,
+            "mean_diff": -0.017,
+            "cohen_dz": -0.1208
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0308,
+            "ci95": [
+              -0.0079,
+              0.0706
+            ],
+            "bootstrap_sd": 0.0202,
+            "n": 30,
+            "observed_mean": 0.0308,
+            "p_two_sided": 0.152769,
+            "mean_diff": 0.0308,
+            "cohen_dz": 0.2786
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0138,
+            "ci95": [
+              -0.0391,
+              0.0609
+            ],
+            "bootstrap_sd": 0.0252,
+            "n": 30,
+            "observed_mean": 0.0138,
+            "p_two_sided": 0.612877,
+            "mean_diff": 0.0138,
+            "cohen_dz": 0.0989
+          }
+        },
+        "unmentioned_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0148,
+            "ci95": [
+              -0.0488,
+              0.0224
+            ],
+            "bootstrap_sd": 0.0181,
+            "n": 30,
+            "observed_mean": -0.0148,
+            "p_two_sided": 0.434713,
+            "mean_diff": -0.0148,
+            "cohen_dz": -0.1472
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0071,
+            "ci95": [
+              -0.0722,
+              0.0946
+            ],
+            "bootstrap_sd": 0.0437,
+            "n": 30,
+            "observed_mean": 0.0071,
+            "p_two_sided": 0.891022,
+            "mean_diff": 0.0071,
+            "cohen_dz": 0.0295
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0078,
+            "ci95": [
+              -0.0713,
+              0.0743
+            ],
+            "bootstrap_sd": 0.0388,
+            "n": 30,
+            "observed_mean": -0.0078,
+            "p_two_sided": 0.918616,
+            "mean_diff": -0.0078,
+            "cohen_dz": -0.0365
+          }
+        },
+        "n_claims": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.1333,
+            "ci95": [
+              -0.5333,
+              0.2
+            ],
+            "bootstrap_sd": 0.1904,
+            "n": 30,
+            "observed_mean": -0.1333,
+            "p_two_sided": 0.618076,
+            "mean_diff": -0.1333,
+            "cohen_dz": -0.128
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.3667,
+            "ci95": [
+              0.0658,
+              0.7667
+            ],
+            "bootstrap_sd": 0.1817,
+            "n": 30,
+            "observed_mean": 0.3667,
+            "p_two_sided": 0.070186,
+            "mean_diff": 0.3667,
+            "cohen_dz": 0.3669
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.2333,
+            "ci95": [
+              -0.0667,
+              0.5333
+            ],
+            "bootstrap_sd": 0.1572,
+            "n": 30,
+            "observed_mean": 0.2333,
+            "p_two_sided": 0.207359,
+            "mean_diff": 0.2333,
+            "cohen_dz": 0.2718
+          }
+        }
+      },
+      "a3_qwen35": {
+        "support_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0229,
+            "ci95": [
+              -0.0675,
+              0.0222
+            ],
+            "bootstrap_sd": 0.0236,
+            "n": 30,
+            "observed_mean": -0.0229,
+            "p_two_sided": 0.34853,
+            "mean_diff": -0.0229,
+            "cohen_dz": -0.1734
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.01,
+            "ci95": [
+              -0.0806,
+              0.0806
+            ],
+            "bootstrap_sd": 0.0408,
+            "n": 30,
+            "observed_mean": 0.01,
+            "p_two_sided": 0.873425,
+            "mean_diff": 0.01,
+            "cohen_dz": 0.0445
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0129,
+            "ci95": [
+              -0.0996,
+              0.0628
+            ],
+            "bootstrap_sd": 0.0422,
+            "n": 30,
+            "observed_mean": -0.0129,
+            "p_two_sided": 0.816837,
+            "mean_diff": -0.0129,
+            "cohen_dz": -0.0551
+          }
+        },
+        "conflict_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0525,
+            "ci95": [
+              0.0166,
+              0.09
+            ],
+            "bootstrap_sd": 0.0188,
+            "n": 30,
+            "observed_mean": 0.0525,
+            "p_two_sided": 0.012797,
+            "mean_diff": 0.0525,
+            "cohen_dz": 0.5079
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0383,
+            "ci95": [
+              -0.07,
+              -0.0083
+            ],
+            "bootstrap_sd": 0.0158,
+            "n": 30,
+            "observed_mean": -0.0383,
+            "p_two_sided": 0.061188,
+            "mean_diff": -0.0383,
+            "cohen_dz": -0.4367
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0141,
+            "ci95": [
+              -0.0214,
+              0.0469
+            ],
+            "bootstrap_sd": 0.0175,
+            "n": 30,
+            "observed_mean": 0.0141,
+            "p_two_sided": 0.544891,
+            "mean_diff": 0.0141,
+            "cohen_dz": 0.1459
+          }
+        },
+        "unmentioned_rate": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0295,
+            "ci95": [
+              -0.0727,
+              0.0077
+            ],
+            "bootstrap_sd": 0.0208,
+            "n": 30,
+            "observed_mean": -0.0295,
+            "p_two_sided": 0.177165,
+            "mean_diff": -0.0295,
+            "cohen_dz": -0.2537
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.0283,
+            "ci95": [
+              -0.0372,
+              0.1161
+            ],
+            "bootstrap_sd": 0.0391,
+            "n": 30,
+            "observed_mean": 0.0283,
+            "p_two_sided": 0.578084,
+            "mean_diff": 0.0283,
+            "cohen_dz": 0.1323
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.0012,
+            "ci95": [
+              -0.0714,
+              0.0837
+            ],
+            "bootstrap_sd": 0.0403,
+            "n": 30,
+            "observed_mean": -0.0012,
+            "p_two_sided": 1.0,
+            "mean_diff": -0.0012,
+            "cohen_dz": -0.0054
+          }
+        },
+        "n_claims": {
+          "ARM_A0->ARM_A1": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.4667,
+            "ci95": [
+              -0.8667,
+              -0.1325
+            ],
+            "bootstrap_sd": 0.1908,
+            "n": 30,
+            "observed_mean": -0.4667,
+            "p_two_sided": 0.029594,
+            "mean_diff": -0.4667,
+            "cohen_dz": -0.448
+          },
+          "ARM_A1->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": 0.2333,
+            "ci95": [
+              -0.0333,
+              0.5
+            ],
+            "bootstrap_sd": 0.1381,
+            "n": 30,
+            "observed_mean": 0.2333,
+            "p_two_sided": 0.170366,
+            "mean_diff": 0.2333,
+            "cohen_dz": 0.3015
+          },
+          "ARM_A0->ARM_A7": {
+            "n_clusters": 30,
+            "n_observations": 30,
+            "mean": -0.2333,
+            "ci95": [
+              -0.5333,
+              0.0333
+            ],
+            "bootstrap_sd": 0.1408,
+            "n": 30,
+            "observed_mean": -0.2333,
+            "p_two_sided": 0.170966,
+            "mean_diff": -0.2333,
+            "cohen_dz": -0.3015
+          }
+        }
+      }
+    },
+    "holm": {
+      "formal_videollama|r_core_ref|ARM_A0->ARM_A1": {
+        "p": 0.0008,
+        "p_holm": 0.0192,
+        "reject": true
+      },
+      "formal_videollama|r_core_ref|ARM_A0->ARM_A7": {
+        "p": 0.001,
+        "p_holm": 0.023,
+        "reject": true
+      },
+      "formal_videollama|n_contra_ref|ARM_A0->ARM_A1": {
+        "p": 0.023395,
+        "p_holm": 0.51469,
+        "reject": false
+      },
+      "formal_videollama|n_contra_ref|ARM_A0->ARM_A7": {
+        "p": 0.027994,
+        "p_holm": 0.587874,
+        "reject": false
+      },
+      "formal_qwen38|r_core_ref|ARM_A0->ARM_A7": {
+        "p": 0.046791,
+        "p_holm": 0.93582,
+        "reject": false
+      },
+      "formal_qwen38|r_core_ref|ARM_A0->ARM_A1": {
+        "p": 0.059988,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen35|n_contra_ref|ARM_A1->ARM_A7": {
+        "p": 0.061188,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen35|n_contra_ref|ARM_A0->ARM_A1": {
+        "p": 0.067586,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen38|n_contra_ref|ARM_A1->ARM_A7": {
+        "p": 0.146171,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "formal_qwen38|n_contra_ref|ARM_A1->ARM_A7": {
+        "p": 0.194161,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "formal_qwen38|n_contra_ref|ARM_A0->ARM_A7": {
+        "p": 0.318736,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen38|n_contra_ref|ARM_A0->ARM_A7": {
+        "p": 0.40132,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen38|r_core_ref|ARM_A0->ARM_A1": {
+        "p": 0.637672,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen38|r_core_ref|ARM_A0->ARM_A7": {
+        "p": 0.693261,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen38|n_contra_ref|ARM_A0->ARM_A1": {
+        "p": 0.764647,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "formal_videollama|r_core_ref|ARM_A1->ARM_A7": {
+        "p": 0.793841,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "formal_videollama|n_contra_ref|ARM_A1->ARM_A7": {
+        "p": 0.85243,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "formal_qwen38|r_core_ref|ARM_A1->ARM_A7": {
+        "p": 0.872026,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen35|n_contra_ref|ARM_A0->ARM_A7": {
+        "p": 1.0,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen35|r_core_ref|ARM_A0->ARM_A1": {
+        "p": 1.0,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen35|r_core_ref|ARM_A0->ARM_A7": {
+        "p": 1.0,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen35|r_core_ref|ARM_A1->ARM_A7": {
+        "p": 1.0,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "a3_qwen38|r_core_ref|ARM_A1->ARM_A7": {
+        "p": 1.0,
+        "p_holm": 1.0,
+        "reject": false
+      },
+      "formal_qwen38|n_contra_ref|ARM_A0->ARM_A1": {
+        "p": 1.0,
+        "p_holm": 1.0,
+        "reject": false
+      }
+    },
+    "cross_model_budget_differential": {
+      "n_contra_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.04,
+          "ci95": [
+            -0.0183,
+            0.0967
+          ],
+          "bootstrap_sd": 0.0299,
+          "n": 600,
+          "observed_mean": 0.04,
+          "p_two_sided": 0.213757,
+          "mean_diff": 0.04,
+          "cohen_dz": 0.0538
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.035,
+          "ci95": [
+            -0.0183,
+            0.0883
+          ],
+          "bootstrap_sd": 0.0272,
+          "n": 600,
+          "observed_mean": 0.035,
+          "p_two_sided": 0.225555,
+          "mean_diff": 0.035,
+          "cohen_dz": 0.0529
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.075,
+          "ci95": [
+            0.01,
+            0.1383
+          ],
+          "bootstrap_sd": 0.033,
+          "n": 600,
+          "observed_mean": 0.075,
+          "p_two_sided": 0.028994,
+          "mean_diff": 0.075,
+          "cohen_dz": 0.0925
+        },
+        "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+      },
+      "r_core_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0283,
+          "ci95": [
+            -0.0667,
+            0.0083
+          ],
+          "bootstrap_sd": 0.0186,
+          "n": 600,
+          "observed_mean": -0.0283,
+          "p_two_sided": 0.157369,
+          "mean_diff": -0.0283,
+          "cohen_dz": -0.0612
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0017,
+          "ci95": [
+            -0.0317,
+            0.0283
+          ],
+          "bootstrap_sd": 0.0156,
+          "n": 600,
+          "observed_mean": -0.0017,
+          "p_two_sided": 1.0,
+          "mean_diff": -0.0017,
+          "cohen_dz": -0.0043
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.03,
+          "ci95": [
+            -0.0683,
+            0.01
+          ],
+          "bootstrap_sd": 0.0203,
+          "n": 600,
+          "observed_mean": -0.03,
+          "p_two_sided": 0.162368,
+          "mean_diff": -0.03,
+          "cohen_dz": -0.0593
+        },
+        "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+      },
+      "support_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0226,
+          "ci95": [
+            -0.0459,
+            0.0008
+          ],
+          "bootstrap_sd": 0.0116,
+          "n": 600,
+          "observed_mean": -0.0226,
+          "p_two_sided": 0.061388,
+          "mean_diff": -0.0226,
+          "cohen_dz": -0.078
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0089,
+          "ci95": [
+            -0.011,
+            0.0292
+          ],
+          "bootstrap_sd": 0.0101,
+          "n": 600,
+          "observed_mean": 0.0089,
+          "p_two_sided": 0.387922,
+          "mean_diff": 0.0089,
+          "cohen_dz": 0.0355
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0137,
+          "ci95": [
+            -0.0374,
+            0.0119
+          ],
+          "bootstrap_sd": 0.0126,
+          "n": 600,
+          "observed_mean": -0.0137,
+          "p_two_sided": 0.30134,
+          "mean_diff": -0.0137,
+          "cohen_dz": -0.0425
+        },
+        "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+      },
+      "conflict_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0197,
+          "ci95": [
+            0.001,
+            0.0378
+          ],
+          "bootstrap_sd": 0.0095,
+          "n": 600,
+          "observed_mean": 0.0197,
+          "p_two_sided": 0.042192,
+          "mean_diff": 0.0197,
+          "cohen_dz": 0.084
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0159,
+          "ci95": [
+            0.0008,
+            0.0305
+          ],
+          "bootstrap_sd": 0.0077,
+          "n": 600,
+          "observed_mean": 0.0159,
+          "p_two_sided": 0.041792,
+          "mean_diff": 0.0159,
+          "cohen_dz": 0.084
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0356,
+          "ci95": [
+            0.0158,
+            0.0553
+          ],
+          "bootstrap_sd": 0.01,
+          "n": 600,
+          "observed_mean": 0.0356,
+          "p_two_sided": 0.0004,
+          "mean_diff": 0.0356,
+          "cohen_dz": 0.1427
+        },
+        "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+      },
+      "unmentioned_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0029,
+          "ci95": [
+            -0.0145,
+            0.0209
+          ],
+          "bootstrap_sd": 0.0091,
+          "n": 600,
+          "observed_mean": 0.0029,
+          "p_two_sided": 0.74985,
+          "mean_diff": 0.0029,
+          "cohen_dz": 0.0132
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0249,
+          "ci95": [
+            -0.0411,
+            -0.0086
+          ],
+          "bootstrap_sd": 0.008,
+          "n": 600,
+          "observed_mean": -0.0249,
+          "p_two_sided": 0.0022,
+          "mean_diff": -0.0249,
+          "cohen_dz": -0.1248
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0219,
+          "ci95": [
+            -0.0429,
+            -0.0018
+          ],
+          "bootstrap_sd": 0.0105,
+          "n": 600,
+          "observed_mean": -0.0219,
+          "p_two_sided": 0.046391,
+          "mean_diff": -0.0219,
+          "cohen_dz": -0.0833
+        },
+        "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+      },
+      "n_claims": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.015,
+          "ci95": [
+            -0.1,
+            0.1234
+          ],
+          "bootstrap_sd": 0.0576,
+          "n": 600,
+          "observed_mean": 0.015,
+          "p_two_sided": 0.823235,
+          "mean_diff": 0.015,
+          "cohen_dz": 0.0107
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.04,
+          "ci95": [
+            -0.1283,
+            0.055
+          ],
+          "bootstrap_sd": 0.0472,
+          "n": 600,
+          "observed_mean": -0.04,
+          "p_two_sided": 0.416117,
+          "mean_diff": -0.04,
+          "cohen_dz": -0.0347
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.025,
+          "ci95": [
+            -0.1533,
+            0.1084
+          ],
+          "bootstrap_sd": 0.0649,
+          "n": 600,
+          "observed_mean": -0.025,
+          "p_two_sided": 0.720456,
+          "mean_diff": -0.025,
+          "cohen_dz": -0.0154
+        },
+        "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+      }
+    }
+  }
+}

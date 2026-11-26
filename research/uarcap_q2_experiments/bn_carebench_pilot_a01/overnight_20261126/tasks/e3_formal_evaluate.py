@@ -31,17 +31,30 @@ def run(backend,name):
             c=ap[p["query_id"]]; prompts.append(_eval_prompt(p["caption"],c["true_action"])); prompts.append(_eval_prompt(p["caption"],c["conflict_action"]))
         resps=backend.complete_batch(prompts)
         for j,p in enumerate(batch):
-            try: yt=_parse_json(resps[2*j]); yc=_parse_json(resps[2*j+1]); ok=True
-            except Exception as e: yt,yc,ok={"parse_error":str(e)},{"parse_error":str(e)},False
-            with rows_path.open("a") as f: f.write(json.dumps({"query_id":p["query_id"],"arm":p["arm"],"generator":p["generator"],"caption":p["caption"],"y_true":int(yt.get("expressed",0) or 0),"y_conflict":int(yc.get("expressed",0) or 0),"true_detail":yt,"conflict_detail":yc,"judge":name,"parse_ok":ok},ensure_ascii=False)+"\n")
+            details=[]; ok=True
+            for k,resp in enumerate((resps[2*j],resps[2*j+1])):
+                d=None
+                for attempt in range(2):
+                    try: d=_parse_json(resp); break
+                    except Exception as e:
+                        if attempt==0:
+                            try: resp=backend.complete_batch([prompts[2*j+k]])[0]
+                            except Exception: break
+                        d={"parse_error":str(e)}
+                if d is None or "parse_error" in d: ok=False
+                details.append(d)
+            yt,yc=details
+            # Never coerce a parse failure to 0: expressed is None and excluded downstream.
+            with rows_path.open("a") as f: f.write(json.dumps({"query_id":p["query_id"],"arm":p["arm"],"generator":p["generator"],"caption":p["caption"],"y_true":(int(yt.get("expressed",0) or 0) if ok else None),"y_conflict":(int(yc.get("expressed",0) or 0) if ok else None),"true_detail":yt,"conflict_detail":yc,"judge":name,"parse_ok":ok},ensure_ascii=False)+"\n")
 with acquire_cooperative_gpu_lock(lock):
     gb=_gemma_backend(); run(gb,"gemma-3-27b-fp8"); gb._engine=None; del gb
     import time; time.sleep(8)
     lb=_llama_backend(); run(lb,"llama-3.3-70b-w4a16"); lb._engine=None; del lb
 rows=read(rows_path); by=defaultdict(dict)
-for r in rows: by[(r["query_id"],r["arm"],r["generator"])][r["judge"]]=r
-pairs=[v for v in by.values() if len(v)==2]
+for r in rows: by[(r["query_id"],r["arm"],r["generator"])][r["judge"]]=r  # later row (retry) wins
+pairs=[v for v in by.values() if len(v)==2 and all(x.get("parse_ok") for x in v.values())]
 summ={"schema":"uarcap_q2.formal_e3_eval.v1","status":"MACHINE_ASSISTED_UNVALIDATED","utc":utcnow(),"n_rows":len(rows),"n_pairs":len(pairs),
+ "n_parse_failures":sum(1 for r in rows if not r.get("parse_ok")),"parse_failure_policy":"expressed=None and excluded; never coerced to 0",
  "true_agreement":round(sum(v["gemma-3-27b-fp8"]["y_true"]==v["llama-3.3-70b-w4a16"]["y_true"] for v in pairs)/max(1,len(pairs)),4),
  "conflict_agreement":round(sum(v["gemma-3-27b-fp8"]["y_conflict"]==v["llama-3.3-70b-w4a16"]["y_conflict"] for v in pairs)/max(1,len(pairs)),4)}
 (OUT/f"E3_{aargs.out_prefix.upper()}_CROSS_JUDGE.json").write_text(json.dumps(summ,indent=2)); print(json.dumps(summ,indent=2)); raise SystemExit(0)

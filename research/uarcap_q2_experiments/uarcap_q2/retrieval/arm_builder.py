@@ -49,6 +49,7 @@ def build_natural_retrieval_arm(
         ExpArm.ARM_A0: 0,
         ExpArm.ARM_A1: 1,
         ExpArm.ARM_A3: 3,
+        ExpArm.ARM_A5: 5,
         ExpArm.ARM_A7: 7,
     }
     if arm_enum not in k_map:
@@ -111,6 +112,7 @@ def verify_natural_prefix_consistency(packets_by_arm: dict[str, ArmInputPacket])
     ordered = [
         (1, packets_by_arm.get(ExpArm.ARM_A1.value)),
         (3, packets_by_arm.get(ExpArm.ARM_A3.value)),
+        (5, packets_by_arm.get(ExpArm.ARM_A5.value)),
         (7, packets_by_arm.get(ExpArm.ARM_A7.value)),
     ]
     present = [(k, p) for k, p in ordered if p is not None]

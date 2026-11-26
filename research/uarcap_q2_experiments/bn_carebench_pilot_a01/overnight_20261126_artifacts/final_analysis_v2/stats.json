@@ -1,0 +1,1574 @@
+{
+  "primary_metrics": [
+    "n_contra_ref",
+    "r_core_ref"
+  ],
+  "auxiliary_metrics": [
+    "support_rate",
+    "conflict_rate",
+    "unmentioned_rate",
+    "n_claims"
+  ],
+  "holm_family": "primary only (n_contra_ref, r_core_ref; all models; A0->A1, A1->A7, A0->A7)",
+  "mode": "MACHINE_ASSISTED_UNCALIBRATED",
+  "primary": {
+    "formal_videollama": {
+      "n_contra_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0417,
+          "ci95": [
+            -0.0767,
+            -0.0083
+          ],
+          "bootstrap_sd": 0.0175,
+          "n": 600,
+          "observed_mean": -0.0417,
+          "p_two_sided": 0.023395,
+          "mean_diff": -0.0417,
+          "cohen_dz": -0.0955
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.005,
+          "ci95": [
+            -0.0383,
+            0.03
+          ],
+          "bootstrap_sd": 0.0175,
+          "n": 600,
+          "observed_mean": -0.005,
+          "p_two_sided": 0.85243,
+          "mean_diff": -0.005,
+          "cohen_dz": -0.0116
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0467,
+          "ci95": [
+            -0.0867,
+            -0.0067
+          ],
+          "bootstrap_sd": 0.0208,
+          "n": 600,
+          "observed_mean": -0.0467,
+          "p_two_sided": 0.027994,
+          "mean_diff": -0.0467,
+          "cohen_dz": -0.0924
+        }
+      },
+      "r_core_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.055,
+          "ci95": [
+            0.0267,
+            0.0833
+          ],
+          "bootstrap_sd": 0.0142,
+          "n": 600,
+          "observed_mean": 0.055,
+          "p_two_sided": 0.0008,
+          "mean_diff": 0.055,
+          "cohen_dz": 0.1532
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.005,
+          "ci95": [
+            -0.02,
+            0.03
+          ],
+          "bootstrap_sd": 0.0128,
+          "n": 600,
+          "observed_mean": 0.005,
+          "p_two_sided": 0.793841,
+          "mean_diff": 0.005,
+          "cohen_dz": 0.0157
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.06,
+          "ci95": [
+            0.0267,
+            0.0917
+          ],
+          "bootstrap_sd": 0.0165,
+          "n": 600,
+          "observed_mean": 0.06,
+          "p_two_sided": 0.001,
+          "mean_diff": 0.06,
+          "cohen_dz": 0.1455
+        }
+      }
+    },
+    "formal_qwen38": {
+      "n_contra_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0017,
+          "ci95": [
+            -0.05,
+            0.045
+          ],
+          "bootstrap_sd": 0.0251,
+          "n": 600,
+          "observed_mean": -0.0017,
+          "p_two_sided": 1.0,
+          "mean_diff": -0.0017,
+          "cohen_dz": -0.0027
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.03,
+          "ci95": [
+            -0.0117,
+            0.0733
+          ],
+          "bootstrap_sd": 0.0217,
+          "n": 600,
+          "observed_mean": 0.03,
+          "p_two_sided": 0.194161,
+          "mean_diff": 0.03,
+          "cohen_dz": 0.0567
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0283,
+          "ci95": [
+            -0.0267,
+            0.0783
+          ],
+          "bootstrap_sd": 0.0265,
+          "n": 600,
+          "observed_mean": 0.0283,
+          "p_two_sided": 0.318736,
+          "mean_diff": 0.0283,
+          "cohen_dz": 0.0438
+        }
+      },
+      "r_core_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0267,
+          "ci95": [
+            0.0,
+            0.0533
+          ],
+          "bootstrap_sd": 0.0135,
+          "n": 600,
+          "observed_mean": 0.0267,
+          "p_two_sided": 0.059988,
+          "mean_diff": 0.0267,
+          "cohen_dz": 0.0819
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0033,
+          "ci95": [
+            -0.0183,
+            0.0233
+          ],
+          "bootstrap_sd": 0.0103,
+          "n": 600,
+          "observed_mean": 0.0033,
+          "p_two_sided": 0.872026,
+          "mean_diff": 0.0033,
+          "cohen_dz": 0.0129
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.03,
+          "ci95": [
+            0.0033,
+            0.0583
+          ],
+          "bootstrap_sd": 0.0142,
+          "n": 600,
+          "observed_mean": 0.03,
+          "p_two_sided": 0.046791,
+          "mean_diff": 0.03,
+          "cohen_dz": 0.0857
+        }
+      }
+    },
+    "a3_qwen38": {
+      "n_contra_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.0667,
+          "ci95": [
+            -0.3,
+            0.1333
+          ],
+          "bootstrap_sd": 0.1049,
+          "n": 30,
+          "observed_mean": -0.0667,
+          "p_two_sided": 0.764647,
+          "mean_diff": -0.0667,
+          "cohen_dz": -0.1143
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.2,
+          "ci95": [
+            0.0,
+            0.4333
+          ],
+          "bootstrap_sd": 0.1124,
+          "n": 30,
+          "observed_mean": 0.2,
+          "p_two_sided": 0.146171,
+          "mean_diff": 0.2,
+          "cohen_dz": 0.3277
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.1333,
+          "ci95": [
+            -0.0667,
+            0.3667
+          ],
+          "bootstrap_sd": 0.1137,
+          "n": 30,
+          "observed_mean": 0.1333,
+          "p_two_sided": 0.40132,
+          "mean_diff": 0.1333,
+          "cohen_dz": 0.212
+        }
+      },
+      "r_core_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0667,
+          "ci95": [
+            -0.0667,
+            0.2
+          ],
+          "bootstrap_sd": 0.0669,
+          "n": 30,
+          "observed_mean": 0.0667,
+          "p_two_sided": 0.637672,
+          "mean_diff": 0.0667,
+          "cohen_dz": 0.1826
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0,
+          "ci95": [
+            -0.1,
+            0.1
+          ],
+          "bootstrap_sd": 0.046,
+          "n": 30,
+          "observed_mean": 0.0,
+          "p_two_sided": 1.0,
+          "mean_diff": 0.0,
+          "cohen_dz": 0.0
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0667,
+          "ci95": [
+            -0.1,
+            0.2333
+          ],
+          "bootstrap_sd": 0.0803,
+          "n": 30,
+          "observed_mean": 0.0667,
+          "p_two_sided": 0.693261,
+          "mean_diff": 0.0667,
+          "cohen_dz": 0.1482
+        }
+      }
+    },
+    "a3_qwen35": {
+      "n_contra_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.2,
+          "ci95": [
+            0.0333,
+            0.3667
+          ],
+          "bootstrap_sd": 0.088,
+          "n": 30,
+          "observed_mean": 0.2,
+          "p_two_sided": 0.067586,
+          "mean_diff": 0.2,
+          "cohen_dz": 0.413
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.1667,
+          "ci95": [
+            -0.3,
+            -0.0333
+          ],
+          "bootstrap_sd": 0.0679,
+          "n": 30,
+          "observed_mean": -0.1667,
+          "p_two_sided": 0.061188,
+          "mean_diff": -0.1667,
+          "cohen_dz": -0.4397
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0333,
+          "ci95": [
+            -0.1333,
+            0.2
+          ],
+          "bootstrap_sd": 0.0883,
+          "n": 30,
+          "observed_mean": 0.0333,
+          "p_two_sided": 1.0,
+          "mean_diff": 0.0333,
+          "cohen_dz": 0.068
+        }
+      },
+      "r_core_ref": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_sd": 0.0,
+          "n": 30,
+          "observed_mean": 0.0,
+          "p_two_sided": 1.0,
+          "mean_diff": 0.0,
+          "cohen_dz": null
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_sd": 0.0,
+          "n": 30,
+          "observed_mean": 0.0,
+          "p_two_sided": 1.0,
+          "mean_diff": 0.0,
+          "cohen_dz": null
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_sd": 0.0,
+          "n": 30,
+          "observed_mean": 0.0,
+          "p_two_sided": 1.0,
+          "mean_diff": 0.0,
+          "cohen_dz": null
+        }
+      }
+    }
+  },
+  "auxiliary_exploratory": {
+    "formal_videollama": {
+      "support_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0363,
+          "ci95": [
+            0.0187,
+            0.0543
+          ],
+          "bootstrap_sd": 0.0091,
+          "n": 600,
+          "observed_mean": 0.0363,
+          "p_two_sided": 0.0006,
+          "mean_diff": 0.0363,
+          "cohen_dz": 0.1589
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0098,
+          "ci95": [
+            -0.0276,
+            0.0068
+          ],
+          "bootstrap_sd": 0.0087,
+          "n": 600,
+          "observed_mean": -0.0098,
+          "p_two_sided": 0.268346,
+          "mean_diff": -0.0098,
+          "cohen_dz": -0.0459
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0265,
+          "ci95": [
+            0.0049,
+            0.0476
+          ],
+          "bootstrap_sd": 0.0106,
+          "n": 600,
+          "observed_mean": 0.0265,
+          "p_two_sided": 0.013397,
+          "mean_diff": 0.0265,
+          "cohen_dz": 0.1007
+        }
+      },
+      "conflict_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0205,
+          "ci95": [
+            -0.036,
+            -0.0059
+          ],
+          "bootstrap_sd": 0.0076,
+          "n": 600,
+          "observed_mean": -0.0205,
+          "p_two_sided": 0.006399,
+          "mean_diff": -0.0205,
+          "cohen_dz": -0.1082
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0107,
+          "ci95": [
+            -0.0233,
+            0.0023
+          ],
+          "bootstrap_sd": 0.0065,
+          "n": 600,
+          "observed_mean": -0.0107,
+          "p_two_sided": 0.106179,
+          "mean_diff": -0.0107,
+          "cohen_dz": -0.0668
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0311,
+          "ci95": [
+            -0.0475,
+            -0.0147
+          ],
+          "bootstrap_sd": 0.0084,
+          "n": 600,
+          "observed_mean": -0.0311,
+          "p_two_sided": 0.0002,
+          "mean_diff": -0.0311,
+          "cohen_dz": -0.1516
+        }
+      },
+      "unmentioned_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0158,
+          "ci95": [
+            -0.0288,
+            -0.0026
+          ],
+          "bootstrap_sd": 0.0067,
+          "n": 600,
+          "observed_mean": -0.0158,
+          "p_two_sided": 0.019596,
+          "mean_diff": -0.0158,
+          "cohen_dz": -0.097
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0205,
+          "ci95": [
+            0.0075,
+            0.0336
+          ],
+          "bootstrap_sd": 0.0067,
+          "n": 600,
+          "observed_mean": 0.0205,
+          "p_two_sided": 0.002799,
+          "mean_diff": 0.0205,
+          "cohen_dz": 0.1246
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0047,
+          "ci95": [
+            -0.0108,
+            0.02
+          ],
+          "bootstrap_sd": 0.008,
+          "n": 600,
+          "observed_mean": 0.0047,
+          "p_two_sided": 0.569886,
+          "mean_diff": 0.0047,
+          "cohen_dz": 0.0238
+        }
+      },
+      "n_claims": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.05,
+          "ci95": [
+            -0.0117,
+            0.1167
+          ],
+          "bootstrap_sd": 0.0331,
+          "n": 600,
+          "observed_mean": 0.05,
+          "p_two_sided": 0.15217,
+          "mean_diff": 0.05,
+          "cohen_dz": 0.0611
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.125,
+          "ci95": [
+            0.0617,
+            0.1833
+          ],
+          "bootstrap_sd": 0.0317,
+          "n": 600,
+          "observed_mean": 0.125,
+          "p_two_sided": 0.0002,
+          "mean_diff": 0.125,
+          "cohen_dz": 0.1622
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.175,
+          "ci95": [
+            0.0933,
+            0.2583
+          ],
+          "bootstrap_sd": 0.0419,
+          "n": 600,
+          "observed_mean": 0.175,
+          "p_two_sided": 0.0002,
+          "mean_diff": 0.175,
+          "cohen_dz": 0.1706
+        }
+      }
+    },
+    "formal_qwen38": {
+      "support_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0137,
+          "ci95": [
+            -0.002,
+            0.0281
+          ],
+          "bootstrap_sd": 0.0077,
+          "n": 600,
+          "observed_mean": 0.0137,
+          "p_two_sided": 0.067986,
+          "mean_diff": 0.0137,
+          "cohen_dz": 0.0735
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0009,
+          "ci95": [
+            -0.0121,
+            0.0101
+          ],
+          "bootstrap_sd": 0.0057,
+          "n": 600,
+          "observed_mean": -0.0009,
+          "p_two_sided": 0.880424,
+          "mean_diff": -0.0009,
+          "cohen_dz": -0.006
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0128,
+          "ci95": [
+            -0.0027,
+            0.0289
+          ],
+          "bootstrap_sd": 0.0081,
+          "n": 600,
+          "observed_mean": 0.0128,
+          "p_two_sided": 0.113577,
+          "mean_diff": 0.0128,
+          "cohen_dz": 0.0644
+        }
+      },
+      "conflict_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0008,
+          "ci95": [
+            -0.0125,
+            0.0109
+          ],
+          "bootstrap_sd": 0.0058,
+          "n": 600,
+          "observed_mean": -0.0008,
+          "p_two_sided": 0.905219,
+          "mean_diff": -0.0008,
+          "cohen_dz": -0.0055
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0052,
+          "ci95": [
+            -0.0039,
+            0.0144
+          ],
+          "bootstrap_sd": 0.0047,
+          "n": 600,
+          "observed_mean": 0.0052,
+          "p_two_sided": 0.25155,
+          "mean_diff": 0.0052,
+          "cohen_dz": 0.0467
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.0045,
+          "ci95": [
+            -0.007,
+            0.0155
+          ],
+          "bootstrap_sd": 0.0058,
+          "n": 600,
+          "observed_mean": 0.0045,
+          "p_two_sided": 0.441912,
+          "mean_diff": 0.0045,
+          "cohen_dz": 0.0318
+        }
+      },
+      "unmentioned_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0129,
+          "ci95": [
+            -0.0245,
+            -0.0007
+          ],
+          "bootstrap_sd": 0.0061,
+          "n": 600,
+          "observed_mean": -0.0129,
+          "p_two_sided": 0.032593,
+          "mean_diff": -0.0129,
+          "cohen_dz": -0.0865
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0044,
+          "ci95": [
+            -0.0127,
+            0.0051
+          ],
+          "bootstrap_sd": 0.0045,
+          "n": 600,
+          "observed_mean": -0.0044,
+          "p_two_sided": 0.335133,
+          "mean_diff": -0.0044,
+          "cohen_dz": -0.0391
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": -0.0173,
+          "ci95": [
+            -0.0301,
+            -0.0042
+          ],
+          "bootstrap_sd": 0.0068,
+          "n": 600,
+          "observed_mean": -0.0173,
+          "p_two_sided": 0.011798,
+          "mean_diff": -0.0173,
+          "cohen_dz": -0.1028
+        }
+      },
+      "n_claims": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.065,
+          "ci95": [
+            -0.0283,
+            0.1533
+          ],
+          "bootstrap_sd": 0.0457,
+          "n": 600,
+          "observed_mean": 0.065,
+          "p_two_sided": 0.155569,
+          "mean_diff": 0.065,
+          "cohen_dz": 0.0594
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.085,
+          "ci95": [
+            0.02,
+            0.1533
+          ],
+          "bootstrap_sd": 0.0346,
+          "n": 600,
+          "observed_mean": 0.085,
+          "p_two_sided": 0.018596,
+          "mean_diff": 0.085,
+          "cohen_dz": 0.0982
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 600,
+          "n_observations": 600,
+          "mean": 0.15,
+          "ci95": [
+            0.0567,
+            0.24
+          ],
+          "bootstrap_sd": 0.0468,
+          "n": 600,
+          "observed_mean": 0.15,
+          "p_two_sided": 0.002,
+          "mean_diff": 0.15,
+          "cohen_dz": 0.129
+        }
+      }
+    },
+    "a3_qwen38": {
+      "support_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0318,
+          "ci95": [
+            -0.0211,
+            0.0879
+          ],
+          "bootstrap_sd": 0.0277,
+          "n": 30,
+          "observed_mean": 0.0318,
+          "p_two_sided": 0.278344,
+          "mean_diff": 0.0318,
+          "cohen_dz": 0.205
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.0378,
+          "ci95": [
+            -0.13,
+            0.0543
+          ],
+          "bootstrap_sd": 0.0482,
+          "n": 30,
+          "observed_mean": -0.0378,
+          "p_two_sided": 0.465907,
+          "mean_diff": -0.0378,
+          "cohen_dz": -0.144
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.006,
+          "ci95": [
+            -0.0996,
+            0.081
+          ],
+          "bootstrap_sd": 0.0472,
+          "n": 30,
+          "observed_mean": -0.006,
+          "p_two_sided": 0.905619,
+          "mean_diff": -0.006,
+          "cohen_dz": -0.0234
+        }
+      },
+      "conflict_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.017,
+          "ci95": [
+            -0.0709,
+            0.0295
+          ],
+          "bootstrap_sd": 0.0251,
+          "n": 30,
+          "observed_mean": -0.017,
+          "p_two_sided": 0.554089,
+          "mean_diff": -0.017,
+          "cohen_dz": -0.1208
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0308,
+          "ci95": [
+            -0.0079,
+            0.0706
+          ],
+          "bootstrap_sd": 0.0202,
+          "n": 30,
+          "observed_mean": 0.0308,
+          "p_two_sided": 0.152769,
+          "mean_diff": 0.0308,
+          "cohen_dz": 0.2786
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0138,
+          "ci95": [
+            -0.0391,
+            0.0609
+          ],
+          "bootstrap_sd": 0.0252,
+          "n": 30,
+          "observed_mean": 0.0138,
+          "p_two_sided": 0.612877,
+          "mean_diff": 0.0138,
+          "cohen_dz": 0.0989
+        }
+      },
+      "unmentioned_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.0148,
+          "ci95": [
+            -0.0488,
+            0.0224
+          ],
+          "bootstrap_sd": 0.0181,
+          "n": 30,
+          "observed_mean": -0.0148,
+          "p_two_sided": 0.434713,
+          "mean_diff": -0.0148,
+          "cohen_dz": -0.1472
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0071,
+          "ci95": [
+            -0.0722,
+            0.0946
+          ],
+          "bootstrap_sd": 0.0437,
+          "n": 30,
+          "observed_mean": 0.0071,
+          "p_two_sided": 0.891022,
+          "mean_diff": 0.0071,
+          "cohen_dz": 0.0295
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.0078,
+          "ci95": [
+            -0.0713,
+            0.0743
+          ],
+          "bootstrap_sd": 0.0388,
+          "n": 30,
+          "observed_mean": -0.0078,
+          "p_two_sided": 0.918616,
+          "mean_diff": -0.0078,
+          "cohen_dz": -0.0365
+        }
+      },
+      "n_claims": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.1333,
+          "ci95": [
+            -0.5333,
+            0.2
+          ],
+          "bootstrap_sd": 0.1904,
+          "n": 30,
+          "observed_mean": -0.1333,
+          "p_two_sided": 0.618076,
+          "mean_diff": -0.1333,
+          "cohen_dz": -0.128
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.3667,
+          "ci95": [
+            0.0658,
+            0.7667
+          ],
+          "bootstrap_sd": 0.1817,
+          "n": 30,
+          "observed_mean": 0.3667,
+          "p_two_sided": 0.070186,
+          "mean_diff": 0.3667,
+          "cohen_dz": 0.3669
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.2333,
+          "ci95": [
+            -0.0667,
+            0.5333
+          ],
+          "bootstrap_sd": 0.1572,
+          "n": 30,
+          "observed_mean": 0.2333,
+          "p_two_sided": 0.207359,
+          "mean_diff": 0.2333,
+          "cohen_dz": 0.2718
+        }
+      }
+    },
+    "a3_qwen35": {
+      "support_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.0229,
+          "ci95": [
+            -0.0675,
+            0.0222
+          ],
+          "bootstrap_sd": 0.0236,
+          "n": 30,
+          "observed_mean": -0.0229,
+          "p_two_sided": 0.34853,
+          "mean_diff": -0.0229,
+          "cohen_dz": -0.1734
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.01,
+          "ci95": [
+            -0.0806,
+            0.0806
+          ],
+          "bootstrap_sd": 0.0408,
+          "n": 30,
+          "observed_mean": 0.01,
+          "p_two_sided": 0.873425,
+          "mean_diff": 0.01,
+          "cohen_dz": 0.0445
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.0129,
+          "ci95": [
+            -0.0996,
+            0.0628
+          ],
+          "bootstrap_sd": 0.0422,
+          "n": 30,
+          "observed_mean": -0.0129,
+          "p_two_sided": 0.816837,
+          "mean_diff": -0.0129,
+          "cohen_dz": -0.0551
+        }
+      },
+      "conflict_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0525,
+          "ci95": [
+            0.0166,
+            0.09
+          ],
+          "bootstrap_sd": 0.0188,
+          "n": 30,
+          "observed_mean": 0.0525,
+          "p_two_sided": 0.012797,
+          "mean_diff": 0.0525,
+          "cohen_dz": 0.5079
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.0383,
+          "ci95": [
+            -0.07,
+            -0.0083
+          ],
+          "bootstrap_sd": 0.0158,
+          "n": 30,
+          "observed_mean": -0.0383,
+          "p_two_sided": 0.061188,
+          "mean_diff": -0.0383,
+          "cohen_dz": -0.4367
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0141,
+          "ci95": [
+            -0.0214,
+            0.0469
+          ],
+          "bootstrap_sd": 0.0175,
+          "n": 30,
+          "observed_mean": 0.0141,
+          "p_two_sided": 0.544891,
+          "mean_diff": 0.0141,
+          "cohen_dz": 0.1459
+        }
+      },
+      "unmentioned_rate": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.0295,
+          "ci95": [
+            -0.0727,
+            0.0077
+          ],
+          "bootstrap_sd": 0.0208,
+          "n": 30,
+          "observed_mean": -0.0295,
+          "p_two_sided": 0.177165,
+          "mean_diff": -0.0295,
+          "cohen_dz": -0.2537
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.0283,
+          "ci95": [
+            -0.0372,
+            0.1161
+          ],
+          "bootstrap_sd": 0.0391,
+          "n": 30,
+          "observed_mean": 0.0283,
+          "p_two_sided": 0.578084,
+          "mean_diff": 0.0283,
+          "cohen_dz": 0.1323
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.0012,
+          "ci95": [
+            -0.0714,
+            0.0837
+          ],
+          "bootstrap_sd": 0.0403,
+          "n": 30,
+          "observed_mean": -0.0012,
+          "p_two_sided": 1.0,
+          "mean_diff": -0.0012,
+          "cohen_dz": -0.0054
+        }
+      },
+      "n_claims": {
+        "ARM_A0->ARM_A1": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.4667,
+          "ci95": [
+            -0.8667,
+            -0.1325
+          ],
+          "bootstrap_sd": 0.1908,
+          "n": 30,
+          "observed_mean": -0.4667,
+          "p_two_sided": 0.029594,
+          "mean_diff": -0.4667,
+          "cohen_dz": -0.448
+        },
+        "ARM_A1->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": 0.2333,
+          "ci95": [
+            -0.0333,
+            0.5
+          ],
+          "bootstrap_sd": 0.1381,
+          "n": 30,
+          "observed_mean": 0.2333,
+          "p_two_sided": 0.170366,
+          "mean_diff": 0.2333,
+          "cohen_dz": 0.3015
+        },
+        "ARM_A0->ARM_A7": {
+          "n_clusters": 30,
+          "n_observations": 30,
+          "mean": -0.2333,
+          "ci95": [
+            -0.5333,
+            0.0333
+          ],
+          "bootstrap_sd": 0.1408,
+          "n": 30,
+          "observed_mean": -0.2333,
+          "p_two_sided": 0.170966,
+          "mean_diff": -0.2333,
+          "cohen_dz": -0.3015
+        }
+      }
+    }
+  },
+  "holm": {
+    "formal_videollama|r_core_ref|ARM_A0->ARM_A1": {
+      "p": 0.0008,
+      "p_holm": 0.0192,
+      "reject": true
+    },
+    "formal_videollama|r_core_ref|ARM_A0->ARM_A7": {
+      "p": 0.001,
+      "p_holm": 0.023,
+      "reject": true
+    },
+    "formal_videollama|n_contra_ref|ARM_A0->ARM_A1": {
+      "p": 0.023395,
+      "p_holm": 0.51469,
+      "reject": false
+    },
+    "formal_videollama|n_contra_ref|ARM_A0->ARM_A7": {
+      "p": 0.027994,
+      "p_holm": 0.587874,
+      "reject": false
+    },
+    "formal_qwen38|r_core_ref|ARM_A0->ARM_A7": {
+      "p": 0.046791,
+      "p_holm": 0.93582,
+      "reject": false
+    },
+    "formal_qwen38|r_core_ref|ARM_A0->ARM_A1": {
+      "p": 0.059988,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen35|n_contra_ref|ARM_A1->ARM_A7": {
+      "p": 0.061188,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen35|n_contra_ref|ARM_A0->ARM_A1": {
+      "p": 0.067586,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen38|n_contra_ref|ARM_A1->ARM_A7": {
+      "p": 0.146171,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "formal_qwen38|n_contra_ref|ARM_A1->ARM_A7": {
+      "p": 0.194161,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "formal_qwen38|n_contra_ref|ARM_A0->ARM_A7": {
+      "p": 0.318736,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen38|n_contra_ref|ARM_A0->ARM_A7": {
+      "p": 0.40132,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen38|r_core_ref|ARM_A0->ARM_A1": {
+      "p": 0.637672,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen38|r_core_ref|ARM_A0->ARM_A7": {
+      "p": 0.693261,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen38|n_contra_ref|ARM_A0->ARM_A1": {
+      "p": 0.764647,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "formal_videollama|r_core_ref|ARM_A1->ARM_A7": {
+      "p": 0.793841,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "formal_videollama|n_contra_ref|ARM_A1->ARM_A7": {
+      "p": 0.85243,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "formal_qwen38|r_core_ref|ARM_A1->ARM_A7": {
+      "p": 0.872026,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen35|n_contra_ref|ARM_A0->ARM_A7": {
+      "p": 1.0,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen35|r_core_ref|ARM_A0->ARM_A1": {
+      "p": 1.0,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen35|r_core_ref|ARM_A0->ARM_A7": {
+      "p": 1.0,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen35|r_core_ref|ARM_A1->ARM_A7": {
+      "p": 1.0,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "a3_qwen38|r_core_ref|ARM_A1->ARM_A7": {
+      "p": 1.0,
+      "p_holm": 1.0,
+      "reject": false
+    },
+    "formal_qwen38|n_contra_ref|ARM_A0->ARM_A1": {
+      "p": 1.0,
+      "p_holm": 1.0,
+      "reject": false
+    }
+  },
+  "cross_model_budget_differential": {
+    "n_contra_ref": {
+      "ARM_A0->ARM_A1": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": 0.04,
+        "ci95": [
+          -0.0183,
+          0.0967
+        ],
+        "bootstrap_sd": 0.0299,
+        "n": 600,
+        "observed_mean": 0.04,
+        "p_two_sided": 0.213757,
+        "mean_diff": 0.04,
+        "cohen_dz": 0.0538
+      },
+      "ARM_A1->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": 0.035,
+        "ci95": [
+          -0.0183,
+          0.0883
+        ],
+        "bootstrap_sd": 0.0272,
+        "n": 600,
+        "observed_mean": 0.035,
+        "p_two_sided": 0.225555,
+        "mean_diff": 0.035,
+        "cohen_dz": 0.0529
+      },
+      "ARM_A0->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": 0.075,
+        "ci95": [
+          0.01,
+          0.1383
+        ],
+        "bootstrap_sd": 0.033,
+        "n": 600,
+        "observed_mean": 0.075,
+        "p_two_sided": 0.028994,
+        "mean_diff": 0.075,
+        "cohen_dz": 0.0925
+      },
+      "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+    },
+    "r_core_ref": {
+      "ARM_A0->ARM_A1": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": -0.0283,
+        "ci95": [
+          -0.0667,
+          0.0083
+        ],
+        "bootstrap_sd": 0.0186,
+        "n": 600,
+        "observed_mean": -0.0283,
+        "p_two_sided": 0.157369,
+        "mean_diff": -0.0283,
+        "cohen_dz": -0.0612
+      },
+      "ARM_A1->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": -0.0017,
+        "ci95": [
+          -0.0317,
+          0.0283
+        ],
+        "bootstrap_sd": 0.0156,
+        "n": 600,
+        "observed_mean": -0.0017,
+        "p_two_sided": 1.0,
+        "mean_diff": -0.0017,
+        "cohen_dz": -0.0043
+      },
+      "ARM_A0->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": -0.03,
+        "ci95": [
+          -0.0683,
+          0.01
+        ],
+        "bootstrap_sd": 0.0203,
+        "n": 600,
+        "observed_mean": -0.03,
+        "p_two_sided": 0.162368,
+        "mean_diff": -0.03,
+        "cohen_dz": -0.0593
+      },
+      "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+    },
+    "support_rate": {
+      "ARM_A0->ARM_A1": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": -0.0226,
+        "ci95": [
+          -0.0459,
+          0.0008
+        ],
+        "bootstrap_sd": 0.0116,
+        "n": 600,
+        "observed_mean": -0.0226,
+        "p_two_sided": 0.061388,
+        "mean_diff": -0.0226,
+        "cohen_dz": -0.078
+      },
+      "ARM_A1->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": 0.0089,
+        "ci95": [
+          -0.011,
+          0.0292
+        ],
+        "bootstrap_sd": 0.0101,
+        "n": 600,
+        "observed_mean": 0.0089,
+        "p_two_sided": 0.387922,
+        "mean_diff": 0.0089,
+        "cohen_dz": 0.0355
+      },
+      "ARM_A0->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": -0.0137,
+        "ci95": [
+          -0.0374,
+          0.0119
+        ],
+        "bootstrap_sd": 0.0126,
+        "n": 600,
+        "observed_mean": -0.0137,
+        "p_two_sided": 0.30134,
+        "mean_diff": -0.0137,
+        "cohen_dz": -0.0425
+      },
+      "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+    },
+    "conflict_rate": {
+      "ARM_A0->ARM_A1": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": 0.0197,
+        "ci95": [
+          0.001,
+          0.0378
+        ],
+        "bootstrap_sd": 0.0095,
+        "n": 600,
+        "observed_mean": 0.0197,
+        "p_two_sided": 0.042192,
+        "mean_diff": 0.0197,
+        "cohen_dz": 0.084
+      },
+      "ARM_A1->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": 0.0159,
+        "ci95": [
+          0.0008,
+          0.0305
+        ],
+        "bootstrap_sd": 0.0077,
+        "n": 600,
+        "observed_mean": 0.0159,
+        "p_two_sided": 0.041792,
+        "mean_diff": 0.0159,
+        "cohen_dz": 0.084
+      },
+      "ARM_A0->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": 0.0356,
+        "ci95": [
+          0.0158,
+          0.0553
+        ],
+        "bootstrap_sd": 0.01,
+        "n": 600,
+        "observed_mean": 0.0356,
+        "p_two_sided": 0.0004,
+        "mean_diff": 0.0356,
+        "cohen_dz": 0.1427
+      },
+      "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+    },
+    "unmentioned_rate": {
+      "ARM_A0->ARM_A1": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": 0.0029,
+        "ci95": [
+          -0.0145,
+          0.0209
+        ],
+        "bootstrap_sd": 0.0091,
+        "n": 600,
+        "observed_mean": 0.0029,
+        "p_two_sided": 0.74985,
+        "mean_diff": 0.0029,
+        "cohen_dz": 0.0132
+      },
+      "ARM_A1->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": -0.0249,
+        "ci95": [
+          -0.0411,
+          -0.0086
+        ],
+        "bootstrap_sd": 0.008,
+        "n": 600,
+        "observed_mean": -0.0249,
+        "p_two_sided": 0.0022,
+        "mean_diff": -0.0249,
+        "cohen_dz": -0.1248
+      },
+      "ARM_A0->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": -0.0219,
+        "ci95": [
+          -0.0429,
+          -0.0018
+        ],
+        "bootstrap_sd": 0.0105,
+        "n": 600,
+        "observed_mean": -0.0219,
+        "p_two_sided": 0.046391,
+        "mean_diff": -0.0219,
+        "cohen_dz": -0.0833
+      },
+      "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+    },
+    "n_claims": {
+      "ARM_A0->ARM_A1": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": 0.015,
+        "ci95": [
+          -0.1,
+          0.1234
+        ],
+        "bootstrap_sd": 0.0576,
+        "n": 600,
+        "observed_mean": 0.015,
+        "p_two_sided": 0.823235,
+        "mean_diff": 0.015,
+        "cohen_dz": 0.0107
+      },
+      "ARM_A1->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": -0.04,
+        "ci95": [
+          -0.1283,
+          0.055
+        ],
+        "bootstrap_sd": 0.0472,
+        "n": 600,
+        "observed_mean": -0.04,
+        "p_two_sided": 0.416117,
+        "mean_diff": -0.04,
+        "cohen_dz": -0.0347
+      },
+      "ARM_A0->ARM_A7": {
+        "n_clusters": 600,
+        "n_observations": 600,
+        "mean": -0.025,
+        "ci95": [
+          -0.1533,
+          0.1084
+        ],
+        "bootstrap_sd": 0.0649,
+        "n": 600,
+        "observed_mean": -0.025,
+        "p_two_sided": 0.720456,
+        "mean_diff": -0.025,
+        "cohen_dz": -0.0154
+      },
+      "interpretation": "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+    }
+  }
+}

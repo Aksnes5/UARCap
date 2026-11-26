@@ -1,0 +1,54 @@
+{
+  "schema": "uarcap_q2.e3_bridge_jobs.v1",
+  "n_jobs": 180,
+  "jobs": [
+    {
+      "job_id": "bridge_001|f_plus",
+      "bridge_id": "bridge_001",
+      "query_id": "carebench_v_00000030_5",
+      "role": "f_plus",
+      "statement": "a woman meticulously perfecting her eyebrows using an eyebrow pencil",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000030_5"
+    },
+    {
+      "job_id": "bridge_001|f_minus",
+      "bridge_id": "bridge_001",
+      "query_id": "carebench_v_00000030_5",
+      "role": "f_minus",
+      "statement": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000030_5"
+    },
+    {
+      "job_id": "bridge_001|neutral",
+      "bridge_id": "bridge_001",
+      "query_id": "carebench_v_00000030_5",
+      "role": "neutral",
+      "statement": "a person is repairing a bicycle tire",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000030_5"
+    },
+    {
+      "job_id": "bridge_002|f_plus",
+      "bridge_id": "bridge_002",
+      "query_id": "carebench_v_00000032_0",
+      "role": "f_plus",
+      "statement": "a woman as she meticulously draws her eyebrows using an eyebrow pencil and a small brush",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000032_0"
+    },
+    {
+      "job_id": "bridge_002|f_minus",
+      "bridge_id": "bridge_002",
+      "query_id": "carebench_v_00000032_0",
+      "role": "f_minus",
+      "statement": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000032_0"
+    },
+    {
+      "job_id": "bridge_002|neutral",
+      "bridge_id": "bridge_002",
+      "query_id": "carebench_v_00000032_0",
+      "role": "neutral",
+      "statement": "a person is baking bread in an oven",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000032_0"
+    }
+  ]
+}

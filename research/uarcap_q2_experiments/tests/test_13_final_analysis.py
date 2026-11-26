@@ -99,12 +99,21 @@ def test_historical_loader_handles_missing():
     assert rows == []
 
 
-def test_two_stage_correction_interface():
-    from uarcap_q2.final_analysis.core import two_stage_human_correction
+def test_two_phase_primary_correction_interface():
+    from uarcap_q2.final_analysis.core import metric_by_qid_arm, two_phase_primary_correction
     rows = _rows()
-    out = two_stage_human_correction(rows, precision=0.8, recall=0.7, n_boot=100)
-    assert "ARM_A0" in out and "corrected_support" in out["ARM_A0"]
-    assert out["ARM_A0"]["ci95"][0] <= out["ARM_A0"]["corrected_support"] <= out["ARM_A0"]["ci95"][1]
+    auto = metric_by_qid_arm(rows, "n_contra_ref")
+    human = {q: {"ARM_A0": auto["ARM_A0"][q], "ARM_A7": auto["ARM_A7"][q] + 0.1} for q in auto["ARM_A0"]}
+    out = two_phase_primary_correction(
+        rows, human, {q: 1.0 for q in human}, {"q1": "s1", "q2": "s2"}, metric="n_contra_ref")
+    assert out["status"] == "OK" and out["metric"] == "n_contra_ref"
+    assert out["n_human_sampled"] == 2
+    assert out["corrected_mean"] == pytest.approx(out["auto_uncorrected_mean"] + 0.1, abs=1e-6)
+    # no human sample -> explicit inconclusive, never a fabricated correction
+    empty = two_phase_primary_correction(rows, {}, {}, {}, metric="n_contra_ref")
+    assert empty["status"] == "INCONCLUSIVE_EMPTY_STRATUM"
+    with pytest.raises(ValueError):
+        two_phase_primary_correction(rows, human, {q: 0.0 for q in human}, {"q1": "s1", "q2": "s2"})
 
 
 def test_e3_formal_generation_gate_refuses_under_floor(tmp_path: Path):

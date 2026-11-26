@@ -1,0 +1,414 @@
+{
+  "generated_utc": "2026-11-26T14:41:00+08:00",
+  "n_logs": 68,
+  "logs": [
+    {
+      "log": "a2_cross_judge.log",
+      "bytes": 48653,
+      "lines": 432,
+      "last_line": "(EngineCore pid=1779640) INFO 11-26 02:12:01 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "a2_machine_report_final.log",
+      "bytes": 482,
+      "lines": 26,
+      "last_line": "}"
+    },
+    {
+      "log": "a2_machine_report_text.log",
+      "bytes": 555,
+      "lines": 29,
+      "last_line": "}"
+    },
+    {
+      "log": "a2_visual_verify.log",
+      "bytes": 26864,
+      "lines": 204,
+      "last_line": "INFO 11-26 02:19:50 [core_client.py:696] [shutdown] MPClient: complete"
+    },
+    {
+      "log": "a2_visual_verify_v2.log",
+      "bytes": 28383,
+      "lines": 241,
+      "last_line": "INFO 11-26 02:34:04 [core_client.py:696] [shutdown] MPClient: complete"
+    },
+    {
+      "log": "a2_visual_verify_v3.log",
+      "bytes": 37854,
+      "lines": 354,
+      "last_line": "(EngineCore pid=2087342) INFO 11-26 12:37:57 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "a3_carebench_qwen.log",
+      "bytes": 699,
+      "lines": 12,
+      "last_line": "a3_carebench_qwen.py: error: argument --model-path: expected one argument"
+    },
+    {
+      "log": "a3_carebench_qwen_v2.log",
+      "bytes": 39408,
+      "lines": 357,
+      "last_line": "(EngineCore pid=1801981) INFO 11-26 02:36:00 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "a3_cross_judge.log",
+      "bytes": 71448,
+      "lines": 656,
+      "last_line": "(EngineCore pid=1805256) INFO 11-26 02:46:57 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "a3_eval_gemma.log",
+      "bytes": 52665,
+      "lines": 452,
+      "last_line": "(EngineCore pid=1803277) INFO 11-26 02:40:50 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "a3_qwen35.log",
+      "bytes": 39324,
+      "lines": 343,
+      "last_line": "(EngineCore pid=2006018) INFO 11-26 08:47:38 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "a3_qwen35_cross.log",
+      "bytes": 71327,
+      "lines": 649,
+      "last_line": "(EngineCore pid=2010951) INFO 11-26 08:57:38 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "a3_qwen35_eval.log",
+      "bytes": 53504,
+      "lines": 458,
+      "last_line": "(EngineCore pid=2008912) INFO 11-26 08:52:39 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "a3_qwen35_visual.log",
+      "bytes": 30984,
+      "lines": 287,
+      "last_line": "INFO 11-26 09:00:49 [core_client.py:696] [shutdown] MPClient: complete"
+    },
+    {
+      "log": "a3_qwen_smoke.log",
+      "bytes": 69349,
+      "lines": 601,
+      "last_line": "SMOKE_MODE=image"
+    },
+    {
+      "log": "a3_visual_verify.log",
+      "bytes": 27505,
+      "lines": 226,
+      "last_line": "INFO 11-26 02:48:09 [core_client.py:696] [shutdown] MPClient: complete"
+    },
+    {
+      "log": "a3_visual_verify_v3.log",
+      "bytes": 56292,
+      "lines": 540,
+      "last_line": "(EngineCore pid=2088945) INFO 11-26 12:43:58 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "debug_cross_judge.log",
+      "bytes": 31109,
+      "lines": 261,
+      "last_line": "(EngineCore pid=1778364) INFO 11-26 02:08:20 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "download_stdout.log",
+      "bytes": 807,
+      "lines": 8,
+      "last_line": "2026-11-25T18:32:01.576084+00:00 COMPLETED sha=8f163f29a72f5bc8d15720847b1c0b125c8a593d3bdaedfabbeb4f83e3c25af5"
+    },
+    {
+      "log": "download_trigger.log",
+      "bytes": 121,
+      "lines": 2,
+      "last_line": "2026-11-25T18:32:06.919894+00:00 appended 9 VidHalluc tasks"
+    },
+    {
+      "log": "download_vidhalluc.log",
+      "bytes": 807,
+      "lines": 8,
+      "last_line": "2026-11-25T18:32:01.576084+00:00 COMPLETED sha=8f163f29a72f5bc8d15720847b1c0b125c8a593d3bdaedfabbeb4f83e3c25af5"
+    },
+    {
+      "log": "downtrigger_stdout.log",
+      "bytes": 123,
+      "lines": 4,
+      "last_line": "2026-11-25T18:32:06.919894+00:00 appended 9 VidHalluc tasks"
+    },
+    {
+      "log": "e2_metric_bridge.log",
+      "bytes": 1718,
+      "lines": 30,
+      "last_line": "}"
+    },
+    {
+      "log": "e3_bridge_prepare.log",
+      "bytes": 165,
+      "lines": 8,
+      "last_line": "}"
+    },
+    {
+      "log": "e3_formal_approve.log",
+      "bytes": 92,
+      "lines": 3,
+      "last_line": "{\"n_approved\": 159, \"n_review\": 21}"
+    },
+    {
+      "log": "e3_formal_evaluate.log",
+      "bytes": 214219,
+      "lines": 1876,
+      "last_line": "}"
+    },
+    {
+      "log": "e3_formal_frames.log",
+      "bytes": 165,
+      "lines": 6,
+      "last_line": "{\"decoded\": 180, \"total\": 180}"
+    },
+    {
+      "log": "e3_formal_generate_qwen.log",
+      "bytes": 358,
+      "lines": 12,
+      "last_line": "}"
+    },
+    {
+      "log": "e3_formal_generate_videollama.log",
+      "bytes": 364,
+      "lines": 12,
+      "last_line": "}"
+    },
+    {
+      "log": "e3_formal_text_screen.log",
+      "bytes": 50715,
+      "lines": 435,
+      "last_line": "}"
+    },
+    {
+      "log": "e3_formal_visual.log",
+      "bytes": 101020,
+      "lines": 1059,
+      "last_line": "(EngineCore pid=2109478) INFO 11-26 13:28:53 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "final_audit.log",
+      "bytes": 172,
+      "lines": 11,
+      "last_line": "}"
+    },
+    {
+      "log": "formal_cross_qwen.log",
+      "bytes": 856836,
+      "lines": 8337,
+      "last_line": "(EngineCore pid=1983209) INFO 11-26 08:42:13 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "formal_cross_qwen_v2.log",
+      "bytes": 31507,
+      "lines": 268,
+      "last_line": "(EngineCore pid=2132406) INFO 11-26 14:07:21 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "formal_cross_videollama.log",
+      "bytes": 440339,
+      "lines": 4314,
+      "last_line": "(EngineCore pid=1968786) INFO 11-26 07:36:12 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "formal_eval_qwen.log",
+      "bytes": 481398,
+      "lines": 4358,
+      "last_line": "(EngineCore pid=1951785) INFO 11-26 06:55:42 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "formal_eval_videollama.log",
+      "bytes": 368099,
+      "lines": 3362,
+      "last_line": "(EngineCore pid=1934800) INFO 11-26 06:09:12 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "formal_features.log",
+      "bytes": 185,
+      "lines": 3,
+      "last_line": "{\"status\": \"FEATURES_READY\", \"utc\": \"2026-11-25T19:18:04.696398+00:00\", \"n_requested\": 1735, \"n_still_missing\": 0, \"sample\": []}"
+    },
+    {
+      "log": "formal_frames.log",
+      "bytes": 56,
+      "lines": 2,
+      "last_line": "===== 2026-11-25T18:24:04.002094+00:00 attempt 1 ====="
+    },
+    {
+      "log": "formal_manifest.log",
+      "bytes": 612,
+      "lines": 14,
+      "last_line": "}"
+    },
+    {
+      "log": "formal_qwen.log",
+      "bytes": 331238,
+      "lines": 3638,
+      "last_line": "(EngineCore pid=1921528) INFO 11-26 05:38:40 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "formal_retrieval.log",
+      "bytes": 1595,
+      "lines": 23,
+      "last_line": "uarcap_q2.common.gpu_lock.GPULockBusyError: Shared GPU lock is currently held by another process (fcntl.flock)."
+    },
+    {
+      "log": "formal_retrieval_v2.log",
+      "bytes": 56,
+      "lines": 2,
+      "last_line": "===== 2026-11-25T18:53:27.142213+00:00 attempt 1 ====="
+    },
+    {
+      "log": "formal_videollama.log",
+      "bytes": 259,
+      "lines": 14,
+      "last_line": "}"
+    },
+    {
+      "log": "orchestrator.log",
+      "bytes": 0,
+      "lines": 0,
+      "last_line": ""
+    },
+    {
+      "log": "orchestrator_restart.log",
+      "bytes": 0,
+      "lines": 0,
+      "last_line": ""
+    },
+    {
+      "log": "report_writer.log",
+      "bytes": 1225,
+      "lines": 25,
+      "last_line": "2026-11-26T06:24:32.101916+00:00 reports written"
+    },
+    {
+      "log": "report_writer_stdout.log",
+      "bytes": 0,
+      "lines": 0,
+      "last_line": ""
+    },
+    {
+      "log": "smoke_fixed_image.log",
+      "bytes": 26242,
+      "lines": 199,
+      "last_line": "(EngineCore pid=1787994) INFO 11-26 02:24:48 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "smoke_fixed_video.log",
+      "bytes": 27569,
+      "lines": 214,
+      "last_line": "INFO 11-26 02:23:14 [core_client.py:696] [shutdown] MPClient: complete"
+    },
+    {
+      "log": "smoke_llama33.log",
+      "bytes": 24429,
+      "lines": 191,
+      "last_line": "RuntimeError: Engine core initialization failed. See root cause above. Failed core proc(s): {}"
+    },
+    {
+      "log": "smoke_llama33_2048.log",
+      "bytes": 15670,
+      "lines": 101,
+      "last_line": "INFO 11-26 02:05:44 [core_client.py:696] [shutdown] MPClient: complete"
+    },
+    {
+      "log": "smoke_llama33_b.log",
+      "bytes": 15702,
+      "lines": 104,
+      "last_line": "INFO 11-26 02:05:08 [core_client.py:696] [shutdown] MPClient: complete"
+    },
+    {
+      "log": "supervisor_stdout.log",
+      "bytes": 0,
+      "lines": 0,
+      "last_line": ""
+    },
+    {
+      "log": "vidhalluc_approve.log",
+      "bytes": 90,
+      "lines": 3,
+      "last_line": "{\"n_approved\": 0, \"n_review\": 30}"
+    },
+    {
+      "log": "vidhalluc_approve_v2.log",
+      "bytes": 91,
+      "lines": 3,
+      "last_line": "{\"n_approved\": 20, \"n_review\": 10}"
+    },
+    {
+      "log": "vidhalluc_evaluate_v2.log",
+      "bytes": 99262,
+      "lines": 836,
+      "last_line": "TypeError: keys must be str, int, float, bool or None, not tuple"
+    },
+    {
+      "log": "vidhalluc_evaluate_v3.log",
+      "bytes": 1870,
+      "lines": 27,
+      "last_line": "TypeError: keys must be str, int, float, bool or None, not tuple"
+    },
+    {
+      "log": "vidhalluc_extract.log",
+      "bytes": 288,
+      "lines": 3,
+      "last_line": "{\"status\": \"EXTRACTED\", \"zip\": \"/home/bn/uarcap_q2_runtime/data/vidhalluc/data/ACH_videos.zip\", \"sha256\": \"8f163f29a72f5bc8d15720847b1c0b125c8a593d3bdaedfabbeb4f83e3c25af5\", \"files\": 3933, \"utc\": \"2026-11-25T18:48:38.655428+00:00\"}"
+    },
+    {
+      "log": "vidhalluc_formal_pool.log",
+      "bytes": 1501,
+      "lines": 51,
+      "last_line": "        \"reason\": "
+    },
+    {
+      "log": "vidhalluc_frames_v2.log",
+      "bytes": 56,
+      "lines": 2,
+      "last_line": "===== 2026-11-26T04:44:01.051689+00:00 attempt 1 ====="
+    },
+    {
+      "log": "vidhalluc_generate_qwen_v2.log",
+      "bytes": 37601,
+      "lines": 327,
+      "last_line": "(EngineCore pid=2097142) INFO 11-26 12:56:36 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "vidhalluc_generate_videollama_v2.log",
+      "bytes": 56,
+      "lines": 2,
+      "last_line": "===== 2026-11-26T04:47:49.726676+00:00 attempt 1 ====="
+    },
+    {
+      "log": "vidhalluc_generate_videollama_v3.log",
+      "bytes": 56,
+      "lines": 2,
+      "last_line": "===== 2026-11-26T04:56:39.238987+00:00 attempt 1 ====="
+    },
+    {
+      "log": "vidhalluc_prepare.log",
+      "bytes": 2057,
+      "lines": 69,
+      "last_line": "        \"reason\": \"SAME_SOURCE_DUPLICATE\""
+    },
+    {
+      "log": "vidhalluc_screen_text.log",
+      "bytes": 33118,
+      "lines": 265,
+      "last_line": "(EngineCore pid=1808710) INFO 11-26 02:50:59 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "vidhalluc_screen_visual.log",
+      "bytes": 27827,
+      "lines": 237,
+      "last_line": "(EngineCore pid=1809866) INFO 11-26 02:53:23 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    },
+    {
+      "log": "vidhalluc_screen_visual_v2.log",
+      "bytes": 36767,
+      "lines": 316,
+      "last_line": "(EngineCore pid=2092501) INFO 11-26 12:47:46 [core.py:1363] [shutdown] EngineCore: exiting busy loop"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "uarcap_q2.fusion_fairness.v1",
+  "utc": "2026-11-26T06:34:40.505977+00:00",
+  "comparison": "frozen EVCap Video-LLaMA (text + visual retrieval fusion) vs Qwen3.8 (text evidence injected into prompt; raw 16 frames as visual input)",
+  "not_architecture_isolated": true,
+  "reasons": [
+    "different pretraining data and scale",
+    "different evidence injection interfaces",
+    "EVCap fuses retrieval visual features; Qwen never receives retrieved clip features",
+    "prompts differ (frozen prompt5 vs short_aligned)"
+  ],
+  "required_claim_language": "model-system contrast under different fusion interfaces; no isolated architectural causal claim",
+  "per_model_evidence": {
+    "videollama": {
+      "n_predictions": 1800,
+      "n_traces": 1800,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "with_text_evidence": 0,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {}
+        },
+        "ARM_A1": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 600,
+          "text_evidence_counts": {
+            "1": 600
+          }
+        },
+        "ARM_A7": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 600,
+          "text_evidence_counts": {
+            "7": 600
+          }
+        }
+      },
+      "modality_fairness": "Video-LLaMA receives text+visual EVCap evidence; Qwen receives text evidence + raw frames only (PROMPT_TEXT_ONLY). Not an architecture-isolated comparison."
+    },
+    "qwen": {
+      "n_predictions": 1800,
+      "n_traces": 1800,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "with_text_evidence": 0,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {}
+        },
+        "ARM_A1": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {
+            "1": 600
+          }
+        },
+        "ARM_A7": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {
+            "7": 600
+          }
+        }
+      },
+      "modality_fairness": "Video-LLaMA receives text+visual EVCap evidence; Qwen receives text evidence + raw frames only (PROMPT_TEXT_ONLY). Not an architecture-isolated comparison."
+    }
+  }
+}

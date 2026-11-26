@@ -1,0 +1,648 @@
+{
+  "schema": "uarcap_q2.supplementary_summary.v1",
+  "utc": "2026-11-26T06:34:40.506156+00:00",
+  "e2_length": {
+    "formal_videollama": {
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "mean_words": 7.57,
+          "median_words": 7.0,
+          "spearman_length_support": -0.1701,
+          "spearman_length_conflict": 0.1002,
+          "spearman_length_core": -0.083
+        },
+        "ARM_A1": {
+          "n": 600,
+          "mean_words": 7.72,
+          "median_words": 7.0,
+          "spearman_length_support": -0.175,
+          "spearman_length_conflict": 0.0772,
+          "spearman_length_core": -0.1054
+        },
+        "ARM_A7": {
+          "n": 600,
+          "mean_words": 8.26,
+          "median_words": 8.0,
+          "spearman_length_support": -0.2718,
+          "spearman_length_conflict": 0.141,
+          "spearman_length_core": -0.1647
+        }
+      },
+      "query_fe_ols_support": {
+        "coef_words": -0.011181,
+        "coef_A1_vs_A0": 0.037951,
+        "coef_A7_vs_A0": 0.034122,
+        "n_rows": 1800,
+        "n_queries": 600
+      },
+      "length_stratified_A7_minus_A0_support": {
+        "n_bins": 5,
+        "mean_within_bin_delta": 0.0265,
+        "bin_deltas": [
+          -0.0056,
+          0.0549,
+          0.0118,
+          0.0476,
+          0.0237
+        ]
+      }
+    },
+    "formal_qwen38": {
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "mean_words": 13.96,
+          "median_words": 14.0,
+          "spearman_length_support": -0.0781,
+          "spearman_length_conflict": 0.1042,
+          "spearman_length_core": -0.0728
+        },
+        "ARM_A1": {
+          "n": 600,
+          "mean_words": 14.12,
+          "median_words": 14.0,
+          "spearman_length_support": -0.0501,
+          "spearman_length_conflict": 0.0798,
+          "spearman_length_core": -0.0215
+        },
+        "ARM_A7": {
+          "n": 600,
+          "mean_words": 14.35,
+          "median_words": 14.0,
+          "spearman_length_support": 0.0117,
+          "spearman_length_conflict": 0.0664,
+          "spearman_length_core": 0.0201
+        }
+      },
+      "query_fe_ols_support": {
+        "coef_words": -0.009971,
+        "coef_A1_vs_A0": 0.015343,
+        "coef_A7_vs_A0": 0.016751,
+        "n_rows": 1800,
+        "n_queries": 600
+      },
+      "length_stratified_A7_minus_A0_support": {
+        "n_bins": 5,
+        "mean_within_bin_delta": 0.0128,
+        "bin_deltas": [
+          -0.0092,
+          0.0014,
+          0.0225,
+          -0.0025,
+          0.0519
+        ]
+      }
+    }
+  },
+  "length_control_plan": {
+    "schema": "uarcap_q2.length_control_plan.v1",
+    "utc": "2026-11-26T06:34:34.335892+00:00",
+    "n_videos": 120,
+    "query_ids": [
+      "carebench_v_00000566_7",
+      "carebench_v_00000617_2",
+      "carebench_v_00001476_0",
+      "carebench_v_00001820_1",
+      "carebench_v_00001872_1",
+      "carebench_v_00002020_0",
+      "carebench_v_00002024_0",
+      "carebench_v_00002098_4",
+      "carebench_v_00002219_6",
+      "carebench_v_00002282_3",
+      "carebench_v_00002362_12",
+      "carebench_v_00003184_0",
+      "carebench_v_00003211_0",
+      "carebench_v_00003343_0",
+      "carebench_v_00003559_0",
+      "carebench_v_00003577_0",
+      "carebench_v_00003581_0",
+      "carebench_v_00003808_0",
+      "carebench_v_00003925_1",
+      "carebench_v_00003958_1",
+      "carebench_v_00004009_1",
+      "carebench_v_00005010_0",
+      "carebench_v_00005056_0",
+      "carebench_v_00005080_2",
+      "carebench_v_00005252_0",
+      "carebench_v_00005279_0",
+      "carebench_v_00005894_0",
+      "carebench_v_00005899_16",
+      "carebench_v_00005907_0",
+      "carebench_v_00005921_1",
+      "carebench_v_00006292_0",
+      "carebench_v_00006316_0",
+      "carebench_v_00006366_0",
+      "carebench_v_00006449_0",
+      "carebench_v_00006457_0",
+      "carebench_v_00006654_1",
+      "carebench_v_00006670_0",
+      "carebench_v_00006711_0",
+      "carebench_v_00006858_1",
+      "carebench_v_00006879_0",
+      "carebench_v_00006963_0",
+      "carebench_v_00006989_2",
+      "carebench_v_00006995_0",
+      "carebench_v_00007041_5",
+      "carebench_v_00007043_40",
+      "carebench_v_00007052_0",
+      "carebench_v_00007164_1",
+      "carebench_v_00007236_0",
+      "carebench_v_00007515_0",
+      "carebench_v_00007630_0",
+      "carebench_v_00007658_0",
+      "carebench_v_00007749_0",
+      "carebench_v_00007929_1",
+      "carebench_v_00008353_0",
+      "carebench_v_00008723_1",
+      "carebench_v_00009103_5",
+      "carebench_v_00009175_34",
+      "carebench_v_00009374_1",
+      "carebench_v_00009404_0",
+      "carebench_v_00009432_0",
+      "carebench_v_00009474_0",
+      "carebench_v_00009689_0",
+      "carebench_v_00009721_0",
+      "carebench_v_00009731_0",
+      "carebench_v_00009792_1",
+      "carebench_v_00009824_0",
+      "carebench_v_00009906_0",
+      "carebench_v_00009958_0",
+      "carebench_v_00010107_2",
+      "carebench_v_00010127_0",
+      "carebench_v_00010203_3",
+      "carebench_v_00010421_0",
+      "carebench_v_00010444_1",
+      "carebench_v_00010615_1",
+      "carebench_v_00010764_1",
+      "carebench_v_00011176_0",
+      "carebench_v_00011221_1",
+      "carebench_v_00011249_0",
+      "carebench_v_00011456_0",
+      "carebench_v_00011886_0",
+      "carebench_v_00011915_0",
+      "carebench_v_00012149_0",
+      "carebench_v_00012223_0",
+      "carebench_v_00012257_1",
+      "carebench_v_00012405_0",
+      "carebench_v_00012462_0",
+      "carebench_v_00012667_2",
+      "carebench_v_00013292_4",
+      "carebench_v_00013470_0",
+      "carebench_v_00013732_0",
+      "carebench_v_00013861_0",
+      "carebench_v_00013866_0",
+      "carebench_v_00013880_1",
+      "carebench_v_00014033_0",
+      "carebench_v_00014045_0",
+      "carebench_v_00014267_3",
+      "carebench_v_00014328_0",
+      "carebench_v_00014429_0",
+      "carebench_v_00015005_0",
+      "carebench_v_00015105_1",
+      "carebench_v_00015231_1",
+      "carebench_v_00015261_0",
+      "carebench_v_00015743_0",
+      "carebench_v_00015746_0",
+      "carebench_v_00015752_0",
+      "carebench_v_00015775_0",
+      "carebench_v_00015987_10",
+      "carebench_v_00015988_0",
+      "carebench_v_00016097_0",
+      "carebench_v_00016267_1",
+      "carebench_v_00016359_0",
+      "carebench_v_00016370_0",
+      "carebench_v_00016397_0",
+      "carebench_v_00016403_0",
+      "carebench_v_00016582_0",
+      "carebench_v_00016760_1",
+      "carebench_v_00016854_0",
+      "carebench_v_00016880_0",
+      "carebench_v_00016883_4",
+      "carebench_v_00016896_1"
+    ],
+    "generator": "Qwen/Qwen3.8-27B-FP8",
+    "conditions": {
+      "short_aligned": "existing A0/A1/A7 captions (8-18 words)",
+      "detailed_sensitivity": "same frames/evidence, 2-4 sentences, max_new_tokens=128"
+    },
+    "planned_new_generations": 360,
+    "videollama_note": "frozen Video-LLaMA prompt cannot be length-manipulated without protocol violation; excluded.",
+    "design": "within-video paired; length is measured post hoc; no hypothesis test until human-calibrated endpoints"
+  },
+  "visual_sampling_plan": {
+    "schema": "uarcap_q2.visual_sampling_plan.v1",
+    "utc": "2026-11-26T06:34:34.342062+00:00",
+    "n_videos": 150,
+    "query_ids": [
+      "carebench_v_00001820_1",
+      "carebench_v_00001910_1",
+      "carebench_v_00001929_10",
+      "carebench_v_00002006_4",
+      "carebench_v_00002030_6",
+      "carebench_v_00002037_0",
+      "carebench_v_00002038_7",
+      "carebench_v_00002066_5",
+      "carebench_v_00002078_1",
+      "carebench_v_00002098_4",
+      "carebench_v_00002171_0",
+      "carebench_v_00002188_4",
+      "carebench_v_00002196_0",
+      "carebench_v_00002219_6",
+      "carebench_v_00002223_0",
+      "carebench_v_00002240_0",
+      "carebench_v_00002252_0",
+      "carebench_v_00002258_0",
+      "carebench_v_00002267_0",
+      "carebench_v_00002352_0",
+      "carebench_v_00002441_2",
+      "carebench_v_00003196_0",
+      "carebench_v_00003209_0",
+      "carebench_v_00003223_1",
+      "carebench_v_00003343_0",
+      "carebench_v_00003359_0",
+      "carebench_v_00003369_0",
+      "carebench_v_00003559_0",
+      "carebench_v_00003565_0",
+      "carebench_v_00003596_0",
+      "carebench_v_00003655_0",
+      "carebench_v_00003812_1",
+      "carebench_v_00003905_0",
+      "carebench_v_00003958_1",
+      "carebench_v_00003969_2",
+      "carebench_v_00004014_0",
+      "carebench_v_00004657_0",
+      "carebench_v_00004962_0",
+      "carebench_v_00004985_0",
+      "carebench_v_00005268_0",
+      "carebench_v_00005560_1",
+      "carebench_v_00005733_3",
+      "carebench_v_00005752_1",
+      "carebench_v_00005890_3",
+      "carebench_v_00005910_0",
+      "carebench_v_00005946_0",
+      "carebench_v_00005988_0",
+      "carebench_v_00006100_0",
+      "carebench_v_00006264_1",
+      "carebench_v_00006290_0",
+      "carebench_v_00006308_1",
+      "carebench_v_00006339_5",
+      "carebench_v_00006382_0",
+      "carebench_v_00006539_0",
+      "carebench_v_00006575_0",
+      "carebench_v_00006578_1",
+      "carebench_v_00006686_0",
+      "carebench_v_00006705_0",
+      "carebench_v_00006774_0",
+      "carebench_v_00006858_1",
+      "carebench_v_00006934_0",
+      "carebench_v_00007042_9",
+      "carebench_v_00007046_1",
+      "carebench_v_00007132_1",
+      "carebench_v_00007170_12",
+      "carebench_v_00007262_0",
+      "carebench_v_00007307_0",
+      "carebench_v_00007313_1",
+      "carebench_v_00007530_2",
+      "carebench_v_00007745_0",
+      "carebench_v_00008410_2",
+      "carebench_v_00008416_0",
+      "carebench_v_00008947_0",
+      "carebench_v_00009103_5",
+      "carebench_v_00009136_0",
+      "carebench_v_00009147_10",
+      "carebench_v_00009204_119",
+      "carebench_v_00009474_0",
+      "carebench_v_00009537_0",
+      "carebench_v_00009792_1",
+      "carebench_v_00009800_0",
+      "carebench_v_00009906_0",
+      "carebench_v_00009908_0",
+      "carebench_v_00009960_1",
+      "carebench_v_00010098_1",
+      "carebench_v_00010133_1",
+      "carebench_v_00010203_3",
+      "carebench_v_00010229_0",
+      "carebench_v_00010253_0",
+      "carebench_v_00010290_8",
+      "carebench_v_00010395_0",
+      "carebench_v_00010622_1",
+      "carebench_v_00010735_0",
+      "carebench_v_00010836_1",
+      "carebench_v_00010838_2",
+      "carebench_v_00011309_0",
+      "carebench_v_00011417_0",
+      "carebench_v_00011940_0",
+      "carebench_v_00012044_0",
+      "carebench_v_00012045_0",
+      "carebench_v_00012071_0",
+      "carebench_v_00012124_0",
+      "carebench_v_00012149_0",
+      "carebench_v_00012257_1",
+      "carebench_v_00012406_0",
+      "carebench_v_00012409_0",
+      "carebench_v_00012411_0",
+      "carebench_v_00012446_0",
+      "carebench_v_00012658_2",
+      "carebench_v_00013066_0",
+      "carebench_v_00013086_1",
+      "carebench_v_00013136_0",
+      "carebench_v_00013149_2",
+      "carebench_v_00013254_8",
+      "carebench_v_00013263_1",
+      "carebench_v_00013470_0",
+      "carebench_v_00013624_0",
+      "carebench_v_00013648_0",
+      "carebench_v_00013844_0",
+      "carebench_v_00013862_5",
+      "carebench_v_00013863_0",
+      "carebench_v_00013866_0",
+      "carebench_v_00013880_1",
+      "carebench_v_00014267_3",
+      "carebench_v_00014268_4",
+      "carebench_v_00014294_0",
+      "carebench_v_00014299_5",
+      "carebench_v_00014348_0",
+      "carebench_v_00014913_2",
+      "carebench_v_00015040_1",
+      "carebench_v_00015103_2",
+      "carebench_v_00015104_0",
+      "carebench_v_00015231_1",
+      "carebench_v_00015261_0",
+      "carebench_v_00015293_0",
+      "carebench_v_00015640_0",
+      "carebench_v_00015643_0",
+      "carebench_v_00015743_0",
+      "carebench_v_00015752_0",
+      "carebench_v_00015775_0",
+      "carebench_v_00015977_0",
+      "carebench_v_00015988_0",
+      "carebench_v_00016021_3",
+      "carebench_v_00016203_0",
+      "carebench_v_00016217_5",
+      "carebench_v_00016227_0",
+      "carebench_v_00016267_1",
+      "carebench_v_00016371_0",
+      "carebench_v_00016405_0",
+      "carebench_v_00016585_0"
+    ],
+    "generator": "Qwen/Qwen3.8-27B-FP8",
+    "arm": "ARM_A7",
+    "frame_settings": [
+      32,
+      64
+    ],
+    "planned_new_generations": 300,
+    "baseline": "existing 16-frame A7 captions",
+    "note": "Video-LLaMA frozen 16-frame feature contract cannot be changed; excluded from this sensitivity."
+  },
+  "retrieval_relevance": {
+    "schema": "uarcap_q2.retrieval_relevance.v1",
+    "utc": "2026-11-26T06:34:34.524302+00:00",
+    "n_queries": 600,
+    "status": "DESCRIPTIVE_NO_HUMAN_RELEVANCE_LABELS",
+    "top1_score_mean": 0.4654,
+    "top7_core_jaccard_mean": 0.1144,
+    "top7_ref_jaccard_mean": 0.0241,
+    "warning": "lexical overlap is not human relevance; X-CLIP score is retrieval confidence, not correctness"
+  },
+  "natural_evidence": {
+    "videollama": {
+      "n_predictions": 1800,
+      "n_traces": 1800,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "with_text_evidence": 0,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {}
+        },
+        "ARM_A1": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 600,
+          "text_evidence_counts": {
+            "1": 600
+          }
+        },
+        "ARM_A7": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 600,
+          "text_evidence_counts": {
+            "7": 600
+          }
+        }
+      },
+      "modality_fairness": "Video-LLaMA receives text+visual EVCap evidence; Qwen receives text evidence + raw frames only (PROMPT_TEXT_ONLY). Not an architecture-isolated comparison."
+    },
+    "qwen": {
+      "n_predictions": 1800,
+      "n_traces": 1800,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "with_text_evidence": 0,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {}
+        },
+        "ARM_A1": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {
+            "1": 600
+          }
+        },
+        "ARM_A7": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {
+            "7": 600
+          }
+        }
+      },
+      "modality_fairness": "Video-LLaMA receives text+visual EVCap evidence; Qwen receives text evidence + raw frames only (PROMPT_TEXT_ONLY). Not an architecture-isolated comparison."
+    }
+  },
+  "contamination": {
+    "schema": "uarcap_q2.contamination_audit.v1",
+    "utc": "2026-11-26T06:34:34.602079+00:00",
+    "carebench": {
+      "n_formal": 600,
+      "n_validation_audit": 60,
+      "n_main": 540,
+      "validation_main_overlap": 0,
+      "pilot_main_overlap": 0,
+      "parent_isolation_verified": true,
+      "near_dup_scan": 0,
+      "caveat": "CaReBench parent IDs are anonymized; YouTube-level source independence cannot be proven."
+    },
+    "vidhalluc": {
+      "n_approved_formal": 159,
+      "n_unique_source_ids": 159,
+      "duplicate_source_within_formal": 0,
+      "pilot_excluded_query_ids": 30,
+      "pilot_excluded_source_ids": 30,
+      "video_ufo_overlap_excluded": 2,
+      "video_ufo_source": "E3_EXPLORATORY_REPORT.md (2 exact VideoUFO overlaps excluded)"
+    },
+    "cross_dataset": {
+      "status": "NOT_JOINABLE",
+      "reason": "CaReBench query IDs/parent IDs are anonymized; no trustworthy YouTube source key exists, so a join would fabricate provenance.",
+      "n_vidhalluc_sources": 159,
+      "carebench_vs_vidhalluc_source_overlap": null
+    }
+  },
+  "pareto": {
+    "schema": "uarcap_q2.pareto_costs.v1",
+    "utc": "2026-11-26T06:34:34.602299+00:00",
+    "note": "measured GPU-task elapsed from real run receipts; Gemma eval projection is marked extrapolated",
+    "rows": [
+      {
+        "pipeline": "videollama_formal_600x3",
+        "model": "Video-LLaMA EVCap frozen",
+        "generations": 1800,
+        "gpu_seconds": 6525,
+        "sec_per_generation": 3.625
+      },
+      {
+        "pipeline": "qwen_formal_600x3",
+        "model": "Qwen3.8-27B-FP8",
+        "generations": 1800,
+        "gpu_seconds": 1910,
+        "sec_per_generation": 1.061
+      },
+      {
+        "pipeline": "qwen_a3_pilot_90x3",
+        "model": "Qwen3.8-27B-FP8",
+        "generations": 90,
+        "gpu_seconds": 113.9,
+        "sec_per_generation": 1.266
+      },
+      {
+        "pipeline": "gemma_eval_1800",
+        "model": "Gemma-3-27B judge (extrapolated)",
+        "generations": 1800,
+        "gpu_seconds": 5742.0,
+        "sec_per_generation": 3.19
+      }
+    ],
+    "planned_supplementary": {
+      "budget_extension_A3_A5": {
+        "generations": 2400
+      },
+      "length_control_qwen": {
+        "generations": 360
+      },
+      "visual_sampling_32_64": {
+        "generations": 300
+      },
+      "e3_bridge_verification_vlm": {
+        "calls": 180
+      }
+    }
+  },
+  "historical_reverse": {
+    "schema": "uarcap_q2.historical_reverse_bridge.v1",
+    "utc": "2026-11-26T06:34:40.422709+00:00",
+    "n_sources_found": 424,
+    "status": "NO_RERUN",
+    "caution": "MSR-VTT/MSVD are multi-reference and different datasets; only DIRECTION of effects may be compared, never absolute values."
+  },
+  "e3_authenticity": {
+    "schema": "uarcap_q2.e3_authenticity_audit.v1",
+    "utc": "2026-11-26T06:34:40.439880+00:00",
+    "n_approved": 159,
+    "source_id_invalid": 0,
+    "source_id_examples_bad": [],
+    "neutral_text_missing": 159,
+    "eval_rows": 1272,
+    "eval_parse_failures": 0,
+    "parse_failure_policy": "None/excluded, never 0",
+    "videollama_predictions": 636,
+    "visual_trace_hash_mismatch": 0,
+    "frame_contract": "16 uniformly sampled frames; not full-video understanding",
+    "full_video_vs_16frames": "unresolved by design; report as limitation, sensitivity queued for Qwen only",
+    "neutral_visual_validation": "PENDING (VLM statement verification task queued)",
+    "human_screening": "PENDING; no human sign-off claimed"
+  },
+  "fusion_fairness": {
+    "schema": "uarcap_q2.fusion_fairness.v1",
+    "utc": "2026-11-26T06:34:40.505977+00:00",
+    "comparison": "frozen EVCap Video-LLaMA (text + visual retrieval fusion) vs Qwen3.8 (text evidence injected into prompt; raw 16 frames as visual input)",
+    "not_architecture_isolated": true,
+    "reasons": [
+      "different pretraining data and scale",
+      "different evidence injection interfaces",
+      "EVCap fuses retrieval visual features; Qwen never receives retrieved clip features",
+      "prompts differ (frozen prompt5 vs short_aligned)"
+    ],
+    "required_claim_language": "model-system contrast under different fusion interfaces; no isolated architectural causal claim",
+    "per_model_evidence": {
+      "videollama": {
+        "n_predictions": 1800,
+        "n_traces": 1800,
+        "per_arm": {
+          "ARM_A0": {
+            "n": 600,
+            "with_text_evidence": 0,
+            "with_visual_evidence": 0,
+            "text_evidence_counts": {}
+          },
+          "ARM_A1": {
+            "n": 600,
+            "with_text_evidence": 600,
+            "with_visual_evidence": 600,
+            "text_evidence_counts": {
+              "1": 600
+            }
+          },
+          "ARM_A7": {
+            "n": 600,
+            "with_text_evidence": 600,
+            "with_visual_evidence": 600,
+            "text_evidence_counts": {
+              "7": 600
+            }
+          }
+        },
+        "modality_fairness": "Video-LLaMA receives text+visual EVCap evidence; Qwen receives text evidence + raw frames only (PROMPT_TEXT_ONLY). Not an architecture-isolated comparison."
+      },
+      "qwen": {
+        "n_predictions": 1800,
+        "n_traces": 1800,
+        "per_arm": {
+          "ARM_A0": {
+            "n": 600,
+            "with_text_evidence": 0,
+            "with_visual_evidence": 0,
+            "text_evidence_counts": {}
+          },
+          "ARM_A1": {
+            "n": 600,
+            "with_text_evidence": 600,
+            "with_visual_evidence": 0,
+            "text_evidence_counts": {
+              "1": 600
+            }
+          },
+          "ARM_A7": {
+            "n": 600,
+            "with_text_evidence": 600,
+            "with_visual_evidence": 0,
+            "text_evidence_counts": {
+              "7": 600
+            }
+          }
+        },
+        "modality_fairness": "Video-LLaMA receives text+visual EVCap evidence; Qwen receives text evidence + raw frames only (PROMPT_TEXT_ONLY). Not an architecture-isolated comparison."
+      }
+    }
+  },
+  "e3_bridge_candidates": {
+    "n_candidates": 60,
+    "n_jobs": 180
+  }
+}

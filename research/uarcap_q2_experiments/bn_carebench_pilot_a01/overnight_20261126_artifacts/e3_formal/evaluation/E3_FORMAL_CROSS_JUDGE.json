@@ -1,0 +1,11 @@
+{
+  "schema": "uarcap_q2.formal_e3_eval.v1",
+  "status": "MACHINE_ASSISTED_UNVALIDATED",
+  "utc": "2026-11-26T06:16:47.254473+00:00",
+  "n_rows": 1272,
+  "n_pairs": 636,
+  "n_parse_failures": 0,
+  "parse_failure_policy": "expressed=None and excluded; never coerced to 0",
+  "true_agreement": 0.9575,
+  "conflict_agreement": 0.9733
+}

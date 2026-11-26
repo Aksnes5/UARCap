@@ -70,6 +70,7 @@ def per_model_arm_descriptives(rows: list[dict]) -> dict[str, Any]:
             "unmentioned_rate": round(unm / n_claims, 4) if n_claims else None,
             "mean_claims_per_caption": round(n_claims / len(ok), 3) if ok else None,
             "mean_caption_words": round(sum(len(str(r.get("caption", "")).split()) for r in ok) / len(ok), 2) if ok else None,
+            "mean_contra_ref_per_caption": round(con / len(ok), 4) if ok else None,
             "core_coverage_mean": round(float(np.mean(cores)), 4) if cores else None,
             "dimensions": dict(dims),
         }
@@ -88,10 +89,21 @@ class TransitionResult:
     replacements: int = 0
     unmatched: int = 0
     core_coverage_delta: float | None = None
+    match_method: str = "lexical_jaccard_candidate"
+    semantic_verified: bool = False
+    uncertain_matches: int = 0
 
 
-def pair_transitions(rows: list[dict], src: str, dst: str, match_jaccard: float = 0.6) -> TransitionResult:
-    """Match facts across arms semantically; rewrites are matches (label flips), not add+delete."""
+def pair_transitions(rows: list[dict], src: str, dst: str, match_jaccard: float = 0.6,
+                     semantic_verifier: Callable[[str, str], bool] | None = None) -> TransitionResult:
+    """Match facts across arms.
+
+    Default matching is a LEXICAL CANDIDATE match (Jaccard on word sets). It is deliberately
+    labelled `lexical_jaccard_candidate` and is NOT a semantic-equivalence certificate.
+    A supplied `semantic_verifier` may upgrade individual candidate pairs; unverified pairs
+    are counted in `uncertain_matches`. High lexical overlap can hide negation/color/count/
+    entity substitutions, so downstream reporting must keep this caveat.
+    """
     by = defaultdict(dict)
     for r in rows:
         if r.get("parse_status") == "OK":
@@ -117,6 +129,8 @@ def pair_transitions(rows: list[dict], src: str, dst: str, match_jaccard: float 
             if best is None:
                 unmatched_a.append((ca, la)); continue
             used_b.add(best)
+            if semantic_verifier is None or not semantic_verifier(ca, bc[best][0]):
+                res.uncertain_matches += 1
             lb = bc[best][1]
             if la != lb:
                 res.label_flips += 1
@@ -198,8 +212,13 @@ def paired_effect(diffs_by_qid: dict[str, float]) -> dict:
             "cohen_dz": round(float(vals.mean() / sd), 4) if sd > 0 else None}
 
 
+PRIMARY_METRICS = ("n_contra_ref", "r_core_ref")
+AUXILIARY_METRICS = ("support_rate", "conflict_rate", "unmentioned_rate", "n_claims")
+
+
 def metric_by_qid_arm(rows: list[dict], metric: str) -> dict[str, dict[str, float]]:
-    """metric: support_rate|conflict_rate|unmentioned_rate|core_coverage|claims."""
+    """Per-query metric. Primary protocol endpoints: n_contra_ref (count per caption) and
+    r_core_ref (core-event coverage). Proportions are auxiliary."""
     out = defaultdict(dict)
     for arm in ARMS:
         byq = defaultdict(list)
@@ -208,13 +227,16 @@ def metric_by_qid_arm(rows: list[dict], metric: str) -> dict[str, dict[str, floa
                 byq[r["query_id"]].append(r)
         for q, rs in byq.items():
             n = sum(x.get("n_claims", 0) for x in rs)
-            if metric == "support_rate": v = sum(x.get("n_entail_ref", 0) for x in rs) / n if n else None
-            elif metric == "conflict_rate": v = sum(x.get("n_contra_ref", 0) for x in rs) / n if n else None
-            elif metric == "unmentioned_rate": v = sum(x.get("n_unment_ref", 0) for x in rs) / n if n else None
-            elif metric == "core_coverage":
+            if metric in ("n_contra_ref", "contra_count"):
+                v = float(sum(x.get("n_contra_ref", 0) or 0 for x in rs))
+            elif metric in ("r_core_ref", "core_coverage"):
                 z = [x["r_core_ref"] for x in rs if x.get("r_core_ref") is not None]
                 v = float(np.mean(z)) if z else None
-            else: v = float(n)
+            elif metric == "support_rate": v = sum(x.get("n_entail_ref", 0) for x in rs) / n if n else None
+            elif metric == "conflict_rate": v = sum(x.get("n_contra_ref", 0) for x in rs) / n if n else None
+            elif metric == "unmentioned_rate": v = sum(x.get("n_unment_ref", 0) for x in rs) / n if n else None
+            elif metric == "n_claims": v = float(n)
+            else: raise ValueError(f"unknown metric {metric}")
             if v is not None: out[arm][q] = float(v)
     return dict(out)
 
@@ -230,6 +252,7 @@ def paired_arm_stats(rows: list[dict], metric: str) -> dict:
 
 
 def cross_model_paired(rows_a: list[dict], rows_b: list[dict], metric: str) -> dict:
+    """Direct same-arm cross-model differences (descriptive; NOT the protocol's budget effect)."""
     ma, mb = metric_by_qid_arm(rows_a, metric), metric_by_qid_arm(rows_b, metric)
     res = {}
     for arm in ARMS:
@@ -237,6 +260,24 @@ def cross_model_paired(rows_a: list[dict], rows_b: list[dict], metric: str) -> d
         diffs = {q: mb[arm][q] - ma[arm][q] for q in common}
         res[arm] = {**cluster_bootstrap(diffs), **paired_permutation(diffs), **paired_effect(diffs)}
     return res
+
+
+def cross_model_budget_differential(rows_a: list[dict], rows_b: list[dict], metric: str) -> dict:
+    """Protocol cross-model budget effect:
+        (model_b[A7] - model_b[A0]) - (model_a[A7] - model_a[A0])
+    plus A1-A0 and A7-A1 contrasts. Cluster bootstrap/permutation over query_id.
+
+    Retrieval-fusion mechanisms differ between the frozen EVCap model and Qwen prompt
+    injection; this is a model-system contrast, not an isolated architectural causal effect.
+    """
+    ma, mb = metric_by_qid_arm(rows_a, metric), metric_by_qid_arm(rows_b, metric)
+    out = {}
+    for low, high in (("ARM_A0", "ARM_A1"), ("ARM_A1", "ARM_A7"), ("ARM_A0", "ARM_A7")):
+        common = sorted(set(ma.get(low, {})) & set(ma.get(high, {})) & set(mb.get(low, {})) & set(mb.get(high, {})))
+        diffs = {q: (mb[high][q] - mb[low][q]) - (ma[high][q] - ma[low][q]) for q in common}
+        out[f"{low}->{high}"] = {**cluster_bootstrap(diffs), **paired_permutation(diffs), **paired_effect(diffs)}
+    out["interpretation"] = "model-system budget contrast; fusion mechanisms differ (not isolated architecture effect)"
+    return out
 
 
 def missing_value_sensitivity(rows: list[dict]) -> dict:
@@ -285,9 +326,37 @@ def judge_reliability(eval_rows: list[dict], cross_labels: list[dict]) -> dict:
     diff = {}
     if budget["ARM_A0"]["disagreement_rate"] is not None and budget["ARM_A7"]["disagreement_rate"] is not None:
         diff["disagreement_rate_A7_minus_A0"] = round(budget["ARM_A7"]["disagreement_rate"] - budget["ARM_A0"]["disagreement_rate"], 4)
+    # Paired budget-effect difference between judges (not just overall agreement):
+    #   (Llama[A7]-Llama[A0]) - (Gemma[A7]-Gemma[A0]), same query clusters.
+    q_arm_gemma = defaultdict(lambda: Counter()); q_arm_llama = defaultdict(lambda: Counter())
+    for r in eval_rows:
+        if r.get("parse_status") != "OK": continue
+        for c in r.get("claims", []):
+            o = cross.get((r["query_id"], norm_claim(c["claim"])))
+            if not o: continue
+            q_arm_gemma[(r["query_id"], r["arm"])][c["label"]] += 1
+            q_arm_llama[(r["query_id"], r["arm"])][o["llama_label"]] += 1
+    def _rate(counter, label):
+        t = sum(counter.values())
+        return counter[label] / t if t else None
+    budget_effect = {}
+    for low, high in (("ARM_A0", "ARM_A1"), ("ARM_A1", "ARM_A7"), ("ARM_A0", "ARM_A7")):
+        for label in ("entailed", "contradicted"):
+            pairs = {}
+            for q in {k[0] for k in q_arm_gemma}:
+                gl, gh = q_arm_gemma.get((q, low)), q_arm_gemma.get((q, high))
+                ll, lh = q_arm_llama.get((q, low)), q_arm_llama.get((q, high))
+                if not all((gl, gh, ll, lh)): continue
+                rg_l, rg_h = _rate(gl, label), _rate(gh, label)
+                rl_l, rl_h = _rate(ll, label), _rate(lh, label)
+                if None in (rg_l, rg_h, rl_l, rl_h): continue
+                pairs[q] = (rl_h - rl_l) - (rg_h - rg_l)
+            budget_effect[f"{low}->{high}|{label}"] = {**cluster_bootstrap(pairs), **paired_permutation(pairs), **paired_effect(pairs)} if pairs else {"n_clusters": 0}
+    budget_effect["interpretation"] = "paired judge budget-effect difference (Llama minus Gemma), not overall agreement"
     return {"n_claims": n, "confusion_gemma_to_llama": {f"{a}->{b}": v for (a, b), v in conf.items()},
             "observed_agreement": round(po, 4), "cohen_kappa": round(kappa, 4) if kappa is not None else None,
-            "per_arm": budget, "budget_differential": diff, "disagreement_examples": flips[:20]}
+            "per_arm": budget, "budget_differential": diff,
+            "judge_budget_effect_difference": budget_effect, "disagreement_examples": flips[:20]}
 
 
 def random_agreed_sample(eval_rows: list[dict], cross_labels: list[dict], n: int = 20, seed: int = 20261126) -> list[dict]:
@@ -309,34 +378,49 @@ def core_event_audit(lock: dict) -> dict:
             "core_lock_sha256": lock.get("lock_sha256"), "created_before_generation": bool(lock.get("created_before_any_generation") or lock.get("created_before_any_judge_call"))}
 
 
-def two_stage_human_correction(rows: list[dict], precision: float, recall: float,
-                               n_boot: int = 1000, seed: int = 20261125) -> dict:
-    """Sensitivity interface for two-stage human correction of the automatic support rate.
+def two_phase_primary_correction(
+    auto_rows: list[dict],
+    human_arm_metric: dict[str, dict[str, float]],
+    inclusion_by_qid: dict[str, float],
+    stratum_by_qid: dict[str, str],
+    metric: str = "n_contra_ref",
+    arm_low: str = "ARM_A0",
+    arm_high: str = "ARM_A7",
+    calibration_excluded_ids: set[str] | None = None,
+) -> dict:
+    """Design-based two-phase (IPW) correction for a PRIMARY endpoint paired contrast.
 
-    `precision`/`recall` refer to the automatic support classifier against adjudicated human
-    labels. The corrected support rate uses the Rogan-Gladen relation with cluster bootstrap;
-    it is a sensitivity analysis, never a substitute for the human calibration gate.
+    Uses the repository's existing `two_phase_correction.py` (Horvitz-Thompson residual
+    correction with stratified finite-population variance, inclusion probabilities, and
+    calibration/validation leakage blocking). It does NOT use a global precision/recall
+    correction and does NOT apply one machine-agreement rate to every arm.
+
+    `human_arm_metric[qid][arm]` must contain adjudicated human metric values for audited
+    queries; `inclusion_by_qid` must carry the recorded probability of selection into the
+    human audit. Missing/empty human samples yield an explicit INCONCLUSIVE result.
     """
-    if not (0 < precision <= 1 and 0 < recall <= 1):
-        raise ValueError("precision/recall must be in (0,1]")
-    denom = recall - (1 - precision)
-    out = {}
-    for arm in ARMS:
-        per_q = {}
-        for r in rows:
-            if r.get("arm") == arm and r.get("parse_status") == "OK" and r.get("n_claims"):
-                per_q[r["query_id"]] = r.get("n_entail_ref", 0) / r["n_claims"]
-        if not per_q or denom <= 0:
-            out[arm] = {"n": len(per_q), "corrected_support": None, "ci95": None}
-            continue
-        vals = np.array(list(per_q.values()), dtype=float)
-        corrected = np.clip((vals - (1 - precision)) / denom, 0.0, 1.0)
-        rng = np.random.default_rng(seed); means = []
-        for _ in range(n_boot):
-            idx = rng.integers(0, len(vals), len(vals))
-            means.append(float(np.clip((vals[idx] - (1 - precision)) / denom, 0, 1).mean()))
-        out[arm] = {"n": len(vals), "observed_support": round(float(vals.mean()), 4),
-                    "corrected_support": round(float(corrected.mean()), 4),
-                    "ci95": [round(float(np.percentile(means, 2.5)), 4), round(float(np.percentile(means, 97.5)), 4)],
-                    "precision": precision, "recall": recall}
-    return out
+    from ..statistics.two_phase_correction import TwoPhaseUnit, estimate_two_phase_corrected_delta
+
+    auto = metric_by_qid_arm(auto_rows, metric)
+    low_map, high_map = auto.get(arm_low, {}), auto.get(arm_high, {})
+    qids = sorted(set(low_map) & set(high_map))
+    units: list[TwoPhaseUnit] = []
+    for q in qids:
+        unit_human = human_arm_metric.get(q)
+        in_sample = bool(unit_human and arm_low in unit_human and arm_high in unit_human)
+        pi = float(inclusion_by_qid.get(q, 0.0)) if in_sample else 0.0
+        if in_sample and not (0.0 < pi <= 1.0):
+            raise ValueError(f"Missing/invalid inclusion probability for audited query {q}: {pi}")
+        units.append(TwoPhaseUnit(
+            query_id=q,
+            stratum=stratum_by_qid.get(q, "unknown"),
+            auto_delta=float(high_map[q] - low_map[q]),
+            in_human_sample=in_sample,
+            inclusion_prob=pi if in_sample else 0.0,
+            human_delta=float(unit_human[arm_high] - unit_human[arm_low]) if in_sample else None,
+        ))
+    res = estimate_two_phase_corrected_delta(units, calibration_excluded_ids=calibration_excluded_ids)
+    res.update({"metric": metric, "contrast": f"{arm_high}-{arm_low}", "n_units": len(units),
+                "n_human_sampled": sum(1 for u in units if u.in_human_sample),
+                "estimator": "two_phase_correction.py (stratified IPW; inclusion probabilities required)"})
+    return res

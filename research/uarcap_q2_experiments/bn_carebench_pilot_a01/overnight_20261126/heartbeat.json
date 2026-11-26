@@ -1,22 +1,22 @@
 {
-  "updated_utc": "2026-11-26T05:34:40.663019+00:00",
+  "updated_utc": "2026-11-26T06:34:42.177252+00:00",
   "started_utc": "2026-11-25T18:09:21.512942+00:00",
-  "current_task": "e3_formal_generate_videollama",
-  "current_task_pid": 2115580,
+  "current_task": null,
+  "current_task_pid": null,
   "progress": null,
   "gpu": {
     "utilization_pct": 0,
     "memory_used_mib": 2,
     "memory_total_mib": 49140
   },
-  "cumulative_task_elapsed_sec": 26924.8,
+  "cumulative_task_elapsed_sec": 29796.6,
   "task_counts": {
-    "RUNNING": 2,
-    "COMPLETED": 35,
-    "BLOCKED": 10,
+    "RUNNING": 1,
+    "COMPLETED": 38,
+    "BLOCKED": 12,
     "PENDING": 9
   },
-  "n_tasks": 56,
+  "n_tasks": 60,
   "stop_requested": false,
   "network_download": {
     "status": "COMPLETED",

@@ -6,6 +6,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 import json
+import math
 from pathlib import Path
 import re
 from typing import Any
@@ -90,33 +91,146 @@ def load_historical_metrics(roots: list[Path] | None = None) -> list[dict]:
 
 
 def prepare_validation_package(out_dir: Path | None = None) -> dict:
-    """Build a blind 60-video E2 validation package from frozen predictions/eval/frames."""
+    """Build the blind 60-video E2 validation package.
+
+    STRICT KEY: every audited caption is keyed by (model_id, query_id, arm). All 60
+    validation videos contribute BOTH models x THREE arms = 360 caption records backed by
+    real frozen predictions/eval claims/frames. No generated text is invented. Isolation
+    from the 540 formal-main videos and inclusion probabilities are asserted before build.
+    """
+    from hashlib import sha256
+    from uarcap_q2.annotation.package_builder import build_blind_e2_annotation_package
+
     out = Path(out_dir or (O / "final_analysis/validation_60"))
     out.mkdir(parents=True, exist_ok=True)
-    from uarcap_q2.annotation.package_builder import build_blind_e2_annotation_package
     manifest = json.loads((FORMAL / "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json").read_text(encoding="utf-8"))
-    val_ids = set(manifest.get("e2_validation_set", {}).get("validation_query_ids", []))
-    preds = {m: read_jsonl(FORMAL / m / "predictions.jsonl") for m in ("videollama", "qwen")}
+    val_ids = set(manifest["e2_validation_set"]["validation_query_ids"])
+    main_ids = set(manifest.get("formal_main_excluding_validation_ids") or []) or (
+        set(manifest.get("selected_query_ids", [])) - val_ids)
+    assert val_ids.isdisjoint(main_ids), "validation/main isolation violated"
+    units = manifest.get("units", {})
+    strata = manifest["e2_validation_set"]["strata"]
+
+    cand = {c["query_id"]: c for c in read_jsonl(FORMAL / "formal_candidates.jsonl")}
     frames_idx = {r["query_id"]: r.get("frames", []) for r in read_jsonl(FORMAL / "formal_frame_indices.jsonl")}
-    # choose the frozen modern model as the validation generator; keep claims from its eval
-    ev = {r["query_id"]: r for r in read_jsonl(FORMAL / "qwen_eval/a2_ref_fact_eval.jsonl") if r["query_id"] in val_ids and r["parse_status"] == "OK"}
-    videos = defaultdict(lambda: {"captions": []})
-    for p in preds["qwen"]:
-        if p["query_id"] in val_ids:
-            v = videos[p["query_id"]]
-            v.update({"query_id": p["query_id"], "dataset_id": "CaReBench", "video_path": p.get("query_id"),
-                      "sampled_frame_paths": frames_idx.get(p["query_id"], [])})
-            r = ev.get(p["query_id"])
-            v["captions"].append({"arm": p["arm"], "model_id": p["model_id"], "caption": p["caption"],
-                                  "claims": [{"claim_id": c.get("claim_id"), "claim": c["claim"]} for c in (r or {}).get("claims", [])]})
-    for q, v in videos.items():
-        v["video_path"] = f"/home/bn/uarcap_q2_runtime/data/carebench/videos/{q.replace('carebench_','')}.mp4"
+    model_dirs = {"videollama": FORMAL / "videollama_eval/a2_ref_fact_eval.jsonl",
+                  "qwen": FORMAL / "qwen_eval/a2_ref_fact_eval.jsonl"}
+    evals = {m: {r["query_id"]: r for r in read_jsonl(p) if r.get("parse_status") == "OK"} for m, p in model_dirs.items()}
+    videos = {q: {"query_id": q, "dataset_id": "CaReBench", "video_path": cand[q]["video_path"],
+                  "sampled_frame_paths": frames_idx.get(q, []), "captions": []} for q in sorted(val_ids)}
+    counts = Counter()
+    missing = []
+    for m, _ in model_dirs.items():
+        for p in read_jsonl(FORMAL / m / "predictions.jsonl"):
+            q = p["query_id"]
+            if q not in videos:
+                continue
+            r = evals[m].get(q)
+            claims = [{"claim_id": c.get("claim_id"), "claim": c["claim"]} for c in (r or {}).get("claims", [])]
+            if not claims:
+                missing.append({"model_id": p.get("model_id"), "query_id": q, "arm": p["arm"]})
+            videos[q]["captions"].append({"arm": p["arm"], "model_id": p.get("model_id"),
+                                          "caption": p.get("caption", ""), "claims": claims})
+            counts[(p.get("model_id"), p["arm"])] += 1
+    expected = len(val_ids) * 2 * 3
+    actual = sum(len(v["captions"]) for v in videos.values())
+    if actual != expected:
+        raise ValueError(f"validation package incomplete: {actual}/{expected} caption rows")
+    for q in videos:
+        if len(videos[q]["captions"]) != 6:
+            raise ValueError(f"{q}: expected 6 (model,arm) captions, got {len(videos[q]['captions'])}")
     pkg = build_blind_e2_annotation_package(list(videos.values()), ["V1", "V2"], out_dir=out)
-    receipt = {"schema": "uarcap_q2.validation60_package.v1", "utc": utcnow(), "n_videos": len(videos),
-               "n_validation_ids": len(val_ids), "files": {k: str(v) for k, v in pkg.items()},
-               "note": "Blind validation package; human verification pending."}
+    key_sha = sha256(pkg["blind_key"].read_bytes()).hexdigest()
+    receipt = {
+        "schema": "uarcap_q2.validation60_package.v2", "utc": utcnow(),
+        "n_videos": len(videos), "n_validation_ids": len(val_ids),
+        "n_caption_records": actual, "expected_caption_records": expected,
+        "keying": "unique per (model_id, query_id, arm); verified against frozen predictions",
+        "per_model_arm_counts": {f"{m}|{a}": n for (m, a), n in sorted(counts.items(), key=str)},
+        "eval_missing_claims_records": len(missing), "eval_missing_examples": missing[:5],
+        "isolation": {"validation_disjoint_from_formal_main": True, "n_formal_main": len(main_ids),
+                      "parent_isolation_verified": manifest.get("parent_isolation_verified")},
+        "inclusion_probability_source": "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.e2_validation_set.strata",
+        "stratum_inclusion_probs": {k: v["val_inclusion_prob"] for k, v in strata.items()},
+        "inclusion_by_qid": {q: units[q]["val_inclusion_prob"] for q in val_ids if q in units},
+        "n_with_inclusion_prob": sum(1 for q in val_ids if q in units),
+        "files": {k: str(v) for k, v in pkg.items()},
+        "blind_key_sha256": key_sha, "blind_key_in_git": False,
+        "new_generations_needed": 0,
+        "note": "All 360 predictions already exist in the frozen formal run; no regeneration. Human verification pending.",
+    }
     (out / "VALIDATION60_RECEIPT.json").write_text(json.dumps(receipt, indent=2), encoding="utf-8")
     return receipt
+
+
+HUMAN_IMPORT_SCHEMA = "uarcap_q2.human_primary_endpoints.v1"
+
+
+def verify_human_primary_endpoints(path: Path, manifest: dict) -> dict:
+    """Validate an adjudicated human endpoint import before any calibration use.
+
+    Required schema fields are checked; audited IDs must be a subset of the frozen
+    validation set; per-qid inclusion probabilities must equal the pre-registered
+    stratified probabilities; two independent annotators plus an adjudication receipt
+    hash are mandatory. Anything missing is an error — never silently filled.
+    """
+    from hashlib import sha256
+    p = Path(path)
+    d = json.loads(p.read_text(encoding="utf-8"))
+    if d.get("schema") != HUMAN_IMPORT_SCHEMA:
+        raise ValueError(f"schema must be {HUMAN_IMPORT_SCHEMA}")
+    if d.get("dataset_id") != "CaReBench":
+        raise ValueError("dataset_id must be CaReBench")
+    if d.get("metric") not in ("n_contra_ref", "r_core_ref"):
+        raise ValueError("metric must be a protocol primary endpoint")
+    ann = d.get("annotator_ids") or []
+    if int(d.get("n_annotators", 0)) < 2 or len(set(ann)) < 2:
+        raise ValueError("at least two distinct annotators are required")
+    rec_path, rec_sha = d.get("adjudication_receipt_path"), d.get("adjudication_receipt_sha256")
+    if not rec_path or not rec_sha:
+        raise ValueError("adjudication_receipt_path and sha256 are required")
+    rp = Path(rec_path)
+    if not rp.is_file() or sha256(rp.read_bytes()).hexdigest() != rec_sha:
+        raise ValueError("adjudication receipt missing or hash mismatch")
+    val = set(manifest["e2_validation_set"]["validation_query_ids"])
+    units = manifest.get("units", {})
+    vals, inc, strat = d.get("values") or {}, d.get("inclusion_by_qid") or {}, d.get("stratum_by_qid") or {}
+    audited = set(vals)
+    if not audited:
+        raise ValueError("no audited queries")
+    if not audited <= val:
+        raise ValueError(f"audited IDs outside frozen validation set: {sorted(audited - val)[:5]}")
+    manifest_inc = {q: units[q]["val_inclusion_prob"] for q in val if q in units}
+    for q in audited:
+        arms = vals[q]
+        if not {"ARM_A0", "ARM_A1", "ARM_A7"} <= set(arms):
+            raise ValueError(f"{q}: missing required arm values")
+        for a in ("ARM_A0", "ARM_A1", "ARM_A7"):
+            v = arms[a]
+            if not isinstance(v, (int, float)) or not math.isfinite(float(v)) or float(v) < 0:
+                raise ValueError(f"{q}/{a}: invalid endpoint value {v!r}")
+        if q not in inc or not (0 < float(inc[q]) <= 1):
+            raise ValueError(f"{q}: missing/invalid inclusion probability")
+        if q not in manifest_inc or abs(float(inc[q]) - float(manifest_inc[q])) > 1e-6:
+            raise ValueError(f"{q}: inclusion probability deviates from pre-registered design")
+        if q not in units or strat.get(q) != units[q]["stratum"]:
+            raise ValueError(f"{q}: stratum missing or does not match manifest")
+    covered = {strat[q] for q in audited}
+    for s, meta in manifest["e2_validation_set"]["strata"].items():
+        if s not in covered:
+            raise ValueError(f"stratum {s} has zero audited units; two-phase estimate undefined")
+    excluded = set(d.get("calibration_excluded_ids") or [])
+    if excluded & audited:
+        raise ValueError("calibration IDs overlap audited validation IDs")
+    payload = {"schema": HUMAN_IMPORT_SCHEMA, "metric": d["metric"], "values": vals,
+               "inclusion_by_qid": {q: float(inc[q]) for q in audited},
+               "stratum_by_qid": {q: strat[q] for q in audited},
+               "calibration_excluded_ids": sorted(excluded)}
+    receipt = {"import_path": str(p), "import_sha256": sha256(p.read_bytes()).hexdigest(),
+               "n_audited": len(audited), "n_strata_covered": len(covered),
+               "annotator_ids": sorted(set(ann)), "adjudication_receipt_sha256": rec_sha,
+               "design_inclusion_match": True}
+    return {"payload": payload, "receipt": receipt}
 
 
 def prepare_e3_bridge_approved(candidates_path: Path | None = None, min_items: int = 20) -> dict:

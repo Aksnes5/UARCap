@@ -1,0 +1,98 @@
+{
+  "utc": "2026-11-26T06:34:34.324161+00:00",
+  "status": "POST_HOC_EXPLORATORY",
+  "models": {
+    "formal_videollama": {
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "mean_words": 7.57,
+          "median_words": 7.0,
+          "spearman_length_support": -0.1701,
+          "spearman_length_conflict": 0.1002,
+          "spearman_length_core": -0.083
+        },
+        "ARM_A1": {
+          "n": 600,
+          "mean_words": 7.72,
+          "median_words": 7.0,
+          "spearman_length_support": -0.175,
+          "spearman_length_conflict": 0.0772,
+          "spearman_length_core": -0.1054
+        },
+        "ARM_A7": {
+          "n": 600,
+          "mean_words": 8.26,
+          "median_words": 8.0,
+          "spearman_length_support": -0.2718,
+          "spearman_length_conflict": 0.141,
+          "spearman_length_core": -0.1647
+        }
+      },
+      "query_fe_ols_support": {
+        "coef_words": -0.011181,
+        "coef_A1_vs_A0": 0.037951,
+        "coef_A7_vs_A0": 0.034122,
+        "n_rows": 1800,
+        "n_queries": 600
+      },
+      "length_stratified_A7_minus_A0_support": {
+        "n_bins": 5,
+        "mean_within_bin_delta": 0.0265,
+        "bin_deltas": [
+          -0.0056,
+          0.0549,
+          0.0118,
+          0.0476,
+          0.0237
+        ]
+      }
+    },
+    "formal_qwen38": {
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "mean_words": 13.96,
+          "median_words": 14.0,
+          "spearman_length_support": -0.0781,
+          "spearman_length_conflict": 0.1042,
+          "spearman_length_core": -0.0728
+        },
+        "ARM_A1": {
+          "n": 600,
+          "mean_words": 14.12,
+          "median_words": 14.0,
+          "spearman_length_support": -0.0501,
+          "spearman_length_conflict": 0.0798,
+          "spearman_length_core": -0.0215
+        },
+        "ARM_A7": {
+          "n": 600,
+          "mean_words": 14.35,
+          "median_words": 14.0,
+          "spearman_length_support": 0.0117,
+          "spearman_length_conflict": 0.0664,
+          "spearman_length_core": 0.0201
+        }
+      },
+      "query_fe_ols_support": {
+        "coef_words": -0.009971,
+        "coef_A1_vs_A0": 0.015343,
+        "coef_A7_vs_A0": 0.016751,
+        "n_rows": 1800,
+        "n_queries": 600
+      },
+      "length_stratified_A7_minus_A0_support": {
+        "n_bins": 5,
+        "mean_within_bin_delta": 0.0128,
+        "bin_deltas": [
+          -0.0092,
+          0.0014,
+          0.0225,
+          -0.0025,
+          0.0519
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "schema": "uarcap_q2.running_tasks_handoff.v1",
+  "generated_utc": "2026-11-26T14:45:00+08:00",
+  "server_gpu_busy": false,
+  "gpu_snapshot": {"utilization_pct": 0, "memory_used_mib": 2, "memory_total_mib": 49140},
+  "processes": [
+    {
+      "role": "orchestrator", "pid": 1779396,
+      "cmd": "/usr/bin/python3 -u run_overnight.py --base /home/bn/uarcap_q2_runtime/overnight/20261126",
+      "status": "ALIVE_IDLE", "state_file": "/home/bn/uarcap_q2_runtime/overnight/20261126/task_state.json",
+      "queue_file": "/home/bn/uarcap_q2_runtime/overnight/20261126/task_queue.json",
+      "resume": "It reloads task_queue.json each loop and atomically resumes by per-task output keys. Do not start a second orchestrator."
+    },
+    {
+      "role": "supervisor", "pid": 1779399,
+      "cmd": "/usr/bin/python3 -u overnight_supervisor.py --base /home/bn/uarcap_q2_runtime/overnight/20261126 --check-interval 1800 --heartbeat 60 --duration-hours 14",
+      "status": "ALIVE_UNTIL_~16:09_LOCAL",
+      "resume": "Restart with a longer --duration-hours after it exits; it only health-checks and never starts duplicate schedulers."
+    },
+    {
+      "role": "report_writer", "pid": 1789311,
+      "cmd": "/usr/bin/python3 -u report_writer.py",
+      "status": "ALIVE",
+      "output": "/home/bn/uarcap_q2_runtime/overnight/20261126/OVERNIGHT_UARCAP_Q2_EXECUTION_REPORT.md"
+    },
+    {
+      "role": "download_watcher", "pid": 1787162,
+      "cmd": "/usr/bin/python3 -u watch_download_and_queue.py",
+      "status": "ALIVE_IDLE", "network_download": "COMPLETED"
+    }
+  ],
+  "current_gpu_tasks": [],
+  "queue_counts": {"COMPLETED": 38, "BLOCKED": 12, "PENDING": 9, "RUNNING": 1},
+  "blocked_tasks": [
+    "a3_carebench_qwen", "a2_visual_verify", "a3_visual_verify", "a3_qwen35_visual",
+    "formal_retrieval", "a2_visual_verify_v2", "formal_cross_qwen", "vidhalluc_approve",
+    "vidhalluc_evaluate_v2", "formal_cross_qwen_v2", "vidhalluc_evaluate_v3",
+    "e3_bridge_prepare"
+  ],
+  "pending_tasks": [
+    "vidhalluc_generate_videollama", "vidhalluc_generate_qwen", "vidhalluc_evaluate",
+    "vidhalluc_report", "vidhalluc_report_v2", "vidhalluc_report_v3",
+    "e3_bridge_generate_videollama", "e3_bridge_generate_qwen", "e3_bridge_evaluate"
+  ],
+  "latest_completed_checkpoint": {
+    "task": "e3_formal_evaluate",
+    "n_eval_rows": 1272,
+    "scope": "Video-LLaMA formal E3 only",
+    "output": "/home/bn/uarcap_q2_runtime/outputs/pilot_e3_exploratory/formal_evaluation"
+  },
+  "e3_formal_qwen": {
+    "status": "BLOCKED",
+    "predictions": 0,
+    "failures": 636,
+    "reason": "MISSING_NEUTRAL_TEXT: the frozen E3_FORMAL_APPROVED.json has neutral_text=null for all 159 candidates",
+    "output": "/home/bn/uarcap_q2_runtime/outputs/pilot_e3_exploratory/formal_qwen",
+    "resume_requires": [
+      "create candidate-specific neutral_text with text + independent visual validation",
+      "write a new approved file (do not mutate the frozen original)",
+      "re-run tasks/e3_formal_generate.py --generator qwen --approved <new file> --out-prefix formal",
+      "then run tasks/e3_formal_evaluate.py"
+    ]
+  },
+  "not_yet_deployed_gpu_tasks": [
+    {
+      "task": "A3/A5 budget extension",
+      "script": "/home/bn/uarcap_q2_runtime/overnight/20261126/tasks/supp_generate.py",
+      "planned": "600 videos x ARM_A3/ARM_A5 x 2 models = 2400 generations",
+      "status": "IMPLEMENTED_PENDING_RUN"
+    },
+    {
+      "task": "length-control generation",
+      "script": "same supp_generate.py",
+      "planned": "120 videos x A0/A1/A7 x 1 model (Qwen detailed prompt) = 360",
+      "status": "IMPLEMENTED_PENDING_RUN"
+    },
+    {
+      "task": "visual-sampling sensitivity",
+      "script": "same supp_generate.py",
+      "planned": "150 videos x ARM_A7 x {32,64} frames x 1 model = 300",
+      "status": "IMPLEMENTED_PENDING_RUN"
+    },
+    {
+      "task": "E3-Bridge VLM verification",
+      "jobs": "/home/bn/uarcap_q2_runtime/outputs/supplementary/E3_BRIDGE_VERIFICATION_JOBS.json",
+      "planned": "180 VLM statement calls (60 candidates x 3 statements)",
+      "status": "IMPLEMENTED_PENDING_RUN; verifier script not yet written"
+    }
+  ],
+  "do_not_disturb": [
+    "PID 1779396 orchestrator",
+    "PID 1779399 supervisor",
+    "PID 1789311 report_writer",
+    "PID 1787162 watch_download_and_queue",
+    "shared GPU lock /home/bn/videoufo_research/gpu.lock",
+    "PID 1705522 (foreign process; never kill)"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "uarcap_q2.formal_e3_generation.v1",
+  "status": "FORMAL_E3_MACHINE_ASSISTED_UNVALIDATED",
+  "generator": "videollama",
+  "n_approved": 159,
+  "n_predictions": 636,
+  "n_failures": 0,
+  "utc": "2026-11-26T06:03:59.140496+00:00",
+  "note": "No human verification; no confirmatory statistics."
+}

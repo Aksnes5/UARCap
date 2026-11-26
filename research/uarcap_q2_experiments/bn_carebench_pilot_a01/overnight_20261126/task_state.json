@@ -545,8 +545,18 @@
       "attempts": 0
     },
     "formal_cross_qwen_v2": {
-      "status": "PENDING",
-      "attempts": 0
+      "status": "BLOCKED",
+      "attempts": 1,
+      "started_utc": "2026-11-26T06:03:59.177649+00:00",
+      "log": "/home/bn/uarcap_q2_runtime/overnight/20261126/logs/formal_cross_qwen_v2.log",
+      "requires_gpu": true,
+      "network": false,
+      "updated_utc": "2026-11-26T06:07:23.729316+00:00",
+      "ended_utc": "2026-11-26T06:07:23.727663+00:00",
+      "elapsed_sec": 204.5,
+      "exit_code": 2,
+      "timed_out": false,
+      "note": "max_retries_exhausted"
     },
     "e3_formal_text_screen": {
       "status": "COMPLETED",
@@ -632,22 +642,70 @@
       "timed_out": false
     },
     "e3_formal_generate_videollama": {
-      "status": "RUNNING",
+      "status": "COMPLETED",
       "attempts": 1,
       "started_utc": "2026-11-26T05:28:56.994528+00:00",
       "log": "/home/bn/uarcap_q2_runtime/overnight/20261126/logs/e3_formal_generate_videollama.log",
       "requires_gpu": true,
       "network": false,
-      "updated_utc": "2026-11-26T05:28:56.994543+00:00"
+      "updated_utc": "2026-11-26T06:03:59.175129+00:00",
+      "ended_utc": "2026-11-26T06:03:59.175111+00:00",
+      "elapsed_sec": 2102.2,
+      "exit_code": 0,
+      "timed_out": false
     },
     "e3_formal_generate_qwen": {
+      "status": "COMPLETED",
+      "attempts": 1,
+      "started_utc": "2026-11-26T06:07:23.731061+00:00",
+      "log": "/home/bn/uarcap_q2_runtime/overnight/20261126/logs/e3_formal_generate_qwen.log",
+      "requires_gpu": true,
+      "network": false,
+      "updated_utc": "2026-11-26T06:07:23.946283+00:00",
+      "ended_utc": "2026-11-26T06:07:23.946239+00:00",
+      "elapsed_sec": 0.2,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    "e3_formal_evaluate": {
+      "status": "COMPLETED",
+      "attempts": 1,
+      "started_utc": "2026-11-26T06:07:23.950023+00:00",
+      "log": "/home/bn/uarcap_q2_runtime/overnight/20261126/logs/e3_formal_evaluate.log",
+      "requires_gpu": true,
+      "network": false,
+      "updated_utc": "2026-11-26T06:16:48.872026+00:00",
+      "ended_utc": "2026-11-26T06:16:48.871981+00:00",
+      "elapsed_sec": 564.9,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    "e3_bridge_prepare": {
+      "status": "BLOCKED",
+      "attempts": 1,
+      "started_utc": "2026-11-26T06:16:48.875557+00:00",
+      "log": "/home/bn/uarcap_q2_runtime/overnight/20261126/logs/e3_bridge_prepare.log",
+      "requires_gpu": false,
+      "network": false,
+      "updated_utc": "2026-11-26T06:16:49.042076+00:00",
+      "ended_utc": "2026-11-26T06:16:49.041985+00:00",
+      "elapsed_sec": 0.2,
+      "exit_code": 3,
+      "timed_out": false,
+      "note": "max_retries_exhausted"
+    },
+    "e3_bridge_generate_videollama": {
       "status": "PENDING",
       "attempts": 0
     },
-    "e3_formal_evaluate": {
+    "e3_bridge_generate_qwen": {
+      "status": "PENDING",
+      "attempts": 0
+    },
+    "e3_bridge_evaluate": {
       "status": "PENDING",
       "attempts": 0
     }
   },
-  "updated_utc": "2026-11-26T05:28:56.994544+00:00"
+  "updated_utc": "2026-11-26T06:34:49.319050+00:00"
 }

@@ -1,0 +1,63 @@
+{
+  "utc": "2026-11-26T06:34:40.503315+00:00",
+  "models": {
+    "videollama": {
+      "n_predictions": 1800,
+      "n_traces": 1800,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "with_text_evidence": 0,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {}
+        },
+        "ARM_A1": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 600,
+          "text_evidence_counts": {
+            "1": 600
+          }
+        },
+        "ARM_A7": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 600,
+          "text_evidence_counts": {
+            "7": 600
+          }
+        }
+      },
+      "modality_fairness": "Video-LLaMA receives text+visual EVCap evidence; Qwen receives text evidence + raw frames only (PROMPT_TEXT_ONLY). Not an architecture-isolated comparison."
+    },
+    "qwen": {
+      "n_predictions": 1800,
+      "n_traces": 1800,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 600,
+          "with_text_evidence": 0,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {}
+        },
+        "ARM_A1": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {
+            "1": 600
+          }
+        },
+        "ARM_A7": {
+          "n": 600,
+          "with_text_evidence": 600,
+          "with_visual_evidence": 0,
+          "text_evidence_counts": {
+            "7": 600
+          }
+        }
+      },
+      "modality_fairness": "Video-LLaMA receives text+visual EVCap evidence; Qwen receives text evidence + raw frames only (PROMPT_TEXT_ONLY). Not an architecture-isolated comparison."
+    }
+  }
+}

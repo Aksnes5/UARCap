@@ -1,0 +1,29 @@
+{
+  "schema": "uarcap_q2.contamination_audit.v1",
+  "utc": "2026-11-26T06:34:34.602079+00:00",
+  "carebench": {
+    "n_formal": 600,
+    "n_validation_audit": 60,
+    "n_main": 540,
+    "validation_main_overlap": 0,
+    "pilot_main_overlap": 0,
+    "parent_isolation_verified": true,
+    "near_dup_scan": 0,
+    "caveat": "CaReBench parent IDs are anonymized; YouTube-level source independence cannot be proven."
+  },
+  "vidhalluc": {
+    "n_approved_formal": 159,
+    "n_unique_source_ids": 159,
+    "duplicate_source_within_formal": 0,
+    "pilot_excluded_query_ids": 30,
+    "pilot_excluded_source_ids": 30,
+    "video_ufo_overlap_excluded": 2,
+    "video_ufo_source": "E3_EXPLORATORY_REPORT.md (2 exact VideoUFO overlaps excluded)"
+  },
+  "cross_dataset": {
+    "status": "NOT_JOINABLE",
+    "reason": "CaReBench query IDs/parent IDs are anonymized; no trustworthy YouTube source key exists, so a join would fabricate provenance.",
+    "n_vidhalluc_sources": 159,
+    "carebench_vs_vidhalluc_source_overlap": null
+  }
+}

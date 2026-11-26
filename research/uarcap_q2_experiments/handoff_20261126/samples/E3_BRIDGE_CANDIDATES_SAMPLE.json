@@ -1,0 +1,102 @@
+{
+  "schema": "uarcap_q2.e3_bridge_candidates.v2",
+  "utc": "2026-11-26T05:59:18.685634+00:00",
+  "n_candidates": 60,
+  "min_valid_required": 30,
+  "status": "PENDING_VERIFICATION",
+  "candidates": [
+    {
+      "bridge_id": "bridge_001",
+      "query_id": "carebench_v_00000030_5",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000030_5.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000030_5",
+      "f_plus": "a woman meticulously perfecting her eyebrows using an eyebrow pencil",
+      "f_minus": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+      "neutral_text": "a person is repairing a bicycle tire",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+        "retrieved_rank": 2,
+        "retrieval_score": 0.25537109375,
+        "clip_ids": [
+          "Lb2EUaE1iTo.11"
+        ],
+        "retrieval_source_ids": [
+          "Lb2EUaE1iTo"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_002",
+      "query_id": "carebench_v_00000032_0",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000032_0.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000032_0",
+      "f_plus": "a woman as she meticulously draws her eyebrows using an eyebrow pencil and a small brush",
+      "f_minus": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+      "neutral_text": "a person is baking bread in an oven",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyebrows using a brush and pencil.",
+        "retrieved_rank": 2,
+        "retrieval_score": 0.29052734375,
+        "clip_ids": [
+          "Lb2EUaE1iTo.11"
+        ],
+        "retrieval_source_ids": [
+          "Lb2EUaE1iTo"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.4545,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    },
+    {
+      "bridge_id": "bridge_003",
+      "query_id": "carebench_v_00000065_94",
+      "source_id": null,
+      "source_id_status": "UNKNOWN_OPAQUE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/carebench/videos/v_00000065_94.mp4",
+      "frames_dir": "/home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames/carebench_v_00000065_94",
+      "f_plus": "a person demonstrating how to select an eyebrow brush and eyebrow powder",
+      "f_minus": "A woman is applying makeup to her eyes with a brush, using a matte powder to line her upper and lower lash lines and blending it into the crease.",
+      "neutral_text": "a person is shoveling snow from a driveway",
+      "f_plus_provenance": "human_reference_core_event; pending independent visual verification",
+      "f_minus_provenance": {
+        "external_caption": "A woman is applying makeup to her eyes with a brush, using a matte powder to line her upper and lower lash lines and blending it into the crease.",
+        "retrieved_rank": 18,
+        "retrieval_score": 0.281005859375,
+        "clip_ids": [
+          "zbNfJRxvkV8.16"
+        ],
+        "retrieval_source_ids": [
+          "zbNfJRxvkV8"
+        ],
+        "note": "retrieved from a different video; natural evidence"
+      },
+      "neutral_provenance": "fixed pre-declared pool; zero content-token overlap (text only)",
+      "text_validity": {
+        "f_plus_minus_jaccard": 0.1,
+        "negation_differs": false,
+        "neutral_overlap": 0
+      },
+      "status": "CANDIDATE_PENDING_INDEPENDENT_VISUAL_VERIFICATION"
+    }
+  ]
+}

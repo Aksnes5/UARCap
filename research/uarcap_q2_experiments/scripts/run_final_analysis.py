@@ -24,12 +24,16 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from hashlib import sha256  # noqa: E402
+
 from uarcap_q2.final_analysis.core import (  # noqa: E402
-    ARMS, all_transitions, cross_model_paired, holm, judge_reliability, metric_by_qid_arm,
-    missing_value_sensitivity, paired_arm_stats, per_model_arm_descriptives, random_agreed_sample, read_jsonl,
+    ARMS, AUXILIARY_METRICS, PRIMARY_METRICS, all_transitions, cross_model_budget_differential, holm,
+    judge_reliability, missing_value_sensitivity, paired_arm_stats, per_model_arm_descriptives,
+    random_agreed_sample, read_jsonl, two_phase_primary_correction,
 )
 from uarcap_q2.final_analysis.pipelines import (  # noqa: E402
-    E3, FORMAL, O, build_e3_bridge_candidates, formal_e3_plan, load_historical_metrics, prepare_validation_package,
+    E3, FORMAL, O, build_e3_bridge_candidates, formal_e3_plan, load_historical_metrics,
+    prepare_validation_package, verify_human_primary_endpoints,
 )
 from uarcap_q2.final_analysis import reporting  # noqa: E402
 
@@ -51,16 +55,64 @@ def load_model(name):
     return rows, labels
 
 
+FORMAL_B_AUTH = O / "final_audit/FORMAL_B_AUTHORIZATION.json"
+A3_HUMAN_RECEIPT = O / "pilot_a3_exploratory/A3_HUMAN_VALIDATION_RECEIPT.json"
+
+
+def _sha(p: Path) -> str | None:
+    return sha256(p.read_bytes()).hexdigest() if p.is_file() else None
+
+
+def _read_json(p: Path) -> dict:
+    try:
+        d = json.loads(p.read_text(encoding="utf-8"))
+        return d if isinstance(d, dict) else {}
+    except Exception:
+        return {}
+
+
 def gates() -> dict:
-    a2 = {}
-    try: a2 = json.loads(A2_RECEIPT.read_text())
-    except Exception: pass
-    a3_receipts = list((O / "pilot_a3_exploratory").rglob("*receipt*.json")) if (O / "pilot_a3_exploratory").exists() else []
+    """Read REAL gate receipts; never assume a gate passed.
+
+    A gate is true only if an existing receipt explicitly records the completed human
+    action with the required fields and the referenced artifact exists. Missing files,
+    PENDING receipts, exploratory receipts and un-signed receipts all evaluate false.
+    """
+    a2 = _read_json(A2_RECEIPT)
+    a3 = _read_json(A3_HUMAN_RECEIPT)
+    fb = _read_json(FORMAL_B_AUTH)
+    a3_human = (
+        a3.get("status") == "VALIDATION_PASS"
+        and int(a3.get("n_annotators", 0)) >= 2
+        and bool(a3.get("adjudication_receipt_sha256"))
+        and bool(a3.get("annotator_signatures"))
+    )
+    fb_ok = (
+        fb.get("authorized") is True
+        and fb.get("scope") in {"FORMAL_B_CONFIRMATORY", "FORMAL_B_E2_E3"}
+        and bool(fb.get("authorization_receipt_sha256"))
+        and bool(fb.get("approved_by"))
+    )
     return {
         "a2_status": a2.get("status"),
-        "a2_human_calibration_completed": bool(a2.get("human_calibration_completed")),
-        "a3_human_validation": any("VALIDATION_PASS" in str(p) for p in a3_receipts),
-        "formal_b_authorized": False,
+        "a2_receipt": str(A2_RECEIPT),
+        "a2_receipt_sha256": _sha(A2_RECEIPT),
+        "a2_human_calibration_completed": a2.get("human_calibration_completed") is True,
+        "a3_status": a3.get("status"),
+        "a3_receipt": str(A3_HUMAN_RECEIPT),
+        "a3_receipt_sha256": _sha(A3_HUMAN_RECEIPT),
+        "a3_human_validation": a3_human,
+        "formal_b_status": fb.get("status"),
+        "formal_b_receipt": str(FORMAL_B_AUTH),
+        "formal_b_receipt_sha256": _sha(FORMAL_B_AUTH),
+        "formal_b_authorized": fb_ok,
+        "input_versions": {
+            "formal_candidates_sha256": _sha(FORMAL / "formal_candidates.jsonl"),
+            "formal_manifest_sha256": _sha(FORMAL / "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json"),
+            "videollama_eval_sha256": _sha(FORMAL / "videollama_eval/a2_ref_fact_eval.jsonl"),
+            "qwen_eval_sha256": _sha(FORMAL / "qwen_eval/a2_ref_fact_eval.jsonl"),
+            "two_phase_correction_sha256": _sha(ROOT / "uarcap_q2/statistics/two_phase_correction.py"),
+        },
     }
 
 
@@ -78,24 +130,63 @@ def descriptive_all() -> dict:
 
 
 def machine_assisted_stats() -> dict:
-    metrics = ("support_rate", "conflict_rate", "unmentioned_rate", "core_coverage")
-    stats = {}
+    """Exploratory paired statistics.
+
+    Protocol PRIMARY endpoints are `n_contra_ref` and `r_core_ref`; ONLY these enter the
+    single pre-declared Holm family. Proportion metrics are auxiliary/exploratory and are
+    reported without multiplicity claims. Cross-model inference uses the protocol budget
+    differential (model_b A7-A0) - (model_a A7-A0), never a same-arm model contrast.
+    """
+    stats = {"primary_metrics": list(PRIMARY_METRICS), "auxiliary_metrics": list(AUXILIARY_METRICS),
+             "holm_family": "primary only (n_contra_ref, r_core_ref; all models; A0->A1, A1->A7, A0->A7)",
+             "mode": "MACHINE_ASSISTED_UNCALIBRATED"}
     pvals = {}
+    primary, auxiliary = {}, {}
     for name in MODELS:
         rows, _ = load_model(name)
         if not rows: continue
-        stats[name] = {}
-        for m in metrics:
+        primary[name], auxiliary[name] = {}, {}
+        for m in PRIMARY_METRICS:
             res = paired_arm_stats(rows, m)
-            stats[name][m] = res
+            primary[name][m] = res
             for pair, v in res.items():
                 if v.get("p_two_sided") is not None:
                     pvals[f"{name}|{m}|{pair}"] = v["p_two_sided"]
+        for m in AUXILIARY_METRICS:
+            auxiliary[name][m] = paired_arm_stats(rows, m)
+    stats["primary"] = primary
+    stats["auxiliary_exploratory"] = auxiliary
     stats["holm"] = holm(pvals)
     fa = load_model("formal_videollama")[0]; fq = load_model("formal_qwen38")[0]
     if fa and fq:
-        stats["cross_model"] = {m: cross_model_paired(fa, fq, m) for m in metrics}
+        stats["cross_model_budget_differential"] = {
+            m: cross_model_budget_differential(fa, fq, m) for m in (*PRIMARY_METRICS, *AUXILIARY_METRICS)
+        }
     return stats
+
+
+def human_calibrated_stats(path: Path) -> dict:
+    """Design-based two-phase (IPW) correction using an imported adjudicated human file.
+
+    Refuses to guess: the import schema, per-stratum audit coverage, inclusion
+    probabilities and calibration/validation isolation are all verified first.
+    """
+    man = _read_json(FORMAL / "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json")
+    valid = verify_human_primary_endpoints(path, man)
+    human = valid["payload"]
+    out = {"mode": "HUMAN_CALIBRATED_TWO_PHASE", "human_import": valid["receipt"],
+           "metric": human["metric"], "corrections": {}}
+    for name in MODELS:
+        rows, _ = load_model(name)
+        if not rows: continue
+        out["corrections"][name] = {}
+        for metric in PRIMARY_METRICS:
+            out["corrections"][name][metric] = two_phase_primary_correction(
+                rows, human["values"], human["inclusion_by_qid"], human["stratum_by_qid"],
+                metric=metric, arm_low="ARM_A0", arm_high="ARM_A7",
+                calibration_excluded_ids=set(human.get("calibration_excluded_ids") or []),
+            )
+    return out
 
 
 def main(argv=None) -> int:
@@ -110,11 +201,23 @@ def main(argv=None) -> int:
     ap.add_argument("--prepare-validation-package", action="store_true")
     ap.add_argument("--e3-plan", action="store_true")
     ap.add_argument("--e3-bridge", action="store_true")
+    ap.add_argument("--human-annotations", type=Path,
+                    help="Adjudicated human primary-endpoint import (see verify_human_primary_endpoints)")
     args = ap.parse_args(argv)
     OUT.mkdir(parents=True, exist_ok=True)
     g = gates()
-    if args.human_calibrated and not (g["a2_status"] == "REAL_RUNTIME_PASS" and g["a2_human_calibration_completed"]):
-        print(json.dumps({"status": "HUMAN_CALIBRATION_REQUIRED", "gates": g}, indent=2)); return 3
+    if args.human_calibrated or args.confirmatory:
+        if not args.human_annotations:
+            print(json.dumps({"status": "HUMAN_ANNOTATION_IMPORT_REQUIRED", "gates": g,
+                              "expected_schema": "uarcap_q2.human_primary_endpoints.v1"}, indent=2)); return 3
+        try:
+            hv = verify_human_primary_endpoints(args.human_annotations,
+                                                _read_json(FORMAL / "FORMAL_CAREBENCH_ANALYSIS_MANIFEST.json"))
+        except Exception as e:
+            print(json.dumps({"status": "HUMAN_IMPORT_REJECTED", "error": str(e), "gates": g}, indent=2)); return 3
+        if not g["a2_human_calibration_completed"]:
+            print(json.dumps({"status": "HUMAN_CALIBRATION_REQUIRED", "gates": g,
+                              "import_ok": hv["receipt"]}, indent=2)); return 3
     if args.confirmatory and not (g["a2_human_calibration_completed"] and g["a3_human_validation"] and g["formal_b_authorized"]):
         print(json.dumps({"status": "CONFIRMATORY_GATES_NOT_MET", "gates": g}, indent=2)); return 3
     if args.integrity_check:
@@ -137,6 +240,13 @@ def main(argv=None) -> int:
         stats = machine_assisted_stats()
         (OUT / "stats.json").write_text(json.dumps(stats, indent=2), encoding="utf-8")
         result["stats"] = stats
+    if args.human_calibrated or args.confirmatory:
+        cal = human_calibrated_stats(args.human_annotations)
+        (OUT / "human_calibrated_stats.json").write_text(json.dumps(cal, indent=2), encoding="utf-8")
+        result["human_calibrated"] = cal
+        result["mode"] = "HUMAN_CALIBRATED_TWO_PHASE" if args.human_calibrated else "CONFIRMATORY"
+    elif args.machine_assisted:
+        result["mode"] = "MACHINE_ASSISTED_UNCALIBRATED"
     (OUT / "analysis.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
 
     # paper tables
@@ -154,7 +264,12 @@ def main(argv=None) -> int:
                 rel_rows.append({"model": name, "arm": arm, "n": v.get("n"), "disagreement_rate": v.get("disagreement_rate"), "directions": v.get("directions")})
         reporting.export_table(rel_rows, OUT / "tables", "table_judge_reliability")
         if "stats" in result:
-            eff = [{"model": m, "metric": met, "pair": p, **v} for m, ms in result["stats"].items() if isinstance(ms, dict) and m not in ("holm","cross_model") for met, ps in ms.items() for p, v in ps.items()]
+            eff = [{"model": m, "metric": met, "family": "PRIMARY", "pair": p, **v}
+                   for m, ms in result["stats"].get("primary", {}).items()
+                   for met, ps in ms.items() for p, v in ps.items()]
+            eff += [{"model": m, "metric": met, "family": "AUXILIARY_EXPLORATORY", "pair": p, **v}
+                    for m, ms in result["stats"].get("auxiliary_exploratory", {}).items()
+                    for met, ps in ms.items() for p, v in ps.items()]
             reporting.export_table(eff, OUT / "tables", "table_paired_effects")
         hist = load_historical_metrics()
         reporting.export_table(hist, OUT / "tables", "table_historical_bridge")
@@ -167,7 +282,7 @@ def main(argv=None) -> int:
             if name in desc["reliability"]:
                 reporting.plot_agreement_matrix(desc["reliability"][name], figdir, stem=f"fig_judge_confusion_{name}")
         if "stats" in result:
-            reporting.plot_effect_sizes({k: v for k, v in result["stats"].items() if k.startswith(("formal","a3"))}, figdir)
+            reporting.plot_effect_sizes(result["stats"].get("primary", {}), figdir)
         reporting.plot_flow({"CaReBench parents": 913, "Pilot parents excluded": 30, "Eligible after near-dup scan": 883,
                              "Formal selected": 600, "Independent validation": 60}, figdir)
         reporting.plot_budget_curve(load_historical_metrics(), figdir)

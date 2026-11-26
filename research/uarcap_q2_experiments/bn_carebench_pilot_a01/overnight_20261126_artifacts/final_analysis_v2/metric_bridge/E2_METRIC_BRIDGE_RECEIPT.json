@@ -1,0 +1,47 @@
+{
+  "schema": "uarcap_q2.e2_metric_bridge.v1",
+  "status": "POST_HOC_EXPLORATORY",
+  "utc": "2026-11-26T05:52:58.765679+00:00",
+  "n_candidates": 600,
+  "n_predictions": 7200,
+  "models": [
+    "formal_videollama",
+    "formal_qwen"
+  ],
+  "reference_modes": [
+    "R-Full",
+    "R-Short"
+  ],
+  "reference_summary": {
+    "n_candidates": 600,
+    "n_valid_short": 600,
+    "full_words_mean": 228.09,
+    "full_words_median": 218.0,
+    "short_words_mean": 14.53,
+    "short_words_median": 14.0,
+    "short_validity_rate": 1.0,
+    "invalid_short_examples": []
+  },
+  "cider_idf": "single fixed reference set per mode and arm; IDF computed from the same 600 (or valid-short) references for all arms",
+  "limitations": [
+    "CaReBench is single-reference; MSR-VTT/MSVD are multi-reference",
+    "absolute CIDEr scores across datasets are not comparable",
+    "traditional metrics are real; fact-level labels are machine-assisted and uncalibrated",
+    "post-hoc analysis added after initial results; protocol primary endpoints unchanged"
+  ],
+  "spice_status": "SKIPPED",
+  "artifacts": {
+    "E2_METRIC_BRIDGE_PER_VIDEO.jsonl": {
+      "bytes": 8411047,
+      "sha256": "3c6423c8702b8054ca223b520bbbe34b56e9d49e72dc1b736dea54b8a4896713"
+    },
+    "E2_METRIC_BRIDGE_SUMMARY.csv": {
+      "bytes": 1850,
+      "sha256": "516d33d876d08c8267411de4601705e53984a9c00405a664e08c783f6b7c53ee"
+    },
+    "E2_METRIC_BRIDGE_PAIRED.json": {
+      "bytes": 5118,
+      "sha256": "f78682a469a0fa160f066531302956b0b07c023c8b4c9c45f9344bc384245b00"
+    }
+  }
+}

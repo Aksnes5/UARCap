@@ -1,0 +1,49 @@
+{
+  "schema": "uarcap_q2.pareto_costs.v1",
+  "utc": "2026-11-26T06:34:34.602299+00:00",
+  "note": "measured GPU-task elapsed from real run receipts; Gemma eval projection is marked extrapolated",
+  "rows": [
+    {
+      "pipeline": "videollama_formal_600x3",
+      "model": "Video-LLaMA EVCap frozen",
+      "generations": 1800,
+      "gpu_seconds": 6525,
+      "sec_per_generation": 3.625
+    },
+    {
+      "pipeline": "qwen_formal_600x3",
+      "model": "Qwen3.8-27B-FP8",
+      "generations": 1800,
+      "gpu_seconds": 1910,
+      "sec_per_generation": 1.061
+    },
+    {
+      "pipeline": "qwen_a3_pilot_90x3",
+      "model": "Qwen3.8-27B-FP8",
+      "generations": 90,
+      "gpu_seconds": 113.9,
+      "sec_per_generation": 1.266
+    },
+    {
+      "pipeline": "gemma_eval_1800",
+      "model": "Gemma-3-27B judge (extrapolated)",
+      "generations": 1800,
+      "gpu_seconds": 5742.0,
+      "sec_per_generation": 3.19
+    }
+  ],
+  "planned_supplementary": {
+    "budget_extension_A3_A5": {
+      "generations": 2400
+    },
+    "length_control_qwen": {
+      "generations": 360
+    },
+    "visual_sampling_32_64": {
+      "generations": 300
+    },
+    "e3_bridge_verification_vlm": {
+      "calls": 180
+    }
+  }
+}
