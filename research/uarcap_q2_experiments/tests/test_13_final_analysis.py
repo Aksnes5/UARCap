@@ -97,3 +97,22 @@ def test_formal_e3_plan_refuses_under_floor(tmp_path: Path):
 def test_historical_loader_handles_missing():
     rows = load_historical_metrics([Path("/nonexistent/path")])
     assert rows == []
+
+
+def test_two_stage_correction_interface():
+    from uarcap_q2.final_analysis.core import two_stage_human_correction
+    rows = _rows()
+    out = two_stage_human_correction(rows, precision=0.8, recall=0.7, n_boot=100)
+    assert "ARM_A0" in out and "corrected_support" in out["ARM_A0"]
+    assert out["ARM_A0"]["ci95"][0] <= out["ARM_A0"]["corrected_support"] <= out["ARM_A0"]["ci95"][1]
+
+
+def test_e3_formal_generation_gate_refuses_under_floor(tmp_path: Path):
+    import json, subprocess, sys
+    p = tmp_path / "approved.json"; p.write_text(json.dumps({"n_approved": 2, "approved": [{}, {}]}))
+    root = Path(__file__).resolve().parents[1]
+    script = Path("/home/bn/uarcap_q2_runtime/overnight/20261126/tasks/e3_formal_generate.py")
+    if not script.is_file(): pytest.skip("overnight script not present")
+    r = subprocess.run([sys.executable, str(script), "--generator", "qwen", "--approved", str(p), "--min-approved", "150"],
+                       capture_output=True, text=True)
+    assert r.returncode == 3 and "AWAITING_SUFFICIENT_CANDIDATES" in r.stdout

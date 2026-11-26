@@ -1,0 +1,467 @@
+{
+  "utc": "2026-11-26T05:28:56.987757+00:00",
+  "items": [
+    {
+      "query_id": "vidhalluc_-geDRZmY-E8_clip_1",
+      "source_id": "-geDRZmY-E8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/-geDRZmY-E8_clip_1.mp4",
+      "true_action": "boiling water",
+      "conflict_action": "placing toppings on the noodles",
+      "question": "What is the prominent action in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are clearly distinct and don't occur simultaneously in a typical noodle-making process. Boiling water and adding toppings are sequential steps, making the conflict action a plausible absence if the prominent action is boiling water."
+      },
+      "visual_screen": {
+        "true_present": "partial",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The frames show a pot of water on a stovetop and a hand placing a lid on it, which is the preparatory step for boiling water. However, the actual state of the water boiling (bubbling/steam) is not visible in the provided frames. The conflicting action of placing toppings on noodles is completely absent."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_0h45uztur-o_clip_11",
+      "source_id": "0h45uztur-o",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/0h45uztur-o_clip_11.mp4",
+      "true_action": "decorating a gift",
+      "conflict_action": "wrapping a present",
+      "question": "What is the prominent action in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "Both actions are very closely related and often occur together. 'Decorating a gift' can *include* 'wrapping a present'. While not identical, they aren't truly mutually exclusive in a practical sense. The conflict action is a substep of the true action, not a different action."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The frames clearly show a person adding a large, silver, glittery star decoration to a box that is already wrapped in blue paper and ribbon. This action corresponds to 'decorating a gift'. The action of 'wrapping a present' (covering the box with paper) is not shown; the box is already wrapped in all frames where the action takes place."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_16g-sBraeKE_clip_4",
+      "source_id": "16g-sBraeKE",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/16g-sBraeKE_clip_4.mp4",
+      "true_action": "applying fake nails",
+      "conflict_action": "painting nails",
+      "question": "What is the key action shown in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "While applying fake nails and painting nails *can* be done separately, they are often related (fake nails are often painted).  Painting nails isn't a clear 'opposite' or absent action when someone is applying fake nails; it's a common follow-up or alternative. Therefore, they aren't mutually exclusive in a practical sense for intervention. The conflict isn't strong enough to be useful for a controlled intervention."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The video frames clearly show a person applying a white, translucent artificial nail to a client's finger. A tray containing multiple fake nails is visible in the foreground. There is no evidence of nail painting (no brushes, polish bottles, or painting motion) in any of the frames."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_8zq6C0SRyDQ_clip_1",
+      "source_id": "8zq6C0SRyDQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/8zq6C0SRyDQ_clip_1.mp4",
+      "true_action": "decorating a cake",
+      "conflict_action": "celebrating a birthday party",
+      "question": "What is the prominent action in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "Decorating a cake is *often* part of celebrating a birthday party. While not the same action, they are highly correlated and not mutually exclusive in a real-world scenario. The conflict action isn't a clear *different* action, but rather a context where the true action frequently occurs.  It's plausible someone could decorate a cake *without* a birthday party happening, but it's not typical."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The frames clearly show the step-by-step process of decorating a cake, including leveling the layers, applying frosting, stacking, and smoothing the exterior with pink icing. While a box of cake mix is visible in the background, there are no elements indicating a birthday party (such as candles, balloons, or a group of people celebrating), so the conflict action is absent."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_91ozOcjKl5M_clip_3",
+      "source_id": "91ozOcjKl5M",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/91ozOcjKl5M_clip_3.mp4",
+      "true_action": "adding pasta to a pan",
+      "conflict_action": "pouring the sauce on top of the pasta",
+      "question": "What is the predominant action captured in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are distinct steps in a pasta-making process, but could occur very close together. However, they are clearly different actions and not simply variations of the same step. The conflict action is plausibly absent if the video focuses *only* on adding the pasta."
+      },
+      "visual_screen": {
+        "true_present": "no",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The video shows a person adding dry pasta to a pot of boiling water on the left side of the stove. The pan on the right side of the stove remains empty throughout the sequence. Therefore, the action of adding pasta to a pan is not visible (it is added to a pot), and the action of pouring sauce on pasta is also not visible."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_ANB_IQfi9kA_clip_1",
+      "source_id": "ANB_IQfi9kA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/ANB_IQfi9kA_clip_1.mp4",
+      "true_action": "a man running",
+      "conflict_action": "surfing waves",
+      "question": "What is the prominent action in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are distinct physical activities. Running and surfing are not typically done simultaneously or in the same location, making them mutually exclusive in most contexts. The actions are described in natural English and are of similar length. The conflict action is a clearly different action, not a synonym or substep of running."
+      },
+      "visual_screen": {
+        "true_present": "no",
+        "conflict_present": "no",
+        "frames_sufficient": "no",
+        "evidence": "The first three frames are completely black. The subsequent frames show a static view from inside a structure looking out at a yard with a wooden fence and a gazebo. There is no person visible in the frames, and therefore no action of a man running or surfing waves can be observed. The frames are insufficient to verify the true action."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_Y4svcMuQgBw_clip_3",
+      "source_id": "Y4svcMuQgBw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/Y4svcMuQgBw_clip_3.mp4",
+      "true_action": "ironing a garment",
+      "conflict_action": "folding laundry",
+      "question": "What is the prominent action in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are distinct and don't typically occur simultaneously. Ironing and folding are both laundry tasks, but one is a finishing step and the other is a preparation/storage step. A person wouldn't generally be actively ironing *while* folding, making them mutually exclusive in a single focused action."
+      },
+      "visual_screen": {
+        "true_present": "no",
+        "conflict_present": "yes",
+        "frames_sufficient": "yes",
+        "evidence": "The frames show a woman handling a white garment, lifting it up, and then placing it on an ironing board to fold it in half. While the setting is a laundry room with an ironing board, the specific action performed is folding the garment, not using an iron to press it. Therefore, the conflict action (folding laundry) is present, and the true action (ironing a garment) is not."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_YQiTt8b6N60_clip_3",
+      "source_id": "YQiTt8b6N60",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/YQiTt8b6N60_clip_3.mp4",
+      "true_action": "scuba diving",
+      "conflict_action": "smiling",
+      "question": "What is the predominant action captured in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "Both actions are very distinct and unlikely to occur simultaneously as a primary action in a video. Scuba diving is a complex physical activity, while smiling is an expression. There's no inherent reason someone *would* be smiling *instead* of scuba diving."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "yes",
+        "frames_sufficient": "yes",
+        "evidence": "The TRUE action 'scuba diving' is clearly visible in frames 8, 13, 14, and 15, showing divers with full gear underwater. The CONFLICT action 'smiling' is also present in frames 3, 5, 6, 12, and 16, where individuals are seen smiling. Since the conflict action is visible, it is not absent."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_YgFwFoqglKc_clip_1",
+      "source_id": "YgFwFoqglKc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/YgFwFoqglKc_clip_1.mp4",
+      "true_action": "combining the ingredients and mixing them together",
+      "conflict_action": "adding the cooked chicken and seasonings, then mixing everything together",
+      "question": "What is the predominant action captured in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "The conflict action *includes* the correct action as a substep (mixing). While it adds more detail, it's not a truly different action. They aren't mutually exclusive because the conflict action inherently *contains* the correct action. The conflict action is a more complete version of the correct action, not a different one."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The frames clearly show raw chicken in a bowl (not cooked). The person adds white powder (likely cornstarch or salt) and liquid seasonings (soy sauce/oil) to the raw meat. They then use their hands to mix the ingredients together. This matches the TRUE action of combining and mixing ingredients. The CONFLICT action is not present because the chicken is visibly raw (pink/flesh-colored) throughout the process, not cooked."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc__3xMhj4mbsk_clip_3",
+      "source_id": "_3xMhj4mbsk",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/_3xMhj4mbsk_clip_3.mp4",
+      "true_action": "painting a table",
+      "conflict_action": "creating items with milk paint",
+      "question": "What is the predominant action captured in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are distinct. Painting a table is a specific task, while creating items with milk paint is a broader activity that *could* include painting a table, but doesn't have to. The conflict action describes a method/material, not a different action.  However, it's plausible someone could be doing both simultaneously (painting a table *with* milk paint), but the actions themselves aren't inherently linked. The conflict action is a different process, not just a synonym or substep of the true action."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "yes",
+        "frames_sufficient": "yes",
+        "evidence": "The frames clearly show a person painting a wooden table with a light green paint (visible in frames 2-16). The action of 'painting a table' is explicitly depicted. However, the 'conflict' action 'creating items with milk paint' is also present because frames 8 and 9 contain on-screen text stating 'After one coat of milk paint,' which confirms the specific material being used is milk paint. Since the action involves using milk paint on an item (the table), both descriptions are factually supported by the visual and textual evidence in the frames."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_baSx0q9LKg0_clip_1",
+      "source_id": "baSx0q9LKg0",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/baSx0q9LKg0_clip_1.mp4",
+      "true_action": "eating a chocolate cake",
+      "conflict_action": "mixing eggs and sugar",
+      "question": "What is the key action shown in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are clearly distinct and don't overlap. Eating a cake and preparing ingredients for baking are separate activities. No ambiguity present."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "yes",
+        "frames_sufficient": "yes",
+        "evidence": "Frames 1-10 clearly show a chocolate cake with a slice removed, confirming the 'eating a chocolate cake' action. Frames 11-15 show a hand holding a piece of the cake with a bite taken out of it, further confirming the eating action. Frame 16 shows hands cracking an egg into a glass bowl, which is a step in 'mixing eggs and sugar', thus the conflict action is also present."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_cCAct_Q8QTw_clip_1",
+      "source_id": "cCAct_Q8QTw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/cCAct_Q8QTw_clip_1.mp4",
+      "true_action": "bringing a pot of salted water to a boil",
+      "conflict_action": "cooking pasta",
+      "question": "What is the predominant action captured in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "While 'bringing water to a boil' and 'cooking pasta' *can* be separate actions, they are very tightly coupled and often happen sequentially as part of the same overall task. 'Cooking pasta' inherently *requires* bringing water to a boil, making them not truly mutually exclusive in a practical sense. The conflict action is a logical next step, not a different action."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "yes",
+        "frames_sufficient": "yes",
+        "evidence": "The first 15 frames clearly show a pot of water boiling with salt being added, matching the TRUE action. However, the final frame (16) shows pasta being poured into the pot with the caption 'Cook pasta in the boiling water', which confirms the CONFLICT action is also present in the sequence."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_cMndipw7_As_clip_3",
+      "source_id": "cMndipw7_As",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/cMndipw7_As_clip_3.mp4",
+      "true_action": "using a hammer to remove debris",
+      "conflict_action": "using a flat equipment to move the dumbbell shaped steels",
+      "question": "What is the prominent action in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are clearly distinct and don't overlap. One involves hammering debris, the other moving steel with flat equipment.  There's no inherent reason to do both simultaneously or in a way that one directly prevents the other. The descriptions are natural English."
+      },
+      "visual_screen": {
+        "true_present": "no",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The worker is using a long, thin tool (likely a chisel or pry bar) to work on the rail, not a hammer. There are no dumbbell-shaped steels visible in the scene, so the conflict action is also absent."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_g9b-kCC79kQ_clip_1",
+      "source_id": "g9b-kCC79kQ",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/g9b-kCC79kQ_clip_1.mp4",
+      "true_action": "attending a casino event",
+      "conflict_action": "playing blackjack in a casino",
+      "question": "What is the main activity in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "The conflict action (playing blackjack) is a *part* of attending a casino event. It's not a mutually exclusive alternative. While you can attend a casino event *without* playing blackjack, the conflict action is a very common activity *within* the true action.  Therefore, they aren't suitable for a controlled intervention as the conflict isn't plausibly absent."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The frames clearly depict a casino event. Frames 2, 4, and 5 show signage for 'Tournoi Le Classique' (a tournament), and frames 6-9 show a registration or lobby area with people standing and socializing, which aligns with 'attending a casino event'. While a 'Black Jack' logo is visible in frame 3, there are no frames showing people actively playing the game (cards, chips, table interaction), so the conflict action is absent."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_luS_76U4OCw_clip_4",
+      "source_id": "luS_76U4OCw",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/luS_76U4OCw_clip_4.mp4",
+      "true_action": "adding bacon to a hot pot",
+      "conflict_action": "adding the meat back into the pan",
+      "question": "What is the key action shown in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are distinct and don't naturally occur together in a typical cooking scenario. Adding bacon to a hot pot is different from returning meat to a pan. There's no inherent reason someone would do both simultaneously or as a direct response to the other."
+      },
+      "visual_screen": {
+        "true_present": "no",
+        "conflict_present": "yes",
+        "frames_sufficient": "yes",
+        "evidence": "The frames show a sequence where bacon is being removed from a pot using a slotted spoon and placed onto a paper towel in a bowl. This action corresponds to 'removing bacon' or 'draining bacon', which is the opposite of 'adding bacon to a hot pot' (the pot is already in use). The action of 'adding the meat back into the pan' is not visible; the meat is being taken out. Therefore, the true action is not present, and the conflict action is also not present, but the frames clearly show the removal process, making the 'adding' label incorrect."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_o8n1YnT8ZZ8_clip_1",
+      "source_id": "o8n1YnT8ZZ8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/o8n1YnT8ZZ8_clip_1.mp4",
+      "true_action": "juicing lemons",
+      "conflict_action": "making sparkling lemonade",
+      "question": "What is the predominant action captured in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "While 'juicing lemons' and 'making sparkling lemonade' aren't *impossible* to do simultaneously, making lemonade *includes* juicing lemons. It's not a truly conflicting action, but a subsequent step. The conflict isn't a clear 'different action' - it's a more complex action *using* the first action.  A better conflict would be something like 'chopping wood'."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "Frames 7-12 clearly show a person using a manual citrus reamer to juice lemons, which directly confirms the 'juicing lemons' action. While frames 13-16 show liquid being poured into a pot and stirred (likely making syrup or a base), there is no visual evidence of carbonation, bubbles, or the specific process of making 'sparkling' lemonade, so the conflict action is absent."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_pUmjiLjhxgc_clip_12",
+      "source_id": "pUmjiLjhxgc",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/pUmjiLjhxgc_clip_12.mp4",
+      "true_action": "mixing the ingredients",
+      "conflict_action": "Mixing flour and water to make dough.",
+      "question": "What is the prominent action in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "The conflict action is a *type* of mixing, specifically related to dough. While not identical to 'mixing the ingredients' generally, it's a very closely related action and not a truly independent, mutually exclusive conflict. It's a substep or specific example of the true action, not a different action that could plausibly be absent while the true action occurs."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The video clearly shows a person mixing a green dressing in a small bowl (frames 1-3) and then pouring it over a salad of vegetables (cucumbers, tomatoes, carrots) and mixing it with a fork (frames 4-16). This aligns perfectly with 'mixing the ingredients'. The conflict action 'Mixing flour and water to make dough' is not present as the ingredients are clearly vegetables and a liquid dressing, not flour and water."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_qdg_pmS934Q_clip_1",
+      "source_id": "qdg_pmS934Q",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/qdg_pmS934Q_clip_1.mp4",
+      "true_action": "mixing and blending ingredients to make a smooth sauce",
+      "conflict_action": "adding various ingredients to a bowl and mixing them well",
+      "question": "What is the predominant action captured in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "The actions are very similar. Both describe the process of combining ingredients to create a mixture. 'Blending' implies a more refined process than 'mixing well', but it's not a *different* action, more a degree of the same action. They aren't mutually exclusive; one could easily be a step within the other. The conflict isn't a clear, distinct alternative action."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The video frames clearly show a sequence of mixing and blending ingredients in a bowl. Starting with dry spices, liquid is added, and a spoon is used to vigorously stir the mixture until it becomes a smooth, creamy sauce. This aligns perfectly with the 'TRUE' action. The 'CONFLICT' action of adding various ingredients to a bowl is not depicted; the ingredients are already in the bowl or added one by one to be mixed, not a bulk addition of various items."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_v-GtKLHLmsU_clip_1",
+      "source_id": "v-GtKLHLmsU",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/v-GtKLHLmsU_clip_1.mp4",
+      "true_action": "seasoning the bacon",
+      "conflict_action": "seasoning the bacon with pepper before cooking",
+      "question": "What is the key action shown in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "The conflict action is a *specific instance* of the true action (seasoning bacon). It's not a different action, but a more detailed one. While technically you can't do *both* simultaneously, it's not a good conflict because it's a refinement, not an alternative.  The conflict is a substep of the correct action, not a mutually exclusive alternative."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "yes",
+        "frames_sufficient": "yes",
+        "evidence": "The frames clearly show a person wearing blue gloves sprinkling a granular substance (seasoning) onto raw bacon strips laid out on a foil-lined tray. This confirms the action of 'seasoning the bacon'. The conflict action 'seasoning the bacon with pepper before cooking' is also present because the bacon is visibly raw (pink and uncooked) during the seasoning process, and the substance being applied is consistent with pepper or a spice blend. The sequence of frames provides sufficient context to verify both the action and the state of the food."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_xS78EktJZZA_clip_13",
+      "source_id": "xS78EktJZZA",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/xS78EktJZZA_clip_13.mp4",
+      "true_action": "frying the potatoes in the pan and placing them on a plate",
+      "conflict_action": "adding milk to the potatoes and mashing them",
+      "question": "What is the prominent action in the video?",
+      "text_screen": {
+        "mutually_exclusive": true,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": true,
+        "ambiguity": "The actions are clearly distinct cooking methods for potatoes. Frying vs. mashing with milk represents a fundamental difference in preparation, making a conflict highly plausible if one is attempted instead of the other."
+      },
+      "visual_screen": {
+        "true_present": "partial",
+        "conflict_present": "no",
+        "frames_sufficient": "no",
+        "evidence": "The frames clearly show potatoes being fried in a pan on a stovetop, which corresponds to the first part of the TRUE action. However, the action of placing them on a plate is not visible in the provided sequence. The CONFLICT action (adding milk and mashing) is absent."
+      },
+      "machine_approved": false
+    },
+    {
+      "query_id": "vidhalluc_zrnxRV3yLR8_clip_3",
+      "source_id": "zrnxRV3yLR8",
+      "video_path": "/home/bn/uarcap_q2_runtime/data/vidhalluc/videos/ACH/zrnxRV3yLR8_clip_3.mp4",
+      "true_action": "applying wallpaper",
+      "conflict_action": "smoothing wallpaper with a spatula",
+      "question": "What is the key action shown in the video?",
+      "text_screen": {
+        "mutually_exclusive": false,
+        "natural": true,
+        "length_ok": true,
+        "conflict_plausibly_absent": false,
+        "ambiguity": "The conflict action is a *step within* applying wallpaper, not a different action. Smoothing is part of the application process. They are not mutually exclusive; you apply *by* smoothing."
+      },
+      "visual_screen": {
+        "true_present": "yes",
+        "conflict_present": "no",
+        "frames_sufficient": "yes",
+        "evidence": "The frames clearly show the process of applying wallpaper. The first sequence shows a person peeling a backing off a sheet of wallpaper (featuring a My Little Pony character) and positioning it on a surface. The subsequent frames show the person using their bare hands to press and smooth the wallpaper onto the wall. While the action of smoothing is performed, it is done with hands, not a spatula, so the conflict action is absent."
+      },
+      "machine_approved": false
+    }
+  ]
+}

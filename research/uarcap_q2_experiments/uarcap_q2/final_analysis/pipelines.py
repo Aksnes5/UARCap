@@ -117,3 +117,28 @@ def prepare_validation_package(out_dir: Path | None = None) -> dict:
                "note": "Blind validation package; human verification pending."}
     (out / "VALIDATION60_RECEIPT.json").write_text(json.dumps(receipt, indent=2), encoding="utf-8")
     return receipt
+
+
+def prepare_e3_bridge_approved(candidates_path: Path | None = None, min_items: int = 20) -> dict:
+    """Freeze machine-assisted E3-Bridge candidates into the shared E3 approved schema.
+
+    TRUE condition = external retrieved caption (natural evidence); CONFLICT = the model
+    claim contradicted by the human reference; NEU = unrelated action. Every pair remains
+    CANDIDATE_PENDING_VERIFICATION and may only be used in machine-assisted mode.
+    """
+    cp = Path(candidates_path or (O / "final_analysis/E3_BRIDGE_CANDIDATES.json"))
+    data = json.loads(cp.read_text(encoding="utf-8")) if cp.is_file() else {"candidates": []}
+    formal = {r["query_id"]: r for r in read_jsonl(FORMAL / "formal_candidates.jsonl")}
+    approved = []
+    for c in data.get("candidates", []):
+        f = formal.get(c["query_id"])
+        if not f: continue
+        approved.append({"query_id": c["query_id"], "source_id": None, "video_path": f["video_path"],
+                         "true_action": c["external_caption"], "conflict_action": c["model_claim"],
+                         "neutral_text": "reading a book in a library", "status": "CANDIDATE_PENDING_VERIFICATION",
+                         "bridge_requires_visual_check": True})
+    payload = {"schema": "uarcap_q2.e3_bridge_approved.v1", "status": "MACHINE_ASSISTED_UNVALIDATED",
+               "utc": utcnow(), "n_approved": len(approved), "min_required": min_items,
+               "eligible": len(approved) >= min_items, "approved": approved}
+    (O / "final_analysis/E3_BRIDGE_APPROVED.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return payload

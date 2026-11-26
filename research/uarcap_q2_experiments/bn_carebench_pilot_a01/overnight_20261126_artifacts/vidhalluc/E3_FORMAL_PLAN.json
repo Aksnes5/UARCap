@@ -1,0 +1,20 @@
+{
+  "schema": "uarcap_q2.formal_e3_plan.v1",
+  "utc": "2026-11-26T05:33:16.103885+00:00",
+  "n_approved_candidates": 159,
+  "min_required": 150,
+  "eligible": true,
+  "models": [
+    "videollama_evcap_frozen_v08",
+    "Qwen/Qwen3.8-27B-FP8"
+  ],
+  "arms": [
+    "E3_BASE",
+    "E3_SUP",
+    "E3_CON",
+    "E3_NEU"
+  ],
+  "planned_generations": 1272,
+  "status": "MACHINE_ASSISTED_UNVALIDATED",
+  "note": "Formal E3 remains exploratory until real human verification; no fabricated human gate."
+}

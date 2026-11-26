@@ -21,12 +21,14 @@ def utcnow(): return datetime.now(timezone.utc).isoformat()
 def read(p): return [json.loads(l) for l in open(p)] if Path(p).is_file() else []
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--generator",choices=["videollama","qwen"],required=True); ap.add_argument("--chunk",type=int,default=45); a=ap.parse_args()
-    if not APPROVED.is_file(): print("HARD_BLOCK: E3_FORMAL_APPROVED.json missing"); return 3
-    ap_data=json.loads(APPROVED.read_text()); approved=ap_data.get("approved",[])
-    if len(approved)<MIN:
-        print(json.dumps({"status":"AWAITING_SUFFICIENT_CANDIDATES","n_approved":len(approved),"min":MIN})); return 3
-    out=W/("formal_"+a.generator); out.mkdir(parents=True,exist_ok=True)
+    ap=argparse.ArgumentParser(); ap.add_argument("--generator",choices=["videollama","qwen"],required=True); ap.add_argument("--chunk",type=int,default=45)
+    ap.add_argument("--approved",type=Path,default=APPROVED); ap.add_argument("--out-prefix",default="formal")
+    ap.add_argument("--frames-dir",type=Path,default=FRAMES); ap.add_argument("--min-approved",type=int,default=MIN); a=ap.parse_args()
+    if not a.approved.is_file(): print(f"HARD_BLOCK: {a.approved} missing"); return 3
+    ap_data=json.loads(a.approved.read_text()); approved=ap_data.get("approved",[])
+    if len(approved)<a.min_approved:
+        print(json.dumps({"status":"AWAITING_SUFFICIENT_CANDIDATES","n_approved":len(approved),"min":a.min_approved})); return 3
+    out=W/(a.out_prefix+"_"+a.generator); out.mkdir(parents=True,exist_ok=True)
     pred=out/"predictions.jsonl"; trace=out/"input_traces.jsonl"; fail=out/"failures.jsonl"
     done={(r["query_id"],r["arm"]) for r in read(pred)}
     from uarcap_q2.common.gpu_lock import GPULockConfig, acquire_cooperative_gpu_lock
@@ -62,7 +64,7 @@ def main():
             for start in range(0,len(pend),step):
                 batch=pend[start:start+step]; items=[]
                 for c in batch:
-                    fps=sorted((FRAMES/c["query_id"]).glob("frame_*.jpg"))
+                    fps=sorted((a.frames_dir/c["query_id"]).glob("frame_*.jpg"))
                     if len(fps)!=16: continue
                     frames=[Image.open(p).convert("RGB") for p in fps]
                     q=QueryRecord(query_id=c["query_id"],dataset_id="VidHalluc-ACH",source_id=c["source_id"],source_id_status="VERIFIED_EXACT",

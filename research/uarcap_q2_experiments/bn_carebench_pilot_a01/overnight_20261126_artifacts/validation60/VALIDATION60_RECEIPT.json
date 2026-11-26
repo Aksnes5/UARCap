@@ -1,0 +1,12 @@
+{
+  "schema": "uarcap_q2.validation60_package.v1",
+  "utc": "2026-11-26T05:20:50.979980+00:00",
+  "n_videos": 60,
+  "n_validation_ids": 60,
+  "files": {
+    "tasks_V1": "/home/bn/uarcap_q2_runtime/outputs/final_analysis/validation_60/blind_tasks_e2_V1.json",
+    "tasks_V2": "/home/bn/uarcap_q2_runtime/outputs/final_analysis/validation_60/blind_tasks_e2_V2.json",
+    "blind_key": "/home/bn/uarcap_q2_runtime/outputs/final_analysis/validation_60/blind_key_e2_DO_NOT_OPEN.json"
+  },
+  "note": "Blind validation package; human verification pending."
+}

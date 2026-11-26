@@ -7,15 +7,18 @@ from pathlib import Path
 sys.path.insert(0,"/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments"); sys.path.insert(0,str(Path(__file__).parent))
 from vidhalluc_pipeline import _gemma_backend,_llama_backend,_eval_prompt,_parse_json
 from uarcap_q2.common.gpu_lock import GPULockConfig,acquire_cooperative_gpu_lock
+import argparse
 W=Path("/home/bn/uarcap_q2_runtime/outputs/pilot_e3_exploratory")
-OUT=W/"formal_evaluation"; OUT.mkdir(parents=True,exist_ok=True)
+aparser=argparse.ArgumentParser(); aparser.add_argument("--approved",type=Path,default=W/"E3_FORMAL_APPROVED.json")
+aparser.add_argument("--out-prefix",default="formal"); aargs=aparser.parse_args()
+OUT=W/(aargs.out_prefix+"_evaluation"); OUT.mkdir(parents=True,exist_ok=True)
 def utcnow(): return datetime.now(timezone.utc).isoformat()
 def read(p): return [json.loads(l) for l in open(p)] if Path(p).is_file() else []
-approved=json.loads((W/"E3_FORMAL_APPROVED.json").read_text())["approved"] if (W/"E3_FORMAL_APPROVED.json").is_file() else []
+approved=json.loads(aargs.approved.read_text())["approved"] if aargs.approved.is_file() else []
 if len(approved)<150: print(json.dumps({"status":"AWAITING_SUFFICIENT_CANDIDATES","n":len(approved)})); raise SystemExit(3)
 ap={c["query_id"]:c for c in approved}
 preds=[]
-for gen in ("formal_videollama","formal_qwen"):
+for gen in (aargs.out_prefix+"_videollama",aargs.out_prefix+"_qwen"):
     for r in read(W/gen/"predictions.jsonl"):
         if r["query_id"] in ap: preds.append({**r,"generator":gen})
 rows_path=OUT/"E3_FORMAL_EVAL.jsonl"; done={(r["query_id"],r["arm"],r["generator"],r["judge"]) for r in read(rows_path)}
@@ -41,4 +44,4 @@ pairs=[v for v in by.values() if len(v)==2]
 summ={"schema":"uarcap_q2.formal_e3_eval.v1","status":"MACHINE_ASSISTED_UNVALIDATED","utc":utcnow(),"n_rows":len(rows),"n_pairs":len(pairs),
  "true_agreement":round(sum(v["gemma-3-27b-fp8"]["y_true"]==v["llama-3.3-70b-w4a16"]["y_true"] for v in pairs)/max(1,len(pairs)),4),
  "conflict_agreement":round(sum(v["gemma-3-27b-fp8"]["y_conflict"]==v["llama-3.3-70b-w4a16"]["y_conflict"] for v in pairs)/max(1,len(pairs)),4)}
-(OUT/"E3_FORMAL_CROSS_JUDGE.json").write_text(json.dumps(summ,indent=2)); print(json.dumps(summ,indent=2)); raise SystemExit(0)
+(OUT/f"E3_{aargs.out_prefix.upper()}_CROSS_JUDGE.json").write_text(json.dumps(summ,indent=2)); print(json.dumps(summ,indent=2)); raise SystemExit(0)

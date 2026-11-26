@@ -307,3 +307,36 @@ def core_event_audit(lock: dict) -> dict:
     ents = lock.get("entries", [])
     return {"n": len(ents), "n_with_core": sum(1 for e in ents if e.get("core_event_candidate")),
             "core_lock_sha256": lock.get("lock_sha256"), "created_before_generation": bool(lock.get("created_before_any_generation") or lock.get("created_before_any_judge_call"))}
+
+
+def two_stage_human_correction(rows: list[dict], precision: float, recall: float,
+                               n_boot: int = 1000, seed: int = 20261125) -> dict:
+    """Sensitivity interface for two-stage human correction of the automatic support rate.
+
+    `precision`/`recall` refer to the automatic support classifier against adjudicated human
+    labels. The corrected support rate uses the Rogan-Gladen relation with cluster bootstrap;
+    it is a sensitivity analysis, never a substitute for the human calibration gate.
+    """
+    if not (0 < precision <= 1 and 0 < recall <= 1):
+        raise ValueError("precision/recall must be in (0,1]")
+    denom = recall - (1 - precision)
+    out = {}
+    for arm in ARMS:
+        per_q = {}
+        for r in rows:
+            if r.get("arm") == arm and r.get("parse_status") == "OK" and r.get("n_claims"):
+                per_q[r["query_id"]] = r.get("n_entail_ref", 0) / r["n_claims"]
+        if not per_q or denom <= 0:
+            out[arm] = {"n": len(per_q), "corrected_support": None, "ci95": None}
+            continue
+        vals = np.array(list(per_q.values()), dtype=float)
+        corrected = np.clip((vals - (1 - precision)) / denom, 0.0, 1.0)
+        rng = np.random.default_rng(seed); means = []
+        for _ in range(n_boot):
+            idx = rng.integers(0, len(vals), len(vals))
+            means.append(float(np.clip((vals[idx] - (1 - precision)) / denom, 0, 1).mean()))
+        out[arm] = {"n": len(vals), "observed_support": round(float(vals.mean()), 4),
+                    "corrected_support": round(float(corrected.mean()), 4),
+                    "ci95": [round(float(np.percentile(means, 2.5)), 4), round(float(np.percentile(means, 97.5)), 4)],
+                    "precision": precision, "recall": recall}
+    return out

@@ -529,7 +529,7 @@
     },
     {
       "id": "formal_cross_qwen_v2",
-      "priority": 108,
+      "priority": 93,
       "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
       "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=formal_cross_qwen_v2 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/a2_cross_judge.py --a2-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/qwen_eval --out-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/qwen_machine_cross --model-path /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/models_campaign/M08_llama33_70b --model-id meta-llama/Llama-3.3-70B-Instruct-W4A16 --model-family llama --max-model-len 2048 --max-new-tokens 256 --gpu-mem 0.95 --chunk 8 --max-retries 2",
       "timeout_sec": 7200,
@@ -656,6 +656,55 @@
       "depends_on": [
         "e3_formal_generate_videollama",
         "e3_formal_generate_qwen"
+      ]
+    },
+    {
+      "id": "e3_bridge_prepare",
+      "priority": 120,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=e3_bridge_prepare /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/e3_bridge_prepare.py",
+      "timeout_sec": 600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "formal_eval_qwen"
+      ]
+    },
+    {
+      "id": "e3_bridge_generate_videollama",
+      "priority": 121,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=e3_bridge_generate_videollama /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/e3_formal_generate.py --generator videollama --approved /home/bn/uarcap_q2_runtime/outputs/final_analysis/E3_BRIDGE_APPROVED.json --out-prefix bridge --frames-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames --chunk 45 --min-approved 20",
+      "timeout_sec": 18000,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "e3_bridge_prepare"
+      ]
+    },
+    {
+      "id": "e3_bridge_generate_qwen",
+      "priority": 122,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=e3_bridge_generate_qwen /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/e3_formal_generate.py --generator qwen --approved /home/bn/uarcap_q2_runtime/outputs/final_analysis/E3_BRIDGE_APPROVED.json --out-prefix bridge --frames-dir /home/bn/uarcap_q2_runtime/outputs/formal_candidate_unvalidated/formal_frames --chunk 5 --min-approved 20",
+      "timeout_sec": 18000,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "e3_bridge_prepare"
+      ]
+    },
+    {
+      "id": "e3_bridge_evaluate",
+      "priority": 123,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=e3_bridge_evaluate /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/e3_formal_evaluate.py --approved /home/bn/uarcap_q2_runtime/outputs/final_analysis/E3_BRIDGE_APPROVED.json --out-prefix bridge",
+      "timeout_sec": 18000,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "e3_bridge_generate_videollama",
+        "e3_bridge_generate_qwen"
       ]
     }
   ]
