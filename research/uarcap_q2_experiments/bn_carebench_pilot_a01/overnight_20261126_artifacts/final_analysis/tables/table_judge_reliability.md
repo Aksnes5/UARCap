@@ -1,0 +1,14 @@
+| model | arm | n | disagreement_rate | directions |
+| --- | --- | --- | --- | --- |
+| formal_videollama | ARM_A0 | 1627 | 0.1168 | {'entailed->unmentioned': 52, 'unmentioned->contradicted': 64, 'entailed->contradicted': 47, 'unmentioned->entailed': 9, 'contradicted->unmentioned': 12, 'contradicted->entailed': 6} |
+| formal_videollama | ARM_A1 | 1657 | 0.105 | {'entailed->unmentioned': 47, 'entailed->contradicted': 49, 'unmentioned->contradicted': 52, 'unmentioned->entailed': 12, 'contradicted->entailed': 5, 'contradicted->unmentioned': 9} |
+| formal_videollama | ARM_A7 | 1732 | 0.108 | {'entailed->unmentioned': 45, 'entailed->contradicted': 47, 'unmentioned->entailed': 25, 'unmentioned->contradicted': 53, 'contradicted->unmentioned': 16, 'contradicted->entailed': 1} |
+| formal_qwen38 | ARM_A0 | 2927 | 0.1179 | {'entailed->unmentioned': 79, 'entailed->contradicted': 95, 'unmentioned->entailed': 53, 'unmentioned->contradicted': 80, 'contradicted->entailed': 10, 'contradicted->unmentioned': 28} |
+| formal_qwen38 | ARM_A1 | 2966 | 0.1146 | {'entailed->unmentioned': 77, 'entailed->contradicted': 100, 'unmentioned->entailed': 57, 'unmentioned->contradicted': 64, 'contradicted->unmentioned': 29, 'contradicted->entailed': 13} |
+| formal_qwen38 | ARM_A7 | 3018 | 0.112 | {'entailed->unmentioned': 79, 'entailed->contradicted': 101, 'unmentioned->entailed': 55, 'unmentioned->contradicted': 56, 'contradicted->unmentioned': 39, 'contradicted->entailed': 8} |
+| a3_qwen38 | ARM_A0 | 147 | 0.1565 | {'entailed->contradicted': 6, 'entailed->unmentioned': 7, 'unmentioned->contradicted': 6, 'unmentioned->entailed': 3, 'contradicted->unmentioned': 1} |
+| a3_qwen38 | ARM_A1 | 143 | 0.2028 | {'entailed->contradicted': 9, 'entailed->unmentioned': 11, 'unmentioned->entailed': 3, 'unmentioned->contradicted': 6} |
+| a3_qwen38 | ARM_A7 | 154 | 0.1883 | {'entailed->contradicted': 7, 'entailed->unmentioned': 7, 'unmentioned->contradicted': 8, 'contradicted->unmentioned': 4, 'unmentioned->entailed': 3} |
+| a3_qwen35 | ARM_A0 | 152 | 0.1447 | {'entailed->contradicted': 6, 'entailed->unmentioned': 9, 'unmentioned->contradicted': 4, 'contradicted->unmentioned': 3} |
+| a3_qwen35 | ARM_A1 | 138 | 0.1377 | {'entailed->contradicted': 5, 'unmentioned->entailed': 2, 'entailed->unmentioned': 6, 'contradicted->entailed': 2, 'contradicted->unmentioned': 2, 'unmentioned->contradicted': 2} |
+| a3_qwen35 | ARM_A7 | 145 | 0.1379 | {'entailed->contradicted': 4, 'unmentioned->contradicted': 5, 'entailed->unmentioned': 7, 'unmentioned->entailed': 1, 'contradicted->unmentioned': 2, 'contradicted->entailed': 1} |

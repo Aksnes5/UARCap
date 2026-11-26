@@ -1,0 +1,13 @@
+{
+  "schema": "uarcap_q2.e3_exploratory_receipt.v1",
+  "status": "EXPLORATORY_E3_UNCALIBRATED",
+  "utc": "2026-11-26T05:12:04.944113+00:00",
+  "n_approved_candidates": 20,
+  "n_generations_videollama": 80,
+  "n_generations_qwen": 80,
+  "n_eval_rows": 320,
+  "n_eval_pairs": 160,
+  "true_agreement": 0.9125,
+  "conflict_agreement": 0.9875,
+  "note": "Machine-assisted exploratory E3; no human validation; no confirmatory statistics."
+}

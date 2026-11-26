@@ -1,31 +1,22 @@
 {
-  "updated_utc": "2026-11-26T04:38:39.169145+00:00",
+  "updated_utc": "2026-11-26T05:19:40.255230+00:00",
   "started_utc": "2026-11-25T18:09:21.512942+00:00",
-  "current_task": "a3_visual_verify_v3",
-  "current_task_pid": 2088636,
-  "progress": {
-    "task": "a3_visual_verify_v3",
-    "phase": "prepare",
-    "model": "Qwen3.8-27B-FP8",
-    "completed": 0,
-    "total": 120,
-    "updated_utc": "2026-11-26T04:38:01.041689+00:00",
-    "n_flagged": 120,
-    "n_unique": 260
-  },
+  "current_task": "e3_formal_visual",
+  "current_task_pid": 2109237,
+  "progress": null,
   "gpu": {
-    "utilization_pct": 99,
-    "memory_used_mib": 33632,
+    "utilization_pct": 100,
+    "memory_used_mib": 41676,
     "memory_total_mib": 49140
   },
-  "cumulative_task_elapsed_sec": 24114.8,
+  "cumulative_task_elapsed_sec": 26164.5,
   "task_counts": {
     "RUNNING": 2,
-    "COMPLETED": 23,
-    "BLOCKED": 8,
-    "PENDING": 13
+    "COMPLETED": 33,
+    "BLOCKED": 10,
+    "PENDING": 8
   },
-  "n_tasks": 46,
+  "n_tasks": 53,
   "stop_requested": false,
   "network_download": {
     "status": "COMPLETED",

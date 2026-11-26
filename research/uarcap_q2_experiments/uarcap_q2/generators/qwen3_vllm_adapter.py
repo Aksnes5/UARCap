@@ -449,7 +449,9 @@ class Qwen3VLLMMultimodalAdapter(GeneratorAdapter):
         batch_rendered: list[dict[str, str]] = []
         batch_vsha: list[str] = []
         for it in items:
-            msgs, rendered, vsha = self.build_multimodal_messages(it.packet, it.frame_images or [], use_data_urls=True)
+            msgs, rendered, vsha = self.build_multimodal_messages(
+                it.packet, it.frame_images or [], use_data_urls=(self.cfg.multimodal_input_key == "image")
+            )
             batch_msgs.append(msgs)
             batch_rendered.append(rendered)
             batch_vsha.append(vsha)

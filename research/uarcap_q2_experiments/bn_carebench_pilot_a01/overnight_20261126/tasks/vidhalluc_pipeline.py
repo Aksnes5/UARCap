@@ -263,8 +263,10 @@ def stage_approve() -> int:
     approved, review = [], []
     for qid in sorted(cands):
         c = cands[qid]; t = (text.get(qid) or {}).get("screen") or {}; v = (vis.get(qid) or {}).get("screen") or {}
+        yn = lambda x: str(x).strip().lower()
         ok = (t.get("mutually_exclusive") and t.get("natural") and t.get("length_ok") and t.get("conflict_plausibly_absent")
-              and v.get("true_present") == "yes" and v.get("conflict_present") == "no" and v.get("frames_sufficient") == "yes")
+              and yn(v.get("true_present")) == "yes" and yn(v.get("conflict_present")) == "no"
+              and yn(v.get("frames_sufficient")) == "yes")
         rec = {**c, "text_screen": t, "visual_screen": v, "machine_approved": bool(ok)}
         if ok and len(approved) < 20:
             neu = random.Random(int(sha256(qid.encode()).hexdigest()[:8], 16)).choice(
@@ -436,8 +438,8 @@ def stage_evaluate() -> int:
                "n_rows": len(allrows), "n_pairs": len(agree),
                "true_agreement": round(sum(x["true_agree"] for x in agree)/max(1,len(agree)), 4),
                "conflict_agreement": round(sum(x["conflict_agree"] for x in agree)/max(1,len(agree)), 4),
-               "y_true_counts": dict(Counter((r["judge"], r["y_true"]) for r in allrows)),
-               "y_conflict_counts": dict(Counter((r["judge"], r["y_conflict"]) for r in allrows))}
+               "y_true_counts": {f"{k[0]}|{k[1]}": v for k, v in Counter((r["judge"], r["y_true"]) for r in allrows).items()},
+               "y_conflict_counts": {f"{k[0]}|{k[1]}": v for k, v in Counter((r["judge"], r["y_conflict"]) for r in allrows).items()}}
     atomic_write(out/"E3_CROSS_JUDGE.json", summary)
     progress(len(by), len(preds), "evaluate")
     print(json.dumps({k: summary[k] for k in ("n_rows","n_pairs","true_agreement","conflict_agreement")}, indent=2))

@@ -1,0 +1,1677 @@
+{
+  "models": {
+    "formal_videollama": {
+      "ARM_A0": {
+        "captions": 600,
+        "parsed_ok": 600,
+        "parse_failure_rate": 0.0,
+        "claims": 1627,
+        "entailed": 1290,
+        "contradicted": 172,
+        "unmentioned": 165,
+        "support_rate": 0.7929,
+        "conflict_rate": 0.1057,
+        "unmentioned_rate": 0.1014,
+        "mean_claims_per_caption": 2.712,
+        "mean_caption_words": 7.57,
+        "core_coverage_mean": 0.6167,
+        "dimensions": {
+          "static_entity_attribute": 263,
+          "dynamic_action_temporal": 586,
+          "mixed": 62,
+          "unclassified": 716
+        }
+      },
+      "ARM_A1": {
+        "captions": 600,
+        "parsed_ok": 600,
+        "parse_failure_rate": 0.0,
+        "claims": 1657,
+        "entailed": 1368,
+        "contradicted": 147,
+        "unmentioned": 142,
+        "support_rate": 0.8256,
+        "conflict_rate": 0.0887,
+        "unmentioned_rate": 0.0857,
+        "mean_claims_per_caption": 2.762,
+        "mean_caption_words": 7.72,
+        "core_coverage_mean": 0.6717,
+        "dimensions": {
+          "static_entity_attribute": 268,
+          "dynamic_action_temporal": 573,
+          "mixed": 66,
+          "unclassified": 750
+        }
+      },
+      "ARM_A7": {
+        "captions": 600,
+        "parsed_ok": 600,
+        "parse_failure_rate": 0.0,
+        "claims": 1732,
+        "entailed": 1397,
+        "contradicted": 144,
+        "unmentioned": 191,
+        "support_rate": 0.8066,
+        "conflict_rate": 0.0831,
+        "unmentioned_rate": 0.1103,
+        "mean_claims_per_caption": 2.887,
+        "mean_caption_words": 8.26,
+        "core_coverage_mean": 0.6767,
+        "dimensions": {
+          "static_entity_attribute": 303,
+          "dynamic_action_temporal": 576,
+          "mixed": 72,
+          "unclassified": 781
+        }
+      }
+    },
+    "formal_qwen38": {
+      "ARM_A0": {
+        "captions": 600,
+        "parsed_ok": 600,
+        "parse_failure_rate": 0.0,
+        "claims": 2928,
+        "entailed": 2185,
+        "contradicted": 280,
+        "unmentioned": 463,
+        "support_rate": 0.7462,
+        "conflict_rate": 0.0956,
+        "unmentioned_rate": 0.1581,
+        "mean_claims_per_caption": 4.88,
+        "mean_caption_words": 13.96,
+        "core_coverage_mean": 0.7267,
+        "dimensions": {
+          "static_entity_attribute": 937,
+          "dynamic_action_temporal": 643,
+          "mixed": 202,
+          "unclassified": 1146
+        }
+      },
+      "ARM_A1": {
+        "captions": 600,
+        "parsed_ok": 600,
+        "parse_failure_rate": 0.0,
+        "claims": 2967,
+        "entailed": 2253,
+        "contradicted": 279,
+        "unmentioned": 435,
+        "support_rate": 0.7594,
+        "conflict_rate": 0.094,
+        "unmentioned_rate": 0.1466,
+        "mean_claims_per_caption": 4.945,
+        "mean_caption_words": 14.12,
+        "core_coverage_mean": 0.7533,
+        "dimensions": {
+          "static_entity_attribute": 999,
+          "dynamic_action_temporal": 642,
+          "mixed": 176,
+          "unclassified": 1150
+        }
+      },
+      "ARM_A7": {
+        "captions": 600,
+        "parsed_ok": 600,
+        "parse_failure_rate": 0.0,
+        "claims": 3018,
+        "entailed": 2296,
+        "contradicted": 297,
+        "unmentioned": 425,
+        "support_rate": 0.7608,
+        "conflict_rate": 0.0984,
+        "unmentioned_rate": 0.1408,
+        "mean_claims_per_caption": 5.03,
+        "mean_caption_words": 14.35,
+        "core_coverage_mean": 0.7567,
+        "dimensions": {
+          "static_entity_attribute": 1025,
+          "dynamic_action_temporal": 636,
+          "mixed": 185,
+          "unclassified": 1172
+        }
+      }
+    },
+    "a3_qwen38": {
+      "ARM_A0": {
+        "captions": 30,
+        "parsed_ok": 30,
+        "parse_failure_rate": 0.0,
+        "claims": 147,
+        "entailed": 111,
+        "contradicted": 9,
+        "unmentioned": 27,
+        "support_rate": 0.7551,
+        "conflict_rate": 0.0612,
+        "unmentioned_rate": 0.1837,
+        "mean_claims_per_caption": 4.9,
+        "mean_caption_words": 14.13,
+        "core_coverage_mean": 0.7667,
+        "dimensions": {
+          "static_entity_attribute": 44,
+          "dynamic_action_temporal": 35,
+          "mixed": 7,
+          "unclassified": 61
+        }
+      },
+      "ARM_A1": {
+        "captions": 30,
+        "parsed_ok": 30,
+        "parse_failure_rate": 0.0,
+        "claims": 143,
+        "entailed": 112,
+        "contradicted": 7,
+        "unmentioned": 24,
+        "support_rate": 0.7832,
+        "conflict_rate": 0.049,
+        "unmentioned_rate": 0.1678,
+        "mean_claims_per_caption": 4.767,
+        "mean_caption_words": 14.63,
+        "core_coverage_mean": 0.8333,
+        "dimensions": {
+          "static_entity_attribute": 45,
+          "dynamic_action_temporal": 39,
+          "mixed": 6,
+          "unclassified": 53
+        }
+      },
+      "ARM_A7": {
+        "captions": 30,
+        "parsed_ok": 30,
+        "parse_failure_rate": 0.0,
+        "claims": 154,
+        "entailed": 116,
+        "contradicted": 13,
+        "unmentioned": 25,
+        "support_rate": 0.7532,
+        "conflict_rate": 0.0844,
+        "unmentioned_rate": 0.1623,
+        "mean_claims_per_caption": 5.133,
+        "mean_caption_words": 14.47,
+        "core_coverage_mean": 0.8333,
+        "dimensions": {
+          "static_entity_attribute": 53,
+          "dynamic_action_temporal": 41,
+          "mixed": 6,
+          "unclassified": 54
+        }
+      }
+    },
+    "a3_qwen35": {
+      "ARM_A0": {
+        "captions": 30,
+        "parsed_ok": 30,
+        "parse_failure_rate": 0.0,
+        "claims": 152,
+        "entailed": 127,
+        "contradicted": 7,
+        "unmentioned": 18,
+        "support_rate": 0.8355,
+        "conflict_rate": 0.0461,
+        "unmentioned_rate": 0.1184,
+        "mean_claims_per_caption": 5.067,
+        "mean_caption_words": 14.67,
+        "core_coverage_mean": 0.9,
+        "dimensions": {
+          "static_entity_attribute": 52,
+          "dynamic_action_temporal": 41,
+          "mixed": 1,
+          "unclassified": 58
+        }
+      },
+      "ARM_A1": {
+        "captions": 30,
+        "parsed_ok": 30,
+        "parse_failure_rate": 0.0,
+        "claims": 138,
+        "entailed": 112,
+        "contradicted": 13,
+        "unmentioned": 13,
+        "support_rate": 0.8116,
+        "conflict_rate": 0.0942,
+        "unmentioned_rate": 0.0942,
+        "mean_claims_per_caption": 4.6,
+        "mean_caption_words": 14.17,
+        "core_coverage_mean": 0.9,
+        "dimensions": {
+          "static_entity_attribute": 44,
+          "dynamic_action_temporal": 39,
+          "mixed": 4,
+          "unclassified": 51
+        }
+      },
+      "ARM_A7": {
+        "captions": 30,
+        "parsed_ok": 30,
+        "parse_failure_rate": 0.0,
+        "claims": 145,
+        "entailed": 122,
+        "contradicted": 8,
+        "unmentioned": 15,
+        "support_rate": 0.8414,
+        "conflict_rate": 0.0552,
+        "unmentioned_rate": 0.1034,
+        "mean_claims_per_caption": 4.833,
+        "mean_caption_words": 14.43,
+        "core_coverage_mean": 0.9,
+        "dimensions": {
+          "static_entity_attribute": 54,
+          "dynamic_action_temporal": 41,
+          "mixed": 3,
+          "unclassified": 47
+        }
+      }
+    }
+  },
+  "transitions": {
+    "formal_videollama": {
+      "ARM_A0->ARM_A1": {
+        "added_correct": 364,
+        "lost_correct": 286,
+        "added_error": 56,
+        "removed_error": 81,
+        "added_unmentioned": 51,
+        "removed_unmentioned": 65,
+        "label_flips": 43,
+        "replacements": 43,
+        "unmatched": 404,
+        "core_coverage_delta": 0.055
+      },
+      "ARM_A1->ARM_A7": {
+        "added_correct": 322,
+        "lost_correct": 293,
+        "added_error": 58,
+        "removed_error": 61,
+        "added_unmentioned": 93,
+        "removed_unmentioned": 49,
+        "label_flips": 30,
+        "replacements": 30,
+        "unmatched": 378,
+        "core_coverage_delta": 0.005
+      },
+      "ARM_A0->ARM_A7": {
+        "added_correct": 511,
+        "lost_correct": 404,
+        "added_error": 72,
+        "removed_error": 100,
+        "added_unmentioned": 127,
+        "removed_unmentioned": 91,
+        "label_flips": 40,
+        "replacements": 40,
+        "unmatched": 571,
+        "core_coverage_delta": 0.06
+      }
+    },
+    "formal_qwen38": {
+      "ARM_A0->ARM_A1": {
+        "added_correct": 723,
+        "lost_correct": 655,
+        "added_error": 117,
+        "removed_error": 118,
+        "added_unmentioned": 152,
+        "removed_unmentioned": 191,
+        "label_flips": 83,
+        "replacements": 83,
+        "unmatched": 898,
+        "core_coverage_delta": 0.0267
+      },
+      "ARM_A1->ARM_A7": {
+        "added_correct": 568,
+        "lost_correct": 525,
+        "added_error": 102,
+        "removed_error": 84,
+        "added_unmentioned": 109,
+        "removed_unmentioned": 115,
+        "label_flips": 80,
+        "replacements": 80,
+        "unmatched": 669,
+        "core_coverage_delta": 0.0033
+      },
+      "ARM_A0->ARM_A7": {
+        "added_correct": 895,
+        "lost_correct": 784,
+        "added_error": 152,
+        "removed_error": 135,
+        "added_unmentioned": 172,
+        "removed_unmentioned": 213,
+        "label_flips": 94,
+        "replacements": 94,
+        "unmatched": 1067,
+        "core_coverage_delta": 0.03
+      }
+    },
+    "a3_qwen38": {
+      "ARM_A0->ARM_A1": {
+        "added_correct": 27,
+        "lost_correct": 26,
+        "added_error": 4,
+        "removed_error": 6,
+        "added_unmentioned": 10,
+        "removed_unmentioned": 13,
+        "label_flips": 2,
+        "replacements": 2,
+        "unmatched": 44,
+        "core_coverage_delta": 0.0667
+      },
+      "ARM_A1->ARM_A7": {
+        "added_correct": 38,
+        "lost_correct": 34,
+        "added_error": 8,
+        "removed_error": 2,
+        "added_unmentioned": 9,
+        "removed_unmentioned": 11,
+        "label_flips": 10,
+        "replacements": 10,
+        "unmatched": 39,
+        "core_coverage_delta": 0.0
+      },
+      "ARM_A0->ARM_A7": {
+        "added_correct": 39,
+        "lost_correct": 34,
+        "added_error": 10,
+        "removed_error": 6,
+        "added_unmentioned": 13,
+        "removed_unmentioned": 15,
+        "label_flips": 11,
+        "replacements": 11,
+        "unmatched": 49,
+        "core_coverage_delta": 0.0667
+      }
+    },
+    "a3_qwen35": {
+      "ARM_A0->ARM_A1": {
+        "added_correct": 20,
+        "lost_correct": 35,
+        "added_error": 10,
+        "removed_error": 4,
+        "added_unmentioned": 5,
+        "removed_unmentioned": 8,
+        "label_flips": 6,
+        "replacements": 6,
+        "unmatched": 44,
+        "core_coverage_delta": 0.0
+      },
+      "ARM_A1->ARM_A7": {
+        "added_correct": 30,
+        "lost_correct": 20,
+        "added_error": 1,
+        "removed_error": 6,
+        "added_unmentioned": 7,
+        "removed_unmentioned": 7,
+        "label_flips": 7,
+        "replacements": 7,
+        "unmatched": 28,
+        "core_coverage_delta": 0.0
+      },
+      "ARM_A0->ARM_A7": {
+        "added_correct": 33,
+        "lost_correct": 38,
+        "added_error": 4,
+        "removed_error": 3,
+        "added_unmentioned": 8,
+        "removed_unmentioned": 10,
+        "label_flips": 5,
+        "replacements": 5,
+        "unmatched": 48,
+        "core_coverage_delta": 0.0
+      }
+    }
+  },
+  "reliability": {
+    "formal_videollama": {
+      "n_claims": 5016,
+      "confusion_gemma_to_llama": {
+        "entailed->entailed": 3768,
+        "entailed->unmentioned": 144,
+        "unmentioned->unmentioned": 283,
+        "unmentioned->contradicted": 169,
+        "entailed->contradicted": 143,
+        "contradicted->contradicted": 414,
+        "unmentioned->entailed": 46,
+        "contradicted->unmentioned": 37,
+        "contradicted->entailed": 12
+      },
+      "observed_agreement": 0.8902,
+      "cohen_kappa": 0.6956,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 1627,
+          "disagreement_rate": 0.1168,
+          "directions": {
+            "entailed->unmentioned": 52,
+            "unmentioned->contradicted": 64,
+            "entailed->contradicted": 47,
+            "unmentioned->entailed": 9,
+            "contradicted->unmentioned": 12,
+            "contradicted->entailed": 6
+          }
+        },
+        "ARM_A1": {
+          "n": 1657,
+          "disagreement_rate": 0.105,
+          "directions": {
+            "entailed->unmentioned": 47,
+            "entailed->contradicted": 49,
+            "unmentioned->contradicted": 52,
+            "unmentioned->entailed": 12,
+            "contradicted->entailed": 5,
+            "contradicted->unmentioned": 9
+          }
+        },
+        "ARM_A7": {
+          "n": 1732,
+          "disagreement_rate": 0.108,
+          "directions": {
+            "entailed->unmentioned": 45,
+            "entailed->contradicted": 47,
+            "unmentioned->entailed": 25,
+            "unmentioned->contradicted": 53,
+            "contradicted->unmentioned": 16,
+            "contradicted->entailed": 1
+          }
+        }
+      },
+      "budget_differential": {
+        "disagreement_rate_A7_minus_A0": -0.0088
+      },
+      "disagreement_examples": [
+        {
+          "query_id": "carebench_v_00001370_1",
+          "claim": "A man exists.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00001370_1",
+          "claim": "The something is a piece of meat.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00003905_0",
+          "claim": "The flowers are on a grave.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00003953_2",
+          "claim": "A woman is present.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00003956_4",
+          "claim": "A woman is present.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00003956_4",
+          "claim": "The woman is demonstrating a process.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005709_0",
+          "claim": "The man is cutting down a tree.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005881_5",
+          "claim": "A man is present.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00005889_0",
+          "claim": "A woman is present.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005889_0",
+          "claim": "The woman is cutting vegetables.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005895_0",
+          "claim": "The vegetables are on a cutting board.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005907_0",
+          "claim": "The person is cutting vegetables.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005908_2",
+          "claim": "The woman is cutting vegetables.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00006262_0",
+          "claim": "The people are climbing.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00006262_0",
+          "claim": "The people are climbing up a building.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00006264_1",
+          "claim": "The man and child are playing.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00006289_0",
+          "claim": "A man exists.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00006382_0",
+          "claim": "A man is climbing.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00006382_0",
+          "claim": "The man is climbing up a window.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00007046_1",
+          "claim": "The man is digging a hole.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        }
+      ]
+    },
+    "formal_qwen38": {
+      "n_claims": 8911,
+      "confusion_gemma_to_llama": {
+        "entailed->entailed": 6201,
+        "unmentioned->unmentioned": 958,
+        "entailed->unmentioned": 235,
+        "contradicted->contradicted": 729,
+        "entailed->contradicted": 296,
+        "unmentioned->entailed": 165,
+        "unmentioned->contradicted": 200,
+        "contradicted->entailed": 31,
+        "contradicted->unmentioned": 96
+      },
+      "observed_agreement": 0.8852,
+      "cohen_kappa": 0.7286,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 2927,
+          "disagreement_rate": 0.1179,
+          "directions": {
+            "entailed->unmentioned": 79,
+            "entailed->contradicted": 95,
+            "unmentioned->entailed": 53,
+            "unmentioned->contradicted": 80,
+            "contradicted->entailed": 10,
+            "contradicted->unmentioned": 28
+          }
+        },
+        "ARM_A1": {
+          "n": 2966,
+          "disagreement_rate": 0.1146,
+          "directions": {
+            "entailed->unmentioned": 77,
+            "entailed->contradicted": 100,
+            "unmentioned->entailed": 57,
+            "unmentioned->contradicted": 64,
+            "contradicted->unmentioned": 29,
+            "contradicted->entailed": 13
+          }
+        },
+        "ARM_A7": {
+          "n": 3018,
+          "disagreement_rate": 0.112,
+          "directions": {
+            "entailed->unmentioned": 79,
+            "entailed->contradicted": 101,
+            "unmentioned->entailed": 55,
+            "unmentioned->contradicted": 56,
+            "contradicted->unmentioned": 39,
+            "contradicted->entailed": 8
+          }
+        }
+      },
+      "budget_differential": {
+        "disagreement_rate_A7_minus_A0": -0.0059
+      },
+      "disagreement_examples": [
+        {
+          "query_id": "carebench_v_00001358_22",
+          "claim": "The location is a market.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00001370_1",
+          "claim": "The butcher is using a cleaver.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00001370_1",
+          "claim": "The piece of meat is raw.",
+          "gemma": "unmentioned",
+          "llama": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00001379_10",
+          "claim": "Customers are watching the butcher.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00003905_0",
+          "claim": "The man is at a grave.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00003905_0",
+          "claim": "The flowers are pink.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00003956_4",
+          "claim": "The candle is red.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00003956_4",
+          "claim": "The greenery and berries are around the candle.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00003958_1",
+          "claim": "A boy is present.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00003966_1",
+          "claim": "The vase is clear.",
+          "gemma": "unmentioned",
+          "llama": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00005709_0",
+          "claim": "The man is in a backyard.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005739_0",
+          "claim": "The pole is yellow.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00005739_0",
+          "claim": "The person is splitting a log.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005876_0",
+          "claim": "The cucumbers are being sliced on a wooden cutting board.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005877_0",
+          "claim": "A person peels an onion.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005877_0",
+          "claim": "The onion is peeled.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005881_5",
+          "claim": "The vegetables are green.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00005890_3",
+          "claim": "The person is chopping orange vegetables.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005890_3",
+          "claim": "The chopping is happening on a white plate.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00005899_16",
+          "claim": "The woman is chopping vegetables.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        }
+      ]
+    },
+    "a3_qwen38": {
+      "n_claims": 444,
+      "confusion_gemma_to_llama": {
+        "entailed->entailed": 292,
+        "entailed->contradicted": 22,
+        "unmentioned->unmentioned": 47,
+        "entailed->unmentioned": 25,
+        "unmentioned->contradicted": 20,
+        "contradicted->contradicted": 24,
+        "unmentioned->entailed": 9,
+        "contradicted->unmentioned": 5
+      },
+      "observed_agreement": 0.8176,
+      "cohen_kappa": 0.5882,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 147,
+          "disagreement_rate": 0.1565,
+          "directions": {
+            "entailed->contradicted": 6,
+            "entailed->unmentioned": 7,
+            "unmentioned->contradicted": 6,
+            "unmentioned->entailed": 3,
+            "contradicted->unmentioned": 1
+          }
+        },
+        "ARM_A1": {
+          "n": 143,
+          "disagreement_rate": 0.2028,
+          "directions": {
+            "entailed->contradicted": 9,
+            "entailed->unmentioned": 11,
+            "unmentioned->entailed": 3,
+            "unmentioned->contradicted": 6
+          }
+        },
+        "ARM_A7": {
+          "n": 154,
+          "disagreement_rate": 0.1883,
+          "directions": {
+            "entailed->contradicted": 7,
+            "entailed->unmentioned": 7,
+            "unmentioned->contradicted": 8,
+            "contradicted->unmentioned": 4,
+            "unmentioned->entailed": 3
+          }
+        }
+      },
+      "budget_differential": {
+        "disagreement_rate_A7_minus_A0": 0.0318
+      },
+      "disagreement_examples": [
+        {
+          "query_id": "carebench_v_00002077_10",
+          "claim": "The eyeshadow is pink.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00002096_7",
+          "claim": "The makeup is bright blue.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00002096_7",
+          "claim": "A small brush is used to apply the makeup.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00002283_1",
+          "claim": "The scooter is red and silver.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00002328_16",
+          "claim": "The person is using a straight razor.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005595_0",
+          "claim": "The baby is wearing white pajamas.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005595_0",
+          "claim": "The girl is helping the baby.",
+          "gemma": "unmentioned",
+          "llama": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00006909_1",
+          "claim": "The toddler is on the woman's lap.",
+          "gemma": "unmentioned",
+          "llama": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00007888_2",
+          "claim": "The athlete is running.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00007888_2",
+          "claim": "The athlete is running on a track.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The dog is black and tan.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00009485_0",
+          "claim": "The boy is sweeping a floor.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00009485_0",
+          "claim": "The boy is using a broom.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00010075_0",
+          "claim": "The man is wearing traditional Scottish attire.",
+          "gemma": "contradicted",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00012062_0",
+          "claim": "The boy plays a trumpet.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00012062_0",
+          "claim": "The trumpet is made of brass.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00012246_0",
+          "claim": "The violin is red.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00013412_0",
+          "claim": "The men are wearing dark suits.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00014430_1",
+          "claim": "The diver is performing the backflip off a high diving board.",
+          "gemma": "unmentioned",
+          "llama": "entailed"
+        },
+        {
+          "query_id": "carebench_v_00015614_0",
+          "claim": "The worker is trimming the top of a palm tree.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        }
+      ]
+    },
+    "a3_qwen35": {
+      "n_claims": 435,
+      "confusion_gemma_to_llama": {
+        "entailed->entailed": 324,
+        "entailed->contradicted": 15,
+        "entailed->unmentioned": 22,
+        "unmentioned->contradicted": 11,
+        "unmentioned->unmentioned": 32,
+        "contradicted->contradicted": 18,
+        "contradicted->unmentioned": 7,
+        "unmentioned->entailed": 3,
+        "contradicted->entailed": 3
+      },
+      "observed_agreement": 0.8598,
+      "cohen_kappa": 0.5983,
+      "per_arm": {
+        "ARM_A0": {
+          "n": 152,
+          "disagreement_rate": 0.1447,
+          "directions": {
+            "entailed->contradicted": 6,
+            "entailed->unmentioned": 9,
+            "unmentioned->contradicted": 4,
+            "contradicted->unmentioned": 3
+          }
+        },
+        "ARM_A1": {
+          "n": 138,
+          "disagreement_rate": 0.1377,
+          "directions": {
+            "entailed->contradicted": 5,
+            "unmentioned->entailed": 2,
+            "entailed->unmentioned": 6,
+            "contradicted->entailed": 2,
+            "contradicted->unmentioned": 2,
+            "unmentioned->contradicted": 2
+          }
+        },
+        "ARM_A7": {
+          "n": 145,
+          "disagreement_rate": 0.1379,
+          "directions": {
+            "entailed->contradicted": 4,
+            "unmentioned->contradicted": 5,
+            "entailed->unmentioned": 7,
+            "unmentioned->entailed": 1,
+            "contradicted->unmentioned": 2,
+            "contradicted->entailed": 1
+          }
+        }
+      },
+      "budget_differential": {
+        "disagreement_rate_A7_minus_A0": -0.0068
+      },
+      "disagreement_examples": [
+        {
+          "query_id": "carebench_v_00002077_10",
+          "claim": "The eyeshadow is pink.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00002096_7",
+          "claim": "The person has colorful face paint.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00002096_7",
+          "claim": "The person is using a brush.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00005904_11",
+          "claim": "The tomato is being sliced into wedges.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00006909_1",
+          "claim": "The child is eating a snack.",
+          "gemma": "contradicted",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00007888_2",
+          "claim": "The athlete is running.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00007888_2",
+          "claim": "The athlete is running on a track.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00008320_0",
+          "claim": "The dog is black and tan.",
+          "gemma": "unmentioned",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00009485_0",
+          "claim": "The boy is wearing gloves.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00009485_0",
+          "claim": "The boy is sweeping a floor.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00009485_0",
+          "claim": "The boy is using a broom.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00010336_1",
+          "claim": "The area is outdoors.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00011374_0",
+          "claim": "There is a microphone.",
+          "gemma": "contradicted",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00011374_0",
+          "claim": "The man is standing in front of the microphone.",
+          "gemma": "contradicted",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00012062_0",
+          "claim": "The boy is playing a trumpet.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00012062_0",
+          "claim": "The trumpet is in the room.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00013412_0",
+          "claim": "The men are wearing dark suits.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00014430_1",
+          "claim": "The dive is from a high platform.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        },
+        {
+          "query_id": "carebench_v_00015614_0",
+          "claim": "The worker is trimming the top of a palm tree.",
+          "gemma": "entailed",
+          "llama": "contradicted"
+        },
+        {
+          "query_id": "carebench_v_00015614_0",
+          "claim": "The palm tree is tall.",
+          "gemma": "entailed",
+          "llama": "unmentioned"
+        }
+      ]
+    }
+  },
+  "random_agreed_audit": {
+    "formal_videollama": [
+      {
+        "query_id": "carebench_v_00007236_0",
+        "arm": "ARM_A1",
+        "claim": "The girl is folding clothes.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00003574_0",
+        "arm": "ARM_A1",
+        "claim": "A man is present.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00016591_0",
+        "arm": "ARM_A1",
+        "claim": "The person is watering something.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00006539_0",
+        "arm": "ARM_A7",
+        "claim": "A ladder exists.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00004657_0",
+        "arm": "ARM_A1",
+        "claim": "Someone is styling hair.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00007041_5",
+        "arm": "ARM_A7",
+        "claim": "Dirt exists.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00006509_0",
+        "arm": "ARM_A0",
+        "claim": "A man is present.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002006_4",
+        "arm": "ARM_A7",
+        "claim": "There is a pool.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00013115_0",
+        "arm": "ARM_A1",
+        "claim": "The man is walking.",
+        "label": "contradicted"
+      },
+      {
+        "query_id": "carebench_v_00003905_0",
+        "arm": "ARM_A0",
+        "claim": "The woman is laying flowers.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002072_20",
+        "arm": "ARM_A7",
+        "claim": "The lipstick is being applied to her lips.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00007041_5",
+        "arm": "ARM_A1",
+        "claim": "The excavator is digging up dirt.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00009911_0",
+        "arm": "ARM_A7",
+        "claim": "The man is on a boat.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00006575_0",
+        "arm": "ARM_A7",
+        "claim": "A ladder exists.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00006858_1",
+        "arm": "ARM_A0",
+        "claim": "The woman is wearing a yellow shirt.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00016602_0",
+        "arm": "ARM_A7",
+        "claim": "The little girl is using a hose.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005739_0",
+        "arm": "ARM_A0",
+        "claim": "The man is chopping down a tree.",
+        "label": "contradicted"
+      },
+      {
+        "query_id": "carebench_v_00009504_0",
+        "arm": "ARM_A7",
+        "claim": "The man is cleaning the floor.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00013474_1",
+        "arm": "ARM_A0",
+        "claim": "The first man is talking to the second man.",
+        "label": "unmentioned"
+      },
+      {
+        "query_id": "carebench_v_00003343_0",
+        "arm": "ARM_A1",
+        "claim": "A group of people exists.",
+        "label": "entailed"
+      }
+    ],
+    "formal_qwen38": [
+      {
+        "query_id": "carebench_v_00014299_5",
+        "arm": "ARM_A0",
+        "claim": "The barbell is being lifted from the floor.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00007043_40",
+        "arm": "ARM_A0",
+        "claim": "The hole is in the dirt.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002262_0",
+        "arm": "ARM_A0",
+        "claim": "The person is wearing a grey hoodie.",
+        "label": "contradicted"
+      },
+      {
+        "query_id": "carebench_v_00002097_34",
+        "arm": "ARM_A7",
+        "claim": "The mascara is being applied to her eyelashes.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00001926_0",
+        "arm": "ARM_A1",
+        "claim": "A starting block list is shown before the dive.",
+        "label": "unmentioned"
+      },
+      {
+        "query_id": "carebench_v_00001748_1",
+        "arm": "ARM_A1",
+        "claim": "The baby is wearing an outfit.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00006858_1",
+        "arm": "ARM_A0",
+        "claim": "The woman is wearing a yellow shirt.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00007553_1",
+        "arm": "ARM_A1",
+        "claim": "The child is being patient.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00003209_0",
+        "arm": "ARM_A1",
+        "claim": "The shoe is black.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002219_6",
+        "arm": "ARM_A1",
+        "claim": "The child rides a bicycle.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005709_0",
+        "arm": "ARM_A7",
+        "claim": "The log is on a stump.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002240_0",
+        "arm": "ARM_A7",
+        "claim": "A child is present.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00009012_0",
+        "arm": "ARM_A0",
+        "claim": "The athlete is female.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00000253_4",
+        "arm": "ARM_A1",
+        "claim": "The makeup is applied to her lips.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00009105_0",
+        "arm": "ARM_A0",
+        "claim": "The athlete is sprinting.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005894_0",
+        "arm": "ARM_A1",
+        "claim": "The person is chopping garlic cloves.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00016370_0",
+        "arm": "ARM_A0",
+        "claim": "There is a bathroom sink.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00010615_1",
+        "arm": "ARM_A7",
+        "claim": "The man is wearing a maroon shirt.",
+        "label": "contradicted"
+      },
+      {
+        "query_id": "carebench_v_00003197_0",
+        "arm": "ARM_A1",
+        "claim": "The shoelaces are white.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00008644_0",
+        "arm": "ARM_A7",
+        "claim": "There is a grassy field.",
+        "label": "entailed"
+      }
+    ],
+    "a3_qwen38": [
+      {
+        "query_id": "carebench_v_00002093_8",
+        "arm": "ARM_A7",
+        "claim": "The brush is used for applying makeup.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002093_8",
+        "arm": "ARM_A7",
+        "claim": "The woman has long hair.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002077_10",
+        "arm": "ARM_A1",
+        "claim": "The woman is applying eyeshadow.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00008693_0",
+        "arm": "ARM_A0",
+        "claim": "An athlete is present.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002093_8",
+        "arm": "ARM_A7",
+        "claim": "The woman's hair is brown.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005805_0",
+        "arm": "ARM_A0",
+        "claim": "A man is splitting firewood.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005904_11",
+        "arm": "ARM_A0",
+        "claim": "A tomato exists.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00012246_0",
+        "arm": "ARM_A7",
+        "claim": "There is a piano.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00013412_0",
+        "arm": "ARM_A0",
+        "claim": "Two men are present.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005805_0",
+        "arm": "ARM_A0",
+        "claim": "The man is using an axe.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00016057_5",
+        "arm": "ARM_A7",
+        "claim": "A person is washing green beans.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00012246_0",
+        "arm": "ARM_A1",
+        "claim": "A boy is young.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00016057_5",
+        "arm": "ARM_A0",
+        "claim": "A person is washing green beans.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00015614_0",
+        "arm": "ARM_A0",
+        "claim": "A worker is in a crane basket.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00008693_0",
+        "arm": "ARM_A0",
+        "claim": "The athlete is jumping.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00010075_0",
+        "arm": "ARM_A0",
+        "claim": "The man is on a bridge.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005904_11",
+        "arm": "ARM_A1",
+        "claim": "The chef is wearing a red shirt.",
+        "label": "contradicted"
+      },
+      {
+        "query_id": "carebench_v_00012568_0",
+        "arm": "ARM_A0",
+        "claim": "A person is an athlete.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005904_11",
+        "arm": "ARM_A1",
+        "claim": "The chef is slicing a tomato.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005904_11",
+        "arm": "ARM_A0",
+        "claim": "The chef is wearing a red shirt.",
+        "label": "contradicted"
+      }
+    ],
+    "a3_qwen35": [
+      {
+        "query_id": "carebench_v_00002077_10",
+        "arm": "ARM_A7",
+        "claim": "A woman is present.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00006909_1",
+        "arm": "ARM_A0",
+        "claim": "A woman is sitting.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00014430_1",
+        "arm": "ARM_A1",
+        "claim": "The man is diving.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00015614_0",
+        "arm": "ARM_A0",
+        "claim": "A worker is in a crane bucket.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00012568_0",
+        "arm": "ARM_A1",
+        "claim": "The athlete cleared a bar.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00004040_0",
+        "arm": "ARM_A0",
+        "claim": "Spectators are watching.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00012062_0",
+        "arm": "ARM_A1",
+        "claim": "A boy is young.",
+        "label": "unmentioned"
+      },
+      {
+        "query_id": "carebench_v_00013274_1",
+        "arm": "ARM_A1",
+        "claim": "A makeup artist is applying mascara.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00012246_0",
+        "arm": "ARM_A1",
+        "claim": "The boy is playing the violin.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00015865_14",
+        "arm": "ARM_A0",
+        "claim": "The athlete is jumping into a sand pit.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00014430_1",
+        "arm": "ARM_A1",
+        "claim": "A man is present.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005595_0",
+        "arm": "ARM_A0",
+        "claim": "The chair is blue.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00013412_0",
+        "arm": "ARM_A7",
+        "claim": "There are American and North Korean flags.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00012062_0",
+        "arm": "ARM_A0",
+        "claim": "The boy is in the room.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00015865_14",
+        "arm": "ARM_A7",
+        "claim": "The athlete is running down a track.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005595_0",
+        "arm": "ARM_A0",
+        "claim": "The girl is sitting in a chair.",
+        "label": "contradicted"
+      },
+      {
+        "query_id": "carebench_v_00006714_0",
+        "arm": "ARM_A7",
+        "claim": "The person is climbing up a tree.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00005394_0",
+        "arm": "ARM_A7",
+        "claim": "Swimmers dive into the pool.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002093_8",
+        "arm": "ARM_A7",
+        "claim": "The woman is applying makeup.",
+        "label": "entailed"
+      },
+      {
+        "query_id": "carebench_v_00002328_16",
+        "arm": "ARM_A7",
+        "claim": "The person is shaving the side of a head.",
+        "label": "entailed"
+      }
+    ]
+  },
+  "missing_value_sensitivity": {
+    "formal_videollama": {
+      "ARM_A0": {
+        "support_per_claim": 0.7929,
+        "support_per_caption": 0.7885
+      },
+      "ARM_A1": {
+        "support_per_claim": 0.8256,
+        "support_per_caption": 0.8248
+      },
+      "ARM_A7": {
+        "support_per_claim": 0.8066,
+        "support_per_caption": 0.815
+      }
+    },
+    "formal_qwen38": {
+      "ARM_A0": {
+        "support_per_claim": 0.7462,
+        "support_per_caption": 0.7449
+      },
+      "ARM_A1": {
+        "support_per_claim": 0.7594,
+        "support_per_caption": 0.7585
+      },
+      "ARM_A7": {
+        "support_per_claim": 0.7608,
+        "support_per_caption": 0.7577
+      }
+    },
+    "a3_qwen38": {
+      "ARM_A0": {
+        "support_per_claim": 0.7551,
+        "support_per_caption": 0.7609
+      },
+      "ARM_A1": {
+        "support_per_claim": 0.7832,
+        "support_per_caption": 0.7927
+      },
+      "ARM_A7": {
+        "support_per_claim": 0.7532,
+        "support_per_caption": 0.7549
+      }
+    },
+    "a3_qwen35": {
+      "ARM_A0": {
+        "support_per_claim": 0.8355,
+        "support_per_caption": 0.8412
+      },
+      "ARM_A1": {
+        "support_per_claim": 0.8116,
+        "support_per_caption": 0.8183
+      },
+      "ARM_A7": {
+        "support_per_claim": 0.8414,
+        "support_per_caption": 0.8283
+      }
+    }
+  }
+}

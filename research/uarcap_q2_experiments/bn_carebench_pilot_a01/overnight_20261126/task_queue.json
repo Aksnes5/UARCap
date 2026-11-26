@@ -538,6 +538,125 @@
       "depends_on": [
         "formal_eval_qwen"
       ]
+    },
+    {
+      "id": "e3_formal_text_screen",
+      "priority": 90,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 OVERNIGHT_TASK_ID=e3_formal_text_screen VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/e3_formal_text_screen.py",
+      "timeout_sec": 3600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": []
+    },
+    {
+      "id": "vidhalluc_generate_videollama_v3",
+      "priority": 86,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=vidhalluc_generate_videollama_v3 /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage generate_videollama",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_approve_v2"
+      ]
+    },
+    {
+      "id": "vidhalluc_evaluate_v3",
+      "priority": 88,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=vidhalluc_evaluate_v3 /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/vidhalluc_pipeline.py --stage evaluate",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_generate_videollama_v3",
+        "vidhalluc_generate_qwen_v2"
+      ]
+    },
+    {
+      "id": "vidhalluc_report_v3",
+      "priority": 89,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=vidhalluc_report_v3 /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/vidhalluc_pipeline.py --stage report",
+      "timeout_sec": 600,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "vidhalluc_evaluate_v3"
+      ]
+    },
+    {
+      "id": "e3_formal_frames",
+      "priority": 91,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=e3_formal_frames /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/e3_formal_visual.py --stage frames",
+      "timeout_sec": 1800,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": []
+    },
+    {
+      "id": "e3_formal_visual",
+      "priority": 92,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=e3_formal_visual /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/e3_formal_visual.py --stage visual",
+      "timeout_sec": 7200,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "e3_formal_frames"
+      ]
+    },
+    {
+      "id": "e3_formal_approve",
+      "priority": 93,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=e3_formal_approve /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/e3_formal_visual.py --stage approve",
+      "timeout_sec": 600,
+      "max_retries": 1,
+      "requires_gpu": false,
+      "depends_on": [
+        "e3_formal_visual",
+        "e3_formal_text_screen"
+      ]
+    },
+    {
+      "id": "e3_formal_generate_videollama",
+      "priority": 94,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments OVERNIGHT_TASK_ID=e3_formal_generate_videollama /home/bn/anaconda3/envs/videollama2/bin/python -u tasks/e3_formal_generate.py --generator videollama --chunk 45",
+      "timeout_sec": 18000,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "e3_formal_approve"
+      ]
+    },
+    {
+      "id": "e3_formal_generate_qwen",
+      "priority": 95,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=e3_formal_generate_qwen /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/e3_formal_generate.py --generator qwen --chunk 5",
+      "timeout_sec": 18000,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "e3_formal_approve"
+      ]
+    },
+    {
+      "id": "e3_formal_evaluate",
+      "priority": 96,
+      "cwd": "/home/bn/uarcap_q2_runtime/overnight/20261126",
+      "cmd": "OVERNIGHT_BASE=/home/bn/uarcap_q2_runtime/overnight/20261126 PYTHONPATH=/home/bn/uarcap_q2_carebench/research/uarcap_q2_experiments VLLM_USE_FLASHINFER_SAMPLER=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OVERNIGHT_TASK_ID=e3_formal_evaluate /media/bn/37b77782-9321-42a0-8a20-f53b4ec9179d1/xyl/Jnh_rag/.venv_rag_vllm/bin/python -u tasks/e3_formal_evaluate.py",
+      "timeout_sec": 18000,
+      "max_retries": 1,
+      "requires_gpu": true,
+      "depends_on": [
+        "e3_formal_generate_videollama",
+        "e3_formal_generate_qwen"
+      ]
     }
   ]
 }

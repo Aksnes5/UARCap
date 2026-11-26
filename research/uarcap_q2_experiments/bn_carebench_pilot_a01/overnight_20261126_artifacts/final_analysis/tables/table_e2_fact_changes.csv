@@ -1,0 +1,13 @@
+model,transition,added_correct,lost_correct,added_error,removed_error,added_unmentioned,removed_unmentioned,label_flips,replacements,unmatched,core_coverage_delta
+formal_videollama,ARM_A0->ARM_A1,364,286,56,81,51,65,43,43,404,0.055
+formal_videollama,ARM_A1->ARM_A7,322,293,58,61,93,49,30,30,378,0.005
+formal_videollama,ARM_A0->ARM_A7,511,404,72,100,127,91,40,40,571,0.06
+formal_qwen38,ARM_A0->ARM_A1,723,655,117,118,152,191,83,83,898,0.0267
+formal_qwen38,ARM_A1->ARM_A7,568,525,102,84,109,115,80,80,669,0.0033
+formal_qwen38,ARM_A0->ARM_A7,895,784,152,135,172,213,94,94,1067,0.03
+a3_qwen38,ARM_A0->ARM_A1,27,26,4,6,10,13,2,2,44,0.0667
+a3_qwen38,ARM_A1->ARM_A7,38,34,8,2,9,11,10,10,39,0.0
+a3_qwen38,ARM_A0->ARM_A7,39,34,10,6,13,15,11,11,49,0.0667
+a3_qwen35,ARM_A0->ARM_A1,20,35,10,4,5,8,6,6,44,0.0
+a3_qwen35,ARM_A1->ARM_A7,30,20,1,6,7,7,7,7,28,0.0
+a3_qwen35,ARM_A0->ARM_A7,33,38,4,3,8,10,5,5,48,0.0

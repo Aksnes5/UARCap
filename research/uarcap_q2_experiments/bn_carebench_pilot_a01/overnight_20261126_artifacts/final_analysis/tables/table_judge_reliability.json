@@ -1,0 +1,164 @@
+[
+  {
+    "model": "formal_videollama",
+    "arm": "ARM_A0",
+    "n": 1627,
+    "disagreement_rate": 0.1168,
+    "directions": {
+      "entailed->unmentioned": 52,
+      "unmentioned->contradicted": 64,
+      "entailed->contradicted": 47,
+      "unmentioned->entailed": 9,
+      "contradicted->unmentioned": 12,
+      "contradicted->entailed": 6
+    }
+  },
+  {
+    "model": "formal_videollama",
+    "arm": "ARM_A1",
+    "n": 1657,
+    "disagreement_rate": 0.105,
+    "directions": {
+      "entailed->unmentioned": 47,
+      "entailed->contradicted": 49,
+      "unmentioned->contradicted": 52,
+      "unmentioned->entailed": 12,
+      "contradicted->entailed": 5,
+      "contradicted->unmentioned": 9
+    }
+  },
+  {
+    "model": "formal_videollama",
+    "arm": "ARM_A7",
+    "n": 1732,
+    "disagreement_rate": 0.108,
+    "directions": {
+      "entailed->unmentioned": 45,
+      "entailed->contradicted": 47,
+      "unmentioned->entailed": 25,
+      "unmentioned->contradicted": 53,
+      "contradicted->unmentioned": 16,
+      "contradicted->entailed": 1
+    }
+  },
+  {
+    "model": "formal_qwen38",
+    "arm": "ARM_A0",
+    "n": 2927,
+    "disagreement_rate": 0.1179,
+    "directions": {
+      "entailed->unmentioned": 79,
+      "entailed->contradicted": 95,
+      "unmentioned->entailed": 53,
+      "unmentioned->contradicted": 80,
+      "contradicted->entailed": 10,
+      "contradicted->unmentioned": 28
+    }
+  },
+  {
+    "model": "formal_qwen38",
+    "arm": "ARM_A1",
+    "n": 2966,
+    "disagreement_rate": 0.1146,
+    "directions": {
+      "entailed->unmentioned": 77,
+      "entailed->contradicted": 100,
+      "unmentioned->entailed": 57,
+      "unmentioned->contradicted": 64,
+      "contradicted->unmentioned": 29,
+      "contradicted->entailed": 13
+    }
+  },
+  {
+    "model": "formal_qwen38",
+    "arm": "ARM_A7",
+    "n": 3018,
+    "disagreement_rate": 0.112,
+    "directions": {
+      "entailed->unmentioned": 79,
+      "entailed->contradicted": 101,
+      "unmentioned->entailed": 55,
+      "unmentioned->contradicted": 56,
+      "contradicted->unmentioned": 39,
+      "contradicted->entailed": 8
+    }
+  },
+  {
+    "model": "a3_qwen38",
+    "arm": "ARM_A0",
+    "n": 147,
+    "disagreement_rate": 0.1565,
+    "directions": {
+      "entailed->contradicted": 6,
+      "entailed->unmentioned": 7,
+      "unmentioned->contradicted": 6,
+      "unmentioned->entailed": 3,
+      "contradicted->unmentioned": 1
+    }
+  },
+  {
+    "model": "a3_qwen38",
+    "arm": "ARM_A1",
+    "n": 143,
+    "disagreement_rate": 0.2028,
+    "directions": {
+      "entailed->contradicted": 9,
+      "entailed->unmentioned": 11,
+      "unmentioned->entailed": 3,
+      "unmentioned->contradicted": 6
+    }
+  },
+  {
+    "model": "a3_qwen38",
+    "arm": "ARM_A7",
+    "n": 154,
+    "disagreement_rate": 0.1883,
+    "directions": {
+      "entailed->contradicted": 7,
+      "entailed->unmentioned": 7,
+      "unmentioned->contradicted": 8,
+      "contradicted->unmentioned": 4,
+      "unmentioned->entailed": 3
+    }
+  },
+  {
+    "model": "a3_qwen35",
+    "arm": "ARM_A0",
+    "n": 152,
+    "disagreement_rate": 0.1447,
+    "directions": {
+      "entailed->contradicted": 6,
+      "entailed->unmentioned": 9,
+      "unmentioned->contradicted": 4,
+      "contradicted->unmentioned": 3
+    }
+  },
+  {
+    "model": "a3_qwen35",
+    "arm": "ARM_A1",
+    "n": 138,
+    "disagreement_rate": 0.1377,
+    "directions": {
+      "entailed->contradicted": 5,
+      "unmentioned->entailed": 2,
+      "entailed->unmentioned": 6,
+      "contradicted->entailed": 2,
+      "contradicted->unmentioned": 2,
+      "unmentioned->contradicted": 2
+    }
+  },
+  {
+    "model": "a3_qwen35",
+    "arm": "ARM_A7",
+    "n": 145,
+    "disagreement_rate": 0.1379,
+    "directions": {
+      "entailed->contradicted": 4,
+      "unmentioned->contradicted": 5,
+      "entailed->unmentioned": 7,
+      "unmentioned->entailed": 1,
+      "contradicted->unmentioned": 2,
+      "contradicted->entailed": 1
+    }
+  }
+]
